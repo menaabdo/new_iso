@@ -1,23 +1,25 @@
 @extends('layouts.master')
 @section('content')
-
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    input,textarea{ box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+</style>
 <div class="card">
-<div class="card-body">
-    <h3 style="margin-top:85px;">حالات عدم المطابقة</h3>
-    <hr>
-    <form action="{{route('Non_conformities.update',$Non_conformities->id)}}" method="post" enctype="multipart/form-data" id="fo1">
+<div class="card-body row" style='margin-top:80px'>
+       <form action="{{route('Non_conformities.update',$Non_conformities->id)}}" class='col-md-12 ' style='margin:auto;margin-right:300px !important' method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-            <h2>حالات عدم المطابقة رقم </h2>
-            <input style="text-align: center;" type="text"  name="number_1" value="{{$Non_conformities->number_1}}">
-            <hr width="1300px;" size="20" color="black">
+        <h3 style="margin-top:85px;">حالات عدم المطابقة</h3>
+  
+            <input style="text-align: center;;margin:auto" class=' form-control col-md-6' type="text"  name="number_1" value="{{$Non_conformities->number_1}}">
+            <hr >
         </div>
-        <div id="mainDiv"  style=" margin-right:500px;">
-            <h4 style=" color:blue;">CO LOGO</h4>
-            <hr width="50%" size="20" color="blue">
-            <img src="{{ asset($Non_conformities->logo) }}" height=180px width=210px; />
-            @if ($Non_conformities->status == 'pending' && Auth::user()->hasRole('Employee'))
+        <div class=" form-group row  text-right">
+      <label class="col-3 col-form-label ">CO LOGO</label>
+    
+             @if ($Non_conformities->status == 'pending' && Auth::user()->hasRole('Employee'))
 
             <input type="file" id="img" name="logo" accept="image/*">
         @endif
@@ -31,57 +33,64 @@
             ($Non_conformities->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
             <input type="file" id="img" name="logo" accept="image/*">
         @endif
+        <img src="{{ asset($Non_conformities->logo) }}" height=100px width=100px; />
+          
 </div>
-        <div class="container-fluid p-4">
-            <div class=" form-group row w-200 text-right">
-                <label for="" class="col-1 col-form-label text-right">التاريخ:</label>
-                <div class="col-4">
+<div class=" form-group row  text-center">
+               <label for="" class="col-3 col-form-label text-right">التاريخ:</label>
+               <div class="col-4">
                     <input type="date" class="form-control" name="date_1"  value="{{$Non_conformities->date_1}}">
                 </div>
-                <label for="" class="col-2 col-form-label text-left">الجهة المختصة:</label>
-                <div class="col-5">
+                </div>
+                <div class=" form-group row  text-center">
+             
+                <label for="" class="col-3 col-form-label text-right">الجهة المختصة:</label>
+                <div class="col-4">
                     <input type="text" class="form-control" name="competent_authority"  value="{{$Non_conformities->competent_authority}}">
                 </div>
             </div>
-            <div class=" form-group row w-200 text-right">
-                <label for="" class="col-4 col-form-label text-right">حالة عدم مطابقة بنظام:</label>
-                <div class="col-6">
+            <div class=" form-group row  text-center">
+                <label for="" class="col-3 col-form-label text-right">حالة عدم مطابقة بنظام:</label>
+                <div class="col-4">
                     <input type="text" class="form-control" name="non_compliance_system"  value="{{$Non_conformities->non_compliance_system}}">
                 </div>
             </div>
             <div class=" form-group row w-200 text-left">
-                <label for="" class="col-6 col-form-label text-right">(1) ملخص وتحليل حالة عدم المطابقة فى </label> :</label>
-                <div class="col-12">
+                <label for="" class="col-4 form-label text-right">(1) ملخص وتحليل حالة عدم المطابقة فى </label> :</label>
+                <div class="col-4">
                     <textarea type="text" class="form-control" name="summary_analysis"> {{$Non_conformities->summary_analysis}}</textarea>
                 </div>
             </div>
             <div class="form-group row w-100 text-right" style="text-align:center ;">
-                <table class="table">
+            <div style="overflow-x:auto;margin:auto" class='col-md-9'>   
+             
+            <table class="table">
                     <tr>
-                        <th cscope="col" colspan="2" style="background-color:rgb(227, 252, 160)">مكتشف الحـــــــالة</th>
-                        <th cscope="col" colspan="2" style="background-color:rgb(227, 252, 160)">مدير الإدارة المعنية</th>
-                        <th cscope="col" colspan="2" style="background-color:rgb(227, 252, 160)">مدير الجودة</th>
+                        <th cscope="col" colspan="2" style="background-color: #001635;color:white">مكتشف الحـــــــالة</th>
+                        <th cscope="col" colspan="2" style="background-color:#001635;color:white">مدير الإدارة المعنية</th>
+                        <th cscope="col" colspan="2" style="background-color:#001635;color:white">مدير الجودة</th>
                        
                     </tr>
                     <tr>
                        
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الإسم</th>
+                        <th scope="col" style="background-color: #001635;color:white">الإسم</th>
                         <th scope="col"><input class="form-control" type="text" name="name_1" value="{{$Non_conformities->name_1}}"></th>
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الإسم</th>
+                        <th scope="col" style="background-color:#001635;color:white">الإسم</th>
                         <th scope="col"><input class="form-control" type="text" name="name_2" value="{{$Non_conformities->name_2}}"></th>
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الإسم</th>
+                        <th scope="col" style="background-color:#001635;color:white">الإسم</th>
                         <th scope="col"><input class="form-control" type="text" name="name_3" value="{{$Non_conformities->name_3}}"></th>
                     </tr>
                     <tr>
                       
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الوظيفة</th>
+                        <th scope="col" style="background-color:#001635;color:white">الوظيفة</th>
                         <th scope="col"><input class="form-control" type="text" name="employ_1" value="{{$Non_conformities->employ_1}}"></th>
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الوظيفة</th>
+                        <th scope="col" style="background-color:#001635;color:white">الوظيفة</th>
                         <th scope="col"><input class="form-control" type="text" name="employ_2" value="{{$Non_conformities->employ_2}}"></th>
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الوظيفة</th>
+                        <th scope="col" style="background-color:#001635;color:white">الوظيفة</th>
                         <th scope="col"><input class="form-control" type="text" name="employ_3" value="{{$Non_conformities->employ_3}}"></th>
                     </tr>
                 </table>
+            </div>
             </div>
             <hr width="1200px;" size="20" color="rgb(227, 252, 160)">
             <div class=" form-group row w-200 text-right">
@@ -155,7 +164,7 @@
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعتماد ( مدير الأداره )     </label>
                             </div>
                             <div class="form-group row w-10 text-center">
-                                <label for="" class="col-1 col-form-label">الإسم   </label>
+                                <label for="" class="col-3 col-form-label">الإسم   </label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" readonly placeholder="  ......" name="name_5" value="{{$Non_conformities->name_5}}">
                                 </div>
@@ -307,16 +316,16 @@
         <style>
             .table thead th {
                 vertical-align: bottom;
-                border-bottom: 2px solid black;
+                /* border-bottom: 2px solid black; */
             }
             
             table,
             th,
             td,
             tr {
-                border: 1px solid black;
-                border-bottom: 2px solid black;
-                border-top: 2px solid black;
+                border: 1px solid silver;
+                /* border-bottom: 2px solid black;
+                border-top: 2px solid black; */
             }
         
             #mainDiv {

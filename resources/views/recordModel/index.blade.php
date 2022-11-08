@@ -2,11 +2,18 @@
 
 @section('content')
 
-
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+</style>
 
 <section class="content">
     <div class="card">
-<div class="card-body">
+<div class="card-body row" style='margin:auto;margin-top:80px'>
       <h3 style="margin-top:85px;">سجل حصر النماذج المستخدمة</h3>
       <hr>
       <div class="row" >

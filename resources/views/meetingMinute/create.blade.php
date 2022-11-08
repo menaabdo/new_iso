@@ -5,11 +5,9 @@
     .shadow-lg {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
     h2{
-        background: linear-gradient( 
-90deg
- , rgba(41,67,148,1) 0%, rgba(40,150,212,1) 100%);
-    color: white;
+       
     padding: 2px;
+    text-align:right;
     }
    
 </style>
@@ -17,7 +15,7 @@
 <div class='row card' >
 <div class='row card' style='margin:auto'>
 
-<form action="{{route('meetingMinute.store')}}" method="post"  class='col-md-6' style='margin:auto;margin-top:80px' enctype="multipart/form-data" id="fo1">
+<form action="{{route('meetingMinute.store')}}" method="post"  class='col-md-6 w-100' style='margin:auto;margin-top:80px' enctype="multipart/form-data" id="fo1">
     {{ csrf_field() }}
 
     <div class="container p-4">
@@ -25,7 +23,7 @@
             <h1 style='text-shadow: 1px 1px 1px #3ed3ea;'>محضر إجتماع مراجعة الإدارة </h1>
               <hr class="w-100">
         </div>
-        <div class='shadow-lg p-3'>
+        <div class='shadow-lg p-3 col-md-12'>
         <label  class="col-md-2 text-left"  style=''>رقم</label>
         <input   class="col-md-3 form-control  shadow-lg"  type="text" name="num">
        
@@ -67,7 +65,7 @@
             </div>
         </div>
 
-
+           
         <div class="form-group row w-100 text-center ">
             <h1 for="" class="col-md-9 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;'> موضوعات الإجتماع:</h1>
             
@@ -75,7 +73,7 @@
                 <h2 for="" class="col-md-9 col-form-label"> 1. نتائج مراجعات الإدارة السابقة وفاعلية تطبيق القرارات الخاصة بها.</h2>
             </div>
             <div class="form-group row w-100 text-center">
-                <h2 for="" class="col-md-12 col-form-label">2. أهداف الإدارة العليا (سياسات / خطط عمل / مشاريع تطوير).</h2>
+                <h2 for="" class="col-md-9 col-form-label">2. أهداف الإدارة العليا (سياسات / خطط عمل / مشاريع تطوير).</h2>
             </div>
             <div class="form-group row w-100 text-center">
                 <h2 for="" class="col-md-9 col-form-label">3. نتائج المراجعات الداخلية على أنظمة الجودة المطبقة بالشركة.</h2>
@@ -119,23 +117,24 @@
             <div class="form-group row w-100 text-right">
                 <h2 for="" class="col-md-9 col-form-label">16. توصيات للتحسين.</h2>
             </div>
+            
         </div>
 
         
         <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-2 col-form-label">ملخص الإجتماع :</h1>
+            <h1 for="" class="col-md-4 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;'>ملخص الإجتماع :</h1>
         </div>
         <div class="form-group row w-100 text-right">
             <h1 for="" class="col-5 col-form-label">موقف مراجعات الإدارة السابقة :</h1>
             <div class="col-10">
-                <textarea type="text" class="form-control" placeholder=" المراجعة ......" name="stand_review"></textarea>
+                <textarea type="text" class="form-control shadow-lg" placeholder=" المراجعة ......" name="stand_review"></textarea>
             </div>
         </div>
         <div class="form-group row w-100 text-right">
             <h1 for="" class="col-5 col-form-label">قرارات وتوصيات الإجتماع :</h1>
         </div>
         <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-5 col-form-label">أولاً: فيما يختص بتحسين كفاءة نظام ﺇدارة الجودة فقد تقرر ما يلى</h1>
+            <h1 for="" class="col-md-8 col-form-label">أولاً: فيما يختص بتحسين كفاءة نظام ﺇدارة الجودة فقد تقرر ما يلى</h1>
         </div>
         <div class="form-group row w-10 text-center">
             <label for="" class="col-1 col-form-label">1   -</label>
@@ -156,7 +155,7 @@
             </div>
         </div>
         <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-5 col-form-label">ثانياً: فيما يختص بتحسين الخدمات طبقاً لمتطلبات العملاء فقد تقرر:</h1>
+            <h1 for="" class="col-md-8 col-form-label">ثانياً: فيما يختص بتحسين الخدمات طبقاً لمتطلبات العملاء فقد تقرر:</h1>
         </div>
         <div class="form-group row w-10 text-center">
             <label for="" class="col-1 col-form-label">1   -</label>
@@ -176,8 +175,8 @@
                 <textarea type="text" class="form-control" placeholder="  ......" name="improve_service_3"></textarea>
             </div>
         </div>
-        <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-5 col-form-label">ثالثاً: الموارد البشرية والمادية المطلوبة هى:</h1>
+        <div class="form-group row w-100 text-center">
+            <h1 for="" class="col-md-6 col-form-label">ثالثاً: الموارد البشرية والمادية المطلوبة هى:</h1>
         </div>
         <div class="form-group row w-10 text-center">
             <label for="" class="col-1 col-form-label">1   -</label>
@@ -259,7 +258,8 @@
                 </tr>
             </thead>
         </table>
-        <table class="table">
+        <div class='row w-100'>
+        <table class="table col-md-12">
             <thead>
                 <tr>
                     <th>
@@ -282,30 +282,32 @@
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                            <label for="" class="" style="text-align: center;;"> مدة الحفظ :
                                 سنتان </label>
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                        <label for="" class="" style="text-align: center;"> رقم الصفحة : 1 /
                           1</label>
                       </div>
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                        <label for="" class="" style="text-align: center;"> رقم الوثيقة : QA – F
                           - 13 </label>
                       </div>
                     </th>
                   </tr>
             </thead>
         </table>
-        <div class="form-group">
-            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-              class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ  </button>
-          </div>
+        </div>
+        <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    </div>  
     </div>
     
     </form>
@@ -315,16 +317,16 @@
 <style>
     .table thead th {
         vertical-align: bottom;
-        border-bottom: 2px solid black;
+        /* border-bottom: 2px solid black; */
     }
     
     table,
     th,
     td,
     tr {
-        border: 1px solid black;
-        border-bottom: 2px solid black;
-        border-top: 2px solid black;
+        border: 1px solid ;
+        /* border-bottom: 2px solid black; */
+        /* border-top: 2px solid black; */
     }
 
     #mainDiv {

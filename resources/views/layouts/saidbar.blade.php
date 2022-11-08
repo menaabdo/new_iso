@@ -333,14 +333,14 @@
                         <li class="sidebar-item">
                             <a href="{{ route('followUpRecord.index') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> سجل متابعة طلبات الإجراءات التصحيحية / الوقائية
+                                <span class="hide-menu" style='font-size:10px'> سجل متابعة طلبات الإجراءات التصحيحية / الوقائية
                                 </span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{ route('reportNonConformanceCases.index') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> تقرير حالات عدم المطابقة والإجراءات التصحيحية والوقائية
+                                <span class="hide-menu" style='font-size:10px'> تقرير  عدم المطابقة والإجراءات التصحيحية والوقائية
 
 
                                 </span>

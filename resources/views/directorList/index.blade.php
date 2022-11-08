@@ -1,16 +1,30 @@
 @extends('layouts.master')
 @section('content')
-    <section class="content">
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+</style>
+
+
+    <section class="content" style='margin:auto;'>
         <div class="card">
-            <div class="card-body">
-                <h3 style="margin-top:85px;">قائمة أسماء المديرين والأفراد المصرح لهم بإعداد الوثائق</h3>
+            <div class="card-body row" style='margin:auto;'>
+                <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>قائمة أسماء المديرين والأفراد المصرح لهم بإعداد الوثائق</h3>
                 <hr>
-                <div class="row">
-
-                    <a href="{{ route('directorList.create') }}" class="btn btn-primary mr-1"
-                        style="width:120px;  float: right; font-size:20px ">
-                        اضافه جديد <i class="icon-lg la la-file-medical"></i></a>
-
+</div>
+                <div class="row" style='margin:auto;'>
+                        <div class='row' style='margin:auto;'>
+                    <a href="{{ route('directorList.create') }}" class="btn col-md-12  mr-1"
+                        style="width:120px;  float: right; font-size:20px;background: linear-gradient(
+90deg
+, rgba(41,67,148,1) 0%, rgba(40,150,212,1) 100%); ">
+                        <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a>
+    </div>
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
@@ -18,7 +32,7 @@
                                     <div class="card-body">
                                         <!-- /.card-header -->
                                         <div class="card-body">
-                                            <table id="example1" class="table table-bordered table-striped">
+                                            <table id="example1" class="table table-bordered table-striped" style='background-color: #001635;color:white;text-align:center'>
                                                 <thead>
                                                     <tr>
                                                         <th style=" font-size:20px ">Logo</th>

@@ -1,28 +1,33 @@
 @extends('layouts.master')
 
 @section('content')
-
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    input{ box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+</style>
 
 <div class="card">
-<div class="card-body">
-    <h3 style="margin-top:85px;">سجل حصر الوثائق الملغاة</h3>
-    <hr>
-    <form action="{{route('recordCanceledDocument.store')}}" method="post" enctype="multipart/form-data" id="fo1">
+<div class="card-body row" style='margin:auto;margin-top:80px'>
+   
+    <form action="{{route('recordCanceledDocument.store')}}" method="post" class='col-md-10' style='margin:auto' enctype="multipart/form-data" id="fo1">
       {{ csrf_field() }}
       <div style="" class="w-100 text-center my-4">
-        <h2>سجل حصر الوثائق الملغاة</h2>
+        <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>سجل حصر الوثائق الملغاة</h2>
         <hr class="w-100">
     </div>
    
-        <div id="mainDiv"  style=" margin-right:500px;">
-            <h4 style=" color:blue;">CO LOGO</h4>
-            <hr width="50%" size="20" color="blue">
-            <input type="file" id="img" name="logo" accept="image/*">
+    <div class='row mt-4 mb-3'>
+      <label class="form-label col-md-2 ">CO LOGO</label>
+    
+            <input class="col-md-6 form-control" type="file" id="img" name="logo" accept="image/*">
         </div>
   
-    <div class="form-group row w-100 text-right" style="text-align:center;">
-        <table class="table">
-            <tr style="background-color:rgb(235, 252, 160); text-align:center;">
+  
+    <div class="form-group row w-100 text-right" style="text-align:center;overflow-x:auto">
+
+        <table class="table" class='col-md-12'>
+            <tr style='font-size:14px;background-color:#001635;color:white;text-align:center;'>
                 <th scope="col" rowspan="2">م</th>
                 <th scope="col" rowspan="2">إسم الوثيقة</th>
                 <th scope="col" rowspan="2">كود </th>
@@ -32,7 +37,7 @@
                 <th scope="col" rowspan="2">ملاحظات/ بيان التعديل إن وجد</th>
 
             </tr>
-            <tr style="background-color:rgb(235, 252, 160); text-align:center;">
+            <tr style="background-color:#001635;color:white;text-align:center">
                 <th scope="col">رقم</th>
                 <th scope="col"> التاريخ</th>
                 <th scope="col">رقم</th>
@@ -133,38 +138,40 @@
         <tr>
             <th>
               <div class="" style="text-align:start ;">
-                <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
+              <label>اسم الشركة</label>
+                <input class="form-control" type="text" name="company_name" >
               </div>
     
             </th>
             <th>
               <div class="" style="text-align:start ;">
-                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+              <label>تاريخ الاصدار</label>
+                <input class="form-control" type="text" name="date2"  onfocus="(this.type='date')" onblur="(this.type='text')">
               </div>
     
             </th>
             <th>
                 <div class="" style="text-align:start ;">
-                    <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                <label>تاريخ التعديل</label>
+                    <input class="form-control" type="text" name="date3"  onfocus="(this.type='date')" onblur="(this.type='text')">
                   </div>
     
             </th>
             <th>
               <div class="" style="text-align:start ;">
-                    <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
-                        سنتان </label>
+                    <label for="" class="" style="text-align: center;"> مدة الحفظ :                        سنتان </label>
               </div>
     
             </th>
             <th>
               <div class="" style="text-align:start ;">
-                <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                <label for="" class="" style="text-align: center;"> رقم الصفحة: 1 /
                   1</label>
               </div>
             </th>
             <th>
               <div class="" style="text-align:start ;">
-                <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                <label for="" class="" style="text-align: center;"> رقم الوثيقة : QA – F
                   - 13 </label>
               </div>
             </th>
@@ -172,10 +179,11 @@
     </thead>
 </table>
 
-      <div class="form-group">
-        <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-          class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ </button>
-      </div>
+<div class='row mt-3'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    </div>  
     </form>
 </div>
  
@@ -222,16 +230,16 @@
 <style>
     .table thead th {
         vertical-align: bottom;
-        border-bottom: 2px solid black;
+        /* border-bottom: 2px solid black; */
     }
     
     table,
     th,
     td,
     tr {
-        border: 1px solid black;
-        border-bottom: 2px solid black;
-        border-top: 2px solid black;
+        border: 1px solid ;
+        /* border-bottom: 2px solid black;
+        border-top: 2px solid black; */
     }
 
     #mainDiv {

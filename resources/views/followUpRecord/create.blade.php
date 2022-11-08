@@ -1,27 +1,36 @@
 @extends('layouts.master')
 @section('content')
-
-<div class="card">
-<div class="card-body">
-    <h3 style="margin-top:85px;">سجل متابعة طلبات الإجراءات التصحيحية / الوقائية</h3>
-    <hr>
-    <form action="{{route('followUpRecord.store')}}" method="post" enctype="multipart/form-data" id="fo1">
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    h2{
+       
+    padding: 2px;
+    text-align:right;
+    }
+   
+</style>
+<div class="card  " style='   ;'>
+<div class='card-body row' style='margin:auto'>
+   
+    <form action="{{route('followUpRecord.store')}}" class='col-md-8 ' style='margin:auto;margin-top:80px;' method="post" enctype="multipart/form-data" id="fo1">
         {{ csrf_field() }}
-        <div style="" class="w-100 text-center my-4">
-            <h2>سجل متابعة طلبات الإجراءات التصحيحية / الوقائية </h2>
+        <div style="" class="w-100 text-center my-4" style=''>
+            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>سجل متابعة طلبات الإجراءات التصحيحية / الوقائية </h2>
             <label>لــعام</label>
-            <input style="text-align: center;" type="text"  name="year">
+            <input class="col-md-6 form-control  shadow-lg"  style="text-align: center;margin:auto" type="text"  name="year">
             <hr class="w-100">
         </div>
-        <div id="mainDiv"  style=" margin-right:500px;">
-            <h4 style=" color:blue;">CO LOGO</h4>
-            <hr width="50%" size="20" color="blue">
-            <input type="file" id="img" name="logo" accept="image/*">
+        <div class='shadow-lg p-3'>
+      <label class="form-label pr-5">CO LOGO</label>
+      <div class=''>
+                <input type="file" id="img" class='shadow-lg' name="logo" accept="image/*">
+        </div>
         </div>
         <hr class="w-100">
-        <div class="form-group row w-100 text-right" style="text-align:center;">
+        <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
             <table class="table">
-                <tr style="background-color:rgb(249, 235, 141); text-align:center;">
+                <tr style="background-color:#001635 ;color:white; text-align:center;">
                     <th class="col-1 col-form-label" scope="col" rowspan="2">م</th>
                     <th scope="col" rowspan="2">رقم الطلب</th>
                     <th scope="col" rowspan="2">تاريخ</th>
@@ -31,7 +40,7 @@
                     <th scope="col" rowspan="2">نتائج المتابعة</th>
                     <th scope="col" colspan="3">فاعلية الإجراء **</th>
                 </tr>
-                <tr style="background-color:rgb(249, 235, 141); text-align:center;">
+                <tr style="background-color:#001635 ;color:white; text-align:center;">
                     <th scope="col"> 1</th>
                     <th scope="col">2</th>
                     <th scope="col"> 3</th>
@@ -76,35 +85,44 @@
 
 
 
-        <table class="table">
+        <table class="table ">
             <thead>
                 <tr>
-                    <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
-                        <div class="form-group row w-20 text-left">
-                            <label for="" class="col-3 col-form-label">*  المصدر </label>
-                            <label for="" class="col-3 col-form-label">(1) مراجعة داخلية</label>
-                            <label for="" class="col-3 col-form-label">(2) مراجعة خارجية </label>
-                            <label for="" class="col-3 col-form-label">(3) مراجعة إدارة</label>
+                    <th class=" w-50 text-center col-3 " style="border: 1px solid #001635  !important;">
+                        <div class="form-group row w-20 text-center">
+                            <label for="" class="col-12 col-form-label text-center">*  المصدر </label>
+                            </div>
+                            <div class="form-group row w-20 text-center">
+                        
+                            <label for="" class="col-6 col-form-label">(1) مراجعة داخلية</label>
+                            <label for="" class="col-6 col-form-center">(4)  شكوى العميل</label>
+                            
+                        </div>
+                            <div class="form-group row w-20 text-center">
+                        
+                            <label for="" class="col-6 col-form-label">(2) مراجعة خارجية </label>
+                            <label for="" class="col-6 col-form-label">(5)  حالة عدم مطابقة	 </label>
+                             
+                        </div>
+                             <div class="form-group row w-20 text-center">
+                        
+                            <label for="" class="col-6 col-form-label">(3) مراجعة إدارة</label>
+                            <label for="" class="col-6 col-form-label">(6) أخرى(تذكر الحالة)</label>
+                                
                         </div>
 
-                        <div class="form-group row w-20 text-left">
-                            <label for="" class="col-2 col-form-label"></label>
-                            <label for="" class="col-3 col-form-label">(4)  شكوى العميل</label>
-                            <label for="" class="col-3 col-form-label">(5)  حالة عدم مطابقة	 </label>
-                            <label for="" class="col-3 col-form-label">(6) أخرى(تذكر الحالة)</label>
-                        </div>
-                    </th>
-                    <th class=" w-30 text-center col-2 " style="border: 2px solid #0f0a0a !important;">
-                        <div class="form-group row w-10 text-left">
-                            <label for="" class="col-4 col-form-label">  ** فاعلية الإٌجراء  </label>
-                        </div>
-
-                        <div class="form-group row w-30 text-center">
+                            <div class="form-group row w-10 text-center">
+                            <label for="" class="col-12 col-form-label">  ** فاعلية الإٌجراء  </label>
                             <label for="" class="col-4 col-form-label">(7) إقفال الطلب  </label>
                             <label for="" class="col-4 col-form-label">(8) إجراء تصحيحي أخر	 </label>
+                           
                             <label for="" class="col-4 col-form-label">(9)أجراء وقائي أخر</label>
+                     
                         </div>
+                           
+                       
                     </th>
+                   
                 </tr>
             </thead>
         </table>
@@ -113,38 +131,41 @@
                 <tr>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
+                      <label>اسم الشركة</label>
+                        <input class="form-control" type="text" name="company_name" >
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                      <label>تاريخ الاصدار</label>
+                        <input class="form-control" type="text" name="date2"  onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
             
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                        <label>تاريخ التعديل</label>
+                            <input class="form-control" type="text" name="date3"  onfocus="(this.type='date')" onblur="(this.type='text')">
                           </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                            <label for="" class="" style="text-align: center;;"> مدة الحفظ:
                                 سنتان </label>
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                        <label for="" class="" style="text-align: center;">  رقم الصفحة :1  /
                           1</label>
                       </div>
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                        <label for="" class="" style="text-align: center;;"> رقم الوثيقة : QA – F
                           - 13 </label>
                       </div>
                     </th>
@@ -152,9 +173,10 @@
             </thead>
         </table>
         
-                    <div class="form-group">
-                        <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ </button>
+        <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
                     </div>
                 </form>
     </div>
@@ -208,16 +230,16 @@
        
             .table thead th {
                 vertical-align: bottom;
-                border-bottom: 2px solid black;
+                /* border-bottom: 2px solid black; */
             }
             
             table,
             th,
             td,
             tr {
-                border: 1px solid black;
-                border-bottom: 2px solid black;
-                border-top: 2px solid black;
+                border: 1px solid white;
+                /* border-bottom: 2px solid black;
+                border-top: 2px solid black; */
             }
         
             #mainDiv {

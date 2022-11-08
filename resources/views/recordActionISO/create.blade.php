@@ -1,13 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
-
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+</style>
 
 <!-- Main content -->
-<div class="container mt-3 p-3">
-    <h3 style="margin-top:85px;">اجراء مراقبة وضبط الوثائق</h3>
-    <hr>
-    <form action="{{route('recordActionSop.store')}}" method="post" enctype="multipart/form-data" id="fo1">
+<div class="container mt-3 p-3 row">
+   
+    <form action="{{route('recordActionSop.store')}}" class='col-md-8' method="post" enctype="multipart/form-data" id="fo1">
         {{ csrf_field() }}
         <input type="hidden" name="type" value="5">
         <table style="width: 850px;" class="table table-bordered my-4   m-auto">

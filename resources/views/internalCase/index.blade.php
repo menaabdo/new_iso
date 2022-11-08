@@ -1,5 +1,16 @@
 @extends('layouts.master')
 @section('content')
+<style>
+     
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+
+
+    </style>
     <section class="content">
         <div class="card">
             <div class="card-body">

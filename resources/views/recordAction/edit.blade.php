@@ -2,31 +2,33 @@
 
 @section('content')
 
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    input{ box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+</style>
 
 
 
     <div class="card">
-        <div class="card-body">
-            <h3 style="margin-top:85px;">سجل حصر الاجراءات المستخدمة</h3>
-            <hr>
-            <form action="{{ route('recordAction.update', $recordAction->id) }}" method="post" enctype="multipart/form-data"
+        <div class="card-body row" style='margin:auto;margin-top:80px'>
+            
+            <form action="{{ route('recordAction.update', $recordAction->id) }}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data"
                 id="fo1">
                 @method('PUT')
                 {{ csrf_field() }}
                 <div style="" class="w-100 text-center my-4">
-                    <h2>سجل حصر الاجراءات المستخدمة</h2>
+                    <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>سجل حصر الاجراءات المستخدمة</h2>
                     <hr class="w-100">
                 </div>
                 <div>
-                    <label class="col-1">إدارة</label>
-                    <input class="col-3" style="text-align: center;" type="text" name="management"
+                    <label class="col-2">إدارة</label>
+                    <input class="col-md-6 form-control" style="text-align: center;" type="text" name="management"
                         value="{{ $recordAction->management }}">
                 </div>
-                <div id="mainDiv" style=" margin-right:500px;">
-                    <h4 style=" color:blue;">CO LOGO</h4>
-                    <hr width="50%" size="20" color="blue">
-                    <img src="{{ asset($recordAction->logo) }}" height=180px width=210px; />
-                    @if ($recordAction->status == 'pending' && Auth::user()->hasRole('Employee'))
+                <div class='row mt-4 mb-3'>
+      <label class="form-label col-md-2 ">CO LOGO</label>
+                   @if ($recordAction->status == 'pending' && Auth::user()->hasRole('Employee'))
                         <input type="file" id="img" name="logo" accept="image/*">
                     @endif
 
@@ -39,11 +41,13 @@
                         ($recordAction->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                         <input type="file" id="img" name="logo" accept="image/*">
                     @endif
+                    <img src="{{ asset($recordAction->logo) }}" height=100px width=100px; />
+       
                 </div>
 
                 <div class="form-group row w-100 text-right" style="text-align:center;">
                     <table class="table">
-                        <tr style="background-color:rgb(235, 252, 160); text-align:center;">
+                        <tr style="background-color:#001635;color:white; text-align:center;">
                             @if ($recordAction->status == 'pending' && Auth::user()->hasRole('Employee'))
                                 <th scope="col" rowspan="2">م</th>
                             @endif
@@ -63,7 +67,7 @@
                             <th scope="col" rowspan="2">ملاحظات</th>
 
                         </tr>
-                        <tr style="background-color:rgb(235, 252, 160); text-align:center;">
+                        <tr style="background-color:#001635; text-align:center;">
                             <th scope="col">رقم</th>
                             <th scope="col"> التاريخ</th>
                         </tr>
@@ -420,11 +424,11 @@
                 @elseif(($recordAction->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                     ($recordAction->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                     ($recordAction->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                    <div class="form-group">
-                        <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                            </i></button>
-                    </div>
+                    <div class='row mt-3'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    </div>  
                 @endif
             </form>
         </div>

@@ -1,16 +1,25 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+</style>
 
-
- <section class="content">
-      <div class="card">
-<div class="card-body">
-        <h3 style="margin-top:85px;">اجراء فهم المنظمه وسياقها</h3>
+ <section class="content" style='margin:auto;'>
+      <div class="card" style='margin:auto;'>
+<div class="card-body" style='margin:auto;'>
+        <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea'>اجراء فهم المنظمه وسياقها</h3>
         <hr>
         <div class="row">
-            <a  href="{{ route('understandingOrganizationSOP.create') }}" class="btn btn-outline-primary mr-1 ">
-                New <i class="icon-lg la la-file-medical"></i></a>
+            <a  href="{{ route('understandingOrganizationSOP.create') }}" class="btn col-md-12  mr-1 ">
+            <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+               
           <div class="col-12">
             <div class="card">
 <div class="card-body">

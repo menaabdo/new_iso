@@ -2,49 +2,50 @@
 @section('content')
 
 <div class="card">
-<div class="card-body">
-  <h3 style="margin-top:85px;">تقرير حالات عدم المطابقة والإجراءات التصحيحية والوقائية
-  </h3>
-  <hr>
+<div class="card-body" style='margin: auto;
+    width: 80%;margin-top:80px'>
+ 
+  
     <form action="{{route('reportNonConformanceCases.update',$reportNonConformanceCases->id)}}" method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT') 
               {{ csrf_field() }}
             <div  class="w-100 text-center my-4">
-                <h2>تقرير حالات عدم المطابقة والإجراءات التصحيحية والوقائية</h2>
+                <h3  style='text-shadow: 1px 1px 1px #3ed3ea;'>تقرير حالات عدم المطابقة والإجراءات التصحيحية والوقائية</h3>
                 <hr class="w-100">
             </div>
-            <div class=" form-group row  text-left">
-                <label for="" class="col-1 col-form-label text-left">الفترة من  يوم :</label>
-                <div class="col-1">
-                  <input type="text" class="form-control"  name="day_from" value="{{$reportNonConformanceCases->day_from}}">
+            <div class="  row  ">
+                <label for="" class="col-3 col-form-label  text-left">الفترة من  يوم :</label>
+                <div class="col-8">
+                  <input type="text" class="form-control shadow-lg col-12" name="day_from" value="{{$reportNonConformanceCases->day_from}}">
                 </div>
-                <label for="" class="col-1 col-form-label text-left" >تاريخ  :</label>
-                <div class="col-2">
-                  <input type="date" class="form-control"  name="date_1" value="{{$reportNonConformanceCases->date_1}}">
+                <label for="" class="col-3 col-form-label text-left" >تاريخ  :</label>
+                <div class="col-8 mt-2">
+                  <input type="date" class="form-control col-12"  name="date_1" value="{{$reportNonConformanceCases->date_1}}">
                 </div>
 
-                <label for="" class="col-1 col-form-label text-left" >إلى يوم :</label>
-                <div class="col-1">
-                  <input type="text" class="form-control"  name="day_to" value="{{$reportNonConformanceCases->day_to}}">
+                <label for="" class="col-3 col-form-label text-left" >إلى يوم :</label>
+                <div class="col-8 mt-2">
+                  <input type="text" class="form-control col-12"  name="day_to" value="{{$reportNonConformanceCases->day_to}}">
                 </div>
-                <label for="" class="col-1 col-form-label text-left">تاريخ  :</label>
-                <div class="col-2">
-                  <input type="date" class="form-control"  name="date_2" value="{{$reportNonConformanceCases->date_2}}">
+                <label for="" class="col-3 col-form-label text-left">تاريخ  :</label>
+                <div class="col-8 mt-2">
+                  <input type="date" class="form-control col-12"  name="date_2" value="{{$reportNonConformanceCases->date_2}}">
                 </div>
              
             </div>
-              <div id="mainDiv"  style="margin-right:1100px">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
-                <img src="{{ asset($reportNonConformanceCases->logo) }}" height=180px width=210px; />
-                <input type="file" id="img" name="logo" accept="image/*">
+            <div class='row mt-4 mb-3'>
+      <label class="col-2 col-form-label text-center">CO LOGO</label>
+            
+                  <input type="file" id="img" name="logo" accept="image/*">
+                  <img src="{{ asset($reportNonConformanceCases->logo) }}" height=100px width=100px; />
+            
             </div>
             
             
-            <div class="form-group row w-100 text-right" style="text-align:center;">
+            <div class="form-group row w-100 text-right" style="overflow-x:auto;text-align:center;">
                 <hr class="w-100">
-                <table class="table">
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
+                <table class="table " style=''>
+                    <tr style="background-color:#001635;color:white; text-align:center;">
                         <th class="col-1 col-form-label" scope="col" rowspan="2">م</th>
                         <th scope="col" rowspan="2">حالة عدم المطابقة</th>
                         <th scope="col" rowspan="2">الإدارة  المختصة</th>
@@ -54,7 +55,7 @@
                         <th scope="col" colspan="2">فاعلية التنفيذ</th>
                         <th scope="col" rowspan="2">ملاحظات</th>
                     </tr>
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
+                    <tr style="background-color:#001635;color:white; text-align:center;">
                         <th scope="col"> تصحيحى </th>
                         <th scope="col">وقائي</th>
                         <th scope="col"> تم </th>
@@ -141,20 +142,20 @@
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                            <label for="" class="" style="text-align: center;"> مدة الحفظ :
                                 سنتان </label>
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                        <label for="" class="" style="text-align: center;"> رقم الصفحة : 1 /
                           1</label>
                       </div>
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                        <label for="" class="" style="text-align: center;"> رقم الوثيقة : QA – F
                           - 13 </label>
                       </div>
                     </th>
@@ -163,10 +164,11 @@
         </table>
     
     </div>
-    <div class="form-group">
-        <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-          class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> تعديل  </button>
-      </div>
+    <div class='row mt-3'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                تعديل</button>
+                    </div>  
     </form>
     </div>
 <script>
@@ -214,16 +216,16 @@
 <style>
     .table thead th {
                 vertical-align: bottom;
-                border-bottom: 2px solid black;
+                /* border-bottom: 2px solid black; */
             }
             
             table,
             th,
             td,
             tr {
-                border: 1px solid black;
-                border-bottom: 2px solid black;
-                border-top: 2px solid black;
+                border: 1px solid silver;
+                /* border-bottom: 2px solid black;
+                border-top: 2px solid black; */
             }
         
             #mainDiv {

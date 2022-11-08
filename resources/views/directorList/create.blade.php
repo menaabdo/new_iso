@@ -1,24 +1,27 @@
 @extends('layouts.master')
 @section('content')
-
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    input,textarea{ box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+</style>
 <div class="card">
-<div class="card-body">
-    <h3 style="margin-top:85px;">قائمة أسماء المديرين والأفراد المصرح لهم بإعداد الوثائق</h3>
-    <hr>
-    <form action="{{route('directorList.store')}}" method="post" enctype="multipart/form-data" id="fo1">
+<div class="card-bodyrow" style='margin:auto;margin-top:80px'>
+    
+    <form action="{{route('directorList.store')}}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
         {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-            <h2>قائمة أسماء المديرين والأفراد المصرح لهم بإعداد الوثائق</h2>
+            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>قائمة أسماء المديرين والأفراد المصرح لهم بإعداد الوثائق</h2>
             <hr class="w-100">
         </div>
-        <div id="mainDiv" style=" margin-right:500px;">
-            <h4 style=" color:blue;">CO LOGO</h4>
-            <hr width="50%" size="20" color="blue">
-            <input type="file" id="img" name="logo" accept="image/*">
+        <div class='row mt-4 mb-3'>
+      <label class="form-label col-md-2 ">CO LOGO</label>
+    
+            <input class="col-md-6 form-control" type="file" id="img" name="logo" accept="image/*">
         </div>
         <div class="form-group row w-100 text-right" style="text-align:center ;">
             <table class="table">
-                <tr style="background-color:rgb(227, 252, 160)">
+                <tr style="background-color: #001635;color:white;text-align:center">
                     <th>م</th>
                     <th>الاسم</th>
                     <th>الوظيفة</th>
@@ -47,9 +50,9 @@
         @if(Auth::user()->hasRole('SuperAdmin'))
         <hr class="w-100">
 
-            <div class=" form-group  text-center">
-                <h2 for=""> اعتماد المدير العام :</h2>
-                <input type="text" class=" col-6 col-form-label" name="manager_name">
+            <div class=" form-group row text-center" style='margin:auto'>
+                <h4 for=""> اعتماد المدير العام :</h4>
+                <input type="text" class=" col-md-6 form-control" name="manager_name">
             </div>
             @endif
             <hr class="w-100">
@@ -78,7 +81,7 @@
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة
+                            <label for="" class="" style="text-align: center;"> مدة
                                 الحفظ :
                                 سنتان </label>
                         </div>
@@ -86,14 +89,14 @@
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم
+                            <label for="" class="" style="text-align: center;"> رقم
                                 الصفحة : 1 /
                                 1</label>
                         </div>
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم
+                            <label for="" class="" style="text-align: center;"> رقم
                                 الوثيقة : QA – F
                                 - 13 </label>
                         </div>

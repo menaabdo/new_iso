@@ -2,27 +2,31 @@
 
 @section('content')
 
-
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    input,textarea{ box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+</style>
 
     <div class="card">
-<div class="card-body">
-        <h3 style="margin-top:85px;">بيان السجلات المعدمة</h3>
-        <hr>
-        <form action="{{ route('brokenRecord.store') }}" method="post" enctype="multipart/form-data" id="fo1">
+<div class="card-body row" style='margin:auto;margin-top:80px'>
+       
+        <form action="{{ route('brokenRecord.store') }}" method="post" class='col-md-10' style='margin:auto' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2>بيان السجلات المعدمة
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>بيان السجلات المعدمة
                 </h2>
                 <hr class="w-100">
             </div>
-            <div id="mainDiv" style=" margin-right:500px;">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
-                <input type="file" id="img" name="logo" accept="image/*">
-            </div>
+            <div class='row mt-4 mb-3'>
+      <label class="form-label col-md-2 ">CO LOGO</label>
+    
+            <input class="col-md-6 form-control" type="file" id="img" name="logo" accept="image/*">
+        </div>
             <div class="form-group row w-100 text-center" style="text-align:center ;">
                 <table class="table">
-                    <tr style="background-color:rgb(187, 216, 240)">
+                    <tr style="background-color: #001635;color:white;text-align:center">
+             
                         <th scope="col" rowspan="2">م</th>
                         <th scope="col" rowspan="2">نوع السجل</th>
                         <th scope="col" rowspan="2">الكود</th>
@@ -31,7 +35,8 @@
                         <th scope="col" rowspan="2">أسلوب التخلص</th>
                         <th scope="col" rowspan="2">التاريخ</th>
                     </tr>
-                    <tr style="background-color:rgb(187, 216, 240); text-align:center;">
+                    <tr style="background-color: #001635;color:white;text-align:center">
+             
                         <th scope="col"> من</th>
                         <th scope="col">الى</th>
                     </tr>
@@ -61,15 +66,16 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th class=" w-50 text-center col-1 ">
+                        <th class=" w-50  col-1 ">
                             <div class="" style="text-align:right ;">
                                 <label for="" class=""
                                     style="text-align:center;font-size:large;font-weight: bolder;"> رئيس اللجنة القائمة
                                     بالعملية:</label>
                             </div>
-                            <div class="form-group row  text-left">
-                                <label>ممثل الإدارة لنظام الجودة</label>
-                                <label for="" class="col-1 col-form-label">الاسم: -</label>
+                            <label class="text-right col-form-label">ممثل الإدارة لنظام الجودة</label>
+                            <div class="form-group row  text-center">
+                                
+                                <label for="" class="col-2 col-form-label">الاسم: -</label>
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="name">
                                 </div>
@@ -107,24 +113,24 @@
                             </th>
                         @endif
                         @if (Auth::user()->hasRole('SuperAdmin'))
-                            <th class=" w-50 text-center col-1 ">
+                            <th class=" w-50  col-1 ">
                                 <div class="" style="text-align:right ;">
                                     <label for="" class=""
                                         style="text-align:center;font-size:large;font-weight: bolder;"> عضوية:</label>
                                 </div>
-
+                               
                                 <div class="form-group row w-10 text-right">
-                                    <label for="" class="col-2 col-form-label">1- مسئول الوثائق: -</label>
+                                <label for="" class="text-right col-form-label">1- مسئول الوثائق: -</label>
 
-                                    <label for="" class="col-1 col-form-label">الاسم: -</label>
+                                    <label for="" class="col-2 col-form-label">الاسم: -</label>
                                     <div class="col-2">
                                         <input type="text" class="form-control" placeholder="  ......"
                                             name="source_official">
                                     </div>
                                 </div>
                                 <div class="form-group row w-10 text-right">
-                                    <label for="" class="col-2 col-form-label">2- مدير الجودة : -</label>
-                                    <label for="" class="col-1 col-form-label">الاسم: -</label>
+                                    <label for="" class=" text-right col-form-label">2- مدير الجودة : -</label>
+                                    <label for="" class="col-2 col-form-label">الاسم: -</label>
 
                                     <div class="col-2">
                                         <input type="text" class="form-control" placeholder="  ......"
@@ -142,22 +148,25 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
+                            <label>اسم الشركة</label>
                                 <input class="form-control" type="text" name="company_name"
-                                    placeholder="اسم الشركة  :">
+                                   >
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
+                            <label>تاريخ الاصدار</label>
                                 <input class="form-control" type="text" name="date2"
-                                    placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')"
+                                    onfocus="(this.type='date')"
                                     onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :"
+                            <label>تاريخ التعديل</label>
+                                <input class="form-control" type="text" name="date3" 
                                     onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
@@ -165,7 +174,7 @@
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                                    style="text-align: center;"> مدة الحفظ :
                                     سنتان </label>
                             </div>
 
@@ -173,14 +182,14 @@
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                                    style="text-align: center;"> رقم الصفحة : 1 /
                                     1</label>
                             </div>
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                                    style="text-align: center;"> رقم الوثيقة : QA – F
                                     - 13 </label>
                             </div>
                         </th>
@@ -188,11 +197,11 @@
                 </thead>
             </table>
 
-            <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                    class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ
-                </button>
-            </div>
+            <div class='row mt-3'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    </div>  
         </form>
     </div>
 
@@ -238,16 +247,16 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+            /* border-bottom: 2px solid black; */
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid white;
+            /* border-bottom: 2px solid black;
+            border-top: 2px solid black; */
         }
 
         #mainDiv {

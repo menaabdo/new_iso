@@ -1,16 +1,24 @@
 @extends('layouts.master')
 @section('content')
-
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    h2{
+       
+    padding: 2px;
+    text-align:right;
+    }
+   
+</style>
 <div class="card">
-<div class="card-body">
-    <h3 style="margin-top:85px;">سجل متابعة طلبات الإجراءات التصحيحية / الوقائية</h3>
-    <hr>
-    <form action="{{route('followUpRecord.update',$followUpRecord->id)}}" method="post" enctype="multipart/form-data" id="fo1">
+<div class='card-body row' style='margin:auto; width:70%' >
+    
+    <form action="{{route('followUpRecord.update',$followUpRecord->id)}}" style='margin:auto; width:70%'   method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT') 
               {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-            <h2>سجل متابعة طلبات الإجراءات التصحيحية / الوقائية </h2>
-            <label>لــعام</label>
+            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>سجل متابعة طلبات الإجراءات التصحيحية / الوقائية </h2>
+            <label class='mt-2'>لــعام</label>
             <input style="text-align: center;" type="text"  name="year" value="{{$followUpRecord->year}}">
             <hr class="w-100">
         </div>

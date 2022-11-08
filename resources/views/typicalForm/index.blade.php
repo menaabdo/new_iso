@@ -2,18 +2,26 @@
 
 @section('content')
 
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+</style>
 
-
-    <section class="content">
-        <div class="card">
-<div class="card-body">
-          <h3 style="margin-top:85px;">نموذج إستلام وثائق/نماذج</h3>
+    <section class="content" style='margin:auto;'>
+        <div class="card" style='margin:auto;'>
+<div class="card-body" style='margin:auto;'>
+          <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea'>نموذج إستلام وثائق/نماذج</h3>
           <hr>
-          <div class="row" >
+          <div class="row" style='margin:auto;'>
            
-              <a  href="{{ route('typicalForm.create') }}" class="btn btn-primary mr-1" style="width:120px;  float: right; font-size:20px ">
-                  اضافه جديد <i class="icon-lg la la-file-medical"></i></a>
-           
+              <a  href="{{ route('typicalForm.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+                   
             <div class="col-12">
               <div class="card">
 <div class="card-body">
@@ -21,7 +29,7 @@
 <div class="card-body">
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped" >
+                  <table id="example1" class="table table-bordered table-striped" style='background-color: #001635;color:white;text-align:center'>
                     <thead>
                     <tr>
                       <th style=" font-size:20px ">Logo</th>
