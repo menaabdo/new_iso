@@ -25,9 +25,7 @@
         <form action="{{ route('risk.store') }}" method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class=" text-center my-4">
-                <h5>سجل تحديد المخاطر وتقييم الأخطار لعمل </h5>
-                <hr class="w-50" style="align:center">
-            </div>
+                 </div>
             <div class="form-group row w-50 " style='margin-right:250px'>
                 <label for="inputPassword" class="col-md-4 col-form-label" style='text-align:center'> ادارة / قسم :</label>
                

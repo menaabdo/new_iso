@@ -181,7 +181,7 @@
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                                    style="text-align: center;"> مدة الحفظ:
                                     سنتان </label>
                             </div>
 
@@ -189,14 +189,14 @@
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                                    style="text-align: center;"> رقم الصفحة: 1 /
                                     1</label>
                             </div>
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                                    style="text-align: center;"> رقم الوثيقة : QA – F
                                     - 13 </label>
                             </div>
                         </th>

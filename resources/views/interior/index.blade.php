@@ -1,28 +1,38 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+</style>
 
+<section class="content " style='margin:auto;' >
 
-<section class="content row" style='flex-wrap:nowrap;'>
-
-<div class="card container col-md-10" style='margin-left: 10px'>
-<div class="card-body  ">
-      <h3 style="margin-top:85px;">متابعة نتائج المراجعة الداخلية</h3>
-          <hr>
-      <div class="row" >
+<div class='card ' >
+<div class="card-body  row" style='margin:auto;'>
+<div class='col-md-12' style='text-align:center'>
+      <h3  style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>متابعة نتائج المراجعة الداخلية</h3>
+</div>   
+      <hr>
+      <div class="row mt-3" style='margin:auto;width:70%' >
        
-          <a  href="{{ route('interior.create') }}" class="btn btn-primary mr-1" style="width:120px;  float: right; font-size:20px ">
-              اضافه جديد <i class="icon-lg la la-file-medical"></i></a>
+          <a  href="{{ route('interior.create') }}" class="btn col-md-12  mr-1" style="width:120px;  float: right; font-size:20px ">
+          <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a>
        
         <div class="col-12">
-          <div class="card">
+          <div class="card" style='margin:auto'> 
 <div class="card-body">
           <div class="card">
 <div class="card-body">
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped" >
-                <thead>
+              <table id="example1" class="table table-bordered table-striped"  >
+                <thead style='background: #001635 ;color:white'>
                 <tr>
                   <th style=" font-size:20px ">Department Name</th>
                   <th style=" font-size:20px ">Status</th>

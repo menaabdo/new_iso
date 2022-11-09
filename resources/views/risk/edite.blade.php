@@ -1,21 +1,35 @@
 @extends('layouts.master')
 @section('content')
+<style>
+      .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    th{
+        padding:10px;
+    }
+    .cell{
+        background-color: beige;
+    border-radius: 50%;
+    padding: 6px;
+    text-align: center;
+    margin: 2px;
+    color:#001635;
+   
+}
+    }
+    </style>
+ 
 
 
-
- <div class="container mt-3 p-3">
-  <h3 style="margin-top:85px;">سجل حصر وتحديدالاخطار والمخاطر</h3>
+ <div class='row card'>
+  <h3 style="margin:auto;margin-top:100px;text-shadow: 1px 1px 1px #3ed3ea;">سجل حصر وتحديدالاخطار والمخاطر</h3>
   <hr>
     <form action="{{route('risk.update',$risk->id)}}" method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT') 
           {{ csrf_field() }}
 
-    <div style="" class="w-100 text-center my-4">
-      <h2>سجل تحديد المخاطر وتقييم الأخطار لعمل </h2>
-      <hr class="w-100" style="align:center">
-    </div>
+    
 
-    <div class="form-group row w-100 text-right">
+    <div class="form-group row w-100 text-right" style='margin-right:250px'>
       <label for="inputPassword" class="col-2 col-form-label"> ادارة / قسم :</label>
       <div class="col-5">
         <input type="text" class="form-control" name="department" value="{{ $risk->department }}" placeholder="ادخل ادارة / قسم  ......" >

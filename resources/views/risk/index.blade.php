@@ -8,17 +8,17 @@
 
     <section class="content row" style='flex-wrap:nowrap;'>
 
-        <div class="card container col-md-10" style='margin-left: 10px'>
+        <div class="card container col-md-12" style='margin-left: 10px'>
 <div class="card-body  ">
 
-            <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">سجل حصر و تحديد الاخطار والمخاطر</h3>
+            <h3 style="margin-top:85px; text-align:center;text-shadow: 1px 1px 1px #3ed3ea;">سجل حصر و تحديد الاخطار والمخاطر</h3>
             <hr>
             <div class="row">
 
-                <a href="{{ route('risk.create') }}" class="btn btn-primary mr-1"
-                    style="width:120px;  float: right; font-size:20px ">
-             جديد <i class="icon-lg la la-file-medical"></i></a>
-
+                <a href="{{ route('risk.create') }}" class="btn col-md-12 mr-1">
+                <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+             
                 <div class="col-12">
                     <div class="card">
 <div class="card-body">

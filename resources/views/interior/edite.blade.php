@@ -2,20 +2,22 @@
 
 @section('content')
 
+<style>
+      .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    
+    </style>
+   <div style='margin-top:85px;margin:auto' class='row card'>
 
-    <div class="container p-3">
-        <h3 style="margin-top:85px;">متابعة نتائج المراجعة الداخلية</h3>
+        <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">متابعة نتائج المراجعة الداخلية</h3>
         <hr>
-        <form action="{{ route('interior.update', $interior->id) }}" method="post" enctype="multipart/form-data" id="fo1">
+        <form action="{{ route('interior.update', $interior->id) }}" method="post" enctype="multipart/form-data" class='col-md-6'  id="fo1">
             @method('PUT')
             {{ csrf_field() }}
-            <div style="" class="w-100 text-center my-4">
-                <h2>متابعة نتائج المراجعة الداخلية </h2>
-                <hr class="w-100" style="align:center">
-            </div>
+           
 
-            <div class="form-group row w-100 text-right">
-                <label for="" class="col-1 col-form-label"> ادارة :</label>
+            <div class="form-group row text-right">
+      <label for="" class="col-1 col-form-label"> ادارة :</label>
                 <div class="col-4">
                     <input type="text" class="form-control" placeholder="ادارة  ......" name="management"
                         value="{{ $interior->management }}">
