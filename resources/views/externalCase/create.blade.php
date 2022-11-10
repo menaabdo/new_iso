@@ -3,13 +3,19 @@
 @section('content')
 <style>
     .shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
-    input,textarea{ box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
 </style>
 
-    <div class="card">
-<div class="card-body row" style='margin:auto;margin-top:80px'>
-       
+<div class="card">
+    <div class="card-body row" style='margin:auto;margin-top:80px'>
+
         <form action="{{ route('externalCases.store') }}" style='margin:auto;width:70%' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
@@ -17,10 +23,10 @@
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>
-      <label class="col-2 col-form-label text-center">CO LOGO</label>
-    
-            <input class="col-md-6 form-control" type="file" id="img" name="logo" accept="image/*">
-        </div>
+                <label class="col-2 col-form-label text-center">CO LOGO</label>
+
+                <input class="col-md-6 form-control" type="file" id="img" name="logo" accept="image/*">
+            </div>
             <div class="form-group row w-100 text-right" style="text-align:center;">
                 <table class="table">
                     <tr style="background-color:#001635;color:white; text-align:center;">
@@ -106,33 +112,33 @@
                 <thead>
                     <tr style="text-align:center;">
                         @if (Auth::user()->hasRole('Admin'))
-                            <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
-                                <div class="form-group row w-20 text-right">
-                                    <label for="" class="col-md-5 col-form-label">مسئول الجودة </label>
-                                    <div class="col-4">
-                                        <input type="text" class="form-control" name="name_1">
-                                    </div>
+                        <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
+                            <div class="form-group row w-20 text-right">
+                                <label for="" class="col-md-5 col-form-label">مسئول الجودة </label>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" name="name_1">
                                 </div>
-                            </th>
+                            </div>
+                        </th>
                         @endif
                         @if (Auth::user()->hasRole('SuperAdmin'))
-                            <th class=" w-50 text-center col-3 " style="border: 1px solid silver !important;">
-                                <div class="form-group row w-20 text-right">
-                                    <label for="" class="col-md-5 col-form-label">مسئول الجودة </label>
-                                    <div class="col-4">
-                                        <input type="text" class="form-control" name="name_1">
-                                    </div>
+                        <th class=" w-50 text-center col-3 " style="border: 1px solid silver !important;">
+                            <div class="form-group row w-20 text-right">
+                                <label for="" class="col-md-5 col-form-label">مسئول الجودة </label>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" name="name_1">
                                 </div>
-                            </th>
-                            <th class=" w-50 text-center col-3 " style="border: 1px solid silver !important;">
+                            </div>
+                        </th>
+                        <th class=" w-50 text-center col-3 " style="border: 1px solid silver !important;">
 
-                                <div class="form-group row w-20 text-right">
-                                    <label for="" class="col-md-5 col-form-label">مدير الجودة</label>
-                                    <div class="col-4">
-                                        <input type="text" class="form-control" name="name_2">
-                                    </div>
+                            <div class="form-group row w-20 text-right">
+                                <label for="" class="col-md-5 col-form-label">مدير الجودة</label>
+                                <div class="col-4">
+                                    <input type="text" class="form-control" name="name_2">
                                 </div>
-                            </th>
+                            </div>
+                        </th>
                         @endif
 
                     </tr>
@@ -144,46 +150,40 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="company_name"
-                                    placeholder="اسم الشركة  :">
+                                <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2"
-                                    placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')"
-                                    onblur="(this.type='text')">
+                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :"
-                                    onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;"> مدة الحفظ:
-                                    سنتان </label>
+                                <label> مدة الحفظ </label>
+                                <input class="form-control shadow-lg" type="text" name="period_time">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;"> رقم الصفحة :1 /
-                                    1</label>
+                                <label> رقم الصفحة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_page">
                             </div>
+
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;"> رقم الوثيقة : QA – F
-                                    - 13 </label>
+                                <label> رقم الوثيقة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_doc">
                             </div>
                         </th>
                     </tr>
@@ -191,10 +191,9 @@
             </table>
 
             <div class='row mt-3'>
-            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
-                class="btn btn-primary col-md-4">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
-                    </div>  
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+            </div>
         </form>
     </div>
     <style>
@@ -221,5 +220,6 @@
             float: left;
             display: inline-table;
         }
+
     </style>
-@stop
+    @stop

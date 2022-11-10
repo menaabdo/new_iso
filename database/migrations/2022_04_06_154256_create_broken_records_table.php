@@ -19,6 +19,9 @@ class CreateBrokenRecordsTable extends Migration
             $table->date('date3')->nullable();
             $table->string('status')->nullable()->default('pending');
             $table->string('company_name')->nullable();
+            $table->string('period_time')->nullable();
+            $table->string('number_page')->nullable();
+            $table->string('number_doc')->nullable();
             $table->string('name')->nullable();
             $table->string('logo')->nullable();
             $table->string('source_official')->nullable();

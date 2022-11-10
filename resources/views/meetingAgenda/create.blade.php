@@ -212,23 +212,28 @@
                           </div>
             
                     </th>
+                   
+
                     <th>
                       <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;"> مدة الحفظ :
-                                سنتان </label>
+                      <label> مدة الحفظ </label>
+                        <input class="form-control shadow-lg" type="text" name="period_time" >
                       </div>
             
                     </th>
+                    
+                     
                     <th>
-                      <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;"> رقم الصفحة : 1 /
-                          1</label>
+                     <div class="" style="text-align:start ;">
+                      <label>  رقم الصفحة </label>
+                        <input class="form-control shadow-lg" type="text" name="number_page" >
                       </div>
+                     
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;"> رقم الوثيقة : QA – F
-                          - 13 </label>
+                      <label>  رقم الوثيقة </label>
+                        <input class="form-control shadow-lg" type="text" name="number_doc" >
                       </div>
                     </th>
                   </tr>

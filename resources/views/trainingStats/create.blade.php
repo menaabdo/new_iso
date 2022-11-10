@@ -2,13 +2,13 @@
 
 @section('content')
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>@lang('إحصائيات التدريب')
-        </h1>
-    </section>
-    <div class="card">
-<div class="card-body">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>@lang('إحصائيات التدريب')
+    </h1>
+</section>
+<div class="card">
+    <div class="card-body">
         <h3 style="margin-top:85px;">إحصائيات التدريب</h3>
         <hr>
         <form action="{{ route('trainingStats.store') }}" method="post" enctype="multipart/form-data" id="fo1">
@@ -54,44 +54,31 @@
                             </button>
                         </th>
                         <th><input class="form-control" style="width: 250px;" type="text" name="trainingStats[0][managment]"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][jan]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][feb]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][mar]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][epr]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][may]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][jaun]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][jun]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][augest]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][sep]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][oct]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][nov]"
-                                value="1"></th>
-                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][des]"
-                                value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][jan]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][feb]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][mar]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][epr]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][may]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][jaun]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][jun]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][augest]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][sep]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][oct]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][nov]" value="1"></th>
+                        <th><input style="width: 20px; height: 20px; " type="checkbox" name="trainingStats[0][des]" value="1"></th>
                         <th>
                             <input class="form-control" style="width: 250px;" type="text" name="trainingStats[0][total_trainees]">
                         </th>
                     </tr>
                     <tr class="datatable-row datatable-row-even">
                         <td class="text-center end-td " id="increment">
-                            <button type="button" class="btn btn-primary add_new" id="btn-0" onclick="appendRow(0)"><i
-                                    class="fa fa-plus-circle"></i></button>
+                            <button type="button" class="btn btn-primary add_new" id="btn-0" onclick="appendRow(0)"><i class="fa fa-plus-circle"></i></button>
                         </td>
                     </tr>
                     <tr>
-                        <th style="background-color:rgb(218, 249, 163); text-align:center;" scope="col"  colspan="2">الاجمالى
+                        <th style="background-color:rgb(218, 249, 163); text-align:center;" scope="col" colspan="2">الاجمالى
                         </th>
-                        <th><input class="form-control"  type="text" name="total_1"></th>
+                        <th><input class="form-control" type="text" name="total_1"></th>
                         <th><input class="form-control" type="text" name="total_2"></th>
                         <th><input class="form-control" type="text" name="total_3"></th>
                         <th><input class="form-control" type="text" name="total_4"></th>
@@ -127,46 +114,41 @@
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :"
-                                    onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :"
-                                    onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
-                                    سنتان </label>
+                                <label> مدة الحفظ </label>
+                                <input class="form-control shadow-lg" type="text" name="period_time">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
-                                    1</label>
+                                <label> رقم الصفحة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_page">
                             </div>
+
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
-                                    - 13 </label>
+                                <label> رقم الوثيقة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_doc">
                             </div>
                         </th>
                     </tr>
                 </thead>
             </table>
             <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                    class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ
+                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ
                 </button>
             </div>
         </form>
@@ -206,13 +188,14 @@
             $(`#btn-${num}`).remove();
             $("#increment").append(
                 `<button type="button" class="btn btn-primary add_new" id="btn-${$new_number}" onclick="appendRow(${$new_number})"><i class="fa fa-plus-circle"></i></button></td>`
-                );
+            );
         }
 
         function removeRow(num) {
             $(`#trainingStats-${num}`).remove();
 
         }
+
     </script>
     <style>
         .table thead th {
@@ -240,4 +223,4 @@
         }
 
     </style>
-@stop
+    @stop

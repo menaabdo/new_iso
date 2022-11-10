@@ -33,6 +33,9 @@ class CreateNonConformanceStatsTable extends Migration
             $table->date('date2')->nullable();
             $table->date('date3')->nullable();
             $table->string('company_name')->nullable();
+            $table->string('period_time')->nullable();
+            $table->string('number_page')->nullable();
+            $table->string('number_doc')->nullable();
             $table->timestamps();
         });
     }

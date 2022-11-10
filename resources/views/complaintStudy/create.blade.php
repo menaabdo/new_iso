@@ -2,9 +2,9 @@
 
 @section('content')
 
-   
-    <div class="card">
-<div class="card-body">
+
+<div class="card">
+    <div class="card-body">
         <h3 style="margin-top:85px;">تقرير دراسة شكوي عميل</h3>
         <hr>
         <form action="{{ route('complaintStudies.store') }}" method="post" enctype="multipart/form-data" id="fo1">
@@ -103,8 +103,7 @@
                         </tr>
                         <tr class="datatable-row datatable-row-even">
                             <td class="text-center end-td " id="increment">
-                                <button type="button" class="btn btn-primary add_new" id="btn-0" onclick="appendRow(0)"><i
-                                        class="fa fa-plus-circle"></i></button>
+                                <button type="button" class="btn btn-primary add_new" id="btn-0" onclick="appendRow(0)"><i class="fa fa-plus-circle"></i></button>
                             </td>
                         </tr>
                     </table>
@@ -131,8 +130,7 @@
                         </tr>
                         <tr class="datatable-row datatable-row-even">
                             <td class="text-center end-td " id="increment2">
-                                <button type="button" class="btn btn-primary add_new" id="btn2-0" onclick="appendRow2(0)"><i
-                                        class="fa fa-plus-circle"></i></button>
+                                <button type="button" class="btn btn-primary add_new" id="btn2-0" onclick="appendRow2(0)"><i class="fa fa-plus-circle"></i></button>
                             </td>
                         </tr>
                     </table>
@@ -163,8 +161,7 @@
                         </tr>
                         <tr class="datatable-row datatable-row-even">
                             <td class="text-center end-td " id="increment1">
-                                <button type="button" class="btn btn-primary add_new" id="btn1-0" onclick="appendRow1(0)"><i
-                                        class="fa fa-plus-circle"></i></button>
+                                <button type="button" class="btn btn-primary add_new" id="btn1-0" onclick="appendRow1(0)"><i class="fa fa-plus-circle"></i></button>
                             </td>
                         </tr>
                     </table>
@@ -188,8 +185,8 @@
                             </div>
                         </div>
                     </th>
-                   
-                   
+
+
                     <th class=" w-50 text-center col-3 " style="border: 2px solid ">
 
                         <div class="form-group row w-20 text-right">
@@ -200,10 +197,10 @@
                         </div>
 
                     </th>
-                 
+
                 </tr>
                 @endif
-            
+
                 @if (Auth::user()->hasRole('SuperAdmin'))
                 <hr class="w-100">
 
@@ -227,7 +224,7 @@
                         </div>
 
                     </th>
-                 
+
                 </tr>
                 <tr style="text-align:center;">
 
@@ -251,7 +248,7 @@
 
                     </th>
                 </tr>
-@endif
+                @endif
             </table>
             <hr class="w-100">
             <table class="table">
@@ -265,46 +262,41 @@
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :"
-                                    onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :"
-                                    onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
-                                    سنتان </label>
+                                <label> مدة الحفظ </label>
+                                <input class="form-control shadow-lg" type="text" name="period_time">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
-                                    1</label>
+                                <label> رقم الصفحة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_page">
                             </div>
+
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
-                                    - 13 </label>
+                                <label> رقم الوثيقة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_doc">
                             </div>
                         </th>
                     </tr>
                 </thead>
             </table>
             <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                    class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ
+                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ
                 </button>
             </div>
         </form>
@@ -333,7 +325,7 @@
             $(`#btn-${num}`).remove();
             $("#increment").append(
                 `<button type="button" class="btn btn-primary add_new" id="btn-${$new_number}" onclick="appendRow(${$new_number})"><i class="fa fa-plus-circle"></i></button></td>`
-                );
+            );
         }
 
         function removeRow(num) {
@@ -363,7 +355,7 @@
             $(`#btn1-${num}`).remove();
             $("#increment1").append(
                 `<button type="button" class="btn btn-primary add_new" id="btn1-${$new_number}" onclick="appendRow1(${$new_number})"><i class="fa fa-plus-circle"></i></button></td>`
-                );
+            );
         }
 
         function removeRow1(num) {
@@ -392,13 +384,14 @@
             $(`#btn2-${num}`).remove();
             $("#increment2").append(
                 `<button type="button" class="btn btn-primary add_new" id="btn2-${$new_number}" onclick="appendRow2(${$new_number})"><i class="fa fa-plus-circle"></i></button></td>`
-                );
+            );
         }
 
         function removeRow2(num) {
             $(`#causes-${num}`).remove();
 
         }
+
     </script>
     <style>
         .table thead th {
@@ -426,4 +419,4 @@
         }
 
     </style>
-@stop
+    @stop

@@ -47,6 +47,9 @@ class CreateISOSTable extends Migration
             $table->text('action_steps')->nullable();
             $table->text('reference_sources')->nullable();
             $table->integer('type')->nullable();
+            $table->string('period_time')->nullable();
+            $table->string('number_page')->nullable();
+            $table->string('number_doc')->nullable();
             $table->timestamps();
         });
     }

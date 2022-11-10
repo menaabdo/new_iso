@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div class="card">
-<div class="card-body">
+<div class="card">
+    <div class="card-body">
         <h3 style="margin-top:85px;">تحليل(SWOT)
         </h3>
         <hr>
@@ -33,23 +33,19 @@
             <div class=" form-group row  w-200 text-center">
                 <div class="col-6">
                     <label for="" class="col-5 col-form-label text-center">نقاط القوة :</label>
-                    <textarea type="text" class="form-control" name="strength_point" placeholder=":"
-                        style="border-radius: 50px; border:solid 5px rgb(235, 42, 25); height: 300px; width: 600px;"></textarea>
+                    <textarea type="text" class="form-control" name="strength_point" placeholder=":" style="border-radius: 50px; border:solid 5px rgb(235, 42, 25); height: 300px; width: 600px;"></textarea>
                     <label for="" class="col-5 col-form-label text-center">الفرص :</label>
 
-                    <textarea type="text" name="opportunities" class="form-control" placeholder=":"
-                        style="border-radius: 50px; border:solid 5px rgb(156, 158, 183); height: 300px; width: 600px;"></textarea>
+                    <textarea type="text" name="opportunities" class="form-control" placeholder=":" style="border-radius: 50px; border:solid 5px rgb(156, 158, 183); height: 300px; width: 600px;"></textarea>
 
                 </div>
                 <div class="col-6">
                     <label for="" class="col-5 col-form-label text-center"> نقاط الضعف :</label>
 
-                    <textarea type="text" class="form-control" name="weak_point" placeholder=":"
-                        style=" border-radius: 50px; border:solid 5px rgb(46, 255, 19); height: 300px; width: 600px;"></textarea>
+                    <textarea type="text" class="form-control" name="weak_point" placeholder=":" style=" border-radius: 50px; border:solid 5px rgb(46, 255, 19); height: 300px; width: 600px;"></textarea>
                     <label for="" class="col-5 col-form-label text-center">التهديدات :</label>
 
-                    <textarea type="text" name="threat" class="form-control" placeholder=":"
-                        style="border-radius: 50px; border:solid 5px rgb(7, 77, 176); height: 300px; width: 600px;"></textarea>
+                    <textarea type="text" name="threat" class="form-control" placeholder=":" style="border-radius: 50px; border:solid 5px rgb(7, 77, 176); height: 300px; width: 600px;"></textarea>
 
                 </div>
             </div>
@@ -65,38 +61,34 @@
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :"
-                                    onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :"
-                                    onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
-                                    سنتان </label>
+                                <label> مدة الحفظ </label>
+                                <input class="form-control shadow-lg" type="text" name="period_time">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
-                                    1</label>
+                                <label> رقم الصفحة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_page">
                             </div>
+
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
-                                    - 13 </label>
+                                <label> رقم الوثيقة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_doc">
                             </div>
                         </th>
                     </tr>
@@ -104,8 +96,7 @@
             </table>
 
             <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                    class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ
+                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ
                 </button>
             </div>
         </form>
@@ -136,4 +127,4 @@
         }
 
     </style>
-@stop
+    @stop
