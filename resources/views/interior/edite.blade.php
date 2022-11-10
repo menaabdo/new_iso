@@ -294,27 +294,25 @@
 
                             </th>
                             <th>
-                                <div class="" style="text-align:start ;">
-                                    <input class="form-control" type="text" name="period"
-                                        placeholder="مدة الحفظ   :" value="{{ $interior->period }}">
-                                </div>
+                            <div class="" style="text-align:start ;">
+                                <label> مدة الحفظ </label>
+                                <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $interior->period_time }}">
+                            </div>
 
-                            </th>
-                            <th>
-                                <div class="" style="text-align:start ;">
-                                    <label for="" class=""
-                                        style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
-                                        1</label>
-                                </div>
-                            </th>
-                            <th>
-                                <div class="" style="text-align:start ;">
-                                    <label for="" class=""
-                                        style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA –
-                                        F
-                                        - 13 </label>
-                                </div>
-                            </th>
+                        </th>
+                        <th>
+                            <div class="" style="text-align:start ;">
+                                <label> رقم الصفحة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $interior->number_page }}">
+                            </div>
+
+                        </th>
+                        <th>
+                            <div class="" style="text-align:start ;">
+                                <label> رقم الوثيقة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $interior->number_doc }}">
+                            </div>
+                        </th>
                         </tr>
                     </thead>
                 </table>

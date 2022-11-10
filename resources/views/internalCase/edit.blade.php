@@ -245,24 +245,25 @@
             
                     </th>
                     <th>
-                      <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;"> مدة الحفظ:
-                                سنتان </label>
-                      </div>
-            
-                    </th>
-                    <th>
-                      <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;"> رقم الصفحة: 1 /
-                          1</label>
-                      </div>
-                    </th>
-                    <th>
-                      <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;"> رقم الوثيقة : QA – F
-                          - 13 </label>
-                      </div>
-                    </th>
+                            <div class="" style="text-align:start ;">
+                                <label> مدة الحفظ </label>
+                                <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $internalCases->period_time }}">
+                            </div>
+
+                        </th>
+                        <th>
+                            <div class="" style="text-align:start ;">
+                                <label> رقم الصفحة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $internalCases->number_page }}">
+                            </div>
+
+                        </th>
+                        <th>
+                            <div class="" style="text-align:start ;">
+                                <label> رقم الوثيقة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $internalCases->number_doc }}">
+                            </div>
+                        </th>
                   </tr>
             </thead>
         </table>

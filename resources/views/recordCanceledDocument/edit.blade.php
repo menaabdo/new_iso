@@ -339,24 +339,25 @@
     
             </th>
             <th>
-              <div class="" style="text-align:start ;">
-                    <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
-                        سنتان </label>
-              </div>
-    
-            </th>
-            <th>
-              <div class="" style="text-align:start ;">
-                <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
-                  1</label>
-              </div>
-            </th>
-            <th>
-              <div class="" style="text-align:start ;">
-                <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
-                  - 13 </label>
-              </div>
-            </th>
+                            <div class="" style="text-align:start ;">
+                                <label> مدة الحفظ </label>
+                                <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $recordCanceledDocument->period_time }}">
+                            </div>
+
+                        </th>
+                        <th>
+                            <div class="" style="text-align:start ;">
+                                <label> رقم الصفحة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $recordCanceledDocument->number_page }}">
+                            </div>
+
+                        </th>
+                        <th>
+                            <div class="" style="text-align:start ;">
+                                <label> رقم الوثيقة </label>
+                                <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $recordCanceledDocument->number_doc }}">
+                            </div>
+                        </th>
           </tr>
     </thead>
 </table>
