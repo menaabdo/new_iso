@@ -1,41 +1,52 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
 
-<div class="card">
-<div class="card-body">
-    <h3 style="margin-top:85px;">دعوة لإجتماع مراجعة الإدارة</h3>
-    <hr>
-</div>
-<form action="{{route('invitationMeeting.update',$invitationMeeting->id)}}" method="post" enctype="multipart/form-data" id="fo1">
+    input {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important
+    }
+
+</style>
+<div class='row card'>
+
+    <div class='row card' style='margin:auto;margin-right:80px'>
+
+<form action="{{route('invitationMeeting.update',$invitationMeeting->id)}}" method="post" class='col-md-10' style='margin:auto;margin-top:80px' enctype="multipart/form-data" id="fo1">
     @method('PUT')
     {{ csrf_field() }}
 
     <div class="container p-4">
         <div style="" class="w-100 text-center my-4">
-            <h2>دعوة لإجتماع مراجعة الإدارة</h2>
+            <h2 style=' ;text-shadow: 1px 1px 1px #3ed3ea;margin-right:100px'>دعوة لإجتماع مراجعة الإدارة</h2>
             <hr class="w-100">
-        </div>
-        <div class="form-group row w-10">
-            <h3 for="" class="col-4">نبلغ سيادتكم بإجتماع مراجعة الإدراة لنظام الجودة : </h3>
-        </div>
-        <div id="mainDiv" class="col-7" style=" margin-right:500px;">
-            <h4 style=" color:blue;">CO LOGO</h4>
-            <hr width="50%" size="20" color="blue">
-            <img src="{{ asset($invitationMeeting->logo) }}" height=180px width=210px; />
-            @if ($invitationMeeting->status == 'pending' && Auth::user()->hasRole('Employee'))
-            <input type="file" id="img" name="logo" accept="image/*">
+            <div class="form-group row w-10">
+                    <h6 for="" class="col-md-12">نبلغ سيادتكم بإجتماع مراجعة الإدراة لنظام الجودة </h6>
+                </div>
+                <div class='row p-3'>
+                    <label class="col-md-3 form-label text-left pr-5">CO LOGO</label>
+                    <div class='col-md-5'>
+              @if ($invitationMeeting->status == 'pending' && Auth::user()->hasRole('Employee'))
+            <input type="file" id="img" class='shadow-lg' name="logo" accept="image/*">
         @endif
 
         @if (($invitationMeeting->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
             ($invitationMeeting->status == 'pending' && Auth::user()->hasRole('Admin')))
-            <input type="file" id="img" name="logo" accept="image/*">
+            <input type="file" id="img" class='shadow-lg' name="logo" accept="image/*">
         @endif
         @if (($invitationMeeting->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
             ($invitationMeeting->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
             ($invitationMeeting->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-            <input type="file" id="img" name="logo" accept="image/*">
-        @endif        </div>
+            <input type="file" id="img" class='shadow-lg' name="logo" accept="image/*">
+        @endif  
+        <img src="{{ asset($invitationMeeting->logo) }}" height=100px width=100px; />
+            
+        </div>
+       
+    </div>
         <div class=" form-group row w-100 text-center">
             <label for="" class=" col-form-label text-left">تاريخ الاجتماع:</label>
             <div class="col-2">

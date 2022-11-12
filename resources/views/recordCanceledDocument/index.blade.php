@@ -14,11 +14,11 @@
 
 <section class="content"  style='margin:auto;'>
     <div class="card"  style='margin:auto;'>
-<div class="card-body row" style='margin:auto'>
+<div class="card-body row" style='margin:auto;'>
       <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">سجل حصر الوثائق الملغاة</h3>
       <hr>
       </div>
-      <div class="row" style='margin:auto'>
+      <div class="row" style='margin:auto;width: 90%;'>
        
           <a  href="{{ route('recordCanceledDocument.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
           <button class='shadow-lg btn btn-light' style='color:  #001635; 
@@ -32,9 +32,9 @@
 <div class="card-body">
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped" style="background-color: #001635;color:white;text-align:center">
+              <table id="example1" class="table table-bordered table-striped" style="background-color: white;text-align:center">
                 
-                <thead>
+                <thead style="background-color: #001635;color:white;text-align:center">
                 <tr>
                 
                   <th style=" font-size:20px ">Logo</th>
@@ -44,7 +44,7 @@
                 </tr>
                 </thead>
     
-                <tbody class="datatable-body ">
+                <tbody class="datatable-body " style='style="background-color: white;'>
                   @foreach ($all_recordCanceledDocument as $recordCanceledDocument)
                       <tr class="datatable-row datatable-row-even">
                           <td class="datatable-cell" style="font-size:15px "><span><img src="{{asset($recordCanceledDocument->logo)}}" alt="Image" width="50px"></span></td>

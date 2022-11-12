@@ -1,28 +1,38 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    input {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
 
 
 <div class="card">
-<div class="card-body">
-    <h3 style="margin-top:85px;">سجل حصر النماذج المستخدمة</h3>
-    <hr>
-    <form action="{{route('recordModel.update',$recordModel->id)}}" method="post" enctype="multipart/form-data" id="fo1">
+<div class="card-body row" style='margin:auto;margin-top:80px'>
+   
+    <form action="{{route('recordModel.update',$recordModel->id)}}" class='col-md-9' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
       <div style="" class="w-100 text-center my-4">
-        <h2>سجل حصر النماذج المستخدمة</h2>
+        <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>سجل حصر النماذج المستخدمة</h2>
         <hr class="w-100">
     </div>
-    <div>
-        <label  class="col-1" >إدارة</label>
-        <input class="col-3" style="text-align: center;" type="text"  name="management" value="{{ $recordModel->management }}">
+    <div class='row'>
+                <label class="col-md-2">إدارة</label>
+                <div class='col-md-6'>
+        <input class=" form-control" style="text-align: center;" type="text"  name="management" value="{{ $recordModel->management }}">
     </div>
-        <div id="mainDiv"  style=" margin-right:500px;">
-            <h4 style=" color:blue;">CO LOGO</h4>
-            <hr width="50%" size="20" color="blue">
-            <img src="{{ asset($recordModel->logo) }}" height=180px width=210px; />
-            @if ($recordModel->status == 'pending' && Auth::user()->hasRole('Employee'))
+    </div>
+    <div class='row mt-4 mb-3'>
+                <label class="form-label col-md-2 ">CO LOGO</label>
+
+             @if ($recordModel->status == 'pending' && Auth::user()->hasRole('Employee'))
                         <input type="file" id="img" name="logo" accept="image/*">
                     @endif
 
@@ -35,12 +45,14 @@
                         ($recordModel->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                         <input type="file" id="img" name="logo" accept="image/*">
                     @endif
+                    <img src="{{ asset($recordModel->logo) }}" height=100px width=100px; />
+         
         </div>
   
     <div class="form-group row w-100 text-right" style="text-align:center;">
         <table class="table">
-            <tr style="background-color:rgb(235, 252, 160); text-align:center;">
-                @if ($recordModel->status == 'pending' && Auth::user()->hasRole('Employee'))
+        <tr style="background-color:#001635;color:white;text-align:center;">
+                        @if ($recordModel->status == 'pending' && Auth::user()->hasRole('Employee'))
                                 <th scope="col" rowspan="2">م</th>
                             @endif
                             @if (($recordModel->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
@@ -59,7 +71,7 @@
                 <th scope="col" rowspan="2">ملاحظات</th>
 
             </tr>
-            <tr style="background-color:rgb(235, 252, 160); text-align:center;">
+            <tr style="background-color:#001635;color:white;text-align:center;">
                 <th scope="col">رقم</th>
                 <th scope="col"> التاريخ</th>
             </tr>
@@ -316,19 +328,22 @@
         <tr>
             <th>
               <div class="" style="text-align:start ;">
-                <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :"  value="{{ $recordModel->company_name }}">
+              <label>اسم الشركة</label>
+                <input class="form-control" type="text" name="company_name"   value="{{ $recordModel->company_name }}">
               </div>
     
             </th>
             <th>
               <div class="" style="text-align:start ;">
-                <input class="form-control" type="text" name="date2"  value="{{ $recordModel->date2 }}" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+              <label>تاريخ الاصدار</label>
+                <input class="form-control" type="text" name="date2"  value="{{ $recordModel->date2 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
               </div>
     
             </th>
             <th>
                 <div class="" style="text-align:start ;">
-                    <input class="form-control" type="text" name="date3"  value="{{ $recordModel->date3 }}" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                <label>تاريخ التعديل</label>
+                    <input class="form-control" type="text" name="date3"  value="{{ $recordModel->date3 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                   </div>
     
             </th>
@@ -372,11 +387,10 @@
 @elseif(($recordModel->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
 ($recordModel->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
 ($recordModel->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-<div class="form-group">
-    <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-        </i></button>
-</div>
+<div class='row mt-3'>
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                   تعديل</button>
+            </div>
 @endif
     </form>
 </div>
@@ -422,17 +436,17 @@
 
 <style>
     .table thead th {
-        vertical-align: bottom;
-        border-bottom: 2px solid black;
+        vertical-align: middle;
+        /* border-bottom: 2px solid black; */
     }
     
     table,
     th,
     td,
     tr {
-        border: 1px solid black;
-        border-bottom: 2px solid black;
-        border-top: 2px solid black;
+        border: 1px solid silver;
+        /* border-bottom: 2px solid black;
+        border-top: 2px solid black; */
     }
 
     #mainDiv {

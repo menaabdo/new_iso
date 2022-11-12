@@ -70,10 +70,11 @@
                 </div>
             </div>
             <hr class="w-100">
-            <h2 for="" class=" col-form-label">4- ملخص المطلوب وسببه :</h2>
-
+            
+            <h2 for="" class=" col-form-label " >4- ملخص المطلوب وسببه :</h2>
+        
             <div class="form-group row w-100 ">
-                <div class="col-md-4 col-form-label">
+                <div class="col-md-4 col-form-label ">
                     <input type="radio" name="summary" value="issuance">
                     <label for="" class=" col-form-label text-left">إصدار </label>
                 </div>
@@ -234,19 +235,24 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
+                            <label>اسم الشركة</label>
+                                <input class="form-control" type="text" name="company_name" >
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <label>
+                                تاريخ الاصدار
+                            </label>
+                                <input class="form-control" type="text" name="date2"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <label>تاريخ التعديل</label>
+                                <input class="form-control" type="text" name="date3"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>

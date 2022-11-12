@@ -145,24 +145,27 @@
                 </thead>
             </table>
             <hr class="w-100">
-            <table class="table">
+            <table class="table" style='text-align: center;'>
                 <thead>
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
+                            <div>اسم الشركة</div>
+                                <input class="form-control" type="text" name="company_name" >
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <div>تاريخ الاصدار</div>
+                                <input class="form-control" type="text" name="date2"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <div>تاريخ تعديل</div>
+                                <input class="form-control" type="text" name="date3"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>

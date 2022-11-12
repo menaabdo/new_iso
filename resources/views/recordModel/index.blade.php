@@ -11,15 +11,17 @@
     }
 </style>
 
-<section class="content">
-    <div class="card">
-<div class="card-body row" style='margin:auto;margin-top:80px'>
-      <h3 style="margin-top:85px;">سجل حصر النماذج المستخدمة</h3>
+<section class="content" style='margin:auto;'>
+    <div class="card" style='width:100%'>
+<div class="card-body row" style='margin:auto;'>
+      <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>سجل حصر النماذج المستخدمة</h3>
       <hr>
-      <div class="row" >
+      </div>
+      <div class="row" style='margin:auto;'>
        
-          <a  href="{{ route('recordModel.create') }}" class="btn btn-primary mr-1" style="width:120px;  float: right; font-size:20px ">
-              اضافه جديد <i class="icon-lg la la-file-medical"></i></a>
+          <a  href="{{ route('recordModel.create') }}" class="btn col-md-12  mr-1" style="width:120px;  float: right; font-size:20px ">
+          <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a>
        
         <div class="col-12">
           <div class="card">

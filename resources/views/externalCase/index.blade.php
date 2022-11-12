@@ -3,8 +3,10 @@
 
     <section class="content" style='margin:auto;'>
         <div class="card" style='margin:auto;'>
-<div class="card-body" style='margin:auto;'>
+<div class="card-body" style='margin:auto;width:90%'>
+<div style='margin:auto;text-align:center'>
           <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea'>استمارة قضايا خارجيه</h3>
+</div>
           <hr>
           <div class="row" >
            
@@ -19,7 +21,7 @@
 <div class="card-body">
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped" >
+                  <table id="example1" class="table table-bordered table-striped" style='text-align: center;' >
                     <thead>
                     <tr>
                       <th style=" font-size:20px ">Logo</th>

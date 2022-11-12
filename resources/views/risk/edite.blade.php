@@ -34,33 +34,31 @@
       <div class="col-5">
         <input type="text" class="form-control" name="department" value="{{ $risk->department }}" placeholder="ادخل ادارة / قسم  ......" >
       </div>
-    </div>
+   
 
 
-    <section class="my-5">
-      <table class="table table-bordered w-100 text-center " style="grid-auto-flow: column;
-          justify-content: center;
-          align-content: center;
-        ">
+    
+      <table class='row  shadow-lg d-flex justifiy-content-between mt-5'  style='margin-right:100px;margin-left:-200px;width:90%;overflow-x:auto'>
+           
         <thead>
-          <tr style="background-color:lightgreen">
-            <th scope="col" rowspan="2">م</th>
-            <th scope="col" rowspan="2">النشاط </th>
-            <th scope="col" rowspan="2">المخاطر</th>
-            <th scope="col" colspan="3">التقييم قبل الاجراء المتخذ</th>
-            <th scope="col" rowspan="2">الاجراءات المتخذه</th>
-            <th scope="col" colspan="3">التقييم بعد الإجراء الوقائى</th>
-            <th scope="col" rowspan="2">مقبول / لا</th>
-          </tr>
-          <tr style="background-color:lightgreen">
-            <th scope="col">S</th>
-            <th scope="col">P</th>
-            <th scope="col">R</th>
-            <th scope="col">S</th>
-            <th scope="col">P</th>
-            <th scope="col">R</th>
-          </tr>
-        </thead>
+          <tr style=" background-color: azure;">
+          <th scope="col" rowspan="2" >م</th>
+                            <th scope="col" rowspan="2" style='padding-left:60px;padding-right:50px'>النشاط </th>
+                            <th scope="col" rowspan="2" style='140px;padding-left:60px;padding-right:50px'>المخاطر</th>
+                            <th scope="col" colspan="3" style='text-align:center;'>التقييم قبل الاجراء المتخذ</th>
+                            <th scope="col" rowspan="2" style='text-align:center;'>الاجراءات المتخذه</th>
+                            <th scope="col" colspan="3" style='text-align:center'>التقييم بعد الإجراء الوقائى</th>
+                            <th scope="col" rowspan="2" > <span style='   '>  مقبول/لا</span></th>
+                        </tr>
+                        <tr style="background-color: azure">
+                            <th scope="col" ><span  class='cell' style='width:6%'>S</span></th>
+                            <th scope="col" ><span  class='cell' style='width:6%'>P</span></th>
+                            <th scope="col" ><span  class='cell' style='width:6%;margin-right: 40px;}'>R</span></th>
+                            <th scope="col" ><span  class='cell' style='width:6%'>S</span></th>
+                            <th scope="col" ><span  class='cell' style='width:6%'>P</span></th>
+                            <th scope="col" ><span  class='cell' style='width:6%'>R</span></th>
+                        </tr>
+                    </thead>
         <tbody>
         @if(count($risk->risk)>0)
             @foreach($risk->risk as $key => $ris)
@@ -228,7 +226,7 @@
         
         </tbody>
       </table>
-    </section>
+   
 
     <section class="w-100  mt-5">
       <div class="row">
@@ -250,10 +248,11 @@
         @endif
       </div>
      
-      <div class="row">
-        <div class="col-6">
-            <h3 class="text-end"> التاريخ</h3>
-          <input type="date" class="form-control w-100" name="date" value="{{ $risk->date }}">
+      <div class="row mt-3">
+        
+        <label class="text-end col-md-2" style='text-align:center'> التاريخ</label>
+                    
+          <input type="date" class="form-control col-md-4" name="date" value="{{ $risk->date }}">
         </div>
         @if ($risk->status == 'confirmed' && Auth::user()->hasRole('Employee') || $risk->status == 'confirmed' && Auth::user()->hasRole('Admin') )
         <div class="col-6">

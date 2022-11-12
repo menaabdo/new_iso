@@ -5,6 +5,10 @@
     .shadow-lg {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
+    input{
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+
+    }
 
 </style>
 <div class="card  ">

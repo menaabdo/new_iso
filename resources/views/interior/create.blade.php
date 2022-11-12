@@ -6,7 +6,7 @@
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
     
     </style>
-<div style='margin-top:85px;width:85%;margin:auto' class='row card'>
+<div style='margin-top:85px;width:85%;margin:auto' class='row card-body'>
 <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;" class='mx-3'>متابعة نتائج المراجعة الداخلية </h3>
   <hr>
   
@@ -14,7 +14,7 @@
     {{ csrf_field() }}
   
 
-  <div class="form-group row text-right">
+  <div class="form-group row text-right p-2">
     <label for="" \-> ادارة :</label>
     <div class="col-md-4">
       <input type="text" class="form-control shadow-lg" placeholder="ادارة  ......" name="management">
@@ -142,12 +142,9 @@
      
       <input class="form-control col-md-4 shadow-lg" type="text" name="period" >
       </div>
-      <div class="row" style='text-align:center'>
-                <div class='col-md-12 my-3'>
-                <button style="border-radius:7px" type="submit"
-                    class="btn btn-primary mx-5"><i class="fas fa-save" style=""></i> حفظ
-                </button>
-            </div>
+      <div class='row'>
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
             </div>
   </form>
 </div>

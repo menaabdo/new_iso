@@ -18,7 +18,7 @@
           <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>طلب إصدار / تعديل / إلغاء وثيقة</h3>
           <hr>
 </div>
-          <div class="row" style='margin:auto;'>
+          <div class="row" style='margin:auto;width:90%'>
            
               <a  href="{{ route('issuanceRequest.create') }}" class="btn  col-md-12  mr-1" style="width:120px;  float: right; font-size:20px ">
               <button class='shadow-lg btn btn-light' style='color:  #001635; 
@@ -31,9 +31,9 @@
 <div class="card-body">
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped"style="background-color: #001635;color:white;text-align:center">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead style="background-color: #001635;color:white;text-align:center">
                 
-                    <thead>
                     <tr>
                       <th style=" font-size:20px ">Management</th>
                       <th style=" font-size:20px ">Logo</th>

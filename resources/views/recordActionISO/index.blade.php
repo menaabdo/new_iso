@@ -4,15 +4,16 @@
 
 
 
- <section class="content">
-      <div class="card">
-<div class="card-body">
-        <h3 style="margin-top:85px;">اجراء مراقبة وضبط الوثائق</h3>
+ <section class="content" style='margin:auto;'>
+      <div class="card" style='margin:auto;'>
+<div class="card-body" style='margin:auto;'>
+        <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>اجراء مراقبة وضبط الوثائق</h3>
         <hr>
         <div class="row">
-            <a  href="{{ route('recordActionSop.create') }}" class="btn btn-outline-primary mr-1 ">
-                New <i class="icon-lg la la-file-medical"></i></a>
-          <div class="col-12">
+            <a  href="{{ route('recordActionSop.create') }}" class="btn col-md-12 mr-1 ">
+                 <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+                        <div class="col-12">
             <div class="card">
 <div class="card-body">
             <div class="card">
@@ -20,7 +21,7 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
-                  <thead>
+                  <thead style='background-color: #001635;color:white'>
                   <tr>
                     <th>Manage Name</th>
                     <th>Company Logo</th>

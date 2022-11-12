@@ -4,9 +4,9 @@
 
 
 
-    <div class="card">
-        <div class="card-body">
-            <h3 style="margin-top:85px;">قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
+<div class="card" style='margin-right:85px'>
+    <div class="card-body">
+             <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
             <hr>
             <form action="{{ route('listInternalAuditor.update', $listInternalAuditor->id) }}" method="post"
                 enctype="multipart/form-data" id="fo1">
@@ -20,7 +20,7 @@
                     <div class="container-fluid p-2">
                         <div class="" style="text-align:center ;">
                             <table class="table">
-                                <tr style="background-color:rgb(245, 192, 212)">
+                                <tr style="background-color: #001635;color:white">
                                     @if ($listInternalAuditor->status == 'pending' && Auth::user()->hasRole('Employee'))
                                         <th class="col-1 col-form-label">م</th>
                                     @endif
@@ -403,32 +403,31 @@
                     @elseif(($listInternalAuditor->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                         ($listInternalAuditor->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                         ($listInternalAuditor->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                        <div class="form-group">
-                            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                                </i></button>
-                        </div>
+                        <div class='row mt-3'>
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+            </div>
                     @endif
             </form>
         </div>
         <style>
             .table thead th {
                 vertical-align: bottom;
-                border-bottom: 2px solid #ffffff;
+                /* border-bottom: 2px solid #ffffff; */
                 padding: 10px;
             }
 
             table,
             td,
             th {
-                border: 2px solid #f80505;
-                border-bottom: 2px solid #df0d0d;
+                border: 2px solid silver;
+                /* border-bottom: 2px solid #df0d0d; */
                 text-align: center;
             }
 
             .table thead th {
                 vertical-align: bottom;
-                border-bottom: 2px solid #e8150e;
+                /* border-bottom: 2px solid #e8150e; */
             }
         </style>
 

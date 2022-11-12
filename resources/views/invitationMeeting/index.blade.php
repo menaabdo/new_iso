@@ -11,17 +11,20 @@
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
     
     </style>
-<section class="content row" style='flex-wrap:nowrap;'>
-
-<div class="card container col-md-10" style='margin-left: 10px'>
-<div class="card-body  ">
-          <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">دعوة لإجتماع مراجعة الإدارة</h3>
+<section class="content" style='margin:auto;'>
+        <div class="card" style='margin:auto;'>
+<div class="card-body row" style='margin:auto;'>  
+      <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">دعوة لإجتماع مراجعة الإدارة</h3>
           <hr>
-          <div class="row" >
+          </div>
+                <div class="row" style='margin:auto;width:90%'>
+
            
-              <a  href="{{ route('invitationMeeting.create') }}" class="btn btn-primary mr-1" style="width:120px;  float: right; font-size:20px ">
-                  اضافه جديد <i class="icon-lg la la-file-medical"></i></a>
            
+              <a  href="{{ route('invitationMeeting.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a>
+       
             <div class="col-12">
               <div class="card">
 <div class="card-body">
@@ -39,7 +42,7 @@
                     </tr>
                     </thead>
         
-                    <tbody class="datatable-body ">
+                    <tbody class="datatable-body text-center">
                       @foreach ($all_invitationMeeting as $invitationMeeting)
                           <tr class="datatable-row datatable-row-even">
                               <td class="datatable-cell" style="font-size:15px "><span><img src="{{asset($invitationMeeting->logo)}}" alt="Image" width="50px"></span></td>

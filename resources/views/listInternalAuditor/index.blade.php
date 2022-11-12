@@ -1,23 +1,28 @@
 @extends('layouts.master')
 
 @section('content')
-<style>
-      .shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
-    
-    </style>
-<section class="content row" style='flex-wrap:nowrap;'>
 
-<div class="card container col-md-10" style='margin-left: 10px'>
-<div class="card-body  ">
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+</style>
+
+<section class="content" style='margin:auto;'>
+        <div class="card row" style='margin:auto;'>
+<div class="card-body " style='margin:auto;width:90%'>
+    
                 <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
                 <hr>
                 <div class="row">
 
-                    <a href="{{ route('listInternalAuditor.create') }}" class="btn btn-primary mr-1"
-                        style="width:120px;  float: right; font-size:20px ">
-                        اضافه جديد <i class="icon-lg la la-file-medical"></i></a>
-
+                    <a href="{{ route('listInternalAuditor.create') }}" class="btn col-md-12 mr-1">
+                    <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a>
+       
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
@@ -36,7 +41,7 @@
                                                     </tr>
                                                 </thead>
 
-                                                <tbody class="datatable-body ">
+                                                <tbody class="datatable-body text-center">
                                                     @foreach ($all_listInternalAuditor as $listInternalAuditor)
                                                         <tr class="datatable-row datatable-row-even">
                                                             <td class="datatable-cell" style="font-size:15px ">
@@ -151,20 +156,20 @@
                                                     @endforeach
                                                 </tbody>
                                             </table>
-                                        </div>
-                                    </div>
-                                    <!-- /.card-body -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-
-
-                            <!-- /.col -->
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.container-fluid -->
-    </section>
+                                            </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+         
+           
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </section>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function confirmDelete(item_id) {

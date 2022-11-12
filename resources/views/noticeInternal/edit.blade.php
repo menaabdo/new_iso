@@ -2,20 +2,32 @@
 
 @section('content')
 
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    th {
+        vertical-align: middle !important;
+    }
+
+</style>
 
 
-    <div class="container p-3">
-        <h3 style="margin-top:85px;">إخطار بمراجعة داخلية</h3>
-        <hr>
+<div class="container mt-3 p-3 card row">
+
+
+
+   
 
         <form action="{{ route('noticeInternal.update', $notice->id) }}" method="post" enctype="multipart/form-data"
-            id="fo1">
+            id="fo1" class='col-md-11' style='margin:auto'>
             @method('PUT')
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2>إخطار بمراجعة داخلية</h2>
-                <hr class="w-50">
-            </div>
+            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>إخطار بمراجعة داخلية</h2>
+            <hr class="w-50">
+        </div>
             <div class="container-fluid p-2" style="border: 2px solid rgb(250, 90, 15);">
                 <div class="form-group row w-100 text-right">
                     <label for="" class="col-1 col-form-label">من :</label>

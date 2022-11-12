@@ -136,7 +136,7 @@
                 </tr>
             </table>
         </div>
-        <hr width="1300px;" size="20" color="black">
+        <hr >
         <div class="form-group row w-100 text-right" style="text-align:center ;">
         <table class="table table-bordered col-md-10" style='margin:auto'>
             
@@ -149,7 +149,7 @@
                             <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة   :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-1 col-form-label">الإسم   </label>
+                            <label for="" class="col-2 col-form-label">الإسم   </label>
                             <div class="col-6">
                                 <input type="text" class="form-control" placeholder="  ......" name="name_1">
                             </div>

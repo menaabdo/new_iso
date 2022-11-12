@@ -1,94 +1,114 @@
 @extends('layouts.master')
 
 @section('content')
-
-    <div class="card">
-        <div class="card-body">
-            <h3 style="margin-top:85px;">أجندة إجتماع مراجعة الإدارة</h3>
-            <hr>
-        </div>
-        <form action="{{ route('meetingAgenda.update', $meetingAgenda->id) }}" method="post" enctype="multipart/form-data"
+<style>
+    label{
+        text-align:center !important;
+    }
+    </style>
+<div class="card row">
+<div style='margin:auto'>
+  
+</div>
+<div class='row ' >
+        <form action="{{ route('meetingAgenda.update', $meetingAgenda->id) }}" class='col-md-9' style='margin:auto' method="post" enctype="multipart/form-data"
             id="fo1">
             @method('PUT')
             {{ csrf_field() }}
 
-            <div class="container p-4">
-                <div style="" class="w-100 text-center my-4">
-                    <h2>أجندة إجتماع مراجعة الإدارة</h2>
+            <div class="container p-4" >
+        <div style="" class="w-100 text-center my-4">
+           <h2 style=' margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>أجندة إجتماع مراجعة الإدارة</h2>
                     <hr class="w-100">
                 </div>
-                <div class="form-group row w-10">
-                    <h3 for="" class="col-2 col-form-label">رقم الاجتماع: </h3>
-                    <div class="col-2">
-                        <input type="text" class="form-control" placeholder="  ......" name="meeting_num"
+                <div class="form-group w-100  mr-5">
+             <div class="row" >   
+             <label for="" class="col-md-3 col-form-label text-right">رقم الاجتماع: </label>
+             <div class="col-md-6" >
+                   <input type="text" class="form-control" placeholder="  ......" name="meeting_num"
                             value="{{ $meetingAgenda->meeting_num }}">
                     </div>
-                    <div id="mainDiv" class="col-7" style=" margin-right:500px;">
-                        <h4 style=" color:blue;">CO LOGO</h4>
-                        <hr width="50%" size="20" color="blue">
-                        <img src="{{ asset($meetingAgenda->logo) }}" height=180px width=210px; />
-                        @if ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Employee'))
-                            <input type="file" id="img" name="logo" accept="image/*">
+                    </div>
+                    </div>
+                    <div class="form-group w-100  mr-5">
+            <div class="row " >
+            <label class="col-md-3 col-form-label text-right">CO LOGO</label>
+            <div class="col-md-6" >
+                       @if ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Employee'))
+                            <input type="file" id="img" class="form-control shadow-lg" name="logo" accept="image/*">
                         @endif
 
                         @if (($meetingAgenda->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                             ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Admin')))
-                            <input type="file" id="img" name="logo" accept="image/*">
+                            <input type="file" class="form-control shadow-lg" id="img" name="logo" accept="image/*">
                         @endif
                         @if (($meetingAgenda->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                             ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                             ($meetingAgenda->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                            <input type="file" id="img" name="logo" accept="image/*">
+                            <input type="file" id="img" class="form-control shadow-lg" name="logo" accept="image/*">
                         @endif
+                       
+                    </div>
+                    <img src="{{ asset($meetingAgenda->logo) }}" height=100px width=100px; />
+            
                     </div>
                 </div>
 
-                <div class=" form-group row w-200 text-center">
-                    <label for="" class="col-2 col-form-label text-left">التاريخ:</label>
-                    <div class="col-2">
-                        <input type="date" class="form-control" name="date_1" value="{{ $meetingAgenda->date_1 }}">
-                    </div>
+                <div class="form-group w-100  mr-5">
+            <div class="row" >
+                    <label for="" class="col-md-3 col-form-label text-right">التاريخ:</label>
+                    <div class="col-md-6" >
+              
+                        <input type="date" class="form-control shadow-lg" name="date_1" value="{{ $meetingAgenda->date_1 }}">
+                        </div>
+            </div>
+            </div>
 
-                    <label for="" class="col-2 col-form-label text-left"> نوع الإجتماع:</label>
-                    <div class="col-2">
-                        <input type="text" class="form-control" name="meeting_kind"
-                            value="{{ $meetingAgenda->meeting_kind }}">
+            <div class="form-group w-100  mr-5">
+            <div class="row" >
+            <label for="" class="col-md-3 col-form-label text-right">  نوع الإجتماع:</label>
+            <div class="col-md-6" >
+                   <input type="text" class="form-control" name="meeting_kind"
+                   class="form-control shadow-lg"  value="{{ $meetingAgenda->meeting_kind }}">
+                    </div>
                     </div>
                 </div>
-                <hr width="1300px;" size="20" color="black">
-                <div class="form-group row w-100 text-right" style="text-align:center ;">
-                    <table class="table">
+                <hr  >
+                   <div class="form-group row w-100 text-right" style="text-align:center ;margin:auto;">
+                     <table class="table table-bordered col-md-10" style='margin:auto'>
                         <tr>
-                            <th style="background-color:rgb(227, 252, 160)">مكان الأنعقاد</th>
+                            <th style="background-color:#001635;color:white ">مكان الأنعقاد</th>
                             <th><input class="form-control" type="text" name="meeting_place"
                                     value="{{ $meetingAgenda->meeting_place }}"></th>
-                            <th style="background-color:rgb(227, 252, 160)">مدة الاجتماع</th>
+                            <th style="background-color:#001635;color:white ">مدة الاجتماع</th>
                             <th><input class="form-control" type="text" name="meeting_period"
                                     value="{{ $meetingAgenda->meeting_period }}"></th>
                         </tr>
                         <tr>
-                            <th style="background-color:rgb(227, 252, 160)">التوقيت</th>
+                            <th style="background-color:#001635;color:white ">التوقيت</th>
                             <th><input class="form-control" type="text" name="meeting_time"
                                     value="{{ $meetingAgenda->meeting_time }}"></th>
-                            <th style="background-color:rgb(227, 252, 160)">مقرر الاجتماع</th>
+                            <th style="background-color:#001635;color:white ">مقرر الاجتماع</th>
                             <th><input class="form-control" type="text" name="meeting_schedule"
                                     value="{{ $meetingAgenda->meeting_schedule }}"></th>
                         </tr>
                     </table>
                 </div>
-                <div class="form-group row w-100 text-right">
-                    <label for="" class="col-2 col-form-label">الغرض من الاجتماع :</label>
-                    <div class="col-12">
-                        <textarea type="text" class="form-control" name="meeting_purpose" placeholder="الغرض من الاجتماع:">{{ $meetingAgenda->meeting_purpose }}</textarea>
+                <div class="form-group w-100  mr-5">
+            <div class="row mt-3" >
+            <label for="" class="col-md-4 col-form-label text-right">الغرض من الاجتماع  :</label>
+            <div class="col-md-4" >    
+            <textarea type="text" class="form-control" name="meeting_purpose" placeholder="الغرض من الاجتماع:">{{ $meetingAgenda->meeting_purpose }}</textarea>
                     </div>
                 </div>
-                <hr width="1300px;" size="20" color="black">
+                </div>
+                <hr >
                 <div class="form-group row w-100 text-right">
                     <h2 for="" class="col-2 col-form-label">أسماء الحضور :</h2>
                 </div>
-                <div class="form-group row w-100 text-right" style="text-align:center ;">
+                <div class="form-group row w-70 text-right" style="text-align:center ;margin:auto;">
                     <table id="attendance_table" class="table">
-                        <tr style="background-color:rgb(227, 252, 160)">
+                        <tr style="background-color:#001635;color:white">
                             @if ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Employee'))
                                 <th>م</th>
                             @endif
@@ -203,14 +223,16 @@
                         @endif
                     </table>
                 </div>
-                <hr width="1300px;" size="20" color="black">
-                <div class="form-group row w-100 text-right">
-                    <h2 for="" class="col-4 col-form-label">الموضوعات التي سيتم مناقشتها :</h2>
-                </div>
+                <hr >
+                <div class="form-group row w-100 text-center">
+         
+            <h2 for="" class="col-12 col-form-label" style=' text-shadow: 1px 1px 1px #3ed3ea;'>الموضوعات التي سيتم مناقشتها :</h2>
+        </div>
 
-                <div class="form-group row w-100 text-right" style="text-align:center ;">
+
+                <div class="form-group row w-70 text-right" style="text-align:center ">
                     <table class="table">
-                        <tr style="background-color:rgb(227, 252, 160)">
+                        <tr style="background-color:#001635;color:white ">
                             @if ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Employee'))
                                 <th>م</th>
                             @endif
@@ -328,8 +350,10 @@
                         @endif
                     </table>
                 </div>
-                <hr width="1300px;" size="20" color="black">
-                <table class="table">
+                <hr >
+                <div class="form-group row w-100 text-right" style="text-align:center ;">
+        <table class="table table-bordered col-md-10" style='margin:auto'>
+         
                     <thead>
                         <tr>
                             @if ($meetingAgenda->status == 'inProgress' && Auth::user()->hasRole('Employee'))
@@ -417,7 +441,7 @@
                                             style="font-size:large;font-weight: bolder;">ممثل الإدارة :</label>
                                     </div>
                                     <div class="form-group row w-10 text-center">
-                                        <label for="" class="col-1 col-form-label">الإسم </label>
+                                        <label for="" class="col-3 col-form-label">الإسم </label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_1" value="{{ $meetingAgenda->name_1 }}">
@@ -432,7 +456,7 @@
                                             العام:</label>
                                     </div>
                                     <div class="form-group row w-10 text-center">
-                                        <label for="" class="col-1 col-form-label">الإسم </label>
+                                        <label for="" class="col-3 col-form-label">الإسم </label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_2" value="{{ $meetingAgenda->name_2 }}">
@@ -442,7 +466,8 @@
                             @endif
                         </tr>
                     </thead>
-                </table>
+                </table> 
+                 </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -509,11 +534,11 @@
             @elseif(($meetingAgenda->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                 ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                 ($meetingAgenda->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                <div class="form-group">
-                    <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                        </i></button>
-                </div>
+                <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    </div>
             @endif
         </form>
 
@@ -610,16 +635,16 @@
         <style>
             .table thead th {
                 vertical-align: bottom;
-                border-bottom: 2px solid black;
+                /* border-bottom: 2px solid black; */
             }
 
             table,
             th,
             td,
             tr {
-                border: 1px solid black;
-                border-bottom: 2px solid black;
-                border-top: 2px solid black;
+                border: 1px solid silver;
+                /* border-bottom: 2px solid black;
+                border-top: 2px solid black; */
             }
 
             #mainDiv {

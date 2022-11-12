@@ -1,22 +1,31 @@
 @extends('layouts.master')
 @section('content')
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
 
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
     <div class="card">
-        <div class="card-body">
-            <h3 style="margin-top:85px;">طلب إصدار / تعديل / إلغاء وثيقة</h3>
-            <hr>
-            <form action="{{ route('issuanceRequest.update', $issuanceRequest->id) }}" method="post"
+        <div class="card-body row" style='margin-top:80px'>
+
+           
+            <form action="{{ route('issuanceRequest.update', $issuanceRequest->id) }}" class='col-md-10' style='margin:auto' method="post"
                 enctype="multipart/form-data" id="fo1">
                 @method('PUT')
                 {{ csrf_field() }}
                 <div style="" class="w-100 text-center my-4">
-                    <h2>طلب إصدار / تعديل / إلغاء وثيقة</h2>
+                    <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>طلب إصدار / تعديل / إلغاء وثيقة</h2>
                     <hr class="w-100">
                 </div>
-                <div id="mainDiv" style=" margin-right:500px;">
-                    <h4 style=" color:blue;">CO LOGO</h4>
-                    <hr width="50%" size="20" color="blue">
-                    <img src="{{ asset($issuanceRequest->logo) }}" height=180px width=210px; />
+                <div class='row mt-4 mb-3'>
+                <label class="form-label col-md-2 ">CO LOGO</label>
+ 
                     @if ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('Employee'))
                         <input type="file" id="img" name="logo" accept="image/*">
                     @endif
@@ -30,81 +39,94 @@
                         ($issuanceRequest->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                         <input type="file" id="img" name="logo" accept="image/*">
                     @endif
+                    <img src="{{ asset($issuanceRequest->logo) }}" height=100px width=100px; />
                 </div>
-                <div class="form-group text-left">
-                    <label for="" class="col-1 col-form-label">1- الإدارة :</label>
-                    <div class="col-4">
-                        <input type="text" class="form-control" name="management"
+                <div class='row mt-4 mb-3'>
+             
+                    <label for=""  class="form-label col-md-2 ">1- الإدارة :</label>
+                    
+                        <input type="text" class="col-md-6 form-control" name="management"
                             value="{{ $issuanceRequest->management }}">
                     </div>
                     <div class="vertical"></div>
-                    <label for="" class="col-2 col-form-label">التاريخ :</label>
-                    <div class="col-4">
-                        <input type="date" class="form-control" name="date_1" value="{{ $issuanceRequest->date_1 }}">
+                    <div class='row mt-4 mb-3'>
+             
+                    <label for="" class="col-md-2 col-form-label">التاريخ :</label>
+                   
+                        <input type="date" class="col-md-6 form-control" name="date_1" value="{{ $issuanceRequest->date_1 }}">
                     </div>
                 </div>
                 <hr class="w-100">
-                <div class="form-group  text-left">
-                    <label for="" class="col-2 col-form-label">2- نوع وإسم الوثيقة</label>
-                    <div class="col-12">
+                <div class='row mt-4 mb-3 mx-5'>
+                       <label for="" class="mx-5 col-2 col-form-label">2- نوع وإسم الوثيقة</label>
+                    <div class="col-12 mx-5">
                         <textarea type="text" class="form-control" placeholder="  ......" name="document_type_and_name">{{ $issuanceRequest->document_type_and_name }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row w-100 text-left">
-                    <label for="" class="col-1 col-form-label">3- رمز الوثيقة :</label>
-                    <div class="col-3">
-                        <input type="text" class="form-control" name="document_code"
+                <div class='col-md-4'>
+                    <div class='row mr-5'>
+                       <label for="" class="col-md-12 col-form-label mx-5">3- رمز الوثيقة :</label>
+                  
+                        <input type="text" class="form-control mx-5" name="document_code"
                             value="{{ $issuanceRequest->document_code }}">
-                    </div>
-                    <label for="" class="col-1 col-form-label text-left">رقم الإصدار</label>
-                    <div class="col-3">
+                            </div>
+                </div>
+                <div class='col-md-4'>
+                    <div class='row ml-5'>
+                       
+                    <label for=""  class="col-md-12 col-form-label text-left">رقم الإصدار</label>
+                    
                         <input type="text" class="form-control" name="issue_number"
                             value="{{ $issuanceRequest->issue_number }}">
                     </div>
-                    <label for="" class="col-1 col-form-label text-left">تاريخ الإصدار :</label>
-                    <div class="col-3">
+                    </div>
+                    <div class='col-md-4'>
+                    <div class='row'>
+                       
+                    <label for="" class="col-md-12 col-form-label text-left">تاريخ الإصدار :</label>
+                   
                         <input type="date" class="form-control" name="release_date"
                             value="{{ $issuanceRequest->release_date }}">
                     </div>
                 </div>
+                </div>
                 <hr class="w-100">
-                <div class="form-group row w-100 text-right">
-                    <h2 for="" class="col-2 col-form-label">4- ملخص المطلوب وسببه :</h2>
-                    <div class="col-4 col-form-label">
-                        <input type="radio" name="summary" value="issuance" <?php if ($issuanceRequest->summary == 'issuance') {
+                
+                    <h2 for="" class=" col-form-label" style='margin:auto'>4- ملخص المطلوب وسببه :</h2>
+                    <div class="form-group row w-100 ">
+                <div class="col-md-4 col-form-label text-center">
+                <input type="radio" name="summary" value="issuance" <?php if ($issuanceRequest->summary == 'issuance') {
                             echo 'checked="checked"';
                         } ?>>
-                        <label for="" class="col-2 col-form-label text-left">إصدار </label>
+                        <label for="" class=" col-form-label text-left">إصدار </label>
                     </div>
-                    <div class="col-4 col-form-label">
-                        <input type="radio" name="summary" value="update" <?php if ($issuanceRequest->summary == 'update') {
+                    <div class="col-md-4 col-form-label text-center">
+                   <input type="radio" name="summary" value="update" <?php if ($issuanceRequest->summary == 'update') {
                             echo 'checked="checked"';
                         } ?>>
                         <label for="" class="col-2 col-form-label text-left">تعديل </label>
                     </div>
-                    <div class="col-3 col-form-label">
-                        <input type="radio" name="summary" value="cancel" <?php if ($issuanceRequest->summary == 'cancel') {
+                    <div class="col-md-4 col-form-label text-center">
+                     <input type="radio" name="summary" value="cancel" <?php if ($issuanceRequest->summary == 'cancel') {
                             echo 'checked="checked"';
                         } ?>>
                         <label for="" class="col-2 col-form-label text-left">إلغاء </label>
                     </div>
-                    <div class="col-12">
-                        <textarea type="text" class="form-control" placeholder="  ......" name="reason">{{ $issuanceRequest->reason }}</textarea>
+                       <textarea type="text" class="form-control " style='    margin-right: 120px' placeholder="  ......" name="reason">{{ $issuanceRequest->reason }}</textarea>
+                   
+                </div>
+                <hr class="w-100">
+                            <h2 for="" class="col-2 col-form-label"  style='margin:auto'>5- التعديلات المقترحة </h2>
+                    <div class="row">
+                        <textarea type="text" class="form-control col-md-10"  style='    margin-right: 100px' placeholder="  ......" name="suggested_modifications">{{ $issuanceRequest->suggested_modifications }}</textarea>
                     </div>
                 </div>
                 <hr class="w-100">
-                <div class="form-group row w-200 text-left">
-                    <h2 for="" class="col-2 col-form-label">5- التعديلات المقترحة </h2>
-                    <div class="col-12">
-                        <textarea type="text" class="form-control" placeholder="  ......" name="suggested_modifications">{{ $issuanceRequest->suggested_modifications }}</textarea>
-                    </div>
-                </div>
-                <hr class="w-100">
-                <div class="form-group text-left">
-                    <h2 for="" class="col-2 col-form-label">مقدم الطلب :</h2>
-                </div>
-                <div class="form-group row w-10 text-center">
-                    <label for="" class="col-1 col-form-label">الإسم </label>
+                   <h2 for="" class="col-2 col-form-label" style='margin:auto'>مقدم الطلب :</h2>
+                
+                <div class="form-group row w-10 text-center" >
+                    <label for="" class="col-4 col-form-label text-right">الإسم </label>
                     <div class="col-4">
                         <input type="text" class="form-control" placeholder="  ......" name="applicant"
                             value="{{ $issuanceRequest->applicant }}">
@@ -112,8 +134,8 @@
                 </div>
                 @if ($issuanceRequest->status == 'inProgress' && Auth::user()->hasRole('Employee'))
                     <div class="form-group text-left">
-                        <h1 for="" class="col-2 col-form-label">6- رأى مدير الجودة :</h1>
-                        <div class="col-12">
+                        <h1 for="" class="col-4 col-form-label">6- رأى مدير الجودة :</h1>
+                        <div class="col-10" style='margin:auto'>
                             <textarea type="text" class="form-control" readonly name="quality_manager">{{ $issuanceRequest->quality_manager }}</textarea>
                         </div>
                     </div>
@@ -161,8 +183,8 @@
                 @endif
                 @if ($issuanceRequest->status == 'confirmed' && Auth::user()->hasRole('Employee'))
                     <div class="form-group text-left">
-                        <h1 for="" class="col-2 col-form-label">6- رأى مدير الجودة :</h1>
-                        <div class="col-12">
+                        <h1 for="" class="col-4 col-form-label">6- رأى مدير الجودة :</h1>
+                        <div class="col-10" style='margin:auto'>
                             <textarea type="text" class="form-control" readonly name="quality_manager">{{ $issuanceRequest->quality_manager }}</textarea>
                         </div>
                     </div>
@@ -265,9 +287,9 @@
 
                 @if (Auth::user()->hasRole('Admin'))
                     <hr class="w-100">
-                    <div class="form-group text-left">
-                        <h1 for="" class="col-2 col-form-label">6- رأى مدير الجودة :</h1>
-                        <div class="col-12">
+                    <div class="form-group text-center" style='margin:auto'>
+                        <h1 for="" class="col-4 col-form-label">6- رأى مدير الجودة :</h1>
+                        <div class="col-10" >
                             <textarea type="text" class="form-control" name="quality_manager">{{ $issuanceRequest->quality_manager }}</textarea>
                         </div>
                     </div>
@@ -372,13 +394,14 @@
                 @endif
                 <hr class="w-100">
                 @if (Auth::user()->hasRole('SuperAdmin'))
-                    <div class="form-group text-left">
-                        <h1 for="" class="col-2 col-form-label">6- رأى مدير الجودة :</h1>
-                        <div class="col-12">
+                    <div class="form-group text-left" >
+                        <h1 for="" style='margin:auto' class="col-4 col-form-label">6- رأى مدير الجودة :</h1>
+                        <div class="col-10" style='margin:auto'>
                             <textarea type="text" class="form-control" name="quality_manager">{{ $issuanceRequest->quality_manager }}</textarea>
                         </div>
                     </div>
-                    <table class="table table-bordered">
+                    <div class='row'>
+                    <table class="table col-md-9 table-bordered" style='margin:auto'>
                         <thead>
                             <tr>
                                 <th class="  text-center col-4 ">
@@ -418,19 +441,21 @@
                             </tr>
                         </thead>
                     </table>
+                    </div>
                     <div class="form-group row w-100 text-center">
-                        <h1 for="" class="col-9 col-form-label">* في حالة وجود أكثر من إدارة ترفق موافقاتهم
+                        <h1 for="" class="col-9 col-form-label" style='margin:auto'>* في حالة وجود أكثر من إدارة ترفق موافقاتهم
                             وتوقيعهم في جدول يبين
                             الإدارة ورأيها وتوقيع المسئول</h1>
                     </div>
 
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-2 col-form-label">- قرار معتمد الوثيقة </label>
-                        <div class="col-12">
-                            <textarea type="text" class="form-control" placeholder="  ......" name="document_approved_decision">{{ $issuanceRequest->document_approved_decision }}</textarea>
+                        <label for="" class="col-4 col-form-label" style='margin:auto'>- قرار معتمد الوثيقة </label>
+                        <div class="col-10" style='margin:auto'>
+                            <textarea type="text"  class="form-control" placeholder="  ......" name="document_approved_decision">{{ $issuanceRequest->document_approved_decision }}</textarea>
                         </div>
                     </div>
-                    <table class="table table-bordered">
+                    <div class='row'>
+                    <table class="table col-md-9 table-bordered" style='margin:auto'>
                         <thead>
                             <tr>
                                 <th class="  text-center col-4 ">
@@ -472,7 +497,8 @@
                         </thead>
                     </table>
                 @endif
-                <table class="table">
+                <div class='row'>
+                <table class="table col-md-9 mt-5" style='margin:auto'>
                     <thead>
                         <tr>
                             <th>
@@ -521,6 +547,7 @@
                         </tr>
                     </thead>
                 </table>
+                    </div>
 
                 @if ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('Employee'))
                     <div class="form-group">
@@ -538,12 +565,15 @@
                 @elseif(($issuanceRequest->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                     ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                     ($issuanceRequest->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                    <div class="form-group">
-                        <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                            </i></button>
-                    </div>
+                    <div class='row mt-3'>
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+            </div>
                 @endif
+                <div class='row mt-3'>
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+            </div>
             </form>
         </div>
 
