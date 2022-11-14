@@ -4,6 +4,16 @@
 
 
 
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    input {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
 <div class="card" style='margin-right:85px'>
     <div class="card-body">
              <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
@@ -338,28 +348,31 @@
                             </thead>
                         </table>
                     </div>
-                    <table class="table table-bordered">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>
                                     <div class="" style="text-align:start ;">
-                                        <input class="form-control" type="text" name="company_name"
-                                            placeholder="اسم الشركة  :" value="{{ $listInternalAuditor->company_name }}">
+                                     <label>اسم الشركة</label>
+                                        <input class="form-control shadow-lg" type="text" name="company_name"
+                                           value="{{ $listInternalAuditor->company_name }}">
                                     </div>
 
                                 </th>
                                 <th>
                                     <div class="" style="text-align:start ;">
-                                        <input class="form-control" type="text" name="date2"
-                                            placeholder="تاريخ الإصدار   :" value="{{ $listInternalAuditor->date2 }}"
+                                     <label>تاريخ الإصدار</label>
+                                        <input class="form-control shadow-lg" type="text" name="date2"
+                                            value="{{ $listInternalAuditor->date2 }}"
                                             onfocus="(this.type='date')" onblur="(this.type='text')">
                                     </div>
 
                                 </th>
                                 <th>
                                     <div class="" style="text-align:start ;">
-                                        <input class="form-control" type="text" name="date3"
-                                            placeholder="تاريخ التعديل :" value="{{ $listInternalAuditor->date3 }}"
+                                     <label>تاريخ التعديل</label>
+                                        <input class="form-control shadow-lg" type="text" name="date3"
+                                          value="{{ $listInternalAuditor->date3 }}"
                                             onfocus="(this.type='date')" onblur="(this.type='text')">
                                     </div>
 
@@ -410,26 +423,7 @@
                     @endif
             </form>
         </div>
-        <style>
-            .table thead th {
-                vertical-align: bottom;
-                /* border-bottom: 2px solid #ffffff; */
-                padding: 10px;
-            }
-
-            table,
-            td,
-            th {
-                border: 2px solid silver;
-                /* border-bottom: 2px solid #df0d0d; */
-                text-align: center;
-            }
-
-            .table thead th {
-                vertical-align: bottom;
-                /* border-bottom: 2px solid #e8150e; */
-            }
-        </style>
+      
 
         <script>
             function appendRow(num) {
@@ -472,4 +466,29 @@
             }
         </script>
 
+         <style>
+        .table thead th {
+            vertical-align: bottom;
+            /* border-bottom: 2px solid ; */
+            padding: 10px;
+        }
+
+        table,
+        td,
+        th {
+            /* border: 2px solid ;
+            border-bottom: 2px solid ; */
+            text-align: center;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            /* border-bottom: 2px solid ; */
+        }
+
+        .shadow-lg {
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        }
+
+    </style>
     @stop

@@ -23,7 +23,7 @@
             <div class="form-group ">
                 <label for="" class="col-4 col-form-label"> بإدارة :</label>
                 <div class="col-4">
-                    <input type="text" class="form-control shadow-lg" name="manage">
+                    <input type="text" class="form-control shadow-lg" name="manage" value="{{ $internalAuditReport->manage }}">
                 </div>
             </div>
         <div class="container-fluid p-2">
@@ -31,28 +31,28 @@
             <div class="form-group row w-100 text-right mt-4">
                         <label for="" class="col-md-4 col-form-label mb-4">الجهة المراجع عليها:</label>
                         <div class="col-md-6 mb-4">
-                            <input type="text" class="form-control shadow-lg" name="referenced_authority" id="">
+                            <input type="text" class="form-control shadow-lg" name="referenced_authority" value="{{ $internalAuditReport->referenced_authority }}" id="">
                         </div>
                         <label for="" class="col-md-4  col-form-label mb-4 "> رقم المراجعة :</label>
                         <div class="col-md-6 mb-4">
-                            <input type="text" class="form-control shadow-lg " name="referenced_number" id="">
+                            <input type="text" class="form-control shadow-lg " name="referenced_number" value="{{ $internalAuditReport->referenced_number }}" id="">
                         </div>
                         <label for="" class="col-md-4  col-form-label"> موضوع المراجعة :</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control shadow-lg" name="referenced_subject" id="">
+                            <input type="text" class="form-control shadow-lg" name="referenced_subject" value="{{ $internalAuditReport->referenced_subject }}" id="">
                         </div>
                     </div>
                     <div class="form-group row w-100 text-right">
                         <label for="inputPassword" class="col-md-4 col-form-label"> رئيس فريق المراجعه :</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control shadow-lg" name="team_lead">
+                            <input type="text" class="form-control shadow-lg" name="team_lead" value="{{ $internalAuditReport->team_lead }}">
                         </div>
                     </div>
 
                     <div class="form-group row w-100 text-right">
                         <label for="inputPassword" class="col-md-4 col-form-label"> فريق المراجعة :</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control shadow-lg" name="team">
+                            <input type="text" class="form-control shadow-lg" name="team" value="{{ $internalAuditReport->team }}">
                         </div>
                     </div>
 
@@ -61,13 +61,13 @@
 
                         <label for="" style="text-align:left;" class="col-md-2 col-form-label">مخططة </label>
                         <div class=" col-form-label pl-2">
-                            <input type="radio" style='margin-top:6px' id="planing" name="planing" value="planing" class='shadow-lg'>
+                             <input type="radio" style='margin-top:6px' id="planing" class='shadow-lg' name="planing" value="planing"  <?php if ( $internalAuditReport->planing == 'planing') echo 'checked="checked"'; ?>>
                         </div>
 
 
                         <label for="" style="text-align:left;" class="col-md-3 col-form-label">غير مخططة </label>
                         <div class=" col-form-label pr-1">
-                            <input type="radio" id="not_planing" style='margin-top:6px' name="planing" value="not_planing" class='shadow-lg'>
+                         <input type="radio" id="not_planing"style='margin-top:6px' name="planing" value="not_planing" class='shadow-lg' <?php if ($internalAuditReport->planing == 'not_planing') echo 'checked="checked"'; ?>>
                         </div>
                     </div>
 
@@ -82,21 +82,21 @@
                 <div class="form-group row w-100 text-right">
                     <label for="inputPassword" class="col-md-2 col-form-label "> أ- نقاط القوة : </label>
                     <div class="col-md-10">
-                        <textarea type="text" class="form-control shadow-lg" name="strong_point"></textarea>
+                        <textarea type="text" class="form-control shadow-lg" name="strong_point"> {{ $internalAuditReport->strong_point }}</textarea>
                     </div>
                 </div>
 
                 <div class="form-group row w-100 text-right">
                     <label for="inputPassword" class="col-2 col-form-label"> ب- نقاط عدم المطابقة : (ملخص) </label>
                     <div class="col-10">
-                        <textarea type="text" class="form-control shadow-lg" name="no_strong_point" placeholder="  نقاط عدم المطابقة ......"></textarea>
+                        <textarea type="text" class="form-control shadow-lg" name="no_strong_point" placeholder="  نقاط عدم المطابقة ......"> {{ $internalAuditReport->no_strong_point }}</textarea>
                     </div>
                 </div>
 
                 <div class="form-group row w-100 text-right">
                     <label for="inputPassword" class="col-2 col-form-label"> حالات ملاحظات التحسين: </label>
                     <div class="col-10">
-                        <textarea type="text" class="form-control shadow-lg" name="improvement_notes" placeholder=" حالات ملاحظات التحسين ......"></textarea>
+                        <textarea type="text" class="form-control shadow-lg" name="improvement_notes" placeholder=" حالات ملاحظات التحسين ......">{{ $internalAuditReport->improvement_notes }}</textarea>
                     </div>
                 </div>
                 <hr>
@@ -107,12 +107,12 @@
                 <div class="form-group row w-100 text-right">
                     <label for="" class="col-md-2 col-form-label">الاسم :</label>
                     <div class="col-3">
-                        <input type="text" class="form-control shadow-lg" placeholder="الاسم    ......" name="name">
+                        <input type="text" class="form-control shadow-lg" placeholder="الاسم    ......" name="name" value="{{ $internalAuditReport->name }}">
                     </div>
 
                     <label for="" class="col-md-2 col-form-label"> التاريخ :</label>
                     <div class="col-3">
-                        <input type="date" class="form-control shadow-lg" placeholder="موضوع المراجعة    ......" name="date_2">
+                        <input type="date" class="form-control shadow-lg" placeholder="موضوع المراجعة    ......" name="date_2" value="{{ $internalAuditReport->date_2 }}">
                     </div>
                 </div>
                 <hr>
@@ -123,12 +123,12 @@
                 <div class="form-group row w-100 text-right">
                     <label for="" class="col-md-4 col-form-label">مسئول الجهة المراجع عليها </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control shadow-lg" placeholder="الاسم    ......" name="referance_name">
+                        <input type="text" class="form-control shadow-lg" placeholder="الاسم    ......" name="referance_name" value="{{ $internalAuditReport->referance_name }}">
                     </div>
 
                     <label for="" class="col-md-4 col-form-label mt-3"> التاريخ </label>
                     <div class="col-4">
-                        <input type="date" class="form-control shadow-lg mt-3" placeholder="موضوع المراجعة    ......" name="date_1">
+                        <input type="date" class="form-control shadow-lg mt-3" placeholder="موضوع المراجعة    ......" name="date_1" value="{{ $internalAuditReport->date_1 }}">
                     </div>
                 </div>
 
@@ -141,42 +141,42 @@
                             <th>
                                 <div class="" style="text-align:start ;">
                                     <label>اسم الشركة</label>
-                                    <input class="form-control shadow-lg" type="text" name="company_name">
+                                    <input class="form-control shadow-lg" type="text" name="company_name"  value="{{ $internalAuditReport->company_name }}">
                                 </div>
 
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
                                     <label>تاريخ الاصدار</label>
-                                    <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                    <input class="form-control shadow-lg" type="text" name="date2"  value="{{ $internalAuditReport->date2 }}" onfocus="(this.type='date')" onblur="(this.type='text')">
                                 </div>
 
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
                                     <label>تاريخ التعديل</label>
-                                    <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                    <input class="form-control shadow-lg" type="text" name="date3"  value="{{ $internalAuditReport->date3 }}" onfocus="(this.type='date')" onblur="(this.type='text')">
                                 </div>
 
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
                                     <label> مدة الحفظ </label>
-                                    <input class="form-control shadow-lg" type="text" name="period_time">
+                                    <input class="form-control shadow-lg" type="text" name="period_time"  value="{{ $internalAuditReport->period_time }}">
                                 </div>
 
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
                                     <label> رقم الصفحة </label>
-                                    <input class="form-control shadow-lg" type="text" name="number_page">
+                                    <input class="form-control shadow-lg" type="text" name="number_page"  value="{{ $internalAuditReport->number_page }}">
                                 </div>
 
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
                                     <label> رقم الوثيقة </label>
-                                    <input class="form-control shadow-lg" type="text" name="number_doc">
+                                    <input class="form-control shadow-lg" type="text" name="number_doc"  value="{{ $internalAuditReport->number_doc }}">
                                 </div>
                             </th>
                         </tr>

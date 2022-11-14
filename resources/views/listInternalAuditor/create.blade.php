@@ -3,7 +3,12 @@
 
 @section('content')
 
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
 
+</style>
 
 <div class="card" style='margin-right:85px'>
     <div class="card-body">
@@ -127,7 +132,7 @@
                         </thead>
                     </table>
                 </div>
-                <table class="table table-bordered" style="background-color: white">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>

@@ -296,7 +296,7 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+           
         }
 
         table,
@@ -304,8 +304,7 @@
         td,
         tr {
             border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+           
         }
 
         #mainDiv {
