@@ -2,23 +2,33 @@
 
 @section('content')
 
-    <div class="card">
-<div class="card-body">
-        <h3 style="margin-top:85px;">تقرير دراسة شكوي عميل</h3>
-        <hr>
-        <form action="{{ route('complaintStudies.update', $complaintStudy->id) }}" method="post" enctype="multipart/form-data"
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
+
+<div class="card">
+    <div class="card-body row" style='margin:auto;margin-top:80px'>
+
+
+        <form action="{{ route('complaintStudies.update', $complaintStudy->id) }}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data"
             id="fo1">
             @method('PUT')
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2>تقرير دراسة شكوي عميل</h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>تقرير دراسة شكوي عميل</h2>
                 <hr class="w-100">
             </div>
-            <div id="mainDiv" style=" margin-right:500px;">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
-                <img src="{{ asset($complaintStudy->logo) }}" height=180px width=210px; />
-                @if ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Employee'))
+            <div class='row mt-4 mb-3'>
+                <label class="form-label col-md-3 ">CO LOGO</label>
+              @if ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Employee'))
                 <input type="file" id="img" name="logo" accept="image/*">
             @endif
 
@@ -31,6 +41,8 @@
                 ($complaintStudy->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                 <input type="file" id="img" name="logo" accept="image/*">
             @endif
+            <img src="{{ asset($complaintStudy->logo) }}" height=180px width=210px; />
+            
             </div>
             <div class="form-group row ">
                 <label for="" class="col-3 col-form-label">عميل رقم:</label>
@@ -44,15 +56,15 @@
                 <thead>
                     <tr>
                         <th class=" w-20 text-center col-1 ">
-                            <div class="form-group row w-10 text-left">
+                            <div class="form-group row w-10 text-center">
                                 <label for="" class="col-2 col-form-label">العميل : - </label>
-                                <div class="col-2">
+                                <div class="col-3">
                                     <input type="text" class="form-control" placeholder="  ......" name="customer"
                                         value="{{ $complaintStudy->customer }}">
                                 </div>
 
-                                <label for="" class="col-2 col-form-label">التاريخ: -</label>
-                                <div class="col-2">
+                                <label for="" class="col-2 col-form-label text-center">التاريخ: -</label>
+                                <div class="col-3">
                                     <input type="date" class="form-control" placeholder="  ......" name="date_1"
                                         value="{{ $complaintStudy->date_1 }}">
                                 </div>
@@ -77,7 +89,7 @@
                     </tr>
                 </thead>
             </table>
-            <table class="table">
+            <table class="table" style='border:none'>
                 <thead>
                     <tr>
                         <th class=" w-20 text-center col-1 ">
@@ -89,7 +101,7 @@
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-1 col-form-label">مرفقات </label>
+                                <label for="" class="col-3 col-form-label">مرفقات </label>
                                 <div class="col-4">
                                     <input type="text" class="form-control" placeholder="  ......" name="attachment"
                                         value="{{ $complaintStudy->attachment }}">
@@ -101,11 +113,11 @@
             </table>
 
             <hr class="w-100">
-            <div class="container-fluid p-4" style="border: 4px solid">
-                <h2>3- الإجراء الفورى لحل الشكوى (Prompt Action) </h2>
+            <div class="container-fluid p-4" >
+                <h4>3- الإجراء الفورى لحل الشكوى (Prompt Action) </h4>
                 <div class="form-group row w-100 text-right" style="text-align:center;">
-                    <table>
-                        <tr style="background-color:rgb(187, 199, 250)">
+                    <table class='table'>
+                        <tr class='padding:4px' style="background-color:   #001635; color:white;">
                             @if ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Employee'))
                             <th>م</th>
                         @endif
@@ -221,11 +233,11 @@
 
             </div>
             <hr class="w-100">
-            <div class="container-fluid p-4" style="border: 4px solid">
-                <h2>4- الأسباب المحتملة للشكوى (Root causes)</h2>
+            <div class="container-fluid p-4" >
+                <h4>4- الأسباب المحتملة للشكوى (Root causes)</h4>
                 <div class="form-group row w-100 text-right" style="text-align:center;">
-                    <table>
-                        <tr style="background-color:rgb(187, 199, 250)">
+                    <table class='table'>
+                        <tr style="background-color:  #001635; color:white;text-align:center">
                             @if ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Employee'))
                             <th>م</th>
                         @endif
@@ -338,11 +350,11 @@
 
             </div>
             <hr class="w-100">
-            <div class="container-fluid p-4" style="border: 4px solid">
-                <h2>5- الإجراءات التصحيحية لتجنب تكرار الشكوى (Corrective Actions)</h2>
+            <div class="container-fluid p-4" >
+                <h4>5- الإجراءات التصحيحية لتجنب تكرار الشكوى (Corrective Actions)</h4>
                 <div class="form-group row w-100 text-right" style="text-align:center;">
-                    <table>
-                        <tr style="background-color:rgb(187, 199, 250)">
+                    <table class='table'>
+                        <tr style="background-color:  #001635; color:white">
                             @if ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Employee'))
                             <th>م</th>
                         @endif
@@ -471,17 +483,17 @@
 
                 <tr style="text-align:center;">
 
-                    <th class=" w-50 text-center col-3 " style="border: 2px solid ">
+                    <th class=" w-50 text-center col-3 " >
 
                         <div class="form-group row w-20 text-right">
-                            <label for="" class="col-3 col-form-label">مدير الجودة</label>
+                            <label for="" class="col-4 col-form-label">مدير الجودة</label>
                             <div class="col-6">
                                 <input type="text" readonly class="form-control" name="name_1"
                                     value="{{ $complaintStudy->name_1 }}">
                             </div>
                         </div>
                     </th>
-                    <th class=" w-50 text-center col-3 "  style="border: 2px solid ">
+                    <th class=" w-50 text-center col-3 "  >
 
                         <div class="form-group row w-20 text-right">
                             <label for="" class="col-3 col-form-label">التاريخ </label>
@@ -499,7 +511,7 @@
 
                 <tr style="text-align:center;">
 
-                    <th class=" w-50 text-center col-3 " style="border: 2px solid ">
+                    <th class=" w-50 text-center col-3 ">
 
                         <div class="form-group row w-20 text-right">
                             <label for="" class="col-3 col-form-label">مدير الجودة</label>
@@ -509,7 +521,7 @@
                             </div>
                         </div>
                     </th>
-                    <th class=" w-50 text-center col-3 "  style="border: 2px solid ">
+                    <th class=" w-50 text-center col-3 "  >
 
                         <div class="form-group row w-20 text-right">
                             <label for="" class="col-3 col-form-label">التاريخ </label>
@@ -526,7 +538,7 @@
                     <th class=" w-50 text-center col-3 ">
 
                         <div class="form-group row w-20 text-right">
-                            <label for="" class="col-3 col-form-label">ممثل الادارة</label>
+                            <label for="" class="col-4 col-form-label">ممثل الادارة</label>
                             <div class="col-6">
                                 <input type="text" readonly class="form-control" name="name_2"
                                     value="{{ $complaintStudy->name_2 }}">
@@ -551,17 +563,17 @@
 
                     <tr style="text-align:center;">
 
-                        <th class=" w-50 text-center col-3 " style="border: 2px solid ">
+                        <th class=" w-50 text-center col-3 " >
 
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">مدير الجودة</label>
+                                <label for="" class="col-4 col-form-label">مدير الجودة</label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="name_1"
                                         value="{{ $complaintStudy->name_1 }}">
                                 </div>
                             </div>
                         </th>
-                        <th class=" w-50 text-center col-3 " style="border: 2px solid ">
+                        <th class=" w-50 text-center col-3 " >
 
                             <div class="form-group row w-20 text-right">
                                 <label for="" class="col-3 col-form-label">التاريخ </label>
@@ -579,7 +591,7 @@
                         <th class=" w-50 text-center col-3 ">
     
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">ممثل الادارة</label>
+                                <label for="" class="col-4 col-form-label">ممثل الادارة</label>
                                 <div class="col-6">
                                     <input type="text" readonly class="form-control" name="name_2"
                                         value="{{ $complaintStudy->name_2 }}">
@@ -603,17 +615,17 @@
                 @if (Auth::user()->hasRole('SuperAdmin'))
                     <tr style="text-align:center;">
 
-                        <th class=" w-50 text-center col-3 " style="border: 2px solid ">
+                        <th class=" w-50 text-center col-3 " >
 
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">مدير الجودة</label>
+                                <label for="" class="col-4 col-form-label">مدير الجودة</label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="name_1"
                                         value="{{ $complaintStudy->name_1 }}">
                                 </div>
                             </div>
                         </th>
-                        <th class=" w-50 text-center col-3 " style="border: 2px solid ">
+                        <th class=" w-50 text-center col-3 " >
 
                             <div class="form-group row w-20 text-right">
                                 <label for="" class="col-3 col-form-label">التاريخ </label>
@@ -630,7 +642,7 @@
                         <th class=" w-50 text-center col-3 ">
 
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">ممثل الادارة</label>
+                                <label for="" class="col-4 col-form-label">ممثل الادارة</label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="name_2"
                                         value="{{ $complaintStudy->name_2 }}">
@@ -657,23 +669,26 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
+                            <label>اسم الشركة</label>
                                 <input class="form-control" type="text" name="company_name"
-                                    placeholder="اسم الشركة  :" value="{{ $complaintStudy->company_name }}">
+                                    value="{{ $complaintStudy->company_name }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
+                            <label>تاريخ الاصدار</label>
                                 <input class="form-control" type="text" name="date2"
-                                    value="{{ $complaintStudy->date2 }}" placeholder="تاريخ الإصدار   :"
+                                    value="{{ $complaintStudy->date2 }}" 
                                     onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
+                            <label>تاريخ التعديل</label>
                                 <input class="form-control" type="text" name="date3"
-                                    value="{{ $complaintStudy->date3 }}" placeholder="تاريخ التعديل :"
+                                    value="{{ $complaintStudy->date3 }}" 
                                     onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
@@ -717,11 +732,11 @@
         @elseif(($complaintStudy->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
             ($complaintStudy->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
             ($complaintStudy->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-            <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                    class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                    </i></button>
-            </div>
+            <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                تعديل</button>
+                    </div>   
         @endif
         </form>
     </div>
@@ -833,16 +848,15 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+          
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+           
         }
 
         #mainDiv {

@@ -17,7 +17,7 @@
 <div class='row card'>
     <div class='row card' style='margin:auto'>
 
-        <form action="{{route('meetingMinute.store')}}" method="post" class='col-md-6 w-100' style='margin:auto;margin-top:80px' enctype="multipart/form-data" id="fo1">
+        <form action="{{route('meetingMinute.store')}}" method="post" class='col-md-9 w-100' style='margin:auto;margin-top:80px' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
 
             <div class="container p-4">
@@ -127,7 +127,7 @@
                     <h1 for="" class="col-md-4 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;'>ملخص الإجتماع :</h1>
                 </div>
                 <div class="form-group row w-100 text-right">
-                    <h1 for="" class="col-5 col-form-label">موقف مراجعات الإدارة السابقة :</h1>
+                    <h1 for="" class="col-6 col-form-label">موقف مراجعات الإدارة السابقة :</h1>
                     <div class="col-10">
                         <textarea type="text" class="form-control shadow-lg" placeholder=" المراجعة ......" name="stand_review"></textarea>
                     </div>
@@ -135,60 +135,60 @@
                 <div class="form-group row w-100 text-right">
                     <h1 for="" class="col-5 col-form-label">قرارات وتوصيات الإجتماع :</h1>
                 </div>
-                <div class="form-group row w-100 text-right">
-                    <h1 for="" class="col-md-8 col-form-label">أولاً: فيما يختص بتحسين كفاءة نظام ﺇدارة الجودة فقد تقرر ما يلى</h1>
+                <div class="form-group row w-100 ">
+                    <h1 for="" class="col-md-12 col-form-label">أولاً: فيما يختص بتحسين كفاءة نظام ﺇدارة الجودة فقد تقرر ما يلى</h1>
                 </div>
                 <div class="form-group row w-10 text-center">
                     <label for="" class="col-1 col-form-label">1 -</label>
-                    <div class="col-3">
+                    <div class="col-9">
                         <textarea type="text" class="form-control" placeholder="  ......" name="improve_efficiency_1"></textarea>
                     </div>
                 </div>
                 <div class="form-group row w-10 text-center">
                     <label for="" class="col-1 col-form-label">2 -</label>
-                    <div class="col-3">
+                    <div class="col-9">
                         <textarea type="text" class="form-control" placeholder="  ......" name="improve_efficiency_2"></textarea>
                     </div>
                 </div>
                 <div class="form-group row w-10 text-center">
                     <label for="" class="col-1 col-form-label">3 -</label>
-                    <div class="col-3">
+                    <div class="col-9">
                         <textarea type="text" class="form-control" placeholder="  ......" name="improve_efficiency_3"></textarea>
                     </div>
                 </div>
-                <div class="form-group row w-100 text-right">
-                    <h1 for="" class="col-md-8 col-form-label">ثانياً: فيما يختص بتحسين الخدمات طبقاً لمتطلبات العملاء فقد تقرر:</h1>
+                <div class="form-group row w-100 ">
+                    <h1 for="" class="col-md-12 col-form-label">ثانياً: فيما يختص بتحسين الخدمات طبقاً لمتطلبات العملاء فقد تقرر:</h1>
                 </div>
                 <div class="form-group row w-10 text-center">
                     <label for="" class="col-1 col-form-label">1 -</label>
-                    <div class="col-3">
+                    <div class="col-9">
                         <textarea type="text" class="form-control" placeholder="  ......" name="improve_service_1"></textarea>
                     </div>
                 </div>
                 <div class="form-group row w-10 text-center">
                     <label for="" class="col-1 col-form-label">2 -</label>
-                    <div class="col-3">
+                    <div class="col-9">
                         <textarea type="text" class="form-control" placeholder="  ......" name="improve_service_2"></textarea>
                     </div>
                 </div>
                 <div class="form-group row w-10 text-center">
                     <label for="" class="col-1 col-form-label">3 -</label>
-                    <div class="col-3">
+                    <div class="col-9">
                         <textarea type="text" class="form-control" placeholder="  ......" name="improve_service_3"></textarea>
                     </div>
                 </div>
                 <div class="form-group row w-100 text-center">
-                    <h1 for="" class="col-md-6 col-form-label">ثالثاً: الموارد البشرية والمادية المطلوبة هى:</h1>
+                    <h1 for="" class="col-md-9 col-form-label">ثالثاً: الموارد البشرية والمادية المطلوبة هى:</h1>
                 </div>
                 <div class="form-group row w-10 text-center">
                     <label for="" class="col-1 col-form-label">1 -</label>
-                    <div class="col-3">
+                    <div class="col-9">
                         <textarea type="text" class="form-control" placeholder="  ......" name="hr_1"></textarea>
                     </div>
                 </div>
                 <div class="form-group row w-10 text-center">
                     <label for="" class="col-1 col-form-label">2 -</label>
-                    <div class="col-3">
+                    <div class="col-9">
                         <textarea type="text" class="form-control" placeholder="  ......" name="hr_2"></textarea>
                     </div>
                 </div>
@@ -199,7 +199,7 @@
                     </div>
                 </div>
 
-                <hr width="1300px;" size="20" color="black">
+                <hr >
                 <table class="table">
                     <thead>
                         <tr>

@@ -39,7 +39,7 @@
                     </ul>
                 </li>
                
-                    <li class="sidebar-item">
+                    <li class="sidebar-item" style='display:none'>
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                             aria-expanded="false">
                             <i class="mdi mdi-tooltip-text"></i>
@@ -410,7 +410,7 @@
                         <li class="sidebar-item">
                             <a href="{{ route('complaintsWorkSOP.index') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> اجراء عمل الشكاوي وقياس رضا العميل
+                                <span class="hide-menu" style='font-size:12px'> اجراء عمل الشكاوي وقياس رضا العميل
                                 </span>
                             </a>
                         </li>
@@ -478,7 +478,7 @@
                         <li class="sidebar-item">
                             <a href="{{ route('changeControlRequests.index') }}" class="sidebar-link">
                                 <i class="mdi mdi-adjust"></i>
-                                <span class="hide-menu"> نموذج طلب التحكم في التغيير (CCR)</span>
+                                <span class="hide-menu" style='font-size:12px'> نموذج طلب التحكم في التغيير (CCR)</span>
                             </a>
                         </li>
                     </ul>

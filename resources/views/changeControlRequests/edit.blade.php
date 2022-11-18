@@ -3,22 +3,36 @@
 @section('content')
 
 
-    <div class="card">
-<div class="card-body">
-        <h3 style="margin-top:85px;">نموذج طلب التحكم في التغيير (CCR) </h3>
-        <hr>
-        <form action="{{ route('changeControlRequests.update',$changeControlRequest->id)}}" method="post" enctype="multipart/form-data" id="fo1">
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
+
+<div class="card">
+    <div class="card-body row" style='margin:auto;margin-top:80px'>
+
+
+
+        <form action="{{ route('changeControlRequests.update',$changeControlRequest->id)}}" class='col-md-12' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             @method('PUT') 
                   {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2>نموذج طلب التحكم في التغيير (CCR)</h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>نموذج طلب التحكم في التغيير (CCR)</h2>
                 <hr class="w-100">
             </div>
-            <div id="mainDiv" style=" margin-right:500px;">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
-                <img src="{{ asset($changeControlRequest->logo) }}" height=180px width=210px; />
-                <input type="file" id="img" name="logo" accept="image/*">
+            <div class='row mt-4 mb-3 w-100'>
+                <label class="form-label col-md-3 ">CO LOGO</label>
+           
+                  <input type="file" id="img" name="logo" accept="image/*">
+                  <img src="{{ asset($changeControlRequest->logo) }}" height=100px width=100px; />
+            
             </div>
             <div class="form-group row ">
                 <label for="" class="col-3 col-form-label">عنوان التغيير: </label>
@@ -45,7 +59,7 @@
             </div>
             <hr class="w-100">
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> التغييرات المطلوبة:</h1>
+                <h4> التغييرات المطلوبة:</h4>
             </div>
             <table class="table table-bordered">
                 <thead>
@@ -124,7 +138,7 @@
             </table>
             <hr class="w-100">
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> الوصف :</h1>
+                <h4> الوصف :</h4>
             </div>
             <div class="form-group row w-100 text-left">
                 <div class="col-12">
@@ -132,7 +146,7 @@
                 </div>
             </div>
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> السبب :</h1>
+                <h4> السبب :</h4>
             </div>
             <div class="form-group row w-100 text-left">
                 <div class="col-12">
@@ -140,7 +154,7 @@
                 </div>
             </div>
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> تغيير المقترح :</h1>
+                <h4> تغيير المقترح :</h4>
             </div>
             <div class="form-group row w-100 text-left">
                 <div class="col-12">
@@ -149,11 +163,11 @@
             </div>
     
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> المستند المتأثر :</h1>
+                <h4> المستند المتأثر :</h4>
             </div>
             <div class="form-group row w-100 text-center">
-                <table>
-                    <tr style="background-color:rgb(187, 199, 250)">
+                <table class='table '>
+                    <tr style="background-color:#001635 ;color:white;text-align:center">
                         <th>م </th>
                         <th> المستند</th>
                     </tr>
@@ -195,31 +209,31 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th class=" w-50 text-left col-2 ">
+                        <th class=" w-50 text-left col-6 ">
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-3 col-form-label">مقدم الطلب   </label>
+                                <label for="" class="col-5 col-form-label">مقدم الطلب   </label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="applicant" value="{{$changeControlRequest->applicant}}">
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-3 col-form-label">مدير القسم   </label>
+                                <label for="" class="col-5 col-form-label">مدير القسم   </label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="section_manager" value="{{$changeControlRequest->section_manager}}">
                                 </div>
                             </div>
     
                         </th>
-                        <th class=" w-50 text-left col-2 ">
+                        <th class=" w-50 text-left col-6 ">
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-2 col-form-label">التاريخ    </label>
-                                <div class="col-6">
+                                <label for="" class="col-4 col-form-label">التاريخ    </label>
+                                <div class="col-8">
                                     <input type="date" class="form-control" placeholder="  ......" name="date_2" value="{{$changeControlRequest->date_2}}">
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-2 col-form-label">التاريخ    </label>
-                                <div class="col-6">
+                                <label for="" class="col-4 col-form-label">التاريخ    </label>
+                                <div class="col-8">
                                     <input type="date" class="form-control" placeholder="  ......" name="date_3" value="{{$changeControlRequest->date_3}}">
                                 </div>
                             </div>
@@ -230,16 +244,18 @@
             
         </div>
         <hr class="w-100">
-        <div class="form-group row w-100 text-left">
-            <label for="" class="col-1 col-form-label"> 	مستوي التغيير :</label>
-        </div>
+        <div class="form-group row text-center">
+        <label for="" class="col-12 col-form-label"> مستوي التغيير :</label>
+    </div>
+    <div class="form-group w-75 row text-center" style='margin:auto'>
+     
         <table class="table table-bordered">
             <thead>
 
                 <tr>
                     <th>
                         <div class="form-group row w-100 text-center">
-                            <label for="" class="col-2 col-form-label text-center">منخفض   </label>
+                            <label for="" class="col-6 col-form-label text-center">منخفض   </label>
                             <div class="col-2 col-form-label">
                                 <input type="radio"  name="change_level" value="low" {{ $changeControlRequest->change_level=="low"? 'checked':'' }}>
                             </div>
@@ -247,7 +263,7 @@
                     </th>
                     <th>
                         <div class="form-group row w-100 text-center">
-                            <label for="" class="col-2 col-form-label text-center">متوسط  </label>
+                            <label for="" class="col-6 col-form-label text-center">متوسط  </label>
                             <div class="col-2 col-form-label">
                                 <input type="radio"  name="change_level" value="medium" {{ $changeControlRequest->change_level=="medium"? 'checked':'' }}>
                             </div>
@@ -255,7 +271,7 @@
                     </th>
                     <th>
                         <div class="form-group row w-100 text-center">
-                            <label for="" class="col-2 col-form-label text-center">مرتفع  </label>
+                            <label for="" class="col-6 col-form-label text-center">مرتفع  </label>
                             <div class="col-2 col-form-label">
                                 <input type="radio"  name="change_level" value="high" {{ $changeControlRequest->change_level=="high"? 'checked':'' }}>
                             </div>
@@ -264,43 +280,49 @@
                 </tr>
             </thead>
         </table>
-        <div class="form-group row w-100 text-left">
-            <h1 for="" class="form-control" style="background-color: pink;">وصف توكيد الجودة : </h1>
         </div>
-        <div class="form-group row w-100 text-left">
-            <div class="col-12">
+        <div class="form-group row w-75 text-center" style='margin:auto'>
+        <h4 for="" >وصف توكيد الجودة : </h4>
+        </div>
+        <div class="form-group row w-75 text-center" style='margin:auto'>
+         <div class="col-12">
                 <textarea type="text" class="form-control" placeholder="  ......" name="quality_assurance">{{$changeControlRequest->quality_assurance}}</textarea>
             </div>
         </div>
-        <div class="form-group row w-100 text-left">
-            <label for="" class="col-1 col-form-label text-left">مدير الجودة   </label>
-            <div class="col-6">
-                <input type="text" name="quality_manager" value="{{$changeControlRequest->quality_manager}}">
+        <div class="form-group row w-75 text-center mt-3" style='margin:auto'>
+        <h4>مدير الجودة </h4>
+</div>
+<div class="form-group row w-75 text-center mb-3" style='margin:auto'>
+        <div class="col-12">
+                <input type="text" class="form-control" name="quality_manager" value="{{$changeControlRequest->quality_manager}}">
             </div>
         </div>
-        <div class="form-group row w-100 text-left">
-            <h1 for="" class="form-control" style="background-color: pink;"> التدابير الواجب اتخاذها بعد تنفيذ التغيير : </h1>
-        </div>
+        <hr>
+    <div class="form-group row w-75 text-center" style='margin:auto'>
+        <h4 for="" > التدابير الواجب اتخاذها بعد تنفيذ التغيير : </h4>
+    </div>
+    <div class="form-group w-75 row text-center" style='margin:auto'>
+     
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-6 col-form-label text-left">1- مراجعة جميع المستندات المتضررة </label>
+                            <label for="" class="col-12 col-form-label text-left">1- مراجعة جميع المستندات المتضررة </label>
                         </div>
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">نعم  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-10 col-form-label text-left">نعم  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio"  name="review_damaged_document" value="yes" {{ $changeControlRequest->review_damaged_document=="yes"? 'checked':'' }}>
                             </div>
                         </div>
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">لا  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-9 col-form-label text-left">لا  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio"  name="review_damaged_document" value="no" {{ $changeControlRequest->review_damaged_document=="no"? 'checked':'' }}>
                             </div>
                         </div>
@@ -314,16 +336,16 @@
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">نعم  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-10 col-form-label text-left">نعم  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio" name="stability_study" value="yes" {{ $changeControlRequest->stability_study=="yes"? 'checked':'' }}>
                             </div>
                         </div>
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">لا  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-9 col-form-label text-left">لا  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio"  name="stability_study" value="no" {{ $changeControlRequest->stability_study=="no"? 'checked':'' }}>
                             </div>
                         </div>
@@ -337,16 +359,16 @@
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">نعم  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-10 col-form-label text-left">نعم  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio" name="equipment_qualification" value="yes" {{ $changeControlRequest->equipment_qualification=="yes"? 'checked':'' }}>
                             </div>
                         </div>
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">لا  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-9 col-form-label text-left">لا  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio" name="equipment_qualification" value="no" {{ $changeControlRequest->equipment_qualification=="no"? 'checked':'' }}>
                             </div>
                         </div>
@@ -360,16 +382,16 @@
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">نعم  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-10 col-form-label text-left">نعم  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio"  name="process_validation" value="yes" {{ $changeControlRequest->process_validation=="yes"? 'checked':'' }}>
                             </div>
                         </div>
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">لا  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-9 col-form-label text-left">لا  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio"  name="process_validation" value="no" {{ $changeControlRequest->process_validation=="no"? 'checked':'' }}>
                             </div>
                         </div>
@@ -378,21 +400,21 @@
                 <tr>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-6 col-form-label text-left">5- التحقق من النظافة </label>
+                            <label for="" class="col-12 col-form-label text-left">5- التحقق من النظافة </label>
                         </div>
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">نعم  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-10 col-form-label text-left">نعم  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio"  name="hygiene_check" value="yes" {{ $changeControlRequest->hygiene_check=="yes"? 'checked':'' }}>
                             </div>
                         </div>
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">لا  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-9 col-form-label text-left">لا  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio"  name="hygiene_check" value="no" {{ $changeControlRequest->hygiene_check=="no"? 'checked':'' }}>
                             </div>
                         </div>
@@ -406,16 +428,16 @@
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">نعم  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-10 col-form-label text-left">نعم  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio" name="recheck" value="yes" {{ $changeControlRequest->recheck=="yes"? 'checked':'' }}>
                             </div>
                         </div>
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">لا  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-9 col-form-label text-left">لا  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio" name="recheck" value="no" {{ $changeControlRequest->recheck=="no"? 'checked':'' }}>
                             </div>
                         </div>
@@ -429,16 +451,16 @@
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">نعم  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-10 col-form-label text-left">نعم  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio"  name="stability_monitoring" value="yes" {{ $changeControlRequest->stability_monitoring=="yes"? 'checked':'' }}>
                             </div>
                         </div>
                     </th>
                     <th>
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-1 col-form-label text-left">لا  </label>
-                            <div class="col-2 col-form-label">
+                            <label for="" class="col-9 col-form-label text-left">لا  </label>
+                            <div class="col-1 col-form-label">
                                 <input type="radio"  name="stability_monitoring" value="no" {{ $changeControlRequest->stability_monitoring=="no"? 'checked':'' }}>
                             </div>
                         </div>
@@ -446,37 +468,41 @@
                 </tr>
             </thead>
         </table>
-        <div class="form-group row w-100 text-left">
-            <h1 for="" class="form-control" style="background-color: pink;"> تغيير الموافقة على التحكم : </h1>
         </div>
+        <hr>
+    <div class="form-group w-75 row text-center" style='margin:auto'>
+        <h4 for="" > تغيير الموافقة على التحكم : </h4>
+    </div>
+    <div class="form-group w-75 row text-center" style='margin:auto'>
+      
 
         <table class="table">
             <thead>
                 <tr>
-                    <th class=" w-50 text-left col-2 ">
+                    <th class=" w-50 text-left col-6 ">
                         <div class="form-group row w-10 text-left">
-                            <label for="" class="col-3 col-form-label">مدير مراقبة الجودة  </label>
+                            <label for="" class="col-5 col-form-label">مدير مراقبة الجودة  </label>
                             <div class="col-6">
                                 <input type="text" class="form-control" placeholder="  ......" name="name_1" value="{{$changeControlRequest->name_1}}">
                             </div>
                         </div>
                         <div class="form-group row w-10 text-left">
-                            <label for="" class="col-3 col-form-label">مدير مصنع   </label>
+                            <label for="" class="col-5 col-form-label">مدير مصنع   </label>
                             <div class="col-6">
                                 <input type="text" class="form-control" placeholder="  ......" name="name_2" value="{{$changeControlRequest->name_2}}">
                             </div>
                         </div>
 
                     </th>
-                    <th class=" w-50 text-left col-2 ">
+                    <th class=" w-50 text-left col-6 ">
                         <div class="form-group row w-10 text-left">
-                            <label for="" class="col-2 col-form-label">التاريخ    </label>
+                            <label for="" class="col-4 col-form-label">التاريخ    </label>
                             <div class="col-6">
                                 <input type="date" class="form-control" placeholder="  ......" name="date_4" value="{{$changeControlRequest->date_4}}">
                             </div>
                         </div>
                         <div class="form-group row w-10 text-left">
-                            <label for="" class="col-2 col-form-label">التاريخ    </label>
+                            <label for="" class="col-4 col-form-label">التاريخ    </label>
                             <div class="col-6">
                                 <input type="date" class="form-control" placeholder="  ......" name="date_5" value="{{$changeControlRequest->date_5}}">
                             </div>
@@ -486,28 +512,33 @@
             </thead>
         </table>
 
-
+</div>
        
-        <hr class="w-100">
-           
+        
+    <hr class="w-100">
+    <div class="form-group w-75 row text-center" style='margin:auto'>
+        
         <table class="table">
             <thead>
                 <tr>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :"  value="{{ $changeControlRequest->company_name }}">
+                      <label>اسم الشركة</label>
+                        <input class="form-control" type="text" name="company_name"   value="{{ $changeControlRequest->company_name }}">
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="date2"  value="{{ $changeControlRequest->date2 }}" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                      <label>تاريخ الاصدار</label>
+                        <input class="form-control" type="text" name="date2"  value="{{ $changeControlRequest->date2 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
             
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <input class="form-control" type="text" name="date3"  value="{{ $changeControlRequest->date3 }}" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                        <label>تاريخ التعديل</label>
+                            <input class="form-control" type="text" name="date3"  value="{{ $changeControlRequest->date3 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                           </div>
             
                     </th>
@@ -534,10 +565,12 @@
                   </tr>
             </thead>
         </table>
-        <div class="form-group">
-            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-            class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> تعديل  </button>
-        </div>
+</div>
+        <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+               تعديل</button>
+                    </div>  
         </form>
     </div>
 
@@ -579,16 +612,15 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+            
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+            
         }
 
         #mainDiv {

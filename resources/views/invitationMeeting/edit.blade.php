@@ -27,7 +27,7 @@
                     <h6 for="" class="col-md-12">نبلغ سيادتكم بإجتماع مراجعة الإدراة لنظام الجودة </h6>
                 </div>
                 <div class='row p-3'>
-                    <label class="col-md-3 form-label text-left pr-5">CO LOGO</label>
+                    <label class="col-md-4 form-label text-right pr-5">CO LOGO</label>
                     <div class='col-md-5'>
               @if ($invitationMeeting->status == 'pending' && Auth::user()->hasRole('Employee'))
             <input type="file" id="img" class='shadow-lg' name="logo" accept="image/*">
@@ -42,38 +42,39 @@
             ($invitationMeeting->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
             <input type="file" id="img" class='shadow-lg' name="logo" accept="image/*">
         @endif  
+       
+        </div>
         <img src="{{ asset($invitationMeeting->logo) }}" height=100px width=100px; />
             
-        </div>
        
     </div>
-        <div class=" form-group row w-100 text-center">
-            <label for="" class=" col-form-label text-left">تاريخ الاجتماع:</label>
-            <div class="col-2">
-                <input type="date" class="form-control" name="date_1" value="{{ $invitationMeeting->date_1 }}">
-            </div>
-        </div>
+    <div class="form-group row w-10">            
+           <label for="" class="col-md-4 form-label text-right pr-5">تاريخ الاجتماع:</label>
+                    
+                        <input type="date" class="form-control col-md-4 shadow-lg" name="date_1">
+                    
+                </div>
 
-        <div class=" form-group row w-200">
-            <label for="" class="col-form-label">اليوم :</label>
-            <div class="col-2">
-                <input type="text" class="form-control" name="day" value="{{ $invitationMeeting->day }}">
-            </div>
+        <div class=" form-group row w-10">
+            <label for="" class="col-md-4 form-label text-right pr-5">اليوم :</label>
+           
+                <input type="text" class="form-control  col-md-4" name="day" value="{{ $invitationMeeting->day }}">
+            
         </div>
-        <div class=" form-group row w-100">
-            <label for="" class="col-form-label">مكان الإجتماع :</label>
-            <div class="col-2">
-                <input type="text" class="form-control" name="place_meeting" value="{{ $invitationMeeting->place_meeting }}">
-            </div>
+        <div class=" form-group row w-10">
+            <label for="" class="col-md-4 form-label text-right pr-5">مكان الإجتماع :</label>
+            
+                <input type="text" class="form-control col-md-4" name="place_meeting" value="{{ $invitationMeeting->place_meeting }}">
+            
         </div>
-        <hr width="1300px;" size="20" color="black">
+        <hr >
         <div class="form-group row w-100 text-right">
-            <h2 for="" class="col-2 col-form-label">أسماء الحضور :</h2>
-        </div>
+                    <h2 for="" class="col-2 col-form-label" style=';text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>أسماء الحضور :</h2>
+                </div>
 
         <div class="form-group row w-100 text-right" style="text-align:center ;">
             <table class="table">
-                <tr style="background-color:rgb(235, 252, 160)">
+                <tr style="background-color:#233242;color:white">
                     @if ($invitationMeeting->status == 'pending' && Auth::user()->hasRole('Employee'))
                     <th>م</th>
                 @endif
@@ -163,7 +164,7 @@
             </table>
         </div>
 
-        <table style=" margin-right:400px;">
+        <table style=" margin:auto">
             <thead>
                 <tr>
                     @if ($invitationMeeting->status == 'confirmed' && Auth::user()->hasRole('Employee') || $invitationMeeting->status == 'confirmed' && Auth::user()->hasRole('Admin') )
@@ -172,7 +173,7 @@
                             <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة :</label>
                         </div>
                         <div class="form-group row w-20 text-left">
-                            <label for="" class="col-5 col-form-label">الإسم </label>
+                            <label for="" class="col-5 col-form-label ">الإسم </label>
                             <div class="col-6">
                                 <input type="text" class="form-control" readonly placeholder="  ......" name="name_manager" value="{{ $invitationMeeting->name_manager}}">
                             </div>
@@ -185,7 +186,7 @@
                             <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة :</label>
                         </div>
                         <div class="form-group row w-20 text-left">
-                            <label for="" class="col-5 col-form-label">الإسم </label>
+                            <label for="" class="col-3 text-center col-form-label">الإسم </label>
                             <div class="col-6">
                                 <input type="text" class="form-control" placeholder="  ......" name="name_manager" value="{{ $invitationMeeting->name_manager}}">
                             </div>
@@ -256,10 +257,9 @@
             @elseif(($invitationMeeting->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                 ($invitationMeeting->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                 ($invitationMeeting->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                <div class="form-group">
-                    <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                        </i></button>
+                <div class='row'>
+                    <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                       تعديل</button>
                 </div>
             @endif
     </div>

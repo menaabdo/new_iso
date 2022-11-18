@@ -27,7 +27,7 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <table id="example1" class="table shadow-lg  table-striped">
-                                    <thead>
+                                    <thead style='background-color:#001635'>
                                         <tr>
                                             <th style=" ">Department Name</th>
                                             <th style=" ">Status</th>

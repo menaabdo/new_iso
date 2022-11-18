@@ -8,18 +8,22 @@
     
     </style>
 
-    <section class="content row" style='flex-wrap:nowrap;'>
+<section class="content" style='margin:auto;'>
+        <div class="card">
+            <div class="card-body row" style='margin:auto;;'>
 
-        <div class="card container col-md-10" style='margin-left: 10px'>
-<div class="card-body  ">
+
             <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
     font-weight: bold;">اجراء اهداف الجوده</h3>
             <hr>
-            <div class="row">
-                <a href="{{ route('sop.create') }}" class="btn btn-outline-primary mr-1" style="margin-top: 40px;">
-                    New <i class="icon-lg la la-file-medical"></i></a>
-                <div class="col-12">
+      </div>
+      <div class="row" style='margin:auto;width:90%'>
+     
+                <a href="{{ route('sop.create') }}" class="btn col-md-12 mr-1" style="margin-top: 40px;">
+                <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+              
                     <div class="card">
 <div class="card-body">
                         <div class="card">
@@ -38,7 +42,7 @@
                                         </tr>
                                     </thead>
 
-                                    <tbody class="datatable-body ">
+                                    <tbody class="datatable-body text-center">
                                         @foreach ($all_iso as $iso)
                                             <tr class="datatable-row datatable-row-even" style="left: 0px;">
                                                 <td class="datatable-cell"><span>{{ $iso->manage_name }}</span></td>

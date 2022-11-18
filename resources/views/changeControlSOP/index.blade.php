@@ -1,18 +1,33 @@
 @extends('layouts.master')
 
 @section('content')
-    <section class="content">
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+</style>
+
+
+<section class="content" style='margin:auto;'>
         <div class="card">
-            <div class="card-body">
-                <h3 style="margin-top:85px;">اجراء التحكم في التغيير </h3>
+            <div class="card-body row" style='margin:auto;'>
+
+                <h3 style="margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">اجراء التحكم في التغيير </h3>
                 <hr>
 
-                <div class="row">
-                    <a href="{{ route('changeControlSOP.create') }}" class="btn btn-outline-primary mr-1 ">
-                        New <i class="icon-lg la la-file-medical"></i></a>
+                </div>
+          <div class="row" style='margin:auto;width:90%'>
+     
+                    <a href="{{ route('changeControlSOP.create') }}" class="btn  col-md-12 mr-1 ">
+                    <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a> 
+                   <div class="col-12">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <div class="card">
                                     <div class="card-body">
                                         <!-- /.card-header -->

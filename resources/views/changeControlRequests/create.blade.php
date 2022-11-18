@@ -3,20 +3,32 @@
 @section('content')
 
 
-<div class="card">
-    <div class="card-body">
-        <h3 style="margin-top:85px;">نموذج طلب التحكم في التغيير (CCR) </h3>
-        <hr>
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
 
-        <form action="{{ route('changeControlRequests.store') }}" method="post" enctype="multipart/form-data" id="fo1">
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
+
+<div class="card">
+    <div class="card-body row" style='margin:auto;margin-top:80px'>
+
+
+
+        <form action="{{ route('changeControlRequests.store') }}" class='col-md-12' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2>نموذج طلب التحكم في التغيير (CCR)</h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>نموذج طلب التحكم في التغيير (CCR)</h2>
                 <hr class="w-100">
             </div>
-            <div id="mainDiv" style=" margin-right:500px;">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
+            <div class='row mt-4 mb-3'>
+                <label class="form-label col-md-3 ">CO LOGO</label>
+           
                 <input type="file" id="img" name="logo" accept="image/*">
             </div>
             <div class="form-group row ">
@@ -44,9 +56,9 @@
             </div>
             <hr class="w-100">
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> التغييرات المطلوبة:</h1>
+                <h4 for="" class="" > التغييرات المطلوبة:</h4>
             </div>
-            <table class="table table-bordered">
+            <table class="table ">
                 <thead>
 
                     <tr>
@@ -123,7 +135,7 @@
             </table>
             <hr class="w-100">
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> الوصف :</h1>
+                <h4 for="" style='text-shadow: 1px 1px 1px #3ed3ea;'> الوصف :</h4>
             </div>
             <div class="form-group row w-100 text-left">
                 <div class="col-12">
@@ -131,7 +143,7 @@
                 </div>
             </div>
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> السبب :</h1>
+                <h4 for="" class="" style='text-shadow: 1px 1px 1px #3ed3ea;'> السبب :</h4>
             </div>
             <div class="form-group row w-100 text-left">
                 <div class="col-12">
@@ -139,7 +151,7 @@
                 </div>
             </div>
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> تغيير المقترح :</h1>
+                <h4 for="" style='text-shadow: 1px 1px 1px #3ed3ea;'> تغيير المقترح :</h4>
             </div>
             <div class="form-group row w-100 text-left">
                 <div class="col-12">
@@ -148,11 +160,11 @@
             </div>
 
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> المستند المتأثر :</h1>
+                <h4 for="" style='text-shadow: 1px 1px 1px #3ed3ea;'> المستند المتأثر :</h4>
             </div>
             <div class="form-group row w-100 text-center">
-                <table>
-                    <tr style="background-color:rgb(187, 199, 250)">
+                <table class='table'>
+                    <tr style="background-color:#001635;color:white;text-align:center ">
                         <th>م </th>
                         <th> المستند</th>
                     </tr>
@@ -171,34 +183,34 @@
                     </tr>
                 </table>
             </div>
-            <table>
+            <table class='table'>
                 <thead>
                     <tr>
-                        <th class=" w-50 text-left col-2 ">
+                        <th class=" w-50 text-left col-6 ">
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-3 col-form-label">مقدم الطلب </label>
+                                <label for="" class="col-5 col-form-label">مقدم الطلب </label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="applicant">
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-3 col-form-label">مدير القسم </label>
+                                <label for="" class="col-5 col-form-label">مدير القسم </label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="section_manager">
                                 </div>
                             </div>
 
                         </th>
-                        <th class=" w-50 text-left col-2 ">
+                        <th class=" w-50 text-left col-6 ">
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-2 col-form-label">التاريخ </label>
-                                <div class="col-6">
+                                <label for="" class="col-4 col-form-label">التاريخ </label>
+                                <div class="col-8">
                                     <input type="date" class="form-control" placeholder="  ......" name="date_2">
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-2 col-form-label">التاريخ </label>
-                                <div class="col-6">
+                                <label for="" class="col-4 col-form-label">التاريخ </label>
+                                <div class="col-8">
                                     <input type="date" class="form-control" placeholder="  ......" name="date_3">
                                 </div>
                             </div>
@@ -209,33 +221,35 @@
 
     </div>
     <hr class="w-100">
-    <div class="form-group row w-100 text-left">
-        <label for="" class="col-1 col-form-label"> مستوي التغيير :</label>
+    <div class="form-group row text-center">
+        <label for="" class="col-12 col-form-label"> مستوي التغيير :</label>
     </div>
-    <table>
+    <div class="form-group w-75 row text-center" style='margin:auto'>
+     
+    <table class='table '>
         <thead>
 
             <tr>
                 <th>
                     <div class="form-group row w-100 text-center">
-                        <label for="" class="col-2 col-form-label text-center">منخفض </label>
-                        <div class="col-2 col-form-label">
+                        <label for="" class="col-6 col-form-label text-center">منخفض </label>
+                        <div class="col-2 col-form-label mt-1">
                             <input type="radio" name="change_level" value="low">
                         </div>
                     </div>
                 </th>
                 <th>
                     <div class="form-group row w-100 text-center">
-                        <label for="" class="col-2 col-form-label text-center">متوسط </label>
-                        <div class="col-2 col-form-label">
+                        <label for="" class="col-6 col-form-label text-center">متوسط </label>
+                        <div class="col-2 col-form-label mt-1">
                             <input type="radio" name="change_level" value="medium">
                         </div>
                     </div>
                 </th>
                 <th>
                     <div class="form-group row w-100 text-center">
-                        <label for="" class="col-2 col-form-label text-center">مرتفع </label>
-                        <div class="col-2 col-form-label">
+                        <label for="" class="col-6 col-form-label text-center">مرتفع </label>
+                        <div class="col-2 col-form-label mt-1">
                             <input type="radio" name="change_level" value="high">
                         </div>
                     </div>
@@ -243,43 +257,51 @@
             </tr>
         </thead>
     </table>
-    <div class="form-group row w-100 text-left">
-        <h1 for="" class="form-control" style="background-color: pink;">وصف توكيد الجودة : </h1>
     </div>
-    <div class="form-group row w-100 text-left">
+    <hr>
+    <div class="form-group row w-75 text-center" style='margin:auto'>
+        <h4 for="" >وصف توكيد الجودة : </h4>
+    </div>
+    <div class="form-group row w-75 text-center" style='margin:auto'>
         <div class="col-12">
             <textarea type="text" class="form-control" placeholder="  ......" name="quality_assurance"></textarea>
         </div>
     </div>
-    <div class="form-group row w-100 text-left">
-        <label for="" class="col-1 col-form-label text-left">مدير الجودة </label>
-        <div class="col-6">
-            <input type="text" name="quality_manager">
+    <hr>
+    <div class="form-group row w-75 text-center" style='margin:auto'>
+        <h4>مدير الجودة </h4>
+</div>
+<div class="form-group row w-75 text-center" style='margin:auto'>
+        <div class="col-12">
+            <input type="text" class="form-control" name="quality_manager">
         </div>
     </div>
-    <div class="form-group row w-100 text-left">
-        <h1 for="" class="form-control" style="background-color: pink;"> التدابير الواجب اتخاذها بعد تنفيذ التغيير : </h1>
+    <hr>
+    <div class="form-group row w-75 text-center" style='margin:auto'>
+        <h4 for="" > التدابير الواجب اتخاذها بعد تنفيذ التغيير : </h4>
     </div>
-    <table class="table table-bordered">
+    <div class="form-group w-75 row text-center" style='margin:auto'>
+     
+    <table class="table">
         <thead>
             <tr>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-6 col-form-label text-left">1- مراجعة جميع المستندات المتضررة </label>
+                        <label for="" class="col-8 col-form-label text-left">1- مراجعة جميع المستندات المتضررة </label>
                     </div>
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">نعم </label>
-                        <div class="col-2 col-form-label">
+                        <label for="" class="col-10 col-form-label text-left">نعم </label>
+                        <div class="col-1 col-form-label mt-1">
                             <input type="radio" name="review_damaged_document" value="yes">
                         </div>
                     </div>
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">لا </label>
-                        <div class="col-2 col-form-label">
+                        <label for="" class="col-9 col-form-label text-left">لا </label>
+                        <div class="col-1 col-form-label mt-1">
                             <input type="radio" name="review_damaged_document" value="no">
                         </div>
                     </div>
@@ -288,21 +310,21 @@
             <tr>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-6 col-form-label text-left">2- دراسة الاستقرار </label>
+                        <label for="" class="col-12 col-form-label text-left">2- دراسة الاستقرار </label>
                     </div>
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">نعم </label>
-                        <div class="col-2 col-form-label">
+                        <label for="" class="col-10 col-form-label text-left">نعم </label>
+                        <div class="col-2 col-form-label mt-1">
                             <input type="radio" name="stability_study" value="yes">
                         </div>
                     </div>
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">لا </label>
-                        <div class="col-2 col-form-label">
+                        <label for="" class="col-9 col-form-label text-left">لا </label>
+                        <div class="col-2 col-form-label mt-1">
                             <input type="radio" name="stability_study" value="no">
                         </div>
                     </div>
@@ -316,16 +338,16 @@
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">نعم </label>
-                        <div class="col-2 col-form-label">
+                        <label for="" class="col-10 col-form-label text-left">نعم </label>
+                        <div class="col-1 col-form-label mt-1">
                             <input type="radio" name="equipment_qualification" value="yes">
                         </div>
                     </div>
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">لا </label>
-                        <div class="col-2 col-form-label">
+                        <label for="" class="col-9 col-form-label text-left ">لا </label>
+                        <div class="col-2 col-form-label mt-1">
                             <input type="radio" name="equipment_qualification" value="no">
                         </div>
                     </div>
@@ -339,7 +361,7 @@
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">نعم </label>
+                        <label for="" class="col-10 col-form-label text-left">نعم </label>
                         <div class="col-2 col-form-label">
                             <input type="radio" name="process_validation" value="yes">
                         </div>
@@ -347,7 +369,7 @@
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">لا </label>
+                        <label for="" class="col-9 col-form-label text-left">لا </label>
                         <div class="col-2 col-form-label">
                             <input type="radio" name="process_validation" value="no">
                         </div>
@@ -362,7 +384,7 @@
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">نعم </label>
+                        <label for="" class="col-10 col-form-label text-left">نعم </label>
                         <div class="col-2 col-form-label">
                             <input type="radio" name="hygiene_check" value="yes">
                         </div>
@@ -370,7 +392,7 @@
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">لا </label>
+                        <label for="" class="col-9 col-form-label text-left">لا </label>
                         <div class="col-2 col-form-label">
                             <input type="radio" name="hygiene_check" value="no">
                         </div>
@@ -385,7 +407,7 @@
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">نعم </label>
+                        <label for="" class="col-10 col-form-label text-left">نعم </label>
                         <div class="col-2 col-form-label">
                             <input type="radio" name="recheck" value="yes">
                         </div>
@@ -393,7 +415,7 @@
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">لا </label>
+                        <label for="" class="col-9 col-form-label text-left">لا </label>
                         <div class="col-2 col-form-label">
                             <input type="radio" name="recheck" value="no">
                         </div>
@@ -408,7 +430,7 @@
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">نعم </label>
+                        <label for="" class="col-10 col-form-label text-left">نعم </label>
                         <div class="col-2 col-form-label">
                             <input type="radio" name="stability_monitoring" value="yes">
                         </div>
@@ -416,7 +438,7 @@
                 </th>
                 <th>
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-1 col-form-label text-left">لا </label>
+                        <label for="" class="col-9 col-form-label text-left">لا </label>
                         <div class="col-2 col-form-label">
                             <input type="radio" name="stability_monitoring" value="no">
                         </div>
@@ -425,37 +447,40 @@
             </tr>
         </thead>
     </table>
-    <div class="form-group row w-100 text-left">
-        <h1 for="" class="form-control" style="background-color: pink;"> تغيير الموافقة على التحكم : </h1>
+</div>
+<hr>
+    <div class="form-group w-75 row text-center" style='margin:auto'>
+        <h4 for="" > تغيير الموافقة على التحكم : </h4>
     </div>
-
+    <div class="form-group w-75 row text-center" style='margin:auto'>
+      
     <table class="table">
         <thead>
             <tr>
-                <th class=" w-50 text-left col-2 ">
+                <th class=" w-50 text-left col-6 ">
                     <div class="form-group row w-10 text-left">
-                        <label for="" class="col-3 col-form-label">مدير مراقبة الجودة </label>
+                        <label for="" class="col-5 col-form-label">مدير مراقبة الجودة </label>
                         <div class="col-6">
                             <input type="text" class="form-control" placeholder="  ......" name="name_1">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-left">
-                        <label for="" class="col-3 col-form-label">مدير مصنع </label>
+                        <label for="" class="col-5 col-form-label">مدير مصنع </label>
                         <div class="col-6">
                             <input type="text" class="form-control" placeholder="  ......" name="name_2">
                         </div>
                     </div>
 
                 </th>
-                <th class=" w-50 text-left col-2 ">
+                <th class=" w-50 text-left col-6 ">
                     <div class="form-group row w-10 text-left">
-                        <label for="" class="col-2 col-form-label">التاريخ </label>
+                        <label for="" class="col-4 col-form-label">التاريخ </label>
                         <div class="col-6">
                             <input type="date" class="form-control" placeholder="  ......" name="date_4">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-left">
-                        <label for="" class="col-2 col-form-label">التاريخ </label>
+                        <label for="" class="col-4 col-form-label">التاريخ </label>
                         <div class="col-6">
                             <input type="date" class="form-control" placeholder="  ......" name="date_5">
                         </div>
@@ -464,28 +489,33 @@
             </tr>
         </thead>
     </table>
-
+</div>
 
 
     <hr class="w-100">
+    <div class="form-group w-75 row text-center" style='margin:auto'>
+      
     <table class="table">
         <thead>
             <tr>
                 <th>
                     <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
+                    <label>اسم الشركة</label>
+                        <input class="form-control" type="text" name="company_name" >
                     </div>
 
                 </th>
                 <th>
                     <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                    <label>تاريخ الاصدار</label>
+                        <input class="form-control" type="text" name="date2"  onfocus="(this.type='date')" onblur="(this.type='text')">
                     </div>
 
                 </th>
                 <th>
                     <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                    <label>تاريخ التعديل</label>
+                        <input class="form-control" type="text" name="date3"  onfocus="(this.type='date')" onblur="(this.type='text')">
                     </div>
 
                 </th>
@@ -512,10 +542,12 @@
             </tr>
         </thead>
     </table>
-    <div class="form-group">
-        <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ
-        </button>
-    </div>
+</div>
+<div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    </div>  
     </form>
 </div>
 
@@ -552,16 +584,15 @@
 <style>
     .table thead th {
         vertical-align: bottom;
-        border-bottom: 2px solid black;
+       
     }
 
     table,
     th,
     td,
     tr {
-        border: 1px solid black;
-        border-bottom: 2px solid black;
-        border-top: 2px solid black;
+        border: 1px solid silver;
+     
     }
 
     #mainDiv {

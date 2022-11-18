@@ -1,73 +1,95 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
 
-<div class="card">
-    <div class="card-body">
-        <h3 style="margin-top:85px;">تحليل(SWOT)
-        </h3>
-        <hr>
-        <form action="{{ route('swot.store') }}" method="post" enctype="multipart/form-data" id="fo1">
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
+<div class="card row" style='width:100%;;margin:auto'>
+    <div class="card-body row" style='width:90%;margin:auto'>
+      
+        <form action="{{ route('swot.store') }}" method="post" style='margin:auto;margin-top:50px;' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2>تحليل(SWOT) </h2>
+                <h2 style="text-shadow: 1px 1px 1px #3ed3ea;">تحليل(SWOT) </h2>
                 <hr class="w-100">
             </div>
-            <div id="mainDiv" style=" margin-right:500px;">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
-                <input type="file" id="img" name="logo" accept="image/*">
+            <div class=' row p-3 w-100 text-center mb-3'>
+            <label for="" class="col-3 col-form-label"> CO LOGO</label>
+                  <input type="file" id="img" name="logo" accept="image/*">
             </div>
-            <div class="form-group row w-100 text-left">
-                <label for="" class="col-1 col-form-label"> الاسم :</label>
+            <div class="form-group row w-100 text-center">
+                <label for="" class="col-3 col-form-label"> الاسم :</label>
                 <div class="col-4">
                     <input type="text" class="form-control" name="name_1">
                 </div>
             </div>
-            <div class="form-group row w-100 text-left">
-                <label for="" class="col-1 col-form-label"> التاريخ :</label>
+            <div class="form-group row w-100 text-center">
+                <label for="" class="col-3 col-form-label"> التاريخ :</label>
                 <div class="col-4">
                     <input type="date" class="form-control" name="date_1">
                 </div>
             </div>
-            <div class=" form-group row  w-200 text-center">
-                <div class="col-6">
-                    <label for="" class="col-5 col-form-label text-center">نقاط القوة :</label>
-                    <textarea type="text" class="form-control" name="strength_point" placeholder=":" style="border-radius: 50px; border:solid 5px rgb(235, 42, 25); height: 300px; width: 600px;"></textarea>
-                    <label for="" class="col-5 col-form-label text-center">الفرص :</label>
-
-                    <textarea type="text" name="opportunities" class="form-control" placeholder=":" style="border-radius: 50px; border:solid 5px rgb(156, 158, 183); height: 300px; width: 600px;"></textarea>
-
+            <div class="form-group row w-100 text-center">
+                <label for="" class="col-3 col-form-label"> نقاط القوة :</label>
+                <div class="col-4">
+                <textarea type="text" class="form-control" name="strength_point" placeholder=":" style=" height: 300px; width: 600px;"></textarea>
+                
                 </div>
-                <div class="col-6">
-                    <label for="" class="col-5 col-form-label text-center"> نقاط الضعف :</label>
-
-                    <textarea type="text" class="form-control" name="weak_point" placeholder=":" style=" border-radius: 50px; border:solid 5px rgb(46, 255, 19); height: 300px; width: 600px;"></textarea>
-                    <label for="" class="col-5 col-form-label text-center">التهديدات :</label>
-
-                    <textarea type="text" name="threat" class="form-control" placeholder=":" style="border-radius: 50px; border:solid 5px rgb(7, 77, 176); height: 300px; width: 600px;"></textarea>
+            </div>
+            <div class="form-group row w-100 text-center">
+                <label for="" class="col-3 col-form-label"> الفرص :</label>
+                <div class="col-4">
+                <textarea type="text" name="opportunities" class="form-control" placeholder=":" style=" height: 300px; width: 600px;"></textarea>
 
                 </div>
             </div>
+            <div class="form-group row w-100 text-center">
+                <label for="" class="col-3 col-form-label"> نقاط الضعف :</label>
+                <div class="col-4">
+                <textarea type="text" class="form-control" name="weak_point" placeholder=":" style="  height: 300px; width: 600px;"></textarea>
+                 
+                </div>
+            </div>
+            <div class="form-group row w-100 text-center">
+                <label for="" class="col-3 col-form-label"> التهديدات :</label>
+                <div class="col-4">
+                <textarea type="text" name="threat" class="form-control" placeholder=":" style=" height: 300px; width: 600px;"></textarea>
+
+                </div>
+            </div>
+            
+            
             <hr class="w-100">
+            
             <table class="table">
                 <thead>
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
+                            <label>اسم الشركة</label>
+                                <input class="form-control" type="text" name="company_name">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <label>تاريخ الاصدار</label>
+                                <input class="form-control" type="text" name="date2"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <label>تاريخ التعديل</label>
+                                <input class="form-control" type="text" name="date3"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
@@ -95,25 +117,25 @@
                 </thead>
             </table>
 
-            <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ
-                </button>
+            <div class='row'>
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
             </div>
         </form>
     </div>
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+            /* border-bottom: 2px solid black; */
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+            /* border-bottom: 2px solid black;
+            border-top: 2px solid black; */
         }
 
         #mainDiv {

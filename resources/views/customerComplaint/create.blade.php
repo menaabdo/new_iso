@@ -3,20 +3,31 @@
 @section('content')
 
 
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
+
 <div class="card">
-    <div class="card-body">
-        <h3 style="margin-top:85px;">متابعة شكوى عميل</h3>
-        <hr>
-        <form action="{{route('customerComplaints.store')}}" method="post" enctype="multipart/form-data" id="fo1">
+    <div class="card-body row" style='margin:auto;margin-top:80px'>
+
+
+        <form action="{{route('customerComplaints.store')}}" method="post" class='col-md-10' style='margin:auto' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2>متابعة شكوى عميل</h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>متابعة شكوى عميل</h2>
                 <hr class="w-100">
             </div>
-            <div id="mainDiv" style=" margin-right:500px;">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
-                <input type="file" id="img" name="logo" accept="image/*">
+            <div class='row mt-4 mb-3'>
+                <label class="form-label col-md-3 ">CO LOGO</label>
+                   <input type="file" id="img" name="logo" accept="image/*">
             </div>
             <div class="form-group row ">
                 <label for="" class="col-3 col-form-label">مصدر الشكوي:</label>
@@ -43,16 +54,16 @@
                 </div>
             </div>
             <div class="form-group row text-left">
-                <label for="" class="col-1 col-form-label">التاريخ:</label>
-                <div class="col-3">
+                <label for="" class="col-3 col-form-label">التاريخ:</label>
+                <div class="col-6">
                     <input type="date" class="form-control" name="date_1">
                 </div>
             </div>
             <hr class="w-100">
-            <div class="form-group row w-100 text-right" style="text-align:center;">
-                <table class="table">
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
-                        <th>موضوع الشكوي</th>
+            <div class="form-group row " style="text-align:center;overflow-x:auto;">
+                <table class="table ">
+                    <tr style="background-color:    #001635; color:white;text-align:center;">
+                         <th>موضوع الشكوي</th>
                         <th>تاريخ استقبال الشكوي</th>
                         <th>تاريخ ارسالهاالي الادارات المختصه</th>
                         <th>تاريخ وصول الرد</th>
@@ -71,20 +82,25 @@
             </div>
             <hr class="w-100">
             <div style="" class="w-100 text-center my-4">
-                <h2>ﺇدارة التسويق والمبيعات (إرضاء العميل) :</h2>
+                <h4>ﺇدارة التسويق والمبيعات (إرضاء العميل) :</h4>
             </div>
             <div class="form-group row ">
-                <label for="" class="col-2 col-form-label">الأسم :</label>
-                <div class="col-9">
+                <label for="" class="col-3 col-form-label">الأسم :</label>
+                <div class="col-6">
                     <input type="text" class="form-control" name="name">
                 </div>
-                <label for="" class="col-2 col-form-label">التاريخ :</label>
-                <div class="col-9">
+                </div>
+                <div class="form-group row ">
+            
+                <label for="" class="col-3 col-form-label">التاريخ :</label>
+                <div class="col-6">
                     <input type="date" class="form-control" name="date_6">
                 </div>
             </div>
             <hr class="w-100">
-            <table class="table">
+            <div class="form-group row " style="text-align:center;overflow-x:auto;">
+            
+            <table class="table ">
                 <thead>
                     <tr>
                         <th>
@@ -128,9 +144,12 @@
                     </tr>
                 </thead>
             </table>
-            <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ </button>
-            </div>
+             </div>
+            <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    </div>  
         </form>
     </div>
 
@@ -138,16 +157,16 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+            /* border-bottom: 2px solid black; */
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+            /* border-bottom: 2px solid black;
+            border-top: 2px solid black; */
         }
 
         #mainDiv {

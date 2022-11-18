@@ -23,7 +23,7 @@
  <div class='row card'>
   <h3 style="margin:auto;margin-top:100px;text-shadow: 1px 1px 1px #3ed3ea;">سجل حصر وتحديدالاخطار والمخاطر</h3>
   <hr>
-    <form action="{{route('risk.update',$risk->id)}}" method="post" enctype="multipart/form-data" id="fo1">
+    <form action="{{route('risk.update',$risk->id)}}" method="post" class='col-md-12' style='margin:auto' enctype="multipart/form-data" id="fo1">
         @method('PUT') 
           {{ csrf_field() }}
 
@@ -228,69 +228,74 @@
       </table>
    
 
-    <section class="w-100  mt-5">
+    <section class="w-50  mt-5" style='margin:auto'>
       <div class="row">
-        <div class="col-6">
-            <h3 class="text-end">أعداد</h3>
+        <div class="col-6 text-center">
+            <h3 class="text-center">أعداد</h3>
           <input type="text" class="form-control w-100" name="prepare" value="{{ $risk->prepare }}">
         </div>
         @if ($risk->status == 'confirmed' && Auth::user()->hasRole('Employee') || $risk->status == 'confirmed' && Auth::user()->hasRole('Admin') )
-        <div class="col-6">
-          <h3 class="text-end">أعتماد</h3>
+        <div class="col-6 text-center">
+          <h3 class="text-center">أعتماد</h3>
         <input type="text" class="form-control w-100" name="approval" value="{{ $risk->approval }}" readonly>
       </div>
         @endif
         @if (Auth::user()->hasRole('SuperAdmin'))
         <div class="col-6">
-            <h3 class="text-end">أعتماد</h3>
+            <h3 class="text-center">أعتماد</h3>
           <input type="text" class="form-control w-100" name="approval" value="{{ $risk->approval }}">
         </div>
         @endif
       </div>
      
       <div class="row mt-3">
-        
-        <label class="text-end col-md-2" style='text-align:center'> التاريخ</label>
-                    
-          <input type="date" class="form-control col-md-4" name="date" value="{{ $risk->date }}">
+        <div class='col-md-6'>
+        <label class="text-start col-md-12" style='text-align:right'> التاريخ</label>
+          <div class='row'>     
+          <input type="date" class="form-control col-md-12" name="date" value="{{ $risk->date }}">
         </div>
+        </div>
+        
         @if ($risk->status == 'confirmed' && Auth::user()->hasRole('Employee') || $risk->status == 'confirmed' && Auth::user()->hasRole('Admin') )
         <div class="col-6">
-          <h3 class="text-end">مدير الأدارة</h3>
+          <label class="" style='text-align:right'>مدير الأدارة</label>
         <input type="text" class="form-control w-100" name="manager_director" readonly value="{{ $risk->manager_director }}">
       </div>
+     
         @endif
         @if (Auth::user()->hasRole('SuperAdmin'))
-        <div class="col-6">
-            <h3 class="text-end">مدير الأدارة</h3>
+        <div class="col-6" style='text-align:right'>
+            <label class="text-start" style='text-align:right'>مدير الأدارة</label>
           <input type="text" class="form-control w-100" name="manager_director" value="{{ $risk->manager_director }}">
         </div>
         @endif
       </div>
-      
+ 
       <div class="row">
 
-          <div class="col-6">
-            <h3 class="text-end"> قسم :</h3>
+          <div class="col-6" style='text-align:right'>
+            <label class="text-end"> قسم :</label>
             <input type="text" class="form-control w-100" name="department2" placeholder="    ......" value="{{ $risk->department2 }}">
           </div>
           @if ($risk->status == 'confirmed' && Auth::user()->hasRole('Employee') || $risk->status == 'confirmed' && Auth::user()->hasRole('Admin') )
           <div class="col-6">
-            <h3 class="text-end"> قسم :</h3>
+            <label class="text-end" style='text-align:right'> قسم :</label>
             <input type="text" class="form-control w-100" name="department3" placeholder="  ......" value="{{ $risk->department3 }}" readonly >
           </div>
           @endif
           @if (Auth::user()->hasRole('SuperAdmin'))
-          <div class="col-6">
-            <h3 class="text-end"> قسم :</h3>
+          <div class="col-6" style='text-align:right'>
+            <label class="text-end"> قسم :</label>
             <input type="text" class="form-control w-100" name="department3" placeholder="  ......" value="{{ $risk->department3 }}" >
           </div>
           @endif
-      </div>
+          </div>
+          </div>
+      
     </section>
     
 
-    <section style="justify-content:space-evenly; margin-top: 10%;" class="p-4 my-4" >
+    <section style="justify-content:space-evenly; margin-top: 10%;margin-right:400px" class="p-4 my-4 " >
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -345,15 +350,15 @@
                         class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
                         </i></button>
                 </div>
-           
+  
             @elseif(
                 ($risk->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                 ($risk->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                <div class="form-group">
-                    <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                        </i></button>
-                </div>
+                <div class="form-group " style='text-align:center;margin-right:300px'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit"
+                class="btn btn-primary">
+               تعديل</button>
+        </div> 
             @endif
 </form>
   </div>

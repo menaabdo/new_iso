@@ -1,11 +1,21 @@
 @extends('layouts.master')
 @section('content')
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
 
-<div class="card">
-<div class="card-body">
-    <h3 style="margin-top:85px;">قائمة رئيسية للوثائق</h3>
-    <hr>
-    <form action="{{route('listDocument.update',$listDocument->id)}}" method="post" enctype="multipart/form-data" id="fo1">
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
+<div class="card" style=''>
+    <div class="card-body row" style='margin-top:80px'>
+
+
+    <form action="{{route('listDocument.update',$listDocument->id)}}" method="post" class='col-md-10' style='margin:auto' enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
       <div style="" class="w-100 text-center my-4">

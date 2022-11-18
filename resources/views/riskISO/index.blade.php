@@ -5,16 +5,22 @@
     
     </style>
 @section('content')
-<section class="content row" style='flex-wrap:nowrap;'>
+<section class="content" style='margin:auto;'>
+        <div class="card">
+            <div class="card-body row" style='margin:auto;;'>
 
-<div class="card container col-md-10">
-            <div class="card-body">
-                <h3 style="margin-top:85px;">اجراء تقيم المخاطر</h3>
+                 <h3 style="margin-top:85px;color: #2a415b;
+    text-shadow: 1px 1px 1px #3ed3ea;
+    font-weight: bold;">
+                اجراء تقيم المخاطر</h3>
                 <hr>
-                <div class="row">
-                    <a href="{{ route('risksop.create') }}" class="btn btn-outline-primary mr-1 ">
-                        New <i class="icon-lg la la-file-medical"></i></a>
-                    <div class="col-12">
+                </div>
+      <div class="row" style='margin:auto;width:90%'>
+     
+                    <a href="{{ route('risksop.create') }}" class="btn col-md-12 mr-1 ">
+                    <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+                <div class="col-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="card">
@@ -23,7 +29,8 @@
                                         <div class="card-body">
                                             <table id="example1" class="table  table-striped shadow-lg">
                                                 <thead>
-                                                    <tr>
+                                                    <tr style='background-color: #001635;color:white;text-align:center'>
+                                           
                                                         <th>Manage Name</th>
                                                         <th>Company Logo</th>
                                                         <th style="  ">Status</th>

@@ -14,21 +14,21 @@
                 <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>قائمة رئيسية للوثائق</h3>
                 <hr>
 </div>
-                <div class="row" style='margin:auto;'>
+                <div class="row" style='margin:auto;width:90%'>
 
                     <a href="{{ route('listDocument.create') }}" class="btn col-md-12 mr-1"
                         style="width:120px;  float: right; font-size:20px ">
                         <button class='shadow-lg btn btn-light' style='color:  #001635; 
     background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body ">
                                 <div class="card">
                                     <div class="card-body">
                                         <!-- /.card-header -->
                                         <div class="card-body">
-                                            <table id="example1" class="table table-bordered table-striped" style="background-color: #001635;color:white;text-align:center">
-                                                <thead>
-                                                    <tr>
+                                            <table id="example1" class="table table-bordered table-striped" >                                    <thead>
+                                                    <tr style="background-color: #001635;color:white;text-align:center">
+            
                                                         <th style=" font-size:20px ">Logo</th>
                                                         <th style=" font-size:20px ">Status</th>
                                                         <th style="font-size:20px " data-field="Actions"
@@ -37,7 +37,7 @@
                                                     </tr>
                                                 </thead>
 
-                                                <tbody class="datatable-body ">
+                                                <tbody class="datatable-body text-center">
                                                     @foreach ($all_listDocument as $listDocument)
                                                         <tr class="datatable-row datatable-row-even">
                                                             <td class="datatable-cell" style="font-size:15px "><span><img

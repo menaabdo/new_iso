@@ -12,7 +12,7 @@
 
 </style>
 <div class="card">
-    <div class="card-bodyrow" style='margin:auto;margin-top:80px'>
+    <div class="card-body row" style='margin:auto;margin-top:80px'>
 
         <form action="{{route('directorList.store')}}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
@@ -105,10 +105,11 @@
                     </tr>
                 </thead>
             </table>
-            <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ
-                </button>
-            </div>
+            <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    </div>   
         </form>
     </div>
 

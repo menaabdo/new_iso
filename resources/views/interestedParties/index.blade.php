@@ -1,16 +1,20 @@
 @extends('layouts.master')
 @section('content')
-    <section class="content">
-        <div class="card">
-            <div class="card-body">
-                <h3 style="margin-top:85px;">استمارة الأطراف المهتمة</h3>
+<section class="content" style='margin:auto;'>
+        <div class="card" style='margin:auto;'>
+            <div class="card-body" style='margin:auto;'>
+             
+                <h3 style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>استمارة الأطراف المهتمة</h3>
                 <hr>
-                <div class="row">
+                </div>
+                <div class="row" style='margin:auto;width:90%'>
 
-                    <a href="{{ route('interestedParties.create') }}" class="btn btn-primary mr-1"
+
+                    <a href="{{ route('interestedParties.create') }}" class="btn col-md-12 mr-1"
                         style="width:120px;  float: right; font-size:20px ">
-                        اضافه جديد <i class="icon-lg la la-file-medical"></i></a>
-
+                        <button class='shadow-lg btn btn-light' style='color:  #001635; 
+    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+                 
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">

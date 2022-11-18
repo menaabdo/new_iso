@@ -226,13 +226,11 @@
 
             </section>
 
-            <div class="row" style='text-align:center'>
-                <div class='col-md-12 my-3'>
-                <button style="border-radius:7px" type="submit"
-                    class="btn btn-primary mx-5"><i class="fas fa-save" style=""></i> حفظ
-                </button>
-            </div>
-            </div>
+            <div class="form-group" style='text-align:center'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit"
+                class="btn btn-primary">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+        </div> 
          
       </form>
     

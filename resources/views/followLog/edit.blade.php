@@ -1,11 +1,20 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
 
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
     <div class="card">
-        <div class="card-body">
-            <h3 style="margin-top:85px;">سجل متابعة قرارات مراجعة الإدارة العليا</h3>
-            <hr>
+        <div class="card-body row">
+            
         </div>
         <form action="{{ route('followLog.update', $followLog->id) }}" method="post" enctype="multipart/form-data"
             id="fo1">
