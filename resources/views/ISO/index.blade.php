@@ -5,7 +5,10 @@
 <style>
       .shadow-lg {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
-    
+     #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
     </style>
 
 <section class="content" style='margin:auto;'>
@@ -15,14 +18,14 @@
 
             <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
-    font-weight: bold;">اجراء اهداف الجوده</h3>
+    font-weight: bold;">إجراء أهداف الجودة</h3>
             <hr>
       </div>
       <div class="row" style='margin:auto;width:90%'>
      
-                <a href="{{ route('sop.create') }}" class="btn col-md-12 mr-1" style="margin-top: 40px;">
-                <button class='shadow-lg btn btn-light' style='color:  #001635; 
-    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+                    <a href="{{ route('sop.create') }}" class="btn col-md-12 mr-1" style="margin-top: 40px;">
+                <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
               
                     <div class="card">
 <div class="card-body">
