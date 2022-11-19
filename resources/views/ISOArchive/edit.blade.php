@@ -15,7 +15,7 @@
 
 <div class="card-body row" style='margin:auto;margin-top:60px'>
 
-    <form action="" class='col-md-10' style='margin:auto'  enctype="multipart/form-data" id="fo1">
+    <form action="" class='col-md-10' style='margin:auto' enctype="multipart/form-data" id="fo1">
         {{ csrf_field() }}
         <input type="hidden" name="type" value="1">
         <div style="" class="w-100 text-center my-4">
@@ -24,12 +24,11 @@
         </div>
         <div class='row'>
             <label class="col-md-2">أسم الأرشيف</label>
-            <input class="col-md-6 form-control" style="text-align: center;" type="text" name="name"  value="{{ $archive->name }}">
+            <input class="col-md-6 form-control" style="text-align: center;" type="text" name="name" value="{{ $archive->name }}">
         </div>
         <div class='row mt-4 mb-3'>
             <label class="form-label col-md-2 ">محتوي الأرشيف</label>
-          <embed src="{{ $archive->links }}" type="application/pdf" id="src_render"
-                        frameBorder="2" scrolling="auto" height="600px" width="100%"></embed>
+            <embed src="{{ $archive->links }}" type="application/pdf" id="src_render" frameBorder="2" scrolling="auto" height="600px" width="100%"></embed>
         </div>
         <br>
         <div class='row mt-3'>
@@ -38,14 +37,14 @@
         </div>
     </form>
 </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-    <script>
-        document.getElementById("btn").onclick = function() {
-            location.href = "{{ route('sopArchives.index') }}";
-        };
+<script>
+    document.getElementById("btn").onclick = function() {
+        location.href = "{{ route('sopArchives.index') }}";
+    };
 
-    </script>
+</script>
 
 
-    @endsection
+@endsection
