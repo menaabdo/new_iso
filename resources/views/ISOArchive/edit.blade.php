@@ -29,11 +29,9 @@
         <div class='row mt-4 mb-3'>
             <label class="form-label col-md-2 ">محتوي الأرشيف</label>
           <embed src="{{ $archive->links }}" type="application/pdf" id="src_render"
-                        frameBorder="0" scrolling="auto" height="350px" width="100%"></embed>
+                        frameBorder="2" scrolling="auto" height="600px" width="100%"></embed>
         </div>
-
-
-
+        <br>
         <div class='row mt-3'>
             <button type="button" style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" id="btn" class="btn btn-primary col-md-4">
                 <i class="fas fa-arrow-left" style="width:15% ; height: 20%;"></i>رجوع</button>
