@@ -48,6 +48,7 @@ use App\Http\Controllers\RecordModelController;
 use App\Http\Controllers\ReportNonConformanceCasesController;
 use App\Http\Controllers\RiskController;
 use App\Http\Controllers\RiskSOPController;
+use App\Http\Controllers\SOPArchiveController;
 use App\Http\Controllers\SOPController;
 use App\Http\Controllers\SwotController;
 use App\Http\Controllers\TrainingStatsController;
@@ -118,6 +119,8 @@ Route::group(['middleware'=>['auth']], function () {
 
 
     Route::resource('/sop',SOPController::class);
+    Route::resource('/sopArchives',SOPArchiveController::class);
+
     //Route::get('/sop-print',[SOPController::class,'print']);
     Route::get('/sop/print/{id}',[SOPController::class,'print'])->name('sop.print');
 

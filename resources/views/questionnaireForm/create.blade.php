@@ -16,7 +16,7 @@
 <div class="card">
     <div class="card-body row" style='margin:auto;margin-top:80px'>
 
-       
+
         <form action="{{route('questionnaireForms.store')}}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
@@ -26,8 +26,8 @@
             <div class='row mt-4 mb-3'>
                 <label class="form-label col-md-3 ">CO LOGO</label>
                 <div class="col-6">
-    <input type="file" id="img" name="logo" accept="image/*">
-            </div>
+                    <input type="file" id="img" name="logo" accept="image/*">
+                </div>
             </div>
             <div class="form-group row ">
                 <label for="" class="col-3 col-form-label">تاريخ:</label>
@@ -45,7 +45,7 @@
             <div class="form-group row w-100 text-right" style="text-align:center;">
                 <table class="table">
                     <tr style="background-color:    #001635; color:white;text-align:center;">
-                         <th>م</th>
+                        <th>م</th>
                         <th>الحاله</th>
                         <th><img src="{{ asset('img/Capture.PNG') }}" width="60px" height="70px"></th>
                         <th><img src="{{ asset('img/Capture1.PNG') }}" width="60px" height="70px"></th>
@@ -187,10 +187,9 @@
                 </thead>
             </table>
             <div class='row'>
-            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
-                class="btn btn-primary col-md-4">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
-                    </div>  
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+            </div>
         </form>
     </div>
 
@@ -198,7 +197,7 @@
     <style>
         .table thead th {
             vertical-align: middle;
-           
+
         }
 
         table,
@@ -206,7 +205,7 @@
         td,
         tr {
             border: 1px solid silver;
-         
+
         }
 
         #mainDiv {
