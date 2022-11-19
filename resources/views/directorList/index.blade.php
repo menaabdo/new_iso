@@ -18,12 +18,9 @@
 </div>
                 <div class="row" style='margin:auto;'>
                         <div class='row' style='margin:auto;'>
-                    <a href="{{ route('directorList.create') }}" class="btn col-md-12  mr-1"
-                        style="width:120px;  float: right; font-size:20px;background: linear-gradient(
-90deg
-, rgba(41,67,148,1) 0%, rgba(40,150,212,1) 100%); ">
-                        <button class='shadow-lg btn btn-light' style='color:  #001635; 
-    background-color: white;' id='me'> اضافة جديدة</button></a>
+                    <a href="{{ route('directorList.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
     </div>
                     <div class="col-12">
                         <div class="card">

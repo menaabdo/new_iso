@@ -2,7 +2,14 @@
 
 @section('content')
 
-
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+</style>
 
  <section class="content">
       <div class="card">
@@ -10,8 +17,9 @@
         <h3 style="margin-top:85px;">اجراء التحسين المستمر</h3>
         <hr>
         <div class="row">
-            <a  href="{{ route('ContinuousImprovementSOP.create') }}" class="btn btn-outline-primary mr-1 ">
-                New <i class="icon-lg la la-file-medical"></i></a>
+            <a  href="{{ route('ContinuousImprovementSOP.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
           <div class="col-12">
             <div class="card">
 <div class="card-body">

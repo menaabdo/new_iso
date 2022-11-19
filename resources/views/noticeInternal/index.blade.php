@@ -1,10 +1,13 @@
 @extends('layouts.master')
 @section('content')
 <style>
-      .shadow-lg {
+    .shadow-lg {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
-    
-    </style>
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+</style>
 <section class="content row" style='flex-wrap:nowrap;'>
 
 <div class="card container col-md-10" style='margin-left: 10px'>
@@ -13,9 +16,9 @@
                 <hr>
                 <div class="row">
 
-                    <a href="{{ route('noticeInternal.create') }}" class="btn btn-primary mr-1"
-                        style="width:120px;  float: right; font-size:20px ">
-                        اضافه جديد <i class="icon-lg la la-file-medical"></i></a>
+                    <a href="{{ route('noticeInternal.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
 
                     <div class="col-12">
                         <div class="card">

@@ -16,9 +16,9 @@
         <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea'>اجراء فهم المنظمه وسياقها</h3>
         <hr>
         <div class="row">
-            <a  href="{{ route('understandingOrganizationSOP.create') }}" class="btn col-md-12  mr-1 ">
-            <button class='shadow-lg btn btn-light' style='color:  #001635; 
-    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+            <a  href="{{ route('understandingOrganizationSOP.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
                
           <div class="col-12">
             <div class="card">

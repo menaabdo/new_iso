@@ -20,7 +20,7 @@
           <div class="row" style='margin:auto;width:90%'>
            
               <a  href="{{ route('assigned.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
-           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
         
             <div class="col-12">

@@ -1,10 +1,14 @@
 @extends('layouts.master')
-<style>
-      .shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
-    
-    </style>
+
 @section('content')
+<style>
+    .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    #me:hover{
+        transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+</style>
 <section class="content" style='margin:auto;'>
         <div class="card">
             <div class="card-body row" style='margin:auto;;'>
@@ -17,9 +21,9 @@
                 </div>
       <div class="row" style='margin:auto;width:90%'>
      
-                    <a href="{{ route('risksop.create') }}" class="btn col-md-12 mr-1 ">
-                    <button class='shadow-lg btn btn-light' style='color:  #001635; 
-    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+                    <a href="{{ route('risksop.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
                 <div class="col-12">
                         <div class="card">
                             <div class="card-body">

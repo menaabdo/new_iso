@@ -13,7 +13,7 @@
 
 </style>
 
-    <div class="row card" style='margin:auto;margin-top:50px' >
+    <div class="row card" style='margin:auto;margin-top:80px' >
 
         <form action="{{route('sopArchives.store')}}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}

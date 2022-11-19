@@ -16,10 +16,9 @@
 </div>
                 <div class="row" style='margin:auto;width:90%'>
 
-                    <a href="{{ route('listDocument.create') }}" class="btn col-md-12 mr-1"
-                        style="width:120px;  float: right; font-size:20px ">
-                        <button class='shadow-lg btn btn-light' style='color:  #001635; 
-    background-color: white;' id='me'> اضافة جديدة</button></a> <div class="col-12">
+                    <a href="{{ route('listDocument.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
                         <div class="card">
                             <div class="card-body ">
                                 <div class="card">
