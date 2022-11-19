@@ -24,6 +24,7 @@ use App\Http\Controllers\FollowUpRecordController;
 use App\Http\Controllers\FollowUpRecordImprovementController;
 use App\Http\Controllers\InterestedPartieController;
 use App\Http\Controllers\InteriorController;
+use App\Http\Controllers\InteriorSOPArchiveController;
 use App\Http\Controllers\InteriorSOPController;
 use App\Http\Controllers\InternalAuditController;
 use App\Http\Controllers\InternalAuditReportController;
@@ -33,6 +34,7 @@ use App\Http\Controllers\IssuanceRequestController;
 use App\Http\Controllers\ListDocumentController;
 use App\Http\Controllers\ListInternalAuditorController;
 use App\Http\Controllers\MeetingAgendaController;
+use App\Http\Controllers\MeetingAgendaSOPArchiveController;
 use App\Http\Controllers\MeetingAgendaSOPController;
 use App\Http\Controllers\MeetingMinuteController;
 use App\Http\Controllers\NonConformanceReportController;
@@ -41,12 +43,14 @@ use App\Http\Controllers\NonConformitiesController;
 use App\Http\Controllers\NoticeInternalController;
 use App\Http\Controllers\QuestionnaireFormController;
 use App\Http\Controllers\RecordActionController;
+use App\Http\Controllers\RecordActionSOPArchiveController;
 use App\Http\Controllers\RecordActionSOPController;
 use App\Http\Controllers\RecordAnalysisController;
 use App\Http\Controllers\RecordCanceledDocumentController;
 use App\Http\Controllers\RecordModelController;
 use App\Http\Controllers\ReportNonConformanceCasesController;
 use App\Http\Controllers\RiskController;
+use App\Http\Controllers\RiskSOPArchiveController;
 use App\Http\Controllers\RiskSOPController;
 use App\Http\Controllers\SOPArchiveController;
 use App\Http\Controllers\SOPController;
@@ -120,59 +124,63 @@ Route::group(['middleware'=>['auth']], function () {
 
     Route::resource('/sop',SOPController::class);
     Route::resource('/sopArchives',SOPArchiveController::class);
-
+    
     //Route::get('/sop-print',[SOPController::class,'print']);
     Route::get('/sop/print/{id}',[SOPController::class,'print'])->name('sop.print');
-
+    
     Route::resource('/risksop',RiskSOPController::class);
+    Route::resource('/risksopArchives',RiskSOPArchiveController::class);
     Route::get('/risksop/print/{id}',[RiskSOPController::class,'print'])->name('risksop.print');
     Route::resource('/risk',RiskController::class);
     Route::get('/risk/print/{id}',[RiskController::class,'print'])->name('risk.print');
-
-
-  
+    
+    
+    
     Route::resource('/interiorsop',InteriorSOPController::class);
     Route::get('/interiorsop/print/{id}',[InteriorSOPController::class,'print'])->name('interiorsop.print');
-
+    
     Route::resource('/interior',InteriorController::class);
+    Route::resource('/interiorArchives',InteriorSOPArchiveController::class);
     Route::get('/interior/print/{id}',[InteriorController::class,'print'])->name('interior.print');
-
+    
     Route::resource('/internalAudit',InternalAuditController::class);
     Route::get('/internalAudit/print/{id}',[InternalAuditController::class,'print'])->name('internalAudit.print');
-
+    
     Route::resource('/noticeInternal',NoticeInternalController::class);
     Route::get('/noticeInternal/print/{id}',[NoticeInternalController::class,'print'])->name('noticeInternal.print');
-
+    
     Route::resource('/InternalAuditReport',InternalAuditReportController::class);
     Route::get('/InternalAuditReport/print/{id}',[InternalAuditReportController::class,'print'])->name('InternalAuditReport.print');
-
+    
     Route::resource('/listInternalAuditor',ListInternalAuditorController::class);
     Route::get('/listInternalAuditor/print/{id}',[ListInternalAuditorController::class,'print'])->name('listInternalAuditor.print');
-
+    
     Route::resource('/assigned',AssignedController::class);
     Route::get('/assigned/print/{id}',[AssignedController::class,'print'])->name('assigned.print');
-
+    
     Route::resource('/work_plan',WorkPlanController::class);
     Route::get('/work_plan/print/{id}',[WorkPlanController::class,'print'])->name('work_plan.print');
-
-
+    
+    
     Route::resource('/meetingAgenda',MeetingAgendaController::class);
+    Route::resource('/meetingAgendaArchives',MeetingAgendaSOPArchiveController::class);
     Route::get('/meetingAgenda/print/{id}',[MeetingAgendaController::class,'print'])->name('meetingAgenda.print');
-
+    
     Route::resource('/meetingAgendasop',MeetingAgendaSOPController::class);
     Route::get('/meetingAgendasop/print/{id}',[MeetingAgendaSOPController::class,'print'])->name('meetingAgendasop.print');
-
+    
     Route::resource('/invitationMeeting',InvitationMeetingController::class);
     Route::get('/invitationMeeting/print/{id}',[InvitationMeetingController::class,'print'])->name('invitationMeeting.print');
-
+    
     Route::resource('/followLog',FollowLogController::class);
     Route::get('/followLog/print/{id}',[FollowLogController::class,'print'])->name('followLog.print');
-
+    
     Route::resource('/meetingMinute',MeetingMinuteController::class);
     Route::get('/meetingMinute/print/{id}',[MeetingMinuteController::class,'print'])->name('meetingMinute.print');
-
-
+    
+    
     Route::resource('/recordAction',RecordActionController::class);
+    Route::resource('/recordActionArchives',RecordActionSOPArchiveController::class);
     Route::get('/recordAction/print/{id}',[RecordActionController::class,'print'])->name('recordAction.print');
 
     Route::resource('/recordModel',RecordModelController::class);

@@ -119,7 +119,7 @@
 
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                    <i class="mdi mdi-format-list-bulleted"></i>
+                    <i class="fa fa-exclamation-triangle"></i>
                     <span class="hide-menu">تقيم المخاطر </span>
 
                 </a>
@@ -136,12 +136,29 @@
                             <span style='    font-size: 10;' class="hide-menu"> سجل حصر وتحديدالاخطار والمخاطر </span>
                         </a>
                     </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="mdi mdi-archive"></i>
+                            <span class="hide-menu">الأرشيف</span>
+
+                        </a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item">
+                                <a href="{{ route('risksopArchives.index') }}" class="sidebar-link">
+                                    <i class="mdi mdi-archive"></i>
+                                    <span class="hide-menu">أرشيف</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                    <i class="mdi mdi-format-list-bulleted"></i>
+                    <i class="fa fa-link"></i>
                     <span class="hide-menu">المراجعه الداخليه</span>
 
                 </a>
@@ -194,12 +211,29 @@
                             <span class="hide-menu"> خطة سنوية للمراجعات الداخلية </span>
                         </a>
                     </li>
+
+                     <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="mdi mdi-archive"></i>
+                            <span class="hide-menu">الأرشيف</span>
+
+                        </a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item">
+                                <a href="{{ route('interiorArchives.index') }}" class="sidebar-link">
+                                    <i class="mdi mdi-archive"></i>
+                                    <span class="hide-menu">أرشيف</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                    <i class="mdi mdi-format-list-bulleted"></i>
+                    <i class="fa fa-tasks"></i>
                     <span class="hide-menu">مراجعة الادارة</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
@@ -233,12 +267,29 @@
                             <span class="hide-menu"> محضر إجتماع مراجعة </span>
                         </a>
                     </li>
+
+                     <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="mdi mdi-archive"></i>
+                            <span class="hide-menu">الأرشيف</span>
+
+                        </a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item">
+                                <a href="{{ route('meetingAgendaArchives.index') }}" class="sidebar-link">
+                                    <i class="mdi mdi-archive"></i>
+                                    <span class="hide-menu">أرشيف</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                    <i class="mdi mdi-format-list-bulleted"></i>
+                    <i class="fas fa-sticky-note"></i>
                     <span class="hide-menu">مراقبة وضبط الوثائق</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
@@ -302,12 +353,29 @@
                             </span>
                         </a>
                     </li>
+
+                     <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="mdi mdi-archive"></i>
+                            <span class="hide-menu">الأرشيف</span>
+
+                        </a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item">
+                                <a href="{{ route('recordActionArchives.index') }}" class="sidebar-link">
+                                    <i class="mdi mdi-archive"></i>
+                                    <span class="hide-menu">أرشيف</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                    <i class="mdi mdi-format-list-bulleted"></i>
+                    <i class="fas fa-file-alt"></i>
                     <span class="hide-menu">التصحيحيه والوقائيه</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
@@ -361,7 +429,7 @@
 
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                    <i class="mdi mdi-format-list-bulleted"></i>
+                    <i class="fas fa-sitemap"></i>
                     <span class="hide-menu">فهم المنظمه وسياقها</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
@@ -409,7 +477,7 @@
 
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                    <i class="mdi mdi-format-list-bulleted"></i>
+                    <i class="fa fa-comments "></i>
                     <span class="hide-menu">شكاوي وقياس رضا العميل</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
@@ -469,7 +537,7 @@
 
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                    <i class="mdi mdi-format-list-bulleted"></i>
+                    <i class="	fas fa-retweet"></i>
                     <span class="hide-menu">التحكم في التغيير</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
@@ -491,7 +559,7 @@
 
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                    <i class="mdi mdi-format-list-bulleted"></i>
+                    <i class="	fas fa-sync-alt"></i>
                     <span class="hide-menu">التحسين المستمر</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
