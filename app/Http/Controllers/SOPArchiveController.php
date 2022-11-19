@@ -229,9 +229,9 @@ $image2 = $request->file('image_illustration');
      */
     public function destroy($id)
     {
-      $iso=ISO::find($id);
+      $iso=Archive::find($id);
       $iso->forceDelete();
-      return redirect()->route('sop.index');
+      return redirect()->route('sopArchives.index');
     }
 
     public function print($id)
