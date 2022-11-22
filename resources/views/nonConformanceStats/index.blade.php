@@ -1,24 +1,25 @@
 @extends('layouts.master')
 @section('content')
+
 <style>
-    .shadow-lg {
+      .shadow-lg {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
-    #me:hover{
-        transform: scale(1.1);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-    }
-</style>
-    <section class="content">
-        <div class="card">
-<div class="card-body">
-          <h3 style="margin-top:85px;">إحصائيات حالات عدم المطابقة</h3>
+    
+    </style>
+<section class="content" style='margin:auto;'>
+        <div class="card" style='margin:auto;'>
+<div class="card-body row" style='margin:auto;'>  
+      
+          <h3 style='text-shadow: 1px 1px 1px #3ed3ea;margin-top:40%'>إحصائيات حالات عدم المطابقة</h3>
           <hr>
-          <div class="row" >
+          </div>
+                <div class="row" style='margin:auto;width:90%'>
+
            
-              <a  href="{{ route('nonConformanceStats.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
-          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
-           
+              <a  href="{{ route('nonConformanceStats.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <button class='shadow-lg btn  btn-light' style='color:  white; 
+    background-color: #001635;border-radius:10px;' id='me'> اضافة جديدة</button></a>
+       
             <div class="col-12">
               <div class="card">
 <div class="card-body">
@@ -27,7 +28,8 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped" >
-                    <thead>
+                    <thead style='color:  white; 
+    background-color: #001635;text-align:center'>
                     <tr>
                       <th style=" font-size:20px ">Logo</th>
                       <th style="font-size:20px " data-field="Actions" class="datatable-cell "><span style="">Actions</span></th>
@@ -35,7 +37,7 @@
                     </tr>
                     </thead>
         
-                    <tbody class="datatable-body ">
+                    <tbody class="datatable-body text-center">
                       @foreach ($all_nonConformanceStats as $nonConformanceStats)
                           <tr class="datatable-row datatable-row-even">
                               <td class="datatable-cell" style="font-size:15px "><span><img src="{{asset($nonConformanceStats->logo)}}" alt="Image" width="50px"></span></td>

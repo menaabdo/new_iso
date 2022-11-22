@@ -13,7 +13,8 @@
 </style>
 <section class="content" style='margin:auto;'>
         <div class="card" style='margin:auto;'>
-<div class="card-body row" style='margin:auto;'>      <h3 style="margin-top:85px;">أجندة إجتماع مراجعة الإدارة</h3>
+<div class="card-body row" style='margin:auto;'>      
+<h3 style="margin-top:85px;">أجندة إجتماع مراجعة الإدارة</h3>
           <hr>
           </div>
                 <div class="row" style='margin:auto;width:90%'>

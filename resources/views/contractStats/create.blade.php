@@ -3,19 +3,31 @@
 @section('content')
 
 
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
 <div class="card">
-    <div class="card-body">
-        <h3 style="margin-top:85px;">إحصائيات التعاقد</h3>
-        <hr>
-        <form action="{{route('contractStats.store')}}" method="post" enctype="multipart/form-data" id="fo1">
+    <div class="card-body row" style='margin:auto;margin-top:80px'>
+
+       
+        <form action="{{route('contractStats.store')}}" method="post" class='col-md-12
+        ' style='margin:auto' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2> إحصائيات التعاقد</h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'> إحصائيات التعاقد</h2>
                 <hr class="w-100">
             </div>
-            <div id="mainDiv" style=" margin-right:500px;">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
+            <div class='row mt-4 mb-3'>
+                <label class="form-label col-md-2 ">CO LOGO</label>
+      
                 <input type="file" id="img" name="logo" accept="image/*">
             </div>
 
@@ -23,15 +35,15 @@
 
             <div class="form-group row w-100 text-right" style="text-align:center;">
                 <table class="table">
-                    <tr style="background-color:rgb(218, 249, 163); text-align:center;">
-                        <th scope="col" rowspan="2">م</th>
+                    <tr style="background-color:    #001635; color:white;text-align:center;">
+                      <th scope="col" rowspan="2">م</th>
                         <th scope="col" rowspan="2">الشهر</th>
                         <th scope="col" colspan="2">التعاقد بالزيارات </th>
                         <th scope="col" colspan="2">التعاقد السنوي</th>
                         <th scope="col" rowspan="2">ملاحظات</th>
                     </tr>
-                    <tr style="background-color:rgb(218, 249, 163); text-align:center;">
-                        <th scope="col"> منفذ</th>
+                    <tr style="background-color:    #001635; color:white;text-align:center;">
+                       <th scope="col"> منفذ</th>
                         <th scope="col">غير منفذ</th>
                         <th scope="col"> منفذ</th>
                         <th scope="col">غير منفذ</th>
@@ -55,7 +67,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <th style="background-color:rgb(218, 249, 163); text-align:center;" scope="col" colspan="2">الاجمالى</th>
+                        <th style="background-color:    #001635; color:white;text-align:center;"
+                      scope="col" colspan="2">الاجمالى</th>
                         <th><input class="form-control" type="text" name="total_1"></th>
                         <th><input class="form-control" type="text" name="total_2"></th>
                         <th><input class="form-control" type="text" name="total_3"></th>
@@ -78,19 +91,22 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
+                            <label>اسم الشركة</label>
+                                <input class="form-control" type="text" name="company_name" >
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <label>تاريخ الاصدار</label>
+                                <input class="form-control" type="text" name="date2"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <label>تاريخ التعديل</label>
+                                <input class="form-control" type="text" name="date3"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
@@ -117,9 +133,11 @@
                     </tr>
                 </thead>
             </table>
-            <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ </button>
-            </div>
+            <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    </div>  
         </form>
     </div>
 
@@ -159,16 +177,15 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+           
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+          
         }
 
         #mainDiv {
