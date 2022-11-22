@@ -6,12 +6,16 @@ use App\Http\Controllers\AssignedController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BrokenRecordController;
 use App\Http\Controllers\ChangeControlRequestController;
+use App\Http\Controllers\ChangeControlSOPArchiveControlle;
 use App\Http\Controllers\ChangeControlSOPController;
 use App\Http\Controllers\ComplaintStudyController;
+use App\Http\Controllers\ComplaintsWorkSOPArchiveController;
 use App\Http\Controllers\ComplaintsWorkSOPController;
+use App\Http\Controllers\ContinuousImprovementSOPArchiveControlle;
 use App\Http\Controllers\ContinuousImprovementSOPController;
 use App\Http\Controllers\ContractStatsController;
 use App\Http\Controllers\CorrctivePreventiveActionsController;
+use App\Http\Controllers\CorrctivePreventiveActionsSOPArchiveController;
 use App\Http\Controllers\CorrctivePreventiveActionsSOPController;
 use App\Http\Controllers\CustomerComplaintController;
 use App\Http\Controllers\CustomerController;
@@ -57,6 +61,7 @@ use App\Http\Controllers\SOPController;
 use App\Http\Controllers\SwotController;
 use App\Http\Controllers\TrainingStatsController;
 use App\Http\Controllers\TypicalFormController;
+use App\Http\Controllers\UnderstandingOrganizationSOPArchiveController;
 use App\Http\Controllers\UnderstandingOrganizationSOPController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkPlanController;
@@ -182,35 +187,36 @@ Route::group(['middleware'=>['auth']], function () {
     Route::resource('/recordAction',RecordActionController::class);
     Route::resource('/recordActionArchives',RecordActionSOPArchiveController::class);
     Route::get('/recordAction/print/{id}',[RecordActionController::class,'print'])->name('recordAction.print');
-
+    
     Route::resource('/recordModel',RecordModelController::class);
     Route::get('/recordModel/print/{id}',[RecordModelController::class,'print'])->name('recordModel.print');
-
+    
     Route::resource('/recordCanceledDocument',RecordCanceledDocumentController::class);
     Route::get('/recordCanceledDocument/print/{id}',[RecordCanceledDocumentController::class,'print'])->name('recordCanceledDocument.print');
-
+    
     Route::resource('/recordActionSop',RecordActionSOPController::class);
     Route::get('/recordActionSop/print/{id}',[RecordActionSOPController::class,'print'])->name('recordActionSop.print');
-
+    
     Route::resource('/issuanceRequest',IssuanceRequestController::class);
     Route::get('/issuanceRequest/print/{id}',[IssuanceRequestController::class,'print'])->name('issuanceRequest.print');
-
+    
     Route::resource('/directorList',DirectorListController::class);
     Route::get('/directorList/print/{id}',[DirectorListController::class,'print'])->name('directorList.print');
-
+    
     Route::resource('/typicalForm',TypicalFormController::class);
     Route::get('/typicalForm/print/{id}',[TypicalFormController::class,'print'])->name('typicalForm.print');
-
+    
     Route::resource('/brokenRecord',BrokenRecordController::class);
     Route::get('/brokenRecord/print/{id}',[BrokenRecordController::class,'print'])->name('brokenRecord.print');
-
+    
     Route::resource('/listDocument',ListDocumentController::class);
     Route::get('/listDocument/print/{id}',[ListDocumentController::class,'print'])->name('listDocument.print');
-
+    
     Route::resource('/corrctivePreventiveActionsSOP',CorrctivePreventiveActionsSOPController::class);
     Route::get('/corrctivePreventiveActionsSOP/print/{id}',[CorrctivePreventiveActionsSOPController::class,'print'])->name('corrctivePreventiveActionsSOP.print');
-
+    
     Route::resource('/corrctivePreventiveActions',CorrctivePreventiveActionsController::class);
+    Route::resource('/corrctiveArchives',CorrctivePreventiveActionsSOPArchiveController::class);
     Route::get('/corrctivePreventiveActions/print/{id}',[CorrctivePreventiveActionsController::class,'print'])->name('corrctivePreventiveActions.print');
 
     Route::resource('/Non_conformities',NonConformitiesController::class);
@@ -227,6 +233,7 @@ Route::group(['middleware'=>['auth']], function () {
 
     
     Route::resource('/understandingOrganizationSOP',UnderstandingOrganizationSOPController::class);
+    Route::resource('/understandingArchives',UnderstandingOrganizationSOPArchiveController::class);
     Route::get('/understandingOrganizationSOP/print/{id}',[UnderstandingOrganizationSOPController::class,'print'])->name('understandingOrganizationSOP.print');
 
     Route::resource('/internalCases',InternalCaseController::class);
@@ -249,26 +256,29 @@ Route::group(['middleware'=>['auth']], function () {
     Route::get('/questionnaireForms/print/{id}',[QuestionnaireFormController::class,'print'])->name('questionnaireForms.print');
 
     Route::resource('/complaintsWorkSOP',ComplaintsWorkSOPController::class);
+    Route::resource('/complaintsWorkSOPArchives',ComplaintsWorkSOPArchiveController::class);
     Route::get('/complaintsWorkSOP/print/{id}',[ComplaintsWorkSOPController::class,'print'])->name('complaintsWorkSOP.print');
-
+    
     Route::resource('/customerComplaints',CustomerComplaintController::class);
     Route::get('/customerComplaints/print/{id}',[CustomerComplaintController::class,'print'])->name('customerComplaints.print');
-
+    
     Route::resource('/customerSatisfactions',CustomerSatisfactionController::class);
     Route::get('/customerSatisfactions/print/{id}',[CustomerSatisfactionController::class,'print'])->name('customerSatisfactions.print');
-
+    
     Route::resource('/complaintStudies',ComplaintStudyController::class);
     Route::get('/complaintStudies/print/{id}',[ComplaintStudyController::class,'print'])->name('complaintStudies.print');
-
-
+    
+    
     Route::resource('/changeControlSOP',ChangeControlSOPController::class);
+    Route::resource('/changeControlSOPArchives',ChangeControlSOPArchiveControlle::class);
     Route::get('/changeControlSOP/print/{id}',[ChangeControlSOPController::class,'print'])->name('changeControlSOP.print');
-
+    
     Route::resource('/changeControlRequests',ChangeControlRequestController::class);
     Route::get('/changeControlRequests/print/{id}',[ChangeControlRequestController::class,'print'])->name('changeControlRequests.print');
-
-
+    
+    
     Route::resource('/ContinuousImprovementSOP',ContinuousImprovementSOPController::class);
+    Route::resource('/ContinuousSOPArchives',ContinuousImprovementSOPArchiveControlle::class);
     Route::get('/ContinuousImprovementSOP/print/{id}',[ContinuousImprovementSOPController::class,'print'])->name('ContinuousImprovementSOP.print');
 
     Route::resource('/contractStats',ContractStatsController::class);

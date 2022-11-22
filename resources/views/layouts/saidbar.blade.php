@@ -98,7 +98,7 @@
                         </a>
                     </li>
 
-                     <li class="sidebar-item">
+                    <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
                             <span class="hide-menu">الأرشيف</span>
@@ -212,7 +212,7 @@
                         </a>
                     </li>
 
-                     <li class="sidebar-item">
+                    <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
                             <span class="hide-menu">الأرشيف</span>
@@ -268,7 +268,7 @@
                         </a>
                     </li>
 
-                     <li class="sidebar-item">
+                    <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
                             <span class="hide-menu">الأرشيف</span>
@@ -354,7 +354,7 @@
                         </a>
                     </li>
 
-                     <li class="sidebar-item">
+                    <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
                             <span class="hide-menu">الأرشيف</span>
@@ -422,7 +422,22 @@
                             </span>
                         </a>
                     </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="mdi mdi-archive"></i>
+                            <span class="hide-menu">الأرشيف</span>
 
+                        </a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item">
+                                <a href="{{ route('corrctiveArchives.index') }}" class="sidebar-link">
+                                    <i class="mdi mdi-archive"></i>
+                                    <span class="hide-menu">أرشيف</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
 
                 </ul>
             </li>
@@ -471,7 +486,22 @@
                             </span>
                         </a>
                     </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="mdi mdi-archive"></i>
+                            <span class="hide-menu">الأرشيف</span>
 
+                        </a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item">
+                                <a href="{{ route('understandingArchives.index') }}" class="sidebar-link">
+                                    <i class="mdi mdi-archive"></i>
+                                    <span class="hide-menu">أرشيف</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
@@ -531,7 +561,22 @@
                             </span>
                         </a>
                     </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="mdi mdi-archive"></i>
+                            <span class="hide-menu">الأرشيف</span>
 
+                        </a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item">
+                                <a href="{{ route('complaintsWorkSOPArchives.index') }}" class="sidebar-link">
+                                    <i class="mdi mdi-archive"></i>
+                                    <span class="hide-menu">أرشيف</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
@@ -553,6 +598,22 @@
                             <i class="mdi mdi-adjust"></i>
                             <span class="hide-menu" style='font-size:12px'> نموذج طلب التحكم في التغيير (CCR)</span>
                         </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="mdi mdi-archive"></i>
+                            <span class="hide-menu">الأرشيف</span>
+
+                        </a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item">
+                                <a href="{{ route('changeControlSOPArchives.index') }}" class="sidebar-link">
+                                    <i class="mdi mdi-archive"></i>
+                                    <span class="hide-menu">أرشيف</span>
+                                </a>
+                            </li>
+
+                        </ul>
                     </li>
                 </ul>
             </li>
@@ -606,9 +667,23 @@
                             <span class="hide-menu"> سجل تحليل لشكاوي العملاء</span>
                         </a>
                     </li>
-                    <br>
-                    <br>
-                    <br>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="mdi mdi-archive"></i>
+                            <span class="hide-menu">الأرشيف</span>
+
+                        </a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item">
+                                <a href="{{ route('ContinuousSOPArchives.index') }}" class="sidebar-link">
+                                    <i class="mdi mdi-archive"></i>
+                                    <span class="hide-menu">أرشيف</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    
                 </ul>
             </li>
             <br>
