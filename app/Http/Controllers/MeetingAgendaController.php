@@ -146,7 +146,7 @@ class MeetingAgendaController extends Controller
     {
        $meetingAgenda=MeetingAgenda::with('attendance','topic')->find($id);
        $pdf = PDF::loadView('meetingAgenda.print', compact('meetingAgenda'));
-       return $pdf->download('meetingAgenda.pdf');  
+       return $pdf->download('meetingAgenda.docs');  
     }
 
     /**

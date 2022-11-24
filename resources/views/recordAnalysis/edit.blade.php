@@ -3,22 +3,32 @@
 @section('content')
 
 
-    <div class="card">
-<div class="card-body">
-        <h3 style="margin-top:85px;">سجل تحليل لشكاوي العملاء</h3>
-        <hr>
-        <form action="{{ route('recordAnalysis.update',$recordAnalysis->id)}}" method="post" enctype="multipart/form-data" id="fo1">
+   
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
+<div class="card" style='margin:auto;'>
+    <div class="card-body row" style='margin:auto;margin-top:80px'>
+
+        <form action="{{ route('recordAnalysis.update',$recordAnalysis->id)}}" class='col-md-6' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             @method('PUT') 
                   {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
                 <h2> سجل تحليل لشكاوي العملاء</h2>
                 <hr class="w-100">
             </div>
-            <div id="mainDiv" style=" margin-right:500px;">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
-                <img src="{{ asset($recordAnalysis->logo) }}" height=180px width=210px; />
-                @if ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('Employee'))
+            <div class='row mt-4 mb-3 '>
+                <label class="form-label col-md-3 ">CO LOGO</label>
+              
+                    @if ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('Employee'))
                 <input type="file" id="img" name="logo" accept="image/*">
             @endif
 
@@ -30,6 +40,8 @@
                 ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                 ($recordAnalysis->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                 <input type="file" id="img" name="logo" accept="image/*">
+                <img src="{{ asset($recordAnalysis->logo) }}" height=100px width=100px; />
+          
             @endif
             </div>
             <div class="form-group row ">
@@ -49,7 +61,7 @@
             <div class="form-group row w-100 text-right" style="text-align:center;">
                 <div style="overflow-x:auto;">
                     <table class="table">
-                        <tr style="background-color:rgb(236, 249, 156); text-align:center;">
+                        <tr style="background-color:#001635;color:white; text-align:center;">
                             @if ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('Employee'))
                             <th scope="col" rowspan="3">م</th>
                         @endif
@@ -76,7 +88,7 @@
                             <th style="width:90 ;" scope="col" colspan="3">5/6 </th>
                             <th style="width:100;" scope="col" rowspan="3">النسبة المئوية</th>
                         </tr>
-                        <tr style="background-color:rgb(236, 249, 156); text-align:center;">
+                        <tr style="background-color:#001635;color:white; text-align:center;">
                             <th scope="col" colspan="1"> نعم</th>
                             <th scope="col" colspan="1">لا</th>
                             <th scope="col" colspan="1"> نعم</th>
@@ -104,7 +116,7 @@
                             <th scope="col" colspan="1"> ج</th>
                             <th scope="col" colspan="1">م</th>
                         </tr>
-                        <tr style="background-color:rgb(236, 249, 156); text-align:center;">
+                        <tr style="background-color:#001635;color:white; text-align:center;">
                             <th scope="col" rowspan="1"> 10</th>
                             <th scope="col" rowspan="1">صفر</th>
                             <th scope="col" rowspan="1"> 10</th>
@@ -324,19 +336,22 @@
                 <tr>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :"  value="{{ $recordAnalysis->company_name }}">
+                      <label>اسم الشركة</label>
+                        <input class="form-control" type="text" name="company_name"   value="{{ $recordAnalysis->company_name }}">
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="date2"  value="{{ $recordAnalysis->date2 }}" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                      <label>تاريخ الاصدار</label>
+                        <input class="form-control" type="text" name="date2"  value="{{ $recordAnalysis->date2 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
             
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <input class="form-control" type="text" name="date3"  value="{{ $recordAnalysis->date3 }}" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                        <label>تاريخ  التعديل</label>
+                            <input class="form-control" type="text" name="date3"  value="{{ $recordAnalysis->date3 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                           </div>
             
                     </th>
@@ -379,11 +394,11 @@
     @elseif(($recordAnalysis->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
         ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
         ($recordAnalysis->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-        <div class="form-group">
-            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                </i></button>
-        </div>
+        <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
+                class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    </div>
     @endif
         </form>
     </div>
@@ -450,16 +465,15 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+            
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+          
         }
 
         #mainDiv {

@@ -18,7 +18,7 @@
     <div class="card-body row" style='margin:auto;margin-top:80px'>
 
        
-        <form action="{{route('contractStats.store')}}" method="post" class='col-md-12
+        <form action="{{route('contractStats.store')}}" method="post" class='col-md-9
         ' style='margin:auto' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">

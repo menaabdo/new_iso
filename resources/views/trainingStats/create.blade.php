@@ -14,12 +14,12 @@
     }
 
 </style>
-<div class="card">
-    <div class="card-body row" style='margin:auto;margin-top:80px'>
+<div class="card" style='margin:auto;'>
+    <div class="card-body " style='margin:auto;margin-top:80px;width:80%'>
 
        
 
-        <form action="{{ route('trainingStats.store') }}" method="post" class='col-md-10' style='margin:auto' enctype="multipart/form-data" id="fo1">
+        <form action="{{ route('trainingStats.store') }}" method="post" class='' style='' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
                 <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'> إحصائيات التدريب</h2>
@@ -116,19 +116,24 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
+                            <label>اسم الشركة</label>
+                                <input class="form-control" type="text" name="company_name" >
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <label>تاريخ الاصدار</label>
+                              
+                                <input class="form-control" type="text" name="date2"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <label>تاريخ التعديل</label>
+                              
+                                <input class="form-control" type="text" name="date3"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
@@ -161,6 +166,7 @@
                 <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
                     </div>  
         </form>
+    </div>
     </div>
 
     <script>
@@ -209,16 +215,16 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+           
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+            
+            
         }
 
         #mainDiv {

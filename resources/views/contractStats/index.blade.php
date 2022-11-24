@@ -7,20 +7,14 @@
     
     </style>
 <section class="content" style='margin:auto;'>
-        <div class="card" style='margin:auto;'>
+        <div class="card" style='margin:auto'>
 <div class="card-body row" style='margin:auto;'>  
-          <h3 style='text-shadow: 1px 1px 1px #3ed3ea;'>إحصائيات التعاقد</h3>
+          <h3 style='text-shadow: 1px 1px 1px #3ed3ea;;margin-top:40px'>إحصائيات التعاقد</h3>
           <hr>
           </div>
                 <div class="row" style='margin:auto;width:90%'>
 
            
-<<<<<<< HEAD
-              <a  href="{{ route('contractStats.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
-          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
-=======
->>>>>>> 1fe736c (new updates)
            
               <a  href="{{ route('contractStats.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
               <button class='shadow-lg btn  btn-light' style='color:  white; 

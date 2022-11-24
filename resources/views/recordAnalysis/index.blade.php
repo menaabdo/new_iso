@@ -8,15 +8,18 @@
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     }
 </style>
-    <section class="content">
-        <div class="card">
-<div class="card-body">
-          <h3 style="margin-top:85px;">سجل تحليل لشكاوي العملاء</h3>
+<section class="content" style='margin:auto;'>
+        <div class="card" style='margin:auto'>
+<div class="card-body row" style='margin:auto;'>  
+    
+          <h3 style="text-shadow: 1px 1px 1px #3ed3ea;;margin-top:80px;">سجل تحليل لشكاوي العملاء</h3>
           <hr>
-          <div class="row" >
+          </div>
+                <div class="row" style='margin:auto;width:90%'>
+
            
               <a  href="{{ route('recordAnalysis.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
-          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+              <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
            
             <div class="col-12">
@@ -27,7 +30,8 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped" >
-                    <thead>
+                    <thead style='color:  white; 
+    background-color: #001635;text-align:center'>
                     <tr>
                       <th style=" font-size:20px ">Logo</th>
                       <th style=" font-size:20px ">Status</th>
@@ -36,7 +40,7 @@
                     </tr>
                     </thead>
         
-                    <tbody class="datatable-body ">
+                    <tbody class="datatable-body text-center">
                       @foreach ($all_recordAnalysis as $recordAnalysis)
                           <tr class="datatable-row datatable-row-even">
                               <td class="datatable-cell" style="font-size:15px "><span><img src="{{asset($recordAnalysis->logo)}}" alt="Image" width="50px"></span></td>

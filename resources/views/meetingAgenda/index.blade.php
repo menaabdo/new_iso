@@ -11,18 +11,20 @@
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     }
 </style>
-<section class="content" style='margin:auto;'>
+<section class="content" style="margin:auto;">
+
         <div class="card" style='margin:auto;'>
-<div class="card-body row" style='margin:auto;'>      
+<div class="card-body row" style="margin:auto;">      
 <h3 style="margin-top:85px;">أجندة إجتماع مراجعة الإدارة</h3>
           <hr>
           </div>
-                <div class="row" style='margin:auto;width:90%'>
+                <div class="row" style='margin:auto;width:90%;'>
 
            
               <a  href="{{ route('meetingAgenda.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
+    
        
             <div class="col-12">
               <div class="card">
@@ -30,7 +32,11 @@
               <div class="card">
 <div class="card-body">
                 <!-- /.card-header -->
-                <div class="card-body">
+                <div class="card-body" style="" >
+         
+                  
+         
+         
                   <table id="example1" class="table shadow-lg table-striped" >
                     <thead>
                     <tr>

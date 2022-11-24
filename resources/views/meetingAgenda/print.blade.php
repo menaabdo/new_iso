@@ -2,16 +2,18 @@
 
 @section('content')
 
-    <div class="card">
+    <div class="card" >
 
 
-            <div class="container p-4">
-                <div style="" class="w-100 text-center my-4">
-                    <h2>أجندة إجتماع مراجعة الإدارة</h2>
+            <div class="container p-4" >
+                       <div style="" class="w-100 text-center my-4">
+                    <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>أجندة إجتماع مراجعة الإدارة</h2>
                     <hr class="w-100">
                 </div>
 
-                <div class="form-group row w-10">
+                <div class="form-group row w-10" style=" background-image: url('../../image/bg.jpeg');
+  background-repeat: no-repeat; background-size: cover;" >
+         
                   
                         <label for="" class="col-2 col-form-label">رقم الاجتماع: </label>
                        {{ $meetingAgenda->meeting_num }}
@@ -28,15 +30,15 @@
                 <div class="form-group row w-100 text-right" style="text-align:center ;">
                     <table class="table">
                         <tr>
-                            <th style="background-color:rgb(227, 252, 160)">مكان الأنعقاد</th>
+                            <th style="background-color:#001635;color:white">مكان الأنعقاد</th>
                             <th>{{ $meetingAgenda->meeting_place }}</th>
-                            <th style="background-color:rgb(227, 252, 160)">مدة الاجتماع</th>
+                            <th style="background-color:#001635;color:white">مدة الاجتماع</th>
                             <th>{{ $meetingAgenda->meeting_period }}</th>
                         </tr>
                         <tr>
-                            <th style="background-color:rgb(227, 252, 160)">التوقيت</th>
+                            <th style="background-color:#001635;color:white">التوقيت</th>
                             <th>{{ $meetingAgenda->meeting_time }}</th>
-                            <th style="background-color:rgb(227, 252, 160)">مقرر الاجتماع</th>
+                            <th style="background-color:#001635;color:white">مقرر الاجتماع</th>
                             <th>{{ $meetingAgenda->meeting_schedule }}</th>
                         </tr>
                     </table>
