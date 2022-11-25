@@ -12,7 +12,7 @@
     }
 
 </style>
-<aside class="left-sidebar " style='border-radius: 10px;;margin-top:100px;border:1px solid;background:#001635 !important;height: 400px;'>
+<aside class="left-sidebar " style='border-radius: 10px;;margin-top:100px;border:1px solid;background:#001635 !important;height: 625px;'>
 
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
