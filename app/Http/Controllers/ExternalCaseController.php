@@ -103,8 +103,9 @@ class ExternalCaseController extends Controller
     public function print($id)
     {
        $externalCase=ExternalCase::find($id);
-       $pdf = PDF::loadView('externalCase.print', compact('externalCase'));
-       return $pdf->download('externalCase.pdf');  
+       return view('externalCase.print', compact('externalCase'));
+    //    $pdf = PDF::loadView('externalCase.print', compact('externalCase'));
+    //    return $pdf->download('externalCase.pdf');  
     }
 
     /**
