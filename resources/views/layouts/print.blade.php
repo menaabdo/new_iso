@@ -7,11 +7,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>
   body { font-family: DejaVu Sans, sans-serif; }
-</style>
+  </style>
 
 </head>
 
-<body>
+<body style='background-color:white'>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -34,33 +34,30 @@
         .table {
          width: 100% !important;
         }
-            <style>
+          
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
         }
         
         table,
-        th,
-        td,
-        tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+        th
+        {padding: 12px ;
+            text-shadow: 1px 1px 1px #3ed3ea;
+            /* border: 1px solid silver; */
+           
         }
     
-        #mainDiv {
+        /* #mainDiv {
             height: 150px;
             width: 50px;
             background: #ffffff;
             border: 1px solid rgb(8, 2, 2);
             text-align: center;
-            float:left;
-            display: inline-table;
-        }
-    </style>
+            float:left; } */
+
+           </style>
          
-    </style>
+    
 </body>
 
 

@@ -3,21 +3,33 @@
 @section('content')
 
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" style='border:1px solid'>
 
                 <div style="" class="w-100 text-center my-4">
-                    <h2> استمارة قضايا خارجيه</h2>
-                    <hr class="w-100">
+                    <h2 class='text-center' style='text-align:center'> 
+                    <span style='font-family:Cursive;border-bottom: 1px solid;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 4;
+}'>استمارة قضايا خارجيه</span>
+                    <img src="{{ asset($externalCase->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+                    
+                </h2>
+                  
+                   
                 </div>
                 <div>
-                    <img src="{{ asset($externalCase->logo) }}" style="float: left;" width="100px" height="50px" />
-                    
+                   
                 </div>
                 <br>
-                <div class="form-group row w-100 text-right" style="text-align:center;">
-                    <table class="table">
-                        <tr style="background-color:rgb(249, 235, 141); text-align:center;">
-                            <th>موضوع القضية</th>
+                <div class="form-group row w-100 text-right" style="text-align:center;    border-bottom: none;">
+                    <table class="table" style='border-top:none;border-bottom:none'>
+                        <tr style="background-color:#001635;padding:12px;color:white; text-align:center;">
+                        <th>موضوع القضية</th>
                             <th>التأثير</th>
                             <th>آلية المراقبة والمراجعة</th>
                         </tr>
@@ -101,12 +113,12 @@
                         </tr>
                     </table>
                 </div>
-                <hr class="w-100">
-                <table class="table">
+               
+                <table class="table" style='    padding: 10px;border:none'>
                     <thead>
                         <tr style="text-align:center;">
                             @if ($externalCase->status == 'inProgress' && Auth::user()->hasRole('Employee'))
-                                <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
+                                <th class=" w-50 text-center col-3 " style="">
                                     <div class="form-group row w-20 text-right">
                                         <label for="" class="col-3 col-form-label">مسئول الجودة </label>
                                         <div class="col-4">
@@ -126,7 +138,7 @@
                                         </div>
                                     </div>
                                 </th>
-                                <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
+                                <th class=" w-50 text-center col-3 " style="">
 
                                     <div class="form-group row w-20 text-right">
                                         <label for="" class="col-3 col-form-label">مدير الجودة</label>
@@ -138,7 +150,7 @@
                                 </th>
                             @endif
                             @if (Auth::user()->hasRole('Admin'))
-                                <th class=" text-center col-3 " style="border: 2px solid #150c0c !important;">
+                                <th class=" text-center col-3 " style="">
                                     <div class="form-group row  text-right">
                                         <label for="" class="col-3 col-form-label">مسئول الجودة </label>
                                         <div class="col-4">
@@ -148,7 +160,7 @@
                                     </div>
                                 </th>
                                 @if ($externalCase->status == 'confirmed' && Auth::user()->hasRole('Admin'))
-                                    <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
+                                    <th class=" w-50 text-center col-3 " style="">
 
                                         <div class="form-group row w-20 text-right">
                                             <label for="" class="col-3 col-form-label">مدير الجودة</label>
@@ -161,7 +173,7 @@
                                 @endif
                             @endif
                             @if (Auth::user()->hasRole('SuperAdmin'))
-                                <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
+                                <th class=" w-50 text-center col-3 " style="">
                                     <div class="form-group row w-20 text-right">
                                         <label for="" class="col-3 col-form-label">مسئول الجودة </label>
                                         <div class="col-4">
@@ -170,7 +182,7 @@
                                         </div>
                                     </div>
                                 </th>
-                                <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
+                                <th class=" w-50 text-center col-3 " style="">
 
                                     <div class="form-group row w-20 text-right">
                                         <label for="" class="col-3 col-form-label">مدير الجودة</label>
@@ -185,8 +197,8 @@
                         </tr>
                     </thead>
                 </table>
-                <hr class="w-100">
-                <table class="table">
+              
+                <table class="table" style="text-align:center;    border-bottom: none;border-top:none;padding:12px">
                     <thead>
                         <tr>
                             <th>
@@ -237,16 +249,18 @@
         <style>
             .table thead th {
                 vertical-align: bottom;
-                border-bottom: 2px solid black;
+              
             }
 
             table,
             th,
             td,
             tr {
-                border: 1px solid black;
-                border-bottom: 2px solid black;
-                border-top: 2px solid black;
+                border: 1px solid silver;
+                border-top:none;
+                
+              
+               
             }
 
             #mainDiv {
@@ -258,6 +272,13 @@
                 float: left;
                 display: inline-table;
             }
+            table, th {padding:0;
+             border-top:1px solid silver;}
+            input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        border: 1px solid white;
+    }
         </style>
 
         <script>

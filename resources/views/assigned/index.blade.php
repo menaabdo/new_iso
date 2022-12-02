@@ -3,21 +3,40 @@
 @section('content')
 <style>
     .shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+      box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
     #me:hover{
         transform: scale(1.1);
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     }
+    body:before{
+  content: 'ISO';
+  position: fixed;
+  background: url('../../bg.jpeg') ;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  
+  color: #0d745e;
+  font-size: 100px;
+  font-weight: 500px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  opacity: 0.2;
+  transform: rotate(-45deg);
+}
+
 </style>
+<section class="content row " style='margin:auto;'>
 
-<section class="content row" style='margin:auto;'>
-
-<div class="card" style='margin:auto;width:100%'>
+<div class="card " style='margin:auto;width:100%'>
 <div class="card-body row" style='margin:auto;'>
            <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">أمر تكليف لإجراء مراجعة داخلية لنظام الجودة</h3>
             <hr>
   </div>
-          <div class="row" style='margin:auto;width:90%'>
+          <div class="row " style='margin:auto;width:90% '>
            
               <a  href="{{ route('assigned.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
@@ -26,11 +45,11 @@
             <div class="col-12">
               <div class="card">
 <div class="card-body">
-              <div class="card">
-<div class="card-body">
+              <div class="card" >
+<div class="card-body" >
                 <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="example1" class="table shadow-lg table-striped" >
+                <div class="card-body " >
+                  <table id="example1" class="table shadow-lg table-striped " >
                     <thead>
                     <tr>
                       <th style=" text-align:center ">Logo</th>
@@ -83,6 +102,7 @@
         </div>
         <!-- /.container-fluid -->
       </section>
+
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script>
           function confirmDelete(item_id) {
