@@ -181,8 +181,9 @@ $data['image_illustration']=$image_path2;
     public function print($id)
     {
      $iso=ISO::with('definition','module')->find($id);
-       $pdf = PDF::loadView('riskISO.print', compact('iso'));
-       return $pdf->download('riskISO.pdf');  
+     return view('riskISO.print', compact('iso'));
+      //  $pdf = PDF::loadView('riskISO.print', compact('iso'));
+      //  return $pdf->download('riskISO.pdf');  
     }
 
     /**

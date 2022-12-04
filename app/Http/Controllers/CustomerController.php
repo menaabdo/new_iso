@@ -90,8 +90,10 @@ class CustomerController extends Controller
       public function print($id)
     {
         $customer=Customer::with('customer')->find($id);
-       $pdf = PDF::loadView('customers.print', compact('customer'));
-       return $pdf->download('customers.pdf');  
+        return view('customers.print',compact('customer'));
+
+    //    $pdf = PDF::loadView('customers.print', compact('customer'));
+    //    return $pdf->download('customers.pdf');  
     }
 
     /**

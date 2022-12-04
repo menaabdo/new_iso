@@ -179,8 +179,10 @@ class MeetingAgendaSOPController extends Controller
       public function print($id)
     {
       $iso=ISO::with('definition','module')->find($id);
-       $pdf = PDF::loadView('MeetingAgendaISO.print', compact('iso'));
-       return $pdf->download('MeetingAgendaISO.pdf');  
+      return view('MeetingAgendaISO.print',compact('iso'));
+
+      //  $pdf = PDF::loadView('MeetingAgendaISO.print', compact('iso'));
+      //  return $pdf->download('MeetingAgendaISO.pdf');  
     }
 
     /**

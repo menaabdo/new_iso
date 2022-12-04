@@ -58,8 +58,8 @@
                                                                         </a>
                                                                         <a href="{{ route('listDocument.print', $listDocument->id) }}"
                                                                             class="btn btn-lg btn-clean
-                                                                            btn-icon mr-2"
-                                                                            title="@lang('general.print')">
+                                                                            btn-icon mr-2 test"
+                                                                            title="@lang('general.print')" target="_blank">
                                                                             <i class="fa fa-print"></i>
                                                                         </a>
                                                                         @csrf
@@ -87,8 +87,8 @@
                                                                         </a>
                                                                         <a href="{{ route('listDocument.print', $listDocument->id) }}"
                                                                             class="btn btn-lg btn-clean
-                                                                            btn-icon mr-2"
-                                                                            title="@lang('general.print')">
+                                                                            btn-icon mr-2 test"
+                                                                            title="@lang('general.print')" target="_blank">
                                                                             <i class="fa fa-print"></i>
                                                                         </a>
                                                                         @csrf
@@ -120,8 +120,8 @@
                                                                         </a>
                                                                         <a href="{{ route('listDocument.print', $listDocument->id) }}"
                                                                             class="btn btn-lg btn-clean
-                                                                            btn-icon mr-2"
-                                                                            title="@lang('general.print')">
+                                                                            btn-icon mr-2  test"
+                                                                            title="@lang('general.print')" target="_blank">
                                                                             <i class="fa fa-print"></i>
                                                                         </a>
                                                                         @csrf
@@ -175,5 +175,12 @@
                 }
             });
         }
+    </script>
+      <script>
+     $(".test").on('click', function(e) {
+          window.open(''.e.target.href.'', "_blank");
+   
+  });
+      
     </script>
 @endsection

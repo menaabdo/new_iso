@@ -8,7 +8,7 @@
                 <hr class="w-100">
             </div>
             <div>
-                <img src="{{ public_path($changeControlRequest->logo) }}" style="float: left;" width="100px"
+                <img src="{{ asset($changeControlRequest->logo) }}" style="float: left;" width="100px"
                     height="50px" />
 
             </div>
@@ -599,7 +599,9 @@
 
 
     </div>
-
+<script>
+  window.addEventListener("load", window.print());
+</script>
     <script>
 
 

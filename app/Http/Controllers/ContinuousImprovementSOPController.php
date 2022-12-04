@@ -103,8 +103,10 @@ $image2 = $request->file('image_illustration');
     public function print($id)
     {
       $iso=ISO::with('definition','module')->find($id);
-       $pdf = PDF::loadView('ContinuousImprovementSOP.print', compact('iso'));
-       return $pdf->download('ContinuousImprovementSOP.pdf');  
+      return view('ContinuousImprovementSOP.print',compact('iso'));
+
+      //  $pdf = PDF::loadView('ContinuousImprovementSOP.print', compact('iso'));
+      //  return $pdf->download('ContinuousImprovementSOP.pdf');  
     }
 
   /**

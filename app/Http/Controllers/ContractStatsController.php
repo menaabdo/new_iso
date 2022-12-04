@@ -89,8 +89,10 @@ class ContractStatsController extends Controller
     public function print($id)
     {
        $contractStats=ContractStats::with('contractStats')->find($id);
-       $pdf = PDF::loadView('contractStats.print', compact('contractStats'));
-       return $pdf->download('contractStats.pdf');  
+       return view('contractStats.print',compact('contractStats'));
+
+    //    $pdf = PDF::loadView('contractStats.print', compact('contractStats'));
+    //    return $pdf->download('contractStats.pdf');  
     }
 
     /**

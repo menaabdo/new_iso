@@ -11,7 +11,7 @@
             </div>
             <br><br>
             <div>
-              <img src="{{ public_path($reportNonConformanceCases->logo) }}" style="float: left;" width="100px" height="50px" />
+              <img src="{{ asset($reportNonConformanceCases->logo) }}" style="float: left;" width="100px" height="50px" />
              
           </div>
           <br><br>
@@ -171,4 +171,7 @@
                 display: inline-table;
             }
         </style>
+        <script>
+  window.addEventListener("load", window.print());
+</script>
 @stop

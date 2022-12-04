@@ -145,8 +145,10 @@ class MeetingAgendaController extends Controller
     public function print($id)
     {
        $meetingAgenda=MeetingAgenda::with('attendance','topic')->find($id);
-       $pdf = PDF::loadView('meetingAgenda.print', compact('meetingAgenda'));
-       return $pdf->download('meetingAgenda.docs');  
+       return view('meetingAgenda.print',compact('meetingAgenda'));
+
+      //  $pdf = PDF::loadView('meetingAgenda.print', compact('meetingAgenda'));
+      //  return $pdf->download('meetingAgenda.docs');  
     }
 
     /**

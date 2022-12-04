@@ -137,8 +137,10 @@ class RecordActionController extends Controller
       public function print($id)
     {
         $recordAction=recordAction::with('recordAction')->find($id);
-       $pdf = PDF::loadView('recordAction.print', compact('recordAction'));
-       return $pdf->download('recordAction.pdf');  
+        return view('recordAction.print',compact('recordAction'));
+
+      //  $pdf = PDF::loadView('recordAction.print', compact('recordAction'));
+      //  return $pdf->download('recordAction.pdf');  
     }
     /**
      * Update the specified resource in storage.

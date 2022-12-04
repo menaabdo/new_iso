@@ -136,8 +136,10 @@ class NonConformanceReportController extends Controller
     public function print($id)
     {
      $nonConformanceReport=NonConformanceReport::with('nonConformanceReport')->find($id);
-       $pdf = PDF::loadView('nonConformanceReport.print', compact('nonConformanceReport'));
-       return $pdf->download('nonConformanceReport.pdf');  
+     return view('nonConformanceReport.print',compact('nonConformanceReport'));
+
+    //    $pdf = PDF::loadView('nonConformanceReport.print', compact('nonConformanceReport'));
+    //    return $pdf->download('nonConformanceReport.pdf');  
     }
     /**
      * Update the specified resource in storage.

@@ -80,8 +80,9 @@ class RiskController extends Controller
     public function print($id)
     {
       $risk=Risk::with('risk')->find($id);
-       $pdf = PDF::loadView('risk.print', compact('risk'));
-       return $pdf->download('risk.pdf');  
+      return view('risk.print',compact('risk'));
+      //  $pdf = PDF::loadView('risk.print', compact('risk'));
+      //  return $pdf->download('risk.pdf');  
     }
 
     /**

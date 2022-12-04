@@ -111,8 +111,10 @@ class InternalAuditController extends Controller
     public function print($id)
     {
        $internalAudit=InternalAudit::with('internalAudit')->find($id);
-       $pdf = PDF::loadView('internalAudit.print', compact('internalAudit'));
-       return $pdf->download('internalAudit.pdf');  
+       return view('internalAudit.print',compact('internalAudit'));
+
+      //  $pdf = PDF::loadView('internalAudit.print', compact('internalAudit'));
+      //  return $pdf->download('internalAudit.pdf');  
     }
 
     /**

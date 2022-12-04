@@ -2,7 +2,7 @@
 @section('content')
 <div class="card">
     <div class="container p-4">
-    <img src="{{ public_path($invitationMeeting->logo) }}" style="float: left;" width="100px" height="50px" />
+    <img src="{{ asset($invitationMeeting->logo) }}" style="float: left;" width="100px" height="50px" />
     
         <div style="" class="w-100 text-center my-4" style='text-align:center'>
             <h2 style='box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;padding:10px'>دعوة لإجتماع مراجعة الإدارة</h2>
@@ -235,7 +235,9 @@
     }
 
 </style>
-
+<script>
+  window.addEventListener("load", window.print());
+</script>
 
 
 

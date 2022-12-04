@@ -247,5 +247,7 @@
 
             </div>
 
-
+<script>
+  window.addEventListener("load", window.print());
+</script>
         @stop

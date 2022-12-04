@@ -179,8 +179,10 @@ class InteriorSOPController extends Controller
     public function print($id)
     {
        $iso=ISO::with('definition','module')->find($id);
-       $pdf = PDF::loadView('interiorISO.print', compact('iso'));
-       return $pdf->download('interiorISO.pdf');  
+       return view('interiorISO.print',compact('iso'));
+
+      //  $pdf = PDF::loadView('interiorISO.print', compact('iso'));
+      //  return $pdf->download('interiorISO.pdf');  
     }
 
     /**

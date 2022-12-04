@@ -133,8 +133,10 @@ class RecordCanceledDocumentController extends Controller
     public function print($id)
     {
       $recordCanceledDocument=recordCanceledDocument::with('recordCanceledDocument')->find($id);
-       $pdf = PDF::loadView('recordCanceledDocument.print', compact('recordCanceledDocument'));
-       return $pdf->download('recordCanceledDocument.pdf');  
+      return view('recordCanceledDocument.print',compact('recordCanceledDocument'));
+
+      //  $pdf = PDF::loadView('recordCanceledDocument.print', compact('recordCanceledDocument'));
+      //  return $pdf->download('recordCanceledDocument.pdf');  
     }
 
     /**

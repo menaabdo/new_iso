@@ -90,8 +90,10 @@ class NonConformanceStatsController extends Controller
      public function print($id)
     {
      $nonConformanceStats=NonConformanceStats::with('nonConformanceStats')->find($id);
-       $pdf = PDF::loadView('nonConformanceStats.print', compact('nonConformanceStats'));
-       return $pdf->download('nonConformanceStats.pdf');  
+     return view('nonConformanceStats.print',compact('nonConformanceStats'));
+
+    //    $pdf = PDF::loadView('nonConformanceStats.print', compact('nonConformanceStats'));
+    //    return $pdf->download('nonConformanceStats.pdf');  
     }
 
     /**

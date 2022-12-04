@@ -135,8 +135,10 @@ class InterestedPartieController extends Controller
     public function print($id)
     {
        $interestedPartie=InterestedPartie::with('interestedPartie')->find($id);
-       $pdf = PDF::loadView('interestedParties.print', compact('interestedPartie'));
-       return $pdf->download('interestedParties.pdf');  
+       return view('interestedParties.print',compact('interestedPartie'));
+
+      //  $pdf = PDF::loadView('interestedParties.print', compact('interestedPartie'));
+      //  return $pdf->download('interestedParties.pdf');  
     }
 
     /**

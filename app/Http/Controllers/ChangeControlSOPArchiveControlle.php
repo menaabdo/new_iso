@@ -237,11 +237,13 @@ $image2 = $request->file('image_illustration');
     public function print($id)
     {
        $iso=ISO::with('definition','module')->find($id);
+       return view('changeControlSOPArchive.print',compact('iso'));
+
         //return view('ISO.print',compact('iso'));
       // return response()->json($data);
       //  dd($iso);
-       $pdf = PDF::loadView('ISO.print', compact('iso'));
-       return $pdf->download('iso.pdf');
+      //  $pdf = PDF::loadView('ISO.print', compact('iso'));
+      //  return $pdf->download('iso.pdf');
       //  return $pdf->stream('iso.pdf');
       
     }

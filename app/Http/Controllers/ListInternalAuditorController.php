@@ -111,8 +111,10 @@ class ListInternalAuditorController extends Controller
     public function print($id)
     {
        $listInternalAuditor=ListInternalAuditor::with('list')->find($id);
-       $pdf = PDF::loadView('listInternalAuditor.print', compact('listInternalAuditor'));
-       return $pdf->download('listInternalAuditor.pdf');  
+       return view('listInternalAuditor.print',compact('listInternalAuditor'));
+
+      //  $pdf = PDF::loadView('listInternalAuditor.print', compact('listInternalAuditor'));
+      //  return $pdf->download('listInternalAuditor.pdf');  
     }
 
     /**

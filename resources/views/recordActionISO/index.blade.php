@@ -102,11 +102,11 @@
                                               <i class="fa fa-edit"></i>
                                           </a>
 
-                                          {{-- <a href="{{ route('sop.print', $iso->id) }}"
+                                          <a href="{{ route('recordActionSop.print', $iso->id) }}"
                                              data-id="{{ $iso->id }}"
-                                            class="btn btn-lg btn-icon">
+                                            class="btn btn-lg btn-icon test" target="_blank">
                                             <i class="fa fa-print"></i>
-                                        </a> --}}
+                                        </a>
                                          
                                           {{-- <a href="#" data-id="{{ $iso->id }}"
                                             class="btn btn-lg btn-icon print">
@@ -166,5 +166,11 @@
             });
         }
     </script>
-
+  <script>
+     $(".test").on('click', function(e) {
+          window.open(''.e.target.href.'', "_blank");
+   
+  });
+      
+    </script>
 @endsection

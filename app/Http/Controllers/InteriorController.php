@@ -110,8 +110,10 @@ class InteriorController extends Controller
       public function print($id)
     {
        $interior=Interior::with('interior')->find($id);
-       $pdf = PDF::loadView('interior.print', compact('interior'));
-       return $pdf->download('interior.pdf');  
+       return view('interior.print',compact('interior'));
+
+      //  $pdf = PDF::loadView('interior.print', compact('interior'));
+      //  return $pdf->download('interior.pdf');  
     }
 
     /**

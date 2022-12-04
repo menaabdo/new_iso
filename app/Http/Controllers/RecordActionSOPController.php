@@ -181,8 +181,10 @@ class RecordActionSOPController extends Controller
     public function print($id)
     {
        $iso=ISO::with('definition','module')->find($id);
-       $pdf = PDF::loadView('recordActionISO.print', compact('iso'));
-       return $pdf->download('recordActionISO.pdf');  
+       return view('recordActionISO.print',compact('iso'));
+
+      //  $pdf = PDF::loadView('recordActionISO.print', compact('iso'));
+      //  return $pdf->download('recordActionISO.pdf');  
     }
 
     /**

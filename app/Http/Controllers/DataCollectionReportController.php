@@ -102,8 +102,10 @@ class DataCollectionReportController extends Controller
     public function print($id)
     {
         $dataCollectionReport=DataCollectionReport::find($id);
-       $pdf = PDF::loadView('dataCollectionReports.print', compact('dataCollectionReport'));
-       return $pdf->download('dataCollectionReports.pdf');  
+        return view('dataCollectionReports.print',compact('dataCollectionReport'));
+
+    //    $pdf = PDF::loadView('dataCollectionReports.print', compact('dataCollectionReport'));
+    //    return $pdf->download('dataCollectionReports.pdf');  
     }
 
     /**

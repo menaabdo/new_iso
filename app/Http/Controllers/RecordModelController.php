@@ -132,8 +132,10 @@ class RecordModelController extends Controller
     public function print($id)
     {
       $recordModel=recordModel::with('recordModel')->find($id);
-       $pdf = PDF::loadView('recordModel.print', compact('recordModel'));
-       return $pdf->download('recordModel.pdf');  
+      return view('recordModel.print',compact('recordModel'));
+
+      //  $pdf = PDF::loadView('recordModel.print', compact('recordModel'));
+      //  return $pdf->download('recordModel.pdf');  
     }
 
     /**

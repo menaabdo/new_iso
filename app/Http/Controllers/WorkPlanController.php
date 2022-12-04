@@ -111,8 +111,10 @@ class WorkPlanController extends Controller
     public function print($id)
     {
        $work_plan=workPlan::with('plan')->find($id);
-       $pdf = PDF::loadView('work_plan.print', compact('work_plan'));
-       return $pdf->download('work_plan.pdf');  
+       return view('work_plan.print',compact('work_plan'));
+
+      //  $pdf = PDF::loadView('work_plan.print', compact('work_plan'));
+      //  return $pdf->download('work_plan.pdf');  
     }
 
     /**

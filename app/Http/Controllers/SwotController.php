@@ -75,8 +75,10 @@ class SwotController extends Controller
     public function print($id)
     {
        $swot=Swot::find($id);
-       $pdf = PDF::loadView('swot.print', compact('swot'));
-       return $pdf->download('swot.pdf');  
+       return view('swot.print',compact('swot'));
+
+    //    $pdf = PDF::loadView('swot.print', compact('swot'));
+    //    return $pdf->download('swot.pdf');  
     }
 
     /**

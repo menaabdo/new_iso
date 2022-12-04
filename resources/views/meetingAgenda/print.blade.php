@@ -24,7 +24,7 @@
                     <label for="" class="col-2 col-form-label text-left"> نوع الإجتماع:</label>
                   {{ $meetingAgenda->meeting_kind }}
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="{{ public_path($meetingAgenda->logo) }}" width="100px" height="50px" />
+                    <img src="{{ asset($meetingAgenda->logo) }}" width="100px" height="50px" />
                 </div>
                 <hr width="1300px;" size="20" color="black">
                 <div class="form-group row w-100 text-right" style="text-align:center ;">
@@ -290,4 +290,7 @@
                 display: inline-table;
             }
         </style>
+        <script>
+  window.addEventListener("load", window.print());
+</script>
     @stop

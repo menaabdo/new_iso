@@ -11,7 +11,7 @@
             <hr width="1300px;" size="20" color="black">
         </div>
         <div>
-            <img src="{{ public_path($Non_conformities->logo) }}" style="float: left;" width="100px" height="50px" />
+            <img src="{{ asset($Non_conformities->logo) }}" style="float: left;" width="100px" height="50px" />
         </div>
         <div class="container-fluid p-4">
             <div class=" form-group row w-200 text-right">
@@ -310,4 +310,7 @@
                 display: inline-table;
             }
         </style>
+        <script>
+  window.addEventListener("load", window.print());
+</script>
         @stop

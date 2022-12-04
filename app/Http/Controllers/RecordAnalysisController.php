@@ -136,8 +136,10 @@ class RecordAnalysisController extends Controller
      public function print($id)
     {
       $recordAnalysis=RecordAnalysis::with('recordAnalysis')->find($id);
-       $pdf = PDF::loadView('recordAnalysis.print', compact('recordAnalysis'));
-       return $pdf->download('recordAnalysis.pdf');  
+      return view('recordAnalysis.print',compact('recordAnalysis'));
+
+      //  $pdf = PDF::loadView('recordAnalysis.print', compact('recordAnalysis'));
+      //  return $pdf->download('recordAnalysis.pdf');  
     }
 
     /**

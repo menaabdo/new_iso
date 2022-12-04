@@ -136,8 +136,10 @@ class InvitationMeetingController extends Controller
     public function print($id)
     {
        $invitationMeeting=InvitationMeeting::with('invetationMeeting')->find($id);
-       $pdf = PDF::loadView('invitationMeeting.print', compact('invitationMeeting'));
-       return $pdf->download('invitationMeeting.pdf');  
+       return view('invitationMeeting.print',compact('invitationMeeting'));
+
+      //  $pdf = PDF::loadView('invitationMeeting.print', compact('invitationMeeting'));
+      //  return $pdf->download('invitationMeeting.pdf');  
     }
 
     /**

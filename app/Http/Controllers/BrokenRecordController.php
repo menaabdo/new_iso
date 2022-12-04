@@ -136,8 +136,10 @@ class BrokenRecordController extends Controller
     {
      
       $brokenRecord=BrokenRecord::with('brokenRecord')->find($id);
-       $pdf = PDF::loadView('brokenRecord.print', compact('brokenRecord'));
-       return $pdf->download('brokenRecord.pdf');  
+      return view('brokenRecord.print',compact('brokenRecord'));
+
+      //  $pdf = PDF::loadView('brokenRecord.print', compact('brokenRecord'));
+      //  return $pdf->download('brokenRecord.pdf');  
     }
 
     /**

@@ -136,8 +136,10 @@ class FollowLogController extends Controller
      public function print($id)
     {
        $followLog=FollowLog::with('follow')->find($id);
-       $pdf = PDF::loadView('followLog.print', compact('followLog'));
-       return $pdf->download('followLog.pdf');  
+       return view('followLog.print',compact('followLog'));
+
+      //  $pdf = PDF::loadView('followLog.print', compact('followLog'));
+      //  return $pdf->download('followLog.pdf');  
     }
 
     /**

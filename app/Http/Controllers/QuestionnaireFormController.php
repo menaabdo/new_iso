@@ -117,8 +117,10 @@ class QuestionnaireFormController extends Controller
     public function print($id)
     {
        $questionnaireForm=QuestionnaireForm::find($id);
-       $pdf = PDF::loadView('questionnaireForm.print', compact('questionnaireForm'));
-       return $pdf->download('questionnaireForm.pdf');  
+       return view('questionnaireForm.print',compact('questionnaireForm'));
+
+    //    $pdf = PDF::loadView('questionnaireForm.print', compact('questionnaireForm'));
+    //    return $pdf->download('questionnaireForm.pdf');  
     }
 
     /**

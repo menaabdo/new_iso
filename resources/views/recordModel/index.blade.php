@@ -61,7 +61,7 @@
                                 </a>
                                 <a href="{{ route('recordModel.print', $recordModel->id) }}"
                                     data-id="{{ $recordModel->id }}"
-                                   class="btn btn-lg btn-icon">
+                                   class="btn btn-lg btn-icon test" target="_blank">
                                    <i class="fa fa-print"></i>
                                </a>
                                 @csrf
@@ -87,7 +87,7 @@
                                 </a>
                                 <a href="{{ route('recordModel.print', $recordModel->id) }}"
                                     data-id="{{ $recordModel->id }}"
-                                   class="btn btn-lg btn-icon">
+                                   class="btn btn-lg btn-icon test" target="_blank">
                                    <i class="fa fa-print"></i>
                                </a>
                                 @csrf
@@ -116,7 +116,7 @@
 
                                   <a href="{{ route('recordModel.print', $recordModel->id) }}"
                                      data-id="{{ $recordModel->id }}"
-                                    class="btn btn-lg btn-icon">
+                                    class="btn btn-lg btn-icon test" target="_blank">
                                     <i class="fa fa-print"></i>
                                 </a>
                                  
@@ -178,5 +178,11 @@
           });
       }
   </script>
-
+ <script>
+     $(".test").on('click', function(e) {
+          window.open(''.e.target.href.'', "_blank");
+   
+  });
+      
+    </script>
 @endsection

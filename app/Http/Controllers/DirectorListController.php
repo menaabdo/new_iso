@@ -135,8 +135,10 @@ class DirectorListController extends Controller
     public function print($id)
     {
       $directorList=DirectorList::with('directorList')->find($id);
-       $pdf = PDF::loadView('directorList.print', compact('directorList'));
-       return $pdf->download('directorList.pdf');  
+      return view('directorList.print',compact('directorList'));
+
+      //  $pdf = PDF::loadView('directorList.print', compact('directorList'));
+      //  return $pdf->download('directorList.pdf');  
     }
 
     /**

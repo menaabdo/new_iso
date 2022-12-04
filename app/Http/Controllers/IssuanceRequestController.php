@@ -105,8 +105,10 @@ class IssuanceRequestController extends Controller
     public function print($id)
     {
        $issuanceRequest=IssuanceRequest::find($id);
-       $pdf = PDF::loadView('issuanceRequest.print', compact('issuanceRequest'));
-       return $pdf->download('issuanceRequest.pdf');  
+       return view('issuanceRequest.print',compact('issuanceRequest'));
+
+      //  $pdf = PDF::loadView('issuanceRequest.print', compact('issuanceRequest'));
+      //  return $pdf->download('issuanceRequest.pdf');  
     }
     /**
      * Update the specified resource in storage.

@@ -9,7 +9,7 @@
             <hr class="w-100">
         </div>
         <div>
-            <img src="{{ public_path($questionnaireForm->logo) }}" style="float: left;" width="100px" height="50px" />
+            <img src="{{ asset($questionnaireForm->logo) }}" style="float: left;" width="100px" height="50px" />
             
         </div>
         <br><br>
@@ -32,9 +32,9 @@
                 <tr style="background-color:rgb(141, 165, 202); text-align:center;">
                     <th>م</th>
                     <th>الحاله</th>
-                    <th><img src="{{ public_path('img/Capture.PNG') }}" width="60px" height="70px"></th>
-                    <th><img src="{{ public_path('img/Capture1.PNG') }}" width="60px" height="70px"></th>
-                    <th><img src="{{ public_path('img/Capture2.PNG') }}" width="60px" height="70px"></th>
+                    <th><img src="{{ asset('img/Capture.PNG') }}" width="60px" height="70px"></th>
+                    <th><img src="{{ asset('img/Capture1.PNG') }}" width="60px" height="70px"></th>
+                    <th><img src="{{ asset('img/Capture2.PNG') }}" width="60px" height="70px"></th>
                     <th>ملاحظات</th>
                 </tr>
                 <tr>
@@ -310,4 +310,7 @@ tr {
     display: inline-table;
 }
 </style>
+<script>
+  window.addEventListener("load", window.print());
+</script>
 @stop

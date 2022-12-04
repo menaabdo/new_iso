@@ -8,7 +8,7 @@
                 <h2>سجل متابعة قرارات مراجعة الإدارة العليا</h2>
                 <hr class="w-100" color="black">
             </div>
-            <img src="{{ public_path($followLog->logo) }}" style="float: left" width="100px" height="50px" />
+            <img src="{{ asset($followLog->logo) }}" style="float: left" width="100px" height="50px" />
             <div class="col-1 col-form-label">
                 <label for="" class="col-1 col-form-label">نوع الاجتماع : </label>
                 <input type="radio" name="planing" value="planned" <?php if ($followLog->planing == 'planned') {
@@ -358,4 +358,7 @@
                 display: inline-table;
             }
         </style>
+        <script>
+  window.addEventListener("load", window.print());
+</script>
     @stop

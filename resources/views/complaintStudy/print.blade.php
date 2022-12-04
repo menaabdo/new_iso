@@ -10,7 +10,7 @@
             </div>
      
             <div>
-                <img src="{{ public_path($complaintStudy->logo) }}" style="float: left;" width="100px"
+                <img src="{{ asset($complaintStudy->logo) }}" style="float: left;" width="100px"
                     height="50px" />
 
             </div>
@@ -438,4 +438,7 @@
             display: inline-table;
         }
     </style>
+    <script>
+  window.addEventListener("load", window.print());
+</script>
 @stop

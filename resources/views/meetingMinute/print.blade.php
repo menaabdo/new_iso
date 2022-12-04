@@ -7,7 +7,7 @@
               <hr class="w-100">
         </div>
         <div>
-        <img src="{{ public_path($meetingMinute->logo) }}" style="float: left;" width="100px" height="50px" />
+        <img src="{{ asset($meetingMinute->logo) }}" style="float: left;" width="100px" height="50px" />
         </div>
         <br>
         <div class=" form-group row w-200 text-center ">
@@ -375,5 +375,8 @@
         display: inline-table;
     }
 </style>
+<script>
+  window.addEventListener("load", window.print());
+</script>
 
 @stop

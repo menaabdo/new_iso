@@ -135,8 +135,10 @@ class ListDocumentController extends Controller
     public function print($id)
     {
        $listDocument=ListDocument::with('listDocument')->find($id);
-       $pdf = PDF::loadView('listDocument.print', compact('listDocument'));
-       return $pdf->download('listDocument.pdf');  
+       return view('listDocument.print',compact('listDocument'));
+
+      //  $pdf = PDF::loadView('listDocument.print', compact('listDocument'));
+      //  return $pdf->download('listDocument.pdf');  
     }
 
     /**

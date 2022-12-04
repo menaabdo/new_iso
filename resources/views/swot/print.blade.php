@@ -8,7 +8,7 @@
             </h3>
             <hr>
             <div>
-                <img src="{{ public_path($swot->logo) }}" style="float: left;" width="100px" height="50px" />
+                <img src="{{ asset($swot->logo) }}" style="float: left;" width="100px" height="50px" />
 
             </div>
             <br><br>
@@ -135,4 +135,7 @@
                 display: inline-table;
             }
         </style>
+        <script>
+  window.addEventListener("load", window.print());
+</script>
     @stop

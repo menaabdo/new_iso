@@ -109,8 +109,10 @@ class NonConformitiesController extends Controller
     public function print($id)
     {
     $Non_conformities=NonConformities::find($id);
-       $pdf = PDF::loadView('Non_conformities.print', compact('Non_conformities'));
-       return $pdf->download('Non_conformities.pdf');  
+    return view('Non_conformities.print',compact('Non_conformities'));
+
+    //    $pdf = PDF::loadView('Non_conformities.print', compact('Non_conformities'));
+    //    return $pdf->download('Non_conformities.pdf');  
     }
 
     /**

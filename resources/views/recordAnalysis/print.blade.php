@@ -10,7 +10,7 @@
                 <hr class="w-100">
             </div>
             <div>
-                <img src="{{ public_path($recordAnalysis->logo) }}" style="float: left;" width="100px"
+                <img src="{{ asset($recordAnalysis->logo) }}" style="float: left;" width="100px"
                     height="50px" />
       
             </div>
@@ -325,4 +325,7 @@
         }
 
     </style>
+    <script>
+  window.addEventListener("load", window.print());
+</script>
 @stop

@@ -75,8 +75,10 @@ class AssignedController extends Controller
      public function print($id)
     {
       $assigned=Assigned::find($id);
-       $pdf = PDF::loadView('assigned.print', compact('assigned'));
-       return $pdf->download('assigned.pdf'); 
+      return view('assigned.print',compact('assigned'));
+
+      //  $pdf = PDF::loadView('assigned.print', compact('assigned'));
+      //  return $pdf->download('assigned.pdf'); 
     }
 
     /**

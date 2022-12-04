@@ -103,8 +103,10 @@ class InternalCaseController extends Controller
     public function print($id)
     {
        $internalCases=InternalCase::find($id);
-       $pdf = PDF::loadView('internalCase.print', compact('internalCases'));
-       return $pdf->download('internalCase.pdf');  
+       return view('internalCase.print',compact('internalCases'));
+
+    //    $pdf = PDF::loadView('internalCase.print', compact('internalCases'));
+    //    return $pdf->download('internalCase.pdf');  
     }
 
     /**

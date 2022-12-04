@@ -133,8 +133,10 @@ class CorrctivePreventiveActionsController extends Controller
     public function print($id)
     {
        $corrctivePreventiveActions=CorrctivePreventiveActions::find($id);
-       $pdf = PDF::loadView('corrctivePreventiveActions.print', compact('corrctivePreventiveActions'));
-       return $pdf->download('corrctivePreventiveActions.pdf');  
+       return view('corrctivePreventiveActions.print',compact('corrctivePreventiveActions'));
+
+    //    $pdf = PDF::loadView('corrctivePreventiveActions.print', compact('corrctivePreventiveActions'));
+    //    return $pdf->download('corrctivePreventiveActions.pdf');  
     }
 
     /**

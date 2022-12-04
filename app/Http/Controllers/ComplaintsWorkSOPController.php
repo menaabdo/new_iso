@@ -180,8 +180,10 @@ $data['status']="confirmed";
     public function print($id)
     {
       $iso=ISO::with('definition','module')->find($id);
-       $pdf = PDF::loadView('complaintsWorkSOP.print', compact('iso'));
-       return $pdf->download('complaintsWorkSOP.pdf');  
+      return view('complaintsWorkSOP.print',compact('iso'));
+
+      //  $pdf = PDF::loadView('complaintsWorkSOP.print', compact('iso'));
+      //  return $pdf->download('complaintsWorkSOP.pdf');  
     }
 
     /**

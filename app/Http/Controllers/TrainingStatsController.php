@@ -89,8 +89,10 @@ class TrainingStatsController extends Controller
     public function print($id)
     {
        $trainingStats=TrainingStats::with('trainingStats')->find($id);
-       $pdf = PDF::loadView('trainingStats.print', compact('trainingStats'));
-       return $pdf->download('trainingStats.pdf');  
+       return view('trainingStats.print',compact('trainingStats'));
+
+    //    $pdf = PDF::loadView('trainingStats.print', compact('trainingStats'));
+    //    return $pdf->download('trainingStats.pdf');  
     }
 
     /**

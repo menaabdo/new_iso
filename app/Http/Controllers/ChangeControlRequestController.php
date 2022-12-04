@@ -97,8 +97,10 @@ class ChangeControlRequestController extends Controller
     public function print($id)
     {
        $changeControlRequest=ChangeControlRequest::with('affectedDocument')->find($id);
-       $pdf = PDF::loadView('changeControlRequests.print', compact('changeControlRequest'));
-       return $pdf->download('changeControlRequests.pdf');  
+       return view('changeControlRequests.print',compact('changeControlRequest'));
+
+    //    $pdf = PDF::loadView('changeControlRequests.print', compact('changeControlRequest'));
+    //    return $pdf->download('changeControlRequests.pdf');  
     }
 
     /**

@@ -8,7 +8,7 @@
   <h3 style="margin-top:85px;">إحصائيات حالات عدم المطابقة</h3>
   <hr>
   <div>
-    <img src="{{ public_path($nonConformanceStats->logo) }}" style="float: left;" width="100px"
+    <img src="{{ asset($nonConformanceStats->logo) }}" style="float: left;" width="100px"
         height="50px" />
 
 </div>
@@ -238,4 +238,7 @@ tr {
     display: inline-table;
 }
 </style>
+<script>
+  window.addEventListener("load", window.print());
+</script>
 @stop

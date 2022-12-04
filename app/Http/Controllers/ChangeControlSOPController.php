@@ -180,8 +180,10 @@ $data['status']="confirmed";
     public function print($id)
     {
       $iso=ISO::with('definition','module')->find($id);
-       $pdf = PDF::loadView('changeControlSOP.print', compact('iso'));
-       return $pdf->download('changeControlSOP.pdf');  
+      return view('changeControlSOP.print',compact('iso'));
+
+      //  $pdf = PDF::loadView('changeControlSOP.print', compact('iso'));
+      //  return $pdf->download('changeControlSOP.pdf');  
     }
 
   /**

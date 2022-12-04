@@ -9,7 +9,7 @@
         <hr class="w-100">
     </div>
     <div>
-        <img src="{{ public_path($recordModel->logo) }}" style="float: left;" width="100px" height="50px" />
+        <img src="{{ asset($recordModel->logo) }}" style="float: left;" width="100px" height="50px" />
         <label class="col-1">إدارة : </label>
       {{ $recordModel->management }}
     </div>
@@ -272,4 +272,7 @@
         display: inline-table;
     }
 </style>
+<script>
+  window.addEventListener("load", window.print());
+</script>
 @stop

@@ -29,7 +29,7 @@
 
                     </th>
                     <th>
-                    <img src="{{ public_path($iso->company_logo) }}" style="float: left" width="120px" height="40px" />
+                    <img src="{{ asset($iso->company_logo) }}" style="float: left" width="120px" height="40px" />
                     </th>
                 </tr>
             </thead>
@@ -382,7 +382,7 @@
         <section class="row" style="margin-right: 100px;">
             <h2>الرسم التوضيحي للاجراء :</h2>
             <div class="input-group my-3  mx-3">
-                <img src="{{ public_path($iso->image_illustration) }}" />  
+                <img src="{{ asset($iso->image_illustration) }}" />  
             </div>
 
 
@@ -408,7 +408,7 @@
                             <td>
                                 <div style="width: 150px; height: 80px;border: 2px solid grey;">
                                     <div style="width: 20px; height: 80px;border: 2px solid grey;float: left;">
-                                        <img src="{{ public_path('image/Screenshot 2022-09-20 220318.png') }}" style="width: 160px; height: 80px;">
+                                        <img src="{{ asset('image/Screenshot 2022-09-20 220318.png') }}" style="width: 160px; height: 80px;">
                                     </div>
                                 </div>
                             </td>
@@ -418,7 +418,7 @@
                         <tr>
                             <td>
                                 <div style="width: 120px; height: 40px;border: 2px solid grey;border-radius: 25px;">
-                                    <img src="{{ public_path('image/Screenshot 2022-09-20 220354.png') }}" style="width: 140px; height: 40px;">
+                                    <img src="{{ asset('image/Screenshot 2022-09-20 220354.png') }}" style="width: 140px; height: 40px;">
                                 </div>
                             </td>
                             <td>البدايه</td>
@@ -427,7 +427,7 @@
                         <tr>
                             <td>
                                 <div style="width: 150px; height: 90px;border: 2px solid grey;background-color: gray;">
-                                    <img src="{{ public_path('image/Screenshot 2022-09-20 220423.png') }}" style="width: 160px; height: 90px;">
+                                    <img src="{{ asset('image/Screenshot 2022-09-20 220423.png') }}" style="width: 160px; height: 90px;">
                                 </div>
                             </td>
                             <td>عمليه</td>
@@ -618,5 +618,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+<script>
+  window.addEventListener("load", window.print());
+</script>
 @stop

@@ -161,8 +161,10 @@ $data['status']="confirmed";
     public function print($id)
     {
       $complaintStudy=ComplaintStudy::with('prompt','causes','complaint')->find($id);
-       $pdf = PDF::loadView('complaintStudy.print', compact('complaintStudy'));
-       return $pdf->download('complaintStudy.pdf');  
+      return view('complaintStudy.print',compact('complaintStudy'));
+
+      //  $pdf = PDF::loadView('complaintStudy.print', compact('complaintStudy'));
+      //  return $pdf->download('complaintStudy.pdf');  
     }
 
     /**

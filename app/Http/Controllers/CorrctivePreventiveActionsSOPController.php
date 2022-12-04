@@ -181,8 +181,10 @@ $data['status']="confirmed";
     public function print($id)
     {
        $iso=ISO::with('definition','module')->find($id);
-       $pdf = PDF::loadView('corrctivePreventiveActionsSOP.print', compact('iso'));
-       return $pdf->download('corrctivePreventiveActionsSOP.pdf');  
+       return view('corrctivePreventiveActionsSOP.print',compact('iso'));
+
+      //  $pdf = PDF::loadView('corrctivePreventiveActionsSOP.print', compact('iso'));
+      //  return $pdf->download('corrctivePreventiveActionsSOP.pdf');  
     }
 
     /**

@@ -82,8 +82,10 @@ class NoticeInternalController extends Controller
     public function print($id)
     {
         $notice=NoticeInternal::find($id);
-       $pdf = PDF::loadView('noticeInternal.print', compact('notice'));
-       return $pdf->download('noticeInternal.pdf');  
+        return view('noticeInternal.print',compact('notice'));
+
+      //  $pdf = PDF::loadView('noticeInternal.print', compact('notice'));
+      //  return $pdf->download('noticeInternal.pdf');  
     }
 
     /**

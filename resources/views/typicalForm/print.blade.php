@@ -12,7 +12,7 @@
         <hr class="w-100">
     </div>
     <div>
-        <img src="{{ public_path($typicalForm->logo) }}" style="float: left;" width="100px" height="50px" />
+        <img src="{{ asset($typicalForm->logo) }}" style="float: left;" width="100px" height="50px" />
        
     </div>
     <br><br>
@@ -155,4 +155,7 @@
             display: inline-table;
         }
     </style>
+    <script>
+  window.addEventListener("load", window.print());
+</script>
     @stop

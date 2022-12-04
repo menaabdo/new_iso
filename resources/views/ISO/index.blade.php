@@ -92,9 +92,9 @@
                                                                 <i class="fa fa-edit"></i>
                                                             </a>
                                                               <a href="{{ route('sop.print', $iso->id) }}"
-                                                                class="btn btn-sm btn-clean
+                                                                class="btn btn-sm btn-clean test
                                             btn-icon mr-2"
-                                                                title="@lang('general.print')">
+                                                                title="@lang('general.print')" target="_blank">
                                                                 <i class="fa fa-print"></i>
                                                             </a>
                                                             @csrf
@@ -123,7 +123,7 @@
 
                                                               <a href="{{ route('sop.print', $iso->id) }}"
                                                                 class="btn btn-lg
-                                                                btn-icon mr-2"
+                                                                btn-icon mr-2 test" target="_blank"
                                                                 title="@lang('general.print')">
                                                                 <i class="fa fa-print"></i>
                                                             </a>
@@ -208,7 +208,13 @@
             });
         });
     </script>
-
+ <script>
+     $(".test").on('click', function(e) {
+          window.open(''.e.target.href.'', "_blank");
+   
+  });
+      
+    </script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   

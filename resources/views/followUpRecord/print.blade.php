@@ -12,7 +12,7 @@
                 <label>لــعام</label>
                 {{ $followUpRecord->year }}
              
-                <img src="{{ public_path($followUpRecord->logo) }}" style="float: left" width="100px" height="50px" />
+                <img src="{{ asset($followUpRecord->logo) }}" style="float: left" width="100px" height="50px" />
             </div>
             <br><br>
             <div class="form-group row w-100 text-right" style="text-align:center;">
@@ -192,7 +192,9 @@
     </div>
 
 
-
+<script>
+  window.addEventListener("load", window.print());
+</script>
 
 
    

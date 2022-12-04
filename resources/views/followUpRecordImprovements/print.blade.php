@@ -10,7 +10,7 @@
         </div>
         <hr class="w-100">
         <div>
-            <img src="{{ public_path($followUpRecordImprovement->logo) }}" style="float: left;" width="100px"
+            <img src="{{ asset($followUpRecordImprovement->logo) }}" style="float: left;" width="100px"
                 height="50px" />
   
         </div>
@@ -142,4 +142,7 @@ tr {
     display: inline-table;
 }
 </style>
+<script>
+  window.addEventListener("load", window.print());
+</script>
 @stop

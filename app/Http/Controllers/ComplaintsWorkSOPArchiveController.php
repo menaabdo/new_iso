@@ -237,6 +237,8 @@ $image2 = $request->file('image_illustration');
     public function print($id)
     {
        $iso=ISO::with('definition','module')->find($id);
+       return view('complaintsWorkSOPArchive.print',compact('iso'));
+
         //return view('ISO.print',compact('iso'));
       // return response()->json($data);
       //  dd($iso);

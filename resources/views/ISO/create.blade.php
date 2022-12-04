@@ -459,7 +459,7 @@ td{
 <div class="form__div " style='height:48px;width:100% '>
             <label for="" class=" border-0 " style='color:#2a415b;width:13%;margin-right:0'>شعار الشركة</label>
           
-           <input type="file" class=" shadow-lg" style='padding:0;width:86% !important' placeholder=" ">
+           <input type="file" class=" shadow-lg" name="company_logo" style='padding:0;width:86% !important' placeholder=" ">
           
 
 </div>

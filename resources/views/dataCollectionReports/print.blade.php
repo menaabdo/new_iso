@@ -11,7 +11,7 @@
             <hr class="w-100">
         </div>
         <div>
-            <img src="{{ public_path($dataCollectionReport->logo) }}" style="float: left;" width="100px"
+            <img src="{{ asset($dataCollectionReport->logo) }}" style="float: left;" width="100px"
                 height="50px" />
   
         </div>
@@ -135,4 +135,7 @@ tr {
     display: inline-table;
 }
 </style>
+<script>
+  window.addEventListener("load", window.print());
+</script>
 @stop

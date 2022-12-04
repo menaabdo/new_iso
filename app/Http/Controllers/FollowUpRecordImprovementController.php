@@ -134,8 +134,10 @@ class FollowUpRecordImprovementController extends Controller
     public function print($id)
     {
         $followUpRecordImprovement=FollowUpRecordImprovement::with('followUpRecord')->find($id);
-       $pdf = PDF::loadView('followUpRecordImprovements.print', compact('followUpRecordImprovement'));
-       return $pdf->download('followUpRecordImprovements.pdf');  
+        return view('followUpRecordImprovements.print',compact('followUpRecordImprovement'));
+
+    //    $pdf = PDF::loadView('followUpRecordImprovements.print', compact('followUpRecordImprovement'));
+    //    return $pdf->download('followUpRecordImprovements.pdf');  
     }
 
     /**

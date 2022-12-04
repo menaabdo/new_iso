@@ -942,7 +942,7 @@ td{
         <div class="form-group" style='text-align:center'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit"
                 class="btn btn-primary">
-             تعديل</button>
+             حفظ</button>
         </div> 
     </form>
     </div>

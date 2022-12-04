@@ -88,8 +88,10 @@ class TypicalFormController extends Controller
     public function print($id)
     {
       $typicalForm=TypicalForm::with('typicalForm')->find($id);
-       $pdf = PDF::loadView('typicalForm.print', compact('typicalForm'));
-       return $pdf->download('typicalForm.pdf');  
+      return view('typicalForm.print',compact('typicalForm'));
+
+      //  $pdf = PDF::loadView('typicalForm.print', compact('typicalForm'));
+      //  return $pdf->download('typicalForm.pdf');  
     }
 
     /**

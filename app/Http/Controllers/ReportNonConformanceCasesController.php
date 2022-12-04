@@ -88,8 +88,10 @@ class ReportNonConformanceCasesController extends Controller
     public function print($id)
     {
      $reportNonConformanceCases=ReportNonConformanceCases::with('reportNonConformanceCases')->find($id);
-       $pdf = PDF::loadView('reportNonConformanceCases.print', compact('reportNonConformanceCases'));
-       return $pdf->download('reportNonConformanceCases.pdf');  
+     return view('reportNonConformanceCases.print',compact('reportNonConformanceCases'));
+
+    //    $pdf = PDF::loadView('reportNonConformanceCases.print', compact('reportNonConformanceCases'));
+    //    return $pdf->download('reportNonConformanceCases.pdf');  
     }
 
     /**

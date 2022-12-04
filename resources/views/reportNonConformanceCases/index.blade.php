@@ -52,7 +52,7 @@
                                       </a>
                                       <a href="{{ route('reportNonConformanceCases.print', $reportNonConformanceCases->id) }}"
                                         data-id="{{ $reportNonConformanceCases->id }}"
-                                       class="btn btn-lg btn-icon">
+                                       class="btn btn-lg btn-icon test" target="_blank">
                                        <i class="fa fa-print"></i>
                                    </a>
                                       @csrf
@@ -106,5 +106,11 @@
               });
           }
       </script>
-    
+     <script>
+     $(".test").on('click', function(e) {
+          window.open(''.e.target.href.'', "_blank");
+   
+  });
+      
+    </script>
     @endsection

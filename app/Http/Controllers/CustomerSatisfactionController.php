@@ -96,8 +96,10 @@ class CustomerSatisfactionController extends Controller
        public function print($id)
     {
         $customerSatisfaction=CustomerSatisfaction::find($id);
-       $pdf = PDF::loadView('customerSatisfaction.print', compact('customerSatisfaction'));
-       return $pdf->download('customerSatisfaction.pdf');  
+        return view('customerSatisfaction.print',compact('customerSatisfaction'));
+
+    //    $pdf = PDF::loadView('customerSatisfaction.print', compact('customerSatisfaction'));
+    //    return $pdf->download('customerSatisfaction.pdf');  
     }
 
     /**

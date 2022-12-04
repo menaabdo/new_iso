@@ -104,8 +104,10 @@ class MeetingMinuteController extends Controller
     public function print($id)
     {
      $meetingMinute=MeetingMinute::find($id);
-       $pdf = PDF::loadView('meetingMinute.print', compact('meetingMinute'));
-       return $pdf->download('meetingMinute.pdf');  
+     return view('meetingMinute.print',compact('meetingMinute'));
+
+      //  $pdf = PDF::loadView('meetingMinute.print', compact('meetingMinute'));
+      //  return $pdf->download('meetingMinute.pdf');  
     }
 
     /**

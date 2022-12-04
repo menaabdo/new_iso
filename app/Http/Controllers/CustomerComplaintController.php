@@ -75,8 +75,10 @@ class CustomerComplaintController extends Controller
     public function print($id)
     {
        $customerComplaint=CustomerComplaint::find($id);
-       $pdf = PDF::loadView('customerComplaint.print', compact('customerComplaint'));
-       return $pdf->download('customerComplaint.pdf');  
+       return view('customerComplaint.print',compact('customerComplaint'));
+
+    //    $pdf = PDF::loadView('customerComplaint.print', compact('customerComplaint'));
+    //    return $pdf->download('customerComplaint.pdf');  
     }
 
     /**

@@ -88,8 +88,10 @@ class FollowUpRecordController extends Controller
     public function print($id)
     {
         $followUpRecord=FollowUpRecord::with('followUpRecord')->find($id);
-       $pdf = PDF::loadView('followUpRecord.print', compact('followUpRecord'));
-       return $pdf->download('followUpRecord.pdf');  
+        return view('followUpRecord.print',compact('followUpRecord'));
+
+      //  $pdf = PDF::loadView('followUpRecord.print', compact('followUpRecord'));
+      //  return $pdf->download('followUpRecord.pdf');  
     }
 
     /**

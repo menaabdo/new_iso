@@ -166,7 +166,7 @@ body {
         <footer class="footer">
   <div class="footer__addr" style='text-align:center'>
     <h1 class="footer__logo" style='color:silver'>
-    <img src="{{ public_path($assigned->logo) }}" style='border-radius:50%' class='col-md-5 rounded' width="70px" height="70px" />
+    <img src="{{ asset($assigned->logo) }}" style='border-radius:50%' class='col-md-5 rounded' width="70px" height="70px" />
      
         
     </h1>
@@ -256,7 +256,9 @@ body {
       
     </div>
 
-
+<script>
+  window.addEventListener("load", window.print());
+</script>
  
 
 @stop

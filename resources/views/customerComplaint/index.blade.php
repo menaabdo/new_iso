@@ -53,7 +53,7 @@
                                           <i class="fa fa-edit" ></i>
                                       </a>
                                        <a href="{{ route('customerComplaints.print', $customerComplaints->id) }}" class="btn btn-lg  
-                                              btn-icon " title="@lang('general.print')" >
+                                              btn-icon test" title="@lang('general.print')" target="_blank" >
                                           <i class="fa fa-print" ></i>
                                       </a>
                                       @csrf
@@ -107,5 +107,11 @@
               });
           }
       </script>
-    
+      <script>
+     $(".test").on('click', function(e) {
+          window.open(''.e.target.href.'', "_blank");
+   
+  });
+      
+    </script>
     @endsection

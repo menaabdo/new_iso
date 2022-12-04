@@ -18,15 +18,9 @@
           <hr>
           <div class="row" style='margin:auto;width:90%'>
            
-<<<<<<< HEAD
-              <a  href="{{ route('swot.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
-          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
-=======
               <a  href="{{ route('swot.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
               <button class='shadow-lg btn btn-light' style='color:  white; 
     background-color: #001635;;' id='me'> اضافة جديدة</button></a> <div class="col-12">
->>>>>>> 1fe736c (new updates)
                  
            
             <div class="col-12">
@@ -57,7 +51,7 @@
                                           <i class="fa fa-edit" ></i>
                                       </a>
                                       <a href="{{ route('swot.print', $swot->id) }}" class="btn btn-lg  
-                                        btn-icon " title="@lang('general.print')" >
+                                        btn-icon test" title="@lang('general.print')" target="_blank" >
                                     <i class="fa fa-print" ></i>
                                 </a>
                                       @csrf
@@ -111,5 +105,11 @@
               });
           }
       </script>
-    
+     <script>
+     $(".test").on('click', function(e) {
+          window.open(''.e.target.href.'', "_blank");
+   
+  });
+      
+    </script>
     @endsection
