@@ -1,30 +1,63 @@
 @extends('layouts.print')
 
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
+
+</style>
+
 
 
 <div class="card">
-<div class="card-body">
-  <h3 style="margin-top:85px;">إحصائيات حالات عدم المطابقة</h3>
+<div class="card-body" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '> 
+  <h3 style='text-align:center;margin-bottom:40px'>
+  <img src="{{ asset($nonConformanceStats->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+
+  <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>إحصائيات حالات عدم المطابقة
+  </span>
+</h3>
   <hr>
   <div>
-    <img src="{{ asset($nonConformanceStats->logo) }}" style="float: left;" width="100px"
-        height="50px" />
-
+   
 </div>
 <br><br>
 
 
-        <div class="form-group row w-100 text-right" style="text-align:center;">
-            <table class="table">
-                <tr style="background-color:rgb(218, 249, 163); text-align:center;">
-                  <th scope="col" rowspan="2"></th>
+        <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+            <table class="table" style='border:none'>
+                <tr style="background-color: #001635;
+    color: white">  <th scope="col" rowspan="2"></th>
                   <th scope="col" rowspan="2">الإدارة</th>
                   <th scope="col" colspan="12">شهر / سنه</th>
                   <th scope="col" rowspan="2">مجموع حالات عدم المطابقة</th>
                 </tr>
-                <tr style="background-color:rgb(218, 249, 163); text-align:center;">
-                  <th>يناير</th>
+                <tr style="background-color: #001635;
+    color: white"> <th>يناير</th>
                   <th>فبراير</th>
                   <th> مارس</th>
                   <th> إبريل</th>
@@ -140,7 +173,8 @@
                 
                 @endif
                 <tr>
-                    <th style="background-color:rgb(218, 249, 163); text-align:center;" scope="col" colspan="2">الاجمالى</th>
+                    <th style="background-color: #001635;
+    color: white; text-align:center;" scope="col" colspan="2">الاجمالى</th>
                     <th><input class="form-control" type="text" name="total_1" value="{{$nonConformanceStats->total_1}}"></th>
                     <th><input class="form-control" type="text" name="total_2" value="{{$nonConformanceStats->total_2}}"></th>
                     <th><input class="form-control" type="text" name="total_3" value="{{$nonConformanceStats->total_3}}"></th>
@@ -167,43 +201,53 @@
             </div>
         </div>
         <hr class="w-100">
-        <table class="table">
+        <table class="" style=' border:none;
+    padding:12px;
+    margin-top:12px;
+    background-color: #001635;
+    color: white;
+    /* text-shadow: none; */
+    width: 97%;
+    margin: auto;
+    margin-bottom: 12px;
+    font-size: 12px;
+    padding: 1px;'>
             <thead>
                 <tr>
-                    <th>
+                    <th  style=' border:none;'>
                       <div class="" style="text-align:start ;">
                         {{ $nonConformanceStats->company_name }}
                       </div>
             
                     </th>
-                    <th>
+                    <th style=' border:none;'>
                       <div class="" style="text-align:start ;">
                         {{ $nonConformanceStats->date2 }}
                       </div>
             
-                    </th>
-                    <th>
+                    </th> 
+                    <th style=' border:none;'>
                         <div class="" style="text-align:start ;">
                             {{ $nonConformanceStats->date3 }}
                           </div>
             
                     </th>
-                    <th>
+                    <th style=' border:none;'>
                       <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                            <label for="" class="" style=""> مدة الحفظ :
                                 سنتان </label>
                       </div>
             
                     </th>
-                    <th>
+                    <th style=' border:none;'>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                        <label for="" class="" style="text-align: center;"> رقم الصفحة : 1 /
                           1</label>
                       </div>
                     </th>
-                    <th>
+                    <th style=' border:none;'>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                        <label for="" class="" style="text-align: center;"> رقم الوثيقة : QA – F
                           - 13 </label>
                       </div>
                     </th>

@@ -1,15 +1,43 @@
 @extends('layouts.print')
 @section('content')
-    <div class="container mt-3 p-3">
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
+
+</style>
+    <div class="container mt-3 p-3" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '>
+        
         <div class="container-fluid p-4">
             <div style="" class="w-100 text-center my-4">
-                <h2>تقرير مراجعة داخلية</h2>
-                <hr class="w-100">
+            <h2 style='text-align:center;margin-bottom:40px'>
+                <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>تقرير مراجعة داخلية</span></h2>
+                
             </div>
-            <div class="form-group row w-100 text-left">
+            <div class="form-group row w-100 text-left" style='text-align:center'> 
                 <div class="col-4">
                     <label for="" class="col-4 col-form-label"> بإدارة :</label>
-                    {{ $internalAuditReport->manage }}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value=' {{ $internalAuditReport->manage }}'>
                 </div>
             </div>
             <br><br>
@@ -17,28 +45,35 @@
                 <section class="my-10 table-bordered">
                     <div class="form-group row w-100 text-right">
                         <label for="" class="col-2 col-form-label">الجهة المراجع عليها:</label>
-                        {{ $internalAuditReport->referenced_authority }}
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <label for="" class="col-2 col-form-label"> رقم المراجعة :</label>
-                        {{ $internalAuditReport->referenced_number }}
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <label for="" class="col-2 col-form-label"> موضوع المراجعة :</label>
-                        {{ $internalAuditReport->referenced_subject }}
-
+                        <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value='{{ $internalAuditReport->referenced_authority }}'>
+                       
+                        <label for="" class="col-2 col-form-label" style='margin-bottom:12px'> رقم المراجعة :</label>
+                        <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value=' {{ $internalAuditReport->referenced_number }}'>
+                      </div>
+                    
+                      <div style='margin-top:12px;margin-bottom:12px;'>
+                        <label for="" class="col-2 col-form-label" style='    margin-left: 23px;'> موضوع المراجعة :</label>
+                        <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value='{{ $internalAuditReport->referenced_subject }}'>
+<label for="inputPassword" class="col-2 col-form-label" style='    margin-left: 26px;'> فريق المراجعة :</label>
+                            <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value=' {{ $internalAuditReport->team }}'>
+                  
                     </div>
-                    <br><br>
+                 
                     <div class="form-group row w-100 text-right">
-                        <div class="col-10">
+                        <div class="col-10" style='margin-bottom:12px'>
                             <label for="inputPassword" class="col-2 col-form-label"> رئيس فريق المراجعه :</label>
-                            {{ $internalAuditReport->team_lead }}
+                            <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value=' {{ $internalAuditReport->team_lead }}'>
                         </div>
                     </div>
 
                     <div class="form-group row w-100 text-right">
                         <div class="col-10">
-                            <label for="inputPassword" class="col-2 col-form-label"> فريق المراجعة :</label>
-                            {{ $internalAuditReport->team }}
-                        </div>
+                                  </div>
                     </div>
                     <br><br>
                     <div class="form-group row w-100 text-right">
@@ -66,17 +101,15 @@
 
                 <div class="form-group row w-100 text-right">
                     <label for="inputPassword" class="col-2 col-form-label"> أ- نقاط القوة : </label>
-                    <div class="col-10">
-                        <textarea type="text" class="form-control" name="strong_point" placeholder="  نقاط القوة ......">{{ $internalAuditReport->strong_point }}</textarea>
-                    </div>
-                </div>
-                <br><br>
-                <div class="form-group row w-100 text-right">
+                  
+                        <textarea type="text" class="form-control" name="strong_point" style='vertical-align: middle;' placeholder="  نقاط القوة ......">{{ $internalAuditReport->strong_point }}</textarea>
+                   
                     <label for="inputPassword" class="col-2 col-form-label"> ب- نقاط عدم المطابقة : (ملخص) </label>
-                    <div class="col-10">
-                        <textarea type="text" class="form-control" name="no_strong_point" placeholder="  نقاط عدم المطابقة ......">{{ $internalAuditReport->no_strong_point }}</textarea>
-                    </div>
+                   
+                        <textarea type="text" class="form-control" name="no_strong_point" style='vertical-align: middle;' placeholder="  نقاط عدم المطابقة ......">{{ $internalAuditReport->no_strong_point }}</textarea>
+                    
                 </div>
+               
                 <br><br>
                 <div class="form-group row w-100 text-right">
                     <label for="inputPassword" class="col-2 col-form-label"> حالات ملاحظات التحسين: </label>
@@ -92,10 +125,12 @@
                 <div class="form-group row w-100 text-right">
 
                     <label for="" class="col-1 col-form-label">الاسم :</label>
-                    {{ $internalAuditReport->name }}
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value='  {{ $internalAuditReport->name }}'>
+                   
                     <label for="" class="col-1 col-form-label"> التاريخ :</label>
-                    {{ $internalAuditReport->date_2 }}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value='{{ $internalAuditReport->date_2 }}'>
 
                 </div>
 
@@ -103,18 +138,30 @@
                 <div class="form-group row w-100 text-right">
 
                     <label for="" class="col-1 col-form-label">مسئول الجهة المراجع عليها :</label>
-                    {{ $internalAuditReport->referance_name }}
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value='  {{ $internalAuditReport->referance_name }}'>
+                    
 
                     <label for="" class="col-1 col-form-label"> التاريخ :</label>
-                    {{ $internalAuditReport->date_1 }}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value=' {{ $internalAuditReport->date_1 }}'>
 
                 </div>
 
 
             </div>
             <br><br>
-            <table class="table table-bordered">
+            <table class=" table-bordered" style=' border:none;
+    padding:12px;
+    margin-top:12px;
+    background-color: #001635;
+    color: white;
+    /* text-shadow: none; */
+    width: 97%;
+    margin: auto;
+    margin-bottom: 12px;
+    font-size: 12px;
+    padding: 1px;'>
                 <thead>
                     <tr>
                         <th>
@@ -138,7 +185,7 @@
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                                    style="text-align: center;"> مدة الحفظ :
                                     سنتان </label>
                             </div>
 
@@ -146,14 +193,14 @@
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                                    style="text-align: center;"> رقم الصفحة : 1 /
                                     1</label>
                             </div>
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                                    style="text-align: center;"> رقم الوثيقة : QA – F
                                     - 13 </label>
                             </div>
                         </th>

@@ -1,32 +1,68 @@
 @extends('layouts.print')
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
+
+</style>
 
 <div class="card">
-<div class="card-body">
+<div class="card-body" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '>
 
 
             <div  class="w-100 text-center my-4">
-                <h2>تقرير حالات عدم المطابقة والإجراءات التصحيحية والوقائية</h2>
+            <h2 style='text-align:center;margin-bottom:40px'>
+            <img src="{{ asset($reportNonConformanceCases->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+            <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'> 
+          تقرير حالات عدم المطابقة والإجراءات التصحيحية والوقائية
+</span>
+        </h2>
                 <hr class="w-100">
             </div>
             <br><br>
             <div>
-              <img src="{{ asset($reportNonConformanceCases->logo) }}" style="float: left;" width="100px" height="50px" />
              
           </div>
           <br><br>
             <div class=" form-group row  text-left">
               
                   <label for="" class="col-1 col-form-label text-left">الفترة من  يوم :</label>
-                  {{$reportNonConformanceCases->day_from}}
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='{{$reportNonConformanceCases->day_from}}'>
+               
                 <label for="" class="col-1 col-form-label text-left" >تاريخ  :</label>
-               {{$reportNonConformanceCases->date_1}}
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='{{$reportNonConformanceCases->date_1}}'>
+                
 
                 <label for="" class="col-1 col-form-label text-left" >إلى يوم :</label>
-               {{$reportNonConformanceCases->day_to}}
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='{{$reportNonConformanceCases->day_to}}'>
+                
                 <label for="" class="col-1 col-form-label text-left">تاريخ  :</label>
                
                   {{$reportNonConformanceCases->date_2}}
@@ -37,8 +73,8 @@
             
             <div class="form-group row w-100 text-right" style="text-align:center;">
                 <hr class="w-100">
-                <table class="table">
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
+                <table class="table" style='border:none'>
+                    <tr style="background-color:#001635;color:white;  text-align:center;">
                      
                         <th scope="col" rowspan="2">حالة عدم المطابقة</th>
                         <th scope="col" rowspan="2">الإدارة  المختصة</th>
@@ -48,7 +84,7 @@
                         <th scope="col" colspan="2">فاعلية التنفيذ</th>
                         <th scope="col" rowspan="2">ملاحظات</th>
                     </tr>
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
+                    <tr style="background-color:#001635;color:white;  text-align:center;">
                         <th scope="col"> تصحيحى </th>
                         <th scope="col">وقائي</th>
                         <th scope="col"> تم </th>
@@ -95,46 +131,50 @@
     
     </div>
     <br><br>
-    <table>
+    <table style="  ; border:none;padding:12px;margin-top:12px;background-color: #001635;
+    color: white;text-shadow: none;width: 97%;
+    margin: auto;
+    margin-bottom: 12px;    font-size: 12px;padding: 1px;">
+  
         <thead>
             <tr>
-                <th>
+                <th style='border:none'>
                     <div class="" style="text-align:start ;">
                         {{ $reportNonConformanceCases->company_name }}
                     </div>
 
                 </th>
-                <th>
+                <th style='border:none'>
                     <div class="" style="text-align:start ;">
                         {{ $reportNonConformanceCases->date2 }}
                     </div>
 
                 </th>
-                <th>
+                <th style='border:none'>
                     <div class="" style="text-align:start ;">
                         {{ $reportNonConformanceCases->date3 }}
                     </div>
 
                 </th>
-                <th>
+                <th style='border:none'>
                     <div class="" style="text-align:start ;">
                         <label for="" class=""
-                            style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                            style="text-align: center;"> مدة الحفظ :
                             سنتان </label>
                     </div>
 
                 </th>
-                <th>
+                <th style='border:none'>
                     <div class="" style="text-align:start ;">
                         <label for="" class=""
-                            style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                            style="text-align: center;"> رقم الصفحة : 1 /
                             1</label>
                     </div>
                 </th>
-                <th>
+                <th style='border:none'>
                     <div class="" style="text-align:start ;">
                         <label for="" class=""
-                            style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة :
+                            style="text-align: center;;"> رقم الوثيقة :
                             QA–F-13
                         </label>
                     </div>

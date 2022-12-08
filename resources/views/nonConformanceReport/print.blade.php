@@ -1,30 +1,62 @@
 @extends('layouts.print')
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
 
+</style>
 <div class="card">
-<div class="card-body">
+<div class="card-body" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '>
 
         <div style="" class="w-100 text-center my-4">
-            <h2>سجل متابعة تقارير عدم المطابقة </h2>
+        <h2 style='text-align:center;margin-bottom:40px'>
+        <img src="{{ asset($nonConformanceReport->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+        <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>سجل متابعة تقارير عدم المطابقة 
+</span>
+</h2>
             <label>لــعام</label>
-            {{$nonConformanceReport->year}}
+            <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value=' {{$nonConformanceReport->year}}'>
             <hr class="w-100">
         </div>
         <div>
-            <img src="{{ asset($nonConformanceReport->logo) }}" style="float: left;" width="100px" height="50px" />
-        
+          
         </div>
         <br><br>
-        <div class="" style="text-align:start ;">
-            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;">   حالات عدم مطابقة لنظام الجودة ( nonConformanceReport 9001 ) فى مختلف الإدارات  .  :</label>
+        <div class="" style="text-align:center ;">
+            <label for="" class="" style="text-align: center;;font-weight: bolder;">   حالات عدم مطابقة لنظام الجودة ( nonConformanceReport 9001 ) فى مختلف الإدارات  .  :</label>
         </div>
         <hr class="w-100">
         <br><br>
         <div class="container-fluid p-4" >
             <div class="container-fluid p-2">
                 <div class="" style="text-align:center ;">
-                    <table>
-                        <tr style="background-color:rgb(230, 242, 117)">
+                    <table style='border:none'>
+                        <tr style='background-color:#001635;color:white; '>
                             <th> التاريخ</th>
                             <th>الإدارة المختصة</th>
                             <th>وصف الحالة</th>
@@ -63,11 +95,13 @@
         <div class="form-group row text-left col-12" >
             <div class="col-4">
                 <label for="" class="col-2 col-form-label">الاسم  :       -</label>
-              {{$nonConformanceReport->name}}
+                <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value=' {{$nonConformanceReport->name}}'>
             </div>
             <div class="col-4">
                 <label for="" class="col-2 col-form-label">الوظيفة:       -</label>
-                {{$nonConformanceReport->employee}}
+                <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value=' {{$nonConformanceReport->employee}}'>
             </div>
         </div>
         <hr class="w-100">
@@ -95,57 +129,62 @@
                         <div class="form-group row text-left col-12" >
                             <div class="col-4">
                                 <label for="" class="col-2 col-form-label">الاسم  :       -</label>
-                                {{$nonConformanceReport->name}}
+                                <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='  {{$nonConformanceReport->name}}'>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4" style='margin:12px'>
                                 <label for="" class="col-2 col-form-label">الوظيفة:       -</label>
-                               {{$nonConformanceReport->employee}}
+                                <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='  {{$nonConformanceReport->employee}}'>
                             </div>
                         </div>
                         <hr class="w-100">
                     @endif
                        
 <br><br>
-<table>
+<table style="  ; border:none;padding:12px;margin-top:12px;background-color: #001635;
+    color: white;text-shadow: none;width: 97%;
+    margin: auto;
+    margin-bottom: 12px;    font-size: 12px;padding: 1px;">
     <thead>
         <tr>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                     {{ $nonConformanceReport->company_name }}
                 </div>
 
             </th>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                     {{ $nonConformanceReport->date2 }}
                 </div>
 
             </th>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                     {{ $nonConformanceReport->date3 }}
                 </div>
 
             </th>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                     <label for="" class=""
-                        style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                        style="text-align: center;"> مدة الحفظ :
                         سنتان </label>
                 </div>
 
             </th>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                     <label for="" class=""
-                        style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                        style="text-align: center;"> رقم الصفحة : 1 /
                         1</label>
                 </div>
             </th>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                     <label for="" class=""
-                        style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة :
+                        style="text-align: center;"> رقم الوثيقة :
                         QA–F-13
                     </label>
                 </div>

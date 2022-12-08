@@ -1,23 +1,58 @@
 @extends('layouts.print')
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
+
+</style>
 
     <div class="card">
-        <div class="card-body">
+        <div class="card-body"  style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '>
+
 
             <div style="" class="w-100 text-center my-4">
-                <h2>سجل متابعة طلبات الإجراءات التصحيحية / الوقائية </h2>
+            <h2 style='text-align:center;margin-bottom:40px'>
+            <img src="{{ asset($followUpRecord->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+      <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>  سجل متابعة طلبات الإجراءات التصحيحية / الوقائية 
+</span>
+    </h2>
                 <hr class="w-100">
             </div>
             <div>
                 <label>لــعام</label>
-                {{ $followUpRecord->year }}
+                <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value=' {{ $followUpRecord->year }}'>
              
-                <img src="{{ asset($followUpRecord->logo) }}" style="float: left" width="100px" height="50px" />
-            </div>
+                  </div>
             <br><br>
-            <div class="form-group row w-100 text-right" style="text-align:center;">
-                <table class="table">
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
+            <div style="overflow-x:auto;">
+                 <table class="table" style='border:none'>
+                    <tr style="background-color:#001635;color:white; 
+                           text-align:center;">
                         <th scope="col" rowspan="2">رقم الطلب</th>
                         <th scope="col" rowspan="2">تاريخ</th>
                         <th scope="col" rowspan="2">الإدارة المختصة</th>
@@ -26,8 +61,8 @@
                         <th scope="col" rowspan="2">نتائج المتابعة</th>
                         <th scope="col" colspan="3">فاعلية الإجراء **</th>
                     </tr>
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
-                        <th scope="col"> 1</th>
+                    <tr style='background-color:#001635;color:white; '>
+                            <th scope="col"> 1</th>
                         <th scope="col">2</th>
                         <th scope="col"> 3</th>
                         <th scope="col">4</th>
@@ -109,13 +144,14 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <td class=" w-50 text-center col-3 " style="border:3px solid #150c0c !important;">
+                        <td class=" w-50 text-center col-3 " style=" box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ ">
                             <div class="form-group row w-20 text-left">
                                 <label for="" class="col-3 col-form-label">** المصدر </label>
                                 
                             </div>
     
-                            <div class="form-group row w-20 text-left">
+                            <div class="form-group row w-20 text-left" style='margin:12px' >
                                 <label for="" class="col-3 col-form-label">(1) مراجعة داخلية</label>
                                 <label for="" class="col-3 col-form-label">(2) مراجعة خارجية </label>
                                 <label for="" class="col-3 col-form-label">(3) مراجعة إدارة</label>
@@ -124,8 +160,11 @@
                                 <label for="" class="col-3 col-form-label">(6) أخرى(تذكر الحالة)</label>
                             </div>
                         </td>
-                        <td class=" w-30 text-center col-2 " style="border: 3px solid #0f0a0a !important;">
-                            <div class="form-group row w-10 text-left">
+                                    </tr>
+                        <tr>
+                        <td class=" w-30 text-center col-2 " style=" box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ ">
+                            <div class="form-group row w-10 text-left" style='margin:12px'>
                                 <label for="" class="col-4 col-form-label">  ** فاعلية الإٌجراء  </label>
                             </div>
     
@@ -139,7 +178,11 @@
                 </thead>
             </table>
             <br><br>
-            <table>
+            <table style="  ; border:none;padding:12px;margin-top:12px;background-color: #001635;
+    color: white;text-shadow: none;width: 97%;
+    margin: auto;
+    margin-bottom: 12px;    font-size: 12px;padding: 1px;">
+  
                 <thead>
                     <tr>
                         <th>
@@ -163,7 +206,7 @@
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                                    style="text-align: center;"> مدة الحفظ :
                                     سنتان </label>
                             </div>
 
@@ -171,14 +214,14 @@
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                                    style="text-align: center;;"> رقم الصفحة : 1 /
                                     1</label>
                             </div>
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة :
+                                    style="text-align: center;"> رقم الوثيقة :
                                     QA–F-13
                                 </label>
                             </div>

@@ -1,29 +1,58 @@
 @extends('layouts.print')
 
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
 
+</style>
 
 <div class="card">
-<div class="card-body">
+<div class="card-body" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '> 
         <div style="" class="w-100 text-center my-4">
-            <h2> سجل متابعة أعمال التحسين والتطوير</h2>
+        <h3 style='text-align:center;margin-bottom:40px'>
+        <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>
+ سجل متابعة أعمال التحسين والتطوير
+
+</span>
+</h3>
         </div>
         <hr class="w-100">
         <div>
-            <img src="{{ asset($followUpRecordImprovement->logo) }}" style="float: left;" width="100px"
-                height="50px" />
+           
   
         </div>
         <div class="form-group row" >
             <div class="col-3">
                 <label for="" class="col-2 col-form-label">لعــام :</label>
-                {{$followUpRecordImprovement->year}}
+                <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value= ' {{$followUpRecordImprovement->year}}'>
             </div>
         </div>
-        <hr class="w-100">
-        <div class="form-group row w-100 text-right" style="text-align:center;">
-            <table class="table">
-                <tr style="background-color:rgb(218, 249, 163); text-align:center;">
+      
+        <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+            <table class="table" style='border:none'>
+                <tr style=";">
                     <th>التاريخ </th>
                     <th>القسم المختص</th>
                     <th>وصف الحالة</th>
@@ -49,7 +78,7 @@
         </div>
 
         <hr class="w-100">
-        <table class="table">
+        <table class="table" style='border:none'>
             <thead>
                 <tr>
                     <th class=" w-50 text-center col-2 ">
@@ -73,43 +102,53 @@
             </thead>
         </table>
         <hr class="w-100">
-        <table class="table">
+        <table class="table" style=' border:none;
+    padding:12px;
+    margin-top:12px;
+    background-color: #001635;
+    color: white;
+    /* text-shadow: none; */
+    width: 97%;
+    margin: auto;
+    margin-bottom: 12px;
+    font-size: 12px;
+    padding: 1px;'>
             <thead>
                 <tr>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
                         {{ $followUpRecordImprovement->company_name }}
                       </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
                       {{ $followUpRecordImprovement->date2 }}
                       </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                         <div class="" style="text-align:start ;">
                             {{ $followUpRecordImprovement->date3 }}
                           </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                            <label for="" class="" style="text-align: center;"> مدة الحفظ :
                                 سنتان </label>
                       </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                        <label for="" class="" style="text-align: center;"> رقم الصفحة : 1 /
                           1</label>
                       </div>
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                        <label for="" class="" style="text-align: center;"> رقم الوثيقة : QA – F
                           - 13 </label>
                       </div>
                     </th>
@@ -120,16 +159,16 @@
 <style>
 .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid silver;
 }
 
 table,
 th,
 td,
 tr {
-    border: 1px solid black;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
+    border: 1px solid silver;
+    border-bottom: 2px solid silver;
+    border-top: 2px solid silver;
 }
 
 #mainDiv {

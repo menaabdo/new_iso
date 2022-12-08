@@ -1,26 +1,64 @@
 @extends('layouts.print')
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
+
+</style>
 
 <div class="card">
-<div class="card-body">
-    <h3 style="margin-top:85px;">حالات عدم المطابقة</h3>
+<div class="card-body" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '>
+      <h2 style='text-align:center;margin-bottom:40px'>
+      <img src="{{ asset($Non_conformities->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+      <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>
+      حالات عدم المطابقة
+</span>
+    </h3>
     <hr>
         <div style="" class="w-100 text-center my-4">
             <label>حالات عدم المطابقة رقم </label>
-            {{$Non_conformities->number_1}}
-            <hr width="1300px;" size="20" color="black">
+            <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='
+        {{$Non_conformities->number_1}}'>
+           
         </div>
         <div>
-            <img src="{{ asset($Non_conformities->logo) }}" style="float: left;" width="100px" height="50px" />
-        </div>
+             </div>
         <div class="container-fluid p-4">
-            <div class=" form-group row w-200 text-right">
+            <div class=" form-group row w-200 text-right" style='margin:12px'>
              
                     <label for="" class="col-1 col-form-label text-right">التاريخ:</label>
-                   {{$Non_conformities->date_1}}
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='  {{$Non_conformities->date_1}}'>
+                   
                 <label for="" class="col-2 col-form-label text-left">الجهة المختصة:</label>
-                {{$Non_conformities->competent_authority}}
+                <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='
+        {{$Non_conformities->competent_authority}}'>
               
             </div>
             <br>
@@ -34,54 +72,54 @@
             <div class=" form-group row w-200 text-left">
                 <label for="" class="col-6 col-form-label text-right">(1) ملخص وتحليل حالة عدم المطابقة فى </label> :</label>
                 <div class="col-12">
-                    <textarea type="text" class="form-control" name="summary_analysis"> {{$Non_conformities->summary_analysis}}</textarea>
+                <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{$Non_conformities->summary_analysis}}</textarea>
                 </div>
             </div>
             <br><br>
             <div class="form-group row w-100 text-right" style="text-align:center ;">
-                <table class="table">
+                <table class="table" style='border:none'>
                     <tr>
-                        <th cscope="col" colspan="2" style="background-color:rgb(227, 252, 160)">مكتشف الحـــــــالة</th>
-                        <th cscope="col" colspan="2" style="background-color:rgb(227, 252, 160)">مدير الإدارة المعنية</th>
-                        <th cscope="col" colspan="2" style="background-color:rgb(227, 252, 160)">مدير الجودة</th>
+                        <th cscope="col" colspan="2" style='background-color:#001635;color:white; '>مكتشف الحـــــــالة</th>
+                        <th cscope="col" colspan="2" style='background-color:#001635;color:white; '>مدير الإدارة المعنية</th>
+                        <th cscope="col" colspan="2" style='background-color:#001635;color:white; '>مدير الجودة</th>
                        
                     </tr>
                     <tr>
                        
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الإسم :</th>
+                        <th scope="col" style='background-color:#001635;color:white; width:10%'>الإسم </th>
                         <th scope="col">{{$Non_conformities->name_1}}</th>
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الإسم :</th>
+                        <th scope="col" style="background-color:#001635;color:white;width:10% ">الإسم </th>
                         <th scope="col">{{$Non_conformities->name_2}}</th>
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الإسم : </th>
+                        <th scope="col" style="background-color:#001635;color:white; width:10%">الإسم  </th>
                         <th scope="col">{{$Non_conformities->name_3}}</th>
                     </tr>
                     <tr>
                       
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الوظيفة : </th>
+                        <th scope="col" style="background-color:#001635;color:white; width:10%">الوظيفة  </th>
                         <th scope="col">{{$Non_conformities->employ_1}}</th>
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الوظيفة :</th>
+                        <th scope="col" style="background-color:#001635;color:white; width:10%">الوظيفة </th>
                         <th scope="col">{{$Non_conformities->employ_2}}</th>
-                        <th scope="col" style="background-color:rgb(227, 252, 160)">الوظيفة :</th>
+                        <th scope="col" style="background-color:#001635;color:white; width:10%">الوظيفة </th>
                         <th scope="col">{{$Non_conformities->employ_3}}</th>
                     </tr>
                 </table>
             </div>
             <br><br>
-            <hr width="1200px;" size="20" color="rgb(227, 252, 160)">
+    
             <div class=" form-group row w-200 text-right">
                 <label for="" class="col-3 col-form-label text-right">(2) دراسة الحالة من الإدارة المعنية:</label>
                 <div class="col-5">
-                    <textarea type="text" class="form-control" placeholder=":" name="case_study">{{$Non_conformities->case_study}}</textarea>
+                <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{$Non_conformities->case_study}}</textarea>
                 </div>
             </div>
             <div class=" form-group row w-200 text-right">
                 <label for="" class="col-3 col-form-label text-right">(3) القرار المتخذ :</label>
                 <div class="col-5">
-                    <textarea type="text" class="form-control" placeholder=":" name="decision_taken">{{$Non_conformities->decision_taken}}</textarea>
+                <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{$Non_conformities->decision_taken}}</textarea>
                 </div>
             </div>
             <br><br>
-            <table class="table">
+            <table class="table" style='border:none'>
                 <thead>
                     <tr>
                         @if ($Non_conformities->status == 'inProgress' && Auth::user()->hasRole('Employee'))
@@ -177,26 +215,29 @@
                 </thead>
             </table>
             <br><br>
-            <hr width="1200px;" size="20" color="rgb(227, 252, 160)">
+    
             <div class=" form-group row w-200 text-right">
                 <label for="" class="col-3 col-form-label text-right">(4) متابعة تنفيذ القرار </label>
                 <div class="col-5">
-                    <textarea type="text" class="form-control" placeholder=":" name="follow_up_decision">{{$Non_conformities->follow_up_decision}}</textarea>
+                <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{$Non_conformities->follow_up_decision}}</textarea>
                 </div>
             </div>
             <br><br>
             <div class=" form-group row w-200 text-right">
-                <div class="col-2">
+                <div class="col-2" style='margin:12px'>
                     <label for="" class="col-1 col-form-label text-right">الاسم:</label>
-                  {{$Non_conformities->name_6}}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value=' {{$Non_conformities->name_6}}'>
                 </div>
-                <div class="col-2">
+                <div class="col-2" style='margin:12px'>
                     <label for="" class="col-1 col-form-label text-right">الوظيفة:</label>
-                   {{$Non_conformities->employ_4}}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value=' {{$Non_conformities->employ_4}}'>
                 </div>
-                <div class="col-3">
+                <div class="col-3" style='margin:12px'>
                     <label for="" class="col-1 col-form-label text-right">التاريخ  :</label>
-                    {{$Non_conformities->date_2}}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value=' {{$Non_conformities->date_2}}'>
                 </div>
             </div>
             <br><br>
@@ -223,11 +264,11 @@
             </div>
             <br><br><br><br>
             <div class=" form-group row w-200 text-left">
-                <div class="col-3">
+                <div class="col-3" style='margin:12px'>
                     <label for="" class="col-1 col-form-label text-left">الاسم:</label>
                     <input type="text" class="form-control" name="name_7" value="{{$Non_conformities->name_7}}">
                 </div>
-                <div class="col-3">
+                <div class="col-3" style='margin:12px'>
                     <label for="" class="col-1 col-form-label text-left">الوظيفة :</label>
                     <input type="text" class="form-control" name="employ_5" value="{{$Non_conformities->employ_5}}">
                 </div>
@@ -235,46 +276,49 @@
 
         </div>
         <br><br>
-        <table>
+        <table  style="  ; border:none;padding:12px;margin-top:12px;background-color: #001635;
+    color: white;text-shadow: none;width: 97%;
+    margin: auto;
+    margin-bottom: 12px;    font-size: 12px;padding: 1px;">
             <thead>
                 <tr>
-                    <th>
+                    <th style='border:none'>
                         <div class="" style="text-align:start ;">
                             {{ $Non_conformities->company_name }}
                         </div>
 
                     </th>
-                    <th>
+                    <th style='border:none'>
                         <div class="" style="text-align:start ;">
                             {{ $Non_conformities->date2 }}
                         </div>
 
                     </th>
-                    <th>
+                    <th style='border:none'>
                         <div class="" style="text-align:start ;">
                             {{ $Non_conformities->date3 }}
                         </div>
 
                     </th>
-                    <th>
+                    <th style='border:none'>
                         <div class="" style="text-align:start ;">
                             <label for="" class=""
-                                style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                                style="text-align: center;;"> مدة الحفظ :
                                 سنتان </label>
                         </div>
 
                     </th>
-                    <th>
+                    <th style='border:none'>
                         <div class="" style="text-align:start ;">
                             <label for="" class=""
-                                style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                                style="text-align: center;"> رقم الصفحة : 1 /
                                 1</label>
                         </div>
                     </th>
-                    <th>
+                    <th style='border:none'>
                         <div class="" style="text-align:start ;">
                             <label for="" class=""
-                                style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة :
+                                style="text-align: center;"> رقم الوثيقة :
                                 QA–F-13
                             </label>
                         </div>

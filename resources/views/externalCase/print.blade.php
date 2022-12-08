@@ -7,16 +7,17 @@
 
                 <div style="" class="w-100 text-center my-4">
                     <h2 class='text-center' style='text-align:center'> 
-                    <span style='font-family:Cursive;border-bottom: 1px solid;
-    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
-    border-radius: 6px;
-    padding: 4;
-}'>استمارة قضايا خارجيه</span>
                     <img src="{{ asset($externalCase->logo) }}" style="border-radius: 6px;
     border: 2px solid #001635;
     margin: 10px;
     float: left;
     /* padding: 12px;" width="50px" height="50px" />
+                    <span style='font-family:Cursive;border-bottom: 1px solid;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 4;
+}'>استمارة قضايا خارجيه</span>
+                   
                     
                 </h2>
                   
@@ -27,7 +28,7 @@
                 </div>
                 <br>
                 <div class="form-group row w-100 text-right" style="text-align:center;    border-bottom: none;">
-                    <table class="table" style='border-top:none;border-bottom:none'>
+                    <table class="table" style='border:none'>
                         <tr style="background-color:#001635;padding:12px;color:white; text-align:center;">
                         <th>موضوع القضية</th>
                             <th>التأثير</th>
@@ -128,6 +129,8 @@
                                     </div>
                                 </th>
                             @endif
+                        </tr>
+                        <tr>
                             @if ($externalCase->status == 'confirmed' && Auth::user()->hasRole('Employee'))
                                 <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
                                     <div class="form-group row w-20 text-right">
@@ -148,7 +151,10 @@
                                         </div>
                                     </div>
                                 </th>
+                             
                             @endif
+                            </tr>
+                            <tr>
                             @if (Auth::user()->hasRole('Admin'))
                                 <th class=" text-center col-3 " style="">
                                     <div class="form-group row  text-right">
@@ -159,6 +165,8 @@
                                         </div>
                                     </div>
                                 </th>
+                               </tr>
+                               <tr>
                                 @if ($externalCase->status == 'confirmed' && Auth::user()->hasRole('Admin'))
                                     <th class=" w-50 text-center col-3 " style="">
 
@@ -172,17 +180,23 @@
                                     </th>
                                 @endif
                             @endif
+                            </tr>
+                            <tr>
                             @if (Auth::user()->hasRole('SuperAdmin'))
-                                <th class=" w-50 text-center col-3 " style="">
+                                <th class=" w-50 text-center col-3 " style="border: none;
+">
                                     <div class="form-group row w-20 text-right">
-                                        <label for="" class="col-3 col-form-label">مسئول الجودة </label>
+                                        <label for="" class="col-3 col-form-label"> {{ $externalCase->name_1 }}:مسئول الجودة </label>
                                         <div class="col-4">
                                            
-                                                {{ $externalCase->name_1 }}
+                                               
                                         </div>
                                     </div>
                                 </th>
-                                <th class=" w-50 text-center col-3 " style="">
+                               </tr>
+                               <tr>
+                                <th class=" w-50 text-center col-3 " style="border: none;
+">
 
                                     <div class="form-group row w-20 text-right">
                                         <label for="" class="col-3 col-form-label">مدير الجودة</label>
@@ -198,46 +212,49 @@
                     </thead>
                 </table>
               
-                <table class="table" style="text-align:center;    border-bottom: none;border-top:none;padding:12px">
-                    <thead>
-                        <tr>
-                            <th>
-                                <div class="" style="text-align:start ;">
+                <table class="" style="   border:none;padding:12px;margin-top:12px;background-color: #001635;
+    color: white;text-shadow: none;width: 97%;
+    margin: auto;
+    margin-bottom: 12px;    font-size: 12px;padding: 1px;">
+                    <thead >
+                        <tr style=''>
+                            <th style="border:none;">
+                                <div class="" style="text-align:center ;">
                                   {{ $externalCase->company_name }}
                                 </div>
 
                             </th>
-                            <th>
-                                <div class="" style="text-align:start ;">
+                            <th style="border:none;">
+                                <div class="" style="text-align:center ;">
                                  {{ $externalCase->date2 }}
                                 </div>
 
                             </th>
-                            <th>
-                                <div class="" style="text-align:start ;">
+                            <th style="border:none;">
+                                <div class="" style="text-align:center ;">
                                    {{ $externalCase->date3 }}
                                 </div>
 
                             </th>
-                            <th>
-                                <div class="" style="text-align:start ;">
+                            <th style="border:none;">
+                                <div class="" style="text-align:center ;">
                                     <label for="" class=""
-                                        style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                                        style="text-align: center;font-size:13px"> مدة الحفظ :
                                         سنتان </label>
                                 </div>
 
                             </th>
-                            <th>
-                                <div class="" style="text-align:start ;">
+                            <th style="border:none;">
+                                <div class="" style="text-align:center ;">
                                     <label for="" class=""
-                                        style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                                        style="text-align: center;font-size:13px"> رقم الصفحة : 1 /
                                         1</label>
                                 </div>
                             </th>
-                            <th>
-                                <div class="" style="text-align:start ;">
+                            <th style="border:none;">
+                                <div class="" style="text-align:center ;">
                                     <label for="" class=""
-                                        style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA –
+                                        style="text-align: center;font-size:13px"> رقم الوثيقة : QA –
                                         F
                                         - 13 </label>
                                 </div>
@@ -276,7 +293,7 @@
              border-top:1px solid silver;}
             input,
     textarea {
-        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important; */
         border: 1px solid white;
     }
         </style>

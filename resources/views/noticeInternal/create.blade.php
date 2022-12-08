@@ -53,14 +53,14 @@
 
                     <input type="text" class="form-control shadow-lg" name="place_review">
                 </div>
-                <div class="col-md-3" style='text-align:right !important'>
+                <div class="col-md-3" style='text-align:right !important;'>
                     <label for="" class=" col-form-label"> التوقيت :</label>
 
                     <input type="text" class="form-control shadow-lg" name="time">
                 </div>
             </div>
 
-            <hr size="20">
+           
             <div class="form-group row mr-5 p-3 border rounded" style='margin:auto;background: #001635 !important;color:white'>
                 <div class='col-md-10'>
                     <label for="" class=" col-form-label"> نحيط سيادتكم علما بأنه سيتم تنفيذ المراجعة الداخلية على :</label>

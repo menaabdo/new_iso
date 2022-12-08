@@ -29,8 +29,9 @@
                                     <div class="card-body">
                                         <!-- /.card-header -->
                                         <div class="card-body">
-                                            <table id="example1" class="table table-bordered table-striped" style='background-color: #001635;color:white;text-align:center'>
-                                                <thead>
+                                            <table id="example1" class="table table-bordered table-striped" >
+                                                <thead style='background-color: #001635;color:white;text-align:center'>
+                                                
                                                     <tr>
                                                         <th style=" font-size:20px ">Logo</th>
                                                         <th style=" font-size:20px ">Status</th>

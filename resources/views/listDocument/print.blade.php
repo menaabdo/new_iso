@@ -1,35 +1,70 @@
 @extends('layouts.print')
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
+
+</style>
+
 
 <div class="card">
-<div class="card-body">
+<div class="card-body" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '>
+
 
       <div style="" class="w-100 text-center my-4">
-        <h2>قائمة رئيسية للوثائق
-        </h2>
+      <h2 style='text-align:center;margin-bottom:40px'>
+      <img src="{{ asset($listDocument->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+      <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>قائمة رئيسية للوثائق
+</span></h2>
         <hr class="w-100">
     </div>
     <div>
-        <img src="{{ asset($listDocument->logo) }}" style="float: left;" width="100px" height="50px" />
-    
+      
     </div>
    
     <div>
         <label  class="col-1">تاريخ : </label>
-       {{ $listDocument->date_1 }}
+        <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='{{ $listDocument->date_1 }}'>
     </div>
     <br><br>
-        <table >
-            <tr style="background-color:rgb(218, 212, 250); text-align:center;">
-                <th scope="col" rowspan="2">اسم الوثيقة</th>
+    <div class='row my-4' style='overflow-x:auto'>
+              
+        <table style='border:none'>
+            <tr style="background-color:#001635;color:white;    width: 20%;">
+                   <th scope="col" rowspan="2">اسم الوثيقة</th>
                 <th scope="col" rowspan="2">الكود</th>
                 <th scope="col" colspan="2">إصدار</th>
                 <th scope="col" colspan="2">تعديل</th>
                 <th scope="col" rowspan="2">عدد الصفحات</th>
                 <th scope="col" colspan="12"> معدل توزيع النسخ (رقم النسخة للأدارات) وعددها</th>
             </tr>
-            <tr style="background-color:rgb(218, 212, 250); text-align:center;">
-                <th scope="col"> رقم</th>
+            <tr style="background-color:#001635;color:white;    width: 20%;">
+                   <th scope="col"> رقم</th>
                 <th scope="col">تاريخ</th>
                 <th scope="col"> رقم</th>
                 <th scope="col">تاريخ</th>
@@ -122,8 +157,9 @@
             @endforeach
             @endif
         </table>
+         </div>
 <br><br>
-<table class="table">
+<table class="table" style='border:none'>
     <thead>
         <tr>
             @if ($listDocument->status == 'inProgress' && Auth::user()->hasRole('Employee'))
@@ -274,44 +310,47 @@
     </thead>
 </table>
 <br><br>
-<table class="table">
+<table class="table" style="  ; border:none;padding:12px;margin-top:12px;background-color: #001635;
+    color: white;text-shadow: none;width: 97%;
+    margin: auto;
+    margin-bottom: 12px;    font-size: 12px;padding: 1px;">
     <thead>
         <tr>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                    {{ $listDocument->company_name }}
                 </div>
 
             </th>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                    {{ $listDocument->date2 }}
                 </div>
 
             </th>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                    {{ $listDocument->date3 }}
                 </div>
 
             </th>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                     <label for="" class=""
-                        style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ : سنتان </label>
+                        style="text-align: center;"> مدة الحفظ : سنتان </label>
                 </div>
 
             </th>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                     <label for="" class=""
-                        style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 / 1</label>
+                        style="text-align: center;"> رقم الصفحة : 1 / 1</label>
                 </div>
             </th>
-            <th>
+            <th style='border:none'>
                 <div class="" style="text-align:start ;">
                     <label for="" class=""
-                        style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA–F-13 </label>
+                        style="text-align: center;"> رقم الوثيقة : QA–F-13 </label>
                 </div>
             </th>
         </tr>

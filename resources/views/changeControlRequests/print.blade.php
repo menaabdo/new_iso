@@ -1,47 +1,82 @@
 @extends('layouts.print')
 
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
+
+</style>
 <div class="card">
-    <div class="card-body">
+    <div class="card-body" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '>
             <div style="" class="w-100 text-center my-4">
-                <h2>نموذج طلب التحكم في التغيير (CCR)</h2>
+            <h3 style='text-align:center;margin-bottom:40px'>
+            <img src="{{ asset($changeControlRequest->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+            <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>  نموذج طلب التحكم في التغيير (CCR)
+</span>
+</h3>
                 <hr class="w-100">
             </div>
             <div>
-                <img src="{{ asset($changeControlRequest->logo) }}" style="float: left;" width="100px"
-                    height="50px" />
-
+              
             </div>
             <br><br>
             <div class="form-group row ">
-                <div class="col-6">
+                <div class="col-6" style='margin:12px'>
                     <label for="" class="col-3 col-form-label">عنوان التغيير: </label>
-                {{$changeControlRequest->address}}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value= ' {{$changeControlRequest->address}}'>
                 </div>
             </div>
             <div class="form-group row ">
-                <div class="col-6">
+                <div class="col-6" style='margin:12px'>
                     <label for="" class="col-3 col-form-label">الطالب :</label>
-                    {{$changeControlRequest->requester}}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value= '{{$changeControlRequest->requester}}'>
                 </div>
             </div>
             <div class="form-group row ">
-                <div class="col-6">
+                <div class="col-6" style='margin:12px'>
                     <label for="" class="col-3 col-form-label">تاريخ    :</label>
-                   {{$changeControlRequest->date_1}}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value= ' {{$changeControlRequest->date_1}}'>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6" style='margin:12px'>
                     <div class="form-group row "> <label for="" class="col-3 col-form-label">الإدارة :</label>
-                   {{$changeControlRequest->management}}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value= ' {{$changeControlRequest->management}}'>
                 </div>
             </div>
             <br>
             <hr class="w-100">
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> التغييرات المطلوبة:</h1>
+                <h5 for="" class="form-control" style=""> التغييرات المطلوبة:</h5>
             </div>
-            <table class="table table-bordered">
+            <table class="table table-bordered" style='border:none'>
                 <thead>
     
                     <tr>
@@ -152,35 +187,41 @@
             </table>
             <hr class="w-100">
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> الوصف :</h1>
+                <h4 for="" class="form-control" style=""> الوصف :</h4>
             </div>
             <div class="form-group row w-100 text-left">
                 <div class="col-12">
-                    <textarea type="text" class="form-control" placeholder="  ......" name="description"> {{$changeControlRequest->description}}</textarea>
+                <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >
+             
+                    {{$changeControlRequest->description}}</textarea>
                 </div>
             </div>
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> السبب :</h1>
+                <h4 for="" class="form-control" style=""> السبب :</h4>
             </div>
             <div class="form-group row w-100 text-left">
                 <div class="col-12">
-                    <textarea type="text" class="form-control" placeholder="  ......" name="reasone"> {{$changeControlRequest->reasone}}</textarea>
+                <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >
+             
+                     {{$changeControlRequest->reasone}}</textarea>
                 </div>
             </div>
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> تغيير المقترح :</h1>
+                <h4 for="" class="form-control" style=""> تغيير المقترح :</h4>
             </div>
             <div class="form-group row w-100 text-left">
                 <div class="col-12">
-                    <textarea type="text" class="form-control" placeholder="  ......" name="suggested_change">{{$changeControlRequest->suggested_change}}</textarea>
+                <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >
+             
+                    {{$changeControlRequest->suggested_change}}</textarea>
                 </div>
             </div>
     <br><br>
             <div class="form-group row w-100 text-left">
-                <h1 for="" class="form-control" style="background-color: pink;"> المستند المتأثر :</h1>
+                <h4 for="" class="form-control" style=""> المستند المتأثر :</h4>
             </div>
             <div class="form-group row w-100 text-center">
-                <table>
+                <table class='table' style='border:none'>
                     <tr style="background-color:rgb(187, 199, 250)">
                         <th> المستند</th>
                     </tr>
@@ -233,10 +274,10 @@
             
         </div>
         <hr class="w-100">
-        <div class="form-group row w-100 text-left">
-            <label for="" class="col-1 col-form-label"> 	مستوي التغيير :</label>
+        <div class="form-group row w-100 text-center">
+            <h4 for="" class="col-1 col-form-label" style='text-align:center'> 	مستوي التغيير :</h4>
         </div>
-        <table class="table table-bordered">
+        <table class="table table-bordered" style='border:none'>
             <thead>
 
                 <tr>
@@ -278,23 +319,26 @@
             </thead>
         </table>
         <div class="form-group row w-100 text-left">
-            <h1 for="" class="form-control" style="background-color: pink;">وصف توكيد الجودة : </h1>
+            <h4 for="" class="form-control" style="text-align:center">وصف توكيد الجودة : </h4>
         </div>
-        <div class="form-group row w-100 text-left">
-            <div class="col-12">
-                <textarea type="text" class="form-control" placeholder="  ......" name="quality_assurance">{{$changeControlRequest->quality_assurance}}</textarea>
+        <div class="form-group row w-100 text-center">
+            <div class="col-12" style='text-align: center;'>
+            <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >
+             
+               {{$changeControlRequest->quality_assurance}}</textarea>
             </div>
         </div>
         <div class="form-group row w-100 text-left">
-            <div class="col-6">
-                <label for="" class="col-1 col-form-label text-left">مدير الجودة   </label>
-               {{$changeControlRequest->quality_manager}}
+            <div class="col-6" style='margin:12px;text-align: center;'>
+                <h4 for="" class="col-1 col-form-label text-left">مدير الجودة   </h4>
+                <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value= '  {{$changeControlRequest->quality_manager}}'>
             </div>
         </div>
-        <div class="form-group row w-100 text-left">
-            <h1 for="" class="form-control" style="background-color: pink;"> التدابير الواجب اتخاذها بعد تنفيذ التغيير : </h1>
+        <div class="form-group row w-100 text-left" style='text-align: center;'>
+            <h4 for="" class="form-control" style=""> التدابير الواجب اتخاذها بعد تنفيذ التغيير : </h4>
         </div>
-        <table class="table table-bordered">
+        <table class="table table-bordered" style='border:none'>
             <thead>
                 <tr>
                     <th>
@@ -509,11 +553,11 @@
             </thead>
         </table>
         <br><br>
-        <div class="form-group row w-100 text-left">
-            <h1 for="" class="form-control" style="background-color: pink;"> تغيير الموافقة على التحكم : </h1>
+        <div class="form-group row w-100 text-left" style='text-align:center'>
+            <h4 for="" class="form-control" style=""> تغيير الموافقة على التحكم : </h4>
         </div>
 
-        <table class="table">
+        <table class="table" style='border:none'>
             <thead>
                 <tr>
                     <th class=" w-50 text-left col-2 ">
@@ -553,43 +597,53 @@
        
         <hr class="w-100">
            
-        <table class="table">
+        <table class="table" style=' border:none;
+    padding:12px;
+    margin-top:12px;
+    background-color: #001635;
+    color: white;
+    /* text-shadow: none; */
+    width: 97%;
+    margin: auto;
+    margin-bottom: 12px;
+    font-size: 12px;
+    padding: 1px;'>
             <thead>
                 <tr>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
                     {{ $changeControlRequest->company_name }}
                       </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
                        {{ $changeControlRequest->date2 }}
                       </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                         <div class="" style="text-align:start ;">
                             {{ $changeControlRequest->date3 }}
                           </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                            <label for="" class="" style="text-align: center;"> مدة الحفظ :
                                 سنتان </label>
                       </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                        <label for="" class="" style="text-align: center;"> رقم الصفحة : 1 /
                           1</label>
                       </div>
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                        <label for="" class="" style="text-align: center;"> رقم الوثيقة : QA – F
                           - 13 </label>
                       </div>
                     </th>
@@ -613,16 +667,16 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid silver;
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+            border-bottom: 2px solid silver;
+            border-top: 2px solid silver;
         }
 
         #mainDiv {

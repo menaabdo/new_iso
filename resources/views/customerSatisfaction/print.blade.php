@@ -1,25 +1,57 @@
 @extends('layouts.print')
 
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
+
+</style>
 
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '>
             <div style="" class="w-100 text-center my-4">
-                <h2>متابعة شكوى عميل</h2>
+            <h3 style='text-align:center;margin-bottom:40px'>
+            <img src="{{ asset($customerSatisfaction->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+            <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>  متابعة شكوى عميل
+</span>
+</h3>
                 <hr class="w-100">
             </div>
             <div>
-                <img src="{{ asset($customerSatisfaction->logo) }}" style="float: left;" width="100px" height="50px" />
-
+             
             </div>
             <br><br>
             <div class="col-12">
-                <h1> عزيزنا عميلنا الكريم</h1>
+                <h4> عزيزنا عميلنا الكريم</h4>
                 <p>
-                <h3>
+                <h5>
                     نتشرف بأن نعرض على سيادتكم هذا النموذج الخاص بقياس مدى رضاءكم على مستوى المنتجات\ الخدمات التي نفخر
                     بتقديمها لسيادتكم.
-                </h3>
+                </h5>
                 </p>
                 <p>
                 <h3>
@@ -32,19 +64,20 @@
             <hr class="w-100">
             <br>
             <label>
-                <h1>** برجاء وضع تعليقاتكم في الجدول بالأسفل :</h1>
+                <h4>** برجاء وضع تعليقاتكم في الجدول بالأسفل :</h4>
             </label>
 
             <div class="form-group row w-100 text-right" style="text-align:center;">
 
-                <table class="table">
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
-                        <th scope="col" rowspan="2">م</th>
+                <table class="table" style='border:none'>
+                    <tr  style='background-color: #2a415b;font-size:11px;
+    color: white'>
+      <th scope="col" rowspan="2">م</th>
                         <th scope="col" rowspan="2">معايير القياس</th>
                         <th scope="col" colspan="3">درجة المعايير</th>>
                     </tr>
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
-                        <th scope="col"> ممتاز </th>
+                    <tr  style='background-color: #2a415b;font-size:11px;
+    color: white'> <th scope="col"> ممتاز </th>
                         <th scope="col">ملائم </th>
                         <th scope="col"> غير مرضي</th>
                     </tr>
@@ -156,71 +189,86 @@
 
                 </table>
             </div>
-            <br><br><br><br><br><br><br><br>
+            <br><br>
             <div class="form-group row ">
-                <h1 for="" class="col-2 col-form-label">ملاحظات اخري :</h1>
+                <h4 for="" class="col-2 col-form-label">ملاحظات اخري :</h4>
                 <div class="col-9">
-                    <textarea class="form-control" name="nodes">{{ $customerSatisfaction->nodes }}</textarea>
+                <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >
+                {{ $customerSatisfaction->nodes }}
+        </textarea>
                 </div>
             </div>
 
             <div class="form-group row ">
-                <div class="col-9">
+                <div class="col-9" style='margin:12px'>
                     <label for="" class="col-2 col-form-label">الأسم :</label>
-                    {{ $customerSatisfaction->name }}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value='{{ $customerSatisfaction->name }}'>
                 </div>
-                <div class="col-9">
+                <div class="col-9" style='margin:12px'>
                     <label for="" class="col-2 col-form-label">التاريخ :</label>
-                    {{ $customerSatisfaction->date_1 }}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value='{{ $customerSatisfaction->date_1 }}'>
                 </div>
                 <div class="col-9">
                     <label for="" class="col-2 col-form-label">رقم الهاتف :</label>
-                    {{ $customerSatisfaction->phone }}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;' value=' {{ $customerSatisfaction->phone }}'>
                 </div>
             </div>
             <br>
             <hr class="w-100">
 
-            <table class="table">
+            <table class="" style=' border:none;
+    padding:12px;
+    margin-top:12px;
+    background-color: #001635;
+    color: white;
+    /* text-shadow: none; */
+    width: 97%;
+    margin: auto;
+    margin-bottom: 12px;
+    font-size: 12px;
+    padding: 1px;'>
                 <thead>
                     <tr>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 {{ $customerSatisfaction->company_name }}
                             </div>
 
                         </th>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 {{ $customerSatisfaction->date2 }}
                             </div>
 
                         </th>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 {{ $customerSatisfaction->date3 }}
                             </div>
 
                         </th>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                                    style="text-align: center;"> مدة الحفظ :
                                     سنتان </label>
                             </div>
 
                         </th>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                                    style="text-align: center;"> رقم الصفحة : 1 /
                                     1</label>
                             </div>
                         </th>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                                    style="text-align: center;"> رقم الوثيقة : QA – F
                                     - 13 </label>
                             </div>
                         </th>

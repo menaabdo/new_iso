@@ -1,27 +1,59 @@
 @extends('layouts.print')
 
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
+
+</style>
 
     <div class="card">
-        <div class="card-body">
-            <h3 style="margin-top:85px;">تحليل(SWOT)
+        <div class="card-body" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '>
+            <h3 style='text-align:center;margin-bottom:40px'>
+            <img src="{{ asset($swot->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+            <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>تحليل(SWOT)</span>
             </h3>
             <hr>
             <div>
-                <img src="{{ asset($swot->logo) }}" style="float: left;" width="100px" height="50px" />
-
+              
             </div>
             <br><br>
             <div class="form-group row w-100 text-left">
-                <div class="col-4">
+                <div class="col-4" style='margin:12px'>
                     <label for="" class="col-1 col-form-label"> الاسم :</label>
-                    {{ $swot->name_1 }}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value=' {{ $swot->name_1 }}'>
                 </div>
             </div>
             <div class="form-group row w-100 text-left">
                 <div class="col-4">
                     <label for="" class="col-1 col-form-label"> التاريخ :</label>
-                    {{ $swot->date_1 }}
+                    <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value=' {{ $swot->date_1 }}'>
                 </div>
             </div>
             <br>
@@ -29,8 +61,9 @@
                 <div class="col-6">
                     <label for="" class="col-5 col-form-label text-center">نقاط القوة :</label>
                     <br>
-                    <textarea type="text" class="form-control" name="strength_point" placeholder=":"
-                        style="border-radius: 50px; border:solid 5px rgb(235, 42, 25); height: 300px; width: 600px;">{{ $swot->strength_point }}</textarea>
+                    <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $swot->strength_point }}</textarea>
+             
+                    
 
 
                 </div>
@@ -39,69 +72,73 @@
                     <label for="" class="col-5 col-form-label text-center">الفرص :</label>
 
                     <br>
-                    <textarea type="text" name="opportunities" class="form-control" placeholder=":"
-                        style="border-radius: 50px; border:solid 5px rgb(156, 158, 183); height: 300px; width: 600px;">{{ $swot->opportunities }}</textarea>
-                </div>
+                    <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $swot->opportunities }}</textarea>
+             
+                       </div>
                 <br><br><br><br><br><br><br>
                 <div class="col-6">
                     <label for="" class="col-5 col-form-label text-center"> نقاط الضعف :</label>
 
                     <br>
-                    <textarea type="text" class="form-control" name="weak_point" placeholder=":"
-                        style=" border-radius: 50px; border:solid 5px rgb(46, 255, 19); height: 300px; width: 600px;">{{ $swot->weak_point }}</textarea>
-
+                    <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $swot->weak_point }}</textarea>
+             
+                  
                 </div>
                 <br>
                 <div>
                     <label for="" class="col-5 col-form-label text-center">التهديدات :</label>
                     <br>
-                    <textarea type="text" name="threat" class="form-control" placeholder=":"
-                        style="border-radius: 50px; border:solid 5px rgb(7, 77, 176); height: 300px; width: 600px;">{{ $swot->threat }}</textarea>
-
+                    <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $swot->threat }}</textarea>
+             
+                   
                 </div>
                 <br>
             </div>
             <hr class="w-100">
-            <table class="table">
+            <table class="" style="  ; border:none;padding:12px;margin-top:12px;background-color: #001635;
+    color: white;text-shadow: none;width: 97%;
+    margin: auto;
+    margin-bottom: 12px;    font-size: 12px;padding: 1px;">
+  
                 <thead>
                     <tr>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 {{ $swot->company_name }}
                             </div>
 
                         </th>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 {{ $swot->date2 }}
                             </div>
 
                         </th>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 {{ $swot->date3 }}
                             </div>
 
                         </th>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                                    style="text-align: center;"> مدة الحفظ :
                                     سنتان </label>
                             </div>
 
                         </th>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                                    style="text-align: center;"> رقم الصفحة : 1 /
                                     1</label>
                             </div>
                         </th>
-                        <th>
+                        <th style='border:none'>
                             <div class="" style="text-align:start ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                                    style="text-align: center;"> رقم الوثيقة : QA – F
                                     - 13 </label>
                             </div>
                         </th>

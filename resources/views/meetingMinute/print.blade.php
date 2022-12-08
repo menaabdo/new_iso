@@ -1,36 +1,72 @@
 @extends('layouts.print')
 @section('content')
+<style>
+    input,textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    textarea{
+        border: none;
+    height: 80px;
+    padding: 10px;
+    }
+    input{
+        font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    }
+
+</style>
+
 <div class="card">
-    <div class="container p-4">
+    <div class="container p-4" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+ '>
         <div style="" class=" text-center">
-            <h2>محضر إجتماع مراجعة الإدارة </h2>
+        <h2 style='text-align:center;margin-bottom:40px'>
+        <img src="{{ asset($meetingMinute->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+        <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>     محضر إجتماع مراجعة الإدارة </span></h2>
               <hr class="w-100">
         </div>
         <div>
-        <img src="{{ asset($meetingMinute->logo) }}" style="float: left;" width="100px" height="50px" />
-        </div>
+         </div>
         <br>
         <div class=" form-group row w-200 text-center ">
             <label  class="col-1" >رقم : </label>
-            {{ $meetingMinute->num }}
+            <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='  {{ $meetingMinute->num }}'>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <label for="" class="col-1 col-form-label ">التاريخ : </label>
-            {{ $meetingMinute->date_1 }}
+            <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='  {{ $meetingMinute->date_1 }}'>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <label for="" class="col-1 col-form-label "> مكان الإنعقاد : </label>
-            {{ $meetingMinute->place_meeting }}
+            <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='  {{ $meetingMinute->place_meeting }}'>
          
         </div>
         <div class=" form-group row w-200 text-center">
 
-            <div class="col-4">
+            <div class="col-4" style='margin:12px'>
                 <label for="" class="col-2 col-form-label "> الحاضرون:</label>
-               طبقاً للكشف المرفق
+                 طبقاً للكشف المرفق
+                 <label for="" class="col-3 col-form-label ">توقيت الإنعقاد : </label>
+                 <input readonly style=' box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;border:none;
+    text-align: center;   ' value='{{ $meetingMinute->time_meeting }}'>
+         
             </div>
             <div class="col-3">
-                <label for="" class="col-3 col-form-label ">توقيت الإنعقاد : </label>
-                {{ $meetingMinute->time_meeting }}
-            </div>
+                  </div>
         </div>
         <br>
         <div class=" form-group row w-200 text-center">
@@ -43,138 +79,161 @@
         </div>
 
 <br><br>
-        <div class="form-group row w-100 text-right ">
+        <div class="form-group row w-100 text-right " style='text-align: right;
+    margin-right: 120;'
+>
             <h2 for="" class="col-2 col-form-label"> موضوعات الإجتماع:</h2>
-            <hr width="1300px;" size="20" color="black">
+          
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label"> 1. نتائج مراجعات الإدارة السابقة وفاعلية تطبيق القرارات الخاصة بها.</h2>
+                <h5 for="" class="col-7 col-form-label"> 1. نتائج مراجعات الإدارة السابقة وفاعلية تطبيق القرارات الخاصة بها.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">2. أهداف الإدارة العليا (سياسات / خطط عمل / مشاريع تطوير).</h2>
+                <h5 for="" class="col-7 col-form-label">2. أهداف الإدارة العليا (سياسات / خطط عمل / مشاريع تطوير).</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">3. نتائج المراجعات الداخلية على أنظمة الجودة المطبقة بالشركة.</h2>
+                <h5 for="" class="col-7 col-form-label">3. نتائج المراجعات الداخلية على أنظمة الجودة المطبقة بالشركة.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">4. نتائج المراجعات الخارجية على أنظمة الجودة المطبقة بالشركة ( إن وجدت ).</h2>
+                <h5 for="" class="col-7 col-form-label">4. نتائج المراجعات الخارجية على أنظمة الجودة المطبقة بالشركة ( إن وجدت ).</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">5. موقف حالات عدم المطابقة بالإدارات المختلفة.</h2>
+                <h5 for="" class="col-7 col-form-label">5. موقف حالات عدم المطابقة بالإدارات المختلفة.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">6. موقف الإجراءات التصحيحية / الوقائية.</h2>
+                <h5 for="" class="col-7 col-form-label">6. موقف الإجراءات التصحيحية / الوقائية.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">7. تقييم أعمال التسويق والمبيعات بما فى ذلك أداء المنافسين وردود فعل العملاء.</h2>
+                <h5 for="" class="col-7 col-form-label">7. تقييم أعمال التسويق والمبيعات بما فى ذلك أداء المنافسين وردود فعل العملاء.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">8. الإحتياجات التدريبية.</h2>
+                <h5 for="" class="col-7 col-form-label">8. الإحتياجات التدريبية.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">9. الإحتياجات البشرية والفنية.</h2>
+                <h5 for="" class="col-7 col-form-label">9. الإحتياجات البشرية والفنية.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">10. ما يستجد من أعمال تتعلق بأنظمة الجودة المطبقة بالشركة.</h2>
+                <h5 for="" class="col-7 col-form-label">10. ما يستجد من أعمال تتعلق بأنظمة الجودة المطبقة بالشركة.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">11. التعديلات التى طرأت على الهيكل التنظيمى.</h2>
+                <h5 for="" class="col-7 col-form-label">11. التعديلات التى طرأت على الهيكل التنظيمى.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">12. بأية شكاوى عملاء فيما يخص جودة خدمات مصنع عبر الجودة للمنتجات الاسمنتية .</h2>
+                <h5 for="" class="col-7 col-form-label">12. بأية شكاوى عملاء فيما يخص جودة خدمات مصنع عبر الجودة للمنتجات الاسمنتية .</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">13. مدى تحقيق وفاعلية نظام الـmeetingMinute 9001 وأي احتياجات للتحسين. </h2>
+                <h5 for="" class="col-7 col-form-label">13. مدى تحقيق وفاعلية نظام الـmeetingMinute 9001 وأي احتياجات للتحسين. </h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">14. متابعة الأعمال من مراجعات إدارة سابقة.</h2>
+                <h5 for="" class="col-7 col-form-label">14. متابعة الأعمال من مراجعات إدارة سابقة.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">15. التغييرات المخططة التي قد تؤثر على أنظمة الجودة المطبقة بمصنع عبر الجودة للمنتجات الاسمنتية.</h2>
+                <h5 for="" class="col-7 col-form-label">15. التغييرات المخططة التي قد تؤثر على أنظمة الجودة المطبقة بمصنع عبر الجودة للمنتجات الاسمنتية.</h5>
             </div>
             <div class="form-group row w-100 text-right">
-                <h2 for="" class="col-7 col-form-label">16. توصيات للتحسين.</h2>
+                <h5 for="" class="col-7 col-form-label">16. توصيات للتحسين.</h5>
             </div>
         </div>
 
         <br><br>
         <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-2 col-form-label">ملخص الإجتماع :</h1>
+            <h6 for="" class="col-2 col-form-label">ملخص الإجتماع :</h6>
         </div>
         <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-5 col-form-label">موقف مراجعات الإدارة السابقة :</h1>
+            <h6 for="" class="col-5 col-form-label">موقف مراجعات الإدارة السابقة :</h6>
             <div class="col-10">
-                <textarea type="text" class="form-control" placeholder=" المراجعة ......" name="stand_review"> {{ $meetingMinute->stand_review }}</textarea>
+            <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $meetingMinute->stand_review }}</textarea>
+                
+                
             </div>
         </div>
         <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-5 col-form-label">قرارات وتوصيات الإجتماع :</h1>
+            <h6 for="" class="col-5 col-form-label">قرارات وتوصيات الإجتماع :</h6>
         </div>
         <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-5 col-form-label">أولاً: فيما يختص بتحسين كفاءة نظام ﺇدارة الجودة فقد تقرر ما يلى</h1>
+            <h6 for="" class="col-5 col-form-label">أولاً: فيما يختص بتحسين كفاءة نظام ﺇدارة الجودة فقد تقرر ما يلى</h6>
         </div>
         <div class="form-group row w-10 text-center">
+            <div class="col-3">
             <label for="" class="col-1 col-form-label">1   -</label>
-            <div class="col-3">
-                <textarea  type="text" class="form-control" placeholder="  ......" name="improve_efficiency_1"> {{ $meetingMinute->improve_efficiency_1 }}</textarea>
+           
+            <textarea type="text" class="form-control" style='margin:12px;vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $meetingMinute->improve_efficiency_1 }}</textarea>
+                
+                
             </div>
         </div>
         <div class="form-group row w-10 text-center">
-            <label for="" class="col-1 col-form-label">2   -</label>
-            <div class="col-3">
-                <textarea type="text" class="form-control" placeholder="  ......" name="improve_efficiency_2"> {{ $meetingMinute->improve_efficiency_2 }}</textarea>
-            </div>
+              <div class="col-3">
+              <label for="" class="col-1 col-form-label">2   -</label>
+         
+            <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $meetingMinute->improve_efficiency_2 }}</textarea>
+               
+                  </div>
         </div>
         <div class="form-group row w-10 text-center">
-            <label for="" class="col-1 col-form-label">3  -</label>
-            <div class="col-3">
-                <textarea type="text" class="form-control" placeholder="  ......" name="improve_efficiency_3"> {{ $meetingMinute->improve_efficiency_3 }}</textarea>
-            </div>
+             <div class="col-3">
+             <label for="" class="col-1 col-form-label">3  -</label>
+          
+            <textarea type="text" class="form-control" style='margin:12px;vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $meetingMinute->improve_efficiency_3 }}</textarea>
+             
+                  </div>
         </div>
         <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-5 col-form-label">ثانياً: فيما يختص بتحسين الخدمات طبقاً لمتطلبات العملاء فقد تقرر:</h1>
+            <h6 for="" class="col-5 col-form-label">ثانياً: فيما يختص بتحسين الخدمات طبقاً لمتطلبات العملاء فقد تقرر:</h6>
         </div>
         <div class="form-group row w-10 text-center">
+            <div class="col-3">
             <label for="" class="col-1 col-form-label">1   -</label>
-            <div class="col-3">
-                <textarea type="text" class="form-control" placeholder="  ......" name="improve_service_1"> {{ $meetingMinute->improve_service_1 }}</textarea>
-            </div>
+           
+            <textarea type="text" class="form-control" style='margin:12px;vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $meetingMinute->improve_service_1 }}</textarea>
+             
+                  </div>
         </div>
         <div class="form-group row w-10 text-center">
-            <label for="" class="col-1 col-form-label">2   -</label>
-            <div class="col-3">
-                <textarea type="text" class="form-control" placeholder="  ......" name="improve_service_2"> {{ $meetingMinute->improve_service_2 }}</textarea>
-            </div>
+              <div class="col-3">
+              <label for="" class="col-1 col-form-label">2   -</label>
+         
+            <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $meetingMinute->improve_service_2 }}</textarea>
+             
+                   </div>
         </div>
         <div class="form-group row w-10 text-center">
+            <div class="col-3">
             <label for="" class="col-1 col-form-label">3  -</label>
-            <div class="col-3">
-                <textarea type="text" class="form-control" placeholder="  ......" name="improve_service_3"> {{ $meetingMinute->improve_service_3 }}</textarea>
-            </div>
+           
+            <textarea type="text" class="form-control" style='margin:12px;vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $meetingMinute->improve_service_3 }}</textarea>
+                
+             </div>
         </div>
         <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-5 col-form-label">ثالثاً: الموارد البشرية والمادية المطلوبة هى:</h1>
+            <h6 for="" class="col-5 col-form-label">ثالثاً: الموارد البشرية والمادية المطلوبة هى:</h6>
         </div>
         <div class="form-group row w-10 text-center">
-            <label for="" class="col-1 col-form-label">1   -</label>
+           <div class="col-3">
+           <label for="" class="col-1 col-form-label">1   -</label>
+           
+            <textarea type="text" class="form-control" style='margin:12px;vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $meetingMinute->hr_1 }}</textarea>
+               
+                 </div>
+        </div>
+        <div class="form-group row w-10 text-center">
+               <div class="col-3">
+               <label for="" class="col-1 col-form-label">2   -</label>
+         
+            <textarea type="text" class="form-control" style='vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $meetingMinute->hr_2 }}</textarea>
+             
+                 </div>
+        </div>
+        <div class="form-group row w-10 text-center">
             <div class="col-3">
-                <textarea type="text" class="form-control" placeholder="  ......" name="hr_1"> {{ $meetingMinute->hr_1 }}</textarea>
-            </div>
-        </div>
-        <div class="form-group row w-10 text-center">
-            <label for="" class="col-1 col-form-label">2   -</label>
-            <div class="col-3">
-                <textarea type="text" class="form-control" placeholder="  ......" name="hr_2"> {{ $meetingMinute->hr_2 }}</textarea>
-            </div>
-        </div>
-        <div class="form-group row w-10 text-center">
             <label for="" class="col-1 col-form-label">3  -</label>
-            <div class="col-3">
-                <textarea type="text" class="form-control" placeholder="  ......" name="hr_3"> {{ $meetingMinute->hr_3 }}</textarea>
-            </div>
+           
+            <textarea type="text" class="form-control" style='margin:12px;vertical-align: middle;    width: 70%;' name="meeting_purpose" >{{ $meetingMinute->hr_3 }}</textarea>
+             
+                  </div>
         </div>
 
       <br><br><br>
-        <table class="table">
+        <table class="table" style='border:none;text-shadow:none'>
             <thead>
                 <tr>
                     @if ($meetingMinute->status == 'inProgress' && Auth::user()->hasRole('Employee'))
@@ -306,41 +365,45 @@
             </thead>
         </table>
         <br><br>
-        <table class="table">
+        <table class="table" style="  ; border:none;padding:12px;margin-top:12px;background-color: #001635;
+    color: white;text-shadow: none;width: 97%;
+    margin: auto;
+    margin-bottom: 12px;    font-size: 12px;padding: 1px;">
+                 
             <thead>
                 <tr>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
                         {{ $meetingMinute->company_name }}
                       </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
                         {{ $meetingMinute->date2 }}
                       </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                         <div class="" style="text-align:start ;">
                           {{ $meetingMinute->date3 }}
                           </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ : سنتان </label>
+                            <label for="" class="" style="text-align: center;"> مدة الحفظ : سنتان </label>
                       </div>
             
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 / 1</label>
+                        <label for="" class="" style="text-align: center;;"> رقم الصفحة : 1 / 1</label>
                       </div>
                     </th>
-                    <th>
+                    <th style='border:none'>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA–F-13 </label>
+                        <label for="" class="" style="text-align: center;"> رقم الوثيقة : QA–F-13 </label>
                       </div>
                     </th>
                   </tr>
@@ -361,8 +424,8 @@
     td,
     tr {
         border: 1px solid black;
-        border-bottom: 2px solid black;
-        border-top: 2px solid black;
+        /* border-bottom: 2px solid black;
+        border-top: 2px solid black; */
     }
 
     #mainDiv {
