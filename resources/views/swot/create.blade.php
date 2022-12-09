@@ -10,6 +10,37 @@
     textarea {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
+    #ip1 {
+    border-radius: 18px;
+     border: 2px solid #609;
+    padding: 20px; 
+    width: 200px;
+    height: 15px;    
+}
+
+#ip2 {
+    border-radius: 25px;
+    border: 2px solid #609;
+    padding: 20px; 
+    width: 200px;
+    height: 15px;    
+}
+
+#ip3 {
+    border-radius: 15px 50px 30px 5px;
+     border: 2px solid #609;
+    padding: 20px; 
+    width: 200px;
+    height: 15px; 
+}
+
+#ip4 {
+    border-radius: 15px 50px 30px;
+    border: 2px solid #609;
+    padding: 20px; 
+    width: 200px;
+    height: 15px; 
+}
 
 </style>
 <div class="card row" style='width:100%;;margin:auto'>
@@ -40,29 +71,28 @@
             <div class="form-group row w-100 text-center">
                 <label for="" class="col-3 col-form-label"> نقاط القوة :</label>
                 <div class="col-4">
-                <textarea type="text" class="form-control" name="strength_point" placeholder=":" style=" height: 300px; width: 600px;"></textarea>
+                <textarea type="text" id="ip1" class="form-control" name="strength_point" placeholder="" style=" height: 300px; width: 600px;"></textarea>
                 
                 </div>
             </div>
             <div class="form-group row w-100 text-center">
                 <label for="" class="col-3 col-form-label"> الفرص :</label>
                 <div class="col-4">
-                <textarea type="text" name="opportunities" class="form-control" placeholder=":" style=" height: 300px; width: 600px;"></textarea>
+                <textarea type="text" id="ip2" name="opportunities" class="form-control" placeholder="" style=" height: 300px; width: 600px;"></textarea>
 
                 </div>
             </div>
             <div class="form-group row w-100 text-center">
                 <label for="" class="col-3 col-form-label"> نقاط الضعف :</label>
                 <div class="col-4">
-                <textarea type="text" class="form-control" name="weak_point" placeholder=":" style="  height: 300px; width: 600px;"></textarea>
+                <textarea type="text" id="ip3" class="form-control" name="weak_point" placeholder="" style="  height: 300px; width: 600px;"></textarea>
                  
                 </div>
             </div>
             <div class="form-group row w-100 text-center">
                 <label for="" class="col-3 col-form-label"> التهديدات :</label>
                 <div class="col-4">
-                <textarea type="text" name="threat" class="form-control" placeholder=":" style=" height: 300px; width: 600px;"></textarea>
-
+                <textarea type="text" id="ip4" name="threat" class="form-control" placeholder="" style=" height: 300px; width: 600px;"></textarea>
                 </div>
             </div>
             

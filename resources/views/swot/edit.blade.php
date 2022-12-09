@@ -10,7 +10,37 @@
     textarea {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
+    #ip1 {
+    border-radius: 18px;
+     border: 2px solid #609;
+    padding: 20px; 
+    width: 200px;
+    height: 15px;    
+}
 
+#ip2 {
+    border-radius: 25px;
+    border: 2px solid #609;
+    padding: 20px; 
+    width: 200px;
+    height: 15px;    
+}
+
+#ip3 {
+    border-radius: 15px 50px 30px 5px;
+     border: 2px solid #609;
+    padding: 20px; 
+    width: 200px;
+    height: 15px; 
+}
+
+#ip4 {
+    border-radius: 15px 50px 30px;
+    border: 2px solid #609;
+    padding: 20px; 
+    width: 200px;
+    height: 15px; 
+}
 </style>
 <div class="card row" style='width:100%;;margin:auto'>
     <div class="card-body row" style='width:90%;margin:auto'>
@@ -46,7 +76,7 @@
                     <label for="" class="col-3 col-form-label text-center">نقاط القوة :</label>
                    
                     <div class="col-4">
-                    <textarea type="text" class="form-control" name="strength_point" placeholder=":"
+                    <textarea type="text" id="ip1" class="form-control" name="strength_point" placeholder=""
                         style=" height: 300px; width: 600px;">{{$swot->strength_point}}</textarea>
              </div>
              </div>
@@ -55,7 +85,7 @@
                         <label for="" class="col-3 col-form-label text-center">الفرص :</label>
                         <div class="col-4">
                    
-                    <textarea type="text" name="opportunities" class="form-control" placeholder=":"
+                    <textarea type="text" id="ip2" name="opportunities" class="form-control" placeholder=""
                         style=" height: 300px; width: 600px;">{{$swot->opportunities}}</textarea>
                         </div>
                 </div>
@@ -65,7 +95,7 @@
                     <label for="" class="col-3 col-form-label text-center"> نقاط الضعف :</label>
                     <div class="col-4">
                    
-                    <textarea type="text" class="form-control" name="weak_point" placeholder=":"
+                    <textarea type="text" id="ip3" class="form-control" name="weak_point" placeholder=""
                         style=" height: 300px; width: 600px;">{{$swot->weak_point}}</textarea>
                     </div>
                     </div>
@@ -73,7 +103,7 @@
                 
                         <label for="" class="col-3 col-form-label text-center">التهديدات :</label>
                         <div class="col-4">
-                    <textarea type="text" name="threat" class="form-control" placeholder=":"
+                    <textarea type="text" id="ip4" name="threat" class="form-control" placeholder=""
                         style=" height: 300px; width: 600px;">{{$swot->threat}}</textarea>
                         </div>
                 </div>
