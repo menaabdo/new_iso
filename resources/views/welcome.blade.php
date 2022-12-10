@@ -20,7 +20,6 @@
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#">اجراء اهداف الجودة</a>
     <a class="dropdown-item" href="#">خطة تنفيذ الهدف</a>
-    <a class="dropdown-item" href="#">الارشيف</a>
   </div>
 </div>
     </h5>
@@ -38,7 +37,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#">اجراء تقييم المخاطر</a>
     <a class="dropdown-item" href="#">سجل حصر وتحديد المخاطر</a>
-    <a class="dropdown-item" href="#">الارشيف</a>
+  
   </div>
 </div>
     </h5>
@@ -63,7 +62,7 @@
     <a class="dropdown-item" href="#">مراجعيين داخليين لنظام الجودة</a>
     <a class="dropdown-item" href="#">امر تكليف مراجعة داخلية</a>
     <a class="dropdown-item" href="#">خطة سنوية للمراجعة الداخيلية</a>
-    <a class="dropdown-item" href="#">الارشيف</a>
+  
  
   </div>
 </div>
@@ -86,7 +85,7 @@
     <a class="dropdown-item" href="#">دعوة لاجتماع مراجعة الادارة</a>
     <a class="dropdown-item" href="#">سجل متابعة قرارات </a>
     <a class="dropdown-item" href="#">مجضر اجتماع المراجعة</a>
-    <a class="dropdown-item" href="#">الارشيف</a>
+  
  
   </div>
 </div>
@@ -133,7 +132,7 @@
     <a class="dropdown-item" href="#">سجل متابعة طلبات الاجراءات التصحيحية </a>
     <a class="dropdown-item" href="#">تقرير عدم المطابقةوالاجراءات التصحيحية</a>
    
-    <a class="dropdown-item" href="#">الارشيف</a>
+  
    
 
   </div>
@@ -158,7 +157,7 @@
     <a class="dropdown-item" href="#">استمارة قضايا داخلية</a>
     <a class="dropdown-item" href="#">استمارة الاطراف المهتمة</a>
     <a class="dropdown-item" href="#">تحليل(SWOT) </a>
-    <a class="dropdown-item" href="#">الارشيف</a>
+  
    
 
   </div>
@@ -208,7 +207,7 @@
 '>
     <a class="dropdown-item" href="#">اجراء التحكم في التغيير</a>
     <a class="dropdown-item" href="#">نموذج طلب التحكم في التغيير</a>
-    <a class="dropdown-item" href="#">الارشيف</a>
+  
    
 
   </div>
