@@ -20,8 +20,8 @@
                         اهداف الجودة
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">اجراء اهداف الجودة</a>
-                        <a class="dropdown-item" href="#">خطة تنفيذ الهدف</a>
+                        <a class="dropdown-item" href="{{ route('sop.index') }}">اجراء اهداف الجودة</a>
+                        <a class="dropdown-item" href="{{ route('sop.index') }}">خطة تنفيذ الهدف</a>
                     </div>
                 </div>
             </h5>
@@ -37,8 +37,8 @@
                         <i class="fa fa-exclamation-triangle" style='margin:4px'></i>
                         تقييم المخاطر</div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">اجراء تقييم المخاطر</a>
-                        <a class="dropdown-item" href="#">سجل حصر وتحديد المخاطر</a>
+                        <a class="dropdown-item" href="{{ route('risksop.index') }}">اجراء تقييم المخاطر</a>
+                        <a class="dropdown-item" href="{{ route('risk.index') }}">سجل حصر وتحديد المخاطر</a>
 
                     </div>
                 </div>
@@ -56,14 +56,14 @@
                         <i class="fa fa-link" style='margin:4px'></i>
                         مراجعة داخلية</div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">اجراء المراجعة الداخلية</a>
-                        <a class="dropdown-item" href="#">متابعة النتائج المراجعة الداخلية</a>
-                        <a class="dropdown-item" href="#">مراجعات داخلية لنظام الجودة</a>
-                        <a class="dropdown-item" href="#">اخطار بمراجعات داخلية</a>
-                        <a class="dropdown-item" href="#">تقرير مراجعات داخلية</a>
-                        <a class="dropdown-item" href="#">مراجعيين داخليين لنظام الجودة</a>
-                        <a class="dropdown-item" href="#">امر تكليف مراجعة داخلية</a>
-                        <a class="dropdown-item" href="#">خطة سنوية للمراجعة الداخيلية</a>
+                        <a class="dropdown-item" href="{{ route('interiorsop.index') }}">اجراء المراجعة الداخلية</a>
+                        <a class="dropdown-item" href="{{ route('interior.index') }}">متابعة النتائج المراجعة الداخلية</a>
+                        <a class="dropdown-item" href="{{ route('internalAudit.index') }}">مراجعات داخلية لنظام الجودة</a>
+                        <a class="dropdown-item" href="{{ route('noticeInternal.index') }}">اخطار بمراجعات داخلية</a>
+                        <a class="dropdown-item" href="{{ route('InternalAuditReport.index') }}">تقرير مراجعات داخلية</a>
+                        <a class="dropdown-item" href="{{ route('listInternalAuditor.index') }}">مراجعيين داخليين لنظام الجودة</a>
+                        <a class="dropdown-item" href="{{ route('assigned.index') }}">امر تكليف مراجعة داخلية</a>
+                        <a class="dropdown-item" href="{{ route('work_plan.index') }}">خطة سنوية للمراجعة الداخيلية</a>
 
 
                     </div>
@@ -82,11 +82,11 @@
                         <i class="fa fa-tasks" style='margin:4px'></i>
                         مراجعة الادارة</div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">اجراء مراجعة الادارة</a>
-                        <a class="dropdown-item" href="#">اجندة اجتماع مراجعة الاارة</a>
-                        <a class="dropdown-item" href="#">دعوة لاجتماع مراجعة الادارة</a>
-                        <a class="dropdown-item" href="#">سجل متابعة قرارات </a>
-                        <a class="dropdown-item" href="#">مجضر اجتماع المراجعة</a>
+                        <a class="dropdown-item" href="{{ route('meetingAgendasop.index') }}">اجراء مراجعة الادارة</a>
+                        <a class="dropdown-item" href="{{ route('meetingAgenda.index') }}">اجندة اجتماع مراجعة الاارة</a>
+                        <a class="dropdown-item" href="{{ route('invitationMeeting.index') }}">دعوة لاجتماع مراجعة الادارة</a>
+                        <a class="dropdown-item" href="{{ route('followLog.index') }}">سجل متابعة قرارات </a>
+                        <a class="dropdown-item" href="{{ route('meetingMinute.index') }}">مجضر اجتماع المراجعة</a>
 
 
                     </div>
@@ -110,9 +110,36 @@
                         مراقبة وضبط الوثائق
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                     
+                        <a href="{{ route('recordActionSop.index') }}"class="dropdown-item">
+                            اجراء مراقبة وضبط الوثائق
+                        </a>
+                        <a href="{{ route('recordAction.index') }}"class="dropdown-item">
+                           سجل حصر الاجراءات المستخدمة 
+                        </a>
+                        <a href="{{ route('recordModel.index') }}"class="dropdown-item">
+                             سجل حصر النماذج المستخدمة 
+                        </a>
+                        <a href="{{ route('recordCanceledDocument.index') }}"class="dropdown-item">
+                            سجل حصر الوثائق الملغاة
+                        </a>
+                        <a href="{{ route('issuanceRequest.index') }}"class="dropdown-item">
+                            طلب إصدار / تعديل / إلغاء وثيقة
+                        </a>
+                        <a href="{{ route('directorList.index') }}"class="dropdown-item">
+                           قائمة أسماء المديرين
+                        </a>
+                        <a href="{{ route('listDocument.index') }}"class="dropdown-item">
+                             قائمة رئيسية للوثائق
+                        </a>
+                        <a href="{{ route('brokenRecord.index') }}"class="dropdown-item">
+                           نماذج السجلات المعدمة
+                        </a>
+                        <a href="{{ route('typicalForm.index') }}"class="dropdown-item">
+                             نموذج إستلام وثائق/نماذج
+                           
+                        </a>
+
                     </div>
                 </div>
             </h5>
@@ -129,12 +156,12 @@
                         التصحيحية الوقائية</div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 '>
-                        <a class="dropdown-item" href="#">اجراءالتصحيحية الوقائية</a>
-                        <a class="dropdown-item" href="#">طلب اجراء تصحيحي قائي</a>
-                        <a class="dropdown-item" href="#">حالات عدم المطابقة</a>
-                        <a class="dropdown-item" href="#">سجل متابعة تقارير عدم المطابقة</a>
-                        <a class="dropdown-item" href="#">سجل متابعة طلبات الاجراءات التصحيحية </a>
-                        <a class="dropdown-item" href="#">تقرير عدم المطابقةوالاجراءات التصحيحية</a>
+                        <a class="dropdown-item" href="{{ route('corrctivePreventiveActionsSOP.index') }}">اجراءالتصحيحية الوقائية</a>
+                        <a class="dropdown-item" href="{{ route('corrctivePreventiveActions.index') }}">طلب اجراء تصحيحي قائي</a>
+                        <a class="dropdown-item" href="{{ route('Non_conformities.index') }}">حالات عدم المطابقة</a>
+                        <a class="dropdown-item" href="{{ route('nonConformanceReport.index') }}">سجل متابعة تقارير عدم المطابقة</a>
+                        <a class="dropdown-item" href="{{ route('followUpRecord.index') }}">سجل متابعة طلبات الاجراءات التصحيحية </a>
+                        <a class="dropdown-item" href="{{ route('reportNonConformanceCases.index') }}">تقرير عدم المطابقةوالاجراءات التصحيحية</a>
 
 
 
@@ -156,11 +183,11 @@
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 '>
-                        <a class="dropdown-item" href="#">اجراء فهم المنظمة وسياقها</a>
-                        <a class="dropdown-item" href="#">استمارة قضايا خارجية</a>
-                        <a class="dropdown-item" href="#">استمارة قضايا داخلية</a>
-                        <a class="dropdown-item" href="#">استمارة الاطراف المهتمة</a>
-                        <a class="dropdown-item" href="#">تحليل(SWOT) </a>
+                        <a class="dropdown-item" href="{{ route('understandingOrganizationSOP.index') }}">اجراء فهم المنظمة وسياقها</a>
+                        <a class="dropdown-item" href="{{ route('externalCases.index') }}">استمارة قضايا خارجية</a>
+                        <a class="dropdown-item" href="{{ route('internalCases.index') }}">استمارة قضايا داخلية</a>
+                        <a class="dropdown-item" href="{{ route('interestedParties.index') }}">استمارة الاطراف المهتمة</a>
+                        <a class="dropdown-item" href="{{ route('swot.index') }}">تحليل(SWOT) </a>
 
 
 
@@ -187,12 +214,12 @@
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 '>
-                        <a class="dropdown-item" href="#">اجراءعمل الشكاوي وقياس رضا العميل</a>
-                        <a class="dropdown-item" href="#">العملاء</a>
-                        <a class="dropdown-item" href="#">نموذج استبيان عن الدورة و المدرب</a>
-                        <a class="dropdown-item" href="#">متابعة شكاوي العميل</a>
-                        <a class="dropdown-item" href="#">قياس رضا العملاء</a>
-                        <a class="dropdown-item" href="#">تقرير دراسة شكوي العميل</a>
+                        <a class="dropdown-item" href="{{ route('complaintsWorkSOP.index') }}">اجراءعمل الشكاوي وقياس رضا العميل</a>
+                        <a class="dropdown-item" href="{{ route('customers.index') }}">العملاء</a>
+                        <a class="dropdown-item" href="{{ route('questionnaireForms.index') }}">نموذج استبيان عن الدورة و المدرب</a>
+                        <a class="dropdown-item" href="{{ route('customerComplaints.index') }}">متابعة شكاوي العميل</a>
+                        <a class="dropdown-item" href="{{ route('customerSatisfactions.index') }}">قياس رضا العملاء</a>
+                        <a class="dropdown-item" href="{{ route('complaintStudies.index') }}">تقرير دراسة شكوي العميل</a>
 
 
                     </div>
@@ -210,8 +237,8 @@
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 '>
-                        <a class="dropdown-item" href="#">اجراء التحكم في التغيير</a>
-                        <a class="dropdown-item" href="#">نموذج طلب التحكم في التغيير</a>
+                        <a class="dropdown-item" href="{{ route('changeControlSOP.index') }}">اجراء التحكم في التغيير</a>
+                        <a class="dropdown-item" href="{{ route('changeControlRequests.index') }}">نموذج طلب التحكم في التغيير</a>
 
 
 
@@ -231,13 +258,13 @@
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 '>
-                        <a class="dropdown-item" href="#">اجراء التحسين المستمر</a>
-                        <a class="dropdown-item" href="#">احصائيات التعاقد</a>
-                        <a class="dropdown-item" href="#">احصائيات التدريب</a>
-                        <a class="dropdown-item" href="#">احصائيات حالات عدم المطابقة</a>
-                        <a class="dropdown-item" href="#">سجل متابعة اعمال التحسين المستمر</a>
-                        <a class="dropdown-item" href="#">تقرير جمع وتحليل البيانات</a>
-                        <a class="dropdown-item" href="#">تقرير جمع وتحليل البيانات</a>
+                        <a class="dropdown-item" href="{{ route('ContinuousImprovementSOP.index') }}">اجراء التحسين المستمر</a>
+                        <a class="dropdown-item" href="{{ route('contractStats.index') }}">احصائيات التعاقد</a>
+                        <a class="dropdown-item" href="{{ route('trainingStats.index') }}">احصائيات التدريب</a>
+                        <a class="dropdown-item" href="{{ route('nonConformanceStats.index') }}">احصائيات حالات عدم المطابقة</a>
+                        <a class="dropdown-item" href="{{ route('followUpRecordImprovements.index') }}">سجل متابعة اعمال التحسين المستمر</a>
+                        <a class="dropdown-item" href="{{ route('dataCollectionReports.index') }}">تقرير جمع وتحليل البيانات</a>
+                        <a class="dropdown-item" href="{{ route('recordAnalysis.index') }}">سجل تحليل لشكاوي العملاء</a>
 
 
                     </div>
