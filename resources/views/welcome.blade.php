@@ -8,13 +8,13 @@
 </style>
 <div class='card' style='text-align:center ; height:500px; margin-top:50px '>
     <div class=" row" style=";margin:auto ;">
-        <div class="card-body " style='width:20%;background-color: black;
-    border-bottom: 4px solid red;
+        <div class="card-body " style='width:20%;background-color: #001635;
+    border-bottom: 4px solid #3ed3ea;
     border-radius: 10px;margin: 10px;'>
 
             <h5 class="card-title">
                 <div class="dropdown">
-                    <div class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div style='color:white;' class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                         <i class="fa fa-object-group" style='margin:4px'></i>
                         اهداف الجودة
@@ -27,12 +27,12 @@
             </h5>
         </div>
         <!--  -->
-        <div class="card-body " style='width:20%;background-color: black;
-    border-bottom: 4px solid red;
+        <div class="card-body " style='width:20%;background-color: #001635;
+    border-bottom: 4px solid #3ed3ea;
     border-radius: 10px;margin: 10px;'>
             <h5 class="card-title">
                 <div class="dropdown">
-                    <div class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div style='color:white;' class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                         <i class="fa fa-exclamation-triangle" style='margin:4px'></i>
                         تقييم المخاطر</div>
@@ -44,14 +44,14 @@
                 </div>
             </h5>
         </div>
-        <div class="card-body " style='width:20%;background-color: black;
-    border-bottom: 4px solid red;
+        <div class="card-body " style='width:20%;background-color: #001635;
+    border-bottom: 4px solid #3ed3ea;
     border-radius: 10px;margin: 10px;'>
 
 
             <h5 class="card-title">
                 <div class="dropdown">
-                    <div class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div style='color:white;' class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                         <i class="fa fa-link" style='margin:4px'></i>
                         مراجعة داخلية</div>
@@ -70,14 +70,14 @@
                 </div>
             </h5>
         </div>
-        <div class="card-body " style='width:20%;background-color: black;
-    border-bottom: 4px solid red;
+        <div class="card-body " style='width:20%;background-color: #001635;
+    border-bottom: 4px solid #3ed3ea;
     border-radius: 10px;margin: 10px;'>
 
 
             <h5 class="card-title">
                 <div class="dropdown">
-                    <div class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div style='color:white;' class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                         <i class="fa fa-tasks" style='margin:4px'></i>
                         مراجعة الادارة</div>
@@ -99,13 +99,13 @@
     </div>
     <!--second row  -->
     <div class=" row" style=";margin:auto;">
-        <div class="card-body " style='width:20%;background-color: black;
-    border-bottom: 4px solid red;
+        <div class="card-body " style='width:20%;background-color: #001635;
+    border-bottom: 4px solid #3ed3ea;
     border-radius: 10px;margin: 10px;'>
 
             <h5 class="card-title">
                 <div class="dropdown">
-                    <div class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div style='color:white;' class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-sticky-note" style='margin:4px'></i>
                         مراقبة وضبط الوثائق
                     </div>
@@ -118,13 +118,13 @@
             </h5>
         </div>
         <!--  -->
-        <div class="card-body " style='width:20%;background-color: black;
-    border-bottom: 4px solid red;
+        <div class="card-body " style='width:20%;background-color: #001635;
+    border-bottom: 4px solid #3ed3ea;
     border-radius: 10px;margin: 10px;'>
 
             <h5 class="card-title">
                 <div class="dropdown">
-                    <div class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div style='color:white;' class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-file-alt" style='margin:4px'></i>
                         التصحيحية الوقائية</div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
@@ -143,14 +143,14 @@
                 </div>
             </h5>
         </div>
-        <div class="card-body " style='width:20%;background-color: black;
-    border-bottom: 4px solid red;
+        <div class="card-body " style='width:20%;background-color: #001635;
+    border-bottom: 4px solid #3ed3ea;
     border-radius: 10px;margin: 10px;'>
 
 
             <h5 class="card-title">
                 <div class="dropdown">
-                    <div class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div style='color:white;' class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-sitemap" style='margin:4px'></i>
                         فهم المنظمة وسياقها
                     </div>
@@ -174,14 +174,14 @@
         <!--  -->
     </div>
     <div class=" row" style=";margin:auto;">
-     <div class="card-body " style='width:20%;background-color: black;
-    border-bottom: 4px solid red;
+     <div class="card-body " style='width:20%;background-color: #001635;
+    border-bottom: 4px solid #3ed3ea;
     border-radius: 10px;margin: 10px;'>
 
 
             <h5 class="card-title">
                 <div class="dropdown">
-                    <div class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div style='color:white;' class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-comments " style='margin:4px'></i>
                         قياس رضا العميل
                     </div>
@@ -199,13 +199,13 @@
                 </div>
             </h5>
         </div>
-        <div class="card-body " style='width:20%;background-color: black;
-    border-bottom: 4px solid red;
+        <div class="card-body " style='width:20%;background-color: #001635;
+    border-bottom: 4px solid #3ed3ea;
     border-radius: 10px;margin: 10px;'>
 
             <h5 class="card-title">
                 <div class="dropdown">
-                    <div class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div style='color:white;' class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="	fas fa-retweet" style='margin:4px'></i>التحكم في التغيير
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
@@ -219,13 +219,13 @@
                 </div>
             </h5>
         </div>
-        <div class="card-body " style='width:20%;background-color: black;
-    border-bottom: 4px solid red;
+        <div class="card-body " style='width:20%;background-color: #001635;
+    border-bottom: 4px solid #3ed3ea;
     border-radius: 10px;margin: 10px;'>
 
             <h5 class="card-title">
                 <div class="dropdown">
-                    <div class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div style='color:white;' class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="	fas fa-sync-alt" style='margin:4px'></i>
                         التحسين المستمر
                     </div>
