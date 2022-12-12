@@ -405,91 +405,68 @@ td{
     <form action="{{route('recordActionSop.store')}}"  method="post" enctype="multipart/form-data" id="fo1">
         {{ csrf_field() }}
         <input type="hidden" name="type" value="5">
-        <table style="width: 850px;" class="table table-bordered my-4   m-auto">
-            <thead>
-                <tr>
-                    <th class=" w-50 text-center col-3 ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: center;">اسم الاداره</label>
-
-                            <input class="form-control" type="text" name="manage_name" style="text-align: start;"
+        <div class='row' style='flex-wrap:nowrap'>
+                       <div class="form__div " > 
+                       
+                            <input class="form__input shadow-lg" type="text" name="manage_name" style="text-align: start;"
                                 placeholder="ادخل اسم الاداره">
+                                <label for="" class="form__label border-0 text-white"  style="text-align: center;">اسم الاداره</label>
+
                         </div>
-
-                    </th>
-                    <th class="col-3 ">
-                        <div style="display: flex;justify-content: center;align-items: center;height: 50px;">
-                            خطوات العمل القياسيه
+                        <div class="form__div ">
+                        <input class="form__input shadow-lg" onfocus="(this.type='date')"  placeholder="تاريخ التفعيل" name="active_date" style="text-align: start;">
+                    
+                            <label for="" class="form__label border-0 text-white" style="text-align: center;">تاريخ التفعيل</label>
+                               </div>
+                     
+                           
+                       
                         </div>
-
-                    </th>
-
-                    <th class="col-4">
-                        <div
-                            style="display: flex;justify-content: center;align-items: center;height: 50px;width: 200px;">
-                            <label for="img">اختار شعار الشركه:</label>
-                            <input type="file" id="img" name="company_logo" accept="image/*">
-                        </div>
-
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: center;">تاريخ التفعيل</label>
-                            <input class="form-control" type="date" name="active_date" style="text-align: end;">
-                        </div>
-                    </th>
-
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: center;">تاريخ الاصدار</label>
-                            <input class="form-control" type="date" name="release_date" style="text-align: end;">
-                        </div>
-                    </th>
-
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: center;">رقم الوثيقه</label>
-                            <input class="form-control" type="text" name="document_number" style="text-align: start;"
+                        <div class='row' style='flex-wrap:nowrap'>
+              
+                        <div class="form__div ">
+                          <input  class="form__input shadow-lg" onfocus="(this.type='date')" placeholder="تاريخ الاصدار" name="release_date" style="text-align: start;">
+                      
+                            <label for="" class="form__label border-0 text-white" style="text-align: center;">تاريخ الاصدار</label>
+                             </div>
+                             <div class="form__div ">
+                             <input class="form__input shadow-lg" type="text" name="document_number" style="text-align: start;"
                                 placeholder="ادخل رقم الوثيقه ">
-                        </div>
-                    </th>
-
-                </tr>
-                <tr>
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: center;">عدد الصفحات</label>
-                            <input class="form-control" type="number" name="page_number" style="text-align: start;"
+         
+                             <label for="" class="form__label border-0 text-white" style="text-align: center;">رقم الوثيقه</label>
+                                           </div>
+                             </div>
+                      
+                             <div class='row' style='flex-wrap:nowrap'>
+              
+                               <div class="form__div ">
+                        <label for="" class="form__label border-0 text-white" style="text-align: center;">عدد الصفحات</label>
+                            <input class="form__input shadow-lg" type="number" name="page_number" style="text-align: start;"
                                 placeholder="ادخل عدد الصفحات ">
                         </div>
-                    </th>
-
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: center;">تاريخ المراجعه</label>
-                            <input class="form-control" type="date" name="review_date" style="text-align: end;">
+                        <div class="form__div " >
+                                 <input class="form__input shadow-lg" onfocus="(this.type='date')" placeholder="تاريخ المراجعة" name="review_date" style="text-align: start;">
+                                 <label for="" class="form__label border-0 text-white"    style="text-align: center;" >تاريخ المراجعه</label>
+                        
+                                </div>
                         </div>
-                    </th>
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: center;">كود الوثيقه</label>
-                            <input class="form-control" type="text" name="document_code" style="text-align: start;"
+                        <div class='row' style='flex-wrap:nowrap;text-align:center'>
+              
+                        <div class="form__div " >
+                                <input class="form__input shadow-lg" type="text" name="document_code" style="text-align: start;"
                                 placeholder="ادخل كود الوثيقه ">
+                                <label for="" class="form__label border-0 text-white" style="text-align: center;">كود الوثيقه</label>
+                           
                         </div>
-                    </th>
-
-
-                </tr>
-
-            </tbody>
-        </table>
+                        <div class="form__div "  > 
+                         
+                        
+                        <input type="file" id="img" name="company_logo" accept="image/*">
+                    </div>
+                        </div>
         <hr style="border: 5px; margin: 50px ;">
 
-        <section style="width: 650px;margin-top: 200px;border: 3px solid yellowgreen;" class=" my-4  p-4 m-auto">
+        <section style="width: 650px;margin-top: 200px;" class=" my-4  p-4 m-auto">
             <div class="form-group row ">
                 <label for="" class="col-sm-2 col-form-label">اسم الشركه</label>
                 <div class="col-sm-10">
@@ -505,7 +482,7 @@ td{
         </section>
         <hr style="border: 5px; margin: 50px ;">
 
-        <section style="width: 650px;margin-top: 200px;border: 3px solid yellowgreen;" class=" my-4  p-4 m-auto">
+        <section style="width: 650px;margin-top: 200px;" class=" my-4  p-4 m-auto">
             <div class="form-group row ">
                 <label for="" class="col-sm-2 col-form-label">رقم النسخه</label>
                 <div class="col-sm-10">
@@ -526,7 +503,7 @@ td{
                     @if (Auth::user()->hasRole('Employee'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:xx-large;font-weight: bolder;">
+                            <label for="" class="" style="text-align: center;">
                                 اعداد :</label>
 
                             <input class="form-control" type="text" name="prepare" style="text-align: end;"
@@ -538,7 +515,7 @@ td{
                     @if (Auth::user()->hasRole('Admin'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:xx-large;font-weight: bolder;">
+                            <label for="" class="" style="text-align: center;">
                                 اعداد :</label>
 
                             <input class="form-control" type="text" name="prepare" style="text-align: end;"
@@ -548,7 +525,7 @@ td{
                     </th>
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: star;font-size:xx-large;font-weight: bolder;">
+                            <label for="" class="" style="text-align: star;">
                                 مراجعه :</label>
 
                             <input class="form-control" type="text" name="review" placeholder="">
@@ -559,7 +536,7 @@ td{
                     @if(Auth::user()->hasRole('SuperAdmin'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:xx-large;font-weight: bolder;">
+                            <label for="" class="" style="text-align: center;">
                                 اعداد :</label>
 
                             <input class="form-control" type="text" name="prepare" style="text-align: end;"
@@ -569,7 +546,7 @@ td{
                     </th>
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: star;font-size:xx-large;font-weight: bolder;">
+                            <label for="" class="" style="text-align: star;">
                                 مراجعه :</label>
 
                             <input class="form-control" type="text" name="review" placeholder="">
@@ -578,7 +555,7 @@ td{
                     </th>
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: end;font-size:xx-large;font-weight: bolder;">
+                            <label for="" class="" style="text-align: end;">
                                 اعتماد : </label>
 
                             <input class="form-control" type="text" name="approval"
@@ -715,7 +692,7 @@ td{
 
 
         </section>
-        <br><br><br><br><br><br><br>
+        <br><br>
         <section>
             <div class="row" style="margin: 100px;text-align: start;">
                 <p>نموذج تسلسل الاجراء هو عرض بياني لخريطة عمليات لبيانات مجموعة الاجراءات الخاصة بكل ادراة من الاقسام
@@ -956,7 +933,7 @@ td{
         <div class="form-group" style='text-align:center'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit"
                 class="btn btn-primary">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+             حفظ</button>
         </div> 
     </form>
     </div>
