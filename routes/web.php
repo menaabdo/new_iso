@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Administration\PermissionController;
 use App\Http\Controllers\Administration\RoleController;
+use App\Http\Controllers\AllSopController;
 use App\Http\Controllers\AssignedController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BrokenRecordController;
@@ -125,7 +126,7 @@ Route::group(['middleware'=>['auth']], function () {
     Route::delete('permissions/destroy/{permissionId}',[PermissionController::class,'destroy'])->name('permissions.destroy');
 
 
-
+    Route::resource('/all_sop',AllSopController::class);
 
     Route::resource('/sop',SOPController::class);
     Route::resource('/sopArchives',SOPArchiveController::class);

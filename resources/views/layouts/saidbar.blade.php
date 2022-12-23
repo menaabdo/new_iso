@@ -686,6 +686,24 @@
                     
                 </ul>
             </li>
+
+             <li class="sidebar-item">
+                <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                    <i class="	fas fa-sync-alt"></i>
+                    <span class="hide-menu">جميع الإجراءات</span>
+                </a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item">
+                        <a href="{{ route('all_sop.index') }}" class="sidebar-link">
+                            <i class="mdi mdi-adjust"></i>
+                            <span class="hide-menu"> جميع الإجراءات
+                            </span>
+                        </a>
+                    </li>
+                  
+                    
+                </ul>
+            </li>
             <br>
             <br>
             </ul>
