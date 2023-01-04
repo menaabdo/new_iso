@@ -1,19 +1,58 @@
 @extends('layouts.print')
 
 @section('content')
+<style>
+    input{
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    color: #4F5467;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 2px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+/* .mytable th,.mytable tr,.mytable td{
+    border:1px solid silver;
+} */
+    </style>
 
     <!-- Content Header (Page header) -->
 
 
     <!-- Main content -->
-    <div class="container mt-3 p-3">
-        <h3 style="margin-top:85px;">اجراء اهداف الجوده</h3>
+    <div class="card" >
+
+
+<div class="container p-4" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;'>
+           <div style="" class="w-100 text-center my-4">
+   <h3 style="margin-top:85px;">
+   <img src="{{ asset($iso->company_logo) }}" src="{{ asset($iso->company_logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+   <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>
+   اجراء اهداف الجوده
+</span>
+</h3>
         <hr>
       
             <input type="hidden" name="type" value="1">
-            <table style="width: 850px;" class="table table-bordered my-4   m-auto">
+            <table style="width: 850px;" class="mytable table table-bordered my-4   m-auto">
                 <thead>
                     <tr>
+                        <th></th>
                         <th class=" w-50 text-center col-3 ">
                             <div class="" style="text-align:center ;">
                                 <label for="" class="" style="text-align: center;">اسم الاداره</label>
@@ -24,6 +63,9 @@
                             </div>
 
                         </th>
+                        </tr>
+                        <tr>
+                            <th></th>
                         <th class="col-3 ">
                             <div style="display: flex;justify-content: center;align-items: center;height: 50px;">
                                 خطوات العمل القياسيه
@@ -31,8 +73,7 @@
 
                         </th>
                         <th>
-                        <img src="{{ asset($iso->company_logo) }}" style="float: left" width="120px" height="40px" />
-                        </th>
+                          </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,7 +137,7 @@
             </table>
             <hr style="border: 5px; margin: 50px ;">
 
-            <section style="width: 650px;margin-top: 20px;border: 3px solid yellowgreen;" class=" my-4  p-4 m-auto">
+            <section style="width: 650px;margin-top: 20px;margin:auto" class=" my-4  p-4 m-auto">
                 <div class="form-group row ">
                     <label for="" class="col-sm-2 col-form-label">اسم الشركه</label>
                     <div class="col-sm-10">
@@ -114,7 +155,7 @@
             </section>
             <hr style="border: 5px; margin: 50px ;">
 
-            <section style="width: 650px;margin-top: 20px;border: 3px solid yellowgreen;" class=" my-4  p-4 m-auto">
+            <section style="width: 650px;margin-top: 20px;margin:auto;" class=" my-4  p-4 m-auto">
                 <div class="form-group row ">
                     <label for="" class="col-sm-2 col-form-label">رقم النسخه</label>
                     <div class="col-sm-10">
@@ -226,7 +267,7 @@
                             <th class=" w-50 text-center col-2 ">
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
-                                        style="text-align: center;font-size:xx-large;font-weight: bolder;">
+                                        style="text-align: center;;">
                                         اعداد :</label>
 
                                     <input class="form-control" type="text" name="prepare"
@@ -237,7 +278,7 @@
                             <th class=" w-50 text-center col-2 ">
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
-                                        style="text-align: star;font-size:xx-large;font-weight: bolder;">
+                                        style="text-align: star;;">
                                         مراجعه :</label>
 
                                     <input class="form-control" type="text" name="review"
@@ -248,7 +289,7 @@
                             <th class=" w-50 text-center col-2 ">
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
-                                        style="text-align: end;font-size:xx-large;font-weight: bolder;">
+                                        style="text-align: end;;">
                                         اعتماد : </label>
 
                                     <input class="form-control" type="text" name="approval"
@@ -409,7 +450,7 @@
                             <tr>
                                 <td>
                                     <div style="width: 150px; height: 80px;border: 2px solid grey;">
-                                        <div style="width: 20px; height: 80px;border: 2px solid grey;float: left;">
+                                        <div style="width: 20px; height: 80px;border: 2px solid grey;">
                                             <img src="{{ asset('image/Screenshot 2022-09-20 220318.png') }}" style="width: 160px; height: 80px;">
                                         </div>
                                     </div>
@@ -490,7 +531,7 @@
                 <div class="input-group my-3  mx-3">
                     <label class="row"> المصطلحات والتعريفات :</label>
                 </div>
-                <table class="datatable-table table table-bordered mt-2 ">
+                <table class="datatable-table table table-bordered mt-2 table table-bordered my-4   m-auto">
                     <thead class="datatable-head">
                         <tr class="datatable-row" style="left: 0px;">
 

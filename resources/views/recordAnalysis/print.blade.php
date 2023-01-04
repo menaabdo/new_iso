@@ -1,18 +1,44 @@
 @extends('layouts.print')
 
 @section('content')
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+    input,
+    textarea {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+
+</style>
+
+<div class="card" >
 
 
-    <div class="card">
-<div class="card-body">
-            <div style="" class="w-100 text-center my-4">
-                <h2> سجل تحليل لشكاوي العملاء</h2>
+<div class="container p-4" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;'>
+           <div style="" class="w-100 text-center my-4">
+           <h2 style='text-align:center;margin-bottom:40px'> 
+     
+           <img src="{{ asset($recordAnalysis->logo) }}" style="border-radius: 6px;
+    border: 2px solid #001635;
+    margin: 10px;
+    float: left;
+    /* padding: 12px;" width="50px" height="50px" />
+      
+           <span style='font-family:Cursive;border-bottom: 1px solid silver;
+    ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    border-radius: 6px;
+    padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
+    padding-right: 40px;
+'>    
+           سجل تحليل لشكاوي العملاء
+</span>
+        </h2>
                 <hr class="w-100">
             </div>
             <div>
-                <img src="{{ asset($recordAnalysis->logo) }}" style="float: left;" width="100px"
-                    height="50px" />
-      
+              
             </div>
             <div class="form-group row ">
                 <div class="col-6">
@@ -26,13 +52,12 @@
                     {{$recordAnalysis->date_1}}
                 </div>
             </div>
-            <hr class="w-100">
-
+           
             <div class="form-group row w-100 text-right" style="text-align:center;">
                 <div style="overflow-x:auto;">
-                    <table class="table">
-                        <tr style="background-color:rgb(236, 249, 156); text-align:center;">
-                     
+                    <table class="table" style='font-size:9px;'>
+                    <tr style="background-color:#001635;color:white; text-align:center;">
+                         
                             <th style="width:70 ;" scope="col" rowspan="3">المنطقة</th>
                             <th style="width:70 ;" scope="col" rowspan="3">اسم العميل</th>
                             <th style="width:30 ;" scope="col" colspan="2">1 </th>
@@ -47,8 +72,8 @@
                             <th style="width:90 ;" scope="col" colspan="3">5/6 </th>
                             <th style="width:100;" scope="col" rowspan="3">النسبة المئوية</th>
                         </tr>
-                        <tr style="background-color:rgb(236, 249, 156); text-align:center;">
-                            <th scope="col" colspan="1"> نعم</th>
+                        <tr style="background-color:#001635;color:white; text-align:center;">
+                           <th scope="col" colspan="1"> نعم</th>
                             <th scope="col" colspan="1">لا</th>
                             <th scope="col" colspan="1"> نعم</th>
                             <th scope="col" colspan="1">لا</th>
@@ -75,7 +100,7 @@
                             <th scope="col" colspan="1"> ج</th>
                             <th scope="col" colspan="1">م</th>
                         </tr>
-                        <tr style="background-color:rgb(236, 249, 156); text-align:center;">
+                        <tr style="background-color:#001635;color:white; text-align:center;">
                             <th scope="col" rowspan="1"> 10</th>
                             <th scope="col" rowspan="1">صفر</th>
                             <th scope="col" rowspan="1"> 10</th>
@@ -106,8 +131,8 @@
                         @if(count($recordAnalysis->recordAnalysis)>0)
                         @foreach($recordAnalysis->recordAnalysis as $key => $data)
                         <tr id="recordAnalysis-{{$key}}">
-                            <th><input class="form-control"  style="width: 180px" type="text" name="recordAnalysis[{{$key}}][area]" value="{{$data->area}}"></th>
-                            <th><input class="form-control" style="width: 180px" type="text" name="recordAnalysis[{{$key}}][customer]" value="{{$data->customer}}"></th>
+                            <th><input class="form-control"  style="width: 40px" type="text" name="recordAnalysis[{{$key}}][area]" value="{{$data->area}}"></th>
+                            <th><input class="form-control" style="width: 40px" type="text" name="recordAnalysis[{{$key}}][customer]" value="{{$data->customer}}"></th>
                             <th><input type="checkbox" value="1" name="recordAnalysis[{{$key}}][yes_1]" {{$recordAnalysis->recordAnalysis[$key]->yes_1=="1"? 'checked':'' }} <?php if ( $recordAnalysis->recordAnalysis[$key]->yes_1 == '1') {
                                 echo 'checked="checked"';
                             } ?>/>&nbsp;</th>
@@ -227,8 +252,7 @@
                         </th>
                         @endif
                         @if (Auth::user()->hasRole('Admin') || Auth::user()->hasRole('SuperAdmin'))
-                        <hr class="w-100">
-                        <th class=" w-50 text-center col-2 ">
+                          <th class=" w-50 text-center col-2 ">
                             <div class="" style="text-align:center ;">
                                 <label for="" class=""
                                     style="text-align:center;font-size:large;font-weight: bolder;"> ممثل الإدارة
@@ -252,8 +276,18 @@
                 </thead>
             </table>
 
-            <hr class="w-100">
-        <table class="table">
+           
+        <table class="table" style=' border:none;
+    padding:12px;
+    margin-top:12px;
+    background-color: #001635;
+    color: white;
+    /* text-shadow: none; */
+    width: 97%;
+    margin: auto;
+    margin-bottom: 12px;
+    font-size: 12px;
+    padding: 1px;'>
             <thead>
                 <tr>
                     <th>
@@ -276,20 +310,20 @@
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> مدة الحفظ :
+                            <label for="" class="" style="text-align: center;;"> مدة الحفظ :
                                 سنتان </label>
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الصفحة : 1 /
+                        <label for="" class="" style="text-align: center;;"> رقم الصفحة : 1 /
                           1</label>
                       </div>
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;"> رقم الوثيقة : QA – F
+                        <label for="" class="" style="text-align: center;"> رقم الوثيقة : QA – F
                           - 13 </label>
                       </div>
                     </th>
@@ -300,18 +334,21 @@
     </div>
 
     <style>
+        table th{
+            padding: 0;
+        }
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+            /* border-bottom: 2px solid black; */
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+            /* border-bottom: 2px solid black;
+            border-top: 2px solid black; */
         }
 
         #mainDiv {

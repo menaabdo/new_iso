@@ -2,22 +2,32 @@
 
 @section('content')
 
-    <div class="card">
-        <div class="card-body">
-            <h3 style="margin-top:85px;">الخطة السنوية للمراجعات الداخلية</h3>
-            <hr>
-        </div>
+<style>
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    }
+    input{
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+
+    }
+
+</style>
+<div class="card  ">
+    <div class=" row " style='margin-top:5px;margin-right:100px'>
+
+
+          
         <form action="{{ route('work_plan.update', $work_plan->id) }}" method="post" enctype="multipart/form-data"
-            id="fo1">
+            id="fo1" class='col-md-12'>
             @method('PUT')
             {{ csrf_field() }}
             <div class="container p-4">
 
                 <div style="" class="w-100 text-center my-4">
-                    <h2>الخطة السنوية للمراجعات الداخلية</h2>
+                    <h2 style="text-shadow: 1px 1px 1px #3ed3ea;margin-top:85px;">الخطة السنوية للمراجعات الداخلية</h2>
                     <hr class="w-100">
                 </div>
-                <div class="form-group row w-10">
+                <div class="form-group row text-center mt-5">
                     <label for="" class="col-3 col-form-label">التاريخ ...</label>
                     <div class="col-3">
                         <input type="date" class="form-control" placeholder="رئيس فريق المراجعه  ......" name="date_1"
@@ -25,11 +35,11 @@
                     </div>
                 </div>
 
-                <div class="container-fluid p-2">
-                    <div class="form-group row w-100 text-right" style="text-align:center ;"></div>
-                    <table>
-                        <tr style="background-color:rgb(217, 192, 245)">
-                            @if ($work_plan->status == 'pending' && Auth::user()->hasRole('Employee'))
+                <div class="form-group row  text-right" style="text-align:center ;overflow-x: auto;">
+   <table  class="table table-bordered  text-center col-md-11 mt-5" style="grid-auto-flow: column;justify-content: center; align-content: center;">
+                   
+                        <tr style='background-color: #2a415b;font-size:11px;
+    color: white;'>  @if ($work_plan->status == 'pending' && Auth::user()->hasRole('Employee'))
                                 <th class="col-1 col-form-label">م</th>
                             @endif
                             @if (($work_plan->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
@@ -217,10 +227,11 @@
                             </tr>
                         @endif
                     </table>
+                   </div>
                     <br><br>
-                    <div class="container-fluid p-2" style="border: 2px solid rgb(250, 90, 15);">
-                        <div class="form-group row w-100 text-left">
-                            <div class="col-1 col-form-label">
+                    <div class=" p-2" style="">
+                <div class="form-group row  d-flex justify-content-between w-100 text-left">
+                 <div class="col-1 col-form-label">
                                 <input type="checkbox" name="planned" value="1"
                                     {{ $work_plan->planned == '1' ? 'checked' : '' }}>
                             </div>
@@ -242,9 +253,9 @@
                             <h2 for="" style="text-align:right;" class="col-3 col-form-label">تم التنفيذ ولا توجد
                                 حالات عدم مطابقة </h2>
                         </div>
-                    </div>
-                    <table class="table">
-                        <thead>
+                   
+                        <table class="table table-bordered shadow-lg">
+                 <thead >
                             <tr>
                                 @if (Auth::user()->hasRole('Employee'))
                                     <th class=" text-center col-2 ">
@@ -410,14 +421,14 @@
                                                 style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-4 col-form-label">الاسم: -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="name_1" value="{{ $work_plan->name_1 }}">
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-4 col-form-label">الوظيفة: -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="job_1" value="{{ $work_plan->job_1 }}">
@@ -431,14 +442,14 @@
                                                 style="text-align:center;font-size:large;font-weight: bolder;">مراجعة:</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-4 col-form-label">الاسم: -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="name_2" value="{{ $work_plan->name_2 }}">
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-4 col-form-label">الوظيفة: -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="job_2" value="{{ $work_plan->job_2 }}">
@@ -452,14 +463,14 @@
                                                 style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-4 col-form-label">الاسم: -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="name_3" value="{{ $work_plan->name_3 }}">
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-4 col-form-label">الوظيفة: -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="job_3" value="{{ $work_plan->job_3 }}">
@@ -478,23 +489,26 @@
                         <tr>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                <label>اسم الشركة</label>
                                     <input class="form-control" type="text" name="company_name"
-                                        placeholder="اسم الشركة  :" value="{{ $work_plan->company_name }}">
+                                         value="{{ $work_plan->company_name }}">
                                 </div>
 
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                <label>تاريخ الاصدار</label>
                                     <input class="form-control" type="text" name="date2"
-                                        placeholder="تاريخ الإصدار   :"value="{{ $work_plan->date2 }}"
+                                       value="{{ $work_plan->date2 }}"
                                         onfocus="(this.type='date')" onblur="(this.type='text')">
                                 </div>
 
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                <label>تاريخ التعديل</label>
                                     <input class="form-control" type="text" name="date3"
-                                        placeholder="تاريخ التعديل :" value="{{ $work_plan->date3 }}"
+                                       value="{{ $work_plan->date3 }}"
                                         onfocus="(this.type='date')" onblur="(this.type='text')">
                                 </div>
 
@@ -538,27 +552,27 @@
                 @elseif(($work_plan->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                     ($work_plan->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                     ($work_plan->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                    <div class="form-group">
-                        <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                            </i></button>
-                    </div>
+                    <div class="form-group" style='text-align:center'>
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit" class="btn btn-primary">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>تعديل</button>
+            </div>
                 @endif
             </div>
 
         </form>
-
+        </div>
+         </div>
 
         <style>
             .table thead th {
                 vertical-align: bottom;
-                border-bottom: 2px solid #5a0ee8;
+                /* border-bottom: 2px solid #5a0ee8; */
             }
 
             table,
             td,
             th {
-                border: 2px solid #240df8;
+                border: 2px solid silver;
 
                 text-align: center;
             }
