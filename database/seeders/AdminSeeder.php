@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -22,14 +23,25 @@ class AdminSeeder extends Seeder
             'name' => 'SuperAdmin',
             'email' => 'superadmin@superadmin.com',
             'password' => Hash::make('123456'),
-        ],[
+            'expire_date'=> null
+        ],
+        [
+            'name' => 'Dr/Assem',
+            'email' => 'dr_assem@dr_assem.com',
+            'password' => Hash::make('dr_assem2023'),
+            'expire_date'=> Carbon::now()->addDays(14)->timezone('Africa/Cairo')
+        ],
+        
+        [
             'name' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('123456'),
+            'expire_date'=>null
         ],[
             'name' => 'Employee',
             'email' => 'employee@employee.com',
             'password' => Hash::make('123456'),
+            'expire_date'=>null
         ]
     ]);
 

@@ -45,13 +45,20 @@
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">
-                        <span class="db"><img src="../../assets/images/WhatsApp Image 2022-07-23 at 9.29.05 PM.jpeg" alt="logo" width="30"/></span>
+                        <span class="db"><img src="../../assets/images/WhatsApp Image 2022-07-23 at 9.29.05 PM.jpeg" alt="logo" width="30" /></span>
                         <h5 class="font-medium m-b-20">Sign In to Admin</h5>
                     </div>
                     <!-- Form -->
+                    @if (\Session::has('success'))
+                    <div class="alert alert-danger">
+                        <ul>
+                            <li>{!! \Session::get('success') !!}</li>
+                        </ul>
+                    </div>
+                    @endif
                     <div class="row">
                         <div class="col-12">
-                            <form method="POST" action="{{ route('login') }}">
+                            <form method="POST" action="{{ route('handleLogin') }}">
                                 @csrf
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -75,7 +82,7 @@
                                     </span>
                                     @enderror
                                 </div>
-                           
+
                                 <div class="form-group text-center">
                                     <div class="col-xs-12 p-b-20">
                                         <button class="btn btn-block btn-lg btn-info" type="submit">Log In</button>
@@ -147,6 +154,7 @@
             $("#loginform").slideUp();
             $("#recoverform").fadeIn();
         });
+
     </script>
 </body>
 

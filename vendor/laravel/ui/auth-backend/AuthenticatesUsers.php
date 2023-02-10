@@ -2,6 +2,7 @@
 
 namespace Illuminate\Foundation\Auth;
 
+use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,6 +32,7 @@ trait AuthenticatesUsers
      */
     public function login(Request $request)
     {
+        
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
@@ -44,6 +46,7 @@ trait AuthenticatesUsers
         }
 
         if ($this->attemptLogin($request)) {
+            
             if ($request->hasSession()) {
                 $request->session()->put('auth.password_confirmed_at', time());
             }
@@ -96,6 +99,7 @@ trait AuthenticatesUsers
      */
     protected function credentials(Request $request)
     {
+
         return $request->only($this->username(), 'password');
     }
 

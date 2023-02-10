@@ -4,7 +4,6 @@ use App\Http\Controllers\Administration\PermissionController;
 use App\Http\Controllers\Administration\RoleController;
 use App\Http\Controllers\AllSopController;
 use App\Http\Controllers\AssignedController;
-use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BrokenRecordController;
 use App\Http\Controllers\ChangeControlRequestController;
 use App\Http\Controllers\ChangeControlSOPArchiveControlle;
@@ -66,6 +65,7 @@ use App\Http\Controllers\UnderstandingOrganizationSOPArchiveController;
 use App\Http\Controllers\UnderstandingOrganizationSOPController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkPlanController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -82,7 +82,10 @@ use Illuminate\Support\Facades\Route;
 
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Auth::routes();
+
+Route::get('/login', [LoginController::class ,'login'])->name('login');
+Route::post('/handleLogin', [LoginController::class ,'handleLogin'])->name('handleLogin');
+Route::post('/logout', [LoginController::class ,'logout'])->name('logout');
 
 
 
