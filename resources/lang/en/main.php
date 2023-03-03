@@ -1,6 +1,8 @@
 <?php
 
 return [
-    'create'=>'Create'
+    'create'=>'Create',
+    'all_section'=>'Sections',
+    'Languages'=>'Languages'
 ];
 ?>

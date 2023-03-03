@@ -18,8 +18,8 @@
             <!-- Logo -->
             <!-- ============================================================== -->
             <br>
-            <div class="navbar-brand">
-          <span style='color:#ffc000'>  جميع الاقسام</span>
+            <div class="navbar-brand" >
+          <span style='color:#ffc000;  margin: auto;'>@lang('main.all_section')</span>
                 <a href="{{url('/')}}" class="logo">
                     <!-- Logo icon -->
                     
@@ -60,7 +60,8 @@
     width: 100%;
     margin-top: 60px;
     z-index: 1;'>
-             <img id='img1' src="../../assets/images/WhatsApp Image 2022-07-23 at 9.29.05 PM.jpeg" alt="homepage" class="dark-logo" style="border-radius: 50%;box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;margin-left:60px ;margin-top:10px;margin-bottom:10px;    margin: 3px 10px;border: 3px solid #3ed3ea;padding:3px;
+             <img id='img1' src="../../assets/images/WhatsApp Image 2022-07-23 at 9.29.05 PM.jpeg" alt="homepage" class="dark-logo" style="border-radius: 50%;box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;margin-left:60px ;margin-top:10px;margin-bottom:10px;          margin: 5px -7px 0 -268px;
+             ;border: 3px solid #3ed3ea;padding:3px;
       " width="100px" height="100px" />
      </div> 
             <ul class="navbar-nav float-left mr-auto">
@@ -96,7 +97,7 @@
                 <!-- ============================================================== -->
                 <!-- Messages -->
                 <!-- ============================================================== -->
-                <li class="nav-item dropdown" style='width:100px'>
+                <li class="nav-item dropdown" style='width:80px'>
                     <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='color:rgb(255, 255, 255);  margin-right: -40px;  margin-top: 30px;'>
                         <i class='fa fa-globe'></i>
                     </a>
@@ -108,7 +109,7 @@
                             <li>
                                 <div class="drop-title bg-primary text-white">
 
-                                    <span class="font-light">Languages</span>
+                                    <span class="font-light">@lang('main.Languages')</span>
 
                                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <li>

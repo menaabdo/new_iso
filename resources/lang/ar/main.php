@@ -1,6 +1,8 @@
 <?php
 
 return [
-    'create'=>'إضافة جديد'
+    'create'=>'إضافة جديد',
+    'all_section'=>'الأقســــــام',
+    'Languages'=>'اللــغة'
 ];
 ?>
