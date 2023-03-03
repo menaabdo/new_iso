@@ -23,7 +23,7 @@
      
                     <a href="{{ route('risksop.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
+    background-color:#001635;' id='me'><b>@lang('main.create')</b></button></a> <div class="col-12">
                 <div class="col-12">
                         <div class="card">
                             <div class="card-body">

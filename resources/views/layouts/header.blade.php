@@ -133,8 +133,8 @@
                 <!-- ============================================================== -->
                 <!-- User profile and search -->
                 <!-- ============================================================== -->
-                <li class="nav-item dropdown" style='width:100px'>
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark pro-pic" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='color:white;    margin-right: -40px;'>
+                <li class="nav-item dropdown" style='width:120px'>
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark pro-pic" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='color:white;    margin-right: -20px;'>
                         {{-- <img src="../../assets/images/users/2.jpg" alt="user" class="rounded-circle" width="40"> --}}
                         <span class="m-l-5 font-medium d-none d-sm-inline-block">{{Auth::user()->name}}<i class="mdi mdi-chevron-down"></i></span>
                     </a>
