@@ -9,12 +9,13 @@
  * file that was distributed with this source code.
  */
 
-if (\PHP_VERSION_ID < 80100) {
-    #[Attribute(Attribute::TARGET_METHOD)]
-    final class ReturnTypeWillChange
-    {
-        public function __construct()
-        {
-        }
-    }
+namespace Symfony\Component\Yaml\Exception;
+
+/**
+ * Exception interface for all exceptions thrown by the component.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+interface ExceptionInterface extends \Throwable
+{
 }

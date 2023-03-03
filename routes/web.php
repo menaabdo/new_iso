@@ -104,7 +104,10 @@ Route::group(['middleware'=>['auth','role:SuperAdmin|Admin|Employee']], function
 
 });
 
-Route::group(['middleware'=>['auth']], function () {
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ],
+    'middleware'=>['auth']], function () {
   
     Route::get('/', function () {
         return view('welcome');

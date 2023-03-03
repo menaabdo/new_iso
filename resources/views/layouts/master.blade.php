@@ -7,6 +7,7 @@
 <!-- Mirrored from wrappixel.com/demos/admin-templates/nice-admin/html/ltr/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 01 Sep 2018 21:16:42 GMT -->
 
 <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <style>

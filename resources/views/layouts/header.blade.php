@@ -96,9 +96,9 @@
                 <!-- ============================================================== -->
                 <!-- Messages -->
                 <!-- ============================================================== -->
-                <li class="nav-item dropdown border-right">
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='color:white;'>
-                        <i class="fa fa-language"></i>
+                <li class="nav-item dropdown" style='width:100px'>
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='color:rgb(255, 255, 255);  margin-right: -40px;  margin-top: 30px;'>
+                        <i class='fa fa-globe'></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
                         <span class="with-arrow">
@@ -117,6 +117,7 @@
                                 </a>
                             </li>
                             @endforeach
+                        </ul>
                     </div>
                 </li>
                 <!-- ============================================================== -->
