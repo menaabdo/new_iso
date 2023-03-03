@@ -427,17 +427,18 @@ td{
                                 <label for="" class="form__label border-0 text-white" style="text-align: center;">اسم الاداره</label>
 
                         </div>
-
-                  
-
                    
+                        <label for=""  style='font-size: 13px; color:#2a415b;margin: -2px 24px 25px 15px;'><b>
+                            شعار الشركة </b></label>
+                        <div class="form__div " style='height:48px '>
+                          
+                           <input type="file" class="form__input shadow-lg" name="company_logo" style='padding:0;width:100% !important' placeholder=" ">
+                          
+                
+                </div>
+                         
 
-                        <div class="form__div "  > 
-                                <input class="form__input shadow-lg " onclick='getlabel()'  type="file" id="img" name="company_logo" accept="image/*">
-                               
-                            </div>
-
-                            </div>
+                        </div>
             <div class='row' style='flex-wrap:nowrap'>
                    
                      <div class="form__div " > 
