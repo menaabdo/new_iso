@@ -37,7 +37,11 @@
   
   .form__label {
     position: absolute;
-    right:  4rem;
+    <?php if(App::getLocale() == 'ar') { ?>
+        right: 4rem;
+    <?php } else { ?>
+        left: 4rem;
+    <?php } ?>
     top: 1rem;
     padding: 0 .25rem;
     /* background-color: white; */
@@ -50,7 +54,11 @@
   /*Input focus move up label*/
   .form__input:focus + .form__label {
     top: -2rem;
-    right: .8rem;
+    <?php if(App::getLocale() == 'ar') { ?>
+        right: .8rem;
+    <?php } else { ?>
+        left: .8rem;
+    <?php } ?>
     color: white;
     font-size: 14px;
     font-weight: 400;
@@ -66,7 +74,11 @@
   /*Input focus sticky top label*/
   .form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
     top: -2rem;
-    right:  .8rem;
+    <?php if(App::getLocale() == 'ar') { ?>
+        right:  .8rem;
+    <?php } else { ?>
+        left:  .8rem;
+    <?php } ?>
     z-index: 10;
     font-size: 14px;
     font-weight: 400;
@@ -653,9 +665,8 @@ td{
                 <tr>
                     <th class=" w-100 text-center ">
                         <div class="form-group mt-4"
-                            style="text-align:center ;justify-content: center;align-items: center; width: 140px;">
-                            <label for="" class="" style="text-align: center;">صفحه
-                                / صفحات</label>
+                            style="text-align:center ;justify-content: center;align-items: center; width: 228px;">
+                            <label for="" class="" style="text-align: center;">صفحه/صفحات</label>
 
                         </div>
                     </th>
