@@ -81,14 +81,14 @@
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="fa fa-object-group"></i>
 
-                    <span class="hide-menu">اهداف الجوده </span>
+                    <span class="hide-menu">@lang('main.Quality goals') </span>
 
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item" style=' box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;'>
                         <a href="{{ route('sop.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> اجراء اهداف الجوده</span>
+                            <span class="hide-menu"> @lang('main.Achieving quality objectives')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
@@ -120,14 +120,14 @@
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="fa fa-exclamation-triangle"></i>
-                    <span class="hide-menu">تقيم المخاطر </span>
+                    <span class="hide-menu">@lang('main.Risk assessment') </span>
 
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
                         <a href="{{ route('risksop.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> اجراء تقيم المخاطر</span>
+                            <span class="hide-menu"> @lang('main.Achieving Risk assessment')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">

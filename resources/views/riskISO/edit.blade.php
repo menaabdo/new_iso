@@ -1,16 +1,411 @@
 @extends('layouts.master')
 
 @section('content')
+<style>
+    .back{
+    /* background-color: #163e73 !important; */
+}
+.form__div {
+    position: relative;
+    height: 48px;
+    margin-bottom: 1.5rem;
+    width: 60%;
+   margin-right:4px 
+  }
+  
+  .form__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 48px;
+    font-size: 14px;
+    border: 1px solid ;
+    background-color:#ffffff !important;
+    border-radius: 4px;
+    outline: none;
+    padding: 1rem;
+    background: transparent;
+    z-index: 1;
+  }
+  
+  input{
+      border:none !important
+  }
+  
+  .form__label {
+    position: absolute;
+    right:  4rem;
+    top: 1rem;
+    padding: 0 .25rem;
+    /* background-color: white; */
+    color: #2a415b!important;
+    font-size: 14px;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  
+  /*Input focus move up label*/
+  .form__input:focus + .form__label {
+    top: -2rem;
+    right: .8rem;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    z-index: 10;
+  }
+  .form__input:focus::placeholder{
+      /* color:#1a274e */
+  }
+  .form__input{
+      color: black !important;
+  }
+  
+  /*Input focus sticky top label*/
+  .form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
+    top: -2rem;
+    right:  .8rem;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  /*Input focus*/
+  .form__input:focus {
+    border: 1.5px solid #989BA7;
+  }
+  
+  .customersreview {
+    padding-bottom: 100px;
+  }
+  
+  .customersreview-wrapper {
+    position: relative;
+  }
+  
+.account-sign {
+    padding: 20px 0px;
+    /* background-color: #EFEFEF;; */
+  }
+  
+  .account-sign-in {
+    /* padding: 45px; */
+    /* background-color: white; */
+    border-radius: 5px;
+    margin-right: 24px;
+    
+  }
+  
+  .account-sign-in h5 {
+    color: #1A2224;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  .account-sign-in form .form__div {
+    margin-bottom: 30px;
+    
+  }
+  
+  .account-sign-in form .form__div input {
+    border: 1px solid #989BA7;
+    border-radius: 4px;
+    padding: 20px;
+    width: 100% !important;
+    height: 37px;
+  }
+  
+  .account-sign-in form .password-info {
+    margin-top: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .account-sign-in form .password-info-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .account-sign-in form .password-info-left input {
+    width: 15px;
+    height: 15px;
+    border-color: #989BA7;
+    border-radius: 2px;
+    margin-right: 6px;
+  }
+  
+  .account-sign-in form .password-info-left label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #989BA7;
+  }
+  
+  .account-sign-in form .password-info-right a {
+    color: #1A2224;
+    font-size: 14px;
+  }
+  
+  .account-sign-in form button {
+    width: 100%;
+    padding: 15px 0px;
+    background-color: #335AFF;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  
+  .account-sign-in form button:focus {
+    background-color: #335AFF;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  
+  .account-sign-in .social-signing {
+    margin-top: 30px;
+  }
+  
+  .account-sign-in .social-signing p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+  
+  .account-sign-in .social-signing-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  
+  .account-sign-in .social-signing-link a {
+    margin-left: 16px;
+    border: 1px solid #EFEFEF;
+    color: #989BA7;
+    padding: 12px 18px;
+    border-radius: 3px;
+  }
+  
+  .account-sign-in .social-signing-link a svg {
+    margin-right: 5px;
+  }
+  
+  .account-sign-up {
+    padding: 45px;
+    /* background-color: white; */
+    border-radius: 5px;
+    margin-left: 24px;
+  }
+  
+  .account-sign-up h5 {
+    color: #1A2224;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  .account-sign-up form .form__div {
+    margin-bottom: 24px;
+  }
+  
+  .account-sign-up form .form__div input {
+    border: 1px solid #989BA7;
+    border-radius: 4px;
+    padding: 20px;
+    width: 100% !important;
+  }
+  
+  .account-sign-up form .password-info-show {
+    margin-top: 12px;
+    margin-bottom: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .account-sign-up form .password-info-show input {
+    margin-right: 6px;
+    width: 15px;
+    height: 15px;
+    border-color: #989BA7;
+    border-radius: 2px;
+  }
+  
+  .account-sign-up form .password-info-show label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #989BA7;
+  }
+  
+  .account-sign-up form button {
+    width: 100%;
+    padding: 15px 0px;
+    background-color: #335AFF;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  
+  .account-sign-up form button:focus {
+    background-color: #335AFF;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .account-sign-in .social-signing-link a {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+      margin-left: 0;
+    }
+    .account-sign-in {
+      margin-right: 0;
+    }
+    .account-sign-up {
+      margin-left: 0;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .account-sign {
+      /* padding: 70px; */
+    }
+    .account-sign-in {
+      margin-right: 0;
+      margin-bottom: 50px;
+    }
+    .account-sign-up {
+      margin-left: 0;
+    }
+  }
+  
+  @media (min-width: 575px) and (max-width: 767px) {
+    .account-sign {
+      padding: 10px;
+      padding-bottom: 50px;
+      /* padding-top: 50px; */
+    }
+    .account-sign-in {
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+    .account-sign-up {
+      margin-left: 0;
+    }
+    .account-sign-in .social-signing-link a {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+      margin-left: 0;
+    }
+  }
+  
+  @media only screen and (min-width: 420px) and (max-width: 574px) {
+    .account-sign {
+      padding: 10px;
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
+    .account-sign-in {
+      margin-right: 0;
+      margin-bottom: 40px;
+      padding: 30px 15px;
+    }
+    .account-sign-up {
+      margin-left: 0;
+    }
+    .account-sign-in .social-signing-link a {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+      margin-left: 0;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .account-sign {
+      padding: 10px;
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+    .account-sign-in {
+      margin-right: 0;
+      margin-bottom: 40px;
+      padding: 20px 15px;
+    }
+    .account-sign-in form .password-info {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+    }
+    .account-sign-in form .password-info-left {
+      margin-bottom: 6px;
+    }
+    .account-sign-up {
+      margin-left: 0;
+      padding: 20px 15px;
+    }
+    .account-sign-in .social-signing-link a {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+      margin-left: 0;
+    }
+  }
+  .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+input,textarea{
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important; 
+}
+td{
+    text-align:center;
+}
+    </style>
 
-<!-- Content Header (Page header) -->
+    <!-- Content Header (Page header) -->
 
 
-<!-- Main content -->
-<div class="container mt-3 p-3">
-    <h3 style="margin-top:85px;">اجراء تقيم المخاطر</h3>
-    <hr>
-    <form action="{{route('risksop.update',$iso->id)}}" method="post" enctype="multipart/form-data" id="fo1">
-        @method('PUT')
+    <!-- Main content -->
+    <div class="container mt-3 p-3" style='background-color:white'>
+   
+   <main class="mt-0">
+  
+   <section class="account-sign ">
+       
+   <div class="container" >
+       <div class="row">
+           <div class="col-lg-10 col-md-10" style='margin:auto'>
+           <h3 style="margin-top:30px;color:#2a415b;padding:10px;color: #2a415b;
+   text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.Achieving Risk assessment')</h3>
+   <hr style='background-color:#3ed3ea'>
+  
+  
+        <form action="{{ route('risksop.update', $iso->id) }}" method="post" enctype="multipart/form-data" id="fo1">
+            @method('PUT')
             {{ csrf_field() }}
             <input type="hidden" name="type" value="2">
             <table style="width: 850px;" class="table table-bordered my-4   m-auto">
@@ -18,17 +413,17 @@
                     <tr>
                         <th class=" w-50 text-center col-3 ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="text-align: center;">اسم الاداره</label>
+                                <label for="" class="form__label border-0 text-white" style="text-align: center;">@lang('main.Manage Name')</label>
 
-                                <input class="form-control" type="text" name="manage_name"
+                                <input  type="text" name="manage_name"
                                     value="{{ $iso->manage_name }}" style="text-align: start;"
-                                    placeholder="ادخل اسم الاداره">
+                                    >
                             </div>
 
                         </th>
                         <th class="col-3 ">
                             <div style="display: flex;justify-content: center;align-items: center;height: 50px;">
-                                خطوات العمل القياسيه
+                                @lang('main.Standard work steps') 
                             </div>
 
                         </th>
@@ -36,14 +431,15 @@
                         <th class="col-4">
                             <div
                                 style="display: flex;justify-content: center;align-items: center;height: 50px;width: 200px;">
-                                <label for="img">اختار شعار الشركه:</label>
+                                <label for="img"> @lang('main.Company Logo')</label>
                                 <img src="{{ asset($iso->company_logo) }}" width="50px" />
                                 @if ($iso->status == 'pending' && Auth::user()->hasRole('Employee'))
+
                                     <input type="file" id="img" name="company_logo" accept="image/*">
                                 @endif
 
                                 @if (($iso->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
-                                    ($iso->status == 'pending' && Auth::user()->hasRole('Admin')))
+                                ($iso->status == 'pending' && Auth::user()->hasRole('Admin')))
                                     <input type="file" id="img" name="company_logo" accept="image/*">
                                 @endif
                                 @if (($iso->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -61,7 +457,7 @@
                     <tr>
                         <th class=" w-50 text-center ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="text-align: center;">تاريخ التفعيل</label>
+                                <label for="" class="" style="text-align: center;">@lang('main.Active Date')</label>
                                 <input class="form-control" type="date" name="active_date"
                                     value="{{ $iso->active_date }}" style="text-align: end;">
                             </div>
@@ -69,7 +465,7 @@
 
                         <th class=" w-50 text-center ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="text-align: center;">تاريخ الاصدار</label>
+                                <label for="" class="" style="text-align: center;">@lang('main.release_date')</label>
                                 <input class="form-control" type="date" name="release_date"
                                     value="{{ $iso->release_date }}" style="text-align: end;">
                             </div>
@@ -77,10 +473,10 @@
 
                         <th class=" w-50 text-center ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="text-align: center;">رقم الوثيقه</label>
+                                <label for="" class="" style="text-align: center;"> @lang('main.document_number')</label>
                                 <input class="form-control" type="text" name="document_number"
                                     value="{{ $iso->document_number }}" style="text-align: start;"
-                                    placeholder="ادخل رقم الوثيقه ">
+                                    placeholder="@lang('main.document_number') ">
                             </div>
                         </th>
 
@@ -88,26 +484,26 @@
                     <tr>
                         <th class=" w-50 text-center ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="text-align: center;">عدد الصفحات</label>
+                                <label for="" class="" style="text-align: center;">@lang('main.Page Number')</label>
                                 <input class="form-control" type="number" name="page_number"
                                     value="{{ $iso->page_number }}" style="text-align: start;"
-                                    placeholder="ادخل عدد الصفحات ">
+                                    placeholder=" @lang('main.Page Number') ">
                             </div>
                         </th>
 
                         <th class=" w-50 text-center ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="text-align: center;">تاريخ المراجعه</label>
+                                <label for="" class="" style="text-align: center;">@lang('main.review_date')</label>
                                 <input class="form-control" type="date" name="review_date"
                                     value="{{ $iso->review_date }}" style="text-align: end;">
                             </div>
                         </th>
                         <th class=" w-50 text-center ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="text-align: center;">كود الوثيقه</label>
+                                <label for="" class="" style="text-align: center;">@lang('main.document_code')</label>
                                 <input class="form-control" type="text" name="document_code"
                                     value="{{ $iso->document_code }}" style="text-align: start;"
-                                    placeholder="ادخل كود الوثيقه ">
+                                    placeholder="@lang('main.document_code') ">
                             </div>
                         </th>
 
@@ -118,16 +514,16 @@
             </table>
             <hr style="border: 5px; margin: 50px ;">
 
-            <section style="width: 650px;margin-top: 200px;border: 3px solid yellowgreen;" class=" my-4  p-4 m-auto">
+            <section style="width: 650px;margin-top: 200px;ق" class=" my-4  p-4 m-auto">
                 <div class="form-group row ">
-                    <label for="" class="col-sm-2 col-form-label">اسم الشركه</label>
+                    <label for="" class="col-sm-2 col-form-label">@lang('main.Company Name')</label>
                     <div class="col-sm-10">
                         <input type="text" name="company_name" value="{{ $iso->company_name }}"
                             class="form-control">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">اسم الاجراء</label>
+                    <label for="inputPassword" class="col-sm-2 col-form-label">@lang('main.procedure_name')</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="procedure_name"
                             value="{{ $iso->procedure_name }}" id="inputPassword">
@@ -136,16 +532,16 @@
             </section>
             <hr style="border: 5px; margin: 50px ;">
 
-            <section style="width: 650px;margin-top: 200px;border: 3px solid yellowgreen;" class=" my-4  p-4 m-auto">
+            <section style="width: 650px;margin-top: 200px;" class=" my-4  p-4 m-auto">
                 <div class="form-group row ">
-                    <label for="" class="col-sm-2 col-form-label">رقم النسخه</label>
+                    <label for="" class="col-sm-2 col-form-label">@lang('main.version_number')</label>
                     <div class="col-sm-10">
                         <input type="text" name="version_number" value="{{ $iso->version_number }}"
                             class="form-control">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">حائز النسخه</label>
+                    <label for="inputPassword" class="col-sm-2 col-form-label">@lang('main.copy_holder')</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="copy_holder" value="{{ $iso->copy_holder }}"
                             id="inputPassword">
@@ -160,8 +556,8 @@
                             <th class=" w-50 text-center col-2 ">
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
-                                        style="text-align: center;font-size:xx-large;font-weight: bolder;">
-                                        اعداد :</label>
+                                        style="text-align: center;;">
+                                         @lang('main.prepare')</label>
 
                                     <input class="form-control" type="text" name="prepare"
                                         value="{{ $iso->prepare }}" style="text-align: end;" placeholder="">
@@ -173,7 +569,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: star;font-size:xx-large;font-weight: bolder;">
-                                            مراجعه :</label>
+                                            @lang('main.review')</label>
 
                                         <input class="form-control" type="text" name="review"
                                             value="{{ $iso->review }}" placeholder="" readonly>
@@ -186,7 +582,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: star;font-size:xx-large;font-weight: bolder;">
-                                            مراجعه :</label>
+                                            @lang('main.review')</label>
 
                                         <input class="form-control" type="text" name="review"
                                             value="{{ $iso->review }}" placeholder="" readonly>
@@ -197,7 +593,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: end;font-size:xx-large;font-weight: bolder;">
-                                            اعتماد : </label>
+                                            @lang('main.approval')</label>
 
                                         <input class="form-control" type="text" name="approval"
                                             value="{{ $iso->approval }}" style="text-align: end;width: 120px;" readonly>
@@ -211,7 +607,7 @@
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
                                         style="text-align: center;font-size:xx-large;font-weight: bolder;">
-                                        اعداد :</label>
+                                         @lang('main.prepare')</label>
 
                                     <input class="form-control" type="text" name="prepare"
                                         value="{{ $iso->prepare }}" style="text-align: end;" placeholder="">
@@ -222,7 +618,7 @@
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
                                         style="text-align: star;font-size:xx-large;font-weight: bolder;">
-                                        مراجعه :</label>
+                                        @lang('main.review')</label>
 
                                     <input class="form-control" type="text" name="review"
                                         value="{{ $iso->review }}" placeholder="">
@@ -235,7 +631,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: end;font-size:xx-large;font-weight: bolder;">
-                                            اعتماد : </label>
+                                            @lang('main.approval')</label>
 
                                         <input class="form-control" type="text" name="approval"
                                             value="{{ $iso->approval }}" style="text-align: end;width: 120px;" readonly>
@@ -248,8 +644,8 @@
                             <th class=" w-50 text-center col-2 ">
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
-                                        style="text-align: center;font-size:xx-large;font-weight: bolder;">
-                                        اعداد :</label>
+                                        style="text-align: center;">
+                                         @lang('main.prepare')</label>
 
                                     <input class="form-control" type="text" name="prepare"
                                         value="{{ $iso->prepare }}" style="text-align: end;" placeholder="">
@@ -259,8 +655,8 @@
                             <th class=" w-50 text-center col-2 ">
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
-                                        style="text-align: star;font-size:xx-large;font-weight: bolder;">
-                                        مراجعه :</label>
+                                        style="text-align: star;">
+                                        @lang('main.review')</label>
 
                                     <input class="form-control" type="text" name="review"
                                         value="{{ $iso->review }}" placeholder="">
@@ -270,8 +666,8 @@
                             <th class=" w-50 text-center col-2 ">
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
-                                        style="text-align: end;font-size:xx-large;font-weight: bolder;">
-                                        اعتماد : </label>
+                                        style="text-align: end;">
+                                        @lang('main.approval')</label>
 
                                     <input class="form-control" type="text" name="approval"
                                         value="{{ $iso->approval }}" style="text-align: end;width: 120px;">
@@ -292,8 +688,7 @@
                         <th class=" w-50 text-center col-4 ">
                             <div class="" style="text-align:center ;">
                                 <label for="" class=""
-                                    style="text-align: end;font-size:large;font-weight: bolder;"> رقم
-                                    التعديل </label>
+                                    style="text-align: end;font-size:large;font-weight: bolder;">@lang('main.number_edit')</label>
 
                             </div>
 
@@ -332,7 +727,7 @@
                         <th class=" w-50 text-center ">
                             <div class="" style="text-align:center ;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;">التاريخ</label>
+                                    style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date')</label>
 
                             </div>
                         </th>
@@ -366,8 +761,7 @@
                             <div class="form-group mt-4"
                                 style="text-align:center ;justify-content: center;align-items: center; width: 140px;">
                                 <label for="" class=""
-                                    style="text-align: center;font-size:large;font-weight: bolder;">صفحه
-                                    / صفحات</label>
+                                    style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.page/pages')</label>
 
                             </div>
                         </th>
@@ -407,43 +801,39 @@
             </table>
             <hr style="border: 5px; margin: 50px ;">
             <section class="row" style="margin-right: 100px;">
-                <h2>الرسم التوضيحي للاجراء :</h2>
+                <h2>@lang('main.Action illustration:')</h2>
                 <div class="input-group my-3  mx-3">
                     <img src="{{ asset($iso->image_illustration) }}" width="50px" />
                     @if ($iso->status == 'pending' && Auth::user()->hasRole('Employee'))
-                        <label class="input-group-text" for="inputGroupFile01">اختيار صوره</label>
                         <input type="file" id="inputGroupFile01" name="image_illustration" class="form-control">
                     @endif
 
                     @if (($iso->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                         ($iso->status == 'pending' && Auth::user()->hasRole('Admin')))
-                        <label class="input-group-text" for="inputGroupFile01">اختيار صوره</label>
                         <input type="file" id="inputGroupFile01" name="image_illustration" class="form-control">
                     @endif
                     @if (($iso->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                         ($iso->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                         ($iso->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                        <label class="input-group-text" for="inputGroupFile01">اختيار صوره</label>
                         <input type="file" id="inputGroupFile01" name="image_illustration" class="form-control">
                     @endif
+                    
                 </div>
 
 
 
             </section>
-            <br><br><br><br><br><br><br>
+        
             <section>
                 <div class="row" style="margin: 100px;text-align: start;">
-                    <p>نموذج تسلسل الاجراء هو عرض بياني لخريطة عمليات لبيانات مجموعة الاجراءات الخاصة بكل ادراة من الاقسام
-                        والعمليات المرتبطة بها لكل مجموعة اجراءات اهداف وسياسات خاصة بها كما انها مزودة بكيفية سير العمل
-                        وباجراءات مفصلة لذلك.</p>
-                    <h3>المصطلحات والرسوم التوضيحيه</h3>
+                    <p>@lang('main.procedure')</p>
+                    <h3>  @lang('main.Terms and illustrations')</h3>
                     <table class="table table-bordered my-4">
                         <thead>
                             <tr>
-                                <th scope="col" style="font-size:large">الرسم </th>
-                                <th scope="col" style="font-size:large">المصطلح</th>
-                                <th scope="col" style="font-size:large">الشرح</th>
+                                <th scope="col" style="font-size:large">@lang('main.drawing') </th>
+                                <th scope="col" style="font-size:large">@lang('main.term')</th>
+                                <th scope="col" style="font-size:large">@lang('main.explain')</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -451,54 +841,54 @@
                                 <td>
                                     <div style="width: 150px; height: 80px;border: 2px solid grey;">
                                         <div style="width: 20px; height: 80px;border: 2px solid grey;float: left;">
-
+    
                                         </div>
                                     </div>
                                 </td>
-                                <td>مجال العمل</td>
-                                <td>يبين هذا الشكل مجال العمل الذى تقوم به الادراة </td>
+                                <td>@lang('main.Employment')</td>
+                                <td>@lang('main.figure') </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div style="width: 120px; height: 40px;border: 2px solid grey;border-radius: 25px;">
-
+    
                                     </div>
                                 </td>
-                                <td>البدايه</td>
-                                <td>يبين هذا الشكل بداية الاجراء </td>
+                                <td>@lang('main.start')</td>
+                                <td>@lang('main.start_figure')</td>
                             </tr>
                             <tr>
                                 <td>
                                     <div style="width: 150px; height: 90px;border: 2px solid grey;background-color: gray;">
-
+    
                                     </div>
                                 </td>
-                                <td>عمليه</td>
-                                <td>يبين هذا الشكل عملية ضمن الاجراء </td>
+                                <td>@lang('main.practical')</td>
+                                <td>@lang('main.practical_figure') </td>
                             </tr>
                             <tr>
                                 <td>Larry the Bird</td>
-                                <td>وثائق</td>
-                                <td>يبين هذا الاجراء شكل الوثائق </td>
+                                <td>@lang('main.documents')</td>
+                                <td>@lang('main.documents_action') </td>
                             </tr>
                             <tr>
                                 <td>Larry the Bird</td>
-                                <td>عملية فرعية </td>
-                                <td>يبين هذا الاجراء شكل العملية الفرعية التابعة لعملية رئيسة </td>
+                                <td>@lang('main.sub process') </td>
+                                <td>@lang('main.procedure sub process') </td>
                             </tr>
                             <tr>
                                 <td>Larry the Bird</td>
-                                <td>معلومات</td>
-                                <td>يبين هذا الاجراء شكل معلومات اضافية </td>
+                                <td>@lang('main.information')</td>
+                                <td>@lang('main.information_additional') </td>
                             </tr>
                             <tr>
                                 <td>Larry the Bird</td>
-                                <td>رابط</td>
-                                <td>يبين تسلسل المهام المبينة فى الاجراء </td>
+                                <td>@lang('main.Link')</td>
+                                <td>@lang('main.Link_sequence')</td>
                             </tr>
                             <tr>
                                 <td>Larry the Bird</td>
-                                <td>نهايه</td>
+                                <td>@lang('main.end')</td>
                                 <td> </td>
                             </tr>
                         </tbody>
@@ -507,29 +897,29 @@
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
-                    <label class="row"> الغرض من الاجراء :</label>
+                    <label class="row">@lang('main.Purpose of the procedure:')</label>
                 </div>
                 <textarea class=form-control name="purpose" id="" cols="55" rows="5"
-                    placeholder="ادخل الغرض من الاجراء ------------------------">{{ $iso->purpose }}</textarea>
+                    placeholder="@lang('main.Purpose of the procedure:')">{{ $iso->purpose }}</textarea>
 
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
-                    <label class="row"> المقدمه :</label>
+                    <label class="row">@lang('main.the introduction')</label>
                 </div>
                 <textarea class=form-control name="introduction" id="" cols="55" rows="5"
-                    placeholder="ادخل   المقدمه ------------------------">{{ $iso->introduction }}</textarea>
+                    placeholder="@lang('main.the introduction')">{{ $iso->introduction }}</textarea>
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
-                    <label class="row"> نطاق التطبيق :</label>
+                    <label class="row">@lang('main.Scope of application:')</label>
                 </div>
                 <textarea class=form-control name="scope_of_application" id="" cols="55" rows="5"
-                    placeholder="ادخل   نطاق التطبيق ------------------------">{{ $iso->scope_of_application }}</textarea>
+                    placeholder="@lang('main.Scope of application:')">{{ $iso->scope_of_application }}</textarea>
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
-                    <label class="row"> المصطلحات والتعريفات :</label>
+                    <label class="row"> @lang('main.Terms and definitions:')</label>
                 </div>
                 <table class="datatable-table table table-bordered mt-2 ">
                     <thead class="datatable-head">
@@ -537,24 +927,24 @@
 
                             @if ($iso->status == 'pending' && Auth::user()->hasRole('Employee'))
                                 <th data-field="" class="datatable-cell  end-cell text-center">
-                                    <span>م</span>
+                                   <span>@lang('main.m')</span>
                                 </th>
                             @endif
                             @if (($iso->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                                 ($iso->status == 'pending' && Auth::user()->hasRole('Admin')))
                                 <th data-field="" class="datatable-cell  end-cell text-center">
-                                    <span>م</span>
+                                   <span>@lang('main.m')</span>
                                 </th>
                             @endif
                             @if (($iso->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($iso->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($iso->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                                 <th data-field="" class="datatable-cell  end-cell text-center">
-                                    <span>م</span>
+                                   <span>@lang('main.m')</span>
                                 </th>
                             @endif
-                            <th data-field="" class="datatable-cell"><span>المصطلح:</span></th>
-                            <th data-field="" class="datatable-cell"><span>التعريف:</span></th>
+                            <th data-field="" class="datatable-cell"><span>@lang('main.term')</span></th>
+                            <th data-field="" class="datatable-cell"><span>@lang('main.definitions')</span></th>
                         </tr>
                     </thead>
                     <tbody class="datatable-body">
@@ -663,49 +1053,49 @@
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
-                    <label class="row"> المسؤليات :</label>
+                    <label class="row"> @lang('main.responsibilities')</label>
                 </div>
                 <textarea class=form-control name="responsibilities" id="" cols="55" rows="5"
-                    placeholder="ادخل  المسؤليات ------------------------">{{ $iso->responsibilities }}</textarea>
+                    placeholder="@lang('main.responsibilities')">{{ $iso->responsibilities }}</textarea>
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
-                    <label class="row"> خطوات العمل :</label>
+                    <label class="row"> @lang('main.action_steps')</label>
                 </div>
                 <textarea class=form-control name="action_steps" id="" cols="30" rows="20"
-                    placeholder="ادخل  خطوات العمل ------------------------">{{ $iso->action_steps }}</textarea>
+                    placeholder="@lang('main.action_steps')">{{ $iso->action_steps }}</textarea>
             </section>
 
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
-                    <label class="row"> النماذج المستخدمه :</label>
+                    <label class="row">  @lang('main.Models used:')</label>
                 </div>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             @if ($iso->status == 'pending' && Auth::user()->hasRole('Employee'))
                                 <th data-field="" class="datatable-cell  end-cell text-center">
-                                    <span>م</span>
+                                   <span>@lang('main.m')</span>
                                 </th>
                             @endif
                             @if (($iso->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                                 ($iso->status == 'pending' && Auth::user()->hasRole('Admin')))
                                 <th data-field="" class="datatable-cell  end-cell text-center">
-                                    <span>م</span>
+                                   <span>@lang('main.m')</span>
                                 </th>
                             @endif
                             @if (($iso->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($iso->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($iso->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                                 <th data-field="" class="datatable-cell  end-cell text-center">
-                                    <span>م</span>
+                                   <span>@lang('main.m')</span>
                                 </th>
                             @endif
-                            <th class="col-4" style="text-align: center;">اسم النموذج </th>
-                            <th class="col-1" style="text-align: center;">رقم النموذج</th>
-                            <th class="col-2" style="text-align: center;">تاريخ الاصدار</th>
-                            <th class="col-2" style="text-align: center;">مده الحفظ</th>
-                            <th class="col-2" style="text-align: center;">جهه الحفظ</th>
+                            <th class="col-4" style="text-align: center;">@lang('main.Model name') </th>
+                        <th class="col-1" style="text-align: center;">@lang('main.Model number')</th>
+                        <th class="col-2" style="text-align: center;">@lang('main.release_date')</th>
+                        <th class="col-2" style="text-align: center;">@lang('main.model_period')</th>
+                        <th class="col-2" style="text-align: center;">@lang('main.model_side')</th>
 
                         </tr>
                     </thead>
@@ -825,35 +1215,41 @@
 
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
-                    <label class="row"> المصادر المرجعيه الخارجيه والداخليه :</label>
+                    <label class="row"> @lang('main.External and internal reference sources:')</label>
                 </div>
-                <textarea class=form-control name="reference_sources" id="" cols="55" rows="5"
-                    placeholder="ادخل   نطاق التطبيق ------------------------">{{ $iso->reference_sources }}</textarea>
+                <textarea class='shadow-lg form-control' name="reference_sources" id="" cols="55" rows="5"
+                    placeholder="@lang('main.External and internal reference sources:')">{{ $iso->reference_sources }}</textarea>
             </section>
             @if ($iso->status == 'pending' && Auth::user()->hasRole('Employee'))
                 <div class="form-group">
                     <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                         </i></button>
                 </div>
             @elseif(($iso->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                 ($iso->status == 'pending' && Auth::user()->hasRole('Admin')))
                 <div class="form-group">
                     <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                         </i></button>
                 </div>
             @elseif(($iso->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                 ($iso->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                 ($iso->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                <div class="form-group">
-                    <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                        </i></button>
-                </div>
+                <div class="form-group" style='text-align:center'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit"
+                class="btn btn-primary">
+                @lang('main.edit')</button>
+        </div> 
             @endif
         </form>
+        </div>
+            </div>
+        </div>
     </div>
+</section>
+</main>
+</div>
 
     <!-- /.content -->
     <div class="modal fade account_model" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">

@@ -18,14 +18,14 @@
 
             <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
-    font-weight: bold;">إجراء أهداف الجودة</h3>
+    font-weight: bold;">@lang('main.Achieving quality objectives')</h3>
             <hr>
       </div>
       <div class="row" style='margin:auto;width:90%'>
      
                     <a href="{{ route('sop.create') }}" class="btn col-md-12 mr-1" style="margin-top: 40px;">
                <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
+    background-color:#001635;' id='me'><b>@lang('main.create')</b></button></a> <div class="col-12">
               
                     <div class="card">
 <div class="card-body">
@@ -36,11 +36,11 @@
                                 <table id="example1" class="table  table-striped shadow-lg" style=''>
                                     <thead>
                                         <tr style='background-color: #001635;color:white;text-align:center'>
-                                            <th>Manage Name</th>
-                                            <th>Company Logo</th>
-                                            <th style=" ">Status</th>
+                                            <th>@lang('main.Manage Name')</th>
+                                            <th>@lang('main.Company Logo')</th>
+                                            <th style=" ">@lang('main.Status')</th>
                                             <th data-field="Actions" class="datatable-cell "><span
-                                                    style="">Actions</span></th>
+                                                    style="">@lang('main.Actions')</span></th>
 
                                         </tr>
                                     </thead>

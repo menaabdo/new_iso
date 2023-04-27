@@ -16,7 +16,7 @@
                  <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
     font-weight: bold;">
-                اجراء تقيم المخاطر</h3>
+              @lang('main.Achieving Risk assessment')</h3>
                 <hr>
                 </div>
       <div class="row" style='margin:auto;width:90%'>
@@ -35,12 +35,12 @@
                                                 <thead>
                                                     <tr style='background-color: #001635;color:white;text-align:center'>
                                            
-                                                        <th>Manage Name</th>
-                                                        <th>Company Logo</th>
-                                                        <th style="  ">Status</th>
+                                                         <th>@lang('main.Manage Name')</th>
+                                                        <th>@lang('main.Company Logo')</th>
+                                                        <th style=" ">@lang('main.Status')</th>
                                                         <th data-field="Actions" class="datatable-cell "><span
-                                                                style="">Actions</span></th>
-
+                                                                style="">@lang('main.Actions')</span></th>
+            
                                                     </tr>
                                                 </thead>
 

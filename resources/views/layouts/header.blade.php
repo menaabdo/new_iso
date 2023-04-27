@@ -27,7 +27,7 @@
                     <!-- Logo text -->
                     <span class="logo-text" >
                         <!-- dark Logo text -->
-                        <img src="../../assets/images/WhatsApp Image 2022-07-23 at 9.29.05 PM.jpeg" alt="homepage" class="dark-logo" style="border-radius: 50%;" width="70px" height="70px" />
+                        <img src="{{asset('assets/images/WhatsApp Image 2022-07-23 at 9.29.05 PM.jpeg')}}" alt="homepage" class="dark-logo" style="border-radius: 50%;" width="70px" height="70px" />
                      
                         <!-- Light Logo text -->
                         <!-- <img src="../../assets/images/WhatsApp Image 2022-07-23 at 9.29.05 PM.jpeg" class="light-logo" alt="homepage" style="border-radius: 50%;" width="50px" height="50px"/>
@@ -60,7 +60,7 @@
     width: 100%;
     margin-top: 60px;
     z-index: 1;'>
-             <img id='img1' src="../../assets/images/WhatsApp Image 2022-07-23 at 9.29.05 PM.jpeg" alt="homepage" class="dark-logo" style="border-radius: 50%;box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;margin-left:60px ;margin-top:10px;margin-bottom:10px;          margin: 5px -7px 0 -268px;
+             <img id='img1' src="{{asset('assets/images/WhatsApp Image 2022-07-23 at 9.29.05 PM.jpeg')}}" alt="homepage" class="dark-logo" style="border-radius: 50%;box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;margin-left:60px ;margin-top:10px;margin-bottom:10px;          margin: 5px -7px 0 -268px;
              ;border: 3px solid #3ed3ea;padding:3px;
       " width="100px" height="100px" />
      </div> 
@@ -187,7 +187,5 @@
     </nav>
 </header>
 <script>
-    window.load{
-        alert('mmmmmmmm')
-    }
+   
     </script>

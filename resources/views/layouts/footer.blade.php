@@ -132,7 +132,7 @@
                             <div class="message-center chat-scroll">
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_1' data-user-id='1'>
                                     <span class="user-img">
-                                        <img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle">
+                                        <img src="{{asset('assets/images/users/1.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status online pull-right"></span>
                                     </span>
                                     <div class="mail-contnet">
@@ -144,7 +144,7 @@
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_2' data-user-id='2'>
                                     <span class="user-img">
-                                        <img src="../../assets/images/users/2.jpg" alt="user" class="rounded-circle">
+                                        <img src="{{asset('assets/images/users/2.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status busy pull-right"></span>
                                     </span>
                                     <div class="mail-contnet">
@@ -156,7 +156,7 @@
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_3' data-user-id='3'>
                                     <span class="user-img">
-                                        <img src="../../assets/images/users/3.jpg" alt="user" class="rounded-circle">
+                                        <img src="{{asset('assets/images/users/3.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status away pull-right"></span>
                                     </span>
                                     <div class="mail-contnet">
@@ -168,7 +168,7 @@
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_4' data-user-id='4'>
                                     <span class="user-img">
-                                        <img src="../../assets/images/users/4.jpg" alt="user" class="rounded-circle">
+                                        <img src="{{asset('assets/images/users/4.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status offline pull-right"></span>
                                     </span>
                                     <div class="mail-contnet">
@@ -181,7 +181,7 @@
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_5' data-user-id='5'>
                                     <span class="user-img">
-                                        <img src="../../assets/images/users/5.jpg" alt="user" class="rounded-circle">
+                                        <img src="{{asset('assets/images/users/5.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status offline pull-right"></span>
                                     </span>
                                     <div class="mail-contnet">
@@ -194,7 +194,7 @@
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_6' data-user-id='6'>
                                     <span class="user-img">
-                                        <img src="../../assets/images/users/6.jpg" alt="user" class="rounded-circle">
+                                        <img src="{{asset('assets/images/users/6.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status offline pull-right"></span>
                                     </span>
                                     <div class="mail-contnet">
@@ -207,7 +207,7 @@
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_7' data-user-id='7'>
                                     <span class="user-img">
-                                        <img src="../../assets/images/users/7.jpg" alt="user" class="rounded-circle">
+                                        <img src="{{asset('assets/images/users/7.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status offline pull-right"></span>
                                     </span>
                                     <div class="mail-contnet">
@@ -220,7 +220,7 @@
                                 <!-- Message -->
                                 <a href="javascript:void(0)" class="message-item" id='chat_user_8' data-user-id='8'>
                                     <span class="user-img">
-                                        <img src="../../assets/images/users/8.jpg" alt="user" class="rounded-circle">
+                                        <img src="{{asset('assets/images/users/8.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status offline pull-right"></span>
                                     </span>
                                     <div class="mail-contnet">
@@ -261,7 +261,7 @@
                         </div>
                         <div class="sl-item">
                             <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="../../assets/images/users/2.jpg"> </div>
+                                <img class="rounded-circle" alt="user" src="{{asset('assets/images/users/2.jpg')}}"> </div>
                             <div class="sl-right">
                                 <div class="font-medium">Go to the Doctor
                                     <span class="sl-date">5 minutes ago</span>
@@ -271,7 +271,7 @@
                         </div>
                         <div class="sl-item">
                             <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="../../assets/images/users/1.jpg"> </div>
+                                <img class="rounded-circle" alt="user" src="{{asset('assets/images/users/1.jpg')}}"> </div>
                             <div class="sl-right">
                                 <div>
                                     <a href="javascript:void(0)">Stephen</a>
@@ -302,7 +302,7 @@
                         </div>
                         <div class="sl-item">
                             <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="../../assets/images/users/4.jpg"> </div>
+                                <img class="rounded-circle" alt="user" src="{{asset('assets/images/users/4.jpg')}}"> </div>
                             <div class="sl-right">
                                 <div class="font-medium">Go to the Doctor
                                     <span class="sl-date">5 minutes ago</span>
@@ -312,7 +312,7 @@
                         </div>
                         <div class="sl-item">
                             <div class="sl-left">
-                                <img class="rounded-circle" alt="user" src="../../assets/images/users/6.jpg"> </div>
+                                <img class="rounded-circle" alt="user" src="{{asset('assets/images/users/6.jpg')}}"> </div>
                             <div class="sl-right">
                                 <div>
                                     <a href="javascript:void(0)">Stephen</a>
@@ -332,30 +332,30 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
 
-    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="{{asset('assets/libs/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{asset('assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
+    <script src="{{asset('assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <!-- apps -->
-    <script src="../../dist/js/app.min.js"></script>
-    <script src="../../dist/js/app.init.js"></script>
-    <script src="../../dist/js/app-style-switcher.js"></script>
+    <script src="{{asset('dist/js/app.min.js')}}"></script>
+    <script src="{{asset('dist/js/app.init.js')}}"></script>
+    <script src="{{asset('dist/js/app-style-switcher.js')}}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="{{asset('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
     <!--Wave Effects -->
-    <script src="../../dist/js/waves.js"></script>
+    <script src="{{asset('dist/js/waves.js')}}"></script>
     <!--Menu sidebar -->
-    <script src="../../dist/js/sidebarmenu.js"></script>
+    <script src="{{asset('dist/js/sidebarmenu.js')}}"></script>
     <!--Custom JavaScript -->
-    <script src="../../dist/js/custom.min.js"></script>
+    <script src="{{asset('dist/js/custom.min.js')}}"></script>
     <!--This page JavaScript -->
     <!--chartis chart-->
-    <script src="../../assets/libs/chartist/dist/chartist.min.js"></script>
-    <script src="../../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="{{asset('assets/libs/chartist/dist/chartist.min.js')}}"></script>
+    <script src="{{asset('assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
     <!--c3 charts -->
-    <script src="../../assets/extra-libs/c3/d3.min.js"></script>
-    <script src="../../assets/extra-libs/c3/c3.min.js"></script>
-    <script src="../../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="../../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../../dist/js/pages/dashboards/dashboard1.js"></script>
+    <script src="{{asset('assets/extra-libs/c3/d3.min.js')}}"></script>
+    <script src="{{asset('assets/extra-libs/c3/c3.min.js')}}"></script>
+    <script src="{{asset('assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js')}}"></script>
+    <script src="{{asset('assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js')}}"></script>
+    <script src="{{asset('dist/js/pages/dashboards/dashboard1.js')}}"></script>
    
