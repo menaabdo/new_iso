@@ -1,28 +1,34 @@
 @extends('layouts.master')
 
 @section('content')
+    <style>
+        .shadow-lg {
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        }
 
-<style>
-    .shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
-    #me:hover{
-        transform: scale(1.1);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-    }
-</style>
+        #me:hover {
+            transform: scale(1.1);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        }
+    </style>
+    <section class="content" style='margin:auto;'>
+        <div class="card">
+            <div class="card-body row" style='margin:auto;;'>
 
-<section class="content" style='margin:auto;'>
-        <div class="card row" style='margin:auto;'>
-<div class="card-body " style='margin:auto;width:90%'>
-    
-                <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
+                <h3 style="margin-top:85px;color: #2a415b;
+    text-shadow: 1px 1px 1px #3ed3ea;
+    font-weight: bold;">
+                 قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
                 <hr>
-                <div class="row">
+            </div>
+            <div class="row" style='margin:auto;width:90%'>
 
-                    <a href="{{ route('listInternalAuditor.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
-          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
-       
+                <a href="{{ route('listInternalAuditor.create') }}" class="btn col-md-12 mr-1"
+                    style="width:120px;  float: right; font-size:20px ">
+                    <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+    background-color:#001635;'
+                        id='me'><b>@lang('main.create')</b></button></a>
+                <div class="col-12">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
@@ -30,23 +36,25 @@
                                     <div class="card-body">
                                         <!-- /.card-header -->
                                         <div class="card-body">
-                                            <table id="example1" class="table shadwo-lg  table-striped">
+                                            <table id="example1" class="table  table-striped shadow-lg">
                                                 <thead>
-                                                    <tr>
-                                                        <th style="     text-align: center;"> Company Name</th>
-                                                        <th style="    text-align: center; ">Status</th>
-                                                        <th style="    text-align: center;" data-field="Actions"
-                                                            class="datatable-cell "><span style="">Actions</span></th>
+                                                    <tr style='background-color: #001635;color:white;text-align:center'>
 
+                                                        <th style="text-align: center;">@lang('main.Company Name')</th>
+                                                        <th style="text-align: center; ">@lang('main.Status')</th>
+                                                        <th data-field="Actions" class="datatable-cell "><span
+                                                                style="">@lang('main.Actions')</span></th>
                                                     </tr>
                                                 </thead>
 
-                                                <tbody class="datatable-body text-center">
+
+                                                <tbody class="datatable-body ">
                                                     @foreach ($all_listInternalAuditor as $listInternalAuditor)
                                                         <tr class="datatable-row datatable-row-even">
                                                             <td class="datatable-cell" style="font-size:15px ">
-                                                                <span>{{ $listInternalAuditor->company_name }}</span></td>
-                                                           
+                                                                <span>{{ $listInternalAuditor->company_name }}</span>
+                                                            </td>
+
                                                             <td class="datatable-cell" style="font-size:15px ">
                                                                 <span>{{ $listInternalAuditor->status }}</span>
                                                             </td>
@@ -57,13 +65,13 @@
                                                                         method="post">
                                                                         <a href="{{ route('listInternalAuditor.edit', $listInternalAuditor->id) }}"
                                                                             class="btn btn-sm btn-clean
-                                            btn-icon mr-2"
+btn-icon mr-2"
                                                                             title="@lang('general.edit')">
                                                                             <i class="fa fa-edit"></i>
                                                                         </a>
-                                                                         <a href="{{ route('listInternalAuditor.print', $listInternalAuditor->id) }}"
+                                                                        <a href="{{ route('listInternalAuditor.print', $listInternalAuditor->id) }}"
                                                                             class="btn btn-lg btn-clean
-                                                                            btn-icon mr-2 test"
+                        btn-icon mr-2 test"
                                                                             title="@lang('general.print')" target="_blank">
                                                                             <i class="fa fa-print"></i>
                                                                         </a>
@@ -86,20 +94,21 @@
                                                                         method="post">
                                                                         <a href="{{ route('listInternalAuditor.edit', $listInternalAuditor->id) }}"
                                                                             class="btn btn-sm btn-clean
-                                            btn-icon mr-2"
+btn-icon mr-2"
                                                                             title="@lang('general.edit')">
                                                                             <i class="fa fa-edit"></i>
                                                                         </a>
-                                                                          <a href="{{ route('listInternalAuditor.print', $listInternalAuditor->id) }}"
+                                                                        <a href="{{ route('listInternalAuditor.print', $listInternalAuditor->id) }}"
                                                                             class="btn btn-lg btn-clean
-                                                                            btn-icon mr-2 test"
+                        btn-icon mr-2 test"
                                                                             title="@lang('general.print')" target="_blank">
                                                                             <i class="fa fa-print"></i>
                                                                         </a>
                                                                         @csrf
                                                                         @method('delete')
-                                                                        @if (($listInternalAuditor->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
-                                                                            ($listInternalAuditor->status == 'pending' && Auth::user()->hasRole('Admin')))
+                                                                        @if (
+                                                                            ($listInternalAuditor->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
+                                                                                ($listInternalAuditor->status == 'pending' && Auth::user()->hasRole('Admin')))
                                                                             <button type="button"
                                                                                 class="btn btn-sm btn-clean btn-icon"
                                                                                 title="@lang('general.delete')"
@@ -109,9 +118,10 @@
                                                                         @endif
                                                                     </form>
                                                                 </td>
-                                                            @elseif(($listInternalAuditor->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
-                                                                ($listInternalAuditor->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
-                                                                ($listInternalAuditor->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
+                                                            @elseif(
+                                                                ($listInternalAuditor->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
+                                                                    ($listInternalAuditor->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
+                                                                    ($listInternalAuditor->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                                                                 <td style="font-size:15px">
                                                                     <form id="delete-form-{{ $listInternalAuditor->id }}"
                                                                         action="{{ route('listInternalAuditor.destroy', $listInternalAuditor->id) }}"
@@ -119,27 +129,27 @@
 
                                                                         <a href="{{ route('listInternalAuditor.edit', $listInternalAuditor->id) }}"
                                                                             class="btn btn-lg  
-                                        btn-icon "
+btn-icon "
                                                                             title="@lang('general.edit')">
                                                                             <i class="fa fa-edit"></i>
                                                                         </a>
-                                                                          <a href="{{ route('listInternalAuditor.print', $listInternalAuditor->id) }}"
+                                                                        <a href="{{ route('listInternalAuditor.print', $listInternalAuditor->id) }}"
                                                                             class="btn btn-lg btn-clean
-                                                                            btn-icon mr-2 test"
+                        btn-icon mr-2 test"
                                                                             title="@lang('general.print')" target="_blank">
                                                                             <i class="fa fa-print"></i>
                                                                         </a>
 
                                                                         {{-- <a href="{{ route('listInternalAuditor.print', $listInternalAuditor->id) }}"
-                                                                 data-id="{{ $listInternalAuditor->id }}"
-                                                                class="btn btn-lg btn-icon">
-                                                                <i class="fa fa-print"></i>
-                                                            </a> --}}
+             data-id="{{ $listInternalAuditor->id }}"
+            class="btn btn-lg btn-icon">
+            <i class="fa fa-print"></i>
+        </a> --}}
 
                                                                         {{-- <a href="#" data-id="{{ $listInternalAuditor->id }}"
-                                                                class="btn btn-lg btn-icon print">
-                                                                <i class="fa fa-print"></i>
-                                                            </a> --}}
+            class="btn btn-lg btn-icon print">
+            <i class="fa fa-print"></i>
+        </a> --}}
 
 
                                                                         @csrf
@@ -156,20 +166,20 @@
                                                     @endforeach
                                                 </tbody>
                                             </table>
-                                            </div>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
-            </div>
-         
-           
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-      </section>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+
+
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+    </section>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function confirmDelete(item_id) {
@@ -194,11 +204,11 @@
             });
         }
     </script>
-      <script>
-     $(".test").on('click', function(e) {
-          window.open(''.e.target.href.'', "_blank");
-   
-  });
-      
+    <script>
+        $(".test").on('click', function(e) {
+            window.open(''.e.target.href.
+                '', "_blank");
+
+        });
     </script>
 @endsection

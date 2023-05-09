@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
 <style>
     .shadow-lg {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
@@ -10,36 +9,43 @@
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     }
 </style>
+<section class="content" style='margin:auto;'>
+        <div class="card">
+            <div class="card-body row" style='margin:auto;;'>
 
- <section class="content">
-      <div class="card">
-<div class="card-body">
-        <h3 style="margin-top:85px;">اجراء التحسين المستمر</h3>
-        <hr>
-        <div class="row">
-            <a  href="{{ route('ContinuousImprovementSOP.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+                 <h3 style="margin-top:85px;color: #2a415b;
+    text-shadow: 1px 1px 1px #3ed3ea;
+    font-weight: bold;">اجراء التحسين المستمر</h3>
+                <hr>
+                </div>
+      <div class="row" style='margin:auto;width:90%'>
+     
+                    <a href="{{ route('ContinuousImprovementSOP.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
-          <div class="col-12">
-            <div class="card">
-<div class="card-body">
-            <div class="card">
-<div class="card-body">
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>Manage Name</th>
-                    <th>Company Logo</th>
-                    <th style=" font-size:20px ">Status</th>
-                    <th data-field="Actions" class="datatable-cell "><span style="">Actions</span></th>
-                    
-                  </tr>
-                  </thead>
-      
-                  <tbody class="datatable-body ">
-                    @foreach ($all_iso as $iso)
+    background-color:#001635;' id='me'><b>@lang('main.create')</b></button></a> <div class="col-12">
+                <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+                                            <table id="example1" class="table  table-striped shadow-lg">
+                                                <thead>
+                                                    <tr style='background-color: #001635;color:white;text-align:center'>
+                                           
+                                                         <th>@lang('main.Manage Name')</th>
+                                                        <th>@lang('main.Company Logo')</th>
+                                                        <th style=" ">@lang('main.Status')</th>
+                                                        <th data-field="Actions" class="datatable-cell "><span
+                                                                style="">@lang('main.Actions')</span></th>
+            
+                                                    </tr>
+                                                </thead>
+
+                                                
+ <tbody class="datatable-body ">
+    @foreach ($all_iso as $iso)
                         <tr class="datatable-row datatable-row-even" style="left: 0px;">
                             <td class="datatable-cell"><span>{{ $iso->manage_name }}</span></td>
                             <td class="datatable-cell"><span> <img src="{{ asset($iso->company_logo) }}"

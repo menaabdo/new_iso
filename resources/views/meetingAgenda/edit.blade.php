@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group w-100  mr-5">
              <div class="row" >   
-             <label for="" class="col-md-3 col-form-label text-right">رقم الاجتماع: </label>
+             <label for="" class="col-md-3 col-form-label text-right">@lang('main.meeting_num') : </label>
              <div class="col-md-6" >
                    <input type="text" class="form-control" placeholder="  ......" name="meeting_num"
                             value="{{ $meetingAgenda->meeting_num }}">
@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group w-100  mr-5">
             <div class="row " >
-            <label class="col-md-3 col-form-label text-right">CO LOGO</label>
+            <label class="col-md-3 col-form-label text-right">@lang('main.Company Logo') </label>
             <div class="col-md-6" >
                        @if ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Employee'))
                             <input type="file" id="img" class="form-control shadow-lg" name="logo" accept="image/*">
@@ -56,7 +56,7 @@
 
                 <div class="form-group w-100  mr-5">
             <div class="row" >
-                    <label for="" class="col-md-3 col-form-label text-right">التاريخ:</label>
+                    <label for="" class="col-md-3 col-form-label text-right">@lang('main.date') :</label>
                     <div class="col-md-6" >
               
                         <input type="date" class="form-control shadow-lg" name="date_1" value="{{ $meetingAgenda->date_1 }}">
@@ -66,7 +66,7 @@
 
             <div class="form-group w-100  mr-5">
             <div class="row" >
-            <label for="" class="col-md-3 col-form-label text-right">  نوع الإجتماع:</label>
+            <label for="" class="col-md-3 col-form-label text-right">@lang('main.meeting_kind') :</label>
             <div class="col-md-6" >
                    <input type="text" class="form-control" name="meeting_kind"
                    class="form-control shadow-lg"  value="{{ $meetingAgenda->meeting_kind }}">
@@ -77,18 +77,18 @@
                    <div class="form-group row w-100 text-right" style="text-align:center ;margin:auto;">
                      <table class="table table-bordered col-md-10" style='margin:auto'>
                         <tr>
-                            <th style="background-color:#001635;color:white ">مكان الأنعقاد</th>
+                            <th style="background-color:#001635;color:white ">@lang('main.meeting_place')</th>
                             <th><input class="form-control" type="text" name="meeting_place"
                                     value="{{ $meetingAgenda->meeting_place }}"></th>
-                            <th style="background-color:#001635;color:white ">مدة الاجتماع</th>
+                            <th style="background-color:#001635;color:white ">@lang('main.meeting_period')</th>
                             <th><input class="form-control" type="text" name="meeting_period"
                                     value="{{ $meetingAgenda->meeting_period }}"></th>
                         </tr>
                         <tr>
-                            <th style="background-color:#001635;color:white ">التوقيت</th>
+                            <th style="background-color:#001635;color:white ">@lang('main.time')</th>
                             <th><input class="form-control" type="text" name="meeting_time"
                                     value="{{ $meetingAgenda->meeting_time }}"></th>
-                            <th style="background-color:#001635;color:white ">مقرر الاجتماع</th>
+                            <th style="background-color:#001635;color:white ">@lang('main.meeting_schedule')</th>
                             <th><input class="form-control" type="text" name="meeting_schedule"
                                     value="{{ $meetingAgenda->meeting_schedule }}"></th>
                         </tr>
@@ -96,33 +96,33 @@
                 </div>
                 <div class="form-group w-100  mr-5">
             <div class="row mt-3" >
-            <label for="" class="col-md-4 col-form-label text-right">الغرض من الاجتماع  :</label>
+            <label for="" class="col-md-4 col-form-label text-right">@lang('main.meeting_purpose') :</label>
             <div class="col-md-4" >    
-            <textarea type="text" class="form-control" name="meeting_purpose" placeholder="الغرض من الاجتماع:">{{ $meetingAgenda->meeting_purpose }}</textarea>
+            <textarea type="text" class="form-control" name="meeting_purpose" placeholder="@lang('main.meeting_purpose') :">{{ $meetingAgenda->meeting_purpose }}</textarea>
                     </div>
                 </div>
                 </div>
                 <hr >
                 <div class="form-group row w-100 text-right">
-                    <h2 for="" class="col-2 col-form-label">أسماء الحضور :</h2>
+                    <h2 for="" class="col-2 col-form-label">@lang('main.Attendance Names') :</h2>
                 </div>
                 <div class="form-group row w-70 text-right" style="text-align:center ;margin:auto;">
                     <table id="attendance_table" class="table">
                         <tr style="background-color:#001635;color:white">
                             @if ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Employee'))
-                                <th>م</th>
+                                <th>@lang('main.m')</th>
                             @endif
                             @if (($meetingAgenda->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                                 ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Admin')))
-                                <th>م</th>
+                                <th>@lang('main.m')</th>
                             @endif
                             @if (($meetingAgenda->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($meetingAgenda->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                                <th>م</th>
+                                <th>@lang('main.m')</th>
                             @endif
-                            <th>الاسم</th>
-                            <th>الوظيفة</th>
+                            <th>@lang('main.name')</th>
+                            <th>@lang('main.job')</th>
 
                         </tr>
                         @if (count($meetingAgenda->attendance) > 0)
@@ -226,7 +226,7 @@
                 <hr >
                 <div class="form-group row w-100 text-center">
          
-            <h2 for="" class="col-12 col-form-label" style=' text-shadow: 1px 1px 1px #3ed3ea;'>الموضوعات التي سيتم مناقشتها :</h2>
+            <h2 for="" class="col-12 col-form-label" style=' text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Topics to be discussed') :</h2>
         </div>
 
 
@@ -234,20 +234,20 @@
                     <table class="table">
                         <tr style="background-color:#001635;color:white ">
                             @if ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Employee'))
-                                <th>م</th>
+                                <th>@lang('main.m')</th>
                             @endif
                             @if (($meetingAgenda->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                                 ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Admin')))
-                                <th>م</th>
+                                <th>@lang('main.m')</th>
                             @endif
                             @if (($meetingAgenda->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($meetingAgenda->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                                <th>م</th>
+                                <th>@lang('main.m')</th>
                             @endif
-                            <th class="col-6 col-form-label">الموضوعات</th>
-                            <th>المسئول</th>
-                            <th>الوقت المخصص</th>
+                            <th class="col-6 col-form-label">@lang('main.Topics')</th>
+                            <th>@lang('main.responsible')</th>
+                            <th>@lang('main.custom_time')</th>
                         </tr>
                         @if (count($meetingAgenda->topic) > 0)
                             @foreach ($meetingAgenda->topic as $key => $topic)
@@ -360,10 +360,10 @@
                                 <th class=" w-50 text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="font-size:large;font-weight: bolder;">ممثل الإدارة :</label>
+                                            style="font-size:large;font-weight: bolder;">@lang('main.management representative') :</label>
                                     </div>
                                     <div class="form-group row w-10 text-center">
-                                        <label for="" class="col-1 col-form-label">الإسم </label>
+                                        <label for="" class="col-1 col-form-label">@lang('main.name') </label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" readonly placeholder="  ......"
                                                 name="name_1" value="{{ $meetingAgenda->name_1 }}">
@@ -376,10 +376,10 @@
                                 <th class=" w-50 text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="font-size:large;font-weight: bolder;">ممثل الإدارة :</label>
+                                            style="font-size:large;font-weight: bolder;">@lang('main.management representative') :</label>
                                     </div>
                                     <div class="form-group row w-10 text-center">
-                                        <label for="" class="col-1 col-form-label">الإسم </label>
+                                        <label for="" class="col-1 col-form-label">@lang('main.name') </label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" readonly placeholder="  ......"
                                                 name="name_1" value="{{ $meetingAgenda->name_1 }}">
@@ -390,11 +390,10 @@
                                 <th class=" w-50 text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">المدير
-                                            العام:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.General Director') :</label>
                                     </div>
                                     <div class="form-group row w-10 text-center">
-                                        <label for="" class="col-1 col-form-label">الإسم </label>
+                                        <label for="" class="col-1 col-form-label">@lang('main.name') </label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......" readonly
                                                 name="name_2" value="{{ $meetingAgenda->name_2 }}">
@@ -406,10 +405,10 @@
                                 <th class=" w-50 text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="font-size:large;font-weight: bolder;">ممثل الإدارة :</label>
+                                            style="font-size:large;font-weight: bolder;">@lang('main.management representative') :</label>
                                     </div>
                                     <div class="form-group row w-10 text-center">
-                                        <label for="" class="col-1 col-form-label">الإسم </label>
+                                        <label for="" class="col-1 col-form-label">@lang('main.name') </label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_1" value="{{ $meetingAgenda->name_1 }}">
@@ -422,11 +421,10 @@
                                 <th class=" w-50 text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">المدير
-                                            العام:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.General Director') :</label>
                                     </div>
                                     <div class="form-group row w-10 text-center">
-                                        <label for="" class="col-1 col-form-label">الإسم </label>
+                                        <label for="" class="col-1 col-form-label">@lang('main.name') </label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......" readonly
                                                 name="name_2" value="{{ $meetingAgenda->name_2 }}">
@@ -438,10 +436,10 @@
                                 <th class=" w-50 text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="font-size:large;font-weight: bolder;">ممثل الإدارة :</label>
+                                            style="font-size:large;font-weight: bolder;">@lang('main.management representative') :</label>
                                     </div>
                                     <div class="form-group row w-10 text-center">
-                                        <label for="" class="col-3 col-form-label">الإسم </label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name') </label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_1" value="{{ $meetingAgenda->name_1 }}">
@@ -452,11 +450,10 @@
                                 <th class=" w-50 text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">المدير
-                                            العام:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.General Director') :</label>
                                     </div>
                                     <div class="form-group row w-10 text-center">
-                                        <label for="" class="col-3 col-form-label">الإسم </label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name') </label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_2" value="{{ $meetingAgenda->name_2 }}">
@@ -473,6 +470,7 @@
                         <tr>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.Company Name')</label>
                                     <input class="form-control" type="text" name="company_name"
                                         placeholder="اسم الشركة  :" value="{{ $meetingAgenda->company_name }}">
                                 </div>
@@ -480,6 +478,7 @@
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.release_date') </label>
                                     <input class="form-control" type="text" name="date2"
                                         placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')"
                                         onblur="(this.type='text')" value="{{ $meetingAgenda->date2 }}">
@@ -488,6 +487,7 @@
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.Modification date')</label>
                                     <input class="form-control" type="text" name="date3"
                                         placeholder="تاريخ التعديل :" onfocus="(this.type='date')"
                                         onblur="(this.type='text')" value="{{ $meetingAgenda->date3 }}">
@@ -496,21 +496,21 @@
                             </th>
                             <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $meetingAgenda->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $meetingAgenda->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $meetingAgenda->number_doc }}">
                             </div>
                         </th>
@@ -521,14 +521,14 @@
             @if ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Employee'))
                 <div class="form-group">
                     <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                         </i></button>
                 </div>
             @elseif(($meetingAgenda->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                 ($meetingAgenda->status == 'pending' && Auth::user()->hasRole('Admin')))
                 <div class="form-group">
                     <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                         </i></button>
                 </div>
             @elseif(($meetingAgenda->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -537,7 +537,7 @@
                 <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.edit')</button>
                     </div>
             @endif
         </form>

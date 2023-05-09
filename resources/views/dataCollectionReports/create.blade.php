@@ -27,38 +27,38 @@
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-3 ">CO LOGO</label>
+                <label class="form-label col-md-3 ">@lang('main.Company Logo')</label>
                 <div class="col-6">
                 <input type="file" id="img" name="logo" accept="image/*">
             </div>
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">التاريخ:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.date'):</label>
                 <div class="col-6">
                     <input type="date" class="form-control" name="date_1">
                 </div>
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">القسم:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.department'):</label>
                 <div class="col-6">
                     <input type="text" class="form-control" name="department">
                 </div>
             </div>
             <hr class="w-100">
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">البيانات المطلوبة :</label>
+                <label for="" class="col-3 col-form-label">@lang('main.date_details') :</label>
                 <div class="col-6">
                     <textarea type="text" class="form-control" name="date_details"></textarea>
                 </div>
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">التفاصيل :</label>
+                <label for="" class="col-3 col-form-label">@lang('main.details') :</label>
                 <div class="col-6">
                     <textarea type="text" class="form-control" name="details"></textarea>
                 </div>
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">النتائج :</label>
+                <label for="" class="col-3 col-form-label">@lang('main.result') :</label>
                 <div class="col-6">
                     <textarea type="text" class="form-control" name="result"></textarea>
                 </div>
@@ -66,7 +66,7 @@
             @if (Auth::user()->hasRole('Admin') || Auth::user()->hasRole('SuperAdmin'))
             <hr class="w-100">
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">مدير الجودة :</label>
+                <label for="" class="col-3 col-form-label">@lang('main.quality manager') :</label>
                 <div class="col-6">
                     <input type="text" class="form-control" name="name_1">
                 </div>
@@ -78,53 +78,52 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                            <label> اسم الشركة </label>
-                                <input class="form-control" type="text" name="company_name" >
+                                <label>@lang('main.Company Name')</label>
+                                <input class="form-control shadow-lg" type="text" name="company_name">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                            <label>تاريخ الاصدار </label>
-                                <input class="form-control" type="text" name="date2"  onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label>@lang('main.release_date') </label>
+                                <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                            <label> تاريخ التعديل </label>
-                                <input class="form-control" type="text" name="date3"  onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label>@lang('main.Modification date')</label>
+                                <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc">
                             </div>
                         </th>
                     </tr>
                 </thead>
             </table>
-            <div class='row'>
-            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
-                class="btn btn-primary col-md-4">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
-                    </div>  
+            <div class='row mt-3'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
+        </div> 
         </form>
     </div>
 

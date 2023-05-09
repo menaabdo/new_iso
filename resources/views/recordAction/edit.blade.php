@@ -22,12 +22,12 @@
                     <hr class="w-100">
                 </div>
                 <div>
-                    <label class="col-2">إدارة</label>
+                    <label class="col-2">@lang('main.Management')</label>
                     <input class="col-md-6 form-control" style="text-align: center;" type="text" name="management"
                         value="{{ $recordAction->management }}">
                 </div>
                 <div class='row mt-4 mb-3'>
-      <label class="form-label col-md-2 ">CO LOGO</label>
+      <label class="form-label col-md-2 ">@lang('main.Company Logo')</label>
                    @if ($recordAction->status == 'pending' && Auth::user()->hasRole('Employee'))
                         <input type="file" id="img" name="logo" accept="image/*">
                     @endif
@@ -49,27 +49,27 @@
                     <table class="table">
                         <tr style="background-color:#001635;color:white; text-align:center;">
                             @if ($recordAction->status == 'pending' && Auth::user()->hasRole('Employee'))
-                                <th scope="col" rowspan="2">م</th>
+                                <th scope="col" rowspan="2">@lang('main.m')</th>
                             @endif
                             @if (($recordAction->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                                 ($recordAction->status == 'pending' && Auth::user()->hasRole('Admin')))
-                                <th scope="col" rowspan="2">م</th>
+                                <th scope="col" rowspan="2">@lang('main.m')</th>
                             @endif
                             @if (($recordAction->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($recordAction->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($recordAction->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                                <th scope="col" rowspan="2">م</th>
+                                <th scope="col" rowspan="2">@lang('main.m')</th>
                             @endif
-                            <th scope="col" rowspan="2">إسم الاجراء</th>
-                            <th scope="col" rowspan="2">كود الاجراء</th>
-                            <th scope="col" colspan="2">أخر إصدار/ تعديل</th>
-                            <th scope="col" rowspan="2">مدة الحفظ</th>
-                            <th scope="col" rowspan="2">ملاحظات</th>
+                            <th scope="col" rowspan="2">@lang('main.Action name')</th>
+                            <th scope="col" rowspan="2">@lang('main.Action code')</th>
+                            <th scope="col" colspan="2">@lang('main.Latest version/modification')</th>
+                            <th scope="col" rowspan="2">@lang('main.model_period')</th>
+                            <th scope="col" rowspan="2">@lang('main.note')</th>
 
                         </tr>
                         <tr style="background-color:#001635; text-align:center;">
-                            <th scope="col">رقم</th>
-                            <th scope="col"> التاريخ</th>
+                            <th scope="col">@lang('main.num')</th>
+                            <th scope="col">@lang('main.date')</th>
                         </tr>
                         @if (count($recordAction->recordAction) > 0)
                             @foreach ($recordAction->recordAction as $key => $intr)
@@ -194,17 +194,17 @@
                                 <th class=" text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" readonly placeholder="  ......"
                                                 name="name_1" value="{{ $recordAction->name_1 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" readonly placeholder="  ......"
                                                 name="job_1" value="{{ $recordAction->job_1 }}">
@@ -217,17 +217,17 @@
                                 <th class=" text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" readonly placeholder="  ......"
                                                 name="name_1" value="{{ $recordAction->name_1 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" readonly placeholder="  ......"
                                                 name="job_1" value="{{ $recordAction->job_1 }}">
@@ -238,17 +238,17 @@
                                 <th class="  text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval'):</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" readonly placeholder="  ......"
                                                 name="name_2" value="{{ $recordAction->name_2 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" readonly placeholder="  ......"
                                                 name="job_2" value="{{ $recordAction->job_2 }}">
@@ -261,17 +261,17 @@
                                 <th class=" text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_1" value="{{ $recordAction->name_1 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_1" value="{{ $recordAction->job_1 }}">
@@ -283,10 +283,10 @@
                                     <th class="  text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval'):</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" readonly
                                                     placeholder="  ......" name="name_2"
@@ -294,7 +294,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" readonly
                                                     placeholder="  ......" name="job_2"
@@ -309,17 +309,17 @@
                                 <th class=" text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_1" value="{{ $recordAction->name_1 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_1" value="{{ $recordAction->job_1 }}">
@@ -330,17 +330,17 @@
                                 <th class="  text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval'):</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_2" value="{{ $recordAction->name_2 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_2" value="{{ $recordAction->job_2 }}">
@@ -360,6 +360,7 @@
                         <tr>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.Company Name')</label>
                                     <input class="form-control" type="text" name="company_name"
                                         placeholder="اسم الشركة  :" value="{{ $recordAction->company_name }}">
                                 </div>
@@ -367,6 +368,7 @@
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.release_date') </label>
                                     <input class="form-control" type="text" name="date2"
                                         value="{{ $recordAction->date2 }}" placeholder="تاريخ الإصدار   :"
                                         onfocus="(this.type='date')" onblur="(this.type='text')">
@@ -375,6 +377,7 @@
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.Modification date')</label>
                                     <input class="form-control" type="text" name="date3"
                                         value="{{ $recordAction->date3 }}" placeholder="تاريخ التعديل :"
                                         onfocus="(this.type='date')" onblur="(this.type='text')">
@@ -383,21 +386,21 @@
                             </th>
                             <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $recordAction->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $recordAction->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $recordAction->number_doc }}">
                             </div>
                         </th>
@@ -408,14 +411,14 @@
                 @if ($recordAction->status == 'pending' && Auth::user()->hasRole('Employee'))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                             </i></button>
                     </div>
                 @elseif(($recordAction->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                     ($recordAction->status == 'pending' && Auth::user()->hasRole('Admin')))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                             </i></button>
                     </div>
                 @elseif(($recordAction->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -424,7 +427,7 @@
                     <div class='row mt-3'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.edit')</button>
                     </div>  
                 @endif
             </form>

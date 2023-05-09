@@ -19,33 +19,33 @@
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
                 <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>سجل متابعة تقارير عدم المطابقة </h2>
-                <label>لــعام</label>
+                <label>@lang('main.year')</label>
                 <input style="text-align: center;" class='form-control' type="text" name="year">
                 <hr class="w-100">
             </div>
             <div class='shadow-lg p-3'>
-                <label class="form-label pr-5">CO LOGO</label>
+                <label class="form-label pr-5">@lang('main.Company Logo')</label>
                 <div class=''>
                     <input type="file" id="img" class='shadow-lg' name="logo" accept="image/*">
                 </div>
             </div>
             <div class="mt-3" style="text-align:start ;">
-                <label for="" class="" style="text-align: center;font-weight: bolder;"> حالات عدم مطابقة لنظام الجودة ( ISO 9001 ) فى مختلف الإدارات . </label>
+                <label for="" class="" style="text-align: center;font-weight: bolder;">@lang('main.Cases of non-compliance with the quality system (ISO 9001) in various departments'). </label>
             </div>
             <hr class="w-100">
 
             <div style="overflow-x:auto;">
                 <table>
                     <tr style="background-color:#001635;color:white">
-                        <th class="col-1 col-form-label">م </th>
-                        <th> التاريخ</th>
-                        <th>الإدارة المختصة</th>
-                        <th>وصف الحالة</th>
-                        <th>الإجراء المتخذ</th>
-                        <th>المسئول عن التنفيذ</th>
-                        <th>مخطط التنفيذ</th>
-                        <th>متابعة التنفيذ</th>
-                        <th>ملاحظات</th>
+                        <th class="col-1 col-form-label">@lang('main.m')</th>
+                        <th>@lang('main.date')</th>
+                        <th>@lang('main.The competent department')</th>
+                        <th>@lang('main.Case description')</th>
+                        <th>@lang('main.Action taken')</th>
+                        <th>@lang('main.Responsible for implementation')</th>
+                        <th>@lang('main.Implementation scheme')</th>
+                        <th>@lang('main.Follow-up implementation')</th>
+                        <th>@lang('main.note')</th>
                     </tr>
                     <tr id="nonConformanceReport-0">
                         <th class="text-center end-td ">
@@ -73,14 +73,14 @@
             <hr class="w-100">
             @if (Auth::user()->hasRole('SuperAdmin'))
             <div class="" style="text-align:center ;">
-                <h2 for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعداد</h2>
+                <h2 for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</h2>
             </div>
             <div class="form-group row text-left col-12">
-                <label for="" class="col-2 col-form-label">الاسم : -</label>
+                <label for="" class="col-2 col-form-label">@lang('main.name') : -</label>
                 <div class="col-4">
                     <input type="text" class="form-control" placeholder="  ......" name="name">
                 </div>
-                <label for="" class="col-2 col-form-label">الوظيفة: -</label>
+                <label for="" class="col-2 col-form-label">@lang('main.job'): -</label>
                 <div class="col-4">
                     <input type="text" class="form-control" placeholder="  ......" name="employee">
                 </div>
@@ -95,53 +95,54 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label>اسم الشركة</label>
-                                <input class="form-control" type="text" name="company_name">
+                                <label>@lang('main.Company Name')</label>
+                                <input class="form-control shadow-lg" type="text" name="company_name">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label>تاريخ الاصدار</label>
-                                <input class="form-control" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label>@lang('main.release_date') </label>
+                                <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label>تاريخ التعديل</label>
-                                <input class="form-control" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label>@lang('main.Modification date')</label>
+                                <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc">
                             </div>
                         </th>
                     </tr>
                 </thead>
             </table>
-
-            <div class='row'>
-                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
-            </div>
+        </div>
+        </div>
+        <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
+        </div>
         </form>
     </div>
 

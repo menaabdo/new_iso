@@ -22,13 +22,13 @@
             {{ csrf_field() }}
             <div class="container p-4">
                 <div style="" class="w-100 text-center my-4">
-                    <h2>سجل متابعة قرارات مراجعة الإدارة العليا</h2>
+                    <h2>سجل متابعة قرارات @lang('main.review') الإدارة العليا</h2>
                     <hr class="w-100" color="black">
                 </div>
 
                 <div class="form-group row">
                     <div id="mainDiv" style=" margin-right:1000px;">
-                        <h4 style=" color:blue;">CO LOGO</h4>
+                        <h4 style=" color:blue;">@lang('main.Company Logo')</h4>
                         <hr width="50%" size="20" color="blue">
                         <img src="{{ asset($followLog->logo) }}" height=180px width=210px; />
                         @if ($followLog->status == 'pending' && Auth::user()->hasRole('Employee'))
@@ -45,26 +45,34 @@
                             <input type="file" id="img" name="logo" accept="image/*">
                         @endif
                     </div>
-                    <h3 for="" class="col-1 col-form-label">نوع الاجتماع : </h3>
-                    <div class="col-1 col-form-label">
-                        <input type="radio" name="planing" value="planned" <?php if ($followLog->planing == 'planned') {
-                            echo 'checked="checked"';
-                        } ?>>
-                    </div>
-                    <h2 for="" class="col-3 col-form-label" style="text-align:right;">مخطط </h2>
-                    <div class="col-1 col-form-label">
-                        <input type="radio" name="planing" value="not_planned" <?php if ($followLog->planing == 'not_planned') {
-                            echo 'checked="checked"';
-                        } ?>>
-                    </div>
-                    <h2 for="" class="col-3 col-form-label" style="text-align:right;">غير مخطط </h2>
+                    <h3 for="" class="col-1 col-form-label">@lang('main.meeting_kind') : </h3>
 
-                    <h2 for="" style="text-align:right;" class="col-4 col-form-label">رقم الأجتماع </h2>
+                    @php
+                    if (App::getLocale() == 'ar')
+                        $align='left';
+                    else
+                        $align='right';
+                    @endphp
+ <label for="" style="text-align:{{$align}};" class="col-md-2 col-form-label">@lang('main.plan') </label>
+ <div class=" col-form-label pl-2">
+     <input type="radio" style='margin-top:6px' id="planing" name="planing" value="planned"  <?php if ($followLog->planing == 'planned') {
+        echo 'checked="checked"';
+    } ?> class='shadow-lg'>
+ </div>
+
+
+ <label for="" style="text-align:{{$align}};" class="col-md-3 col-form-label">@lang('main.no_plan') </label>
+ <div class=" col-form-label pr-1">
+     <input type="radio" id="not_planing" style='margin-top:6px' name="planing" value="not_planned" <?php if ($followLog->planing == 'not_planned') {
+        echo 'checked="checked"';
+    } ?>class='shadow-lg'>
+ </div>
+                    <h2 for="" style="text-align:right;" class="col-4 col-form-label">@lang('main.meeting_num') </h2>
                     <div class="col-3 col-form-label">
                         <input type="text" name="meeting_num" value="{{ $followLog->meeting_num }}">
                     </div>
 
-                    <h2 for="" style="text-align:left;" class="col-3 col-form-label">التاريخ : </h2>
+                    <h2 for="" style="text-align:left;" class="col-3 col-form-label">@lang('main.date') : </h2>
                     <div class="col-1 col-form-label">
                         <input type="date" name="meetting_date" value="{{ $followLog->meetting_date }}">
                     </div>
@@ -75,27 +83,27 @@
                     <table class="table">
                         <tr style="background-color:rgb(235, 252, 160); text-align:center;">
                             @if ($followLog->status == 'pending' && Auth::user()->hasRole('Employee'))
-                                <th scope="col" rowspan="2">م</th>
+                                <th scope="col" rowspan="2">@lang('main.m')</th>
                             @endif
                             @if (($followLog->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                                 ($followLog->status == 'pending' && Auth::user()->hasRole('Admin')))
-                                <th scope="col" rowspan="2">م</th>
+                                <th scope="col" rowspan="2">@lang('main.m')</th>
                             @endif
                             @if (($followLog->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($followLog->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($followLog->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                                <th scope="col" rowspan="2">م</th>
+                                <th scope="col" rowspan="2">@lang('main.m')</th>
                             @endif
-                            <th scope="col" rowspan="2">الموضوع</th>
-                            <th scope="col" rowspan="2">القرار المتخذ</th>
-                            <th scope="col" rowspan="2">المسئول</th>
-                            <th scope="col" rowspan="2">التاريخ المخطط</th>
-                            <th scope="col" colspan="2">متابعة التنفيذ</th>
-                            <th scope="col" rowspan="2">الملاحظات</th>
+                            <th scope="col" rowspan="2">@lang('main.Topic')</th>
+                            <th scope="col" rowspan="2">@lang('main.decision made')</th>
+                            <th scope="col" rowspan="2">@lang('main.responsible')</th>
+                            <th scope="col" rowspan="2">@lang('main.Planned date')</th>
+                            <th scope="col" colspan="2">@lang('main.Follow-up implementation')</th>
+                            <th scope="col" rowspan="2">@lang('main.note')</th>
                         </tr>
                         <tr style="background-color:rgb(235, 252, 160); text-align:center;">
-                            <th scope="col"> تم</th>
-                            <th scope="col">لم يتم</th>
+                            <th scope="col">@lang('main.completed')</th>
+                            <th scope="col">@lang('main.not_completed')</th>
                         </tr>
                         @if (count($followLog->follow) > 0)
                             @foreach ($followLog->follow as $key => $intr)
@@ -228,17 +236,17 @@
                                 <th class=" text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare'):</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_1" value="{{ $followLog->name_1 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_1" value="{{ $followLog->job_1 }}">
@@ -250,10 +258,10 @@
                                     <th class="  text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">مراجعة:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.review'):</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" readonly
                                                     placeholder="  ......" name="name_2"
@@ -261,7 +269,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" readonly
                                                     placeholder="  ......" name="job_2"
@@ -275,10 +283,10 @@
                                     <th class="  text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">مراجعة:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.review'):</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" readonly
                                                     placeholder="  ......" name="name_2"
@@ -286,7 +294,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" readonly
                                                     placeholder="  ......" name="job_2"
@@ -298,10 +306,10 @@
                                     <th class="  text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval'):</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" readonly
                                                     placeholder="  ......" name="name_3"
@@ -309,7 +317,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" readonly
                                                     placeholder="  ......" name="job_3"
@@ -324,17 +332,17 @@
                                 <th class=" text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare'):</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_1" value="{{ $followLog->name_1 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_1" value="{{ $followLog->job_1 }}">
@@ -345,17 +353,17 @@
                                 <th class="  text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">مراجعة:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.review'):</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_2" value="{{ $followLog->name_2 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_2" value="{{ $followLog->job_2 }}">
@@ -367,10 +375,10 @@
                                     <th class="  text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval'):</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" readonly
                                                     placeholder="  ......" name="name_3"
@@ -378,7 +386,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" readonly
                                                     placeholder="  ......" name="job_3"
@@ -393,17 +401,17 @@
                                 <th class=" text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare'):</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_1" value="{{ $followLog->name_1 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_1" value="{{ $followLog->job_1 }}">
@@ -414,17 +422,17 @@
                                 <th class="  text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">مراجعة:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.review'):</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_2" value="{{ $followLog->name_2 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_2" value="{{ $followLog->job_2 }}">
@@ -435,17 +443,17 @@
                                 <th class="  text-center col-2 ">
                                     <div class="" style="text-align:center ;">
                                         <label for="" class=""
-                                            style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval'):</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_3" value="{{ $followLog->name_3 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_3" value="{{ $followLog->job_3 }}">
@@ -464,6 +472,7 @@
                         <tr>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.Company Name')</label>
                                     <input class="form-control" type="text" name="company_name"
                                         placeholder="اسم الشركة  :" value="{{ $followLog->company_name }}">
                                 </div>
@@ -471,6 +480,7 @@
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.release_date') </label>
                                     <input class="form-control" type="text" name="date2"
                                         placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')"
                                         onblur="(this.type='text')" value="{{ $followLog->date2 }}">
@@ -479,6 +489,7 @@
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.Modification date')</label>
                                     <input class="form-control" type="text" name="date3"
                                         placeholder="تاريخ التعديل :" onfocus="(this.type='date')"
                                         onblur="(this.type='text')" value="{{ $followLog->date3 }}">
@@ -487,21 +498,21 @@
                             </th>
                             <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $followLog->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $followLog->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $followLog->number_doc }}">
                             </div>
                         </th>
@@ -511,14 +522,14 @@
                 @if ($followLog->status == 'pending' && Auth::user()->hasRole('Employee'))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                             </i></button>
                     </div>
                 @elseif(($followLog->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                     ($followLog->status == 'pending' && Auth::user()->hasRole('Admin')))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                             </i></button>
                     </div>
                 @elseif(($followLog->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -526,7 +537,7 @@
                     ($followLog->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                             </i></button>
                     </div>
                 @endif

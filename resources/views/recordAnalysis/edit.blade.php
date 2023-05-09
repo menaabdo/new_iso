@@ -26,7 +26,7 @@
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3 '>
-                <label class="form-label col-md-3 ">CO LOGO</label>
+                <label class="form-label col-md-3 ">@lang('main.Company Logo')</label>
               
                     @if ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('Employee'))
                 <input type="file" id="img" name="logo" accept="image/*">
@@ -45,13 +45,13 @@
             @endif
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">لعام:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.year'):</label>
                 <div class="col-6">
                     <input type="text" class="form-control" name="year" value="{{$recordAnalysis->year}}">
                 </div>
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label"> التاريخ:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.date'):</label>
                 <div class="col-6">
                     <input type="date" class="form-control" name="date_1" value="{{$recordAnalysis->date_1}}">
                 </div>
@@ -63,19 +63,19 @@
                     <table class="table">
                         <tr style="background-color:#001635;color:white; text-align:center;">
                             @if ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('Employee'))
-                            <th scope="col" rowspan="3">م</th>
+                            <th scope="col" rowspan="3">@lang('main.m')</th>
                         @endif
                         @if (($recordAnalysis->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                             ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('Admin')))
-                            <th scope="col" rowspan="3">م</th>
+                            <th scope="col" rowspan="3">@lang('main.m')</th>
                         @endif
                         @if (($recordAnalysis->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                             ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                             ($recordAnalysis->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                            <th scope="col" rowspan="3">م</th>
+                            <th scope="col" rowspan="3">@lang('main.m')</th>
                         @endif
-                            <th style="width:70 ;" scope="col" rowspan="3">المنطقة</th>
-                            <th style="width:70 ;" scope="col" rowspan="3">اسم العميل</th>
+                            <th style="width:70 ;" scope="col" rowspan="3">@lang('main.Region')</th>
+                            <th style="width:70 ;" scope="col" rowspan="3">@lang('main.customer_name')</th>
                             <th style="width:30 ;" scope="col" colspan="2">1 </th>
                             <th style="width:30 ;" scope="col" colspan="2">2 </th>
                             <th style="width:30 ;" scope="col" colspan="2">3 </th>
@@ -86,17 +86,17 @@
                             <th style="width:90 ;" scope="col" colspan="3">5/4 </th>
                             <th style="width:90 ;" scope="col" colspan="3">5/5 </th>
                             <th style="width:90 ;" scope="col" colspan="3">5/6 </th>
-                            <th style="width:100;" scope="col" rowspan="3">النسبة المئوية</th>
+                            <th style="width:100;" scope="col" rowspan="3">@lang('main.percentage')</th>
                         </tr>
                         <tr style="background-color:#001635;color:white; text-align:center;">
-                            <th scope="col" colspan="1"> نعم</th>
-                            <th scope="col" colspan="1">لا</th>
-                            <th scope="col" colspan="1"> نعم</th>
-                            <th scope="col" colspan="1">لا</th>
-                            <th scope="col" colspan="1"> نعم</th>
-                            <th scope="col" colspan="1">لا</th>
-                            <th scope="col" colspan="1"> نعم</th>
-                            <th scope="col" colspan="1">لا</th>
+                            <th scope="col" colspan="1">@lang('main.yes')</th>
+                            <th scope="col" colspan="1"> @lang('main.no')</th>
+                            <th scope="col" colspan="1">@lang('main.yes')</th>
+                            <th scope="col" colspan="1"> @lang('main.no')</th>
+                            <th scope="col" colspan="1">@lang('main.yes')</th>
+                            <th scope="col" colspan="1"> @lang('main.no')</th>
+                            <th scope="col" colspan="1">@lang('main.yes')</th>
+                            <th scope="col" colspan="1"> @lang('main.no')</th>
                             <th scope="col" colspan="1">جج</th>
                             <th scope="col" colspan="1"> ج</th>
                             <th scope="col" colspan="1">م</th>
@@ -118,13 +118,13 @@
                         </tr>
                         <tr style="background-color:#001635;color:white; text-align:center;">
                             <th scope="col" rowspan="1"> 10</th>
-                            <th scope="col" rowspan="1">صفر</th>
+                            <th scope="col" rowspan="1">0</th>
                             <th scope="col" rowspan="1"> 10</th>
-                            <th scope="col" rowspan="1">صفر</th>
+                            <th scope="col" rowspan="1">0</th>
                             <th scope="col" rowspan="1"> 10</th>
-                            <th scope="col" rowspan="1">صفر</th>
+                            <th scope="col" rowspan="1">0</th>
                             <th scope="col" rowspan="1"> 10</th>
-                            <th scope="col" rowspan="1">صفر</th>
+                            <th scope="col" rowspan="1">0</th>
                             <th scope="col" rowspan="1">9</th>
                             <th scope="col" rowspan="1"> 7</th>
                             <th scope="col" rowspan="1">5</th>
@@ -287,17 +287,16 @@
                         <th class=" w-50 text-center col-2 ">
                             <div class="" style="text-align:center ;">
                                 <label for="" class=""
-                                    style="text-align:center;font-size:large;font-weight: bolder;"> ممثل الإدارة
-                                    الجودة:</label>
+                                    style="text-align:center;font-size:large;font-weight: bolder;"> @lang('main.management representative'):</label>
                             </div>
                             <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" readonly placeholder="  ......" name="name_1" value="{{$recordAnalysis->name_1}}">
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">التاريخ: -</label>
+                                <label for="" class="col-3 col-form-label">@lang('main.date'): -</label>
                                 <div class="col-6">
                                     <input type="date" class="form-control" readonly placeholder="  ......" name="date_2" value="{{$recordAnalysis->date_2}}">
                                 </div>
@@ -309,17 +308,16 @@
                         <th class=" w-50 text-center col-2 ">
                             <div class="" style="text-align:center ;">
                                 <label for="" class=""
-                                    style="text-align:center;font-size:large;font-weight: bolder;"> ممثل الإدارة
-                                    الجودة:</label>
+                                    style="text-align:center;font-size:large;font-weight: bolder;"> @lang('main.management representative'):</label>
                             </div>
                             <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_1" value="{{$recordAnalysis->name_1}}">
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">التاريخ: -</label>
+                                <label for="" class="col-3 col-form-label">@lang('main.date'): -</label>
                                 <div class="col-6">
                                     <input type="date" class="form-control" placeholder="  ......" name="date_2" value="{{$recordAnalysis->date_2}}">
                                 </div>
@@ -336,42 +334,42 @@
                 <tr>
                     <th>
                       <div class="" style="text-align:start ;">
-                      <label>اسم الشركة</label>
+                        <label>@lang('main.Company Name')</label>
                         <input class="form-control" type="text" name="company_name"   value="{{ $recordAnalysis->company_name }}">
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                      <label>تاريخ الاصدار</label>
+                        <label>@lang('main.release_date') </label>
                         <input class="form-control" type="text" name="date2"  value="{{ $recordAnalysis->date2 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
             
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                        <label>تاريخ  التعديل</label>
+                            <label>@lang('main.Modification date')</label>
                             <input class="form-control" type="text" name="date3"  value="{{ $recordAnalysis->date3 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                           </div>
             
                     </th>
                      <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $recordAnalysis->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $recordAnalysis->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $recordAnalysis->number_doc }}">
                             </div>
                         </th>
@@ -381,14 +379,14 @@
         @if ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('Employee'))
         <div class="form-group">
             <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                 </i></button>
         </div>
     @elseif(($recordAnalysis->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
         ($recordAnalysis->status == 'pending' && Auth::user()->hasRole('Admin')))
         <div class="form-group">
             <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                 </i></button>
         </div>
     @elseif(($recordAnalysis->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -397,7 +395,7 @@
         <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.edit')</button>
                     </div>
     @endif
         </form>

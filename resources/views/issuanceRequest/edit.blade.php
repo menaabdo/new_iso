@@ -24,7 +24,7 @@
                     <hr class="w-100">
                 </div>
                 <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-2 ">CO LOGO</label>
+                <label class="form-label col-md-2 ">@lang('main.Company Logo')</label>
  
                     @if ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('Employee'))
                         <input type="file" id="img" name="logo" accept="image/*">
@@ -43,7 +43,7 @@
                 </div>
                 <div class='row mt-4 mb-3'>
              
-                    <label for=""  class="form-label col-md-2 ">1- الإدارة :</label>
+                    <label for=""  class="form-label col-md-2 ">1-@lang('main.Management') :</label>
                     
                         <input type="text" class="col-md-6 form-control" name="management"
                             value="{{ $issuanceRequest->management }}">
@@ -51,14 +51,14 @@
                     <div class="vertical"></div>
                     <div class='row mt-4 mb-3'>
              
-                    <label for="" class="col-md-2 col-form-label">التاريخ :</label>
+                    <label for="" class="col-md-2 col-form-label">@lang('main.date') :</label>
                    
                         <input type="date" class="col-md-6 form-control" name="date_1" value="{{ $issuanceRequest->date_1 }}">
                     </div>
                 </div>
                 <hr class="w-100">
                 <div class='row mt-4 mb-3 mx-5'>
-                       <label for="" class="mx-5 col-2 col-form-label">2- نوع وإسم الوثيقة</label>
+                       <label for="" class="mx-5 col-2 col-form-label">2-@lang('main.The type and name of the document')</label>
                     <div class="col-12 mx-5">
                         <textarea type="text" class="form-control" placeholder="  ......" name="document_type_and_name">{{ $issuanceRequest->document_type_and_name }}</textarea>
                     </div>
@@ -66,7 +66,7 @@
                 <div class="form-group row w-100 text-left">
                 <div class='col-md-4'>
                     <div class='row mr-5'>
-                       <label for="" class="col-md-12 col-form-label mx-5">3- رمز الوثيقة :</label>
+                       <label for="" class="col-md-12 col-form-label mx-5">3-@lang('main.document_number') :</label>
                   
                         <input type="text" class="form-control mx-5" name="document_code"
                             value="{{ $issuanceRequest->document_code }}">
@@ -75,7 +75,7 @@
                 <div class='col-md-4'>
                     <div class='row ml-5'>
                        
-                    <label for=""  class="col-md-12 col-form-label text-left">رقم الإصدار</label>
+                    <label for=""  class="col-md-12 col-form-label text-left">@lang('main.release_number')</label>
                     
                         <input type="text" class="form-control" name="issue_number"
                             value="{{ $issuanceRequest->issue_number }}">
@@ -84,7 +84,7 @@
                     <div class='col-md-4'>
                     <div class='row'>
                        
-                    <label for="" class="col-md-12 col-form-label text-left">تاريخ الإصدار :</label>
+                    <label for="" class="col-md-12 col-form-label text-left">@lang('main.release_date') :</label>
                    
                         <input type="date" class="form-control" name="release_date"
                             value="{{ $issuanceRequest->release_date }}">
@@ -93,40 +93,40 @@
                 </div>
                 <hr class="w-100">
                 
-                    <h2 for="" class=" col-form-label" style='margin:auto'>4- ملخص المطلوب وسببه :</h2>
+                    <h2 for="" class=" col-form-label" style='margin:auto'>4-@lang('main.Summary of the request and its reason') :</h2>
                     <div class="form-group row w-100 ">
                 <div class="col-md-4 col-form-label text-center">
                 <input type="radio" name="summary" value="issuance" <?php if ($issuanceRequest->summary == 'issuance') {
                             echo 'checked="checked"';
                         } ?>>
-                        <label for="" class=" col-form-label text-left">إصدار </label>
+                        <label for="" class=" col-form-label text-left">@lang('main.release') </label>
                     </div>
                     <div class="col-md-4 col-form-label text-center">
                    <input type="radio" name="summary" value="update" <?php if ($issuanceRequest->summary == 'update') {
                             echo 'checked="checked"';
                         } ?>>
-                        <label for="" class="col-2 col-form-label text-left">تعديل </label>
+                        <label for="" class="col-2 col-form-label text-left">@lang('main.edit') </label>
                     </div>
                     <div class="col-md-4 col-form-label text-center">
                      <input type="radio" name="summary" value="cancel" <?php if ($issuanceRequest->summary == 'cancel') {
                             echo 'checked="checked"';
                         } ?>>
-                        <label for="" class="col-2 col-form-label text-left">إلغاء </label>
+                        <label for="" class="col-2 col-form-label text-left">@lang('main.cancel') </label>
                     </div>
                        <textarea type="text" class="form-control " style='    margin-right: 120px' placeholder="  ......" name="reason">{{ $issuanceRequest->reason }}</textarea>
                    
                 </div>
                 <hr class="w-100">
-                            <h2 for="" class="col-2 col-form-label"  style='margin:auto'>5- التعديلات المقترحة </h2>
+                            <h2 for="" class="col-2 col-form-label"  style='margin:auto'>5-@lang('main.Proposed modifications')  </h2>
                     <div class="row">
                         <textarea type="text" class="form-control col-md-10"  style='    margin-right: 100px' placeholder="  ......" name="suggested_modifications">{{ $issuanceRequest->suggested_modifications }}</textarea>
                     </div>
                 </div>
                 <hr class="w-100">
-                   <h2 for="" class="col-2 col-form-label" style='margin:auto'>مقدم الطلب :</h2>
+                   <h2 for="" class="col-2 col-form-label" style='margin:auto'>@lang('main.applicant') :</h2>
                 
                 <div class="form-group row w-10 text-center" >
-                    <label for="" class="col-4 col-form-label text-right">الإسم </label>
+                    <label for="" class="col-4 col-form-label text-right">@lang('main.name')</label>
                     <div class="col-4">
                         <input type="text" class="form-control" placeholder="  ......" name="applicant"
                             value="{{ $issuanceRequest->applicant }}">
@@ -134,7 +134,7 @@
                 </div>
                 @if ($issuanceRequest->status == 'inProgress' && Auth::user()->hasRole('Employee'))
                     <div class="form-group text-left">
-                        <h1 for="" class="col-4 col-form-label">6- رأى مدير الجودة :</h1>
+                        <h1 for="" class="col-4 col-form-label">6-@lang('main.Quality manager saw') :</h1>
                         <div class="col-10" style='margin:auto'>
                             <textarea type="text" class="form-control" readonly name="quality_manager">{{ $issuanceRequest->quality_manager }}</textarea>
                         </div>
@@ -146,7 +146,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الاسم :</label>
+                                            @lang('main.name') :</label>
 
                                         <input class="form-control" type="text" name="quality_manager_name" readonly
                                             style="text-align: end;" placeholder=""
@@ -158,7 +158,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الوظيفة :</label>
+                                            @lang('main.job') :</label>
 
                                         <input class="form-control" type="text" name="quality_manager_job"
                                             style="text-align: end;" value="{{ $issuanceRequest->quality_manager_job }}"
@@ -169,8 +169,7 @@
                                 <th class=" text-center col-4 ">
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
-                                            style="text-align: center;font-size:large;font-weight: bolder;">التاريخ
-                                            :</label>
+                                            style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date'):</label>
 
                                         <input class="form-control" type="date" name="quality_manager_date"
                                             value="{{ $issuanceRequest->quality_manager_date }}" style="text-align: end;"
@@ -183,7 +182,7 @@
                 @endif
                 @if ($issuanceRequest->status == 'confirmed' && Auth::user()->hasRole('Employee'))
                     <div class="form-group text-left">
-                        <h1 for="" class="col-4 col-form-label">6- رأى مدير الجودة :</h1>
+                        <h1 for="" class="col-4 col-form-label">6-@lang('main.Quality manager saw') :</h1>
                         <div class="col-10" style='margin:auto'>
                             <textarea type="text" class="form-control" readonly name="quality_manager">{{ $issuanceRequest->quality_manager }}</textarea>
                         </div>
@@ -195,7 +194,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الاسم :</label>
+                                            @lang('main.name') :</label>
 
                                         <input class="form-control" type="text" name="quality_manager_name" readonly
                                             style="text-align: end;" placeholder=""
@@ -207,7 +206,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الوظيفة :</label>
+                                            @lang('main.job') :</label>
 
                                         <input class="form-control" type="text" name="quality_manager_job"
                                             style="text-align: end;" value="{{ $issuanceRequest->quality_manager_job }}"
@@ -218,7 +217,7 @@
                                 <th class=" text-center col-4 ">
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
-                                            style="text-align: center;font-size:large;font-weight: bolder;">التاريخ
+                                            style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date')
                                             :</label>
 
                                         <input class="form-control" type="date" name="quality_manager_date"
@@ -231,13 +230,11 @@
                     </table>
                     <hr class="w-100">
                     <div class="form-group row w-100 text-center">
-                        <h1 for="" class="col-9 col-form-label">* في حالة وجود أكثر من إدارة ترفق موافقاتهم
-                            وتوقيعهم في جدول يبين
-                            الإدارة ورأيها وتوقيع المسئول</h1>
+                        <h1 for="" class="col-10 col-form-label">*@lang('main.In the event that there is more than one administration, their approvals and signatures shall be attached in a table showing the administration and its opinion and the signature of the person in charge')</h1>
                     </div>
 
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-2 col-form-label">- قرار معتمد الوثيقة </label>
+                        <label for="" class="col-2 col-form-label">-@lang('main.Resolution supported document') </label>
                         <div class="col-12">
                             <textarea type="text" class="form-control" readonly placeholder="  ......" name="document_approved_decision">{{ $issuanceRequest->document_approved_decision }}</textarea>
                         </div>
@@ -249,7 +246,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الاسم :</label>
+                                            @lang('main.name') :</label>
 
                                         <input class="form-control" type="text" readonly name="document_approved_name"
                                             value="{{ $issuanceRequest->document_approved_name }}"style="text-align: end;"
@@ -261,7 +258,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الوظيفة :</label>
+                                            @lang('main.job') :</label>
 
                                         <input class="form-control" type="text" name="document_approved_job" readonly
                                             value="{{ $issuanceRequest->document_approved_job }}"
@@ -272,7 +269,7 @@
                                 <th class=" text-center col-4 ">
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
-                                            style="text-align: center;font-size:large;font-weight: bolder;">التاريخ
+                                            style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date')
                                             :</label>
 
                                         <input class="form-control" type="date" name="document_approved_date" readonly
@@ -288,7 +285,7 @@
                 @if (Auth::user()->hasRole('Admin'))
                     <hr class="w-100">
                     <div class="form-group text-center" style='margin:auto'>
-                        <h1 for="" class="col-4 col-form-label">6- رأى مدير الجودة :</h1>
+                        <h1 for="" class="col-4 col-form-label">6-@lang('main.Quality manager saw') :</h1>
                         <div class="col-10" >
                             <textarea type="text" class="form-control" name="quality_manager">{{ $issuanceRequest->quality_manager }}</textarea>
                         </div>
@@ -300,7 +297,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الاسم :</label>
+                                            @lang('main.name') :</label>
 
                                         <input class="form-control" type="text" name="quality_manager_name"
                                             style="text-align: end;" placeholder=""
@@ -312,7 +309,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الوظيفة :</label>
+                                            @lang('main.job') :</label>
 
                                         <input class="form-control" type="text" name="quality_manager_job"
                                             style="text-align: end;" value="{{ $issuanceRequest->quality_manager_job }}">
@@ -322,7 +319,7 @@
                                 <th class=" text-center col-4 ">
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
-                                            style="text-align: center;font-size:large;font-weight: bolder;">التاريخ
+                                            style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date')
                                             :</label>
 
                                         <input class="form-control" type="date" name="quality_manager_date"
@@ -335,13 +332,11 @@
                     </table>
                     @if ($issuanceRequest->status == 'confirmed' && Auth::user()->hasRole('Admin'))
                         <div class="form-group row w-100 text-center">
-                            <h1 for="" class="col-9 col-form-label">* في حالة وجود أكثر من إدارة ترفق موافقاتهم
-                                وتوقيعهم في جدول يبين
-                                الإدارة ورأيها وتوقيع المسئول</h1>
+                            <h1 for="" class="col-10 col-form-label">*@lang('main.In the event that there is more than one administration, their approvals and signatures shall be attached in a table showing the administration and its opinion and the signature of the person in charge')</h1>
                         </div>
 
                         <div class="form-group row w-100 text-left">
-                            <label for="" class="col-2 col-form-label">- قرار معتمد الوثيقة </label>
+                            <label for="" class="col-2 col-form-label">-@lang('main.Resolution supported document') </label>
                             <div class="col-12">
                                 <textarea type="text" readonly class="form-control" placeholder="  ......" name="document_approved_decision">{{ $issuanceRequest->document_approved_decision }}</textarea>
                             </div>
@@ -353,7 +348,7 @@
                                         <div class="" style="text-align:start ;">
                                             <label for="" class=""
                                                 style="text-align: center;font-size:large;font-weight: bolder;">
-                                                الاسم :</label>
+                                                @lang('main.name') :</label>
 
                                             <input class="form-control" readonly type="text"
                                                 name="document_approved_name"
@@ -366,7 +361,7 @@
                                         <div class="" style="text-align:start ;">
                                             <label for="" class=""
                                                 style="text-align: center;font-size:large;font-weight: bolder;">
-                                                الوظيفة :</label>
+                                                @lang('main.job') :</label>
 
                                             <input class="form-control" readonly type="text"
                                                 name="document_approved_job"
@@ -378,7 +373,7 @@
                                     <th class=" text-center col-4 ">
                                         <div class="" style="text-align:start ;">
                                             <label for="" class=""
-                                                style="text-align: center;font-size:large;font-weight: bolder;">التاريخ
+                                                style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date')
                                                 :</label>
 
                                             <input class="form-control" readonly type="date"
@@ -395,7 +390,7 @@
                 <hr class="w-100">
                 @if (Auth::user()->hasRole('SuperAdmin'))
                     <div class="form-group text-left" >
-                        <h1 for="" style='margin:auto' class="col-4 col-form-label">6- رأى مدير الجودة :</h1>
+                        <h1 for="" style='margin:auto' class="col-4 col-form-label">6-@lang('main.Quality manager saw') :</h1>
                         <div class="col-10" style='margin:auto'>
                             <textarea type="text" class="form-control" name="quality_manager">{{ $issuanceRequest->quality_manager }}</textarea>
                         </div>
@@ -408,7 +403,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الاسم :</label>
+                                            @lang('main.name') :</label>
 
                                         <input class="form-control" type="text" name="quality_manager_name"
                                             style="text-align: end;" placeholder=""
@@ -420,7 +415,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الوظيفة :</label>
+                                            @lang('main.job') :</label>
 
                                         <input class="form-control" type="text" name="quality_manager_job"
                                             style="text-align: end;" value="{{ $issuanceRequest->quality_manager_job }}">
@@ -430,7 +425,7 @@
                                 <th class=" text-center col-4 ">
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
-                                            style="text-align: center;font-size:large;font-weight: bolder;">التاريخ
+                                            style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date')
                                             :</label>
 
                                         <input class="form-control" type="date" name="quality_manager_date"
@@ -443,18 +438,16 @@
                     </table>
                     </div>
                     <div class="form-group row w-100 text-center">
-                        <h1 for="" class="col-9 col-form-label" style='margin:auto'>* في حالة وجود أكثر من إدارة ترفق موافقاتهم
-                            وتوقيعهم في جدول يبين
-                            الإدارة ورأيها وتوقيع المسئول</h1>
+                        <h1 for="" class="col-10 col-form-label">*@lang('main.In the event that there is more than one administration, their approvals and signatures shall be attached in a table showing the administration and its opinion and the signature of the person in charge')</h1>
                     </div>
 
                     <div class="form-group row w-100 text-left">
-                        <label for="" class="col-4 col-form-label" style='margin:auto'>- قرار معتمد الوثيقة </label>
+                        <label for="" class="col-4 col-form-label" style='margin:auto'>-@lang('main.Resolution supported document') </label>
                         <div class="col-10" style='margin:auto'>
                             <textarea type="text"  class="form-control" placeholder="  ......" name="document_approved_decision">{{ $issuanceRequest->document_approved_decision }}</textarea>
                         </div>
                     </div>
-                    <div class='row'>
+                   
                     <table class="table col-md-9 table-bordered" style='margin:auto'>
                         <thead>
                             <tr>
@@ -462,7 +455,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الاسم :</label>
+                                            @lang('main.name') :</label>
 
                                         <input class="form-control" type="text" name="document_approved_name"
                                             value="{{ $issuanceRequest->document_approved_name }}"style="text-align: end;"
@@ -474,7 +467,7 @@
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
                                             style="text-align: center;font-size:large;font-weight: bolder;">
-                                            الوظيفة :</label>
+                                            @lang('main.job') :</label>
 
                                         <input class="form-control" type="text" name="document_approved_job"
                                             value="{{ $issuanceRequest->document_approved_job }}"
@@ -485,7 +478,7 @@
                                 <th class=" text-center col-4 ">
                                     <div class="" style="text-align:start ;">
                                         <label for="" class=""
-                                            style="text-align: center;font-size:large;font-weight: bolder;">التاريخ
+                                            style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date')
                                             :</label>
 
                                         <input class="form-control" type="date" name="document_approved_date"
@@ -497,12 +490,13 @@
                         </thead>
                     </table>
                 @endif
-                <div class='row'>
+              
                 <table class="table col-md-9 mt-5" style='margin:auto'>
                     <thead>
                         <tr>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.Company Name')</label>
                                     <input class="form-control" type="text" name="company_name"
                                         value="{{ $issuanceRequest->company_name }}"placeholder="اسم الشركة  :">
                                 </div>
@@ -510,6 +504,7 @@
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.release_date') </label>
                                     <input class="form-control" type="text" name="date2"
                                         value="{{ $issuanceRequest->date2 }}"placeholder="تاريخ الإصدار   :"
                                         onfocus="(this.type='date')" onblur="(this.type='text')">
@@ -518,6 +513,7 @@
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
+                                    <label>@lang('main.Modification date')</label>
                                     <input class="form-control" type="text" name="date3"
                                         value="{{ $issuanceRequest->date3 }}" placeholder="تاريخ التعديل :"
                                         onfocus="(this.type='date')" onblur="(this.type='text')">
@@ -526,40 +522,60 @@
                             </th>
                             <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $issuanceRequest->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $issuanceRequest->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $issuanceRequest->number_doc }}">
                             </div>
                         </th>
                         </tr>
                     </thead>
                 </table>
-                    </div>
-
+                   
                 @if ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('Employee'))
+                <div class="form-group">
+                    <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
+                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
+                        </i></button>
+                </div>
+            @elseif(($issuanceRequest->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
+                ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('Admin')))
+                <div class="form-group">
+                    <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
+                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
+                        </i></button>
+                </div>
+            @elseif(($issuanceRequest->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
+                ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
+                ($issuanceRequest->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
+                <div class='row'>
+                    <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                       @lang('main.edit')</button>
+                </div>
+            @endif
+                {{-- @if ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('Employee'))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                             </i></button>
                     </div>
                 @elseif(($issuanceRequest->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                     ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('Admin')))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                             </i></button>
                     </div>
                 @elseif(($issuanceRequest->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -567,15 +583,16 @@
                     ($issuanceRequest->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                     <div class='row mt-3'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.edit')</button>
             </div>
                 @endif
                 <div class='row mt-3'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
-            </div>
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.edit')</button>
+            </div> --}}
+                </div>
             </form>
-        </div>
+        
 
         <style>
             #mainDiv {

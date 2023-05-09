@@ -23,7 +23,7 @@
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-3 text-right ">CO LOGO</label>
+                <label class="form-label col-md-3 text-right ">@lang('main.Company Logo')</label>
            @if ($directorList->status == 'pending' && Auth::user()->hasRole('Employee'))
 
             <input type="file" class="col-md-6 form-control"  id="img" name="logo" accept="image/*">
@@ -47,18 +47,18 @@
                   <table class="table" style='width: 70% !important;margin: auto;'>
                 <tr style="background-color: #001635;color:white">
                     @if ($directorList->status == 'pending' && Auth::user()->hasRole('Employee'))
-                    <th>م</th>
+                    <th>@lang('main.m')</th>
                     @endif
                     @if (($directorList->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
-                    ($directorList->status == 'pending' && Auth::user()->hasRole('Admin')))                    <th>م</th>
+                    ($directorList->status == 'pending' && Auth::user()->hasRole('Admin')))                    <th>@lang('main.m')</th>
                     @endif
                     @if (($directorList->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                     ($directorList->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
-                    ($directorList->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))                    <th>م</th>
+                    ($directorList->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))                    <th>@lang('main.m')</th>
                     @endif
-                    <th>الاسم</th>
-                    <th>الوظيفة</th>
-                    <th>الاداره</th>
+                    <th>@lang('main.name')</th>
+                    <th>@lang('main.job')</th>
+                    <th>@lang('main.Department')</th>
                 </tr>
                 @if(count($directorList->directorList)>0)
                 @foreach($directorList->directorList as $key => $intr)
@@ -140,7 +140,7 @@
         <hr class="w-100">
 
         <div class=" form-group  text-center">
-            <h2 for=""> اعتماد المدير العام :</h2>
+            <h2 for=""> @lang('main.General Director') @lang('main.approval')</h2>
             <input type="text" readonly class=" col-6 shadow-lg form-control" name="manager_name" value="{{ $directorList->manager_name }}">
         </div>
         @endif
@@ -149,7 +149,7 @@
         <hr class="w-100">
 
         <div class=" form-group  text-center">
-            <h2 for=""> اعتماد المدير العام :</h2>
+            <h2 for=""> @lang('main.General Director') @lang('main.approval')</h2>
             <input type="text" readonly class=" col-6 col-form-label" name="manager_name" value="{{ $directorList->manager_name }}">
         </div>
         @endif
@@ -158,7 +158,7 @@
                 <hr class="w-100">
 
             <div class=" form-group  text-center">
-                <h2 for=""> اعتماد المدير العام :</h2>
+                <h2 for=""> @lang('main.General Director') @lang('main.approval')</h2>
                 <input type="text" class=" col-6 col-form-label" name="manager_name" value="{{ $directorList->manager_name }}">
             </div>
         @endif
@@ -168,12 +168,14 @@
                 <tr>
                     <th>
                         <div class="" style="text-align:start ;">
+                            <label>@lang('main.Company Name')</label>
                             <input class="form-control" type="text" name="company_name" value="{{ $directorList->company_name }}" placeholder="اسم الشركة  :">
                         </div>
 
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
+                            <label>@lang('main.release_date') </label>
                             <input class="form-control" type="text" name="date2" value="{{ $directorList->date2 }}" placeholder="تاريخ الإصدار   :"
                                 onfocus="(this.type='date')" onblur="(this.type='text')">
                         </div>
@@ -181,6 +183,7 @@
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
+                            <label>@lang('main.Modification date')</label>
                             <input class="form-control" type="text" name="date3" value="{{ $directorList->date3 }}" placeholder="تاريخ التعديل :"
                                 onfocus="(this.type='date')" onblur="(this.type='text')">
                         </div>
@@ -188,21 +191,21 @@
                     </th>
                     <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $directorList->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $directorList->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $directorList->number_doc }}">
                             </div>
                         </th>
@@ -212,14 +215,14 @@
         @if ($directorList->status == 'pending' && Auth::user()->hasRole('Employee'))
                 <div class="form-group">
                     <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                         </i></button>
                 </div>
             @elseif(($directorList->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                 ($directorList->status == 'pending' && Auth::user()->hasRole('Admin')))
                 <div class="form-group">
                     <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                         </i></button>
                 </div>
             @elseif(($directorList->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -228,7 +231,7 @@
                 <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">
-               تعديل</button>
+               @lang('main.edit')</button>
                     </div>   
             @endif
     </form>

@@ -14,27 +14,27 @@
                 <hr class="w-100">
             </div>
             <div class="  row  ">
-                <label for="" class="col-3 col-form-label  text-left">الفترة من  يوم :</label>
+                <label for="" class="col-3 col-form-label  text-left">@lang('main.period of day :')</label>
                 <div class="col-8">
                   <input type="text" class="form-control shadow-lg col-12" name="day_from" value="{{$reportNonConformanceCases->day_from}}">
                 </div>
-                <label for="" class="col-3 col-form-label text-left" >تاريخ  :</label>
+                <label for="" class="col-3 col-form-label text-left" >@lang('main.date')  :</label>
                 <div class="col-8 mt-2">
                   <input type="date" class="form-control col-12"  name="date_1" value="{{$reportNonConformanceCases->date_1}}">
                 </div>
 
-                <label for="" class="col-3 col-form-label text-left" >إلى يوم :</label>
+                <label for="" class="col-3 col-form-label text-left" >@lang('main.until today :')</label>
                 <div class="col-8 mt-2">
                   <input type="text" class="form-control col-12"  name="day_to" value="{{$reportNonConformanceCases->day_to}}">
                 </div>
-                <label for="" class="col-3 col-form-label text-left">تاريخ  :</label>
+                <label for="" class="col-3 col-form-label text-left">@lang('main.date')  :</label>
                 <div class="col-8 mt-2">
                   <input type="date" class="form-control col-12"  name="date_2" value="{{$reportNonConformanceCases->date_2}}">
                 </div>
              
             </div>
             <div class='row mt-4 mb-3'>
-      <label class="col-2 col-form-label text-center">CO LOGO</label>
+      <label class="col-2 col-form-label text-center">@lang('main.Company Logo')</label>
             
                   <input type="file" id="img" name="logo" accept="image/*">
                   <img src="{{ asset($reportNonConformanceCases->logo) }}" height=100px width=100px; />
@@ -46,20 +46,20 @@
                 <hr class="w-100">
                 <table class="table " style=''>
                     <tr style="background-color:#001635;color:white; text-align:center;">
-                        <th class="col-1 col-form-label" scope="col" rowspan="2">م</th>
-                        <th scope="col" rowspan="2">حالة عدم المطابقة</th>
-                        <th scope="col" rowspan="2">الإدارة  المختصة</th>
-                        <th scope="col" rowspan="2">تاريخ إكتشفاها</th>
-                        <th scope="col" rowspan="2">الأسباب</th>
-                        <th scope="col" colspan="2">الإجراء المتخذ </th>
-                        <th scope="col" colspan="2">فاعلية التنفيذ</th>
-                        <th scope="col" rowspan="2">ملاحظات</th>
+                        <th class="col-1 col-form-label" scope="col" rowspan="2">@lang('main.m')</th>
+                        <th scope="col" rowspan="2">@lang('main.case of non-conformity')</th>
+                        <th scope="col" rowspan="2">@lang('main.The competent department')</th>
+                        <th scope="col" rowspan="2">@lang('main.The date it was discovered')</th>
+                        <th scope="col" rowspan="2">@lang('main.reasons')</th>
+                        <th scope="col" colspan="2">@lang('main.Action taken')</th>
+                        <th scope="col" colspan="2">@lang('main.implementation effectiveness')</th>
+                        <th scope="col" rowspan="2">@lang('main.note')</th>
                     </tr>
                     <tr style="background-color:#001635;color:white; text-align:center;">
-                        <th scope="col"> تصحيحى </th>
-                        <th scope="col">وقائي</th>
-                        <th scope="col"> تم </th>
-                        <th scope="col">لم يتم</th>
+                        <th scope="col">@lang('main.corrective')</th>
+                        <th scope="col">@lang('main.preventive')</th>
+                        <th scope="col">@lang('main.completed')</th>
+                        <th scope="col">@lang('main.not_completed')</th>
                         
                     </tr>
 
@@ -124,39 +124,42 @@
                 <tr>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :" value="{{ $reportNonConformanceCases->company_name }}">
+                        <label>@lang('main.Company Name')</label>
+                        <input class="form-control" type="text" name="company_name"  value="{{ $reportNonConformanceCases->company_name }}">
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :"value="{{ $reportNonConformanceCases->date2 }}" onfocus="(this.type='date')" onblur="(this.type='text')">
+                        <label>@lang('main.release_date') </label>
+                        <input class="form-control" type="text" name="date2" value="{{ $reportNonConformanceCases->date2 }}" onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
             
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" value="{{ $reportNonConformanceCases->date3 }}" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <label>@lang('main.Modification date')</label>
+                            <input class="form-control" type="text" name="date3" value="{{ $reportNonConformanceCases->date3 }}" onfocus="(this.type='date')" onblur="(this.type='text')">
                           </div>
             
                     </th>
                     <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $reportNonConformanceCases->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $reportNonConformanceCases->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $reportNonConformanceCases->number_doc }}">
                             </div>
                         </th>
@@ -168,7 +171,7 @@
     <div class='row mt-3'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">
-                تعديل</button>
+                @lang('main.edit')</button>
                     </div>  
     </form>
     </div>

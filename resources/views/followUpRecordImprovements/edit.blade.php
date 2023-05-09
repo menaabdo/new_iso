@@ -15,13 +15,13 @@
         </div>
         <hr class="w-100">
         <div class="form-group row" style="text-align: center;">
-            <label for="" class="col-2 col-form-label">لعــام:</label>
+            <label for="" class="col-2 col-form-label">@lang('main.year'):</label>
             <div class="col-3">
                 <input type="text" class="form-control" name="year" value="{{$followUpRecordImprovement->year}}">
             </div>
         </div>
         <div id="mainDiv"  style=" margin-right:500px;">
-            <h4 style=" color:blue;">CO LOGO</h4>
+            <h4 style=" color:blue;">@lang('main.Company Logo')</h4>
             <hr width="50%" size="20" color="blue">
             <img src="{{ asset($followUpRecordImprovement->logo) }}" height=180px width=210px; />
             <input type="file" id="img" name="logo" accept="image/*">
@@ -30,15 +30,15 @@
         <div class="form-group row w-100 text-right" style="text-align:center;">
             <table class="table">
                 <tr style="background-color:rgb(218, 249, 163); text-align:center;">
-                    <th>م</th>
-                    <th>التاريخ </th>
-                    <th>القسم المختص</th>
-                    <th>وصف الحالة</th>
-                    <th>الإجراء المتخذ</th>
-                    <th>المسئول عن التنفيذ</th>
-                    <th>مخطط التنفيذ</th>
-                    <th>متابعة التنفيذ</th>
-                    <th>ملاحظات</th>
+                    <th>@lang('main.m')</th>
+                    <th>@lang('main.date') </th>
+                    <th>@lang('main.relevant department')</th>
+                    <th>@lang('main.Case description')</th>
+                    <th>@lang('main.Action taken')</th>
+                    <th>@lang('main.Responsible for implementation')</th>
+                    <th>@lang('main.Implementation scheme')</th>
+                    <th>@lang('main.Follow-up implementation')</th>
+                    <th>@lang('main.note')</th>
                 </tr>
                 @if(count($followUpRecordImprovement->followUpRecord)>0)
                 @foreach($followUpRecordImprovement->followUpRecord as $key => $data)
@@ -96,16 +96,16 @@
                 <tr>
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                            <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare'):</label>
                         </div>
                         <div class="form-group row" style="text-align:center ;">
-                            <label for="" class="col-2 col-form-label">الاسم:       -</label>
+                            <label for="" class="col-2 col-form-label">@lang('main.name'):-</label>
                             <div class="col-4">
                                 <input type="text" class="form-control" placeholder="  ......" name="name_1" value="{{$followUpRecordImprovement->name_1}}">
                             </div>
                         </div>
                         <div class="form-group row" style="text-align:center ;">
-                            <label for="" class="col-2 col-form-label">الوظيفة:       -</label>
+                            <label for="" class="col-2 col-form-label">@lang('main.job'):-</label>
                             <div class="col-4">
                                 <input type="text" class="form-control" placeholder="  ......" name="employ" value="{{$followUpRecordImprovement->employ}}">
                             </div>
@@ -120,39 +120,42 @@
                 <tr>
                     <th>
                       <div class="" style="text-align:start ;">
+                        <label>@lang('main.Company Name')</label>
                         <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :"  value="{{ $followUpRecordImprovement->company_name }}">
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
+                        <label>@lang('main.release_date') </label>
                         <input class="form-control" type="text" name="date2"  value="{{ $followUpRecordImprovement->date2 }}" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
             
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
+                            <label>@lang('main.Modification date')</label>
                             <input class="form-control" type="text" name="date3"  value="{{ $followUpRecordImprovement->date3 }}" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
                           </div>
             
                     </th>
                      <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $followUpRecordImprovement->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $followUpRecordImprovement->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $followUpRecordImprovement->number_doc }}">
                             </div>
                         </th>
@@ -161,7 +164,7 @@
         </table>
         <div class="form-group">
             <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-            class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> تعديل  </button>
+            class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.edit')</button>
         </div>
     </form>
 </div>

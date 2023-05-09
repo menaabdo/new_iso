@@ -22,30 +22,30 @@
                 <h2 style=' ;text-shadow: 1px 1px 1px #3ed3ea;margin-right:100px'>دعوة لإجتماع مراجعة الإدارة</h2>
                 <hr class="w-100">
                 <div class="form-group row w-10">
-                    <h6 for="" class="col-md-12">نبلغ سيادتكم بإجتماع مراجعة الإدراة لنظام الجودة </h6>
+                    <h6 for="" class="col-md-12">@lang('main.We inform you of the management review meeting of the quality system') </h6>
                 </div>
                 <div class='shadow-lg p-3'>
-                    <label class="form-label pr-5">CO LOGO</label>
+                    <label class="form-label pr-5">@lang('main.Company Logo')</label>
                     <div class=''>
                         <input type="file" id="img" class='shadow-lg' name="logo" accept="image/*">
                     </div>
                 </div>
 
                 <div class='shadow-lg p-3'>
-                    <label for="" class=" col-form-label text-left">تاريخ الاجتماع:</label>
+                    <label for="" class=" col-form-label text-left">@lang('main.meeting_time') :</label>
                     <div class="">
                         <input type="date" class="form-control col-md-4 shadow-lg" name="date_1">
                     </div>
                 </div>
 
                 <div class='shadow-lg p-3'>
-                    <label for="" class="col-form-label">اليوم :</label>
+                    <label for="" class="col-form-label">@lang('main.day') :</label>
                     <div class="">
                         <input type="text" class="form-control col-md-4 shadow-lg" name="day">
                     </div>
                 </div>
                 <div class='shadow-lg p-3'>
-                    <label for="" class="col-form-label">مكان الإجتماع :</label>
+                    <label for="" class="col-form-label">@lang('main.meeting_place') :</label>
                     <div class="">
                         <input type="text" class="form-control col-md-4 shadow-lg" name="place_meeting">
                     </div>
@@ -58,10 +58,10 @@
                 <div class="form-group row w-100 text-center" style="text-align:center ;">
                     <table class="table">
                         <tr style="background-color:#233242;color:white">
-                            <th>م</th>
-                            <th>الاسم</th>
-                            <th>الوظيفة</th>
-                            <th>تاريخ الإستلام</th>
+                            <th>@lang('main.m')</th>
+                            <th>@lang('main.name')</th>
+                            <th>@lang('main.job')</th>
+                            <th>@lang('main.received date')</th>
                         </tr>
 
                         <tr id="invetation-0">
@@ -88,10 +88,10 @@
                             @if (Auth::user()->hasRole('SuperAdmin'))
                             <th class=" w-50 text-center">
                                 <div class="" style="text-align:center ;">
-                                    <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة :</label>
+                                    <label for="" class="" style="font-size:large;font-weight: bolder;">@lang('main.management representative') :</label>
                                 </div>
                                 <div class="form-group row w-20 text-right">
-                                    <label for="" class="col-md-3 col-form-label">الإسم </label>
+                                    <label for="" class="col-md-3 col-form-label">@lang('main.name') </label>
                                     <div class="col-md-6">
                                         <input type="text" class="form-control shadow-lg" placeholder="  ......" name="name_manager">
                                     </div>
@@ -107,52 +107,53 @@
                         <tr>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                    <label>اسم الشركة</label>
+                                    <label>@lang('main.Company Name')</label>
                                     <input class="form-control shadow-lg" type="text" name="company_name">
                                 </div>
-
+        
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                    <label>تاريخ الاصدار</label>
+                                    <label>@lang('main.release_date') </label>
                                     <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
                                 </div>
-
+        
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                    <label>تاريخ التعديل</label>
+                                    <label>@lang('main.Modification date')</label>
                                     <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
                                 </div>
-
+        
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                    <label> مدة الحفظ </label>
+                                    <label>@lang('main.model_period')</label>
                                     <input class="form-control shadow-lg" type="text" name="period_time">
                                 </div>
-
+        
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                    <label> رقم الصفحة </label>
+                                    <label>@lang('main.page_number')</label>
                                     <input class="form-control shadow-lg" type="text" name="number_page">
                                 </div>
-
+        
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                    <label> رقم الوثيقة </label>
+                                    <label>@lang('main.document_code')</label>
                                     <input class="form-control shadow-lg" type="text" name="number_doc">
                                 </div>
                             </th>
                         </tr>
                     </thead>
                 </table>
-                <div class='row'>
-                    <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                        <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
-                </div>
+            </div>
+            <div class='row'>
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
+            </div>
 
             </div>
 

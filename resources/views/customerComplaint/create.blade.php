@@ -26,35 +26,35 @@
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-3 ">CO LOGO</label>
+                <label class="form-label col-md-3 ">@lang('main.Company Logo')</label>
                    <input type="file" id="img" name="logo" accept="image/*">
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">مصدر الشكوي:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.source_complaint') :</label>
                 <div class="col-6">
                     <input type="text" class="form-control" name="source_complaint">
                 </div>
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">نوع المنتج / الخدمه:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.type_product_service') :</label>
                 <div class="col-6">
                     <input type="text" class="form-control" name="type_product_service">
                 </div>
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">اسم العميل:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.customer_name') :</label>
                 <div class="col-6">
                     <input type="text" class="form-control" name="customer_name">
                 </div>
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">المكان:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.place') :</label>
                 <div class="col-6">
                     <input type="text" class="form-control" name="place">
                 </div>
             </div>
             <div class="form-group row text-left">
-                <label for="" class="col-3 col-form-label">التاريخ:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.date'):</label>
                 <div class="col-6">
                     <input type="date" class="form-control" name="date_1">
                 </div>
@@ -63,12 +63,12 @@
             <div class="form-group row " style="text-align:center;overflow-x:auto;">
                 <table class="table ">
                     <tr style="background-color:    #001635; color:white;text-align:center;">
-                         <th>موضوع الشكوي</th>
-                        <th>تاريخ استقبال الشكوي</th>
-                        <th>تاريخ ارسالهاالي الادارات المختصه</th>
-                        <th>تاريخ وصول الرد</th>
-                        <th>تاريخ ارسال الرد الي العميل </th>
-                        <th>ملاحظات العميل </th>
+                         <th>@lang('main.subject_complaint')</th>
+                        <th>@lang('main.The date the complaint was received')</th>
+                        <th>@lang('mmain.The date it was sent to the competent departments')</th>
+                        <th>@lang('main.The date the response was received')</th>
+                        <th>@lang('main.The date the response was sent to the client') </th>
+                        <th>@lang('main.Client feedback') </th>
                     </tr>
                     <tr>
                         <th><textarea class="form-control" type="text" name="subject_complaint"></textarea></th>
@@ -82,74 +82,75 @@
             </div>
             <hr class="w-100">
             <div style="" class="w-100 text-center my-4">
-                <h4>ﺇدارة التسويق والمبيعات (إرضاء العميل) :</h4>
+                <h4>@lang('main.Marketing and Sales Department (customer satisfaction)') :</h4>
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">الأسم :</label>
+                <label for="" class="col-3 col-form-label">@lang('main.name') :</label>
                 <div class="col-6">
                     <input type="text" class="form-control" name="name">
                 </div>
                 </div>
                 <div class="form-group row ">
             
-                <label for="" class="col-3 col-form-label">التاريخ :</label>
+                <label for="" class="col-3 col-form-label">@lang('main.date') :</label>
                 <div class="col-6">
                     <input type="date" class="form-control" name="date_6">
                 </div>
             </div>
             <hr class="w-100">
-            <div class="form-group row " style="text-align:center;overflow-x:auto;">
+          
             
             <table class="table ">
                 <thead>
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
+                                <label>@lang('main.Company Name')</label>
+                                <input class="form-control shadow-lg" type="text" name="company_name">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label>@lang('main.release_date') </label>
+                                <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label>@lang('main.Modification date')</label>
+                                <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc">
                             </div>
                         </th>
                     </tr>
                 </thead>
             </table>
-             </div>
-            <div class='row'>
-            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
-                class="btn btn-primary col-md-4">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
-                    </div>  
+            <div class='row mt-3'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
+        </div>
         </form>
     </div>
 

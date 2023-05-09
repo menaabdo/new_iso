@@ -27,7 +27,7 @@
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-3 ">CO LOGO</label>
+                <label class="form-label col-md-3 ">@lang('main.Company Logo')</label>
               @if ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Employee'))
                 <input type="file" id="img" name="logo" accept="image/*">
             @endif
@@ -45,7 +45,7 @@
             
             </div>
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">عميل رقم:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.customer_number') :</label>
                 <div class="col-6">
                     <input type="text" class="form-control" name="customer_number"
                         value="{{ $complaintStudy->customer_number }}">
@@ -57,13 +57,13 @@
                     <tr>
                         <th class=" w-20 text-center col-1 ">
                             <div class="form-group row w-10 text-center">
-                                <label for="" class="col-2 col-form-label">العميل : - </label>
+                                <label for="" class="col-2 col-form-label">@lang('main.customer_name'):-</label>
                                 <div class="col-3">
                                     <input type="text" class="form-control" placeholder="  ......" name="customer"
                                         value="{{ $complaintStudy->customer }}">
                                 </div>
 
-                                <label for="" class="col-2 col-form-label text-center">التاريخ: -</label>
+                                <label for="" class="col-2 col-form-label text-center">@lang('main.date'): -</label>
                                 <div class="col-3">
                                     <input type="date" class="form-control" placeholder="  ......" name="date_1"
                                         value="{{ $complaintStudy->date_1 }}">
@@ -79,7 +79,7 @@
                     <tr>
                         <th class=" w-20 text-center col-1 ">
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-2 col-form-label">نوع الخدمه : - </label>
+                                <label for="" class="col-2 col-form-label">@lang('main.service') : - </label>
                                 <div class="col-8">
                                     <input type="text" class="form-control" placeholder="  ......" name="service"
                                         value="{{ $complaintStudy->service }}">
@@ -94,14 +94,14 @@
                     <tr>
                         <th class=" w-20 text-center col-1 ">
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-3 col-form-label">2- موضوع الشكوى (complaint Compliant)
+                                <label for="" class="col-3 col-form-label">2-@lang('main.subject_complaint') </label>
                                 </label>
                                 <div class="col-9">
                                     <textarea type="text" class="form-control" placeholder="  ......" name="subject_complain">{{ $complaintStudy->subject_complain }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-left">
-                                <label for="" class="col-3 col-form-label">مرفقات </label>
+                                <label for="" class="col-3 col-form-label">@lang('main.attachment') </label>
                                 <div class="col-4">
                                     <input type="text" class="form-control" placeholder="  ......" name="attachment"
                                         value="{{ $complaintStudy->attachment }}">
@@ -114,25 +114,25 @@
 
             <hr class="w-100">
             <div class="container-fluid p-4" >
-                <h4>3- الإجراء الفورى لحل الشكوى (Prompt Action) </h4>
+                <h4>3-@lang('main.Immediate Procedure for Filing a Complaint (Immediate Procedure)') </h4>
                 <div class="form-group row w-100 text-right" style="text-align:center;">
                     <table class='table'>
                         <tr class='padding:4px' style="background-color:   #001635; color:white;">
                             @if ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Employee'))
-                            <th>م</th>
+                            <th>@lang('main.m')</th>
                         @endif
                         @if (($complaintStudy->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                             ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Admin')))
-                            <th>م</th>
+                            <th>@lang('main.m')</th>
                         @endif
                         @if (($complaintStudy->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                             ($complaintStudy->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                             ($complaintStudy->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                            <th>م</th>
+                            <th>@lang('main.m')</th>
                         @endif
-                            <th> الإجراء</th>
-                            <th>المسئول عن التنفيذ</th>
-                            <th>التاريخ</th>
+                        <th>@lang('main.Action1')</th>
+                        <th>@lang('main.Responsible for implementation')</th>
+                        <th>@lang('main.date')</th>
                         </tr>
                         @if (count($complaintStudy->prompt) > 0)
                             @foreach ($complaintStudy->prompt as $key => $data)
@@ -234,24 +234,24 @@
             </div>
             <hr class="w-100">
             <div class="container-fluid p-4" >
-                <h4>4- الأسباب المحتملة للشكوى (Root causes)</h4>
+                <h4>4-@lang('main.Possible causes of the complaint (Root causes)')</h4>
                 <div class="form-group row w-100 text-right" style="text-align:center;">
                     <table class='table'>
                         <tr style="background-color:  #001635; color:white;text-align:center">
                             @if ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Employee'))
-                            <th>م</th>
+                            <th>@lang('main.m')</th>
                         @endif
                         @if (($complaintStudy->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                             ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Admin')))
-                            <th>م</th>
+                            <th>@lang('main.m')</th>
                         @endif
                         @if (($complaintStudy->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                             ($complaintStudy->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                             ($complaintStudy->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                            <th>م</th>
+                            <th>@lang('main.m')</th>
                         @endif
-                            <th> السبب</th>
-                        </tr>
+                        <th>@lang('main.the reason')</th>
+                    </tr>
                         @if (count($complaintStudy->causes) > 0)
                             @foreach ($complaintStudy->causes as $key => $data)
                                 <tr id="causes-{{ $key }}">
@@ -351,25 +351,25 @@
             </div>
             <hr class="w-100">
             <div class="container-fluid p-4" >
-                <h4>5- الإجراءات التصحيحية لتجنب تكرار الشكوى (Corrective Actions)</h4>
+                <h4>5-@lang('main.Corrective actions to avoid repeating the complaint (Corrective Actions)')</h4>
                 <div class="form-group row w-100 text-right" style="text-align:center;">
                     <table class='table'>
                         <tr style="background-color:  #001635; color:white">
                             @if ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Employee'))
-                            <th>م</th>
+                            <th>@lang('main.m')</th>
                         @endif
                         @if (($complaintStudy->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                             ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Admin')))
-                            <th>م</th>
+                            <th>@lang('main.m')</th>
                         @endif
                         @if (($complaintStudy->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                             ($complaintStudy->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                             ($complaintStudy->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                            <th>م</th>
+                            <th>@lang('main.m')</th>
                         @endif
-                            <th> الإجراء</th>
-                            <th>المسئول عن التنفيذ</th>
-                            <th>التاريخ</th>
+                        <th>@lang('main.Action1')</th>
+                        <th>@lang('main.Responsible for implementation')</th>
+                            <th>@lang('main.date')</th>
                         </tr>
                         @if (count($complaintStudy->complaint) > 0)
                             @foreach ($complaintStudy->complaint as $key => $data)
@@ -486,7 +486,7 @@
                     <th class=" w-50 text-center col-3 " >
 
                         <div class="form-group row w-20 text-right">
-                            <label for="" class="col-4 col-form-label">مدير الجودة</label>
+                            <label for="" class="col-4 col-form-label">@lang('main.quality manager')</label>
                             <div class="col-6">
                                 <input type="text" readonly class="form-control" name="name_1"
                                     value="{{ $complaintStudy->name_1 }}">
@@ -496,7 +496,7 @@
                     <th class=" w-50 text-center col-3 "  >
 
                         <div class="form-group row w-20 text-right">
-                            <label for="" class="col-3 col-form-label">التاريخ </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date') </label>
                             <div class="col-6">
                                 <input type="date" readonly class="form-control" name="date_3"
                                     value="{{ $complaintStudy->date_3 }}">
@@ -514,7 +514,7 @@
                     <th class=" w-50 text-center col-3 ">
 
                         <div class="form-group row w-20 text-right">
-                            <label for="" class="col-3 col-form-label">مدير الجودة</label>
+                            <label for="" class="col-3 col-form-label">@lang('main.quality manager')</label>
                             <div class="col-6">
                                 <input type="text" readonly class="form-control" name="name_1"
                                     value="{{ $complaintStudy->name_1 }}">
@@ -524,7 +524,7 @@
                     <th class=" w-50 text-center col-3 "  >
 
                         <div class="form-group row w-20 text-right">
-                            <label for="" class="col-3 col-form-label">التاريخ </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date') </label>
                             <div class="col-6">
                                 <input type="date" readonly class="form-control" name="date_3"
                                     value="{{ $complaintStudy->date_3 }}">
@@ -538,7 +538,7 @@
                     <th class=" w-50 text-center col-3 ">
 
                         <div class="form-group row w-20 text-right">
-                            <label for="" class="col-4 col-form-label">ممثل الادارة</label>
+                            <label for="" class="col-4 col-form-label">@lang('main.management representative')</label>
                             <div class="col-6">
                                 <input type="text" readonly class="form-control" name="name_2"
                                     value="{{ $complaintStudy->name_2 }}">
@@ -548,7 +548,7 @@
                     <th class=" w-50 text-center col-3 ">
 
                         <div class="form-group row w-20 text-right">
-                            <label for="" class="col-3 col-form-label">التاريخ </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date') </label>
                             <div class="col-6">
                                 <input type="date" readonly class="form-control" name="date_4"
                                     value="{{ $complaintStudy->date_4 }}">
@@ -566,7 +566,7 @@
                         <th class=" w-50 text-center col-3 " >
 
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-4 col-form-label">مدير الجودة</label>
+                                <label for="" class="col-4 col-form-label">@lang('main.quality manager')</label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="name_1"
                                         value="{{ $complaintStudy->name_1 }}">
@@ -576,7 +576,7 @@
                         <th class=" w-50 text-center col-3 " >
 
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">التاريخ </label>
+                                <label for="" class="col-3 col-form-label">@lang('main.date') </label>
                                 <div class="col-6">
                                     <input type="date" class="form-control" name="date_3"
                                         value="{{ $complaintStudy->date_3 }}">
@@ -591,7 +591,7 @@
                         <th class=" w-50 text-center col-3 ">
     
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-4 col-form-label">ممثل الادارة</label>
+                                <label for="" class="col-4 col-form-label">@lang('main.management representative')</label>
                                 <div class="col-6">
                                     <input type="text" readonly class="form-control" name="name_2"
                                         value="{{ $complaintStudy->name_2 }}">
@@ -601,7 +601,7 @@
                         <th class=" w-50 text-center col-3 ">
     
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">التاريخ </label>
+                                <label for="" class="col-3 col-form-label">@lang('main.date') </label>
                                 <div class="col-6">
                                     <input type="date" readonly class="form-control" name="date_4"
                                         value="{{ $complaintStudy->date_4 }}">
@@ -618,7 +618,7 @@
                         <th class=" w-50 text-center col-3 " >
 
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-4 col-form-label">مدير الجودة</label>
+                                <label for="" class="col-4 col-form-label">@lang('main.quality manager')</label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="name_1"
                                         value="{{ $complaintStudy->name_1 }}">
@@ -628,7 +628,7 @@
                         <th class=" w-50 text-center col-3 " >
 
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">التاريخ </label>
+                                <label for="" class="col-3 col-form-label">@lang('main.date') </label>
                                 <div class="col-6">
                                     <input type="date" class="form-control" name="date_3"
                                         value="{{ $complaintStudy->date_3 }}">
@@ -642,7 +642,7 @@
                         <th class=" w-50 text-center col-3 ">
 
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-4 col-form-label">ممثل الادارة</label>
+                                <label for="" class="col-4 col-form-label">@lang('main.management representative')</label>
                                 <div class="col-6">
                                     <input type="text" class="form-control" name="name_2"
                                         value="{{ $complaintStudy->name_2 }}">
@@ -652,7 +652,7 @@
                         <th class=" w-50 text-center col-3 ">
 
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">التاريخ </label>
+                                <label for="" class="col-3 col-form-label">@lang('main.date') </label>
                                 <div class="col-6">
                                     <input type="date" class="form-control" name="date_4"
                                         value="{{ $complaintStudy->date_4 }}">
@@ -669,7 +669,7 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                            <label>اسم الشركة</label>
+                                <label>@lang('main.Company Name')</label>
                                 <input class="form-control" type="text" name="company_name"
                                     value="{{ $complaintStudy->company_name }}">
                             </div>
@@ -677,7 +677,7 @@
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                            <label>تاريخ الاصدار</label>
+                                <label>@lang('main.release_date') </label>
                                 <input class="form-control" type="text" name="date2"
                                     value="{{ $complaintStudy->date2 }}" 
                                     onfocus="(this.type='date')" onblur="(this.type='text')">
@@ -686,7 +686,7 @@
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                            <label>تاريخ التعديل</label>
+                                <label>@lang('main.Modification date')</label>
                                 <input class="form-control" type="text" name="date3"
                                     value="{{ $complaintStudy->date3 }}" 
                                     onfocus="(this.type='date')" onblur="(this.type='text')">
@@ -695,21 +695,21 @@
                         </th>
                          <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $complaintStudy->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $complaintStudy->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $complaintStudy->number_doc }}">
                             </div>
                         </th>
@@ -719,14 +719,14 @@
             @if ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Employee'))
             <div class="form-group">
                 <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                    class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                    class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                     </i></button>
             </div>
         @elseif(($complaintStudy->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
             ($complaintStudy->status == 'pending' && Auth::user()->hasRole('Admin')))
             <div class="form-group">
                 <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                    class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                    class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                     </i></button>
             </div>
         @elseif(($complaintStudy->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -735,7 +735,7 @@
             <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">
-                تعديل</button>
+                @lang('main.edit')</button>
                     </div>   
         @endif
         </form>

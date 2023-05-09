@@ -28,12 +28,12 @@
               <hr class="w-100">
         </div>
         <div class='shadow-lg p-3 col-md-12'>
-                    <label class="col-md-2 text-left" style=''>رقم</label>
+                    <label class="col-md-2 text-left" style=''>@lang('main.meeting_num')</label>
                     <input class="col-md-3 form-control  shadow-lg" type="text" name="num">
 
                 </div>
                 <div class='shadow-lg p-3'>
-                    <label class="form-label pr-5">CO LOGO</label>
+                    <label class="form-label pr-5">@lang('main.Company Logo')</label>
                     <div class=''>
                @if ($meetingMinute->status == 'pending' && Auth::user()->hasRole('Employee'))
             <input type="file" id="img" class='shadow-lg' name="logo" accept="image/*">
@@ -53,106 +53,71 @@
 </div>
         </div>
         <div class='shadow-lg p-3'>
-                    <label for="" class="col-md-2 text-left" style='text-align:left !important'>التاريخ:</label>
+                    <label for="" class="col-md-2 text-left" style='text-align:left !important'>@lang('main.date'):</label>
 
                 <input type="date" class="col-md-4 form-control  shadow-lg" name="date_1" value="{{ $meetingMinute->date_1 }}">
             </div>
             <div class='shadow-lg p-3'>
-                    <label for="" class="col-md-4 text-left"> مكان الإنعقاد:</label>
+                    <label for="" class="col-md-4 text-left">@lang('main.meeting_place') :</label>
 
                 <input type="text" class="form-control col-md-4" name="place_meeting"  value="{{ $meetingMinute->place_meeting }}">
             </div>
         
             <div class=" form-group row mt-3 text-center">
 
-<label for="" class="col-3  "> الحاضرون:</label>
-<div class="col-5">
-    <h5>طبقاً للكشف المرفق</h5>
-</div>
-<label for="" class="col-md-4 col-form-label ">توقيت الإنعقاد:</label>
+                <div class="col-12">
+                    <h5>@lang('main.Attendees according to the attached list') :</h5>
+                </div>
+<label for="" class="col-md-4 col-form-label ">@lang('main.meeting_time1') :</label>
                     <div class="col-3">
                 <input type="text" class="form-control" name="time_meeting"  value="{{ $meetingMinute->time_meeting }}">
             </div>
         </div>
         <div class=" form-group row w-200 text-center">
-                    <label for="" class="col-md-4 col-form-label text-left"> الهدف من الإجتماع:</label>
+                    <label for="" class="col-md-4 col-form-label text-left">@lang('main.The purpose of the meeting') :</label>
                     <div class="col-10  rounded shadow-lg" style=''>
                         <div class="col-">
-                            <label>مناقشة ومراجعة سياسات الشركة وأهداف الإدارات والتأكد من فاعلية تطبيق النظام والنظر فى تطويره بصورة دائمة. </label>
+                            <label>@lang('main.Discussing and reviewing the companys policies and departmental objectives, ensuring the effectiveness of applying the system, and considering its permanent development') . </label>
                         </div>
                     </div>
                 </div>
 
 
+                <h1 for="" class="col-12 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Meeting topics') :</h1>
                 <div class="form-group row w-100 text-center ">
-                    <h1 for="" class="col-md-9 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;'> موضوعات الإجتماع:</h1>
-
-                    <div class="form-group row w-100 text-right">
-                        <h2 for="" class="col-md-9 col-form-label"> 1. نتائج مراجعات الإدارة السابقة وفاعلية تطبيق القرارات الخاصة بها.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-center">
-                        <h2 for="" class="col-md-9 col-form-label">2. أهداف الإدارة العليا (سياسات / خطط عمل / مشاريع تطوير).</h2>
-                    </div>
-                    <div class="form-group row w-100 text-center">
-                        <h2 for="" class="col-md-9 col-form-label">3. نتائج المراجعات الداخلية على أنظمة الجودة المطبقة بالشركة.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-center">
-                        <h2 for="" class="col-md-9 col-form-label">4. نتائج المراجعات الخارجية على أنظمة الجودة المطبقة بالشركة ( إن وجدت ).</h2>
-                    </div>
-                    <div class="form-group row w-100 text-center">
-                        <h2 for="" class="col-md-9 col-form-label">5. موقف حالات عدم المطابقة بالإدارات المختلفة.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-center">
-                        <h2 for="" class="col-md-9 col-form-label">6. موقف الإجراءات التصحيحية / الوقائية.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-center">
-                        <h2 for="" class="col-md-9 col-form-label">7. تقييم أعمال التسويق والمبيعات بما فى ذلك أداء المنافسين وردود فعل العملاء.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-center">
-                        <h2 for="" class="col-md-9 col-form-label">8. الإحتياجات التدريبية.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-center">
-                        <h2 for="" class="col-md-9 col-form-label">9. الإحتياجات البشرية والفنية.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-center">
-                        <h2 for="" class="col-md-9 col-form-label">10. ما يستجد من أعمال تتعلق بأنظمة الجودة المطبقة بالشركة.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-right">
-                        <h2 for="" class="col-md-9 col-form-label">11. التعديلات التى طرأت على الهيكل التنظيمى.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-right">
-                        <h2 for="" class="col-md-9 col-form-label">12. بأية شكاوى عملاء فيما يخص جودة خدمات مصنع عبر الجودة للمنتجات الاسمنتية .</h2>
-                    </div>
-                    <div class="form-group row w-100 text-right">
-                        <h2 for="" class="col-7 col-form-label">13. مدى تحقيق وفاعلية نظام الـISO 9001 وأي احتياجات للتحسين. </h2>
-                    </div>
-                    <div class="form-group row w-100 text-right">
-                        <h2 for="" class="col-9-md col-form-label">14. متابعة الأعمال من مراجعات إدارة سابقة.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-right">
-                        <h2 for="" class="col-md-9 col-form-label">15. التغييرات المخططة التي قد تؤثر على أنظمة الجودة المطبقة بمصنع عبر الجودة للمنتجات الاسمنتية.</h2>
-                    </div>
-                    <div class="form-group row w-100 text-right">
-                        <h2 for="" class="col-md-9 col-form-label">16. توصيات للتحسين.</h2>
-                    </div>
-
+                    <h2 for="" class="col-12 col-form-label" >1-@lang('main.The results of previous management reviews and the effectiveness of implementing their decisions').</h2>
+                    <h2 for="" class="col-12 col-form-label">2-@lang('main.Senior management goals (policies / action plans / development projects)').</h2>
+                    <h2 for="" class="col-12 col-form-label">3-@lang('main.The results of internal audits on the quality systems applied by the company').</h2>
+                    <h2 for="" class="col-12 col-form-label">4-@lang('main.The results of external audits on the quality systems applied by the company (if any)').</h2>
+                    <h2 for="" class="col-12 col-form-label">5-@lang('main.The position of cases of non-conformity in different departments').</h2>
+                    <h2 for="" class="col-12 col-form-label">6-@lang('main.Corrective/preventive action attitude').</h2>
+                    <h2 for="" class="col-12 col-form-label">7-@lang('main.Evaluate marketing and sales work, including competitor performance and customer feedback').</h2>
+                    <h2 for="" class="col-12 col-form-label">8-@lang('main.Training needs').</h2>
+                    <h2 for="" class="col-12 col-form-label">9-@lang('main.human and technical needs').</h2>
+                    <h2 for="" class="col-12 col-form-label">10-@lang('main.Any new work related to the quality systems applied by the company').</h2>
+                    <h2 for="" class="col-12 col-form-label">11-@lang('main.Amendments to the organizational structure').</h2>
+                    <h2 for="" class="col-12 col-form-label">12-@lang('main.Any customer complaints regarding the quality of the services of a quality factory for cement products').</h2>
+                    <h2 for="" class="col-12 col-form-label">13-@lang('main.The extent to which the ISO 9001 system has been achieved and effective, and any improvement needs'). </h2>
+                    <h2 for="" class="col-12 col-form-label">14-@lang('main.Follow-up work from previous management reviews').</h2>
+                    <h2 for="" class="col-12 col-form-label">15-@lang('main.Planned changes that may affect the quality systems applied in a factory across the quality of cement products').</h2>
+                    <h2 for="" class="col-12 col-form-label">16-@lang('main.recommendations for improvement').</h2>
                 </div>
 
 
                 <div class="form-group row w-100 text-right">
-                    <h1 for="" class="col-md-4 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;'>ملخص الإجتماع :</h1>
+                    <h1 for="" class="col-md-4 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Meeting summary') :</h1>
                 </div>
                 <div class="form-group row w-100 text-right">
-                    <h1 for="" class="col-6 col-form-label">موقف مراجعات الإدارة السابقة :</h1>
+                    <h1 for="" class="col-6 col-form-label">@lang('main.The position of previous management reviews') :</h1>
                     <div class="col-10">
                 <textarea type="text" class="form-control" placeholder=" المراجعة ......" name="stand_review"> {{ $meetingMinute->stand_review }}</textarea>
             </div>
         </div>
         <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-5 col-form-label">قرارات وتوصيات الإجتماع :</h1>
+            <h1 for="" class="col-5 col-form-label">@lang('main.Resolutions and recommendations of the meeting') :</h1>
         </div>
         <div class="form-group row w-100 ">
-            <h1 for="" class="col-9 col-form-label">أولاً: فيما يختص بتحسين كفاءة نظام ﺇدارة الجودة فقد تقرر ما يلى</h1>
+            <h1 for="" class="col-md-12 col-form-label">@lang('main.First:With regard to improving the efficiency of the quality management system, the following has been decided')</h1>
         </div>
         <div class="form-group row w-10 text-center">
             <label for="" class="col-1 col-form-label">1   -</label>
@@ -173,7 +138,7 @@
             </div>
         </div>
         <div class="form-group row w-100 ">
-            <h1 for="" class="col-9 col-form-label">ثانياً: فيما يختص بتحسين الخدمات طبقاً لمتطلبات العملاء فقد تقرر:</h1>
+            <h1 for="" class="col-md-12 col-form-label">@lang('main.Second:With regard to improving services according to customer requirements, it has been decided')</h1>
         </div>
         <div class="form-group row w-10 text-center">
             <label for="" class="col-1 col-form-label">1   -</label>
@@ -193,8 +158,8 @@
                 <textarea type="text" class="form-control" placeholder="  ......" name="improve_service_3"> {{ $meetingMinute->improve_service_3 }}</textarea>
             </div>
         </div>
-        <div class="form-group row w-100 text-right">
-            <h1 for="" class="col-5 col-form-label">ثالثاً: الموارد البشرية والمادية المطلوبة هى:</h1>
+        <div class="form-group row w-100">
+            <h1 for="" class="col-md-12 col-form-label">@lang('main.Third:The required human and material resources are')</h1>
         </div>
         <div class="form-group row w-10 text-center">
             <label for="" class="col-1 col-form-label">1   -</label>
@@ -222,15 +187,15 @@
                     @if ($meetingMinute->status == 'inProgress' && Auth::user()->hasRole('Employee'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة   :</label>
+                            <label for="" class="" style="font-size:large;font-weight: bolder;">@lang('main.management representative') :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.name') </label>
                             <div class="col-8">
                                 <input type="text" class="form-control" readonly placeholder="  ......" name="name_1" value="{{ $meetingMinute->name_1 }}">
                             </div>
 
-                            <label for="" class="col-3 col-form-label">تاريخ   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date') </label>
                             <div class="col-8">
                                 <input type="date" class="form-control" readonly placeholder="  ......" name="date_2"  value="{{ $meetingMinute->date_2 }}">
                             </div>
@@ -241,15 +206,15 @@
                     @if ($meetingMinute->status == 'confirmed' && Auth::user()->hasRole('Employee'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة   :</label>
+                            <label for="" class="" style="font-size:large;font-weight: bolder;">@lang('main.management representative') :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.name')   </label>
                             <div class="col-8">
                                 <input type="text" class="form-control" readonly placeholder="  ......" name="name_1" value="{{ $meetingMinute->name_1 }}">
                             </div>
 
-                            <label for="" class="col-3 col-form-label">تاريخ   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date')   </label>
                             <div class="col-8">
                                 <input type="date" class="form-control" readonly placeholder="  ......" name="date_2"  value="{{ $meetingMinute->date_2 }}">
                             </div>
@@ -258,15 +223,15 @@
                     </th>
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">المدير العام:</label>
+                            <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.General Director') :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.name')   </label>
                             <div class="col-8">
                                 <input type="text" class="form-control" readonly placeholder="  ......" name="name_2"  value="{{ $meetingMinute->name_2 }}">
                             </div>
 
-                            <label for="" class="col-3 col-form-label">تاريخ   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date')   </label>
                             <div class="col-8">
                                 <input type="date" class="form-control" readonly placeholder="  ......" name="date_3"  value="{{ $meetingMinute->date_3 }}">
                             </div>
@@ -276,15 +241,15 @@
                     @if (Auth::user()->hasRole('Admin'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة   :</label>
+                            <label for="" class="" style="font-size:large;font-weight: bolder;">@lang('main.management representative') :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.name')   </label>
                             <div class="col-8">
                                 <input type="text" class="form-control" placeholder="  ......" name="name_1" value="{{ $meetingMinute->name_1 }}">
                             </div>
 
-                            <label for="" class="col-3 col-form-label">تاريخ   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date')   </label>
                             <div class="col-8">
                                 <input type="date" class="form-control" placeholder="  ......" name="date_2"  value="{{ $meetingMinute->date_2 }}">
                             </div>
@@ -294,15 +259,15 @@
                     @if ($meetingMinute->status == 'confirmed' && Auth::user()->hasRole('Admin'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">المدير العام:</label>
+                            <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.General Director') :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.name')   </label>
                             <div class="col-8">
                                 <input type="text" class="form-control" readonly placeholder="  ......" name="name_2"  value="{{ $meetingMinute->name_2 }}">
                             </div>
 
-                            <label for="" class="col-3 col-form-label">تاريخ   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date')   </label>
                             <div class="col-8">
                                 <input type="date" class="form-control" readonly placeholder="  ......" name="date_3"  value="{{ $meetingMinute->date_3 }}">
                             </div>
@@ -313,15 +278,15 @@
                     @if (Auth::user()->hasRole('SuperAdmin'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة   :</label>
+                            <label for="" class="" style="font-size:large;font-weight: bolder;">@lang('main.management representative') :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.name')   </label>
                             <div class="col-8">
                                 <input type="text" class="form-control" placeholder="  ......" name="name_1" value="{{ $meetingMinute->name_1 }}">
                             </div>
 
-                            <label for="" class="col-3 col-form-label">تاريخ   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date')   </label>
                             <div class="col-8">
                                 <input type="date" class="form-control" placeholder="  ......" name="date_2"  value="{{ $meetingMinute->date_2 }}">
                             </div>
@@ -330,15 +295,15 @@
                     </th>
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">المدير العام:</label>
+                            <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.General Director') :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.name')   </label>
                             <div class="col-8">
                                 <input type="text" class="form-control" placeholder="  ......" name="name_2"  value="{{ $meetingMinute->name_2 }}">
                             </div>
 
-                            <label for="" class="col-3 col-form-label">تاريخ   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date')   </label>
                             <div class="col-8">
                                 <input type="date" class="form-control" placeholder="  ......" name="date_3"  value="{{ $meetingMinute->date_3 }}">
                             </div>
@@ -353,42 +318,42 @@
                 <tr>
                     <th>
                       <div class="" style="text-align:start ;">
-                      <label>اسم الشركة</label>
+                        <label>@lang('main.Company Name')</label>
                         <input class="form-control" type="text" name="company_name"   value="{{ $meetingMinute->company_name }}">
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                      <label>تاريخ الاصدار</label>
+                        <label>@lang('main.release_date') </label>
                         <input class="form-control" type="text" name="date2"  value="{{ $meetingMinute->date2 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
             
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                        <label>تاريخ التعديل</label>
+                            <label>@lang('main.Modification date')</label>
                             <input class="form-control" type="text" name="date3"  value="{{ $meetingMinute->date3 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                           </div>
             
                     </th>
                     <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $meetingMinute->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $meetingMinute->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $meetingMinute->number_doc }}">
                             </div>
                         </th>
@@ -398,14 +363,14 @@
         @if ($meetingMinute->status == 'pending' && Auth::user()->hasRole('Employee'))
         <div class="form-group">
             <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                 </i></button>
         </div>
     @elseif(($meetingMinute->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
         ($meetingMinute->status == 'pending' && Auth::user()->hasRole('Admin')))
         <div class="form-group">
             <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                 </i></button>
         </div>
     @elseif(($meetingMinute->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -413,7 +378,7 @@
         ($meetingMinute->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
         <div class='row'>
                     <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                      تعديل</button>
+                      @lang('main.edit')</button>
                 </div>
     @endif
     </div>

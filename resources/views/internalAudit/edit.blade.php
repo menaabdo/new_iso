@@ -15,18 +15,18 @@
                 <h2>قائمة المراجعات الداخلية لنظام الجودة </h2>
                 <hr class="w-100" style="align:center">
             </div>
-            <label for="" class="col-1 col-form-label"> التاريخ :</label>
+            <label for="" class="col-1 col-form-label"> @lang('main.date')  :</label>
             <div class="col-4">
                 <input type="date" name="date1" class="form-control" placeholder="  ......" value="{{ $internalAudit->date1 }}">
             </div>
-            <label for="" class="col-2 col-form-label"> الجهة المراجع عليها :</label>
+            <label for="" class="col-2 col-form-label"> @lang('main.Referenced Authority') :</label>
             <div class="col-4">
                 <input type="text" class="form-control" name="referenced_authority" placeholder="الجهة المراجع عليها  ......" id="" value="{{ $internalAudit->referenced_authority }}">
             </div>
         </div>
         <div class="form-group row w-100 text-right">
 
-            <label for="" class="col-2 col-form-label"> الوثائق المرجعية: :</label>
+            <label for="" class="col-2 col-form-label"> @lang('main.Reference Documents') :</label>
             <div class="col-4">
                 <input type="text" class="form-control" name="reference_documents" value="{{ $internalAudit->reference_documents }}" placeholder="الوثائق المرجعية:   ......" id="">
             </div>
@@ -37,29 +37,29 @@
                     <tr style="background-color:lightgreen">
                         @if ($internalAudit->status == 'pending' && Auth::user()->hasRole('Employee'))
                         <th scope="col" rowspan="2" data-field="" class="datatable-cell  end-cell text-center">
-                            <span>م</span>
+                            <span>@lang('main.m')</span>
                         </th>
                         @endif
                         @if (($internalAudit->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                         ($internalAudit->status == 'pending' && Auth::user()->hasRole('Admin')))
                         <th scope="col" rowspan="2" data-field="" class="datatable-cell  end-cell text-center">
-                            <span>م</span>
+                            <span>@lang('main.m')</span>
                         </th>
                         @endif
                         @if (($internalAudit->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                         ($internalAudit->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                         ($internalAudit->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                         <th scope="col" rowspan="2" data-field="" class="datatable-cell  end-cell text-center">
-                            <span>م</span>
+                            <span>@lang('main.m')</span>
                         </th>
                         @endif
-                        <th scope="col" rowspan="2">أسئلــة المراجعـــة </th>
-                        <th scope="col" colspan="2">نتائج التحقق</th>
-                        <th scope="col" rowspan="2">الدليل الموضوعي</th>
+                        <th scope="col" rowspan="2">@lang('main.Review questions') </th>
+                        <th scope="col" colspan="2">@lang('main.verification results')</th>
+                        <th scope="col" rowspan="2">@lang('main.Thematic guide')</th>
                     </tr>
                     <tr style="background-color:lightgreen">
-                        <th scope="col"> مطابق</th>
-                        <th scope="col">غير مطابق</th>
+                        <th scope="col"> @lang('main.identical')</th>
+                        <th scope="col">@lang('main.notidentical')</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -177,13 +177,13 @@
             </table>
             @if (Auth::user()->hasRole('Employee'))
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-1 col-form-label"> إسم المراجع :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.References name') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" value="{{ $internalAudit->reference_name }}" name="reference_name" placeholder="إسم المراجع  ......" id="">
+                    <input type="text" class="form-control" value="{{ $internalAudit->reference_name }}" name="reference_name" placeholder="@lang('main.References name')  ......" id="">
                 </div>
-                <label for="" class="col-1 col-form-label"> الوظيفة :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.job') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" name="job" value="{{ $internalAudit->job }}" placeholder="الوظيفة  ......" id="">
+                    <input type="text" class="form-control" name="job" value="{{ $internalAudit->job }}" placeholder="@lang('main.job')  ......" id="">
                 </div>
             </div>
             @endif
@@ -191,9 +191,9 @@
             @if (($internalAudit->status == 'inProgress' && Auth::user()->hasRole('Employee')) ||
             ($internalAudit->status == 'confirmed' && Auth::user()->hasRole('Employee')))
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-1 col-form-label"> مدير الجودة الإسم :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.Quality Manager Name') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" readonly name="quality_manager_name" value="{{ $internalAudit->quality_manager_name }}" placeholder="مدير الجودة الإسم  ......" id="">
+                    <input type="text" class="form-control" readonly name="quality_manager_name" value="{{ $internalAudit->quality_manager_name }}" placeholder="@lang('main.Quality Manager Name')  ......" id="">
                 </div>
             </div>
             @endif
@@ -201,49 +201,49 @@
 
             @if (Auth::user()->hasRole('Admin'))
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-1 col-form-label"> إسم المراجع :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.References name') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" value="{{ $internalAudit->reference_name }}" name="reference_name" placeholder="إسم المراجع  ......" id="">
+                    <input type="text" class="form-control" value="{{ $internalAudit->reference_name }}" name="reference_name" placeholder="@lang('main.References name')  ......" id="">
                 </div>
-                <label for="" class="col-1 col-form-label"> الوظيفة :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.job') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" name="job" value="{{ $internalAudit->job }}" placeholder="الوظيفة  ......" id="">
+                    <input type="text" class="form-control" name="job" value="{{ $internalAudit->job }}" placeholder="@lang('main.job')  ......" id="">
                 </div>
             </div>
             @endif
             @if (($internalAudit->status == 'pending' && Auth::user()->hasRole('Admin')) ||
             ($internalAudit->status == 'inProgress' && Auth::user()->hasRole('Admin')))
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-1 col-form-label"> مدير الجودة الإسم :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.Quality Manager Name') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" name="quality_manager_name" value="{{ $internalAudit->quality_manager_name }}" placeholder="مدير الجودة الإسم  ......" id="">
+                    <input type="text" class="form-control" name="quality_manager_name" value="{{ $internalAudit->quality_manager_name }}" placeholder="@lang('main.Quality Manager Name')  ......" id="">
                 </div>
             </div>
             @endif
 
             @if ($internalAudit->status == 'confirmed' && Auth::user()->hasRole('Admin'))
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-1 col-form-label"> مدير الجودة الإسم :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.Quality Manager Name') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" readonly name="quality_manager_name" value="{{ $internalAudit->quality_manager_name }}" placeholder="مدير الجودة الإسم  ......" id="">
+                    <input type="text" class="form-control" readonly name="quality_manager_name" value="{{ $internalAudit->quality_manager_name }}" placeholder="@lang('main.Quality Manager Name')  ......" id="">
                 </div>
             </div>
             @endif
             @if (Auth::user()->hasRole('SuperAdmin'))
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-1 col-form-label"> إسم المراجع :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.References name') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" value="{{ $internalAudit->reference_name }}" name="reference_name" placeholder="إسم المراجع  ......" id="">
+                    <input type="text" class="form-control" value="{{ $internalAudit->reference_name }}" name="reference_name" placeholder="@lang('main.References name')  ......" id="">
                 </div>
-                <label for="" class="col-1 col-form-label"> الوظيفة :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.job') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" name="job" value="{{ $internalAudit->job }}" placeholder="الوظيفة  ......" id="">
+                    <input type="text" class="form-control" name="job" value="{{ $internalAudit->job }}" placeholder="@lang('main.job')  ......" id="">
                 </div>
             </div>
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-1 col-form-label"> مدير الجودة الإسم :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.Quality Manager Name') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" name="quality_manager_name" value="{{ $internalAudit->quality_manager_name }}" placeholder="مدير الجودة الإسم  ......" id="">
+                    <input type="text" class="form-control" name="quality_manager_name" value="{{ $internalAudit->quality_manager_name }}" placeholder="@lang('main.Quality Manager Name')  ......" id="">
                 </div>
             </div>
             @endif
@@ -253,12 +253,14 @@
             <thead>
                 <th>
                     <div class="" style="text-align:start ;">
+                        <label>@lang('main.Company Name')</label>
                         <input class="form-control" type="text" name="company_name" value="{{ $internalAudit->company_name }}" placeholder="اسم الشركة  :">
                     </div>
 
                 </th>
                 <th>
                     <div class="" style="text-align:start ;">
+                        <label>@lang('main.release_date') </label>
                         <input class="form-control" type="text" name="date2" value="{{ $internalAudit->date2 }}" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
                     </div>
 
@@ -266,26 +268,27 @@
                 <th>
 
                     <div class="" style="text-align:start ;">
-                        <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل   :" onfocus="(this.type='date')" onblur="(this.type='text')" value="{{ $internalAudit->date3 }}">
+                        <label>@lang('main.Modification date')</label>
+                        <input class="form-control" type="text" name="date3" placeholder="تاريخ ال@lang('main.edit')   :" onfocus="(this.type='date')" onblur="(this.type='text')" value="{{ $internalAudit->date3 }}">
                     </div>
                 </th>
                 <th>
                     <div class="" style="text-align:start ;">
-                        <label> مدة الحفظ </label>
+                        <label>@lang('main.model_period')</label>
                         <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $internalAudit->period_time }}">
                     </div>
 
                 </th>
                 <th>
                     <div class="" style="text-align:start ;">
-                        <label> رقم الصفحة </label>
+                        <label>@lang('main.page_number')</label>
                         <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $internalAudit->number_page }}">
                     </div>
 
                 </th>
                 <th>
                     <div class="" style="text-align:start ;">
-                        <label> رقم الوثيقة </label>
+                        <label>@lang('main.document_code')</label>
                         <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $internalAudit->number_doc }}">
                     </div>
                 </th>
@@ -294,20 +297,20 @@
         </table>
         @if ($internalAudit->status == 'pending' && Auth::user()->hasRole('Employee'))
         <div class="form-group">
-            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                 </i></button>
         </div>
         @elseif(($internalAudit->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
         ($internalAudit->status == 'pending' && Auth::user()->hasRole('Admin')))
         <div class="form-group">
-            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                 </i></button>
         </div>
         @elseif(($internalAudit->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
         ($internalAudit->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
         ($internalAudit->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
         <div class="form-group">
-            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                 </i></button>
         </div>
         @endif

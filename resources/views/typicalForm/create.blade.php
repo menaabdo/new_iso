@@ -14,17 +14,16 @@
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-2 ">CO LOGO</label>
+                <label class="form-label col-md-2 ">@lang('main.Company Logo')</label>
 
                 <input class="col-md-6 form-control" type="file" id="img" name="logo" accept="image/*">
             </div>
             <div class="form-group row w-100 text-left">
 
                 <div class="row col-form-label mr-3">
-                    <label class="form-label  ">إستلمت أنا :</label>
+                    <label class="form-label  ">@lang('main.I received') :</label>
                     <input type="text" class="col-3 form-control" name="name">
-                    <label>الموقع أدناه الوثائق التالية.</label>
-                    <label>والتي تخص إدارة / </label>
+                    <label>@lang('main.Signed below are the following documents / which belong to the Department') :</label>
                     <input type="text" class="col-3 form-control" name="management">
                 </div>
             </div>
@@ -32,12 +31,12 @@
             <div class="form-group row w-100 text-right" style="text-align:center ;">
                 <table class="table">
                     <tr style='font-size:14px;background-color:#001635;color:white;text-align:center;'>
-                        <th>م</th>
-                        <th>إسم الوثيقة</th>
-                        <th>كود الوثيقة</th>
-                        <th>عدد النسخ</th>
-                        <th>التاريخ</th>
-                        <th>الملاحظات</th>
+                        <th>@lang('main.m')</th>
+                        <th>@lang('main.Document name')</th>
+                        <th>@lang('main.document_number')</th>
+                        <th>@lang('main.num_copy')</th>
+                        <th>@lang('main.date')</th>
+                        <th>@lang('main.note')</th>
                     </tr>
                     <tr id="typicalForm-0">
                         <th class="text-center end-td ">
@@ -63,16 +62,16 @@
                     <tr>
                         <th class=" w-50 text-center col-1 ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">المستلم:</label>
+                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.receiver'):</label>
                             </div>
                             <div class="form-group row w-10 text-right ">
-                                <label for="" class="col-5  col-form-label">الاسم: -</label>
+                                <label for="" class="col-5  col-form-label">@lang('main.name'): -</label>
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="name2">
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-right">
-                                <label for="" class="col-5 col-form-label">الوظيفة: -</label>
+                                <label for="" class="col-5 col-form-label">@lang('main.job'): -</label>
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="job">
                                 </div>
@@ -87,50 +86,52 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :">
+                                <label>@lang('main.Company Name')</label>
+                                <input class="form-control shadow-lg" type="text" name="company_name">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label>@lang('main.release_date') </label>
+                                <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label>@lang('main.Modification date')</label>
+                                <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page">
                             </div>
-
+    
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc">
                             </div>
                         </th>
                     </tr>
                 </thead>
             </table>
-
             <div class='row mt-3'>
-                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
-            </div>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
+        </div>
         </form>
     </div>
 

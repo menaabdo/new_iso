@@ -17,7 +17,7 @@
         <hr class="w-100">
     </div>
     <div id="mainDiv"  style=" margin-right:500px;">
-        <h4 style=" color:blue;">CO LOGO</h4>
+        <h4 style=" color:blue;">@lang('main.Company Logo')</h4>
         <hr width="50%" size="20" color="blue">
         <img src="{{ asset($typicalForm->logo) }}" height=180px width=210px; />
         <input type="file" id="img" name="logo" accept="image/*">
@@ -25,10 +25,9 @@
     <div class="form-group row w-100 text-left">
         
         <div class="col-form-label">
-            <label>إستلمت أنا :</label>
+            <label class="form-label  ">@lang('main.I received') :</label>
             <input type="text" class="col-3"  name="name" value="{{ $typicalForm->name }}">
-            <label>الموقع أدناه الوثائق التالية.</label>
-            <label>والتي تخص إدارة / </label>
+            <label>@lang('main.Signed below are the following documents / which belong to the Department') :</label>
             <input type="text"  class="col-3"  name="management" value="{{ $typicalForm->management }}">
         </div>
     </div>
@@ -36,12 +35,12 @@
     <div class="form-group row w-100 text-right" style="text-align:center ;">
         <table class="table">
             <tr style="background-color:rgb(187, 216, 240)">
-                <th>م</th>
-                <th>إسم الوثيقة</th>
-                <th>كود الوثيقة</th>
-                <th>عدد النسخ</th>
-                <th>التاريخ</th>
-                <th>الملاحظات</th>
+                <th>@lang('main.m')</th>
+                <th>@lang('main.Document name')</th>
+                <th>@lang('main.document_number')</th>
+                <th>@lang('main.num_copy')</th>
+                <th>@lang('main.date')</th>
+                <th>@lang('main.note')</th>
             </tr>
             @if(count($typicalForm->typicalForm)>0)
             @foreach($typicalForm->typicalForm as $key => $intr)
@@ -89,16 +88,16 @@
             <tr>
                 <th class=" w-50 text-center col-1 ">
                     <div class="" style="text-align:center ;">
-                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">المستلم:</label>
+                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.receiver'):</label>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-1 col-form-label">الاسم:       -</label>
+                        <label for="" class="col-1 col-form-label">@lang('main.name') :-</label>
                         <div class="col-2">
                             <input type="text" class="form-control" placeholder="  ......" name="name2" value="{{ $typicalForm->name2 }}">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-1 col-form-label">الوظيفة:       -</label>
+                        <label for="" class="col-1 col-form-label">@lang('main.job') :-</label>
                         <div class="col-2">
                             <input type="text" class="form-control" placeholder="  ......" name="job" value="{{ $typicalForm->job }}">
                         </div>
@@ -114,39 +113,42 @@
             <tr>
                 <th>
                   <div class="" style="text-align:start ;">
+                    <label>@lang('main.Company Name')</label>
                     <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :"  value="{{ $typicalForm->company_name }}">
                   </div>
         
                 </th>
                 <th>
                   <div class="" style="text-align:start ;">
+                    <label>@lang('main.release_date') </label>
                     <input class="form-control" type="text" name="date2"  value="{{ $typicalForm->date2 }}" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
                   </div>
         
                 </th>
                 <th>
                     <div class="" style="text-align:start ;">
+                        <label>@lang('main.Modification date')</label>
                         <input class="form-control" type="text" name="date3"  value="{{ $typicalForm->date3 }}" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
         
                 </th>
                 <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $typicalForm->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $typicalForm->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $typicalForm->number_doc }}">
                             </div>
                         </th>
@@ -156,7 +158,7 @@
     
           <div class="form-group">
             <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-              class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> تعديل  </button>
+              class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i>  <label>@lang('main.edit')</label>  </button>
           </div>
         </form>
     </div>

@@ -22,9 +22,9 @@
 
 
         <div class="form-group row text-right">
-            <label for="" class="col-1 col-form-label"> ادارة :</label>
+            <label for="" class="col-1 col-form-label"> @lang('main.Department') :</label>
             <div class="col-4">
-                <input type="text" class="form-control" placeholder="ادارة  ......" name="management" value="{{ $interior->management }}">
+                <input type="text" class="form-control" placeholder="@lang('main.Department')" name="management" value="{{ $interior->management }}">
             </div>
         </div>
         <!-- table -->
@@ -37,30 +37,30 @@
                     <tr>
                         @if ($interior->status == 'pending' && Auth::user()->hasRole('Employee'))
 
-                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>م</th>
+                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>@lang('main.m')</th>
                         @endif
                         @if (($interior->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                         ($interior->status == 'pending' && Auth::user()->hasRole('Admin')))
                         <th scope="col" rowspan="2" style='vertical-align: middle; !important;' data-field="" class="datatable-cell  end-cell text-center">
-                            م
+                            @lang('main.m')
                         </th>
                         @endif
                         @if (($interior->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                         ($interior->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                         ($interior->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                         <th scope="col" rowspan="2" style='vertical-align: middle; !important;' data-field="" class="datatable-cell  end-cell text-center">
-                            م
+                            @lang('main.m')
                         </th>
                         @endif
-                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>وصف حالة عدم المطابقة </th>
-                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>الإجراء التصحيحي / الوقائي المطلوب</th>
-                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>رقم الإجراء</th>
-                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>المسئول عن التنفيذ</th>
-                        <th scope="col" colspan="2">متابعة التنفيذ</th>
+                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>@lang('main.Description of the nonconformity') </th>
+                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>@lang('main.Corrective/preventive action required')</th>
+                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>@lang('main.action number')</th>
+                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>@lang('main.Responsible for implementation')</th>
+                        <th scope="col" colspan="2">@lang('main.Follow-up implementation')</th>
                     </tr>
                     <tr style="">
-                        <th scope="col"> مخطط</th>
-                        <th scope="col">فعلي</th>
+                        <th scope="col"> @lang('main.plan')</th>
+                        <th scope="col">@lang('main.actual')</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -222,17 +222,17 @@
       <section class=" text-right mt-5"> -->
         @if (Auth::user()->hasRole('SuperAdmin'))
         <div class="form-group row w-100 text-right">
-            <label class="col-3 col-form-label"> رئيس فريق المراجعه :</label>
+            <label class="col-3 col-form-label"> @lang('main.Head of the review team') :</label>
             <div class="col-9">
-                <input type="text" class="form-control" placeholder="رئيس فريق المراجعه  ......" name="head_of_the_review" value="{{ $interior->head_of_the_review }}">
+                <input type="text" class="form-control" placeholder="@lang('main.Head of the review team')" name="head_of_the_review" value="{{ $interior->head_of_the_review }}">
             </div>
         </div>
         <div class="form-group row w-100 text-right">
-            <label for="" class="col-1 col-form-label"> الاسم :</label>
+            <label for="" class="col-1 col-form-label"> @lang('main.name') :</label>
             <div class="col-4">
-                <input type="text" class="form-control" placeholder="الاسم  ......" name="name" value="{{ $interior->name }}">
+                <input type="text" class="form-control" placeholder="@lang('main.name')" name="name" value="{{ $interior->name }}">
             </div>
-            <label for="" class="col-1 col-form-label"> التاريخ :</label>
+            <label for="" class="col-1 col-form-label"> @lang('main.date') :</label>
             <div class="col-4">
                 <input type="date" class="form-control" name="date" value="{{ $interior->date }}">
             </div>
@@ -243,7 +243,7 @@
                 <tr>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label for="" class=" col-form-label"> اسم الشركة :</label>
+                            <label for="" class=" col-form-label"> @lang('main.Company Name') :</label>
 
                             <input class="form-control" type="text" name="company_name" value="{{ $interior->company_name }}">
                         </div>
@@ -251,7 +251,7 @@
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label for="" class=""> تاريخ الإصدار:</label>
+                            <label for="" class=""> @lang('main.release_date'):</label>
 
                             <input class="form-control" type="text" name="date2" onfocus="(this.type='date')" value="{{ $interior->date2 }}" onblur="(this.type='text')">
                         </div>
@@ -259,7 +259,7 @@
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label for="" class=" col-form-label"> تاريخ التعديل:</label>
+                            <label for="" class=" col-form-label"> @lang('main.Modification date'):</label>
 
                             <input class="form-control" type="text" name="date3" onfocus="(this.type='date')" value="{{ $interior->date3 }}" onblur="(this.type='text')">
                         </div>
@@ -267,21 +267,21 @@
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label> مدة الحفظ </label>
+                            <label> @lang('main.model_period')</label>
                             <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $interior->period_time }}">
                         </div>
 
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label> رقم الصفحة </label>
+                            <label> @lang('main.page_number') </label>
                             <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $interior->number_page }}">
                         </div>
 
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label> رقم الوثيقة </label>
+                            <label> @lang('main.document_code') </label>
                             <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $interior->number_doc }}">
                         </div>
                     </th>
@@ -305,17 +305,11 @@
         ($interior->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
         <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                تعديل</button>
+                @lang('main.edit')</button>
         </div>
         @endif
     </form>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-</script>
 
 
 

@@ -17,7 +17,7 @@
         </div>
         <div class="form-group w-100  mr-5">
              <div class="row" >
-             <label for="" class="col-md-4 col-form-label text-right">رقم الاجتماع: </label>
+             <label for="" class="col-md-4 col-form-label text-right">@lang('main.meeting_num') : </label>
              <div class="col-md-4" >
                 <input type="text" class="form-control shadow-lg" placeholder="  ......" name="meeting_num">
             </div>
@@ -25,7 +25,7 @@
             </div>
             <div class="form-group w-100  mr-5">
             <div class="row" >
-            <label class="col-md-4 col-form-label text-right">CO LOGO</label>
+            <label class="col-md-4 col-form-label text-right">@lang('main.Company Logo')</label>
             <div class="col-md-4" >
                 <input type="file" id="img" class='shadow-lg form-control' name="logo" accept="image/*">
               </div>
@@ -34,7 +34,7 @@
        
         <div class="form-group w-100  mr-5">
             <div class="row" >
-                    <label for="" class="col-md-4 col-form-label text-right">التاريخ:</label>
+                    <label for="" class="col-md-4 col-form-label text-right">@lang('main.date') :</label>
                     <div class="col-md-4" >
                 <input type="date" class="form-control shadow-lg" name="date_1">
             </div>
@@ -42,7 +42,7 @@
             </div>
             <div class="form-group w-100  mr-5">
             <div class="row" >
-            <label for="" class="col-md-4 col-form-label text-right">  نوع الإجتماع:</label>
+            <label for="" class="col-md-4 col-form-label text-right">@lang('main.meeting_kind') :</label>
             <div class="col-md-4" >
                 <input type="text" class="form-control shadow-lg" name="meeting_kind">
             </div>
@@ -52,22 +52,22 @@
         <div class="form-group row w-100 text-right" style="text-align:center ;">
             <table class="table table-bordered col-md-10" style='margin:auto'>
                 <tr>
-                    <th style="background-color:#001635;color:white ">مكان الأنعقاد</th>
+                    <th style="background-color:#001635;color:white ">@lang('main.meeting_place')</th>
                     <th><input class="form-control shadow-lg" type="text" name="meeting_place"></th>
-                    <th style="background-color:#001635;color:white ">مدة الاجتماع</th>
+                    <th style="background-color:#001635;color:white ">@lang('main.meeting_period')</th>
                     <th><input class="form-control" type="text" name="meeting_period"></th>
                 </tr>
                 <tr>
-                    <th style="background-color:#001635;color:white">التوقيت</th>
+                    <th style="background-color:#001635;color:white">@lang('main.time')</th>
                     <th><input class="form-control shadow-lg" type="text" name="meeting_time"></th>
-                    <th style="background-color:#001635;color:white">مقرر الاجتماع</th>
+                    <th style="background-color:#001635;color:white">@lang('main.meeting_schedule')</th>
                     <th><input class="form-control  shadow-lg" type="text" name="meeting_schedule"></th>
                 </tr>
             </table>
         </div>
         <div class="form-group w-100  mr-5">
             <div class="row" >
-            <label for="" class="col-md-4 col-form-label text-right">الغرض من الاجتماع  :</label>
+            <label for="" class="col-md-4 col-form-label text-right">@lang('main.meeting_purpose') :</label>
             <div class="col-md-4" >
                 <textarea type="text" class="form-control shadow-lg" name="meeting_purpose"></textarea>
             </div>
@@ -75,15 +75,15 @@
         </div>
         <hr width="1300px;" size="20" color="black">
         <div class="form-group row w-100 text-center">
-            <h2 for="" class="col-md-12 col-form-label text-center" style=' text-shadow: 1px 1px 1px #3ed3ea;'>أسماء الحضور :</h2>
+            <h2 for="" class="col-md-12 col-form-label text-center" style=' text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Attendance Names') :</h2>
         </div>
         <div class="form-group row w-100 text-right" style="text-align:center ;">
             <table class="table table-bordered col-md-10" style='margin:auto'>
             
                 <tr style="background-color:#001635;color:white">
-                    <th>م</th>
-                    <th>الاسم</th>
-                    <th>الوظيفة</th>
+                    <th>@lang('main.m')</th>
+                    <th>@lang('main.name')</th>
+                    <th>@lang('main.job')</th>
 
                 </tr>
                 <tr id="attendance-0">
@@ -106,17 +106,17 @@
         <hr width="1300px;" size="20" color="black">
         <div class="form-group row w-100 text-center">
          
-            <h2 for="" class="col-4 col-form-label" style=' text-shadow: 1px 1px 1px #3ed3ea;'>الموضوعات التي سيتم مناقشتها :</h2>
+            <h2 for="" class="col-4 col-form-label" style=' text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Topics to be discussed') :</h2>
         </div>
 
         <div class="form-group row w-100 text-right" style="text-align:center ;">
         <table class="table table-bordered col-md-10" style='margin:auto'>
             
                 <tr style="background-color:#001635;color:white">
-                    <th>م</th>
-                    <th class="col-6 col-form-label">الموضوعات</th>
-                    <th>المسئول</th>
-                    <th>الوقت المخصص</th>
+                    <th>@lang('main.m')</th>
+                    <th class="col-6 col-form-label">@lang('main.Topics')</th>
+                    <th>@lang('main.responsible')</th>
+                    <th>@lang('main.custom_time')</th>
                 </tr>
                 <tr id="topics-0">
                     <th class="text-center end-td ">
@@ -146,10 +146,10 @@
                     @if (Auth::user()->hasRole('Admin'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة   :</label>
+                            <label for="" class="" style="font-size:large;font-weight: bolder;">@lang('main.management representative')   :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-2 col-form-label">الإسم   </label>
+                            <label for="" class="col-2 col-form-label">@lang('main.name')   </label>
                             <div class="col-6">
                                 <input type="text" class="form-control" placeholder="  ......" name="name_1">
                             </div>
@@ -160,10 +160,10 @@
                     @if (Auth::user()->hasRole('SuperAdmin'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة   :</label>
+                            <label for="" class="" style="font-size:large;font-weight: bolder;">@lang('main.management representative')   :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-md-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-md-3 col-form-label">@lang('main.name')   </label>
                             <div class="col-6">
                                 <input type="text" class="form-control shadow-lg" placeholder="  ......" name="name_1">
                             </div>
@@ -172,10 +172,10 @@
                     </th>
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">المدير العام:</label>
+                            <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.General Director') :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-md-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-md-3 col-form-label">@lang('main.name')   </label>
                             <div class="col-6">
                                 <input type="text" class="form-control shadow-lg" placeholder="  ......" name="name_2">
                             </div>
@@ -186,65 +186,58 @@
             </thead>
         </table>
         </div>
-        <div class="form-group row w-100 text-right" style="text-align:center ;">
-        <table class="table table-bordered col-md-10" style='margin:auto'>
-           
+     
+            <table class="table table-bordered mr-5">   
             <thead>
                 <tr>
                     <th>
-                      <div class="" style="text-align:start ;">
-                      <label>اسم الشركة</label>
-                        <input class="form-control shadow-lg" type="text" name="company_name" >
-                      </div>
-            
-                    </th>
-                    <th>
-                      <div class="" style="text-align:start ;">
-                      <label>تاريخ الاصدار</label>
-                        <input class="form-control shadow-lg" type="text" name="date2"  onfocus="(this.type='date')" onblur="(this.type='text')">
-                      </div>
-            
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.Company Name')</label>
+                            <input class="form-control shadow-lg" type="text" name="company_name">
+                        </div>
+
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                        <label>تاريخ التعديل</label>
-                            <input class="form-control shadow-lg" type="text" name="date3"  onfocus="(this.type='date')" onblur="(this.type='text')">
-                          </div>
-            
-                    </th>
-                   
+                            <label>@lang('main.release_date') </label>
+                            <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
+                        </div>
 
-                    <th>
-                      <div class="" style="text-align:start ;">
-                      <label> مدة الحفظ </label>
-                        <input class="form-control shadow-lg" type="text" name="period_time" >
-                      </div>
-            
-                    </th>
-                    
-                     
-                    <th>
-                     <div class="" style="text-align:start ;">
-                      <label>  رقم الصفحة </label>
-                        <input class="form-control shadow-lg" type="text" name="number_page" >
-                      </div>
-                     
                     </th>
                     <th>
-                      <div class="" style="text-align:start ;">
-                      <label>  رقم الوثيقة </label>
-                        <input class="form-control shadow-lg" type="text" name="number_doc" >
-                      </div>
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.Modification date')</label>
+                            <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
+                        </div>
+
                     </th>
-                  </tr>
+                    <th>
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.model_period')</label>
+                            <input class="form-control shadow-lg" type="text" name="period_time">
+                        </div>
+
+                    </th>
+                    <th>
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.page_number')</label>
+                            <input class="form-control shadow-lg" type="text" name="number_page">
+                        </div>
+
+                    </th>
+                    <th>
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.document_code')</label>
+                            <input class="form-control shadow-lg" type="text" name="number_doc">
+                        </div>
+                    </th>
+                </tr>
             </thead>
         </table>
-    </div>
-    <div class='row'>
-            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
-                class="btn btn-primary col-md-4">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
-                    </div>  
+        <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
+        </div>
     </form>
 </div>
 

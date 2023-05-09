@@ -20,12 +20,12 @@
                 <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>قائمة المراجعات الداخلية لنظام الجودة </h2>
                 <hr class="w-100" style="align:center">
             </div>
-            <label for="" class="col-md-4 col-form-label ml-1"> التاريخ :</label>
+            <label for="" class="col-md-4 col-form-label ml-1"> @lang('main.date') :</label>
             <div class="col-md-4">
                 <input type="date" name="date1" class="ml-5 form-control shadow-lg">
             </div>
 
-            <label for="" class="col-md-4 col-form-label mr-1 mt-3"> الجهة المراجع عليها :</label>
+            <label for="" class="col-md-4 col-form-label mr-1 mt-3">@lang('main.Referenced Authority'):</label>
             <div class="col-md-4 mt-3">
                 <input type="text" class="form-control shadow-lg" name="referenced_authority" id="">
 
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group row w-100 text-right">
 
-            <label for="" class="col-md-4 col-form-label"> الوثائق المرجعية:</label>
+            <label for="" class="col-md-4 col-form-label">@lang('main.Reference Documents'):</label>
             <div class="col-md-4">
                 <input type="text" class="form-control" name="reference_documents" id="">
             </div>
@@ -42,14 +42,14 @@
             <table class="table table-bordered  text-center col-md-10" style=";grid-auto-flow: column;justify-content: center; align-content: center;">
                 <thead>
                     <tr style="background-color:#001635 ;color:white">
-                        <th scope="col" rowspan="2">م</th>
-                        <th scope="col" rowspan="2">أسئلــة المراجعـــة </th>
-                        <th scope="col" colspan="2">نتائج التحقق</th>
-                        <th scope="col" rowspan="2">الدليل الموضوعي</th>
+                        <th scope="col" rowspan="2">@lang('main.m')</th>
+                        <th scope="col" rowspan="2">@lang('main.Review questions') </th>
+                        <th scope="col" colspan="2">@lang('main.verification results')</th>
+                        <th scope="col" rowspan="2">@lang('main.Thematic guide')</th>
                     </tr>
                     <tr style="background-color:#001635 ;color:white">
-                        <th scope="col"> مطابق</th>
-                        <th scope="col">غير مطابق</th>
+                        <th scope="col"> @lang('main.identical')</th>
+                        <th scope="col">@lang('main.notidentical')</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -93,29 +93,29 @@
             </table>
             @if (Auth::user()->hasRole('Employee'))
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-md-4 col-form-label"> إسم المراجع :</label>
+                <label for="" class="col-md-4 col-form-label"> @lang('main.References name') :</label>
                 <div class="col-md-3">
                     <input type="text" class="form-control shadow-lg" name="reference_name" placeholder="إسم المراجع  ......" id="">
                 </div>
-                <label for="" class="col-1 col-form-label"> الوظيفة :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.job') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" name="job" placeholder="الوظيفة  ......" id="">
+                    <input type="text" class="form-control" name="job" placeholder="@lang('main.job')  ......" id="">
                 </div>
             </div>
             @endif
             @if (Auth::user()->hasRole('Admin'))
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-md-4 col-form-label"> إسم المراجع :</label>
+                <label for="" class="col-md-4 col-form-label">@lang('main.References name'):</label>
                 <div class="col-3">
                     <input type="text" class="form-control" name="reference_name" placeholder="إسم المراجع  ......" id="">
                 </div>
-                <label for="" class="col-1 col-form-label"> الوظيفة :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.job') :</label>
                 <div class="col-3">
-                    <input type="text" class="form-control" name="job" placeholder="الوظيفة  ......" id="">
+                    <input type="text" class="form-control" name="job" placeholder="@lang('main.job')  ......" id="">
                 </div>
             </div>
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-1 col-form-label"> مدير الجودة الإسم :</label>
+                <label for="" class="col-1 col-form-label"> @lang('main.Quality Manager Name') :</label>
                 <div class="col-3">
                     <input type="text" class="form-control" name="quality_manager_name" placeholder="مدير الجودة الإسم  ......" id="">
                 </div>
@@ -123,75 +123,73 @@
             @endif
             @if (Auth::user()->hasRole('SuperAdmin'))
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-md-2 col-form-label"> إسم المراجع :</label>
+                <label for="" class="col-md-2 col-form-label">@lang('main.References name'):</label>
                 <div class="col-3">
                     <input type="text" class="form-control shadow-lg" name="reference_name" id="">
                 </div>
-                <label for="" class="col-md-2 col-form-label"> الوظيفة :</label>
+                <label for="" class="col-md-2 col-form-label"> @lang('main.job') :</label>
                 <div class="col-md-3">
                     <input type="text" class="form-control shadow-lg" name="job" id="">
                 </div>
             </div>
             <div class="form-group row w-100 text-right">
-                <label for="" class="col-md-2 col-form-label"> مدير الجودة الإسم :</label>
+                <label for="" class="col-md-2 col-form-label">@lang('main.Quality Manager Name') :</label>
                 <div class="col-md-3">
                     <input type="text" class="form-control shadow-lg" name="quality_manager_name" id="">
                 </div>
             </div>
             @endif
         </section>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.Company Name')</label>
+                            <input class="form-control shadow-lg" type="text" name="company_name">
+                        </div>
+
+                    </th>
+                    <th>
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.release_date') </label>
+                            <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
+                        </div>
+
+                    </th>
+                    <th>
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.Modification date')</label>
+                            <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
+                        </div>
+
+                    </th>
+                    <th>
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.model_period')</label>
+                            <input class="form-control shadow-lg" type="text" name="period_time">
+                        </div>
+
+                    </th>
+                    <th>
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.page_number')</label>
+                            <input class="form-control shadow-lg" type="text" name="number_page">
+                        </div>
+
+                    </th>
+                    <th>
+                        <div class="" style="text-align:start ;">
+                            <label>@lang('main.document_code')</label>
+                            <input class="form-control shadow-lg" type="text" name="number_doc">
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+        </table>
         <div class='row'>
-            <table class="table table-bordered col-md-9  " style='margin:auto;vertical-align: middle;'>
-                <thead style='vertical-align: middle;'>
-                    <tr>
-                        <th>
-                            <div class="" style="text-align:start ;">
-                                <label>اسم الشركة</label>
-                                <input class="form-control shadow-lg" type="text" name="company_name">
-                            </div>
-
-                        </th>
-                        <th>
-                            <div class="" style="text-align:start ;">
-                                <label>تاريخ الاصدار</label>
-                                <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
-                            </div>
-
-                        </th>
-                        <th>
-                            <div class="" style="text-align:start ;">
-                                <label>تاريخ التعديل</label>
-                                <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
-                            </div>
-
-                        </th>
-                        <th>
-                            <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
-                                <input class="form-control shadow-lg" type="text" name="period_time">
-                            </div>
-
-                        </th>
-                        <th>
-                            <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
-                                <input class="form-control shadow-lg" type="text" name="number_page">
-                            </div>
-
-                        </th>
-                        <th>
-                            <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
-                                <input class="form-control shadow-lg" type="text" name="number_doc">
-                            </div>
-                        </th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <div class='row mt-5'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
         </div>
 </div>
 </form>

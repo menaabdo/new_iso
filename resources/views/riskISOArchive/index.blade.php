@@ -28,7 +28,7 @@
 
             <a href="{{ route('risksopArchives.create') }}" class="btn col-md-12 mr-1" style="margin-top: 40px;">
                 <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
+    background-color:#001635;' id='me'><b>@lang('main.create')</b></button></a>
             <div class="col-12">
 
                 <div class="card">
@@ -40,8 +40,8 @@
                                     <table id="example1" class="table  table-striped shadow-lg" style=''>
                                         <thead>
                                             <tr style='background-color: #001635;color:white;text-align:center'>
-                                                <th>Archive Name</th>
-                                                <th data-field="Actions" class="datatable-cell "><span style="">Actions</span></th>
+                                                <th>@lang('main.Archive Name')</th>
+                                                <th data-field="Actions" class="datatable-cell "><span style="">@lang('main.Actions')</span></th>
                                             </tr>
                                         </thead>
                                         <tbody class="datatable-body text-center">
