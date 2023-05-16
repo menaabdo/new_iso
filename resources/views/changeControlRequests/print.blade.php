@@ -35,7 +35,7 @@
     border-radius: 6px;
     padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
     padding-right: 40px;
-'>  نموذج طلب التحكم في التغيير (CCR)
+'>  نموذج طلب التحكم في التغيير 
 </span>
 </h3>
                 <hr class="w-100">

@@ -14,7 +14,7 @@
 </style>
 <div style='margin-top:85px;margin:auto' class='row card'>
 
-    <h3 style="margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">متابعة نتائج المراجعة الداخلية</h3>
+    <h3 style="margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.Follow up on the results of the internal audit')</h3>
     <hr>
     <form action="{{ route('interior.update', $interior->id) }}" method="post" enctype="multipart/form-data" class='col-md-10' style='margin:auto' id="fo1">
         @method('PUT')

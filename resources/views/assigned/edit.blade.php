@@ -3,7 +3,7 @@
 <div class='card'>
     <div class="row card-body" style='margin:auto'>
         <div class='row' style='margin:auto'>
-            <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">أمر تكليف لإجراء مراجعة داخلية لنظام الجودة</h3>
+            <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.Assigning an internal auditor')</h3>
             <hr>
         </div>
 

@@ -21,7 +21,7 @@
             {{ csrf_field() }}
 
             <div class="w-100 text-center my-4">
-                <h3 style='text-shadow: 1px 1px 1px #3ed3ea;'>تقرير حالات عدم المطابقة والإجراءات التصحيحية والوقائية</h3>
+                <h3 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Report cases of non-conformity and corrective and preventive actions')</h3>
                 <hr class="w-100">
             </div>
             <div class=" ">

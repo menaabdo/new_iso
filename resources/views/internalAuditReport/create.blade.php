@@ -16,7 +16,7 @@
 
         <div class="container-fluid p-4">
             <div style="text-shadow: 1px 1px 1px #3ed3ea;" class="w-100 text-center my-4">
-                <h2>تقرير مراجعة داخلية</h2>
+                <h2>@lang('main.IA Report')</h2>
                 <hr class="w-100">
             </div>
             <div class="form-group ">

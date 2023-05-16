@@ -11,7 +11,7 @@
         @method('PUT')
         {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-        <h3 style="margin-top:85px;">حالات عدم المطابقة</h3>
+        <h3 style="margin-top:85px;">@lang('main.NCR')</h3>
   
             <input style="text-align: center;;margin:auto" class=' form-control col-md-6' type="text"  name="number_1" value="{{$Non_conformities->number_1}}">
             <hr >

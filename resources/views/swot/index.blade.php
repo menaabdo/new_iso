@@ -17,7 +17,7 @@
 
                 <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
-    font-weight: bold;">تحليل(SWOT)
+    font-weight: bold;">@lang('main.SWOT analysis')
           </h3>
                 <hr>
             </div>

@@ -16,7 +16,7 @@
 </style>
 <div class="card" style='margin-right:85px'>
     <div class="card-body">
-             <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
+             <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.List of approved internal auditors')</h3>
             <hr>
             <form action="{{ route('listInternalAuditor.update', $listInternalAuditor->id) }}" method="post"
                 enctype="multipart/form-data" id="fo1">
@@ -24,7 +24,7 @@
                 {{ csrf_field() }}
                 <div class="container-fluid p-4">
                     <div style="" class="w-100 text-center my-4">
-                        <h2>قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h2>
+                        <h2>@lang('main.List of approved internal auditors')</h2>
                         <hr class="w-100">
                     </div>
                     <div class="container-fluid p-2">

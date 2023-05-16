@@ -18,7 +18,7 @@
         <form action="{{route('followUpRecord.store')}}" class='col-md-8 ' style='margin:auto;margin-top:80px;' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4" style=''>
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>سجل متابعة طلبات الإجراءات التصحيحية / الوقائية </h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>@lang('main.Follow-up record of corrective/preventive action requests') </h2>
                 <label>@lang('main.year')</label>
                 <input class="col-md-6 form-control  shadow-lg" style="text-align: center;margin:auto" type="text" name="year">
                 <hr class="w-100">

@@ -17,7 +17,7 @@
         <form action="{{route('directorList.store')}}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>قائمة أسماء المديرين والأفراد المصرح لهم بإعداد الوثائق</h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.list of managers and individuals authorized to prepare documents')  والأفراد المصرح لهم بإعداد الوثائق</h2>
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>

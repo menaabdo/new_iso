@@ -4,7 +4,7 @@
 
 
 <div class="container mt-3 p-3">
-    <h3 style="margin-top:85px;">قائمة المراجعات الداخلية لنظام الجودة</h3>
+    <h3 style="margin-top:85px;">@lang('main.List of Internal Audits')</h3>
     <hr>
     <form action="{{ route('internalAudit.update', $internalAudit->id) }}" method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
@@ -12,7 +12,7 @@
         <div class="form-group row w-100 text-right">
 
             <div style="" class="w-100 text-center my-4">
-                <h2>قائمة المراجعات الداخلية لنظام الجودة </h2>
+                <h2>@lang('main.List of Internal Audits') </h2>
                 <hr class="w-100" style="align:center">
             </div>
             <label for="" class="col-1 col-form-label"> @lang('main.date')  :</label>

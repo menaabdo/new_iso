@@ -400,7 +400,7 @@ td{
        <div class="row">
            <div class="col-lg-10 col-md-10" style='margin:auto'>
            <h3 style="margin-top:30px;color:#2a415b;padding:10px;color: #2a415b;
-   text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">اجراء مراقبة وضبط الوثائق</h3>
+   text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.Document control') </h3>
 
    <hr style='background-color:#3ed3ea'>
   <h4 style="text-align:center;margin-bottom:40px;color:#2a415b">@lang('main.Standard work steps') </h4>

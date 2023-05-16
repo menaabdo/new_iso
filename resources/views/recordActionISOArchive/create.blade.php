@@ -19,7 +19,8 @@
             {{ csrf_field() }}
             <input type="hidden" name="type" value="5">
             <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>أرشيف إجراء مراقبة وضبط الوثائق </h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Archive') 
+@lang('main.Document control') </h2>
                 <hr class="w-100">
             </div>
             <div class='row'>

@@ -24,7 +24,7 @@
             @method('PUT') 
                   {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>نموذج طلب التحكم في التغيير (CCR)</h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Change Control Request ') </h2>
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3 w-100'>

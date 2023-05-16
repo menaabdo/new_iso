@@ -4,13 +4,13 @@
 
 <div class="card">
 <div class="card-body">
-  <h3 style="margin-top:85px;">إحصائيات التدريب</h3>
+  <h3 style="margin-top:85px;">@lang('main.Training statistics')</h3>
   <hr>
     <form action="{{route('trainingStats.update',$trainingStats->id)}}" method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT') 
               {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-            <h2> إحصائيات التدريب</h2>
+            <h2> @lang('main.Training statistics')</h2>
             <hr class="w-100">
         </div>
         <div id="mainDiv"  style=" margin-right:500px;">

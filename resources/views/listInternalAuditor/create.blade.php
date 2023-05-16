@@ -12,7 +12,7 @@
 
 <div class="card" style='margin-right:85px'>
     <div class="card-body">
-        <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
+        <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.List of approved internal auditors')</h3>
         <hr>
         <form action="{{route('listInternalAuditor.store')}}" method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}

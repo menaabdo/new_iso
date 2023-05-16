@@ -8,7 +8,7 @@
 
 </style>
 <div style='margin-top:85px;width:85%;margin:auto' class='row card-body'>
-    <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;" class='mx-3'>متابعة نتائج المراجعة الداخلية </h3>
+    <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;" class='mx-3'>@lang('main.Follow up on the results of the internal audit') </h3>
     <hr>
 
     <form action="{{route('interior.store')}}" method="post" enctype="multipart/form-data" id="fo1" class='col-md-12'>

@@ -13,7 +13,7 @@
         @method('PUT')
         {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>طلب إجراء تصحيحي / وقائي</h2>
+            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.CAR/PAR')</h2>
             <input style="text-align: center;margin:auto" type="text" class='form-control col-md-6'  name="number" value="{{$corrctivePreventiveActions->number}}">
             <hr class="w-100">
         </div>

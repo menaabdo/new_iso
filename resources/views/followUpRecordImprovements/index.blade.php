@@ -17,7 +17,7 @@
 
                 <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
-    font-weight: bold;">سجل متابعة أعمال التحسين والتطوير</h3>
+    font-weight: bold;">@lang('main.Follow-up record of improvement and development work')</h3>
                 <hr>
             </div>
             <div class="row" style='margin:auto;width:90%'>

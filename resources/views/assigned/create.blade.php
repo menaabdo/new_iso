@@ -4,7 +4,7 @@
 
 <div class='row card'>
     <div style='margin:auto'>
-        <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">أمر تكليف لإجراء مراجعة داخلية لنظام الجودة</h3>
+        <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.Assigning an internal auditor')</h3>
         <hr>
     </div>
     <div class='row '>
@@ -83,7 +83,7 @@
 </div>
 <!-- <div class="card ">
 <div class="card-body" style='margin-right:250px'>
-  <h3 style="margin-top:85px;">أمر تكليف لإجراء مراجعة داخلية لنظام الجودة</h3>
+  <h3 style="margin-top:85px;">@lang('main.Assigning an internal auditor')</h3>
   <hr>
     <form action="{{route('assigned.store')}}" method="post" enctype="multipart/form-data" id="fo1">
       {{ csrf_field() }}
@@ -96,7 +96,7 @@
         <tr>
             <th class="  text-center col-1 ">
                 <div class="" style="text-align:center ;">
-                    <h3 for="" class="" style="text-align:center; color:blue;">أمر تكليف لإجراء مراجعة داخلية لنظام الجودة:</h3>
+                    <h3 for="" class="" style="text-align:center; color:blue;">@lang('main.Assigning an internal auditor'):</h3>
                     <hr width="500px;" size="20" color="blue">
                 </div>
             </th>

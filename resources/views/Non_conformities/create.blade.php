@@ -18,7 +18,7 @@
         <form action="{{route('Non_conformities.store')}}" class='col-md-12 ' style='margin:auto;margin-right:300px !important' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4 " style='margin:auto;'>
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>حالات عدم المطابقة رقم </h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.NCR') رقم </h2>
                 <input style="text-align: center;;margin:auto" class=' form-control col-md-6' type="text" name="number_1">
                 <hr class="w-100">
             </div>

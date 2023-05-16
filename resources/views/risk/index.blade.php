@@ -14,7 +14,7 @@
         <div class="card container col-md-12" style='margin-left: 10px'>
 <div class="card-body  ">
 
-            <h3 style="margin-top:85px; text-align:center;text-shadow: 1px 1px 1px #3ed3ea;">سجل حصر و تحديد الاخطار والمخاطر</h3>
+            <h3 style="margin-top:85px; text-align:center;text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.Risk Management report')</h3>
             <hr>
             <div class="row">
 

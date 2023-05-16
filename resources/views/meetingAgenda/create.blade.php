@@ -12,7 +12,7 @@
 
     <div class="container p-4" style='margin-right:80px'>
         <div style="" class="w-100 text-center my-4">
-            <h2 style=' margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>أجندة إجتماع مراجعة الإدارة</h2>
+            <h2 style=' margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.meeting agenda')</h2>
             <hr class="w-100">
         </div>
         <div class="form-group w-100  mr-5">

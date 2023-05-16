@@ -17,7 +17,7 @@
 
                 <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
-    font-weight: bold;">اجراء مراقبة وضبط الوثائق</h3>
+    font-weight: bold;">@lang('main.Document control') </h3>
                 <hr>
             </div>
             <div class="row" style='margin:auto;width:90%'>

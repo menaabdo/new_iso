@@ -6,13 +6,13 @@
 
 <div class="card">
 <div class="card-body">
-    <h3 style="margin-top:85px;">نموذج إستلام وثائق/نماذج</h3>
+    <h3 style="margin-top:85px;">@lang('main.Document receipt form') </h3>
     <hr>
     <form action="{{route('typicalForm.update',$typicalForm->id)}}" method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
       <div style="" class="w-100 text-center my-4">
-        <h2>نموذج إستلام وثائق/نماذج
+        <h2>@lang('main.Document receipt form') 
         </h2>
         <hr class="w-100">
     </div>

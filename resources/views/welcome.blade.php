@@ -17,11 +17,11 @@
                     <div style='color:white;' class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                         <i class="fa fa-object-group" style='margin:4px'></i>
-                        اهداف الجودة
+                        @lang('main.Quality goals')
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ route('sop.index') }}">اجراء اهداف الجودة</a>
-                        <a class="dropdown-item" href="{{ route('sop.index') }}">خطة تنفيذ الهدف</a>
+                        <a class="dropdown-item" href="{{ route('sop.index') }}">@lang('main.quality objectives')</a>
+                        <a class="dropdown-item" href="{{ route('sop.index') }}">@lang('main.objectives execution plan form')</a>
                     </div>
                 </div>
             </h5>
@@ -35,10 +35,10 @@
                     <div style='color:white;' class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                         <i class="fa fa-exclamation-triangle" style='margin:4px'></i>
-                        تقييم المخاطر</div>
+                        @lang('main.Risk assessment')</div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ route('risksop.index') }}">اجراء تقييم المخاطر</a>
-                        <a class="dropdown-item" href="{{ route('risk.index') }}">سجل حصر وتحديد المخاطر</a>
+                        <a class="dropdown-item" href="{{ route('risksop.index') }}">@lang('main.Risk assessment1')</a>
+                        <a class="dropdown-item" href="{{ route('risk.index') }}">@lang('main.Risk Management report') </a>
 
                     </div>
                 </div>
@@ -54,16 +54,16 @@
                     <div style='color:white;' class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                         <i class="fa fa-link" style='margin:4px'></i>
-                        مراجعة داخلية</div>
+                        @lang('main.internal audit')</div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ route('interiorsop.index') }}">اجراء المراجعة الداخلية</a>
-                        <a class="dropdown-item" href="{{ route('interior.index') }}">متابعة النتائج المراجعة الداخلية</a>
-                        <a class="dropdown-item" href="{{ route('internalAudit.index') }}">مراجعات داخلية لنظام الجودة</a>
-                        <a class="dropdown-item" href="{{ route('noticeInternal.index') }}">اخطار بمراجعات داخلية</a>
-                        <a class="dropdown-item" href="{{ route('InternalAuditReport.index') }}">تقرير مراجعات داخلية</a>
-                        <a class="dropdown-item" href="{{ route('listInternalAuditor.index') }}">مراجعيين داخليين لنظام الجودة</a>
-                        <a class="dropdown-item" href="{{ route('assigned.index') }}">امر تكليف مراجعة داخلية</a>
-                        <a class="dropdown-item" href="{{ route('work_plan.index') }}">خطة سنوية للمراجعة الداخيلية</a>
+                        <a class="dropdown-item" href="{{ route('interiorsop.index') }}">@lang('main.internal audit1')</a>
+                        <a class="dropdown-item" href="{{ route('interior.index') }}">@lang('main.Follow up on the results of the internal audit')</a>
+                        <a class="dropdown-item" href="{{ route('internalAudit.index') }}">@lang('main.List of Internal Audits')</a>
+                        <a class="dropdown-item" href="{{ route('noticeInternal.index') }}">@lang('main.Notify of an internal  audit')</a>
+                        <a class="dropdown-item" href="{{ route('InternalAuditReport.index') }}">@lang('main.IA Report')</a>
+                        <a class="dropdown-item" href="{{ route('listInternalAuditor.index') }}">@lang('main.List of approved internal auditors')</a>
+                        <a class="dropdown-item" href="{{ route('assigned.index') }}">@lang('main.Assigning an internal auditor')</a>
+                        <a class="dropdown-item" href="{{ route('work_plan.index') }}">@lang('main.Annual plan for internal  audit')</a>
 
 
                     </div>
@@ -80,13 +80,13 @@
                     <div style='color:white;' class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                         <i class="fa fa-tasks" style='margin:4px'></i>
-                        مراجعة الادارة</div>
+                        @lang('main.Management review')</div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ route('meetingAgendasop.index') }}">اجراء مراجعة الادارة</a>
-                        <a class="dropdown-item" href="{{ route('meetingAgenda.index') }}">اجندة اجتماع مراجعة الاارة</a>
-                        <a class="dropdown-item" href="{{ route('invitationMeeting.index') }}">دعوة لاجتماع مراجعة الادارة</a>
-                        <a class="dropdown-item" href="{{ route('followLog.index') }}">سجل متابعة قرارات </a>
-                        <a class="dropdown-item" href="{{ route('meetingMinute.index') }}">مجضر اجتماع المراجعة</a>
+                        <a class="dropdown-item" href="{{ route('meetingAgendasop.index') }}">@lang('main.Management review1')</a>
+                        <a class="dropdown-item" href="{{ route('meetingAgenda.index') }}">@lang('main.meeting agenda')</a>
+                        <a class="dropdown-item" href="{{ route('invitationMeeting.index') }}">@lang('main.Invitation to a meeting')</a>
+                        <a class="dropdown-item" href="{{ route('followLog.index') }}">@lang('main.Follow-up record of senior management decisions')</a>
+                        <a class="dropdown-item" href="{{ route('meetingMinute.index') }}">@lang('main.Minutes of Meeting')</a>
 
 
                     </div>
@@ -107,36 +107,36 @@
                 <div class="dropdown">
                     <div style='color:white;' class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-sticky-note" style='margin:4px'></i>
-                        مراقبة وضبط الوثائق
+                        @lang('main.Document control1') 
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                      
                         <a href="{{ route('recordActionSop.index') }}"class="dropdown-item">
-                            اجراء مراقبة وضبط الوثائق
+                            @lang('main.Document control') 
                         </a>
                         <a href="{{ route('recordAction.index') }}"class="dropdown-item">
-                           سجل حصر الاجراءات المستخدمة 
+                           @lang('main.Record inventory of the sop  used')  
                         </a>
                         <a href="{{ route('recordModel.index') }}"class="dropdown-item">
-                             سجل حصر النماذج المستخدمة 
+                             @lang('main.Record inventory of the Forms used')  
                         </a>
                         <a href="{{ route('recordCanceledDocument.index') }}"class="dropdown-item">
-                            سجل حصر الوثائق الملغاة
+                            @lang('main.Record of Canceled Documents') 
                         </a>
                         <a href="{{ route('issuanceRequest.index') }}"class="dropdown-item">
-                            طلب إصدار / تعديل / إلغاء وثيقة
+                            @lang('main.DCR') 
                         </a>
                         <a href="{{ route('directorList.index') }}"class="dropdown-item">
-                           قائمة أسماء المديرين
+                           @lang('main.list of managers and individuals authorized to prepare documents') 
                         </a>
                         <a href="{{ route('listDocument.index') }}"class="dropdown-item">
-                             قائمة رئيسية للوثائق
+                             @lang('main.Main list of documents') 
                         </a>
                         <a href="{{ route('brokenRecord.index') }}"class="dropdown-item">
-                           نماذج السجلات المعدمة
+                           @lang('main.List of Disposed Documents') 
                         </a>
                         <a href="{{ route('typicalForm.index') }}"class="dropdown-item">
-                             نموذج إستلام وثائق/نماذج
+                             @lang('main.Document receipt form') 
                            
                         </a>
 
@@ -153,15 +153,20 @@
                 <div class="dropdown">
                     <div style='color:white;' class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-file-alt" style='margin:4px'></i>
-                        التصحيحية الوقائية</div>
+                        @php
+                           $string = trans('main.Corrective and preventive actions and cases of non-conformity1');
+                            $split_string = wordwrap($string, 30, "\n");
+                        @endphp
+                        {!! nl2br(e($split_string)) !!}
+                       </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 '>
-                        <a class="dropdown-item" href="{{ route('corrctivePreventiveActionsSOP.index') }}">اجراءالتصحيحية الوقائية</a>
-                        <a class="dropdown-item" href="{{ route('corrctivePreventiveActions.index') }}">طلب اجراء تصحيحي قائي</a>
-                        <a class="dropdown-item" href="{{ route('Non_conformities.index') }}">حالات عدم المطابقة</a>
-                        <a class="dropdown-item" href="{{ route('nonConformanceReport.index') }}">سجل متابعة تقارير عدم المطابقة</a>
-                        <a class="dropdown-item" href="{{ route('followUpRecord.index') }}">سجل متابعة طلبات الاجراءات التصحيحية </a>
-                        <a class="dropdown-item" href="{{ route('reportNonConformanceCases.index') }}">تقرير عدم المطابقةوالاجراءات التصحيحية</a>
+                        <a class="dropdown-item" href="{{ route('corrctivePreventiveActionsSOP.index') }}">@lang('main.Corrective and preventive actions and cases of non-conformity')</a>
+                        <a class="dropdown-item" href="{{ route('corrctivePreventiveActions.index') }}">@lang('main.CAR/PAR')</a>
+                        <a class="dropdown-item" href="{{ route('Non_conformities.index') }}">@lang('main.NCR')</a>
+                        <a class="dropdown-item" href="{{ route('nonConformanceReport.index') }}">@lang('main.Record follow-up reports of non-conformance')</a>
+                        <a class="dropdown-item" href="{{ route('followUpRecord.index') }}">@lang('main.Follow-up record of corrective/preventive action requests') </a>
+                        <a class="dropdown-item" href="{{ route('reportNonConformanceCases.index') }}">@lang('main.Report cases of non-conformity and corrective and preventive actions')</a>
 
 
 
@@ -179,15 +184,15 @@
                 <div class="dropdown">
                     <div style='color:white;' class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-sitemap" style='margin:4px'></i>
-                        فهم المنظمة وسياقها
+                        @lang('main.Organization Context1')
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 '>
-                        <a class="dropdown-item" href="{{ route('understandingOrganizationSOP.index') }}">اجراء فهم المنظمة وسياقها</a>
-                        <a class="dropdown-item" href="{{ route('externalCases.index') }}">استمارة قضايا خارجية</a>
-                        <a class="dropdown-item" href="{{ route('internalCases.index') }}">استمارة قضايا داخلية</a>
-                        <a class="dropdown-item" href="{{ route('interestedParties.index') }}">استمارة الاطراف المهتمة</a>
-                        <a class="dropdown-item" href="{{ route('swot.index') }}">تحليل(SWOT) </a>
+                        <a class="dropdown-item" href="{{ route('understandingOrganizationSOP.index') }}">@lang('main.Organization Context')</a>
+                        <a class="dropdown-item" href="{{ route('externalCases.index') }}">@lang('main.external Issue Form')</a>
+                        <a class="dropdown-item" href="{{ route('internalCases.index') }}">@lang('main.Internal Issue Form')</a>
+                        <a class="dropdown-item" href="{{ route('interestedParties.index') }}">@lang('main.Interested Parties Form')</a>
+                        <a class="dropdown-item" href="{{ route('swot.index') }}">@lang('main.SWOT analysis') </a>
 
 
 
@@ -210,16 +215,21 @@
                 <div class="dropdown">
                     <div style='color:white;' class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-comments " style='margin:4px'></i>
-                        قياس رضا العميل
+                        @php
+                        $string2 = trans('main.Measuring customer satisfaction1');
+                         $split_string2 = wordwrap($string2, 20, "\n");
+                     @endphp
+                     {!! nl2br(e($split_string2)) !!}
+                        
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 '>
-                        <a class="dropdown-item" href="{{ route('complaintsWorkSOP.index') }}">اجراءعمل الشكاوي وقياس رضا العميل</a>
-                        <a class="dropdown-item" href="{{ route('customers.index') }}">العملاء</a>
-                        <a class="dropdown-item" href="{{ route('questionnaireForms.index') }}">نموذج استبيان عن الدورة و المدرب</a>
-                        <a class="dropdown-item" href="{{ route('customerComplaints.index') }}">متابعة شكاوي العميل</a>
-                        <a class="dropdown-item" href="{{ route('customerSatisfactions.index') }}">قياس رضا العملاء</a>
-                        <a class="dropdown-item" href="{{ route('complaintStudies.index') }}">تقرير دراسة شكوي العميل</a>
+                        <a class="dropdown-item" href="{{ route('complaintsWorkSOP.index') }}">@lang('main.Measuring customer satisfaction')</a>
+                        <a class="dropdown-item" href="{{ route('customers.index') }}">@lang('main.Customers')</a>
+                        <a class="dropdown-item" href="{{ route('questionnaireForms.index') }}">@lang('main.Questionnaire form for the course and trainer')</a>
+                        <a class="dropdown-item" href="{{ route('customerComplaints.index') }}">@lang('main.Follow up on a customer complaint')</a>
+                        <a class="dropdown-item" href="{{ route('customerSatisfactions.index') }}">@lang('main.customer satisfaction')</a>
+                        <a class="dropdown-item" href="{{ route('complaintStudies.index') }}">@lang('main.Customer complaint report')</a>
 
 
                     </div>
@@ -233,12 +243,12 @@
             <h5 class="card-title">
                 <div class="dropdown">
                     <div style='color:white;' class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="	fas fa-retweet" style='margin:4px'></i>التحكم في التغيير
+                        <i class="	fas fa-retweet" style='margin:4px'></i>@lang('main.Change control1')
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 '>
-                        <a class="dropdown-item" href="{{ route('changeControlSOP.index') }}">اجراء التحكم في التغيير</a>
-                        <a class="dropdown-item" href="{{ route('changeControlRequests.index') }}">نموذج طلب التحكم في التغيير</a>
+                        <a class="dropdown-item" href="{{ route('changeControlSOP.index') }}">@lang('main.Change control')</a>
+                        <a class="dropdown-item" href="{{ route('changeControlRequests.index') }}">@lang('main.Change Control Request ')</a>
 
 
 
@@ -254,17 +264,17 @@
                 <div class="dropdown">
                     <div style='color:white;' class="btn  dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="	fas fa-sync-alt" style='margin:4px'></i>
-                        التحسين المستمر
+                        @lang('main.Improvement1')
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style='  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 '>
-                        <a class="dropdown-item" href="{{ route('ContinuousImprovementSOP.index') }}">اجراء التحسين المستمر</a>
-                        <a class="dropdown-item" href="{{ route('contractStats.index') }}">احصائيات التعاقد</a>
-                        <a class="dropdown-item" href="{{ route('trainingStats.index') }}">احصائيات التدريب</a>
-                        <a class="dropdown-item" href="{{ route('nonConformanceStats.index') }}">احصائيات حالات عدم المطابقة</a>
-                        <a class="dropdown-item" href="{{ route('followUpRecordImprovements.index') }}">سجل متابعة اعمال التحسين المستمر</a>
-                        <a class="dropdown-item" href="{{ route('dataCollectionReports.index') }}">تقرير جمع وتحليل البيانات</a>
-                        <a class="dropdown-item" href="{{ route('recordAnalysis.index') }}">سجل تحليل لشكاوي العملاء</a>
+                        <a class="dropdown-item" href="{{ route('ContinuousImprovementSOP.index') }}">@lang('main.Improvement')</a>
+                        <a class="dropdown-item" href="{{ route('contractStats.index') }}">@lang('main.contract statistics')</a>
+                        <a class="dropdown-item" href="{{ route('trainingStats.index') }}">@lang('main.Training statistics')</a>
+                        <a class="dropdown-item" href="{{ route('nonConformanceStats.index') }}">@lang('main.Nonconformance statistics')</a>
+                        <a class="dropdown-item" href="{{ route('followUpRecordImprovements.index') }}">@lang('main.Follow-up record of improvement and development work')</a>
+                        <a class="dropdown-item" href="{{ route('dataCollectionReports.index') }}">@lang('main.Data collection and analysis report')</a>
+                        <a class="dropdown-item" href="{{ route('recordAnalysis.index') }}">@lang('main.Analyze customer complaints')</a>
 
 
                     </div>

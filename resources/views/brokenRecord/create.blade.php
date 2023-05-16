@@ -20,7 +20,7 @@
         <form action="{{ route('brokenRecord.store') }}" method="post" class='col-md-10' style='margin:auto' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>بيان السجلات المعدمة
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.List of Disposed Documents') 
                 </h2>
                 <hr class="w-100">
             </div>

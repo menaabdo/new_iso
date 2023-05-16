@@ -19,7 +19,7 @@
             @method('PUT')
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>سجل متابعة طلبات الإجراءات التصحيحية / الوقائية </h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>@lang('main.Follow-up record of corrective/preventive action requests') </h2>
                 <label class='mt-2'>@lang('main.year')</label>
                 <input style="text-align: center;" type="text" name="year" value="{{$followUpRecord->year}}">
                 <hr class="w-100">

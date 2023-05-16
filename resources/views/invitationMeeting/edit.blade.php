@@ -21,7 +21,7 @@
 
     <div class="container p-4">
         <div style="" class="w-100 text-center my-4">
-            <h2 style=' ;text-shadow: 1px 1px 1px #3ed3ea;margin-right:100px'>دعوة لإجتماع مراجعة الإدارة</h2>
+            <h2 style=' ;text-shadow: 1px 1px 1px #3ed3ea;margin-right:100px'>@lang('main.Invitation to a meeting')</h2>
             <hr class="w-100">
             <div class="form-group row w-10">
                     <h6 for="" class="col-md-12">@lang('main.We inform you of the management review meeting of the quality system')</h6>

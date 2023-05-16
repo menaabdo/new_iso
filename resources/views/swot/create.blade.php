@@ -49,7 +49,7 @@
         <form action="{{ route('swot.store') }}" method="post" style='margin:auto;margin-top:50px;' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2 style="text-shadow: 1px 1px 1px #3ed3ea;">تحليل(SWOT) </h2>
+                <h2 style="text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.SWOT analysis') </h2>
                 <hr class="w-100">
             </div>
             <div class=' row p-3 w-100 text-center mb-3'>

@@ -17,7 +17,7 @@
         <div class="form-group row w-100 text-right">
 
             <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>قائمة المراجعات الداخلية لنظام الجودة </h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.List of Internal Audits') </h2>
                 <hr class="w-100" style="align:center">
             </div>
             <label for="" class="col-md-4 col-form-label ml-1"> @lang('main.date') :</label>

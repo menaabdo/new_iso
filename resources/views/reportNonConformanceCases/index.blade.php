@@ -17,7 +17,7 @@
 
                 <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
-    font-weight: bold;">تقرير حالات عدم المطابقة والإجراءات التصحيحية والوقائية
+    font-weight: bold;">@lang('main.Report cases of non-conformity and corrective and preventive actions')
             </h3>
                 <hr>
             </div>

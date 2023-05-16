@@ -25,7 +25,7 @@
             @method('PUT')
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>إخطار بمراجعة داخلية</h2>
+            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Notify of an internal  audit')</h2>
             <hr class="w-50">
         </div>
             <div class="container-fluid p-2" style="border: 2px solid rgb(250, 90, 15);">

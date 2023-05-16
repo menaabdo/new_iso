@@ -3,13 +3,13 @@
 
 <div class="card">
 <div class="card-body">
-    <h3 style="margin-top:85px;">سجل متابعة تقارير عدم المطابقة</h3>
+    <h3 style="margin-top:85px;">@lang('main.Record follow-up reports of non-conformance')</h3>
     <hr>
     <form action="{{route('nonConformanceReport.update',$nonConformanceReport->id)}}" method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-            <h2>سجل متابعة تقارير عدم المطابقة </h2>
+            <h2>@lang('main.Record follow-up reports of non-conformance') </h2>
             <label>@lang('main.year')</label>
             <input style="text-align: center;" type="text"  name="year" value="{{$nonConformanceReport->year}}">
             <hr class="w-100">

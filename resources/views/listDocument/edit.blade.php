@@ -19,7 +19,7 @@
         @method('PUT')
         {{ csrf_field() }}
       <div style="" class="w-100 text-center my-4">
-        <h2>قائمة رئيسية للوثائق
+        <h2>@lang('main.Main list of documents') 
         </h2>
         <hr class="w-100">
     </div>

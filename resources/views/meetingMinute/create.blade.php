@@ -22,7 +22,7 @@
 
             <div class="container p-4">
                 <div style="" class=" text-center">
-                    <h1 style='text-shadow: 1px 1px 1px #3ed3ea;'>محضر إجتماع مراجعة الإدارة </h1>
+                    <h1 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Minutes of Meeting') </h1>
                     <hr class="w-100">
                 </div>
                 <div class='shadow-lg p-3 col-md-12'>

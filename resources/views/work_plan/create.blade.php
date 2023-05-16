@@ -14,7 +14,7 @@
 <div class="card  ">
     <div class=" row " style='margin-top:5px;margin-right:100px'>
 
-        <h3 style="text-shadow: 1px 1px 1px #3ed3ea;margin-top:85px;" class='mx-3 '>الخطة السنوية للمراجعات الداخلية</h3>
+        <h3 style="text-shadow: 1px 1px 1px #3ed3ea;margin-top:85px;" class='mx-3 '>@lang('main.Annual plan for internal  audit')</h3>
         <hr>
         <form action="{{route('work_plan.store')}}" method="post" enctype="multipart/form-data" id="fo1" class='col-md-12'>
             {{ csrf_field() }}

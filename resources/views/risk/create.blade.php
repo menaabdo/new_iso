@@ -20,7 +20,7 @@
      
     <div class='row card'>
         
-    <h3 style="margin-top:100px;margin-right:250px;text-shadow: 1px 1px 1px #3ed3ea;">سجل حصر وتحديدالاخطار والمخاطر </h3>
+    <h3 style="margin-top:100px;margin-right:250px;text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.Risk Management report') </h3>
         <hr >
         <form action="{{ route('risk.store') }}" method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
@@ -238,7 +238,7 @@
       </div>
 <!-- <div class=" " >
   
-        <h3 style="margin-top:85px;">سجل حصر وتحديدالاخطار والمخاطر </h3>
+        <h3 style="margin-top:85px;">@lang('main.Risk Management report') </h3>
         <hr>
         <form action="{{ route('risk.store') }}" method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}

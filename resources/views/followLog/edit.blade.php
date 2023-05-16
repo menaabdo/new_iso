@@ -22,7 +22,7 @@
             {{ csrf_field() }}
             <div class="container p-4">
                 <div style="" class="w-100 text-center my-4">
-                    <h2>سجل متابعة قرارات @lang('main.review') الإدارة العليا</h2>
+                    <h2>@lang('main.Follow-up record of senior management decisions')</h2>
                     <hr class="w-100" color="black">
                 </div>
 

@@ -16,7 +16,7 @@
                  <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
     font-weight: bold;">
-              @lang('main.Achieving Risk assessment')</h3>
+             @lang('main.Risk assessment1')</h3>
                 <hr>
                 </div>
       <div class="row" style='margin:auto;width:90%'>

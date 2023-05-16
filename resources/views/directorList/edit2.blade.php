@@ -3,13 +3,13 @@
 
 <div class="card">
 <div class="card-body">
-    <h3 style="margin-top:85px;">قائمة أسماء المديرين والأفراد المصرح لهم بإعداد الوثائق</h3>
+    <h3 style="margin-top:85px;">@lang('main.list of managers and individuals authorized to prepare documents')  والأفراد المصرح لهم بإعداد الوثائق</h3>
     <hr>
     <form action="{{route('directorList.update',$directorList->id)}}" method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-            <h2>قائمة أسماء المديرين والأفراد المصرح لهم بإعداد الوثائق</h2>
+            <h2>@lang('main.list of managers and individuals authorized to prepare documents')  والأفراد المصرح لهم بإعداد الوثائق</h2>
             <hr class="w-100">
         </div>
         <div id="mainDiv" style=" margin-right:500px;">

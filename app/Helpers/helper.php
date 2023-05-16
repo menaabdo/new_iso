@@ -7,34 +7,34 @@ function getTypeSop($type)
 {
     switch ($type) {
         case 1:
-            $content = "إجراء أهداف الجوده";
+            $content = trans('main.quality objectives');
             break;
         case 2:
-            $content = "إجراء تقيم المخاطر";
+            $content = trans('main.Risk assessment1');
             break;
         case 3:
-            $content = "إجراء المراجعه الداخليه";
+            $content = trans('main.internal audit1');
             break;
         case 4:
-            $content ="إجراء مراجعه الأدارة";
+            $content =trans('main.Management review1');
             break;
         case 5:
-            $content = "إجراء مراقبة وضبط الوثائق";
+            $content = trans('main.Document control');
             break;
         case 6:
-            $content = "إجراء التصحيحيه والوقائيه";
+            $content = trans('main.Corrective and preventive actions and cases of non-conformity');
             break;
         case 7 :
-            $content = "إجراء فهم المنظمه وسياقها";
+            $content =  trans('main.Organization Context');
             break;
         case 8:
-            $content = "إجراء عمل الشكاوي وقياس رضا العميل";
+            $content =  trans('main.Measuring customer satisfaction');
             break;
         case 9:
-            $content = "إجراء التحكم في التغيير";
+            $content = trans('main.Change control');
             break;
         case 10:
-            $content = "إجراء التحسين المستمر";
+            $content = trans('main.Improvement');
             break;
         default:
             $content  = '';

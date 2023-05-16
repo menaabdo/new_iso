@@ -20,7 +20,7 @@
         <form action="{{route('interestedParties.store')}}" method="post" style='margin:auto;margin-top:85px;width:70%' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2 style="text-shadow: 1px 1px 1px #3ed3ea;"> استمارة الأطراف المهتمة</h2>
+                <h2 style="text-shadow: 1px 1px 1px #3ed3ea;"> @lang('main.Interested Parties Form')</h2>
             </div>
             <div class='shadow-lg p-3'>
                 <label class="form-label pr-5">@lang('main.Company Logo')</label>

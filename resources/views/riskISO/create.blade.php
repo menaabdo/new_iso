@@ -397,7 +397,7 @@ td{
         <div class="row">
             <div class="col-lg-10 col-md-10" style='margin:auto'>
             <h3 style="margin-top:30px;color:#2a415b;padding:10px;color: #2a415b;
-    text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.Achieving Risk assessment') </h3>
+    text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.Risk assessment1')</h3>
     <hr style='background-color:#3ed3ea'>
    
                 <div class="account-sign-in back">

@@ -24,7 +24,7 @@
     {{ csrf_field() }}
     <div class="container p-4">
         <div style="" class=" text-center">
-            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>محضر إجتماع مراجعة الإدارة </h2>
+            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Minutes of Meeting') </h2>
               <hr class="w-100">
         </div>
         <div class='shadow-lg p-3 col-md-12'>

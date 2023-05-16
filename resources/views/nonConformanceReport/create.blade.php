@@ -18,7 +18,7 @@
         <form action="{{route('nonConformanceReport.store')}}" method="post" class='col-md-9 w-100' style='margin:auto;margin-top:80px' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>سجل متابعة تقارير عدم المطابقة </h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Record follow-up reports of non-conformance') </h2>
                 <label>@lang('main.year')</label>
                 <input style="text-align: center;" class='form-control' type="text" name="year">
                 <hr class="w-100">

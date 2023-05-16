@@ -5,13 +5,13 @@
 
 <div class="card">
 <div class="card-body">
-    <h3 style="margin-top:85px;">سجل متابعة أعمال التحسين والتطوير</h3>
+    <h3 style="margin-top:85px;">@lang('main.Follow-up record of improvement and development work')</h3>
     <hr>
     <form action="{{route('followUpRecordImprovements.update',$followUpRecordImprovement->id)}}" method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT') 
               {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-            <h2> سجل متابعة أعمال التحسين والتطوير</h2>
+            <h2> @lang('main.Follow-up record of improvement and development work')</h2>
         </div>
         <hr class="w-100">
         <div class="form-group row" style="text-align: center;">

@@ -22,7 +22,7 @@
             @method('PUT') 
                   {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2> سجل تحليل لشكاوي العملاء</h2>
+                <h2> @lang('main.Analyze customer complaints')</h2>
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3 '>

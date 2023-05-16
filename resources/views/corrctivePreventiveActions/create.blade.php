@@ -19,7 +19,7 @@
         <form action="{{route('corrctivePreventiveActions.store')}}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4" style='margin:auto;'>
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>طلب إجراء تصحيحي / وقائي</h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.CAR/PAR')</h2>
                 <input style="text-align: center;margin:auto" class='form-control col-md-6' type="text" name="number">
                 <hr class="w-100">
             </div>
