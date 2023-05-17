@@ -16,19 +16,22 @@
 
     <h3 style="margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">متابعة نتائج المراجعة الداخلية</h3>
     <hr>
-    <form action="{{ route('interior.update', $interior->id) }}" method="post" enctype="multipart/form-data" class='col-md-10' style='margin:auto' id="fo1">
+    <form action="{{ route('interior.update', $interior->id) }}" method="post" enctype="multipart/form-data" class='col-md-12' style='margin:auto' id="fo1">
         @method('PUT')
         {{ csrf_field() }}
 
 
         <div class="form-group row text-right">
-            <label for="" class="col-1 col-form-label"> ادارة :</label>
+            <label for="" class="col-3 col-form-label"> ادارة :</label>
             <div class="col-4">
                 <input type="text" class="form-control" placeholder="ادارة  ......" name="management" value="{{ $interior->management }}">
             </div>
         </div>
         <!-- table -->
+    
         <div class="form-group row text-right mt-5 ">
+        <div style="overflow-x:auto;">
+ 
             <table class="table table-bordered  text-center col-md-11" style="grid-auto-flow: column;justify-content: center; align-content: center;margin:auto">
 
 
@@ -215,6 +218,7 @@
                 </tbody>
             </table>
         </div>
+         </div>
         <!-- end table -->
 
         <!-- </section>
@@ -228,16 +232,18 @@
             </div>
         </div>
         <div class="form-group row w-100 text-right">
-            <label for="" class="col-1 col-form-label"> الاسم :</label>
+            <label for="" class="col-2 col-form-label"> الاسم :</label>
             <div class="col-4">
                 <input type="text" class="form-control" placeholder="الاسم  ......" name="name" value="{{ $interior->name }}">
             </div>
-            <label for="" class="col-1 col-form-label"> التاريخ :</label>
+            <label for="" class="col-2 col-form-label"> التاريخ :</label>
             <div class="col-4">
                 <input type="date" class="form-control" name="date" value="{{ $interior->date }}">
             </div>
         </div>
         @endif
+        <div style="overflow-x:auto;">
+ 
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -288,7 +294,7 @@
                 </tr>
             </thead>
         </table>
-
+        </div>
         @if ($interior->status == 'pending' && Auth::user()->hasRole('Employee'))
         <div class="form-group">
             <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل

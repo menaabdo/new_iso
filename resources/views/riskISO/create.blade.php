@@ -384,6 +384,13 @@
 td{
     text-align:center;
 }
+@media only screen and (max-width: 600px) {
+
+    
+.form__label {
+    top:0
+}
+}
     </style>
 
 <!-- Main content -->

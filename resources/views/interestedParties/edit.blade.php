@@ -43,8 +43,8 @@
           
         </div>
         <hr class="w-100">
-        <div class="form-group row w-100 text-right" style="text-align:center ;">
-            <table class="table">
+        <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+                <table class="table">
                 <tr style="background-color:#001635 ;color:white; text-align:center;">
                     @if ($interestedPartie->status == 'pending' && Auth::user()->hasRole('Employee'))
                     <th>م</th>
@@ -190,6 +190,8 @@
             </thead>
         </table>
         <hr class="w-100">
+        <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
         <table class="table">
             <thead>
                 <tr>
@@ -237,6 +239,7 @@
                   </tr>
             </thead>
         </table>
+        </div>
         @if ($interestedPartie->status == 'pending' && Auth::user()->hasRole('Employee'))
         <div class="form-group">
             <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"

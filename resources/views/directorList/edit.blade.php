@@ -159,7 +159,7 @@
 
             <div class=" form-group  text-center">
                 <h2 for=""> اعتماد المدير العام :</h2>
-                <input type="text" class=" col-6 col-form-label" name="manager_name" value="{{ $directorList->manager_name }}">
+                <input type="text" class=" col-6 form-control shadow-lg" style='margin:auto' name="manager_name" value="{{ $directorList->manager_name }}">
             </div>
         @endif
             <hr class="w-100">

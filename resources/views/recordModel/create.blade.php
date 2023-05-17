@@ -15,7 +15,7 @@
 <div class="card">
     <div class="card-body row" style='margin:auto;margin-top:80px'>
 
-        <form action="{{route('recordModel.store')}}" class='col-md-9' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
+        <form action="{{route('recordModel.store')}}" class='' style='width:95%' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
                 <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>سجل حصر النماذج المستخدمة</h2>
@@ -34,6 +34,7 @@
             </div>
 
             <div class="form-group row w-100 text-right" style="text-align:center;">
+            <div style="overflow-x:auto;">
                 <table class="table-bordered ">
                     <tr style="background-color:#001635;color:white;text-align:center;">
                         <th scope="col" rowspan="2">م</th>
@@ -68,6 +69,7 @@
                         </td>
                     </tr>
                 </table>
+                </div>
             </div>
             <table class="table">
                 <thead>
@@ -97,15 +99,15 @@
                             <div class="" style="text-align:center ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الاسم: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الاسم: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_1">
                                 </div>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="job_1">
                                 </div>
                             </div>
@@ -115,15 +117,15 @@
                             <div class="" style="text-align:center ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الاسم: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الاسم: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_2">
                                 </div>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="job_2">
                                 </div>
                             </div>
@@ -239,7 +241,7 @@
         th,
         td,
         tr {
-            border: 1px solid;
+            border: 1px solid silver;
             /* border-bottom: 2px solid black;
         border-top: 2px solid black; */
         }

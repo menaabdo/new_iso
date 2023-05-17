@@ -10,14 +10,18 @@
     input {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
-
+    @media only screen and (max-width: 900px) {
+    .card-body{
+        width:90%;
+    }
+    }
 </style>
 
 
 <div class="card">
 <div class="card-body row" style='margin:auto;margin-top:80px'>
    
-    <form action="{{route('recordCanceledDocument.update',$recordCanceledDocument->id)}}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
+    <form action="{{route('recordCanceledDocument.update',$recordCanceledDocument->id)}}" class='col-md-10'  method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
       <div style="" class="w-100 text-center my-4">
@@ -44,7 +48,7 @@
        
      </div>
   
-    <div class="form-group row w-100 text-right" style="text-align:center;">
+    <div class="form-group row w-100 text-right" style="text-align:center;;overflow-x:auto">
         <table class="table">
             <tr style='font-size:14px;background-color:#001635;color:white;text-align:center;'>
                 

@@ -16,6 +16,8 @@
 </style>
 
 <div class="card">
+<div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+
     <div class="card-body row" style='margin:auto;margin-top:80px'>
 
 
@@ -263,6 +265,8 @@
                 @endif
             </table>
             <hr class="w-100">
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+
             <table class="table">
                 <thead>
                     <tr>
@@ -310,6 +314,7 @@
                     </tr>
                 </thead>
             </table>
+             </div>
             <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">
@@ -317,7 +322,7 @@
                     </div>   
         </form>
     </div>
-
+    </div>
     <script>
         function appendRow(num) {
             $new_number = parseInt(num) + 1;

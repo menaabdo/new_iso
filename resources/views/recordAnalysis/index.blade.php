@@ -18,7 +18,7 @@
                 <div class="row" style='margin:auto;width:90%'>
 
            
-              <a  href="{{ route('recordAnalysis.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <a  href="{{ route('recordAnalysis.create') }}"  class="btn col-md-12 mr-1" style=" ">
               <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
            
@@ -29,6 +29,8 @@
 <div class="card-body">
                 <!-- /.card-header -->
                 <div class="card-body">
+                <div class="card-body" style='overflow-x:auto'>
+               
                   <table id="example1" class="table table-bordered table-striped" >
                     <thead style='color:  white; 
     background-color: #001635;text-align:center'>

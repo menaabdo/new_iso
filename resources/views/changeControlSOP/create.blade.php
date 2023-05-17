@@ -352,7 +352,7 @@
     .account-sign-in {
       margin-right: 0;
       margin-bottom: 40px;
-      padding: 20px 15px;
+      /* padding: 20px 15px; */
     }
     .account-sign-in form .password-info {
       -webkit-box-orient: vertical;
@@ -473,7 +473,7 @@ td{
                        
         <hr style="border: 5px; margin: 50px ;">
 
-        <section style="width: 650px;margin-top: 200px;;" class=" my-4  p-4 m-auto">
+        <section style="margin-top: 200px;;" class=" my-4  p-4 m-auto">
             <div class="form-group row ">
                 <label for="" class="col-sm-2 col-form-label">اسم الشركه</label>
                 <div class="col-sm-10">
@@ -489,7 +489,7 @@ td{
         </section>
         <hr style="border: 5px; margin: 50px ;">
 
-        <section style="width: 650px;margin-top: 200px;" class=" my-4  p-4 m-auto">
+        <section style=";margin-top: 200px;" class=" my-4  p-4 m-auto">
             <div class="form-group row ">
                 <label for="" class="col-sm-2 col-form-label">رقم النسخه</label>
                 <div class="col-sm-10">
@@ -577,6 +577,8 @@ td{
         </table>
 
         <hr style="border: 5px; margin: 50px ;">
+        <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
         <table style="width: 550px;justify-content: center;align-items: center;"
             class="table table-bordered my-4   m-auto">
             <thead>
@@ -688,8 +690,9 @@ td{
 
             </tbody>
         </table>
+          </div>
         <hr style="border: 5px; margin: 50px ;">
-        <section class="row" style="margin-right: 100px;">
+        <section class="row" style="">
             <h2>الرسم التوضيحي للاجراء :</h2>
             <div class="input-group my-3  mx-3">
                 <label class="input-group-text" for="inputGroupFile01">اختيار صوره</label>
@@ -701,7 +704,7 @@ td{
         </section>
         <br><br><br><br><br><br><br>
         <section>
-            <div class="row" style="margin: 100px;text-align: start;">
+            <div class="row" style="text-align: start;">
                 <p>نموذج تسلسل الاجراء هو عرض بياني لخريطة عمليات لبيانات مجموعة الاجراءات الخاصة بكل ادراة من الاقسام
                     والعمليات المرتبطة بها لكل مجموعة اجراءات اهداف وسياسات خاصة بها كما انها مزودة بكيفية سير العمل
                     وباجراءات مفصلة لذلك.</p>
@@ -868,6 +871,8 @@ td{
             <div class="input-group my-3  mx-3">
                 <label class="row"> النماذج المستخدمه :</label>
             </div>
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -925,7 +930,7 @@ td{
                     </tr>
                 </tbody>
             </table>
-
+              </div>
             <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
         </section>
 

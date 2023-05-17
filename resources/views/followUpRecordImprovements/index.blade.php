@@ -17,7 +17,7 @@
           </div>
                 <div class="row" style='margin:auto;width:90%'>
 
-              <a  href="{{ route('followUpRecordImprovements.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <a  href="{{ route('followUpRecordImprovements.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
            
@@ -27,7 +27,7 @@
               <div class="card">
 <div class="card-body">
                 <!-- /.card-header -->
-                <div class="card-body">
+                <div class="card-body" style='overflow-x:auto'>
                   <table id="example1" class="table table-bordered table-striped" >
                     <thead style='color:  white; 
     background-color: #001635;text-align:center'>
@@ -98,7 +98,7 @@
                              @elseif($followUpRecordImprovements->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin') || $followUpRecordImprovements->status == 'pending' && Auth::user()->hasRole('SuperAdmin')
                              || $followUpRecordImprovements->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin'))
                             <td style="font-size:15px">
-                              <form id="delete-form-{{ $followUpRecordImprovements->id }}"
+                              <form id="delete-form-{{ $followUpRecordImprovements->id }}" class='d-flex justify-content-center'
                                   action="{{ route('followUpRecordImprovements.destroy', $followUpRecordImprovements->id) }}" method="post">
                                       <a href="{{ route('followUpRecordImprovements.edit', $followUpRecordImprovements->id) }}"
                                           class="btn btn-lg  

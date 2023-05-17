@@ -26,27 +26,27 @@
             </div>
             <div class=" ">
                 <div class="row mt-2">
-                    <label for="" class="col-2 col-form-label  text-left">الفترة من يوم :</label>
+                    <label for="" class="col-md-2 col-form-label  text-left">الفترة من يوم :</label>
 
                     <input type="text" class="form-control shadow-lg col-6" name="day_from">
                 </div>
                 <div class="row mt-2">
-                    <label for="" class="col-2 col-form-label text-left">تاريخ :</label>
+                    <label for="" class="col-md-2 col-form-label text-left">تاريخ :</label>
 
                     <input type="date" class="form-control shadow-lg  col-6" name="date_1">
                 </div>
                 <div class="row mt-2">
-                    <label for="" class="col-2  col-form-label text-left">إلى يوم :</label>
+                    <label for="" class="col-md-2  col-form-label text-left">إلى يوم :</label>
 
                     <input type="text" class="form-control shadow-lg col-6" name="day_to">
                 </div>
                 <div class="row mt-2">
-                    <label for="" class="col-2 col-form-label text-left">تاريخ :</label>
+                    <label for="" class="col-md-2 col-form-label text-left">تاريخ :</label>
 
                     <input type="date" class="form-control shadow-lg col-6" name="date_2">
                 </div>
                 <div class='row mt-2'>
-                    <label class="col-2 col-form-label text-left">CO LOGO</label>
+                    <label class="col-md-2 col-form-label text-left">CO LOGO</label>
                     <div class=''>
                         <input type="file" id="img" class='form-control shadow-lg ' name="logo" accept="image/*">
                     </div>
@@ -104,6 +104,7 @@
 
                     <hr class="w-100">
                 </div>
+                <div style='overflow:auto'>
                 <table class="table">
                     <thead>
                         <tr>
@@ -151,7 +152,7 @@
                         </tr>
                     </thead>
                 </table>
-
+                 </div>
                 <div class='row mt-3'>
                     <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
                         <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>

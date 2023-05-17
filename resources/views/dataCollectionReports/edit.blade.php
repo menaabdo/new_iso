@@ -15,7 +15,7 @@
 
 </style>
 <div class="card">
-    <div class="card-body row" style='margin:auto;margin-top:80px'>
+    <div class="card-body row" style=';margin-top:80px'>
 
        
     <form action="{{route('dataCollectionReports.update',$dataCollectionReport->id)}}" method="post" class='col-md-9
@@ -94,6 +94,8 @@
         </div>
         @endif
         <hr class="w-100">
+        <div  style='overflow-x:auto'>
+               
         <table class="table">
             <thead>
                 <tr>
@@ -141,6 +143,7 @@
                   </tr>
             </thead>
         </table>
+           </div>
         @if ($dataCollectionReport->status == 'pending' && Auth::user()->hasRole('Employee'))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"

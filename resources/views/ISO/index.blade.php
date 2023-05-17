@@ -9,6 +9,9 @@
         transform: scale(1.1);
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     }
+    @media only screen and (max-width: 600px) {
+    tr{font-size:15px !important;}
+    }
     </style>
 
 <section class="content" style='margin:auto;'>
@@ -33,6 +36,8 @@
 <div class="card-body">
                             <!-- /.card-header -->
                             <div class="card-body">
+                            <div style="overflow-x:auto;">
+ 
                                 <table id="example1" class="table  table-striped shadow-lg" style=''>
                                     <thead>
                                         <tr style='background-color: #001635;color:white;text-align:center'>
@@ -149,6 +154,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
                         </div>
                         <!-- /.card-body -->
                     </div>

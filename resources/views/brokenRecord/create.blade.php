@@ -15,7 +15,7 @@
 </style>
 
 <div class="card">
-    <div class="card-body row" style='margin:auto;margin-top:80px'>
+    <div class="card-body row" style=';margin-top:80px'>
 
         <form action="{{ route('brokenRecord.store') }}" method="post" class='col-md-10' style='margin:auto' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
@@ -30,7 +30,8 @@
                 <input class="col-md-6 form-control" type="file" id="img" name="logo" accept="image/*">
             </div>
             <div class="form-group row w-100 text-center" style="text-align:center ;">
-                <table class="table">
+            <div class="card-body" style='overflow-x:auto'>    
+            <table class="table">
                     <tr style="background-color: #001635;color:white;text-align:center">
 
                         <th scope="col" rowspan="2">م</th>
@@ -89,7 +90,7 @@
                     </tr>
                 </thead>
             </table>
-
+             </div>
             <table class="table">
                 <thead>
                     <tr>

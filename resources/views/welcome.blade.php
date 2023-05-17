@@ -4,6 +4,15 @@
     a {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
+    @media only screen and (max-width: 600px) {
+        .card-body{
+            width:80% !important;
+        } 
+        .card{
+            height:1100px !important;
+        }
+    }
+
 
 </style>
 <div class='card' style='text-align:center ; height:500px; margin-top:50px '>

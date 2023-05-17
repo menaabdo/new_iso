@@ -9,6 +9,11 @@
     input {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
+    @media only screen and (max-width: 600px) {
+    form{
+        width:80%;
+    }
+    }
 
 </style>
 
@@ -16,7 +21,7 @@
 <div class="card">
 <div class="card-body row" style='margin:auto;margin-top:80px'>
    
-    <form action="{{route('recordModel.update',$recordModel->id)}}" class='col-md-9' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
+    <form action="{{route('recordModel.update',$recordModel->id)}}" class='' style='' method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
       <div style="" class="w-100 text-center my-4">
@@ -50,6 +55,7 @@
         </div>
   
     <div class="form-group row w-100 text-right" style="text-align:center;">
+    <div style="overflow-x:auto;">
         <table class="table">
         <tr style="background-color:#001635;color:white;text-align:center;">
                         @if ($recordModel->status == 'pending' && Auth::user()->hasRole('Employee'))
@@ -162,6 +168,7 @@
             </tr>
             @endif
         </table>
+        </div>
     </div>
     <table class="table">
         <thead>
@@ -284,15 +291,15 @@
                     <div class="" style="text-align:center ;">
                         <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
                     </div>
-                    <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الاسم:       -</label>
-                        <div class="col-6">
+                    <div class="form-group row w-10 ">
+                        <label for="" class="col-md-3 col-form-label">الاسم:       -</label>
+                        <div class="col-md-6">
                             <input type="text" class="form-control" placeholder="  ......" name="name_1"  value="{{ $recordModel->name_1 }}">
                         </div>
                     </div>
-                    <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الوظيفة:       -</label>
-                        <div class="col-6">
+                    <div class="form-group row w-10 ">
+                        <label for="" class="col-md-3 col-form-label">الوظيفة:       -</label>
+                        <div class="col-md-6">
                             <input type="text" class="form-control" placeholder="  ......" name="job_1"  value="{{ $recordModel->job_1 }}">
                         </div>
                     </div>
@@ -302,15 +309,15 @@
                     <div class="" style="text-align:center ;">
                         <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
                     </div>
-                    <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الاسم:       -</label>
-                        <div class="col-6">
+                    <div class="form-group row w-10 ">
+                        <label for="" class="col-md-3 col-form-label">الاسم:       -</label>
+                        <div class="col-md-6">
                             <input type="text" class="form-control" placeholder="  ......" name="name_2"  value="{{ $recordModel->name_2 }}">
                         </div>
                     </div>
-                    <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الوظيفة:       -</label>
-                        <div class="col-6">
+                    <div class="form-group row w-10 ">
+                        <label for="" class="col-md-3 col-form-label">الوظيفة:       -</label>
+                        <div class="col-md-6">
                             <input type="text" class="form-control" placeholder="  ......" name="job_2"  value="{{ $recordModel->job_2 }}">
                         </div>
                     </div>

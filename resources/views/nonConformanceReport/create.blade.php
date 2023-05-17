@@ -10,12 +10,17 @@
         padding: 2px;
         text-align: right;
     }
-
+    @media only screen and (max-width: 440px) {
+    form{
+        width:70% !important;
+        margin:0 !important;
+    }
+    }
 </style>
 <div class="card">
     <div class="card-body" style='margin:auto'>
 
-        <form action="{{route('nonConformanceReport.store')}}" method="post" class='col-md-9 w-100' style='margin:auto;margin-top:80px' enctype="multipart/form-data" id="fo1">
+        <form action="{{route('nonConformanceReport.store')}}" method="post" class='col-md-9 ' style='margin:auto;margin-top:80px' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
                 <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>سجل متابعة تقارير عدم المطابقة </h2>
@@ -34,7 +39,9 @@
             </div>
             <hr class="w-100">
 
-            <div style="overflow-x:auto;">
+            <div class="form-group row w-100 text-right" style="text-align:center ;">
+                <div style="overflow-x:auto;margin:auto" class='col-md-9'>
+           
                 <table>
                     <tr style="background-color:#001635;color:white">
                         <th class="col-1 col-form-label">م </th>
@@ -138,13 +145,13 @@
                 </thead>
             </table>
 
-            <div class='row'>
-                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+            <div class='row w-100'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+             <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
             </div>
         </form>
     </div>
-
+    </div>
     <script>
         function appendRow(num) {
             $new_number = parseInt(num) + 1;

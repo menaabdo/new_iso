@@ -25,7 +25,7 @@
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3' >
-                <label class="form-label col-md-2 text-right ">CO LOGO</label>
+                <label class="form-label col-md-2  ">CO LOGO</label>
       
                 <input type="file" id="img" name="logo" accept="image/*">
             </div>

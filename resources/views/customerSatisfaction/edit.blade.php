@@ -11,6 +11,12 @@
     textarea {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
+    @media only screen and (max-width: 400px) {
+     .col-md-10{
+       width:60% !important;
+       margin: 0 !important;
+    }
+    }
 
 </style>
 
@@ -163,6 +169,8 @@
                 </div>
             </div>
             <hr class="w-100">
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+
             <table class="table">
                 <thead>
                     <tr>
@@ -217,6 +225,7 @@
                     </tr>
                 </thead>
             </table>
+                   </div>
             <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">

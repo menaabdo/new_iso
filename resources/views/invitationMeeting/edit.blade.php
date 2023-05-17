@@ -13,7 +13,7 @@
 </style>
 <div class='row card'>
 
-    <div class='row card' style='margin:auto;margin-right:80px'>
+    <div class='row card' style='margin:auto;'>
 
 <form action="{{route('invitationMeeting.update',$invitationMeeting->id)}}" method="post" class='col-md-10' style='margin:auto;margin-top:80px' enctype="multipart/form-data" id="fo1">
     @method('PUT')
@@ -21,7 +21,7 @@
 
     <div class="container p-4">
         <div style="" class="w-100 text-center my-4">
-            <h2 style=' ;text-shadow: 1px 1px 1px #3ed3ea;margin-right:100px'>دعوة لإجتماع مراجعة الإدارة</h2>
+            <h2 style=' ;text-shadow: 1px 1px 1px #3ed3ea;'>دعوة لإجتماع مراجعة الإدارة</h2>
             <hr class="w-100">
             <div class="form-group row w-10">
                     <h6 for="" class="col-md-12">نبلغ سيادتكم بإجتماع مراجعة الإدراة لنظام الجودة </h6>
@@ -68,8 +68,8 @@
             
         </div>
         <hr >
-        <div class="form-group row w-100 text-right">
-                    <h2 for="" class="col-2 col-form-label" style=';text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>أسماء الحضور :</h2>
+        <div class="form-group row w-100 text-center">
+                    <h2 for="" class="col-md-2 col-form-label" style=';text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>أسماء الحضور :</h2>
                 </div>
 
         <div class="form-group row w-100 text-right" style="text-align:center ;">

@@ -21,7 +21,7 @@
                 <div class="row" style='margin:auto;width:90%'>
 
 
-                    <a href="{{ route('internalCases.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+                    <a href="{{ route('internalCases.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
                      
@@ -32,6 +32,8 @@
                                     <div class="card-body">
                                         <!-- /.card-header -->
                                         <div class="card-body">
+                                        <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
                                             <table id="example1" class="table table-bordered table-striped">
                                                 <thead>
                                                     <tr>
@@ -116,7 +118,7 @@
                                                                 ($internalCases->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                                                                 <td style="font-size:15px">
                                                                     <form id="delete-form-{{ $internalCases->id }}"
-                                                                        action="{{ route('internalCases.destroy', $internalCases->id) }}"
+                                                                        action="{{ route('internalCases.destroy', $internalCases->id) }}" class='d-flex justify-content-center'
                                                                         method="post">
 
                                                                         <a href="{{ route('internalCases.edit', $internalCases->id) }}"
@@ -159,6 +161,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                    </div>
                                     </div>
                                     <!-- /.card-body -->
                                 </div>

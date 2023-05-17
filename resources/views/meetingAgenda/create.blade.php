@@ -3,14 +3,12 @@
 @section('content')
 
 <div class="card row">
-<div style='margin:auto'>
-  
-</div>
+
 <div class='row ' >
-<form style='margin:auto' action="{{route('meetingAgenda.store')}}" method="post" class='col-md-9' enctype="multipart/form-data" id="fo1">
+<form style='margin:auto' action="{{route('meetingAgenda.store')}}" method="post" class='col-md-12' enctype="multipart/form-data" id="fo1">
     {{ csrf_field() }}
 
-    <div class="container p-4" style='margin-right:80px'>
+    <div class="container p-4" style=''>
         <div style="" class="w-100 text-center my-4">
             <h2 style=' margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>أجندة إجتماع مراجعة الإدارة</h2>
             <hr class="w-100">

@@ -5,7 +5,11 @@
     .shadow-lg {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
-
+    @media only screen and (max-width: 400px) {
+    .text-right{
+        text-align: right !important;
+    }
+    }
 </style>
 
 <div class="container mt-3 p-3 card row">
@@ -20,9 +24,9 @@
                 <hr class="w-100">
             </div>
            
-            <div class="form-group ">
-                <label for="" class="col-4 col-form-label"> بإدارة :</label>
-                <div class="col-4">
+            <div class="form-group " style='text-align: center;'>
+                <label for="" class="col-4 col-form-label" style='margin:auto'> بإدارة :</label>
+                <div class="col-4"  >
                     <input type="text" class="form-control shadow-lg" name="manage" value="{{ $internalAuditReport->manage }}">
                 </div>
             </div>
@@ -57,17 +61,20 @@
                     </div>
 
                     <div class="form-group row w-100 text-right">
-                        <label for="" class="col-md-4 col-form-label">نوع المراجعة :</label>
-
-                        <label for="" style="text-align:left;" class="col-md-2 col-form-label">مخططة </label>
+                        <label for="" class="col-md-4 col-form-label"  style='margin:auto'>نوع المراجعة :</label>
+                        <div class=" col-form-label pl-2 col-4 d-flex justify-content-center" style='margin:auto;'>
+                      
+                        <label for="" style=";" class="col-md-4 col-form-label">مخططة </label>
                         <div class=" col-form-label pl-2">
                              <input type="radio" style='margin-top:6px' id="planing" class='shadow-lg' name="planing" value="planing"  <?php if ( $internalAuditReport->planing == 'planing') echo 'checked="checked"'; ?>>
                         </div>
-
-
-                        <label for="" style="text-align:left;" class="col-md-3 col-form-label">غير مخططة </label>
+                        </div>
+                        <div class=" col-form-label pl-2 col-4 d-flex justify-content-center" style='margin:auto;'>
+                      
+                        <label for="" style=";" class="col-md-3 col-form-label">غير مخططة </label>
                         <div class=" col-form-label pr-1">
                          <input type="radio" id="not_planing"style='margin-top:6px' name="planing" value="not_planing" class='shadow-lg' <?php if ($internalAuditReport->planing == 'not_planing') echo 'checked="checked"'; ?>>
+                        </div>
                         </div>
                     </div>
 
@@ -87,21 +94,21 @@
                 </div>
 
                 <div class="form-group row w-100 text-right">
-                    <label for="inputPassword" class="col-2 col-form-label"> ب- نقاط عدم المطابقة : (ملخص) </label>
+                    <label for="inputPassword" class="col-5 col-form-label"> ب- نقاط عدم المطابقة : (ملخص) </label>
                     <div class="col-10">
                         <textarea type="text" class="form-control shadow-lg" name="no_strong_point" placeholder="  نقاط عدم المطابقة ......"> {{ $internalAuditReport->no_strong_point }}</textarea>
                     </div>
                 </div>
 
-                <div class="form-group row w-100 text-right">
-                    <label for="inputPassword" class="col-2 col-form-label"> حالات ملاحظات التحسين: </label>
+                <div class="form-group row w-100 ">
+                    <label for="inputPassword" class="col-5 col-form-label"> حالات ملاحظات التحسين: </label>
                     <div class="col-10">
                         <textarea type="text" class="form-control shadow-lg" name="improvement_notes" placeholder=" حالات ملاحظات التحسين ......">{{ $internalAuditReport->improvement_notes }}</textarea>
                     </div>
                 </div>
                 <hr>
-                <div class="form-group row w-100 text-right">
-                    <label for="" class="col-2 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'> نتائج المراجعة :</label>
+                <div class="form-group row w-100 ">
+                    <label for="" class="col-5 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'> نتائج المراجعة :</label>
                 </div>
 
                 <div class="form-group row w-100 text-right">

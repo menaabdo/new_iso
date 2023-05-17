@@ -28,7 +28,9 @@
                 <input type="file" id="img" name="logo" accept="image/*">
             </div>
             <hr class="w-100">
-            <div class="form-group row w-100 text-right" style="text-align:center ;">
+        
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
                 <table class="table">
                     <tr  style="background-color:#001635 ;color:white; text-align:center;">
                         <th>م</th>
@@ -84,6 +86,8 @@
                 </thead>
             </table>
             <hr class="w-100">
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
             <table class="table">
                 <thead>
                     <tr>
@@ -131,6 +135,7 @@
                     </tr>
                 </thead>
             </table>
+            </div>
             <div class='row'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
                     <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>

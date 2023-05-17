@@ -6,37 +6,35 @@
 
 <div class="card">
 <div class="card-body">
-    <h3 style="margin-top:85px;">نموذج إستلام وثائق/نماذج</h3>
+    <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;text-align:center">نموذج إستلام وثائق/نماذج</h3>
     <hr>
     <form action="{{route('typicalForm.update',$typicalForm->id)}}" method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
-      <div style="" class="w-100 text-center my-4">
-        <h2>نموذج إستلام وثائق/نماذج
-        </h2>
-        <hr class="w-100">
-    </div>
-    <div id="mainDiv"  style=" margin-right:500px;">
-        <h4 style=" color:blue;">CO LOGO</h4>
-        <hr width="50%" size="20" color="blue">
-        <img src="{{ asset($typicalForm->logo) }}" height=180px width=210px; />
+        <div class='row mt-4 mb-3'>
+                <label class="form-label col-md-2 ">CO LOGO</label>
+  <img src="{{ asset($typicalForm->logo) }}" height=180px width=210px; />
         <input type="file" id="img" name="logo" accept="image/*">
     </div>
     <div class="form-group row w-100 text-left">
         
-        <div class="col-form-label">
-            <label>إستلمت أنا :</label>
-            <input type="text" class="col-3"  name="name" value="{{ $typicalForm->name }}">
+    <div class="row col-form-label mr-3">
+                    <label class="form-label  ">إستلمت أنا :</label>
+               
+            <input type="text"  class="col-3 form-control"  name="name" value="{{ $typicalForm->name }}">
             <label>الموقع أدناه الوثائق التالية.</label>
             <label>والتي تخص إدارة / </label>
-            <input type="text"  class="col-3"  name="management" value="{{ $typicalForm->management }}">
+            <input type="text"  class="col-3 form-control"   name="management" value="{{ $typicalForm->management }}">
         </div>
     </div>
    
     <div class="form-group row w-100 text-right" style="text-align:center ;">
-        <table class="table">
-            <tr style="background-color:rgb(187, 216, 240)">
-                <th>م</th>
+            <div class="card-body" style='overflow-x:auto'>
+              
+             
+    <table class="table">
+            <tr  style='font-size:14px;background-color:#001635;color:white;text-align:center;'>
+                       <th>م</th>
                 <th>إسم الوثيقة</th>
                 <th>كود الوثيقة</th>
                 <th>عدد النسخ</th>
@@ -84,6 +82,7 @@
             @endif
         </table>
     </div>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -92,13 +91,13 @@
                         <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">المستلم:</label>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-1 col-form-label">الاسم:       -</label>
+                        <label for="" class="col-5 col-form-label">الاسم:       -</label>
                         <div class="col-2">
                             <input type="text" class="form-control" placeholder="  ......" name="name2" value="{{ $typicalForm->name2 }}">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-1 col-form-label">الوظيفة:       -</label>
+                        <label for="" class="col-5 col-form-label">الوظيفة:       -</label>
                         <div class="col-2">
                             <input type="text" class="form-control" placeholder="  ......" name="job" value="{{ $typicalForm->job }}">
                         </div>
@@ -154,9 +153,9 @@
         </thead>
     </table>
     
-          <div class="form-group">
-            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-              class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> تعديل  </button>
+    <div class='row mt-3'>
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                </i> تعديل  </button>
           </div>
         </form>
     </div>
@@ -200,16 +199,15 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+          
         }
         
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+          
         }
     
         #mainDiv {

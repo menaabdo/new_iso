@@ -19,17 +19,17 @@
         @method('PUT')
         {{ csrf_field() }}
       <div style="" class="w-100 text-center my-4">
-        <h2>قائمة رئيسية للوثائق
+        <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>قائمة رئيسية للوثائق
         </h2>
         <hr class="w-100">
     </div>
-    <div>
-        <label  class="col-1">تاريخ</label>
-        <input class="col-2" style="text-align: center;" type="date"  name="date_1"  value="{{ $listDocument->date_1 }}">
+    <div class='row mt-4 mb-3'>
+        <label  class="form-label col-md-2">تاريخ</label>
+        <input class="col-md-6 form-control" style="text-align: center;" type="date"  name="date_1"  value="{{ $listDocument->date_1 }}">
     </div>
-        <div id="mainDiv"  style=" margin-right:500px;">
-            <h4 style=" color:blue;">CO LOGO</h4>
-            <hr width="50%" size="20" color="blue">
+    <div class='row mt-4 mb-3'>
+                <label class="form-label col-md-2 ">CO LOGO</label>
+
             <img src="{{ asset($listDocument->logo) }}" height=180px width=210px; />
             @if ($listDocument->status == 'pending' && Auth::user()->hasRole('Employee'))
 
@@ -45,8 +45,12 @@
             ($listDocument->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
             <input type="file" id="img" name="logo" accept="image/*">
         @endif        </div>
-        <table >
-            <tr style="background-color:rgb(218, 212, 250); text-align:center;">
+        <div class="form-group row w-100 text-center" style="text-align:center ;">
+          
+        <div class='row my-4' style='overflow-x:auto'>
+           
+        <table class='table' style=''>
+            <tr style="background-color: #001635;color:white;text-align:center">
                 @if ($listDocument->status == 'pending' && Auth::user()->hasRole('Employee'))
                                 <th scope="col" rowspan="2">م</th>
                             @endif
@@ -204,7 +208,8 @@
             </tr>
             @endif
         </table>
-
+        </div>
+        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -433,9 +438,10 @@
     @elseif(($listDocument->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
         ($listDocument->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
         ($listDocument->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-        <div class="form-group">
-            <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+        <div class="row">
+        <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+              
+                <i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
                 </i></button>
         </div>
     @endif
@@ -503,9 +509,8 @@
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+          
         }
     
         #mainDiv {

@@ -12,7 +12,7 @@
 
 </style>
 <div class="card  ">
-    <div class=" row " style='margin-top:5px;margin-right:100px'>
+    <div class=" row " style='margin-top:5px;padding:0 50'>
 
         <h3 style="text-shadow: 1px 1px 1px #3ed3ea;margin-top:85px;" class='mx-3 '>الخطة السنوية للمراجعات الداخلية</h3>
         <hr>
@@ -95,6 +95,7 @@
                     </div>
                 </div>
             </div>
+            <div style="text-align:center ;overflow-x: auto;">
             <table class="table table-bordered shadow-lg">
                 <thead>
                     <tr>
@@ -164,13 +165,13 @@
                             </div>
                             <div class="form-group row w-10 ">
                                 <label for="" class="col-md-3 col-form-label">الاسم: -</label>
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_1">
                                 </div>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="job_1">
                                 </div>
                             </div>
@@ -186,9 +187,9 @@
                                     <input type="text" class="form-control shadow-lg" placeholder="  ......" name="name_2">
                                 </div>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الوظيفة</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الوظيفة</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control shadow-lg" placeholder="  ......" name="job_2">
                                 </div>
                             </div>
@@ -198,15 +199,15 @@
                             <div class="" style="text-align:center ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
                             </div>
-                            <div class="form-group row w-10 text-right">
+                            <div class="form-group row w-10 ">
                                 <label for="" class="col-md-3 col-form-label">الاسم</label>
-                                <div class="col-6">
+                                <div class="col-md-6">
                                     <input type="text" class="form-control shadow-lg" placeholder="  ......" name="name_3">
                                 </div>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الوظيفة</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الوظيفة</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control shadow-lg" placeholder="  ......" name="job_3">
                                 </div>
                             </div>
@@ -218,7 +219,7 @@
                 </thead>
             </table>
 
-
+</div>
 
             <table class="table">
                 <thead>

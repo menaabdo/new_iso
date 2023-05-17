@@ -9,6 +9,9 @@
         transform: scale(1.1);
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     }
+    @media only screen and (max-width: 600px) {
+    th{font-size:12px !important;}
+    }
 </style>
 <section class="content row" style='flex-wrap:nowrap;'>
 
@@ -18,7 +21,7 @@
       <hr>
       <div class="row" >
        <div style='justify-content: center;width:100%;margin:auto' class='row'>
-          <a  href="{{ route('internalAudit.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+          <a  href="{{ route('internalAudit.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
                    </div>

@@ -14,10 +14,10 @@
  <section class="content">
       <div class="card">
 <div class="card-body">
-        <h3 style="margin-top:85px;">الاجراءات التصحيحيه والوقائيه</h3>
+        <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;text-align:center">الاجراءات التصحيحيه والوقائيه</h3>
         <hr>
         <div class="row">
-            <a  href="{{ route('corrctivePreventiveActionsSOP.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+            <a  href="{{ route('corrctivePreventiveActionsSOP.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
           <div class="col-12">
@@ -27,6 +27,7 @@
 <div class="card-body">
               <!-- /.card-header -->
               <div class="card-body">
+              <div style="overflow-x:auto;">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
@@ -50,7 +51,7 @@
                             @if (Auth::user()->hasRole('Employee'))
                                 <td>
                                     <form id="delete-form-{{ $iso->id }}"
-                                        action="{{ route('corrctivePreventiveActionsSOP.destroy', $iso->id) }}" method="post">
+                                        action="{{ route('corrctivePreventiveActionsSOP.destroy', $iso->id) }}" method="post"  class='d-flex justify-content-center'>
                                         <a href="{{ route('corrctivePreventiveActionsSOP.edit', $iso->id) }}"
                                             class="btn btn-sm btn-clean
                                             btn-icon mr-2"
@@ -104,7 +105,7 @@
                                  @elseif($iso->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin') || $iso->status == 'pending' && Auth::user()->hasRole('SuperAdmin')
                                  || $iso->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin'))
                                 <td style="font-size:15px">
-                                  <form id="delete-form-{{ $iso->id }}"
+                                  <form id="delete-form-{{ $iso->id }}" class='d-flex justify-content-center'
                                       action="{{ route('corrctivePreventiveActionsSOP.destroy', $iso->id) }}" method="post">
                                      
                                           <a href="{{ route('corrctivePreventiveActionsSOP.edit', $iso->id) }}"
@@ -146,6 +147,7 @@
                     @endforeach
                 </tbody>
                 </table>
+              </div>
               </div>
               </div>
               <!-- /.card-body -->

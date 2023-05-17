@@ -14,7 +14,7 @@
     }
 
 </style>
-<div class="card" style='margin-right:85px'>
+<div class="card" style=''>
     <div class="card-body">
              <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
             <hr>
@@ -24,11 +24,11 @@
                 {{ csrf_field() }}
                 <div class="container-fluid p-4">
                     <div style="" class="w-100 text-center my-4">
-                        <h2>قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h2>
-                        <hr class="w-100">
+                      
                     </div>
                     <div class="container-fluid p-2">
                         <div class="" style="text-align:center ;">
+                        <div style="overflow-x:auto;">
                             <table class="table">
                                 <tr style="background-color: #001635;color:white">
                                     @if ($listInternalAuditor->status == 'pending' && Auth::user()->hasRole('Employee'))
@@ -152,7 +152,7 @@
                                 @endif
                             </table>
                         </div>
-
+                        </div>
                         <table class=" w-100">
                             <thead>
                                 <tr>
@@ -292,29 +292,29 @@
                                         </th>
                                     @endif
                                     @if (Auth::user()->hasRole('SuperAdmin'))
-                                        <th class=" w-90 text-center col-3 ">
+                                        <th class=" w-90 text-center col-md-3 ">
                                             <div class="" style="text-align:center ;">
                                                 <label for="" class="">إعداد</label>
                                             </div>
                                             <div class="" style="text-align:center ;">
                                                 <label for="" class="">مدير الجودة </label>
                                             </div>
-                                            <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">التاريخ : -</label>
-                                                <div class="col-6">
+                                            <div class="form-group row w-10 ">
+                                                <label for="" class="col-md-3 col-form-label">التاريخ : -</label>
+                                                <div class="col-md-6">
                                                     <input type="date" class="form-control" placeholder="  ......"
                                                         name="date_1" value="{{ $listInternalAuditor->date_1 }}">
                                                 </div>
                                             </div>
-                                            <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">التوقيع: -</label>
-                                                <div class="col-6">
+                                            <div class="form-group row w-10 ">
+                                                <label for="" class="col-md-3 col-form-label">التوقيع: -</label>
+                                                <div class="col-md-6">
                                                     <input type="text" class="form-control" placeholder="  ......"
                                                         name="name" value="{{ $listInternalAuditor->name }}">
                                                 </div>
                                             </div>
                                         </th>
-                                        <th class=" w-90 text-center col-3">
+                                        <th class=" w-90 text-center col-md-3">
                                             <div class="" style="text-align:center ;">
                                                 <label for="" class=""
                                                     style="text-align:center;font-size:large;font-weight: bolder;">إعتماد</label>
@@ -324,18 +324,18 @@
                                                     style="text-align:center;font-size:large;font-weight: bolder;">المدير
                                                     العام</label>
                                             </div>
-                                            <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">التاريخ : -</label>
-                                                <div class="col-6">
+                                            <div class="form-group row w-10 ">
+                                                <label for="" class="col-md-3 col-form-label">التاريخ : -</label>
+                                                <div class="col-md-6">
                                                     <input type="date" class="form-control" placeholder="  ......"
                                                         name="date_2" value="{{ $listInternalAuditor->date_2 }}">
                                                 </div>
                                             </div>
 
 
-                                            <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">التوقيع: -</label>
-                                                <div class="col-6">
+                                            <div class="form-group row w-10 ">
+                                                <label for="" class="col-md-3 col-form-label">التوقيع: -</label>
+                                                <div class="col-md-6">
                                                     <input type="text" class="form-control" placeholder="  ......"
                                                         name="manager_name"
                                                         value="{{ $listInternalAuditor->manager_name }}">

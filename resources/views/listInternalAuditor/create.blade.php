@@ -10,7 +10,7 @@
 
 </style>
 
-<div class="card" style='margin-right:85px'>
+<div class="card" style=''>
     <div class="card-body">
         <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
         <hr>
@@ -20,6 +20,7 @@
 
                 <div class="container-fluid p-2">
                     <div class="" style="text-align:center ;">
+                    <div style="overflow-x:auto;">
                         <table class="table table-bordered ">
                             <tr style="background-color: #001635;color:white">
                                 <th class="col-1 col-form-label">م</th>
@@ -46,7 +47,7 @@
                             </tr>
                         </table>
                     </div>
-
+                    </div>
                     <table class=" w-100 mt-5 card">
                         <thead>
                             <tr>
@@ -78,7 +79,7 @@
                                 </th>
                                 @endif
                                 @if (Auth::user()->hasRole('SuperAdmin'))
-                                <th class=" w-90 text-center col-3 ">
+                                <th class=" w-90 text-center col-md-3 ">
 
                                     <div class="" style="text-align:center ;">
                                         <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعداد</label>
@@ -119,9 +120,9 @@
                                     </div>
 
 
-                                    <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-md-3 col-form-label">التوقيع: -</label>
-                                        <div class="col-6">
+                                    <div class="form-group row w-10 ">
+                                        <label for="" class="col-md-3 col-form-label " style='text-align:right'>التوقيع: -</label>
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control shadow-lg" placeholder="  ......" name="manager_name">
                                         </div>
                                     </div>

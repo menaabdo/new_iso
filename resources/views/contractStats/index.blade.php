@@ -16,7 +16,7 @@
 
            
            
-              <a  href="{{ route('contractStats.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <a  href="{{ route('contractStats.create') }}" class="btn col-md-12 mr-1" style=" ">
               <button class='shadow-lg btn  btn-light' style='color:  white; 
     background-color: #001635;border-radius:10px;' id='me'> اضافة جديدة</button></a>
        
@@ -27,6 +27,8 @@
 <div class="card-body">
                 <!-- /.card-header -->
                 <div class="card-body">
+                <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+    
                   <table id="example1" class="table table-bordered table-striped" >
                     <thead style='color:  white; 
     background-color: #001635;text-align:center'>
@@ -42,7 +44,7 @@
                           <tr class="datatable-row datatable-row-even">
                               <td class="datatable-cell" style="font-size:15px "><span><img src="{{asset($contractStats->logo)}}" alt="Image" width="50px"></span></td>
                               <td style="font-size:15px">
-                                  <form id="delete-form-{{ $contractStats->id }}" 
+                                  <form id="delete-form-{{ $contractStats->id }}" class='d-flex justify-content-center'
                                       action="{{ route('contractStats.destroy', $contractStats->id) }}" method="post">
                                       <a href="{{ route('contractStats.edit', $contractStats->id) }}" class="btn btn-lg  
                                               btn-icon " title="@lang('general.edit')" >
@@ -65,6 +67,7 @@
                    @endforeach
                   </tbody>
                   </table>
+                </div>
                 </div>
                 </div>
                 <!-- /.card-body -->

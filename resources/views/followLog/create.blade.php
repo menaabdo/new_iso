@@ -20,41 +20,47 @@
 
         <div class="container p-4">
             <div style="" class="w-100 text-center my-4">
-                <h2>سجل متابعة قرارات مراجعة الإدارة العليا</h2>
-                <hr class="w-100" color="black">
+                <h2 style=' ;text-shadow: 1px 1px 1px #3ed3ea;text-align:center'>سجل متابعة قرارات مراجعة الإدارة العليا</h2>
+                <hr class="w-100" >
             </div>
 
             <div class="form-group row">
-                <div id="mainDiv" style=" margin-right:1000px;">
-                    <h4 style=" color:blue;">CO LOGO</h4>
-                    <hr width="50%" size="20" color="blue">
-                    <input type="file" id="img" name="logo" accept="image/*">
+                <div id="" style=" " class='shadow-lg p-3 w-100'>
+                <label class="form-label pr-5">CO LOGO</label>
+                    <div class=''>
+                    <input type="file" id="img"  class='shadow-lg' name="logo" accept="image/*">
                 </div>
-                <h3 for="" class="col-1 col-form-label">نوع الاجتماع : </h3>
+                </div>
+                </div>
+                <div class=" row  d-flex justify-content-center">
+                <h3 for="" class="col-md-3 col-form-label">نوع الاجتماع : </h3>
+                
                 <div class="col-1 col-form-label">
                     <input type="radio" name="planing" value="planned">
                 </div>
-                <h2 for="" class="col-3 col-form-label" style="text-align:right;">مخطط </h2>
+                
+                <h2 for="" class="col-2 col-form-label" style="text-align:right;">مخطط </h2>
                 <div class="col-1 col-form-label">
                     <input type="radio" name="planing" value="not_planned">
                 </div>
                 <h2 for="" class="col-3 col-form-label" style="text-align:right;">غير مخطط </h2>
-
-                <h2 for="" style="text-align:right;" class="col-4 col-form-label">رقم الأجتماع </h2>
-                <div class="col-3 col-form-label">
-                    <input type="text" name="meeting_num">
+                </div>
+                <div class="form-group row p-3">
+                <h2 for="" style="text-align:right;" class="col-md-2 col-form-label">رقم الأجتماع </h2>
+                <div class="col-md-3 col-form-label">
+                    <input type="text" name="meeting_num" class='form-control shadow-lg'>
                 </div>
 
-                <h2 for="" style="text-align:left;" class="col-3 col-form-label">التاريخ : </h2>
-                <div class="col-1 col-form-label">
-                    <input type="date" name="meetting_date">
+                <h2 for="" style=";" class="col-md-2 col-form-label">التاريخ : </h2>
+                <div class="col-md-3 col-form-label">
+                    <input type="date" name="meetting_date" class='form-control shadow-lg'>
                 </div>
 
-
+                </div>
             </div>
-            <div class="form-group row w-100 text-right" style="text-align:center;">
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow-x:auto">
                 <table class="table">
-                    <tr style="background-color:rgb(235, 252, 160); text-align:center;">
+                    <tr  style="background-color:#233242;color:white">
                         <th scope="col" rowspan="2">م</th>
                         <th scope="col" rowspan="2">الموضوع</th>
                         <th scope="col" rowspan="2">القرار المتخذ</th>
@@ -63,7 +69,7 @@
                         <th scope="col" colspan="2">متابعة التنفيذ</th>
                         <th scope="col" rowspan="2">الملاحظات</th>
                     </tr>
-                    <tr style="background-color:rgb(235, 252, 160); text-align:center;">
+                    <tr style="background-color:#233242;color:white">
                         <th scope="col"> تم</th>
                         <th scope="col">لم يتم</th>
                     </tr>
@@ -156,15 +162,15 @@
                             <div class="" style="text-align:center ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الاسم: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الاسم: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_1">
                                 </div>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="job_1">
                                 </div>
                             </div>
@@ -174,15 +180,15 @@
                             <div class="" style="text-align:center ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">مراجعة:</label>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الاسم: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الاسم: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_2">
                                 </div>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="job_2">
                                 </div>
                             </div>
@@ -192,15 +198,15 @@
                             <div class="" style="text-align:center ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الاسم: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الاسم: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_3">
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                <div class="col-6">
+                                <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="job_3">
                                 </div>
                             </div>
@@ -256,8 +262,9 @@
                     </tr>
                 </thead>
             </table>
-            <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ </button>
+            <div class="row">
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i> حفظ </button>
             </div>
         </div>
 
@@ -312,17 +319,17 @@
         th,
         td,
         tr {
-            border: 1px solid black;
+            border: 1px solid silver;
            
         }
 
         #mainDiv {
             height: 150px;
-            width: 50px;
-            background: #ffffff;
-            border: 1px solid rgb(8, 2, 2);
-            text-align: center;
-            float: left;
+            width: 100%;
+            /* background: #ffffff;
+            /* border: 1px solid rgb(8, 2, 2); */
+            /* text-align: center;
+            float: left; */ */
             display: inline-table;
         }
 

@@ -383,7 +383,19 @@ input,textarea{
 }
 td{
     text-align:center;
+} 
+@media only screen and (max-width: 600px) {
+.row1{
+    width:60% !important;
 }
+.row2{
+    margin-right: 0px !important;
+}
+.row3{
+    margin-right: 30px !important;
+}
+}
+
     </style>
 
     <!-- Content Header (Page header) -->
@@ -409,6 +421,8 @@ td{
             @method('PUT')
             {{ csrf_field() }}
             <input type="hidden" name="type" value="1">
+            <div style="overflow-x:auto;">
+ 
             <table style="width: 850px;" class="table table-bordered my-4   m-auto">
                 <thead>
                     <tr>
@@ -513,17 +527,18 @@ td{
 
                 </tbody>
             </table>
+            </div>
             <hr style="border: 5px; margin: 50px ;">
 
             <section style="width: 650px;margin-top: 200px;ق" class=" my-4  p-4 m-auto">
-                <div class="form-group row ">
+                <div class="form-group row row1 ">
                     <label for="" class="col-sm-2 col-form-label">@lang('main.Company Name')</label>
                     <div class="col-sm-10">
                         <input type="text" name="company_name" value="{{ $iso->company_name }}"
                             class="form-control">
                     </div>
                 </div>
-                <div class="form-group row ">
+                <div class="form-group row row1">
                     <label for="inputPassword" class="col-sm-2 col-form-label">@lang('main.procedure_name')</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="procedure_name"
@@ -534,14 +549,14 @@ td{
             <hr style="border: 5px; margin: 50px ;">
 
             <section style="width: 650px;margin-top: 200px;" class=" my-4  p-4 m-auto">
-                <div class="form-group row ">
+                <div class="form-group row row1">
                     <label for="" class="col-sm-2 col-form-label">@lang('main.version_number')</label>
                     <div class="col-sm-10">
                         <input type="text" name="version_number" value="{{ $iso->version_number }}"
                             class="form-control">
                     </div>
                 </div>
-                <div class="form-group row ">
+                <div class="form-group row row1">
                     <label for="inputPassword" class="col-sm-2 col-form-label">@lang('main.copy_holder')</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="copy_holder" value="{{ $iso->copy_holder }}"
@@ -550,6 +565,8 @@ td{
                 </div>
             </section>
             <hr style="border: 5px; margin: 50px ;">
+            <div style="overflow-x:auto;">
+ 
             <table style="width: 550px;" class="table table-bordered my-4   m-auto">
                 <thead>
                     <tr>
@@ -680,8 +697,10 @@ td{
                 </thead>
 
             </table>
-
+            </div>
             <hr style="border: 5px; margin: 50px ;">
+            <div style="overflow-x:auto;">
+ 
             <table style="width: 550px;justify-content: center;align-items: center;"
                 class="table table-bordered my-4   m-auto">
                 <thead>
@@ -800,8 +819,9 @@ td{
 
                 </tbody>
             </table>
+             </div>
             <hr style="border: 5px; margin: 50px ;">
-            <section class="row" style="margin-right: 100px;">
+            <section class="row row2" style="margin-right: 100px;">
                 <h2>@lang('main.Action illustration:')</h2>
                 <div class="input-group my-3  mx-3">
                     <img src="{{ asset($iso->image_illustration) }}" width="50px" />
@@ -826,7 +846,7 @@ td{
             </section>
         
             <section>
-                <div class="row" style="margin: 100px;text-align: start;">
+                <div class="row row3" style="margin: 100px;text-align: start;">
                     <p>@lang('main.procedure')</p>
                     <h3>  @lang('main.Terms and illustrations')</h3>
                     <table class="table table-bordered my-4">

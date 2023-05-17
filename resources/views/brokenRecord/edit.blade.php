@@ -5,20 +5,20 @@
 
 
 <div class="card">
-    <div class="card-body">
-        <h3 style="margin-top:85px;">بيان السجلات المعدمة</h3>
-        <hr>
+    <div class="card-body" style=';margin-top:80px'>
+
+       
         <form action="{{route('brokenRecord.update',$brokenRecord->id)}}" method="post" enctype="multipart/form-data" id="fo1">
             @method('PUT')
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2>بيان السجلات المعدمة
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>بيان السجلات المعدمة
                 </h2>
                 <hr class="w-100">
             </div>
-            <div id="mainDiv" style=" margin-right:500px;">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
+            <div class='row mt-4 mb-3'>
+                <label class="form-label col-md-2 ">CO LOGO</label>
+
                 <img src="{{ asset($brokenRecord->logo) }}" height=180px width=210px; />
                 @if ($brokenRecord->status == 'pending' && Auth::user()->hasRole('Employee'))
 
@@ -36,8 +36,9 @@
                 @endif
             </div>
             <div class="form-group row w-100 text-center" style="text-align:center ;">
+            <div class="card-body" style='overflow-x:auto'> 
                 <table class="table">
-                    <tr style="background-color:rgb(187, 216, 240)">
+                    <tr style="background-color: #001635;color:white;text-align:center">
                         @if ($brokenRecord->status == 'pending' && Auth::user()->hasRole('Employee'))
                         <th scope="col" rowspan="2">م</th>
                         @endif
@@ -57,7 +58,7 @@
                         <th scope="col" rowspan="2">أسلوب التخلص</th>
                         <th scope="col" rowspan="2">التاريخ</th>
                     </tr>
-                    <tr style="background-color:rgb(187, 216, 240); text-align:center;">
+                    <tr  style="background-color: #001635;color:white;text-align:center">
                         <th scope="col"> من</th>
                         <th scope="col">الى</th>
                     </tr>
@@ -148,16 +149,17 @@
                     @endif
                 </table>
             </div>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
-                        <th class=" w-50 text-center col-1 ">
+                        <th class=" w-50  col-1 ">
                             <div class="" style="text-align:right ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;"> رئيس اللجنة القائمة بالعملية:</label>
                             </div>
                             <div class="form-group row  text-left">
                                 <label>ممثل الإدارة لنظام الجودة</label>
-                                <label for="" class="col-1 col-form-label">الاسم: -</label>
+                                <label for="" class="col-2 col-form-label">الاسم: -</label>
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="name" value="{{ $brokenRecord->name }}">
                                 </div>
@@ -191,11 +193,11 @@
                             <div class="" style="text-align:right ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;"> عضوية:</label>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-2 col-form-label">1- مسئول الوثائق: -</label>
+                            <div class="form-group row w-100">
+                                <label for="" class="col-4 col-form-label">1- مسئول الوثائق: -</label>
 
-                                <label for="" class="col-1 col-form-label">الاسم: -</label>
-                                <div class="col-2">
+                                <label for="" class="col-2 col-form-label">الاسم: -</label>
+                                <div class="col-3">
                                     <input type="text" class="form-control" readonly placeholder="  ......" name="source_official" value="{{ $brokenRecord->source_official }}">
                                 </div>
                             </div>
@@ -241,17 +243,17 @@
                             <div class="" style="text-align:right ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;"> عضوية:</label>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-2 col-form-label">1- مسئول الوثائق: -</label>
+                            <div class="form-group row w-100 ">
+                                <label for="" class="col-6 col-form-label">1- مسئول الوثائق: -</label>
 
-                                <label for="" class="col-1 col-form-label">الاسم: -</label>
+                                <label for="" class="col-2 col-form-label">الاسم: -</label>
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="source_official" value="{{ $brokenRecord->source_official }}">
                                 </div>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-2 col-form-label">2- مدير الجودة : -</label>
-                                <label for="" class="col-1 col-form-label">الاسم: -</label>
+                            <div class="form-group row w-100 ">
+                                <label for="" class="col-6 col-form-label">2- مدير الجودة : -</label>
+                                <label for="" class="col-2 col-form-label">الاسم: -</label>
 
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="quality_manager" value="{{ $brokenRecord->quality_manager }}">
@@ -324,9 +326,9 @@
             @elseif(($brokenRecord->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
             ($brokenRecord->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
             ($brokenRecord->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-            <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
-                    </i></button>
+            <div class="row">
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                   حفظ  </i></button>
             </div>
             @endif
         </form>
@@ -375,16 +377,15 @@
     <style>
         .table thead th {
             vertical-align: bottom;
-            border-bottom: 2px solid black;
+          
         }
 
         table,
         th,
         td,
         tr {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            border-top: 2px solid black;
+            border: 1px solid silver;
+          
         }
 
         #mainDiv {

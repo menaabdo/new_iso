@@ -16,17 +16,17 @@
         <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea'>اجراء فهم المنظمه وسياقها</h3>
         <hr>
         <div class="row">
-            <a  href="{{ route('understandingOrganizationSOP.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+            <a  href="{{ route('understandingOrganizationSOP.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
                
           <div class="col-12">
-            <div class="card">
-<div class="card-body">
+            
             <div class="card">
 <div class="card-body">
               <!-- /.card-header -->
-              <div class="card-body">
+              <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
@@ -50,7 +50,7 @@
                             @if (Auth::user()->hasRole('Employee'))
                                 <td>
                                     <form id="delete-form-{{ $iso->id }}"
-                                        action="{{ route('understandingOrganizationSOP.destroy', $iso->id) }}" method="post">
+                                    class='d-flex justify-content-center'   action="{{ route('understandingOrganizationSOP.destroy', $iso->id) }}" method="post">
                                         <a href="{{ route('understandingOrganizationSOP.edit', $iso->id) }}"
                                             class="btn btn-sm btn-clean
                                             btn-icon mr-2"
@@ -105,7 +105,7 @@
                                  || $iso->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin'))
                                 <td style="font-size:15px">
                                   <form id="delete-form-{{ $iso->id }}"
-                                      action="{{ route('understandingOrganizationSOP.destroy', $iso->id) }}" method="post">
+                                  class='d-flex justify-content-center' action="{{ route('understandingOrganizationSOP.destroy', $iso->id) }}" method="post">
                                      
                                           <a href="{{ route('understandingOrganizationSOP.edit', $iso->id) }}"
                                               class="btn btn-lg  

@@ -9,13 +9,19 @@
     textarea {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
-
+    @media only screen and (max-width: 900px) {
+    form{
+        width:100% !important;
+        margin:0 !important;
+    }
+    .card-body{margin:0 !important;width:100%;}
+    }
 </style>
-<div class="card">
-    <div class="card-body row" style='margin-top:80px'>
+<div class="card " style=''>
+    <div class="card-body row" style='margin:auto;margin-top:80px;margin-right:150px;'>
 
 
-        <form action="{{route('Non_conformities.store')}}" class='col-md-12 ' style='margin:auto;margin-right:300px !important' method="post" enctype="multipart/form-data" id="fo1">
+        <form action="{{route('Non_conformities.store')}}" class='' style='width:70%;margin:auto;margin-right:200px' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4 " style='margin:auto;'>
                 <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>حالات عدم المطابقة رقم </h2>
@@ -192,9 +198,9 @@
                 </div>
             </div>
 
-    </div>
+   
     <div class="form-group row w-100 " style="text-align:center ;">
-        <div style="overflow-x:auto;margin:auto;margin-right:400px" class='col-md-9'>
+        <div style="overflow-x:auto;margin:auto;" class=''>
 
             <table class="table">
                 <thead>
@@ -243,13 +249,13 @@
         </div>
     </div>
 
-    <div class='row mt-3' style='margin-right:400px'>
+    <div class='row mt-3' style=''>
         <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
             <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
     </div>
     </form>
 </div>
-
+</div>
 
 <style>
     .table thead th {

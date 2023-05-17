@@ -19,7 +19,7 @@
       </div>
       <div class="row" style='margin:auto;'>
        
-          <a  href="{{ route('recordModel.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+          <a  href="{{ route('recordModel.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
        

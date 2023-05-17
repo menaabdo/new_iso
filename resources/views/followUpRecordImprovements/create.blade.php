@@ -12,10 +12,15 @@
     textarea {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
-
+    @media only screen and (max-width: 440px) {
+    .card-body{
+      
+        margin:0 !important;
+    }
+    }
 </style>
 <div class="card">
-    <div class="card-body row" style='margin:auto;margin-top:80px'>
+    <div class="card-body row" style='margin-top:80px'>
 
        
 
@@ -32,15 +37,15 @@
                     <input type="text" class="form-control" name="year">
                 </div>
             </div>
-            <div class='row mt-4 mb-3 text-center'>
+            <div class='row mt-4 mb-3 '>
                 <label class="form-label col-md-3 ">CO LOGO</label>
                 <div class="col-6">
               <input type="file" id="img" name="logo" accept="image/*">
             </div>
             </div>
             <hr class="w-100">
-            <div class="form-group row w-100 text-right" style="text-align:center;">
-                <table class="table">
+            <div class="form-group row  text-right" style="text-align:center;overflow-x:auto;margin:auto;width:85%">
+             <table class="table">
                     <tr style="background-color:#001635 ;color:white; text-align:center;">
                         <th>م</th>
                         <th>التاريخ </th>

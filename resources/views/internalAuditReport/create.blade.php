@@ -6,9 +6,13 @@
     .shadow-lg {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
-
+    /* @media only screen and (max-width: 400px) {
+    .text-right{
+        text-align: right !important;
+    }
+    } */
 </style>
-<div class="container mt-3 p-3 card row">
+<div class="container mt-3 p-3 card row text-right">
 
 
     <form action="{{route('InternalAuditReport.store')}}" method="post" enctype="multipart/form-data" id="fo1" class='col-md-10' style='margin:auto'>
@@ -19,15 +23,15 @@
                 <h2>تقرير مراجعة داخلية</h2>
                 <hr class="w-100">
             </div>
-            <div class="form-group ">
-                <label for="" class="col-4 col-form-label"> بإدارة :</label>
-                <div class="col-4">
+            <div class="form-group "  style='text-align: center;'>
+                <label for="" class="col-4 col-form-label" style='margin:auto'> بإدارة :</label>
+                <div class="col-4" style='margin:auto'>
                     <input type="text" class="form-control shadow-lg" name="manage">
                 </div>
             </div>
             <div class="container-fluid p-2">
                 <section class="my-10 table-bordered">
-                    <div class="form-group row w-100 text-right mt-4">
+                    <div class="form-group row w-100  mt-4">
                         <label for="" class="col-md-4 col-form-label mb-4">الجهة المراجع عليها:</label>
                         <div class="col-md-6 mb-4">
                             <input type="text" class="form-control shadow-lg" name="referenced_authority" id="">
@@ -41,93 +45,99 @@
                             <input type="text" class="form-control shadow-lg" name="referenced_subject" id="">
                         </div>
                     </div>
-                    <div class="form-group row w-100 text-right">
+                    <div class="form-group row w-100">
                         <label for="inputPassword" class="col-md-4 col-form-label"> رئيس فريق المراجعه :</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control shadow-lg" name="team_lead">
                         </div>
                     </div>
 
-                    <div class="form-group row w-100 text-right">
+                    <div class="form-group row w-100 ">
                         <label for="inputPassword" class="col-md-4 col-form-label"> فريق المراجعة :</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control shadow-lg" name="team">
                         </div>
                     </div>
 
-                    <div class="form-group row w-100 text-right">
+                    <div class="form-group row w-100 " style='margin:auto'>
                         <label for="" class="col-md-4 col-form-label">نوع المراجعة :</label>
+                        <div class=" col-form-label pl-2 col-4 d-flex justify-content-center" style='margin:auto;'>
+                      
+                        <label for="" style="text-align:left;" class="col-md-4 col-form-label">مخططة </label>
+                        <div class=" col-form-label pr-1">
+                       
+                       <input type="radio" style='margin-top:6px' id="planing" name="planing" value="planing" class='shadow-lg'>
+                       </div>
+                          </div>
 
-                        <label for="" style="text-align:left;" class="col-md-2 col-form-label">مخططة </label>
-                        <div class=" col-form-label pl-2">
-                            <input type="radio" style='margin-top:6px' id="planing" name="planing" value="planing" class='shadow-lg'>
-                        </div>
-
-
-                        <label for="" style="text-align:left;" class="col-md-3 col-form-label">غير مخططة </label>
+                          <div class=" col-form-label pl-2 col-4 d-flex justify-content-center" style='margin:auto;'>
+                     
+                        <label for="" style="text-align:left;" class="col-md-6 col-form-label">غير مخططة </label>
                         <div class=" col-form-label pr-1">
                             <input type="radio" id="not_planing" style='margin-top:6px' name="planing" value="not_planing" class='shadow-lg'>
+                        </div>
                         </div>
                     </div>
 
                 </section>
 
-
-                <div class="form-group row w-100 text-right mt-4">
-                    <label for="" class="col-md-3 col-form-label" style="text-shadow: 1px 1px 1px #3ed3ea;margin:auto"> نتائج المراجعة :</label>
+                <section class="my-10 table-bordered text-center">
+                <div class="form-group row w-100  mt-4">
+                    <label for="" class="col-md-5 col-form-label" style="text-shadow: 1px 1px 1px #3ed3ea;margin:auto"> نتائج المراجعة :</label>
                 </div>
 
 
-                <div class="form-group row w-100 text-right">
-                    <label for="inputPassword" class="col-md-2 col-form-label "> أ- نقاط القوة : </label>
+                <div class="form-group row w-100 ">
+                    <label for="inputPassword" class="col-md-5 col-form-label "> أ- نقاط القوة : </label>
                     <div class="col-md-10">
                         <textarea type="text" class="form-control shadow-lg" name="strong_point"></textarea>
                     </div>
                 </div>
 
-                <div class="form-group row w-100 text-right">
-                    <label for="inputPassword" class="col-2 col-form-label"> ب- نقاط عدم المطابقة : (ملخص) </label>
-                    <div class="col-10">
-                        <textarea type="text" class="form-control shadow-lg" name="no_strong_point" placeholder="  نقاط عدم المطابقة ......"></textarea>
+                <div class="form-group row w-100 " style='margin:auto'>
+                    <label for="inputPassword" class="col-md-5 col-form-label"> ب- نقاط عدم المطابقة : (ملخص) </label>
+                    <div class="col-md-10">
+                        <textarea type="text" class="form-control shadow-lg text-center" name="no_strong_point" placeholder="  نقاط عدم المطابقة ......"></textarea>
                     </div>
                 </div>
 
-                <div class="form-group row w-100 text-right">
-                    <label for="inputPassword" class="col-2 col-form-label"> حالات ملاحظات التحسين: </label>
-                    <div class="col-10">
-                        <textarea type="text" class="form-control shadow-lg" name="improvement_notes" placeholder=" حالات ملاحظات التحسين ......"></textarea>
+                <div class="form-group row w-100 ">
+                    <label for="inputPassword" class="col-md-5 col-form-label"> حالات ملاحظات التحسين: </label>
+                    <div class="col-md-10">
+                        <textarea type="text" class="form-control shadow-lg text-center" name="improvement_notes" placeholder=" حالات ملاحظات التحسين ......"></textarea>
+                    </div>
+                </div>
+                </section>
+                <hr>
+                <div class="form-group row w-100 ">
+                    <label for="" class="col-4 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'> نتائج المراجعة :</label>
+                </div>
+
+                <div class="form-group row w-100 ">
+                    <label for="" class="col-md-5 col-form-label">الاسم :</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control shadow-lg text-center" placeholder="الاسم    ......" name="name">
+                    </div>
+
+                    <label for="" class="col-md-5 col-form-label"> التاريخ :</label>
+                    <div class="col-md-10">
+                        <input type="date" class="form-control shadow-lg text-center" placeholder="موضوع المراجعة    ......" name="date_2">
                     </div>
                 </div>
                 <hr>
-                <div class="form-group row w-100 text-right">
-                    <label for="" class="col-2 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'> نتائج المراجعة :</label>
+                <div class="form-group row w-100 ">
+                    <label for="" class="col-3 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'> نتائج المراجعة :</label>
                 </div>
 
-                <div class="form-group row w-100 text-right">
-                    <label for="" class="col-md-2 col-form-label">الاسم :</label>
-                    <div class="col-3">
-                        <input type="text" class="form-control shadow-lg" placeholder="الاسم    ......" name="name">
-                    </div>
-
-                    <label for="" class="col-md-2 col-form-label"> التاريخ :</label>
-                    <div class="col-3">
-                        <input type="date" class="form-control shadow-lg" placeholder="موضوع المراجعة    ......" name="date_2">
-                    </div>
-                </div>
-                <hr>
-                <div class="form-group row w-100 text-right">
-                    <label for="" class="col-2 col-form-label" style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'> نتائج المراجعة :</label>
-                </div>
-
-                <div class="form-group row w-100 text-right">
+                <div class="form-group row w-100 ">
                     <label for="" class="col-md-4 col-form-label">مسئول الجهة المراجع عليها </label>
                     <div class="col-md-8">
-                        <input type="text" class="form-control shadow-lg" placeholder="الاسم    ......" name="referance_name">
+                        <input type="text" class="form-control shadow-lg text-center" placeholder="الاسم    ......" name="referance_name">
                     </div>
 
                     <label for="" class="col-md-4 col-form-label mt-3"> التاريخ </label>
-                    <div class="col-4">
-                        <input type="date" class="form-control shadow-lg mt-3" placeholder="موضوع المراجعة    ......" name="date_1">
+                    <div class="col-md-10">
+                        <input type="date" class="form-control shadow-lg mt-3 text-center" placeholder="موضوع المراجعة    ......" name="date_1">
                     </div>
                 </div>
 

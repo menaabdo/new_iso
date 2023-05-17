@@ -16,9 +16,9 @@
 
 </style>
 <div class="card" style='margin:auto;'>
-    <div class="card-body row" style='margin:auto;margin-top:80px'>
+    <div class="card-body row" style=';margin-top:80px'>
 
-        <form action="{{ route('recordAnalysis.update',$recordAnalysis->id)}}" class='col-md-6' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
+        <form action="{{ route('recordAnalysis.update',$recordAnalysis->id)}}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             @method('PUT') 
                   {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">

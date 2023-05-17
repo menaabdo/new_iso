@@ -18,7 +18,7 @@
           <hr>
           <div class="row" style='margin:auto;width:90%'>
            
-              <a  href="{{ route('swot.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <a  href="{{ route('swot.create') }}" class="btn col-md-12 mr-1" style=" ">
               <button class='shadow-lg btn btn-light' style='color:  white; 
     background-color: #001635;;' id='me'> اضافة جديدة</button></a> <div class="col-12">
                  
@@ -30,6 +30,8 @@
 <div class="card-body">
                 <!-- /.card-header -->
                 <div class="card-body">
+                <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
                   <table id="example1" class="table table-bordered table-striped" >
                     <thead class=" text-center">
                     <tr>
@@ -44,7 +46,7 @@
                           <tr class="datatable-row datatable-row-even">
                               <td class="datatable-cell" style="font-size:15px "><span><img src="{{asset($swot->logo)}}" alt="Image" width="50px"></span></td>
                               <td style="font-size:15px">
-                                  <form id="delete-form-{{ $swot->id }}" 
+                                  <form id="delete-form-{{ $swot->id }}" class='d-flex justify-content-center'
                                       action="{{ route('swot.destroy', $swot->id) }}" method="post">
                                       <a href="{{ route('swot.edit', $swot->id) }}" class="btn btn-lg  
                                               btn-icon " title="@lang('general.edit')" >

@@ -260,7 +260,7 @@
     th,
     td,
     tr {
-        border: 1px solid black;
+        border: 1px solid #dee2e6;
 
     }
 

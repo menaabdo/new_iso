@@ -13,7 +13,7 @@
     <div class="card">
         <div class="card-body row" style='margin:auto;margin-top:80px'>
             
-            <form action="{{ route('recordAction.update', $recordAction->id) }}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data"
+            <form action="{{ route('recordAction.update', $recordAction->id) }}"  style='width:90%' method="post" enctype="multipart/form-data"
                 id="fo1">
                 @method('PUT')
                 {{ csrf_field() }}
@@ -46,6 +46,7 @@
                 </div>
 
                 <div class="form-group row w-100 text-right" style="text-align:center;">
+                <div style="overflow-x:auto;">
                     <table class="table">
                         <tr style="background-color:#001635;color:white; text-align:center;">
                             @if ($recordAction->status == 'pending' && Auth::user()->hasRole('Employee'))
@@ -187,6 +188,7 @@
                         @endif
                     </table>
                 </div>
+                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -240,16 +242,16 @@
                                         <label for="" class=""
                                             style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
                                     </div>
-                                    <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
-                                        <div class="col-6">
+                                    <div class="form-group row w-10 ">
+                                        <label for="" class="col-md-3 col-form-label">الاسم: -</label>
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" readonly placeholder="  ......"
                                                 name="name_2" value="{{ $recordAction->name_2 }}">
                                         </div>
                                     </div>
-                                    <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                        <div class="col-6">
+                                    <div class="form-group row w-10 ">
+                                        <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" readonly placeholder="  ......"
                                                 name="job_2" value="{{ $recordAction->job_2 }}">
                                         </div>
@@ -311,16 +313,16 @@
                                         <label for="" class=""
                                             style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
                                     </div>
-                                    <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
-                                        <div class="col-6">
+                                    <div class="form-group row w-10 ">
+                                        <label for="" class="col-md-3 col-form-label">الاسم: -</label>
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_1" value="{{ $recordAction->name_1 }}">
                                         </div>
                                     </div>
-                                    <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                        <div class="col-6">
+                                    <div class="form-group row w-10 ">
+                                        <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_1" value="{{ $recordAction->job_1 }}">
                                         </div>
@@ -333,15 +335,15 @@
                                             style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الاسم: -</label>
-                                        <div class="col-6">
+                                        <label for="" class="col-md-3 col-form-label">الاسم: -</label>
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="name_2" value="{{ $recordAction->name_2 }}">
                                         </div>
                                     </div>
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                        <div class="col-6">
+                                        <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" placeholder="  ......"
                                                 name="job_2" value="{{ $recordAction->job_2 }}">
                                         </div>
@@ -474,16 +476,15 @@
         <style>
             .table thead th {
                 vertical-align: bottom;
-                border-bottom: 2px solid black;
+                /* border-bottom: 2px solid black; */
             }
 
             table,
             th,
             td,
             tr {
-                border: 1px solid black;
-                border-bottom: 2px solid black;
-                border-top: 2px solid black;
+                border: 1px solid silver;
+              
             }
 
             #mainDiv {

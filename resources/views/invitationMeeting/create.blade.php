@@ -9,17 +9,21 @@
     input {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important
     }
-
+ /* @media only screen and (max-width: 400px) {
+    .card{
+        margin-right: 20px !important;
+    }
+    } */
 </style>
 
 <div class='row card'>
 
-    <div class='row card' style='margin:auto;margin-right:80px'>
+    <div class='row card' style='margin:auto;'>
 
         <form action="{{route('invitationMeeting.store')}}" method="post" class='col-md-10' style='margin:auto;margin-top:80px' enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div class="container p-4">
-                <h2 style=' ;text-shadow: 1px 1px 1px #3ed3ea;margin-right:100px'>دعوة لإجتماع مراجعة الإدارة</h2>
+                <h2 style=' ;text-shadow: 1px 1px 1px #3ed3ea;text-align:center'>دعوة لإجتماع مراجعة الإدارة</h2>
                 <hr class="w-100">
                 <div class="form-group row w-10">
                     <h6 for="" class="col-md-12">نبلغ سيادتكم بإجتماع مراجعة الإدراة لنظام الجودة </h6>
@@ -86,11 +90,11 @@
                     <thead>
                         <tr>
                             @if (Auth::user()->hasRole('SuperAdmin'))
-                            <th class=" w-50 text-center">
+                            <th class=" p-3 text-center">
                                 <div class="" style="text-align:center ;">
                                     <label for="" class="" style="font-size:large;font-weight: bolder;">ممثل الإدارة :</label>
                                 </div>
-                                <div class="form-group row w-20 text-right">
+                                <div class="form-group row w-20 ">
                                     <label for="" class="col-md-3 col-form-label">الإسم </label>
                                     <div class="col-md-6">
                                         <input type="text" class="form-control shadow-lg" placeholder="  ......" name="name_manager">
@@ -205,7 +209,7 @@
     th,
     td,
     tr {
-        border: 1px solid;
+        border: 1px solid silver;
         /* border-bottom: 2px solid rgb(214, 206, 206);
         border-top: 2px solid rgb(214, 206, 206); */
     }

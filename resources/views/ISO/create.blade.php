@@ -384,6 +384,13 @@
 td{
     text-align:center;
 }
+@media only screen and (max-width: 600px) {
+
+    
+.form__label {
+    top:0
+}
+}
     </style>
 
 <!-- Main content -->
@@ -571,6 +578,8 @@ td{
 </table>
 
 <hr style="border: 5px; margin: 50px ;">
+<div style="overflow-x:auto;">
+ 
 <table style="width: 550px;justify-content: center;align-items: center;"
     class="table table-bordered my-4   m-auto">
     <thead>
@@ -680,6 +689,7 @@ td{
 
     </tbody>
 </table>
+</div>
 <hr style="border: 5px; margin: 50px ;">
 <section class="row" style="margin-right: 100px;">
     <h2>@lang('main.Action illustration:')</h2>
@@ -806,6 +816,7 @@ td{
             <div class="input-group my-3  mx-3">
                 <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Terms and definitions:')</label>
             </div>
+            
             <table class="datatable-table table table-bordered mt-2 shadow-lg">
                 <thead class="datatable-head" style='background-color: #2a415b;
     color: white;
@@ -880,6 +891,8 @@ td{
             <div class="input-group my-3  mx-3">
                 <label class="row"  style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.Models used:')</label>
             </div>
+            <div style="overflow-x:auto;">
+ 
             <table class="table table-bordered shadow-lg">
                 <thead style='background-color: #2a415b;
     color: white;
@@ -950,7 +963,7 @@ td{
                     </tr>
                 </tbody>
             </table>
-
+             </div> 
             <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
         </section>
         <hr style='width:100%'>

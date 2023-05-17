@@ -18,7 +18,7 @@
                     <hr class="w-100">
                 </div>
                 <div class='row mt-4 mb-3'>
-      <label class="col-2 col-form-label text-center">CO LOGO</label>
+      <label class="col-3 col-form-label text-center">CO LOGO</label>
                  @if ($externalCase->status == 'pending' && Auth::user()->hasRole('Employee'))
                         <input type="file" id="img" name="logo" accept="image/*">
                     @endif
@@ -202,6 +202,8 @@
                     </thead>
                 </table>
                 <hr class="w-100">
+                <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
                 <table class="table">
                     <thead>
                         <tr>
@@ -254,6 +256,7 @@
                         </tr>
                     </thead>
                 </table>
+    </div>
                 @if ($externalCase->status == 'pending' && Auth::user()->hasRole('Employee'))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"

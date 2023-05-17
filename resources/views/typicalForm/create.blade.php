@@ -30,6 +30,8 @@
             </div>
 
             <div class="form-group row w-100 text-right" style="text-align:center ;">
+            <div class="card-body" style='overflow-x:auto'>
+              
                 <table class="table">
                     <tr style='font-size:14px;background-color:#001635;color:white;text-align:center;'>
                         <th>م</th>
@@ -57,6 +59,7 @@
                         </td>
                     </tr>
                 </table>
+            </div>
             </div>
             <table class="table">
                 <thead>

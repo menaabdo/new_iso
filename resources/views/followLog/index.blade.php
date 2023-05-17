@@ -14,13 +14,13 @@
 <section class="content" style='margin:auto;'>
         <div class="card" style='margin:auto;'>
 <div class="card-body row" style='margin:auto;'>  
-     <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">سجل متابعة قرارات مراجعة الإدارة العليا</h3>
+     <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;text-align:center">سجل متابعة قرارات مراجعة الإدارة العليا</h3>
           <hr>
           </div>
                 <div class="row" style='margin:auto;width:90%'>
 
            
-              <a  href="{{ route('followLog.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <a  href="{{ route('followLog.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
        
@@ -106,7 +106,7 @@
                                                      || $followLog->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin'))
                                                     <td style="font-size:15px">
                                                       <form id="delete-form-{{ $followLog->id }}"
-                                                          action="{{ route('followLog.destroy', $followLog->id) }}" method="post">
+                                                       class='d-flex justify-content-center'   action="{{ route('followLog.destroy', $followLog->id) }}" method="post">
                                                          
                                                               <a href="{{ route('followLog.edit', $followLog->id) }}"
                                                                   class="btn btn-lg  

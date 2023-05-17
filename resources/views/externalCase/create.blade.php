@@ -23,7 +23,7 @@
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>
-                <label class="col-2 col-form-label text-center">CO LOGO</label>
+                <label class="col-md-2 col-form-label text-center">CO LOGO</label>
 
                 <input class="col-md-6 form-control" type="file" id="img" name="logo" accept="image/*">
             </div>
@@ -145,6 +145,8 @@
                 </thead>
             </table>
             <hr class="w-100">
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
             <table class="table" style='text-align: center;'>
                 <thead>
                     <tr>
@@ -192,7 +194,7 @@
                     </tr>
                 </thead>
             </table>
-
+             </div>
             <div class='row mt-3'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
                     <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>

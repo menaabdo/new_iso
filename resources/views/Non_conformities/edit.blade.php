@@ -4,10 +4,17 @@
     .shadow-lg {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
     input,textarea{ box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    @media only screen and (max-width: 900px) {
+    form{
+        width:100% !important;
+        margin:0 !important;
+    }
+    .card-body{margin:0 !important;width:100%;}
+    }
 </style>
 <div class="card">
-<div class="card-body row" style='margin-top:80px'>
-       <form action="{{route('Non_conformities.update',$Non_conformities->id)}}" class='col-md-12 ' style='margin:auto;margin-right:300px !important' method="post" enctype="multipart/form-data" id="fo1">
+<div class="card-body row"  style='margin:auto;margin-right:150px;'>
+       <form action="{{route('Non_conformities.update',$Non_conformities->id)}}" style='width:70%;margin:auto;margin-right:200px' method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
@@ -34,8 +41,8 @@
             <input type="file" id="img" name="logo" accept="image/*">
         @endif
         <img src="{{ asset($Non_conformities->logo) }}" height=100px width=100px; />
-          
-</div>
+    </div>
+
 <div class=" form-group row  text-center">
                <label for="" class="col-3 col-form-label text-right">التاريخ:</label>
                <div class="col-4">
@@ -178,8 +185,8 @@
                                 <label for="" class="" style="font-size:large;font-weight: bolder;">إعداد ( مراقب الجودة )  </label>
                             </div>
                             <div class="form-group row w-10 text-center">
-                                <label for="" class="col-1 col-form-label">الإسم   </label>
-                                <div class="col-6">
+                                <label for="" class="col-md-2 col-form-label">الإسم   </label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_4" value="{{$Non_conformities->name_4}}">
                                 </div>
                             </div>
@@ -190,8 +197,8 @@
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعتماد ( مدير الأداره )     </label>
                             </div>
                             <div class="form-group row w-10 text-center">
-                                <label for="" class="col-1 col-form-label">الإسم   </label>
-                                <div class="col-6">
+                                <label for="" class="col-md-2 col-form-label">الإسم   </label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_5" value="{{$Non_conformities->name_5}}">
                                 </div>
                             </div>
@@ -208,15 +215,15 @@
                 </div>
             </div>
             <div class=" form-group row w-200 text-right">
-                <label for="" class="col-1 col-form-label text-right">الاسم:</label>
-                <div class="col-2">
+                <label for="" class="col-2 col-form-label">الاسم:</label>
+                <div class="col-5">
                     <input type="text" class="form-control" name="name_6" value="{{$Non_conformities->name_6}}"  >
                 </div>
-                <label for="" class="col-1 col-form-label text-right">الوظيفة:</label>
-                <div class="col-2">
+                <label for="" class="col-md-3 col-form-label " style='text-align:right'>الوظيفة:</label>
+                <div class="col-5">
                     <input type="text" class="form-control" name="employ_4" value="{{$Non_conformities->employ_4}}">
                 </div>
-                <label for="" class="col-1 col-form-label text-right">التاريخ  :</label>
+                <label for="" class="col-2 col-form-label text-right">التاريخ  :</label>
                 <div class="col-3">
                     <input type="date" class="form-control" name="date_2" value="{{$Non_conformities->date_2}}">
                 </div>
@@ -234,17 +241,17 @@
 
             </div>
             <div class=" form-group row w-200 text-left">
-                <label for="" class="col-1 col-form-label text-left">الاسم:</label>
+                <label for="" class="col-2 col-form-label text-left">الاسم:</label>
                 <div class="col-3">
                     <input type="text" class="form-control" name="name_7" value="{{$Non_conformities->name_7}}">
                 </div>
-                <label for="" class="col-1 col-form-label text-left">الوظيفة :</label>
+                <label for="" class="col-2 col-form-label text-left">الوظيفة :</label>
                 <div class="col-3">
                     <input type="text" class="form-control" name="employ_5" value="{{$Non_conformities->employ_5}}">
                 </div>
             </div>
 
-        </div>
+        
         <table class="table">
             <thead>
                 <tr>
@@ -289,7 +296,7 @@
                   </tr>
             </thead>
         </table>
-    </div>
+   
     @if ($Non_conformities->status == 'pending' && Auth::user()->hasRole('Employee'))
     <div class="form-group">
         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
@@ -306,13 +313,14 @@
 @elseif(($Non_conformities->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
     ($Non_conformities->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
     ($Non_conformities->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-    <div class="form-group">
-        <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+    <div class="row">
+    <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+        <i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
             </i></button>
     </div>
 @endif
     </form>
+    </div>
     </div>
         <style>
             .table thead th {

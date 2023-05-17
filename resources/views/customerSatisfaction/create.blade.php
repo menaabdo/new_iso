@@ -12,6 +12,12 @@
     textarea {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
+    @media only screen and (max-width: 400px) {
+     .col-md-10{
+       width:60% !important;
+       margin: 0 !important;
+    }
+    }
 
 </style>
 

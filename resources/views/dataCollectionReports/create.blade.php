@@ -15,7 +15,7 @@
 
 </style>
 <div class="card">
-    <div class="card-body row" style='margin:auto;margin-top:80px'>
+    <div class="card-body row" style=';margin-top:80px'>
 
        
        

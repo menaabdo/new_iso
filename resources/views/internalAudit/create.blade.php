@@ -8,6 +8,9 @@
     th {
         vertical-align: middle !important;
     }
+    @media only screen and (max-width: 600px) {
+    .row1{margin:0px !important;}
+    }
 
 </style>
 <div class="container mt-3 p-3 card row">
@@ -38,7 +41,9 @@
                 <input type="text" class="form-control" name="reference_documents" id="">
             </div>
         </div>
-        <section class="my-5 row" style='margin-right:100px'>
+        <section class="my-5 row row1" style='margin-right:100px'>
+        <div style="overflow-x:auto;">
+ 
             <table class="table table-bordered  text-center col-md-10" style=";grid-auto-flow: column;justify-content: center; align-content: center;">
                 <thead>
                     <tr style="background-color:#001635 ;color:white">
@@ -91,6 +96,7 @@
 
                 </tbody>
             </table>
+              </div>
             @if (Auth::user()->hasRole('Employee'))
             <div class="form-group row w-100 text-right">
                 <label for="" class="col-md-4 col-form-label"> إسم المراجع :</label>

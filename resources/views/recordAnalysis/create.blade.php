@@ -15,10 +15,10 @@
 
 </style>
 <div class="card" style='margin:auto;'>
-    <div class="card-body row" style='margin:auto;margin-top:80px'>
+    <div class="card-body row" style=';margin-top:80px'>
 
        
-        <form action="{{ route('recordAnalysis.store') }}" class='col-md-6' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
+        <form action="{{ route('recordAnalysis.store') }}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
                 <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'> سجل تحليل لشكاوي العملاء</h2>
@@ -43,8 +43,8 @@
             </div>
             <hr class="w-100">
 
-            <div class="form-group row w-100 text-right" style="text-align:center;">
-                <div style="overflow-x:auto;">
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow-x:auto">
+              
                     <table class="table">
                         <tr style="background-color:#001635;color:white; text-align:center;">
                             <th scope="col" rowspan="3">م</th>
@@ -165,7 +165,7 @@
 
                     </table>
                 </div>
-            </div>
+            
 
 
 

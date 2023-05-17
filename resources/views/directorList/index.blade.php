@@ -113,7 +113,7 @@
                                                                 ($directorList->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                                                                 ($directorList->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                                                                 <td style="font-size:15px">
-                                                                    <form id="delete-form-{{ $directorList->id }}"
+                                                                    <form id="delete-form-{{ $directorList->id }}" class='d-flex justify-content-center'
                                                                         action="{{ route('directorList.destroy', $directorList->id) }}"
                                                                         method="post">
 

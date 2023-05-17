@@ -41,6 +41,12 @@
     width: 200px;
     height: 15px; 
 }
+@media only screen and (max-width: 500px) {
+    textarea{
+        width:200px !important;
+
+    }
+    }
 </style>
 <div class="card row" style='width:100%;;margin:auto'>
     <div class="card-body row" style='width:90%;margin:auto'>
@@ -77,7 +83,7 @@
                    
                     <div class="col-4">
                     <textarea type="text" id="ip1" class="form-control" name="strength_point" placeholder=""
-                        style=" height: 300px; width: 600px;">{{$swot->strength_point}}</textarea>
+                        style=" height: 300px; width: 300px;">{{$swot->strength_point}}</textarea>
              </div>
              </div>
              <div class=" form-group row  w-200 text-center">
@@ -86,7 +92,7 @@
                         <div class="col-4">
                    
                     <textarea type="text" id="ip2" name="opportunities" class="form-control" placeholder=""
-                        style=" height: 300px; width: 600px;">{{$swot->opportunities}}</textarea>
+                        style=" height: 300px; width: 300px;">{{$swot->opportunities}}</textarea>
                         </div>
                 </div>
 
@@ -96,7 +102,7 @@
                     <div class="col-4">
                    
                     <textarea type="text" id="ip3" class="form-control" name="weak_point" placeholder=""
-                        style=" height: 300px; width: 600px;">{{$swot->weak_point}}</textarea>
+                        style=" height: 300px; width: 300px;">{{$swot->weak_point}}</textarea>
                     </div>
                     </div>
                     <div class=" form-group row  w-200 text-center">
@@ -104,11 +110,13 @@
                         <label for="" class="col-3 col-form-label text-center">التهديدات :</label>
                         <div class="col-4">
                     <textarea type="text" id="ip4" name="threat" class="form-control" placeholder=""
-                        style=" height: 300px; width: 600px;">{{$swot->threat}}</textarea>
+                        style=" height: 300px; width: 300px;">{{$swot->threat}}</textarea>
                         </div>
                 </div>
             
             <hr class="w-100">
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
             <table class="table">
                 <thead>
                     <tr>
@@ -156,6 +164,7 @@
                       </tr>
                 </thead>
             </table>
+</div>
             <div class='row'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
                     تعديل</button>

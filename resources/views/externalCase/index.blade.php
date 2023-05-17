@@ -17,17 +17,17 @@
           <hr>
           <div class="row" >
            
-              <a  href="{{ route('externalCases.create') }}" class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <a  href="{{ route('externalCases.create') }}" class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
              
             <div class="col-12">
-              <div class="card">
-<div class="card-body">
+              
               <div class="card">
 <div class="card-body">
                 <!-- /.card-header -->
-                <div class="card-body">
+                <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
                   <table id="example1" class="table table-bordered table-striped" style='text-align: center;' >
                     <thead>
                     <tr>
@@ -102,7 +102,7 @@
                                                      @elseif($externalCases->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin') || $externalCases->status == 'pending' && Auth::user()->hasRole('SuperAdmin')
                                                      || $externalCases->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin'))
                                                     <td style="font-size:15px">
-                                                      <form id="delete-form-{{ $externalCases->id }}"
+                                                      <form id="delete-form-{{ $externalCases->id }}"  class='d-flex justify-content-center'
                                                           action="{{ route('externalCases.destroy', $externalCases->id) }}" method="post">
                                                          
                                                               <a href="{{ route('externalCases.edit', $externalCases->id) }}"
@@ -145,9 +145,9 @@
                   </tbody>
                   </table>
                 </div>
-                </div>
+                
                 <!-- /.card-body -->
-              </div>
+             
               <!-- /.card -->
             </div>
          

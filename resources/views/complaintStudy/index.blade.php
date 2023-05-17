@@ -23,7 +23,7 @@
      
           
            
-              <a  href="{{ route('complaintStudies.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <a  href="{{ route('complaintStudies.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
               
@@ -109,7 +109,7 @@
                          @elseif($complaintStudies->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin') || $complaintStudies->status == 'pending' && Auth::user()->hasRole('SuperAdmin')
                          || $complaintStudies->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin'))
                         <td style="font-size:15px">
-                          <form id="delete-form-{{ $complaintStudies->id }}"
+                          <form id="delete-form-{{ $complaintStudies->id }}" class='d-flex justify-content-center'
                               action="{{ route('complaintStudies.destroy', $complaintStudies->id) }}" method="post">
                              
                                   <a href="{{ route('complaintStudies.edit', $complaintStudies->id) }}"

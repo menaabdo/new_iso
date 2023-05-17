@@ -26,7 +26,7 @@
             <hr class="w-100">
         </div>
         <div class='row mt-4 mb-3' >
-                <label class="form-label col-md-2 text-right ">CO LOGO</label>
+                <label class="form-label col-md-2  ">CO LOGO</label>
       
              <input type="file" id="img" name="logo" accept="image/*">
              <img src="{{ asset($nonConformanceStats->logo) }}" height=180px width=210px; />
@@ -258,16 +258,15 @@
 <style>
 .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid black;
+    
 }
 
 table,
 th,
 td,
 tr {
-    border: 1px solid black;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
+    border: 1px solid silver;
+   
 }
 
 #mainDiv {

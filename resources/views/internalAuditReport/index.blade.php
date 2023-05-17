@@ -10,26 +10,35 @@
         transform: scale(1.1);
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     }
+    @media only screen and (max-width: 400px) {
+    .text-right{
+        text-align: right !important;
+    }
+    }
+    th{
+        text-align:center;
+    }
 </style>
 <section class="content" style='margin:auto;'>
         <div class="card row" style='margin:auto;'>
 <div class="card-body " style='margin:auto;width:90%'>
             
-      <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>تقرير مراجعة داخلية</h3>
+      <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;text-align: center;'>تقرير مراجعة داخلية</h3>
       <hr>
       <div class="row" >
        
-          <a  href="{{ route('InternalAuditReport.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+          <a  href="{{ route('InternalAuditReport.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
        
         <div class="col-12">
-          <div class="card">
-<div class="card-body">
+       
           <div class="card">
 <div class="card-body">
             <!-- /.card-header -->
-            <div class="card-body">
+        
+            <div style="overflow-x:auto;">
+ 
               <table id="example1" class="table shadow-lg table-striped" >
                 <thead>
                 <tr>
@@ -48,7 +57,7 @@
                           <td class="datatable-cell" style="font-size:15px "><span>{{ $InternalAuditReport->referenced_authority }}</span></td>
                           <td class="datatable-cell" style="font-size:15px "><span>{{ $InternalAuditReport->referenced_number }}</span></td>
                           <td style="font-size:15px">
-                              <form id="delete-form-{{ $InternalAuditReport->id }}" 
+                              <form id="delete-form-{{ $InternalAuditReport->id }}" class='d-flex justify-content-center'
                                   action="{{ route('InternalAuditReport.destroy', $InternalAuditReport->id) }}" method="post">
                                   <a href="{{ route('InternalAuditReport.edit', $InternalAuditReport->id) }}" class="btn btn-lg  
                                           btn-icon " title="@lang('general.edit')" >
@@ -73,7 +82,7 @@
                @endforeach
               </tbody>
               </table>
-            </div>
+         
             </div>
             <!-- /.card-body -->
           </div>

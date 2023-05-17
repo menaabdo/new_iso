@@ -14,9 +14,11 @@
 </style>
 
 <div class="card">
+<div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+    
     <div class="card-body row" style='margin:auto;margin-top:80px'>
 
-
+          
         <form action="{{route('questionnaireForms.store')}}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
@@ -192,7 +194,7 @@
             </div>
         </form>
     </div>
-
+    </div>
 
     <style>
         .table thead th {

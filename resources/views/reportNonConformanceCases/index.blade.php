@@ -19,7 +19,7 @@
             <hr>
           <div class="row" style='margin:auto;'>
            
-              <a  href="{{ route('reportNonConformanceCases.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <a  href="{{ route('reportNonConformanceCases.create') }}"  class="btn col-md-12 mr-1" style="">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
                  
@@ -45,7 +45,7 @@
                               <td class="datatable-cell" style="font-size:15px "><span><img src="{{asset($reportNonConformanceCases->logo)}}" alt="Image" width="50px"></span></td>
                               <td style="font-size:15px">
                                   <form id="delete-form-{{ $reportNonConformanceCases->id }}" 
-                                      action="{{ route('reportNonConformanceCases.destroy', $reportNonConformanceCases->id) }}" method="post">
+                                  class='d-flex justify-content-center'     action="{{ route('reportNonConformanceCases.destroy', $reportNonConformanceCases->id) }}" method="post">
                                       <a href="{{ route('reportNonConformanceCases.edit', $reportNonConformanceCases->id) }}" class="btn btn-lg  
                                               btn-icon " title="@lang('general.edit')" >
                                           <i class="fa fa-edit" ></i>

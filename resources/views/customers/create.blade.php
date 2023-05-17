@@ -13,6 +13,9 @@
 
 </style>
 <div class="card">
+    <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+
+
     <div class="card-body row" style='margin:auto;margin-top:80px'>
 
        
@@ -152,7 +155,7 @@
                     </div>  
         </form>
     </div>
-
+    </div>
     <script>
         function appendRow(num) {
             $new_number = parseInt(num) + 1;

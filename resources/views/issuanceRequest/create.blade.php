@@ -101,9 +101,9 @@
             <div class="form-group text-left">
                 <h2 for="" class="col-2 col-form-label">مقدم الطلب :</h2>
             </div>
-            <div class="form-group row w-10 text-center">
+            <div class="form-group row w-10 ">
                 <label for="" class="col-md-1 col-form-label">الإسم </label>
-                <div class="col-4">
+                <div class="col-6">
                     <input type="text" class="form-control" placeholder="  ......" name="applicant">
                 </div>
             </div>

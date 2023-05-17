@@ -8,6 +8,9 @@
         transform: scale(1.1);
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
     }
+    @media only screen and (max-width: 600px) {
+    tr{font-size:15px !important;}
+    }
 </style>
 <section class="content" style='margin:auto;'>
         <div class="card">
@@ -21,7 +24,7 @@
                 </div>
       <div class="row" style='margin:auto;width:90%'>
      
-                    <a href="{{ route('risksop.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+                    <a href="{{ route('risksop.create') }}"  class="btn col-md-12 mr-1" style="">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>@lang('main.create')</b></button></a> <div class="col-12">
                 <div class="col-12">
@@ -31,6 +34,8 @@
                                     <div class="card-body">
                                         <!-- /.card-header -->
                                         <div class="card-body">
+                                        <div style="overflow-x:auto;">
+ 
                                             <table id="example1" class="table  table-striped shadow-lg">
                                                 <thead>
                                                     <tr style='background-color: #001635;color:white;text-align:center'>
@@ -153,6 +158,7 @@
     @endforeach
 </tbody>
                                             </table>
+                                        </div>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->

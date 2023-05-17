@@ -124,15 +124,15 @@
                             <div class="" style="text-align:center ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الاسم: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الاسم: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_1">
                                 </div>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="job_1">
                                 </div>
                             </div>
@@ -142,15 +142,15 @@
                             <div class="" style="text-align:center ;">
                                 <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الاسم: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الاسم: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="name_2">
                                 </div>
                             </div>
-                            <div class="form-group row w-10 text-right">
-                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
-                                <div class="col-6">
+                            <div class="form-group row w-10 ">
+                                <label for="" class="col-md-3 col-form-label">الوظيفة: -</label>
+                                <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="  ......" name="job_2">
                                 </div>
                             </div>

@@ -14,23 +14,20 @@
 <section class="content" style='margin:auto;'>
     <div class="card" >
 <div class="card-body row" style='margin:auto;'>
-      <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;'>سجل حصر الاجراءات المستخدمة</h3>
+      <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;text-align:center'>سجل حصر الاجراءات المستخدمة</h3>
       <hr>
 </div>
       <div class="row" style='margin:auto;'>
     
-          <a  href="{{ route('recordAction.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+          <a  href="{{ route('recordAction.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
        
         <div class="col-md-12">
           <div class="card" style='margin:auto'>
 <div class="card-body">
-          <div class="card">
-<div class="card-body">
-            <!-- /.card-header -->
-            <div class="card-body" style='    padding-top: 0;'>
-              <table id="example1" class="table table-bordered table-striped" >
+         
+              <table id="example1" class="table table-bordered table-striped"  style="overflow-x:auto;">
                 <thead style="background-color: #001635;color:white;text-align:center">
                 <tr>
                   <th style=" font-size:20px ">	Management</th>
@@ -106,7 +103,7 @@
                          @elseif($recordAction->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin') || $recordAction->status == 'pending' && Auth::user()->hasRole('SuperAdmin')
                          || $recordAction->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin'))
                         <td style="font-size:15px">
-                          <form id="delete-form-{{ $recordAction->id }}"
+                          <form id="delete-form-{{ $recordAction->id }}" class='d-flex justify-content-center'
                               action="{{ route('recordAction.destroy', $recordAction->id) }}" method="post">
                              
                                   <a href="{{ route('recordAction.edit', $recordAction->id) }}"
@@ -135,7 +132,7 @@
                @endforeach
               </tbody>
               </table>
-            </div>
+           
             </div>
             <!-- /.card-body -->
        

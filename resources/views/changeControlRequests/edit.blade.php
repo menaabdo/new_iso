@@ -517,7 +517,8 @@
         
     <hr class="w-100">
     <div class="form-group w-75 row text-center" style='margin:auto'>
-        
+    <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+    
         <table class="table">
             <thead>
                 <tr>
@@ -565,7 +566,7 @@
                   </tr>
             </thead>
         </table>
-</div>
+</div></div>
         <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">

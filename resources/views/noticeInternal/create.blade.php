@@ -9,6 +9,11 @@
     th {
         vertical-align: middle !important;
     }
+    @media only screen and (max-width: 600px) {
+    
+    .lab{
+            margin-bottom: 26px;
+    }}
 
 </style>
 
@@ -69,16 +74,15 @@
                 </div>
 
                 <h8 class='py-3'>وذلك للتأكد من تطبيق أنظمة ودراسة فاعليتها طبقا للآتي : </h8>
-                <label for="" class="col-3 col-form-label py-5"> موضوعات :</label>
+                <label for="" class="col-7 col-form-label "> موضوعات المراجعة :</label>
 
-                <label for="" class=" col-form-label py-5">المراجعة :</label>
-                <div class="col-10">
+                 <div class="col-10">
                     <textarea type="text" class="form-control" name="review" placeholder=" المراجعة ......"></textarea>
                 </div>
             </div>
             <hr size="20">
             <div class="form-group row mr-5 p-3 border rounded" style='margin:auto;background: #001635 !important;color:white'>
-                <label for="" class="col-2 col-form-label">المراجع المستخدمة :</label>
+                <label for="" class="col-7 col-form-label">المراجع المستخدمة :</label>
                 <div class="col-10">
                     <textarea type="text" class="form-control" name="references_used" placeholder=" المراجعة ......"></textarea>
                 </div>
@@ -86,13 +90,13 @@
             <hr size="20">
             <div class="form-group row mr-5 p-3 border rounded" style='margin:auto;background: #001635 !important;color:white'>
 
-                <label for="" class="col-2 col-form-label">فريق المراجعة: :</label>
-                <label for="" class="col-1 col-form-label">1 -</label>
-                <div class="col-3">
+                <label for="" class="col-12 col-form-label">فريق المراجعة: </label>
+                <!-- <label for="" class="col-1 col-form-label">1 -</label> -->
+                <div class="col-5">
                     <input type="text" class="form-control" placeholder="  ......" name="team_1">
                 </div>
-                <label for="" class="col-1 col-form-label">2 -</label>
-                <div class="col-3">
+                <!-- <label for="" class="col-1 col-form-label">2 -</label> -->
+                <div class="col-5">
                     <input type="text" class="form-control" placeholder="  ......" name="team_2">
                 </div>
             </div>
@@ -127,7 +131,7 @@
                         @if (Auth::user()->hasRole('SuperAdmin'))
                         <th class=" w-50 text-center col-md-2 ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="font-size:large;font-weight: bolder;">إعداد (مدير الجودة) :</label>
+                                <label for="" class="" style=";font-weight: bolder;">إعداد (مدير الجودة) :</label>
                             </div>
                             <div class="form-group row w-10 text-center mt-3">
                                 <label for="" class="col-md-3 col-form-label ">الإسم </label>
@@ -144,7 +148,7 @@
                         </th>
                         <th class=" w-50 text-center col-2 ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعتماد : (المدير العام):</label>
+                                <label for="" class="" style="text-align:center;;font-weight: bolder;">إعتماد : (المدير العام):</label>
                             </div>
                             <div class="form-group row w-10 text-center mt-3">
                                 <label for="" class="col-md-3 col-form-label">الإسم </label>
@@ -169,7 +173,7 @@
                     <tr>
                         <th class=" w-50 text-center col-2 ">
                             <div class="" style="text-align:center ;">
-                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">الجهة المراجع عليها للتوقيع بالاستلام؛ :</label>
+                                <label for="" class="" style="text-align:center;;font-weight: bolder;">الجهة المراجع عليها للتوقيع بالاستلام؛ :</label>
                             </div>
                             <div class="form-group row w-10 text-center mt-3">
                                 <label for="" class="col-md-3 col-form-label">الإسم </label>
@@ -192,8 +196,8 @@
                             </div>
                         </th>
                         <th class=" w-50 text-center col-2 ">
-                            <div class="mt-5" style="text-align:center ;">
-                                <label for="" class="" style="text-align:center;font-weight: bolder;"> الجهة المراجع عليها للتوقيع بالموافقة على الموعد المخطط :</label>
+                            <div class="" style="text-align:center ;">
+                                <label for="" class="lab1" style="text-align:center;"> الجهة المراجع عليها للتوقيع بالموافقة على الموعد المخطط :</label>
                             </div>
                             <div class="form-group row w-10 text-center">
                                 <label for="" class="col-md-3 col-form-label">الإسم </label>
@@ -220,7 +224,7 @@
                 </thead>
             </table>
         </div>
-        <table class="table table-bordered mr-5">
+        <table class="table table-bordered ">
             <thead>
                 <tr>
                     <th>

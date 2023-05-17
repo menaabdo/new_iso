@@ -9,7 +9,11 @@
     textarea {
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     }
-
+    @media only screen and (max-width: 900px) {
+    .card-body{
+        width:90%;
+    }
+    }
 </style>
     <div class="card">
         <div class="card-body row" style='margin-top:80px'>
@@ -121,10 +125,11 @@
                     <div class="row">
                         <textarea type="text" class="form-control col-md-10"  style='    margin-right: 100px' placeholder="  ......" name="suggested_modifications">{{ $issuanceRequest->suggested_modifications }}</textarea>
                     </div>
-                </div>
+               
                 <hr class="w-100">
+                <div class="form-group text-left">
                    <h2 for="" class="col-2 col-form-label" style='margin:auto'>مقدم الطلب :</h2>
-                
+                    </div>
                 <div class="form-group row w-10 text-center" >
                     <label for="" class="col-4 col-form-label text-right">الإسم </label>
                     <div class="col-4">
@@ -550,14 +555,14 @@
                     </div>
 
                 @if ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('Employee'))
-                    <div class="form-group">
+                    <div class="row">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
                             class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
                             </i></button>
                     </div>
                 @elseif(($issuanceRequest->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                     ($issuanceRequest->status == 'pending' && Auth::user()->hasRole('Admin')))
-                    <div class="form-group">
+                    <div class="row">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
                             class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
                             </i></button>
@@ -572,7 +577,7 @@
                 @endif
                 <div class='row mt-3'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                   <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
             </div>
             </form>
         </div>

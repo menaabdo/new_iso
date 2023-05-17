@@ -14,10 +14,10 @@
  <section class="content">
       <div class="card">
 <div class="card-body">
-        <h3 style="margin-top:85px;">اجراء التحسين المستمر</h3>
+        <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;text-align:center">اجراء التحسين المستمر</h3>
         <hr>
         <div class="row">
-            <a  href="{{ route('ContinuousImprovementSOP.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+            <a  href="{{ route('ContinuousImprovementSOP.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
           <div class="col-12">
@@ -27,6 +27,8 @@
 <div class="card-body">
               <!-- /.card-header -->
               <div class="card-body">
+              <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+    
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
@@ -104,7 +106,7 @@
                                  @elseif($iso->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin') || $iso->status == 'pending' && Auth::user()->hasRole('SuperAdmin')
                                  || $iso->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin'))
                                 <td style="font-size:15px">
-                                  <form id="delete-form-{{ $iso->id }}"
+                                  <form id="delete-form-{{ $iso->id }}" class='d-flex justify-content-center'
                                       action="{{ route('ContinuousImprovementSOP.destroy', $iso->id) }}" method="post">
                                      
                                           <a href="{{ route('ContinuousImprovementSOP.edit', $iso->id) }}"

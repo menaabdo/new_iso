@@ -90,7 +90,7 @@
                         @if (Auth::user()->hasRole('Admin'))
                         <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">مسئول الجودة </label>
+                                <label for="" class="col-md-3 col-form-label">مسئول الجودة </label>
                                 <div class="col-4">
                                     <input type="text" class="form-control" name="name_1">
                                 </div>
@@ -98,19 +98,19 @@
                         </th>
                         @endif
                         @if (Auth::user()->hasRole('SuperAdmin'))
-                        <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
+                        <th class=" w-50 text-center col-3 " style="border: 1px solid silver !important;">
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">مسئول الجودة </label>
-                                <div class="col-4">
+                                <label for="" class="col-md-3 col-form-label">مسئول الجودة </label>
+                                <div class="col-md-4">
                                     <input type="text" class="form-control" name="name_1">
                                 </div>
                             </div>
                         </th>
-                        <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
+                        <th class=" w-50 text-center col-3 " style="border: 1px solid silver !important;">
 
                             <div class="form-group row w-20 text-right">
-                                <label for="" class="col-3 col-form-label">مدير الجودة</label>
-                                <div class="col-4">
+                                <label for="" class="col-md-3 col-form-label">مدير الجودة</label>
+                                <div class="col-md-4">
                                     <input type="text" class="form-control" name="name_2">
                                 </div>
                             </div>
@@ -121,6 +121,8 @@
                 </thead>
             </table>
             <hr class="w-100">
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
             <table class="table">
                 <thead>
                     <tr>
@@ -165,7 +167,7 @@
                     </tr>
                 </thead>
             </table>
-
+            </div>
             <div class='row mt-3'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
                     <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>

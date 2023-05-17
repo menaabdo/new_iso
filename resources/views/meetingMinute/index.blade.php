@@ -20,7 +20,7 @@
           <div class="row" style='margin:auto;width:90%'>
         
            
-              <a  href="{{ route('meetingMinute.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <a  href="{{ route('meetingMinute.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
        
@@ -31,6 +31,8 @@
 <div class="card-body">
                 <!-- /.card-header -->
                 <div class="card-body">
+                <div style="overflow-x:auto;">
+ 
                   <table id="example1" class="table shadow-lg table-striped shadow-lg" >
                     <thead>
                     <tr>
@@ -107,7 +109,7 @@
                                                      @elseif($meetingMinute->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin') || $meetingMinute->status == 'pending' && Auth::user()->hasRole('SuperAdmin')
                                                      || $meetingMinute->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin'))
                                                     <td style="font-size:15px">
-                                                      <form id="delete-form-{{ $meetingMinute->id }}"
+                                                      <form id="delete-form-{{ $meetingMinute->id }}"    class='d-flex justify-content-center'
                                                           action="{{ route('meetingMinute.destroy', $meetingMinute->id) }}" method="post">
                                                          
                                                               <a href="{{ route('meetingMinute.edit', $meetingMinute->id) }}"
@@ -149,6 +151,7 @@
                    @endforeach
                   </tbody>
                   </table>
+                </div>
                 </div>
                 </div>
                 <!-- /.card-body -->

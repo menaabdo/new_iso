@@ -10,12 +10,24 @@
         padding: 2px;
         text-align: right;
     }
+    @media only screen and (max-width: 500px) {
+    form{
+        width:43% !important;
+        margin:0 !important;
+    }
+    }
+    @media only screen and (max-width: 700px) {
+    form{
+        width:43% !important;
+        margin:0 !important;
+    }
+    }
 
 </style>
 <div class="card  " style='   ;'>
     <div class='card-body row' style='margin:auto'>
 
-        <form action="{{route('followUpRecord.store')}}" class='col-md-8 ' style='margin:auto;margin-top:80px;' method="post" enctype="multipart/form-data" id="fo1">
+        <form action="{{route('followUpRecord.store')}}" class=' ' style='width:100%;margin:auto;margin-top:80px;' method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4" style=''>
                 <h2 style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>سجل متابعة طلبات الإجراءات التصحيحية / الوقائية </h2>
@@ -89,7 +101,7 @@
             <table class="table ">
                 <thead>
                     <tr>
-                        <th class=" w-50 text-center col-3 " style="border: 1px solid #001635  !important;">
+                        <th class=" w-50 text-center col-3 " style="border: 1px solid silver  !important;">
                             <div class="form-group row w-20 text-center">
                                 <label for="" class="col-12 col-form-label text-center">* المصدر </label>
                             </div>

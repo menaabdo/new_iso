@@ -1,7 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-
+<style>
+    @media only screen and (max-width: 600px) {
+.card{padding:35px;}
+}
+    </style>
 <div class='row card'>
     <div style='margin:auto'>
         <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">أمر تكليف لإجراء مراجعة داخلية لنظام الجودة</h3>

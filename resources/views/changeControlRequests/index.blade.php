@@ -21,7 +21,7 @@
           <div class="row" style='margin:auto;width:90%'>
      
            
-              <a  href="{{ route('changeControlRequests.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+              <a  href="{{ route('changeControlRequests.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
               
@@ -32,6 +32,8 @@
 <div class="card-body">
                 <!-- /.card-header -->
                 <div class="card-body">
+                <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+           
                   <table id="example1" class="table table-bordered table-striped" >
                     <thead class='text-center' style='text-align:center;background-color:#001635;color:white; box-shadow: 0 1rem 3rem rgba(0,0,0,.175)'>
                    
@@ -47,7 +49,7 @@
                           <tr class="datatable-row datatable-row-even">
                               <td class="datatable-cell" style="font-size:15px "><span><img src="{{asset($changeControlRequests->logo)}}" alt="Image" width="50px"></span></td>
                               <td style="font-size:15px">
-                                  <form id="delete-form-{{ $changeControlRequests->id }}" 
+                                  <form id="delete-form-{{ $changeControlRequests->id }}" class='d-flex justify-content-center'
                                       action="{{ route('changeControlRequests.destroy', $changeControlRequests->id) }}" method="post">
                                       <a href="{{ route('changeControlRequests.edit', $changeControlRequests->id) }}" class="btn btn-lg  
                                               btn-icon " title="@lang('general.edit')" >

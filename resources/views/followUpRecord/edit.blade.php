@@ -10,30 +10,43 @@
         padding: 2px;
         text-align: right;
     }
+    /* @media only screen and (max-width: 700px) {
+    form{
+        width:40% !important;
+        margin:0 !important;
+    }
+    } */
+    @media only screen and (min-width: 320px)and (max-width: 500px) {
+    form{
+        width:43% !important;
+        margin:0 !important;
+    }
+    }
 
 </style>
-<div class="card">
-    <div class='card-body row' style='margin:auto; width:70%'>
+<div class="card  " style='   ;'>
+    <div class='card-body row' style='margin:auto'>
 
-        <form action="{{route('followUpRecord.update',$followUpRecord->id)}}" style='margin:auto; width:70%' method="post" enctype="multipart/form-data" id="fo1">
+        <form action="{{route('followUpRecord.update',$followUpRecord->id)}}" style='margin:auto;;margin-top:80px; width:100%' method="post" enctype="multipart/form-data" id="fo1">
             @method('PUT')
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto'>سجل متابعة طلبات الإجراءات التصحيحية / الوقائية </h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;margin:auto;text-align:center'>سجل متابعة طلبات الإجراءات التصحيحية / الوقائية </h2>
                 <label class='mt-2'>لــعام</label>
-                <input style="text-align: center;" type="text" name="year" value="{{$followUpRecord->year}}">
+                <input class="col-md-6 form-control  shadow-lg" style="text-align: center;margin:auto"  type="text" name="year" value="{{$followUpRecord->year}}">
                 <hr class="w-100">
             </div>
-            <div id="mainDiv" style=" margin-right:500px;">
-                <h4 style=" color:blue;">CO LOGO</h4>
-                <hr width="50%" size="20" color="blue">
-                <img src="{{ asset($followUpRecord->logo) }}" height=180px width=210px; />
-                <input type="file" id="img" name="logo" accept="image/*">
+            <div class='shadow-lg p-3'>
+                <label class="form-label pr-5">CO LOGO</label>
+                <div class=''>
+               <img src="{{ asset($followUpRecord->logo) }}" height=180px width=210px; />
+                <input type="file" id="img" name="logo" class='shadow-lg' accept="image/*">
+            </div>
             </div>
             <hr class="w-100">
-            <div class="form-group row w-100 text-right" style="text-align:center;">
-                <table class="table">
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+                 <table class="table">
+                    <tr  style="background-color:#001635 ;color:white; text-align:center;">
                         <th class="col-1 col-form-label" scope="col" rowspan="2">م</th>
                         <th scope="col" rowspan="2">رقم الطلب</th>
                         <th scope="col" rowspan="2">تاريخ</th>
@@ -43,7 +56,7 @@
                         <th scope="col" rowspan="2">نتائج المتابعة</th>
                         <th scope="col" colspan="3">فاعلية الإجراء **</th>
                     </tr>
-                    <tr style="background-color:rgb(249, 235, 141); text-align:center;">
+                    <tr style="background-color:#001635 ;color:white; text-align:center;">
                         <th scope="col"> 1</th>
                         <th scope="col">2</th>
                         <th scope="col"> 3</th>
@@ -116,35 +129,44 @@
 
 
 
-            <table class="table">
+            <table class="table ">
                 <thead>
                     <tr>
-                        <th class=" w-50 text-center col-3 " style="border: 2px solid #150c0c !important;">
-                            <div class="form-group row w-20 text-left">
-                                <label for="" class="col-3 col-form-label">* المصدر </label>
-                                <label for="" class="col-3 col-form-label">(1) مراجعة داخلية</label>
-                                <label for="" class="col-3 col-form-label">(2) مراجعة خارجية </label>
-                                <label for="" class="col-3 col-form-label">(3) مراجعة إدارة</label>
+                        <th class=" w-50 text-center col-3 " style="border: 1px solid silver  !important;">
+                            <div class="form-group row w-20 text-center">
+                                <label for="" class="col-12 col-form-label text-center">* المصدر </label>
+                            </div>
+                            <div class="form-group row w-20 text-center">
+
+                                <label for="" class="col-6 col-form-label">(1) مراجعة داخلية</label>
+                                <label for="" class="col-6 col-form-center">(4) شكوى العميل</label>
+
+                            </div>
+                            <div class="form-group row w-20 text-center">
+
+                                <label for="" class="col-6 col-form-label">(2) مراجعة خارجية </label>
+                                <label for="" class="col-6 col-form-label">(5) حالة عدم مطابقة </label>
+
+                            </div>
+                            <div class="form-group row w-20 text-center">
+
+                                <label for="" class="col-6 col-form-label">(3) مراجعة إدارة</label>
+                                <label for="" class="col-6 col-form-label">(6) أخرى(تذكر الحالة)</label>
+
                             </div>
 
-                            <div class="form-group row w-20 text-left">
-                                <label for="" class="col-2 col-form-label"></label>
-                                <label for="" class="col-3 col-form-label">(4) شكوى العميل</label>
-                                <label for="" class="col-3 col-form-label">(5) حالة عدم مطابقة </label>
-                                <label for="" class="col-3 col-form-label">(6) أخرى(تذكر الحالة)</label>
-                            </div>
-                        </th>
-                        <th class=" w-30 text-center col-2 " style="border: 2px solid #0f0a0a !important;">
-                            <div class="form-group row w-10 text-left">
-                                <label for="" class="col-4 col-form-label"> ** فاعلية الإٌجراء </label>
-                            </div>
-
-                            <div class="form-group row w-30 text-center">
+                            <div class="form-group row w-10 text-center">
+                                <label for="" class="col-12 col-form-label"> ** فاعلية الإٌجراء </label>
                                 <label for="" class="col-4 col-form-label">(7) إقفال الطلب </label>
                                 <label for="" class="col-4 col-form-label">(8) إجراء تصحيحي أخر </label>
+
                                 <label for="" class="col-4 col-form-label">(9)أجراء وقائي أخر</label>
+
                             </div>
+
+
                         </th>
+
                     </tr>
                 </thead>
             </table>
@@ -194,8 +216,9 @@
             </table>
 
     </div>
-    <div class="form-group">
-        <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save" style="width:15% ; height: 20%;"></i> تعديل </button>
+    <div class="row">
+    <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                 <i class="fas fa-save" style="width:15% ; height: 20%;"></i> تعديل </button>
     </div>
     </form>
 </div>
@@ -251,18 +274,18 @@
 </script>
 
 <style>
-    <style>.table thead th {
+    <style>
+    .table thead th {
         vertical-align: bottom;
-        border-bottom: 2px solid black;
+      
     }
 
     table,
     th,
     td,
     tr {
-        border: 1px solid black;
-        border-bottom: 2px solid black;
-        border-top: 2px solid black;
+        border: 1px solid silver;
+       
     }
 
     #mainDiv {
