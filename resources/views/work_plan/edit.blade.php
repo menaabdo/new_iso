@@ -24,13 +24,13 @@
             <div class="container p-4">
 
                 <div style="" class="w-100 text-center my-4">
-                    <h2 style="text-shadow: 1px 1px 1px #3ed3ea;margin-top:85px;">الخطة السنوية للمراجعات الداخلية</h2>
+                    <h2 style="text-shadow: 1px 1px 1px #3ed3ea;margin-top:85px;">@lang('main.Annual plan for internal  audit')</h2>
                     <hr class="w-100">
                 </div>
                 <div class="form-group row text-center mt-5">
-                    <label for="" class="col-3 col-form-label">التاريخ ...</label>
+                    <label for="" class="col-3 col-form-label">@lang('main.date')</label>
                     <div class="col-3">
-                        <input type="date" class="form-control" placeholder="رئيس فريق المراجعه  ......" name="date_1"
+                        <input type="date" class="form-control" name="date_1"
                             value="{{ $work_plan->date_1 }}">
                     </div>
                 </div>
@@ -40,32 +40,32 @@
                    
                         <tr style='background-color: #2a415b;font-size:11px;
     color: white;'>  @if ($work_plan->status == 'pending' && Auth::user()->hasRole('Employee'))
-                                <th class="col-1 col-form-label">م</th>
+                                <th class="col-1 col-form-label">@lang('main.m')</th>
                             @endif
                             @if (($work_plan->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                                 ($work_plan->status == 'pending' && Auth::user()->hasRole('Admin')))
-                                <th class="col-1 col-form-label">م</th>
+                                <th class="col-1 col-form-label">@lang('main.m')</th>
                             @endif
                             @if (($work_plan->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($work_plan->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                                 ($work_plan->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                                <th class="col-1 col-form-label">م</th>
+                                <th class="col-1 col-form-label">@lang('main.m')</th>
                             @endif
-                            <th class="col-3 col-form-label">الجهة المراجع عليها </th>
-                            <th class="col-3 col-form-label">موضوعات/بنود المراجعة </th>
-                            <th>يناير</th>
-                            <th>فبراير</th>
-                            <th> مارس</th>
-                            <th> إبريل</th>
-                            <th> مايو</th>
-                            <th> يونيو</th>
-                            <th> يوليو</th>
-                            <th>أغسطس</th>
-                            <th>سبتمبر</th>
-                            <th>أكتوبر</th>
-                            <th>نوفمبر</th>
-                            <th>ديسمبر</th>
-                            <th class="col-3 col-form-label">ملاحظات</th>
+                            <th class="col-3 col-form-label">@lang('main.Referenced Authority') </th>
+                            <th class="col-3 col-form-label">@lang('main.Review topics/items') </th>
+                            <th class='rota'>@lang('main.January')</th>
+                            <th class='rota'>@lang('main.February')</th>
+                            <th class='rota'> @lang('main.March')</th>
+                            <th class='rota'> @lang('main.April')</th>
+                            <th class='rota'> @lang('main.May')</th>
+                            <th class='rota'> @lang('main.June')</th>
+                            <th class='rota'> @lang('main.July')</th>
+                            <th class='rota'>@lang('main.August')</th>
+                            <th class='rota'>@lang('main.September')</th>
+                            <th class='rota'>@lang('main.October')</th>
+                            <th class='rota'>@lang('main.November')</th>
+                            <th class='rota'>@lang('main.December')</th>
+                            <th class="col-3 col-form-label">@lang('main.note')</th>
                         </tr>
                         @if (count($work_plan->plan) > 0)
                             @foreach ($work_plan->plan as $key => $work)
@@ -235,23 +235,19 @@
                                 <input type="checkbox" name="planned" value="1"
                                     {{ $work_plan->planned == '1' ? 'checked' : '' }}>
                             </div>
-                            <h2 for="" style="text-align:right;" class="col-2 col-form-label">موعد مخطط
-                                (work_plan
-                                9001) </h2>
+                            <h2 for="" style="text-align:right;" class="col-2 col-form-label">@lang('main.Planned date') (ISO 9001)</h2>
                             <div class="col-1 col-form-label">
                                 <input type="radio" name="planing" value="there_are_mismatches" <?php if ($work_plan->planing == 'there_are_mismatches') {
                                     echo 'checked="checked"';
                                 } ?>>
                             </div>
-                            <h2 for="" style="text-align:right;" class="col-3 col-form-label">تم التنفيذ وتوجد
-                                حالات عدم تطابق </h2>
+                            <h2 for="" style="text-align:right;" class="col-3 col-form-label">@lang('main.Implemented and there are no mismatches')</h2>
                             <div class="col-1 col-form-label">
                                 <input type="radio" name="planing" value="there_are_no_mismatches" <?php if ($work_plan->planing == 'there_are_no_mismatches') {
                                     echo 'checked="checked"';
                                 } ?>>
                             </div>
-                            <h2 for="" style="text-align:right;" class="col-3 col-form-label">تم التنفيذ ولا توجد
-                                حالات عدم مطابقة </h2>
+                            <h2 for="" style="text-align:right;" class="col-3 col-form-label">@lang('main.Implemented and there are no cases of non-compliance')</h2>
                         </div>
                    
                         <table class="table table-bordered shadow-lg">
@@ -261,17 +257,17 @@
                                     <th class=" text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="name_1" value="{{ $work_plan->name_1 }}">
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="job_1" value="{{ $work_plan->job_1 }}">
@@ -283,17 +279,17 @@
                                         <th class="  text-center col-2 ">
                                             <div class="" style="text-align:center ;">
                                                 <label for="" class=""
-                                                    style="text-align:center;font-size:large;font-weight: bolder;">مراجعة:</label>
+                                                    style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.review'):</label>
                                             </div>
                                             <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                                <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                                 <div class="col-6">
                                                     <input type="text" class="form-control" placeholder="  ......"
                                                         name="name_2" value="{{ $work_plan->name_2 }}" readonly>
                                                 </div>
                                             </div>
                                             <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                                <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                                 <div class="col-6">
                                                     <input type="text" class="form-control" placeholder="  ......"
                                                         name="job_2" value="{{ $work_plan->job_2 }}" readonly>
@@ -307,17 +303,17 @@
                                         <th class="  text-center col-2 ">
                                             <div class="" style="text-align:center ;">
                                                 <label for="" class=""
-                                                    style="text-align:center;font-size:large;font-weight: bolder;">مراجعة:</label>
+                                                    style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.review'):</label>
                                             </div>
                                             <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                                <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                                 <div class="col-6">
                                                     <input type="text" class="form-control" placeholder="  ......"
                                                         name="name_2" value="{{ $work_plan->name_2 }}" readonly>
                                                 </div>
                                             </div>
                                             <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                                <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                                 <div class="col-6">
                                                     <input type="text" class="form-control" placeholder="  ......"
                                                         name="job_2" value="{{ $work_plan->job_2 }}" readonly>
@@ -328,17 +324,17 @@
                                         <th class="  text-center col-2 ">
                                             <div class="" style="text-align:center ;">
                                                 <label for="" class=""
-                                                    style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                                                    style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval'):</label>
                                             </div>
                                             <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                                <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                                 <div class="col-6">
                                                     <input type="text" class="form-control" placeholder="  ......"
                                                         name="name_3" value="{{ $work_plan->name_3 }}" readonly>
                                                 </div>
                                             </div>
                                             <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                                <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                                 <div class="col-6">
                                                     <input type="text" class="form-control" placeholder="  ......"
                                                         name="job_3" value="{{ $work_plan->job_3 }}" readonly>
@@ -352,17 +348,17 @@
                                     <th class=" text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="name_1" value="{{ $work_plan->name_1 }}">
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="job_1" value="{{ $work_plan->job_1 }}">
@@ -373,17 +369,17 @@
                                     <th class="  text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">مراجعة:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.review'):</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="name_2" value="{{ $work_plan->name_2 }}">
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="job_2" value="{{ $work_plan->job_2 }}">
@@ -394,17 +390,17 @@
                                         <th class="  text-center col-2 ">
                                             <div class="" style="text-align:center ;">
                                                 <label for="" class=""
-                                                    style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                                                    style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval'):</label>
                                             </div>
                                             <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">الاسم: -</label>
+                                                <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                                                 <div class="col-6">
                                                     <input type="text" class="form-control" placeholder="  ......"
                                                         name="name_3" value="{{ $work_plan->name_3 }}" readonly>
                                                 </div>
                                             </div>
                                             <div class="form-group row w-10 text-right">
-                                                <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                                                <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                                                 <div class="col-6">
                                                     <input type="text" class="form-control" placeholder="  ......"
                                                         name="job_3" value="{{ $work_plan->job_3 }}" readonly>
@@ -418,17 +414,17 @@
                                     <th class=" text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-4 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-4 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="name_1" value="{{ $work_plan->name_1 }}">
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-4 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-4 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="job_1" value="{{ $work_plan->job_1 }}">
@@ -439,17 +435,17 @@
                                     <th class="  text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">مراجعة:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.review'):</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-4 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-4 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="name_2" value="{{ $work_plan->name_2 }}">
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-4 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-4 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="job_2" value="{{ $work_plan->job_2 }}">
@@ -460,17 +456,17 @@
                                     <th class="  text-center col-2 ">
                                         <div class="" style="text-align:center ;">
                                             <label for="" class=""
-                                                style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                                                style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval'):</label>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-4 col-form-label">الاسم: -</label>
+                                            <label for="" class="col-4 col-form-label">@lang('main.name'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="name_3" value="{{ $work_plan->name_3 }}">
                                             </div>
                                         </div>
                                         <div class="form-group row w-10 text-right">
-                                            <label for="" class="col-4 col-form-label">الوظيفة: -</label>
+                                            <label for="" class="col-4 col-form-label">@lang('main.job'): -</label>
                                             <div class="col-6">
                                                 <input type="text" class="form-control" placeholder="  ......"
                                                     name="job_3" value="{{ $work_plan->job_3 }}">
@@ -489,7 +485,7 @@
                         <tr>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                <label>اسم الشركة</label>
+                                    <label>@lang('main.Company Name')</label>
                                     <input class="form-control" type="text" name="company_name"
                                          value="{{ $work_plan->company_name }}">
                                 </div>
@@ -497,7 +493,7 @@
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                <label>تاريخ الاصدار</label>
+                                    <label>@lang('main.release_date') </label>
                                     <input class="form-control" type="text" name="date2"
                                        value="{{ $work_plan->date2 }}"
                                         onfocus="(this.type='date')" onblur="(this.type='text')">
@@ -506,7 +502,7 @@
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                <label>تاريخ التعديل</label>
+                                    <label>@lang('main.Modification date')</label>
                                     <input class="form-control" type="text" name="date3"
                                        value="{{ $work_plan->date3 }}"
                                         onfocus="(this.type='date')" onblur="(this.type='text')">
@@ -515,21 +511,21 @@
                             </th>
                              <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $work_plan->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $work_plan->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $work_plan->number_doc }}">
                             </div>
                         </th>
@@ -539,14 +535,14 @@
                 @if ($work_plan->status == 'pending' && Auth::user()->hasRole('Employee'))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                             </i></button>
                     </div>
                 @elseif(($work_plan->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                     ($work_plan->status == 'pending' && Auth::user()->hasRole('Admin')))
                     <div class="form-group">
                         <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                            class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                             </i></button>
                     </div>
                 @elseif(($work_plan->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -554,7 +550,7 @@
                     ($work_plan->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
                     <div class="form-group" style='text-align:center'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit" class="btn btn-primary">
-                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>تعديل</button>
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.edit')</button>
             </div>
                 @endif
             </div>

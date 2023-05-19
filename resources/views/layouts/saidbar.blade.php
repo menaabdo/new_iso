@@ -88,27 +88,27 @@
                     <li class="sidebar-item" style=' box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;'>
                         <a href="{{ route('sop.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> @lang('main.Achieving quality objectives')</span>
+                            <span class="hide-menu"> @lang('main.quality objectives')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('sop.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> خطه تنفيذ هدف </span>
+                            <span class="hide-menu">@lang('main.objectives execution plan form')</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
-                            <span class="hide-menu">الأرشيف</span>
+                            <span class="hide-menu">@lang('main.Archive')</span>
 
                         </a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
                                 <a href="{{ route('sopArchives.index') }}" class="sidebar-link">
                                     <i class="mdi mdi-archive"></i>
-                                    <span class="hide-menu">أرشيف</span>
+                                    <span class="hide-menu">@lang('main.Archive')</span>
                                 </a>
                             </li>
 
@@ -127,27 +127,27 @@
                     <li class="sidebar-item">
                         <a href="{{ route('risksop.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> @lang('main.Achieving Risk assessment')</span>
+                            <span class="hide-menu"> @lang('main.Risk assessment1')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('risk.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span style='    font-size: 10;' class="hide-menu"> سجل حصر وتحديدالاخطار والمخاطر </span>
+                            <span style='    font-size:12;' class="hide-menu">@lang('main.Risk Management report') </span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
-                            <span class="hide-menu">الأرشيف</span>
+                            <span class="hide-menu">@lang('main.Archive')</span>
 
                         </a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
                                 <a href="{{ route('risksopArchives.index') }}" class="sidebar-link">
                                     <i class="mdi mdi-archive"></i>
-                                    <span class="hide-menu">أرشيف</span>
+                                    <span class="hide-menu">@lang('main.Archive')</span>
                                 </a>
                             </li>
 
@@ -159,70 +159,70 @@
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="fa fa-link"></i>
-                    <span class="hide-menu">المراجعه الداخليه</span>
+                    <span class="hide-menu">@lang('main.internal audit')</span>
 
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
                         <a href="{{ route('interiorsop.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> اجراء المراجعه الداخليه</span>
+                            <span class="hide-menu">@lang('main.internal audit1')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('interior.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> متابعة نتائج المراجعة الداخلية </span>
+                            <span class="hide-menu">@lang('main.Follow up on the results of the internal audit')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('internalAudit.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> مراجعات داخلية لنظام الجودة </span>
+                            <span class="hide-menu">@lang('main.List of Internal Audits')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('noticeInternal.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> إخطار بمراجعة داخلية </span>
+                            <span class="hide-menu">@lang('main.Notify of an internal  audit')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('InternalAuditReport.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> تقرير مراجعة داخلية </span>
+                            <span class="hide-menu">@lang('main.IA Report')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('listInternalAuditor.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> مراجعين داخليين لنظام الجودة </span>
+                            <span class="hide-menu">@lang('main.List of approved internal auditors')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('assigned.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu">أمر تكليف إجراء مراجعة داخلية</span>
+                            <span class="hide-menu">@lang('main.Assigning an internal auditor')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('work_plan.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> خطة سنوية للمراجعات الداخلية </span>
+                            <span class="hide-menu">@lang('main.Annual plan for internal  audit')</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
-                            <span class="hide-menu">الأرشيف</span>
+                            <span class="hide-menu">@lang('main.Archive')</span>
 
                         </a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
                                 <a href="{{ route('interiorArchives.index') }}" class="sidebar-link">
                                     <i class="mdi mdi-archive"></i>
-                                    <span class="hide-menu">أرشيف</span>
+                                    <span class="hide-menu">@lang('main.Archive')</span>
                                 </a>
                             </li>
 
@@ -234,51 +234,51 @@
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="fa fa-tasks"></i>
-                    <span class="hide-menu">مراجعة الادارة</span>
+                    <span class="hide-menu">@lang('main.Management review')</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
                         <a href="{{ route('meetingAgendasop.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> اجراء مراجعة الادارة</span>
+                            <span class="hide-menu">@lang('main.Management review1')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('meetingAgenda.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> أجندة إجتماع مراجعة الإدارة </span>
+                            <span class="hide-menu">@lang('main.meeting agenda')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('invitationMeeting.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> دعوة لإجتماع مراجعة الإدارة </span>
+                            <span class="hide-menu">@lang('main.Invitation to a meeting')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('followLog.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu" style='font-size: 10px;'> سجل متابعة قرارات مراجعة الإدارة العليا </span>
+                            <span class="hide-menu" style='font-size: 10px;'>@lang('main.Follow-up record of senior management decisions')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('meetingMinute.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> محضر إجتماع مراجعة </span>
+                            <span class="hide-menu">@lang('main.Minutes of Meeting')</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
-                            <span class="hide-menu">الأرشيف</span>
+                            <span class="hide-menu">@lang('main.Archive')</span>
 
                         </a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
                                 <a href="{{ route('meetingAgendaArchives.index') }}" class="sidebar-link">
                                     <i class="mdi mdi-archive"></i>
-                                    <span class="hide-menu">أرشيف</span>
+                                    <span class="hide-menu">@lang('main.Archive')</span>
                                 </a>
                             </li>
 
@@ -290,44 +290,44 @@
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="fas fa-sticky-note"></i>
-                    <span class="hide-menu">مراقبة وضبط الوثائق</span>
+                    <span class="hide-menu">@lang('main.Document control1') </span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
                         <a href="{{ route('recordActionSop.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> اجراء مراقبة وضبط الوثائق</span>
+                            <span class="hide-menu"> @lang('main.Document control') </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('recordAction.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> سجل حصر الاجراءات المستخدمة </span>
+                            <span class="hide-menu"> @lang('main.Record inventory of the sop  used')  </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('recordModel.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> سجل حصر النماذج المستخدمة </span>
+                            <span class="hide-menu"> @lang('main.Record inventory of the Forms used')  </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('recordCanceledDocument.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> سجل حصر الوثائق الملغاة</span>
+                            <span class="hide-menu"> @lang('main.Record of Canceled Documents') </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('issuanceRequest.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> طلب إصدار / تعديل / إلغاء وثيقة
+                            <span class="hide-menu"> @lang('main.DCR') 
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('directorList.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> قائمة أسماء المديرين
+                            <span class="hide-menu"> @lang('main.list of managers and individuals authorized to prepare documents') 
 
                             </span>
                         </a>
@@ -335,21 +335,21 @@
                     <li class="sidebar-item">
                         <a href="{{ route('listDocument.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> قائمة رئيسية للوثائق
+                            <span class="hide-menu"> @lang('main.Main list of documents') 
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('brokenRecord.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu">نماذج السجلات المعدمة
+                            <span class="hide-menu">@lang('main.List of Disposed Documents') 
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('typicalForm.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> نموذج إستلام وثائق/نماذج
+                            <span class="hide-menu"> @lang('main.Document receipt form') 
                             </span>
                         </a>
                     </li>
@@ -357,14 +357,14 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
-                            <span class="hide-menu">الأرشيف</span>
+                            <span class="hide-menu">@lang('main.Archive')</span>
 
                         </a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
                                 <a href="{{ route('recordActionArchives.index') }}" class="sidebar-link">
                                     <i class="mdi mdi-archive"></i>
-                                    <span class="hide-menu">أرشيف</span>
+                                    <span class="hide-menu">@lang('main.Archive')</span>
                                 </a>
                             </li>
 
@@ -376,47 +376,58 @@
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="fas fa-file-alt"></i>
-                    <span class="hide-menu">التصحيحيه والوقائيه</span>
+                    <span class="hide-menu">
+                        @php
+                        $string1 = trans('main.Corrective and preventive actions and cases of non-conformity1');
+                         $split_string1 = wordwrap($string1, 30, "\n");
+                     @endphp
+                     {!! nl2br(e($split_string1)) !!}
+                  </span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
                         <a href="{{ route('corrctivePreventiveActionsSOP.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> اجراء التصحيحيه والوقائيه</span>
+                            <span class="hide-menu">
+                                @php
+                                $string2 = trans('main.Corrective and preventive actions and cases of non-conformity');
+                                 $split_string2 = wordwrap($string2, 30, "\n");
+                             @endphp
+                             {!! nl2br(e($split_string2)) !!}</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('corrctivePreventiveActions.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> طلب إجراء تصحيحي / وقائي
+                            <span class="hide-menu"> @lang('main.CAR/PAR')
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('Non_conformities.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> حالات عدم المطابقة
+                            <span class="hide-menu"> @lang('main.NCR')
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('nonConformanceReport.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> سجل متابعة تقارير عدم المطابقة
+                            <span class="hide-menu"> @lang('main.Record follow-up reports of non-conformance')
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('followUpRecord.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu" style='font-size:10px'> سجل متابعة طلبات الإجراءات التصحيحية / الوقائية
+                            <span class="hide-menu" style='font-size:10px'> @lang('main.Follow-up record of corrective/preventive action requests')
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('reportNonConformanceCases.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu" style='font-size:10px'> تقرير عدم المطابقة والإجراءات التصحيحية والوقائية
+                            <span class="hide-menu" style='font-size:10px'> @lang('main.Report cases of non-conformity and corrective and preventive actions')
 
 
                             </span>
@@ -425,14 +436,14 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
-                            <span class="hide-menu">الأرشيف</span>
+                            <span class="hide-menu">@lang('main.Archive')</span>
 
                         </a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
                                 <a href="{{ route('corrctiveArchives.index') }}" class="sidebar-link">
                                     <i class="mdi mdi-archive"></i>
-                                    <span class="hide-menu">أرشيف</span>
+                                    <span class="hide-menu">@lang('main.Archive')</span>
                                 </a>
                             </li>
 
@@ -445,20 +456,20 @@
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="fas fa-sitemap"></i>
-                    <span class="hide-menu">فهم المنظمه وسياقها</span>
+                    <span class="hide-menu"> @lang('main.Organization Context1')</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
                         <a href="{{ route('understandingOrganizationSOP.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> اجراء فهم المنظمه وسياقها
+                            <span class="hide-menu"> @lang('main.Organization Context')
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('externalCases.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> استمارة قضايا خارجيه
+                            <span class="hide-menu"> @lang('main.external Issue Form')
 
                             </span>
                         </a>
@@ -466,7 +477,7 @@
                     <li class="sidebar-item">
                         <a href="{{ route('internalCases.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> استمارة قضايا داخلية
+                            <span class="hide-menu"> @lang('main.Internal Issue Form')
 
                             </span>
                         </a>
@@ -474,7 +485,7 @@
                     <li class="sidebar-item">
                         <a href="{{ route('interestedParties.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> استمارة الأطراف المهتمة
+                            <span class="hide-menu"> @lang('main.Interested Parties Form')
 
                             </span>
                         </a>
@@ -482,21 +493,21 @@
                     <li class="sidebar-item">
                         <a href="{{ route('swot.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> تحليل(SWOT)
+                            <span class="hide-menu"> @lang('main.SWOT analysis')
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
-                            <span class="hide-menu">الأرشيف</span>
+                            <span class="hide-menu">@lang('main.Archive')</span>
 
                         </a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
                                 <a href="{{ route('understandingArchives.index') }}" class="sidebar-link">
                                     <i class="mdi mdi-archive"></i>
-                                    <span class="hide-menu">أرشيف</span>
+                                    <span class="hide-menu">@lang('main.Archive')</span>
                                 </a>
                             </li>
 
@@ -508,20 +519,20 @@
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="fa fa-comments "></i>
-                    <span class="hide-menu">شكاوي وقياس رضا العميل</span>
+                    <span class="hide-menu">@lang('main.Measuring customer satisfaction1')</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
                         <a href="{{ route('complaintsWorkSOP.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu" style='font-size:12px'> اجراء عمل الشكاوي وقياس رضا العميل
+                            <span class="hide-menu" style='font-size:12px'> @lang('main.Measuring customer satisfaction')
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('customers.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> العمـــــــــــلاء
+                            <span class="hide-menu"> @lang('main.Customers')
 
                             </span>
                         </a>
@@ -529,7 +540,7 @@
                     <li class="sidebar-item">
                         <a href="{{ route('questionnaireForms.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> نموذج استبيان عن الدورة و المدرب
+                            <span class="hide-menu"> @lang('main.Questionnaire form for the course and trainer')
 
 
                             </span>
@@ -538,7 +549,7 @@
                     <li class="sidebar-item">
                         <a href="{{ route('customerComplaints.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> متابعة شكوى عميل
+                            <span class="hide-menu"> @lang('main.Follow up on a customer complaint')
 
 
                             </span>
@@ -547,7 +558,7 @@
                     <li class="sidebar-item">
                         <a href="{{ route('customerSatisfactions.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> قياس رضا العملاء
+                            <span class="hide-menu"> @lang('main.customer satisfaction')
 
                             </span>
                         </a>
@@ -555,7 +566,7 @@
                     <li class="sidebar-item">
                         <a href="{{ route('complaintStudies.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> تقرير دراسة شكوي عميل
+                            <span class="hide-menu"> @lang('main.Customer complaint report')
 
 
                             </span>
@@ -564,14 +575,14 @@
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
-                            <span class="hide-menu">الأرشيف</span>
+                            <span class="hide-menu">@lang('main.Archive')</span>
 
                         </a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
                                 <a href="{{ route('complaintsWorkSOPArchives.index') }}" class="sidebar-link">
                                     <i class="mdi mdi-archive"></i>
-                                    <span class="hide-menu">أرشيف</span>
+                                    <span class="hide-menu">@lang('main.Archive')</span>
                                 </a>
                             </li>
 
@@ -583,33 +594,33 @@
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="	fas fa-retweet"></i>
-                    <span class="hide-menu">التحكم في التغيير</span>
+                    <span class="hide-menu">@lang('main.Change control1')</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
                         <a href="{{ route('changeControlSOP.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> اجراء التحكم في التغيير
+                            <span class="hide-menu"> @lang('main.Change control')
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('changeControlRequests.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu" style='font-size:12px'> نموذج طلب التحكم في التغيير (CCR)</span>
+                            <span class="hide-menu" style='font-size:12px'> @lang('main.Change Control Request ') </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
-                            <span class="hide-menu">الأرشيف</span>
+                            <span class="hide-menu">@lang('main.Archive')</span>
 
                         </a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
                                 <a href="{{ route('changeControlSOPArchives.index') }}" class="sidebar-link">
                                     <i class="mdi mdi-archive"></i>
-                                    <span class="hide-menu">أرشيف</span>
+                                    <span class="hide-menu">@lang('main.Archive')</span>
                                 </a>
                             </li>
 
@@ -621,63 +632,63 @@
             <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="	fas fa-sync-alt"></i>
-                    <span class="hide-menu">التحسين المستمر</span>
+                    <span class="hide-menu">@lang('main.Improvement1')</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
                         <a href="{{ route('ContinuousImprovementSOP.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> اجراء التحسين المستمر
+                            <span class="hide-menu"> @lang('main.Improvement')
                             </span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('contractStats.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> إحصائيات التعاقد</span>
+                            <span class="hide-menu"> @lang('main.contract statistics')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('trainingStats.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> إحصائيات التدريب</span>
+                            <span class="hide-menu"> @lang('main.Training statistics')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('nonConformanceStats.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> إحصائيات حالات عدم المطابقة</span>
+                            <span class="hide-menu"> @lang('main.Nonconformance statistics')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('followUpRecordImprovements.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> سجل متابعة أعمال التحسين والتطوير</span>
+                            <span class="hide-menu"> @lang('main.Follow-up record of improvement and development work')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('dataCollectionReports.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> تقرير جمع و تحليل البيانات</span>
+                            <span class="hide-menu"> @lang('main.Data collection and analysis report')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="{{ route('recordAnalysis.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> سجل تحليل لشكاوي العملاء</span>
+                            <span class="hide-menu"> @lang('main.Analyze customer complaints')</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                             <i class="mdi mdi-archive"></i>
-                            <span class="hide-menu">الأرشيف</span>
+                            <span class="hide-menu">@lang('main.Archive')</span>
 
                         </a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item">
                                 <a href="{{ route('ContinuousSOPArchives.index') }}" class="sidebar-link">
                                     <i class="mdi mdi-archive"></i>
-                                    <span class="hide-menu">أرشيف</span>
+                                    <span class="hide-menu">@lang('main.Archive')</span>
                                 </a>
                             </li>
 
@@ -690,13 +701,13 @@
              <li class="sidebar-item">
                 <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                     <i class="	fas fa-sync-alt"></i>
-                    <span class="hide-menu">جميع الإجراءات</span>
+                    <span class="hide-menu">@lang('main.All Sop')</span>
                 </a>
                 <ul aria-expanded="false" class="collapse  first-level">
                     <li class="sidebar-item">
                         <a href="{{ route('all_sop.index') }}" class="sidebar-link">
                             <i class="mdi mdi-adjust"></i>
-                            <span class="hide-menu"> جميع الإجراءات
+                            <span class="hide-menu"> @lang('main.All Sop')
                             </span>
                         </a>
                     </li>

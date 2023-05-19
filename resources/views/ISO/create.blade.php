@@ -38,8 +38,8 @@
   
   .form__label {
     position: absolute;
-    right:  4rem;
-    top: 1rem;
+    right:  2rem;
+    /* top: 1rem; */
     padding: 0 .25rem;
     /* background-color: white; */
     color: #2a415b!important;
@@ -404,7 +404,7 @@ td{
         <div class="row">
             <div class="col-lg-10 col-md-10" style='margin:auto'>
             <h3 style="margin-top:30px;color:#2a415b;padding:10px;color: #2a415b;
-    text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.Achieving quality objectives') </h3>
+    text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.quality objectives')</h3>
     <hr style='background-color:#3ed3ea'>
    <h4 style="text-align:center;margin-bottom:40px;color:#2a415b">@lang('main.Standard work steps') </h4>
    
@@ -691,7 +691,7 @@ td{
 </table>
 </div>
 <hr style="border: 5px; margin: 50px ;">
-<section class="row" style="margin-right: 100px;">
+<section class="row" style="">
     <h2>@lang('main.Action illustration:')</h2>
     <div class="input-group my-3  mx-3">
         <label class="input-group-text" for="inputGroupFile01">@lang('main.choose_photo')</label>

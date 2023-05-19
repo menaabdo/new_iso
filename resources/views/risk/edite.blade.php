@@ -21,7 +21,7 @@
 
 
  <div class='row card'>
-  <h3 style="margin:auto;margin-top:100px;text-shadow: 1px 1px 1px #3ed3ea;">سجل حصر وتحديدالاخطار والمخاطر</h3>
+  <h3 style="margin:auto;margin-top:100px;text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.Risk Management report')</h3>
   <hr>
     <form action="{{route('risk.update',$risk->id)}}" method="post" class='col-md-12' style='margin:auto' enctype="multipart/form-data" id="fo1">
         @method('PUT') 

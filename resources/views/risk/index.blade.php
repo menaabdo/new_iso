@@ -14,11 +14,11 @@
         <div class="card container col-md-12" style='margin-left: 10px'>
 <div class="card-body  ">
 
-            <h3 style="margin-top:85px; text-align:center;text-shadow: 1px 1px 1px #3ed3ea;">سجل حصر و تحديد الاخطار والمخاطر</h3>
+            <h3 style="margin-top:85px; text-align:center;text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.Risk Management report')</h3>
             <hr>
             <div class="row">
 
-                <a href="{{ route('risk.create') }}"  class="btn col-md-12 mr-1" style="width:120px;  float: right; font-size:20px ">
+                <a href="{{ route('risk.create') }}"  class="btn col-md-12 mr-1" style=" ">
           <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
     background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
              
@@ -29,6 +29,7 @@
 <div class="card-body">
                             <!-- /.card-header -->
                             <div class="card-body">
+                            <div style="overflow-x:auto;">
                                 <table id="example1" class="table shadow-lg  table-striped">
                                     <thead style='background-color:#001635'>
                                         <tr>

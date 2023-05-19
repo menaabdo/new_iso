@@ -1,7 +1,9 @@
 @extends('layouts.master')
 
+
 @section('content')
 
+<!-- Content Header (Page header) -->
 <style>
     .back{
     /* background-color: #163e73 !important; */
@@ -36,8 +38,8 @@
   
   .form__label {
     position: absolute;
-    right:  4rem;
-    top: 1rem;
+    right:  3rem;
+    /* top: 1rem; */
     padding: 0 .25rem;
     /* background-color: white; */
     color: #2a415b!important;
@@ -377,18 +379,12 @@
     }
   }
   .shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
-    input,textarea{
-        box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-  
-    
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
 }
 td{
     text-align:center;
 }
     </style>
-
-
 
 <!-- Main content -->
 <div class="container mt-3 p-3" style='background-color:white'>
@@ -401,320 +397,325 @@ td{
         <div class="row">
             <div class="col-lg-10 col-md-10" style='margin:auto'>
             <h3 style="margin-top:30px;color:#2a415b;padding:10px;color: #2a415b;
-    text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;margin-bottom: 50px;
-    text-align: center;">اجراء التحكم في التغيير</h3>
-    
-      <div class="account-sign-in back">
-   
+    text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.Change control')</h3>
 
-    
+    <hr style='background-color:#3ed3ea'>
+   <br>
+                <div class="account-sign-in back">
     <form action="{{route('changeControlSOP.store')}}" method="post" enctype="multipart/form-data" id="fo1">
         {{ csrf_field() }}
         <input type="hidden" name="type" value="9">
         <div class='row' style='flex-wrap:nowrap'>
-                       <div class="form__div " > 
-                       
-                            <input class="form__input shadow-lg" type="text" name="manage_name" style="text-align: start;"
-                                placeholder="ادخل اسم الاداره">
-                                <label for="" class="form__label border-0 text-white"  style="text-align: center;">اسم الاداره</label>
-
-                        </div>
-                        <div class="form__div ">
-                        <input class="form__input shadow-lg" onfocus="(this.type='date')"  placeholder="تاريخ التفعيل" name="active_date" style="text-align: start;">
-                    
-                            <label for="" class="form__label border-0 text-white" style="text-align: center;">تاريخ التفعيل</label>
-                               </div>
-                     
-                           
-                       
-                        </div>
-                        <div class='row' style='flex-wrap:nowrap'>
-              
-                        <div class="form__div ">
-                          <input  class="form__input shadow-lg" onfocus="(this.type='date')" placeholder="تاريخ الاصدار" name="release_date" style="text-align: start;">
-                      
-                            <label for="" class="form__label border-0 text-white" style="text-align: center;">تاريخ الاصدار</label>
-                             </div>
-                             <div class="form__div ">
-                             <input class="form__input shadow-lg" type="text" name="document_number" style="text-align: start;"
-                                placeholder="ادخل رقم الوثيقه ">
-         
-                             <label for="" class="form__label border-0 text-white" style="text-align: center;">رقم الوثيقه</label>
-                                           </div>
-                             </div>
-                      
-                             <div class='row' style='flex-wrap:nowrap'>
-              
-                               <div class="form__div ">
-                        <label for="" class="form__label border-0 text-white" style="text-align: center;">عدد الصفحات</label>
-                            <input class="form__input shadow-lg" type="number" name="page_number" style="text-align: start;"
-                                placeholder="ادخل عدد الصفحات ">
-                        </div>
-                        <div class="form__div " >
-                                 <input class="form__input shadow-lg" onfocus="(this.type='date')" placeholder="تاريخ المراجعة" name="review_date" style="text-align: start;">
-                                 <label for="" class="form__label border-0 text-white"    style="text-align: center;" >تاريخ المراجعه</label>
-                        
-                                </div>
-                        </div>
-                        <div class='row' style='flex-wrap:nowrap;text-align:center'>
-              
-                        <div class="form__div " >
-                                <input class="form__input shadow-lg" type="text" name="document_code" style="text-align: start;"
-                                placeholder="ادخل كود الوثيقه ">
-                                <label for="" class="form__label border-0 text-white" style="text-align: center;">كود الوثيقه</label>
-                           
-                        </div>
-                        <div class="form__div "  > 
-                         
-                        
-                        <input type="file" id="img" name="company_logo" accept="image/*">
-                    </div>
-                        </div>
-                       
-        <hr style="border: 5px; margin: 50px ;">
-
-        <section style="margin-top: 200px;;" class=" my-4  p-4 m-auto">
-            <div class="form-group row ">
-                <label for="" class="col-sm-2 col-form-label">اسم الشركه</label>
-                <div class="col-sm-10">
-                    <input type="text" name="company_name" class="form-control">
-                </div>
-            </div>
-            <div class="form-group row ">
-                <label for="inputPassword" class="col-sm-2 col-form-label">اسم الاجراء</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="procedure_name" id="inputPassword">
-                </div>
-            </div>
-        </section>
-        <hr style="border: 5px; margin: 50px ;">
-
-        <section style=";margin-top: 200px;" class=" my-4  p-4 m-auto">
-            <div class="form-group row ">
-                <label for="" class="col-sm-2 col-form-label">رقم النسخه</label>
-                <div class="col-sm-10">
-                    <input type="text" name="version_number" class="form-control">
-                </div>
-            </div>
-            <div class="form-group row ">
-                <label for="inputPassword" class="col-sm-2 col-form-label">حائز النسخه</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="copy_holder" id="inputPassword">
-                </div>
-            </div>
-        </section>
-        <hr style="border: 5px; margin: 50px ;">
-        <table style="width: 550px;" class="table table-bordered my-4   m-auto">
-            <thead>
-                <tr>
-                    @if (Auth::user()->hasRole('Employee'))
-                    <th class=" w-50 text-center col-2 ">
-                        <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;;">
-                                اعداد :</label>
-
-                            <input class="form-control" type="text" name="prepare" style="text-align: end;"
-                                placeholder="">
-                        </div>
-
-                    </th>
-                    @endif
-                    @if (Auth::user()->hasRole('Admin'))
-                    <th class=" w-50 text-center col-2 ">
-                        <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;font-size:xx-large;font-weight: bolder;">
-                                اعداد :</label>
-
-                            <input class="form-control" type="text" name="prepare" style="text-align: end;"
-                                placeholder="">
-                        </div>
-
-                    </th>
-                    <th class=" w-50 text-center col-2 ">
-                        <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: star;font-size:xx-large;font-weight: bolder;">
-                                مراجعه :</label>
-
-                            <input class="form-control" type="text" name="review" placeholder="">
-                        </div>
-
-                    </th>
-                    @endif
-                    @if(Auth::user()->hasRole('SuperAdmin'))
-                    <th class=" w-50 text-center col-2 ">
-                        <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: center;;">
-                                اعداد :</label>
-
-                            <input class="form-control" type="text" name="prepare" style="text-align: end;"
-                                placeholder="">
-                        </div>
-
-                    </th>
-                    <th class=" w-50 text-center col-2 ">
-                        <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: star;;">
-                                مراجعه :</label>
-
-                            <input class="form-control" type="text" name="review" placeholder="">
-                        </div>
-
-                    </th>
-                    <th class=" w-50 text-center col-2 ">
-                        <div class="" style="text-align:start ;">
-                            <label for="" class="" style="text-align: end;">
-                                اعتماد : </label>
-
-                            <input class="form-control" type="text" name="approval"
-                                style="text-align: end;width: 120px;">
-                        </div>
-
-                    </th>
-                    @endif
-                </tr>
-            </thead>
-
-        </table>
-
-        <hr style="border: 5px; margin: 50px ;">
-        <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
+        <div class="form__div" >
            
-        <table style="width: 550px;justify-content: center;align-items: center;"
-            class="table table-bordered my-4   m-auto">
-            <thead>
-                <tr>
-                    <th class=" w-50 text-center col-4 ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: end;font-size:large;font-weight: bolder;"> رقم
-                                التعديل </label>
+                            <input type="text" name="manage_name" class="form__input shadow-lg" placeholder="@lang('main.Manage Name')">
+                            <label for="" class="form__label border-0 text-white">@lang('main.Manage Name')</label>
+                           
 
+</div>
+                        
+                        <div class="form__div mb-0 " >
+                            <input onfocus="(this.type='date')" name="active_date" placeholder="@lang('main.Active Date')"  class="form__input text-white shadow-lg" >
+                            <label for="" class="form__label text-white" >@lang('main.Active Date')</label>
                         </div>
-
-                    </th>
-                    <th class=" w-100 text-center col-4 ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: star;">1</label>
-
-
+                        <div class="form__div mb-0 " >
+                            <input type="number" name='page_number' class="form__input text-white shadow-lg" placeholder="@lang('main.Page Number')">
+                            <label for="" class="form__label text-white">@lang('main.Page Number')</label>
                         </div>
-
-                    </th>
-                    <th class=" w-100 text-center col-4 ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: center;">2 </label>
-
+</div>
+<!-- dates -->
+<div class='row' style='flex-wrap:nowrap'>
+       
+                        
+                        <div class="form__div  " >
+                            <input onfocus="(this.type='date')" placeholder="@lang('main.release_date')" class="form__input text-white shadow-lg" type="text" name="release_date">
+                            <label for="" class="form__label text-white" >@lang('main.release_date')</label>
                         </div>
+                        <div class="form__div  " >
+                            <input onfocus="(this.type='date')" placeholder="@lang('main.review_date')" class="form__input text-white shadow-lg" type="text" name="review_date">
+                            <label id='2' for="" class="form__label text-white" >@lang('main.review_date')</label>
+                        </div>
+                       
+</div>
+<!-- end dates -->
+<!-- document codes -->
+<div class='row' style='flex-wrap:nowrap'>
+<div class="form__div " >
+           
+           <input type="text" class="form__input shadow-lg" placeholder="  @lang('main.document_code')" type="text" name="document_code">
+           <label for="" class="form__label border-0 text-white">@lang('main.document_code')</label>
+          
 
-                    </th>
-                    <th class=" w-100 text-center col-4 ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: center;">3 </label>
+</div>
+        <div class="form__div " >
+           
+                            <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.document_number')" type="text" name="document_number">
+                            <label for="" class="form__label border-0 text-white">@lang('main.document_number')</label>
+                           
 
-                        </div>
-                    </th>
-                    <th class=" w-100 text-center col-4 ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class="" style="text-align: center;">4 </label>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+</div>
+</div>
+<div class='row' style='flex-wrap:nowrap'>
+<div class="form__div " style='height:48px;width:100% '>
+            <label for="" class=" border-0 " style='color:#2a415b;width:13%;margin-right:0'>@lang('main.Company Logo')</label>
+          
+           <input type="file" class=" shadow-lg" name="company_logo" style='padding:0;width:86% !important' placeholder=" ">
+          
 
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <label for="" class=""
-                                style="text-align: center;font-size:large;font-weight: bolder;">التاريخ</label>
+</div>
+</div>
+<div class='row' style='flex-wrap:nowrap'>
+<div class="form__div " >
+           
+           <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.Company Name')" name="company_name">
+           <label for="" class="form__label border-0 text-white">@lang('main.Company Name')</label>
+          
 
-                        </div>
-                    </th>
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <input class="form-control" type="date" name="date_1" style="text-align: end;">
-                        </div>
-                    </th>
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <input class="form-control" type="date" name="date_2" style="text-align: end;width: 120px;">
-                        </div>
-                    </th>
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <input class="form-control" type="date" name="date_3" style="text-align: end;width: 120px;">
-                        </div>
-                    </th>
-                    <th class=" w-50 text-center ">
-                        <div class="" style="text-align:center ;">
-                            <input class="form-control" type="date" name="date_4" style="text-align: end;">
-                        </div>
-                    </th>
-                </tr>
-                <tr>
-                    <th class=" w-100 text-center ">
-                        <div class="form-group mt-4"
-                            style="text-align:center ;justify-content: center;align-items: center; width: 140px;">
-                            <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;">صفحه
-                                / صفحات</label>
+</div>
+        <div class="form__div " >
+           
+                            <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.procedure_name')" name="procedure_name">
+                            <label for="" class="form__label border-0 text-white">@lang('main.procedure_name')</label>
+                           
 
-                        </div>
-                    </th>
-                    <th class=" w-50 text-center ">
-                        <div class="form-group mt-4"
-                            style="text-align:center ;justify-content: center;align-items: center;">
-                            <input class="form-control" type="text" name="page_1" style="text-align: end;">
-                        </div>
-                    </th>
-                    <th class=" w-50 text-center ">
-                        <div class="form-group mt-4"
-                            style="text-align:center ;justify-content: center;align-items: center;">
-                            <input class="form-control" type="text" name="page_2" style="text-align: end;width: 120px;"
-                                placeholder=" ">
-                        </div>
-                    </th>
-                    <th class=" w-50 text-center ">
-                        <div class="form-group w-100 mt-4"
-                            style="text-align:center ;justify-content: center;align-items: center;">
-                            <input class="form-control" type="text" name="page_3" style="text-align: end;">
-                        </div>
-                    </th>
-                    <th class=" w-50 text-center ">
-                        <div class="form-group w-100 mt-4"
-                            style="text-align:center ;justify-content: center;align-items: center;">
-                            <input class="form-control" type="text" name="page_4" style="text-align: end;">
+</div>
+</div>
+<div class='row' style='flex-wrap:nowrap'>
+<div class="form__div " >
+           
+           <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.version_number')"  name="version_number">
+           <label for="" class="form__label border-0 text-white">@lang('main.version_number')</label>
+          
 
-                        </div>
-                    </th>
-                </tr>
+</div>
+        <div class="form__div " >
+           
+                            <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.copy_holder')" name="copy_holder">
+                            <label for="" class="form__label border-0 text-white">@lang('main.copy_holder')</label>
+                           
+
+</div>
+</div>
+
+<hr style="border: 5px; margin: 50px ;">
+<table style="width: 550px;" class="table table-bordered my-4   m-auto">
+    <thead>
+        <tr>
+            @if (Auth::user()->hasRole('Employee'))
+            <th class=" w-50 text-center col-2 ">
+                <div class="" style="text-align:start ;">
+                    <label for="" class="" style="text-align: center;font-size:xx-large;font-weight: bolder;">
+                       @lang('main.prepare')</label>
+
+                    <input class="form-control" type="text" name="prepare" style="text-align: end;"
+                        placeholder="">
+                </div>
+
+            </th>
+            @endif
+            @if (Auth::user()->hasRole('Admin'))
+            <th class=" w-50 text-center col-2 ">
+                <div class="" style="text-align:start ;">
+                    <label for="" class="" style="text-align: center;font-size:xx-large;font-weight: bolder;">
+                        @lang('main.prepare')</label>
+
+                    <input class="form-control" type="text" name="prepare" style="text-align: end;"
+                        placeholder="">
+                </div>
+
+            </th>
+            <th class=" w-50 text-center col-2 ">
+                <div class="" style="text-align:start ;">
+                    <label for="" class="" style="text-align: star;font-size:xx-large;font-weight: bolder;">
+                         @lang('main.review')</label>
+
+                    <input class="form-control" type="text" name="review" placeholder="">
+                </div>
+
+            </th>
+            @endif
+            @if(Auth::user()->hasRole('SuperAdmin'))
+            <th class=" w-50 text-center col-2 ">
+                <div class="" style="text-align:start ;">
+                    <label for="" class="" style="text-align: ">
+                        @lang('main.prepare')</label>
+
+                    <input class="form-control" type="text" name="prepare" style="text-align: end;"
+                        placeholder="">
+                </div>
+
+            </th>
+            <th class=" w-50 text-center col-2 ">
+                <div class="" style="text-align:start ;">
+                    <label for="" class="" style="text-align: ">
+                         @lang('main.review')</label>
+
+                    <input class="form-control" type="text" name="review" placeholder="">
+                </div>
+
+            </th>
+            <th class=" w-50 text-center col-2 ">
+                <div class="" style="text-align:start ;">
+                    <label for="" class="" style="text-align: end;">
+                        @lang('main.approval')</label>
+
+                    <input class="form-control" type="text" name="approval"
+                        style="text-align: end;width: 120px;">
+                </div>
+
+            </th>
+            @endif
+        </tr>
+    </thead>
+
+</table>
+
+<hr style="border: 5px; margin: 50px ;">
+<div style="overflow-x:auto;">
+<table style="width: 550px;justify-content: center;align-items: center;"
+    class="table table-bordered my-4   m-auto">
+    <thead>
+        <tr>
+            <th class=" w-50 text-center col-4 ">
+                <div class="" style="text-align:center ;">
+                    <label for="" class="" style="text-align: end;font-size:large;font-weight: bolder;">@lang('main.number_edit')</label>
+
+                </div>
+
+            </th>
+            <th class=" w-100 text-center col-4 ">
+                <div class="" style="text-align:center ;">
+                    <label for="" class="" style="text-align: star;">1</label>
 
 
-            </tbody>
-        </table>
-          </div>
-        <hr style="border: 5px; margin: 50px ;">
-        <section class="row" style="">
-            <h2>الرسم التوضيحي للاجراء :</h2>
-            <div class="input-group my-3  mx-3">
-                <label class="input-group-text" for="inputGroupFile01">اختيار صوره</label>
-                <input type="file" class="form-control" name="image_illustration" id="inputGroupFile01">
-            </div>
+                </div>
+
+            </th>
+            <th class=" w-100 text-center col-4 ">
+                <div class="" style="text-align:center ;">
+                    <label for="" class="" style="text-align: center;">2 </label>
+
+                </div>
+
+            </th>
+            <th class=" w-100 text-center col-4 ">
+                <div class="" style="text-align:center ;">
+                    <label for="" class="" style="text-align: center;">3 </label>
+
+                </div>
+            </th>
+            <th class=" w-100 text-center col-4 ">
+                <div class="" style="text-align:center ;">
+                    <label for="" class="" style="text-align: center;">4 </label>
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <th class=" w-50 text-center ">
+                <div class="" style="text-align:center ;">
+                    <label for="" class=""
+                        style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date')</label>
+
+                </div>
+            </th>
+            <th class=" w-50 text-center ">
+                <div class="" style="text-align:center ;">
+                    <input class="form-control" type="date" name="date_1" style="text-align: end;">
+                </div>
+            </th>
+            <th class=" w-50 text-center ">
+                <div class="" style="text-align:center ;">
+                    <input class="form-control" type="date" name="date_2" style="text-align: end;width: 120px;">
+                </div>
+            </th>
+            <th class=" w-50 text-center ">
+                <div class="" style="text-align:center ;">
+                    <input class="form-control" type="date" name="date_3" style="text-align: end;width: 120px;">
+                </div>
+            </th>
+            <th class=" w-50 text-center ">
+                <div class="" style="text-align:center ;">
+                    <input class="form-control" type="date" name="date_4" style="text-align: end;">
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th class=" w-100 text-center ">
+                <div class="form-group mt-4"
+                    style="text-align:center ;justify-content: center;align-items: center; width: 140px;">
+                    <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.page/pages')</label>
+
+                </div>
+            </th>
+            <th class=" w-50 text-center ">
+                <div class="form-group mt-4"
+                    style="text-align:center ;justify-content: center;align-items: center;">
+                    <input class="form-control" type="text" name="page_1" style="text-align: end;">
+                </div>
+            </th>
+            <th class=" w-50 text-center ">
+                <div class="form-group mt-4"
+                    style="text-align:center ;justify-content: center;align-items: center;">
+                    <input class="form-control" type="text" name="page_2" style="text-align: end;width: 120px;"
+                        placeholder=" ">
+                </div>
+            </th>
+            <th class=" w-50 text-center ">
+                <div class="form-group w-100 mt-4"
+                    style="text-align:center ;justify-content: center;align-items: center;">
+                    <input class="form-control" type="text" name="page_3" style="text-align: end;">
+                </div>
+            </th>
+            <th class=" w-50 text-center ">
+                <div class="form-group w-100 mt-4"
+                    style="text-align:center ;justify-content: center;align-items: center;">
+                    <input class="form-control" type="text" name="page_4" style="text-align: end;">
+
+                </div>
+            </th>
+        </tr>
+
+
+    </tbody>
+</table>
+</div>
+<hr style="border: 5px; ">
+<section class="row" style="">
+    <h2>@lang('main.Action illustration:')</h2>
+    <div class="input-group my-3  mx-3">
+        <label class="input-group-text" for="inputGroupFile01">@lang('main.choose_photo')</label>
+        <input type="file" class="form-control" name="image_illustration" id="inputGroupFile01">
+    </div>
 
 
 
-        </section>
-        <br><br><br><br><br><br><br>
+</section>
+<br><br>
+      
         <section>
             <div class="row" style="text-align: start;">
-                <p>نموذج تسلسل الاجراء هو عرض بياني لخريطة عمليات لبيانات مجموعة الاجراءات الخاصة بكل ادراة من الاقسام
-                    والعمليات المرتبطة بها لكل مجموعة اجراءات اهداف وسياسات خاصة بها كما انها مزودة بكيفية سير العمل
-                    وباجراءات مفصلة لذلك.</p>
-                <h3>المصطلحات والرسوم التوضيحيه</h3>
-                <table class="table table-bordered my-4">
-                    <thead>
+                <p style='background-color:#2a415b;padding:20px;border-radius:4px;color:white'>
+                   @lang('main.procedure')
+                </p>
+               <hr style='width:100%;margin:5px;padding:10px'>
+                       <h4 style='color: #2a415b;
+                        text-shadow: 1px 1px 1px #3ed3ea;
+                          font-weight: bold;'>
+                          @lang('main.Terms and illustrations')
+                          
+                        </h4>
+                <table class="table table-bordered my-4 shadow-lg" >
+                    <thead style='background-color: #2a415b;
+    color: white;
+    text-align: center;
+    font-weight: bolder;'>
                         <tr>
-                            <th scope="col" style="font-size:large">الرسم </th>
-                            <th scope="col" style="font-size:large">المصطلح</th>
-                            <th scope="col" style="font-size:large">الشرح</th>
+                            <th scope="col" style="font-size:large">@lang('main.drawing') </th>
+                            <th scope="col" style="font-size:large">@lang('main.term')</th>
+                            <th scope="col" style="font-size:large">@lang('main.explain')</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -726,8 +727,8 @@ td{
                                     </div>
                                 </div>
                             </td>
-                            <td>مجال العمل</td>
-                            <td>يبين هذا الشكل مجال العمل الذى تقوم به الادراة </td>
+                            <td>@lang('main.Employment')</td>
+                            <td>@lang('main.figure') </td>
                         </tr>
                         <tr>
                             <td>
@@ -735,8 +736,8 @@ td{
 
                                 </div>
                             </td>
-                            <td>البدايه</td>
-                            <td>يبين هذا الشكل بداية الاجراء </td>
+                            <td>@lang('main.start')</td>
+                            <td>@lang('main.start_figure')</td>
                         </tr>
                         <tr>
                             <td>
@@ -744,74 +745,82 @@ td{
 
                                 </div>
                             </td>
-                            <td>عمليه</td>
-                            <td>يبين هذا الشكل عملية ضمن الاجراء </td>
+                            <td>@lang('main.practical')</td>
+                            <td>@lang('main.practical_figure') </td>
                         </tr>
                         <tr>
                             <td>Larry the Bird</td>
-                            <td>وثائق</td>
-                            <td>يبين هذا الاجراء شكل الوثائق </td>
+                            <td>@lang('main.documents')</td>
+                            <td>@lang('main.documents_action') </td>
                         </tr>
                         <tr>
                             <td>Larry the Bird</td>
-                            <td>عملية فرعية </td>
-                            <td>يبين هذا الاجراء شكل العملية الفرعية التابعة لعملية رئيسة </td>
+                            <td>@lang('main.sub process') </td>
+                            <td>@lang('main.procedure sub process') </td>
                         </tr>
                         <tr>
                             <td>Larry the Bird</td>
-                            <td>معلومات</td>
-                            <td>يبين هذا الاجراء شكل معلومات اضافية </td>
+                            <td>@lang('main.information')</td>
+                            <td>@lang('main.information_additional') </td>
                         </tr>
                         <tr>
                             <td>Larry the Bird</td>
-                            <td>رابط</td>
-                            <td>يبين تسلسل المهام المبينة فى الاجراء </td>
+                            <td>@lang('main.Link')</td>
+                            <td>@lang('main.Link_sequence')</td>
                         </tr>
                         <tr>
                             <td>Larry the Bird</td>
-                            <td>نهايه</td>
+                            <td>@lang('main.end')</td>
                             <td> </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
-        <section class="row" style="margin: 50px;">
-            <div class="input-group my-3  mx-3">
-                <label class="row"> الغرض من الاجراء :</label>
+        <hr style='width:100%'>
+        <section class="row" style="">
+            <div class="input-group my-3  mx-3 ">
+                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Purpose of the procedure:')</label>
             </div>
-            <textarea class=form-control name="purpose" id="" cols="55" rows="5"
-                placeholder="ادخل الغرض من الاجراء ------------------------"></textarea>
+            <textarea class='shadow-lg' name="purpose" id="" cols="55" rows="5"style='border:none;padding:10px'
+                placeholder="@lang('main.Purpose of the procedure:')"></textarea>
 
         </section>
-        <section class="row" style="margin: 50px;">
+        <hr style='width:100%'>
+        <section class="row" style="">
             <div class="input-group my-3  mx-3">
-                <label class="row"> المقدمه :</label>
+                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.the introduction')</label>
             </div>
-            <textarea class=form-control name="introduction" id="" cols="55" rows="5"
-                placeholder="ادخل   المقدمه ------------------------"></textarea>
+            <textarea class='shadow-lg' name="introduction" id="" cols="55" rows="5" style='border:none;padding:10px'
+                placeholder="@lang('main.the introduction')"></textarea>
         </section>
-        <section class="row" style="margin: 50px;">
+        <hr style='width:100%'>
+       
+        <section class="row" style="">
             <div class="input-group my-3  mx-3">
-                <label class="row"> نطاق التطبيق :</label>
+                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Scope of application:')</label>
             </div>
-            <textarea class=form-control name="scope_of_application" id="" cols="55" rows="5"
-                placeholder="ادخل   نطاق التطبيق ------------------------"></textarea>
+            <textarea class='shadow-lg' name="scope_of_application" id="" cols="55" rows="5" style='border:none;padding:10px'
+                placeholder="@lang('main.Scope of application:')"></textarea>
         </section>
-        <section class="row" style="margin: 50px;">
+        <hr style='width:100%'>
+        <section class="row" style="">
             <div class="input-group my-3  mx-3">
-                <label class="row"> المصطلحات والتعريفات :</label>
+                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Terms and definitions:')</label>
             </div>
-            <table class="datatable-table table table-bordered mt-2 ">
-                <thead class="datatable-head">
+            <table class="datatable-table table table-bordered mt-2 shadow-lg">
+                <thead class="datatable-head" style='background-color: #2a415b;
+    color: white;
+    text-align: center;
+    font-weight: bolder;'>
                     <tr class="datatable-row" style="left: 0px;">
 
                         <th data-field="" class="datatable-cell  end-cell text-center">
-                            <span>م</span>
+                            <span>@lang('main.m')</span>
                         </th>
 
-                        <th data-field="" class="datatable-cell"><span>المصطلح:</span></th>
-                        <th data-field="" class="datatable-cell"><span>التعريف:</span></th>
+                        <th data-field="" class="datatable-cell"><span>@lang('main.term')</span></th>
+                        <th data-field="" class="datatable-cell"><span>@lang('main.definitions')</span></th>
                     </tr>
                 </thead>
                 <tbody class="datatable-body">
@@ -824,8 +833,8 @@ td{
                         </td>
                         <td class="datatable-cell  ">
                             <div class="a-col alternate">
-                                <div class="input-field">
-                                    <input type="text" class="form-control" name="names[0][term]" />
+                                <div class="input-field shadow-lg">
+                                    <input type="text" class="form-control" name="names[0][term]"/>
                                 </div>
                             </div>
                         </td>
@@ -833,7 +842,7 @@ td{
                         <td class="datatable-cell  ">
                             <div class="a-col alternate">
                                 <div class="input-field">
-                                    <input type="text" class="form-control" name="names[0][definition]" />
+                                    <input type="text" class="form-control shadow-lg" name="names[0][definition]"/>
                                 </div>
                             </div>
                         </td>
@@ -852,68 +861,82 @@ td{
             </table>
             <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
         </section>
-        <section class="row" style="margin: 50px;">
+        <hr style='width:100%'>
+        <section class="row" style="">
             <div class="input-group my-3  mx-3">
-                <label class="row"> المسؤليات :</label>
+                <label class="row " style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.responsibilities')</label>
             </div>
-            <textarea class=form-control name="responsibilities" id="" cols="55" rows="5"
-                placeholder="ادخل  المسؤليات ------------------------"></textarea>
-        </section>
-        <section class="row" style="margin: 50px;">
-            <div class="input-group my-3  mx-3">
-                <label class="row"> خطوات العمل :</label>
-            </div>
-            <textarea class=form-control name="action_steps" id="" cols="30" rows="20"
-                placeholder="ادخل  خطوات العمل ------------------------"></textarea>
-        </section>
+            <textarea class='shadow-lg' name="responsibilities" id="" cols="55" rows="5" style='border:none;padding:10px'
 
-        <section class="row" style="margin: 50px;">
+                placeholder="@lang('main.responsibilities')"></textarea>
+        </section>
+        <section class="row" style="">
             <div class="input-group my-3  mx-3">
-                <label class="row"> النماذج المستخدمه :</label>
+                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.action_steps'):</label>
             </div>
-            <div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
-           
-            <table class="table table-bordered">
-                <thead>
+            <textarea class='shadow-lg' name="action_steps" id="" cols="55" rows="5" style='border:none;padding:10px'
+                placeholder=" @lang('main.action_steps')"></textarea>
+        </section>
+        <hr style='width:100%'>
+        <section class="row" style="">
+            <div class="input-group my-3  mx-3">
+                <label class="row"  style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.Models used:')</label>
+            </div>
+            <div style="overflow-x:auto;">
+            <table class="table table-bordered shadow-lg">
+                <thead style='background-color: #2a415b;
+    color: white;
+    text-align: center;
+    font-weight: bolder;'>
                     <tr>
                         <th data-field="" class="datatable-cell  end-cell text-center">
-                            <span>م</span>
+                            <span>@lang('main.m')</span>
                         </th>
-                        <th class="col-4" style="text-align: center;">اسم النموذج </th>
-                        <th class="col-1" style="text-align: center;">رقم النموذج</th>
-                        <th class="col-2" style="text-align: center;">تاريخ الاصدار</th>
-                        <th class="col-2" style="text-align: center;">مده الحفظ</th>
-                        <th class="col-2" style="text-align: center;">جهه الحفظ</th>
+                        <th class="col-4" style="text-align: center;">@lang('main.Model name') </th>
+                        <th class="col-1" style="text-align: center;">@lang('main.Model number')</th>
+                        <th class="col-2" style="text-align: center;">@lang('main.release_date')</th>
+                        <th class="col-2" style="text-align: center;">@lang('main.model_period')</th>
+                        <th class="col-2" style="text-align: center;">@lang('main.model_side')</th>
 
                     </tr>
                 </thead>
                 <tbody>
                     <tr id="models-0">
                         <td class="text-center end-td ">
-                            <button type="button" title="Remove" disabled="disabled" class="btn btn-danger btn-option">
+                            <button style='padding:4px' type="button" title="Remove" disabled="disabled" class="btn btn-danger btn-option">
                                 <i class="fa fa-minus-circle"></i>
                             </button>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="models[0][model_name]" style="text-align: start;"
+                        <div class="input-field shadow-lg">
+                            <input class="" type="text" name="models[0][model_name]" style="text-align: start;"
                                 placeholder="----------------------------------------------------">
-                        </td>
+                        </div>
+                            </td>
                         <td>
+                        <div class="input-field shadow-lg">
                             <input class="form-control" type="number" name="models[0][model_number]" style="text-align: start;"
                                 placeholder="----------------------------------------------------">
-                        </td>
+                        </div>
+                            </td>
                         <td>
+                        <div class="input-field shadow-lg">
                             <input class="form-control" type="date" name="models[0][model_date]" style="text-align: start;"
                                 placeholder="----------------------------------------------------">
-                        </td>
+                          </div>
+                            </td>
                         <td>
+                        <div class="input-field shadow-lg">
                             <input class="form-control" type="text" name="models[0][model_period]" style="text-align: start;"
                                 placeholder="----------------------------------------------------">
-                        </td>
+                        </div>
+                            </td>
                         <td>
+                        <div class="input-field shadow-lg">
                             <input class="form-control" type="text" name="models[0][model_side]" style="text-align: start;"
                                 placeholder="----------------------------------------------------">
-                        </td>
+                        </div>
+                            </td>
 
                     </tr>
                     
@@ -922,7 +945,7 @@ td{
                     <tr class="datatable-row datatable-row-even">
 
                         <td class="text-center end-td " id="increment2">
-                            <button type="button" class="btn btn-primary add_new" id="btn2-0" onclick="appendRow2(0)"><i
+                            <button style='padding:4px' type="button" class="btn btn-primary add_new" id="btn2-0" onclick="appendRow2(0)"><i
                                     class="fa fa-plus-circle"></i></button>
                         </td>
 
@@ -930,30 +953,32 @@ td{
                     </tr>
                 </tbody>
             </table>
+
               </div>
             <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
         </section>
-
-        <section class="row" style="margin: 50px;">
+        <hr style='width:100%'>
+        <section class="row" style="">
             <div class="input-group my-3  mx-3">
-                <label class="row"> المصادر المرجعيه الخارجيه والداخليه :</label>
+                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.External and internal reference sources:')</label>
             </div>
-            <textarea class=form-control name="reference_sources" id="" cols="55" rows="5"
-                placeholder="ادخل   نطاق التطبيق ------------------------"></textarea>
+            <textarea class='shadow-lg' name="reference_sources" id="" cols="55" rows="5" style='border:none;padding:10px'
+                placeholder="@lang('main.External and internal reference sources:')"></textarea>
         </section>
 
         <div class="form-group" style='text-align:center'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit"
                 class="btn btn-primary">
-             حفظ</button>
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
         </div> 
     </form>
-    </div>
+      </div>
             </div>
         </div>
     </div>
 </section>
 </main>
+</div>
 
 <!-- /.content -->
 <div class="modal fade account_model" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
@@ -1056,7 +1081,11 @@ td{
                     $(`#models-${num}`).remove();
 
           }
+          function showme(){
+              console.log('mmmmmmmmmmmm')
+            //document.getElementById('2').style.display='block'
+          }
 
 
 </script>
-@stop
+@endsection

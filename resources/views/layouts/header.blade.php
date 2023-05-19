@@ -1,13 +1,27 @@
 <style>
      .shadow-lg {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+    @media (min-width: 700px) and (max-width: 900px){
+img{display:none;} }
+    @media (max-width: 700px) {
+img{display:none;}  
+.navbar-header{margin-bottom:0 !important;
+    background: none !important;
+}     
+.topbartoggler {
     
-      
-
+    padding-right:  250px !important; 
+    padding-bottom:9px !important;
+    }
+    /* .sections{
+        display:none ;
+    } */
+    }
+   
     </style>
 <header class="topbar shadow-lg" style='background:none !important;background-color: #001635 !important;'>
  
-    <nav class="navbar top-navbar navbar-expand-md navbar-dark" style='background-color: #001635;'>
+    <nav class="navbar top-navbar navbar-expand-md navbar-dark d-flex justify-content-betwee" style='background-color: #001635;'>
     
         <div class="navbar-header" style='margin-bottom:60px;width:25%'>
             <!-- This is for the sidebar toggle which is visible on mobile only -->
@@ -19,7 +33,7 @@
             <!-- ============================================================== -->
             <br>
             <div class="navbar-brand" >
-          <span style='color:#ffc000;  margin: auto;'>@lang('main.all_section')</span>
+          <span class='sections' style='color:#ffc000;  margin: auto;'>@lang('main.all_section')</span>
                 <a href="{{url('/')}}" class="logo">
                     <!-- Logo icon -->
                     

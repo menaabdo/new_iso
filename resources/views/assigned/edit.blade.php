@@ -3,7 +3,7 @@
 <div class='card'>
     <div class="row card-body" style='margin:auto'>
         <div class='row' style='margin:auto'>
-            <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">أمر تكليف لإجراء مراجعة داخلية لنظام الجودة</h3>
+            <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.Assigning an internal auditor')</h3>
             <hr>
         </div>
 
@@ -11,7 +11,7 @@
             @method('PUT')
             {{ csrf_field() }}
             <div class='row shadow-lg p-3'>
-                <label class=" form-label text-left pr-5" style='text-align:left !important'>CO LOGO</label>
+                <label class=" form-label text-left pr-5" style='text-align:left !important'>@lang('main.Company Logo')</label>
                 <div class='mx-4'>
                     <input type="file" id="img" name="logo" class='form-control ' accept="image/*">
                 </div>
@@ -20,11 +20,9 @@
             </div>
 
             <div class='shadow-lg mt-5 p-3'>
-                <label class="form-label">أمر تكليف لإجراء مراجعة داخلية لنظام الجودة</label>
+                <label class="form-label">@lang('main.assigned')</label>
                 <div>
-                    <textarea name="assigned" rows="12" cols="100" class='form-control'>
-
-       </textarea>
+                    <textarea name="assigned" rows="12" cols="100" class='form-control'>{{$assigned->assigned}} </textarea>
                 </div>
             </div>
         <br>
@@ -33,43 +31,43 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label>اسم الشركة</label>
-                                <input class="form-control shadow-lg" type="text" name="company_name">
+                                <label>@lang('main.Company Name')</label>
+                                <input class="form-control shadow-lg" type="text" name="company_name" value="{{$assigned->company_name}}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label>تاريخ الإصدار </label>
-                                <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label>@lang('main.release_date') </label>
+                                <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')" value="{{$assigned->date2}}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label>تاريخ التعديل</label>
-                                <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <label>@lang('main.Modification date')</label>
+                                <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')" value="{{$assigned->date3}}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
-                                <input class="form-control shadow-lg" type="text" name="period_time">
+                                <label>@lang('main.model_period')</label>
+                                <input class="form-control shadow-lg" type="text" name="period_time" value="{{$assigned->period_time}}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
-                                <input class="form-control shadow-lg" type="text" name="number_page">
+                                <label>@lang('main.page_number')</label>
+                                <input class="form-control shadow-lg" type="text" name="number_page" value="{{$assigned->number_page}}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
-                                <input class="form-control shadow-lg" type="text" name="number_doc">
+                                <label>@lang('main.document_code')</label>
+                                <input class="form-control shadow-lg" type="text" name="number_doc" value="{{$assigned->number_doc}}">
                             </div>
                         </th>
                     </tr>
@@ -77,7 +75,7 @@
             </table>
             <div class='row'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.edit')</button>
             </div>
 
         </form>

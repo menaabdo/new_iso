@@ -9,7 +9,7 @@
         @method('PUT') 
               {{ csrf_field() }}
               <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'> إحصائيات التدريب</h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.Training statistics')</h2>
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>
@@ -20,27 +20,27 @@
         <hr class="w-100">
 
 
-        <div class="form-group row w-100 text-right" style="text-align:center;overflow-x:auto;">
-                <table class="table">
-                    <tr style="background-color:    #001635; color:white;text-align:center;">
-                     <th scope="col" rowspan="2">م</th>
-                  <th scope="col" rowspan="2">الإدارة</th>
-                  <th scope="col" colspan="12">شهر / سنه</th>
-                  <th scope="col" rowspan="2">مجموع المتدربين</th>
+        <div class="form-group row w-100 text-right" style="text-align:center;overflow-x:auto">
+            <table class="table">
+                <tr style="background-color:rgb(218, 249, 163); text-align:center;">
+                    <th scope="col" rowspan="2">@lang('main.m')</th>
+                    <th scope="col" rowspan="2">@lang('main.Department')</th>
+                    <th scope="col" colspan="12">@lang('main.month')/@lang('main.year')</th>
+                    <th scope="col" rowspan="2">@lang('main.Total trainees')</th>
                 </tr>
                 <tr style="background-color:rgb(218, 249, 163); text-align:center;">
-                  <th>يناير</th>
-                  <th>فبراير</th>
-                  <th> مارس</th>
-                  <th> إبريل</th>
-                  <th> مايو</th>
-                  <th> يونيو</th>
-                  <th> يوليو</th>
-                  <th>أغسطس</th>
-                  <th>سبتمبر</th>
-                  <th>أكتوبر</th>
-                  <th>نوفمبر</th>
-                  <th>ديسمبر</th>
+                    <th>@lang('main.January')</th>
+                        <th>@lang('main.February')</th>
+                        <th> @lang('main.March')</th>
+                        <th> @lang('main.April')</th>
+                        <th> @lang('main.May')</th>
+                        <th> @lang('main.June')</th>
+                        <th> @lang('main.July')</th>
+                        <th>@lang('main.August')</th>
+                        <th>@lang('main.September')</th>
+                        <th>@lang('main.October')</th>
+                        <th>@lang('main.November')</th>
+                        <th>@lang('main.December')</th>
                 </tr>
 
                 @if(count($trainingStats->trainingStats)>0)
@@ -115,7 +115,7 @@
                 </tr>
                 @endif
                 <tr>
-                    <th style="background-color:rgb(218, 249, 163); text-align:center;" scope="col" colspan="2">الاجمالى</th>
+                    <th style="background-color:rgb(218, 249, 163); text-align:center;" scope="col" colspan="2">@lang('main.Total')</th>
                     <th><input class="form-control" type="text" name="total_1" value="{{$trainingStats->total_1}}"></th>
                     <th><input class="form-control" type="text" name="total_2" value="{{$trainingStats->total_2}}"></th>
                     <th><input class="form-control" type="text" name="total_3" value="{{$trainingStats->total_3}}"></th>
@@ -136,61 +136,66 @@
 
         <hr class="w-100">
         <div class="form-group row ">
-            <label for="" class="col-3 col-form-label">الإستنتاج:</label>
-            <div class="col-6">
+            <label for="" class="col-md-3 col-form-label">@lang('main.conclusion'):</label>
+            <div class="col-md-6">
                 <input type="text" class="form-control" name="conclusion" value="{{$trainingStats->conclusion}}">
             </div>
         </div>
         <hr class="w-100">
+        <div style="overflow-x:auto;">
         <table class="table">
             <thead>
                 <tr>
                     <th>
                       <div class="" style="text-align:start ;">
+                        <label>@lang('main.Company Name')</label>
                         <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :"  value="{{ $trainingStats->company_name }}">
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
+                        <label>@lang('main.release_date') </label>
                         <input class="form-control" type="text" name="date2"  value="{{ $trainingStats->date2 }}" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
             
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
+                            <label>@lang('main.Modification date')</label>
                             <input class="form-control" type="text" name="date3"  value="{{ $trainingStats->date3 }}" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
                           </div>
             
                     </th>
                     <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $trainingStats->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $trainingStats->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $trainingStats->number_doc }}">
                             </div>
                         </th>
                   </tr>
             </thead>
         </table>
+           </div>
         <div class="row">
         <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">
            
-            <i class="fas fa-save" style="width:15% ; height: 20%;"></i> تعديل  </button>
+            <i class="fas fa-save" style="width:15% ; height: 20%;"></i> @lang('main.edit')</button>
         </div>
     </form>
 </div>

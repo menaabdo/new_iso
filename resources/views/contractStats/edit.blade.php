@@ -15,17 +15,17 @@
 
 </style>
 <div class="card">
-    <div class="card-body row" style='margin:auto;margin-top:80px'>
+    <div class="card-body row" style='margin-top:80px'>
 
         <form action="{{route('contractStats.update',$contractStats->id)}}" class='col-md-10' style='margin:auto' method="post" enctype="multipart/form-data" id="fo1">
             @method('PUT')
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'> إحصائيات التعاقد</h2>
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.contract statistics')</h2>
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-2 ">CO LOGO</label>
+                <label class="form-label col-md-2 ">@lang('main.Company Logo')</label>
       
                 <input type="file" id="img" name="logo" accept="image/*">
                 <img src="{{ asset($contractStats->logo) }}" height=180px width=210px; />
@@ -34,20 +34,20 @@
             <hr class="w-100">
 
 
-            <div class="form-group row w-100 text-right" style="text-align:center;">
+            <div class="form-group row w-100 text-right" style="text-align:center;overflow-x:auto;">
                 <table class="table">
                     <tr style="background-color:    #001635; color:white;text-align:center;">
-                     <th scope="col" rowspan="2">م</th>
-                        <th scope="col" rowspan="2">الشهر</th>
-                        <th scope="col" colspan="2">التعاقد بالزيارات </th>
-                        <th scope="col" colspan="2">التعاقد السنوي</th>
-                        <th scope="col" rowspan="2">ملاحظات</th>
+                        <th scope="col" rowspan="2">@lang('main.m')</th>
+                        <th scope="col" rowspan="2">@lang('main.month')</th>
+                        <th scope="col" colspan="2">@lang('main.Contract visits')</th>
+                        <th scope="col" colspan="2">@lang('main.Annual contract')</th>
+                        <th scope="col" rowspan="2">@lang('main.note')</th>
                     </tr>
                     <tr style="background-color:    #001635; color:white;text-align:center;">
-                     <th scope="col"> منفذ</th>
-                        <th scope="col">غير منفذ</th>
-                        <th scope="col"> منفذ</th>
-                        <th scope="col">غير منفذ</th>
+                        <th scope="col">@lang('main.implemented')</th>
+                        <th scope="col">@lang('main.Not implemented')</th>
+                        <th scope="col">@lang('main.implemented')</th>
+                        <th scope="col">@lang('main.Not implemented')</th>
                     </tr>
 
                     @if(count($contractStats->contractStats)>0)
@@ -93,7 +93,7 @@
                     @endif
                     <tr>
                         <th style="background-color:    #001635; color:white;text-align:center;"
-                     scope="col" rowspan="2">الاجمالى</th>
+                     scope="col" rowspan="2">@lang('main.Total')</th>
                         <th><input class="form-control" type="text" name="total_1" value="{{$contractStats->total_1}}"></th>
                         <th><input class="form-control" type="text" name="total_2" value="{{$contractStats->total_2}}"></th>
                         <th><input class="form-control" type="text" name="total_3" value="{{$contractStats->total_3}}"></th>
@@ -107,63 +107,65 @@
 
             <hr class="w-100">
             <div class="form-group row ">
-                <label for="" class="col-3 col-form-label">الإستنتاج:</label>
+                <label for="" class="col-3 col-form-label">@lang('main.conclusion'):</label>
                 <div class="col-6">
                     <input type="text" class="form-control" name="conclusion" value="{{$contractStats->conclusion}}">
                 </div>
             </div>
             <hr class="w-100">
+            <div style="overflow-x:auto;">
             <table class="table">
                 <thead>
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
-                            <label>اسم الشركة</label>
+                                <label>@lang('main.Company Name')</label>
                                 <input class="form-control" type="text" name="company_name"  value="{{ $contractStats->company_name }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                            <label>تاريخ الاصدار</label>
+                                <label>@lang('main.release_date') </label>
                                 <input class="form-control" type="text" name="date2" value="{{ $contractStats->date2 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                            <label>تاريخ التعديل</label>
+                                <label>@lang('main.Modification date')</label>
                                 <input class="form-control" type="text" name="date3" value="{{ $contractStats->date3 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $contractStats->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $contractStats->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $contractStats->number_doc }}">
                             </div>
                         </th>
                     </tr>
                 </thead>
             </table>
+</div>
             <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">
-               تعديل</button>
+               @lang('main.edit')</button>
                     </div>  
         </form>
     </div>

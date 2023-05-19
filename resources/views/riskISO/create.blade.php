@@ -38,8 +38,8 @@
   
   .form__label {
     position: absolute;
-    right:  4rem;
-    top: 1rem;
+    right:  2rem;
+    /* top: 1rem; */
     padding: 0 .25rem;
     /* background-color: white; */
     color: #2a415b!important;
@@ -388,7 +388,7 @@ td{
 
     
 .form__label {
-    top:0
+    top:-1px;
 }
 }
     </style>
@@ -404,7 +404,7 @@ td{
         <div class="row">
             <div class="col-lg-10 col-md-10" style='margin:auto'>
             <h3 style="margin-top:30px;color:#2a415b;padding:10px;color: #2a415b;
-    text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.Achieving Risk assessment') </h3>
+    text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.Risk assessment1')</h3>
     <hr style='background-color:#3ed3ea'>
    
                 <div class="account-sign-in back">
@@ -461,7 +461,7 @@ td{
 
 </div>
 </div>
-<div class='row' style='flex-wrap:nowrap'>
+<div class='row mb-5' style='flex-wrap:nowrap'>
 <div class="form__div " style='height:48px;width:100% '>
             <label for="" class=" border-0 " style='color:#2a415b;width:13%;margin-right:0'>@lang('main.Company Logo')</label>
           
@@ -577,6 +577,7 @@ td{
 </table>
 
 <hr style="border: 5px; margin: 50px ;">
+<div style="overflow-x:auto;">
 <table style="width: 550px;justify-content: center;align-items: center;"
     class="table table-bordered my-4   m-auto">
     <thead>
@@ -686,8 +687,9 @@ td{
 
     </tbody>
 </table>
+</div>
 <hr style="border: 5px; margin: 50px ;">
-<section class="row" style="margin-right: 100px;">
+<section class="row" style="">
     <h2>@lang('main.Action illustration:')</h2>
     <div class="input-group my-3  mx-3">
         <label class="input-group-text" for="inputGroupFile01">@lang('main.choose_photo')</label>
@@ -886,6 +888,7 @@ td{
             <div class="input-group my-3  mx-3">
                 <label class="row"  style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.Models used:')</label>
             </div>
+            <div style="overflow-x:auto;">
             <table class="table table-bordered shadow-lg">
                 <thead style='background-color: #2a415b;
     color: white;
@@ -956,7 +959,7 @@ td{
                     </tr>
                 </tbody>
             </table>
-
+            </div>
             <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
         </section>
         <hr style='width:100%'>

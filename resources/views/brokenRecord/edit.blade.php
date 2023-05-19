@@ -5,20 +5,23 @@
 
 
 <div class="card">
-    <div class="card-body" style=';margin-top:80px'>
-
-       
+    <div class="card-body">
+         <hr>
         <form action="{{route('brokenRecord.update',$brokenRecord->id)}}" method="post" enctype="multipart/form-data" id="fo1">
             @method('PUT')
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
-                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>بيان السجلات المعدمة
-                </h2>
+
+                <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'> 
+                @lang('main.List of Disposed Documents') 
+            </h2>
                 <hr class="w-100">
             </div>
             <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-2 ">CO LOGO</label>
+                <label class="form-label col-md-2 ">@lang('main.Company Logo')</label>
 
+
+        
                 <img src="{{ asset($brokenRecord->logo) }}" height=180px width=210px; />
                 @if ($brokenRecord->status == 'pending' && Auth::user()->hasRole('Employee'))
 
@@ -40,27 +43,27 @@
                 <table class="table">
                     <tr style="background-color: #001635;color:white;text-align:center">
                         @if ($brokenRecord->status == 'pending' && Auth::user()->hasRole('Employee'))
-                        <th scope="col" rowspan="2">م</th>
+                        <th scope="col" rowspan="2">@lang('main.m')</th>
                         @endif
                         @if (($brokenRecord->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                         ($brokenRecord->status == 'pending' && Auth::user()->hasRole('Admin')))
-                        <th scope="col" rowspan="2">م</th>
+                        <th scope="col" rowspan="2">@lang('main.m')</th>
                         @endif
                         @if (($brokenRecord->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                         ($brokenRecord->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                         ($brokenRecord->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                        <th scope="col" rowspan="2">م</th>
+                        <th scope="col" rowspan="2">@lang('main.m')</th>
                         @endif
-                        <th scope="col" rowspan="2">نوع السجل</th>
-                        <th scope="col" rowspan="2">الكود</th>
-                        <th scope="col" colspan="2">فترة الاستخدام</th>
-                        <th scope="col" rowspan="2">مكان الحفظ</th>
-                        <th scope="col" rowspan="2">أسلوب التخلص</th>
-                        <th scope="col" rowspan="2">التاريخ</th>
+                        <th scope="col" rowspan="2">@lang('main.record type')</th>
+                        <th scope="col" rowspan="2">@lang('main.code')</th>
+                        <th scope="col" colspan="2">@lang('main.period of use')</th>
+                        <th scope="col" rowspan="2">@lang('main.save place')</th>
+                        <th scope="col" rowspan="2">@lang('main.disposal method')</th>
+                        <th scope="col" rowspan="2">@lang('main.date')</th>
                     </tr>
-                    <tr  style="background-color: #001635;color:white;text-align:center">
-                        <th scope="col"> من</th>
-                        <th scope="col">الى</th>
+                    <tr style="background-color: #001635;color:white;text-align:center">
+                        <th scope="col">@lang('main.from')</th>
+                        <th scope="col">@lang('main.to')</th>
                     </tr>
                     @if(count($brokenRecord->brokenRecord)>0)
                     @foreach($brokenRecord->brokenRecord as $key => $intr)
@@ -155,11 +158,11 @@
                     <tr>
                         <th class=" w-50  col-1 ">
                             <div class="" style="text-align:right ;">
-                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;"> رئيس اللجنة القائمة بالعملية:</label>
+                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.Chairman of the operating committee'):</label>
                             </div>
                             <div class="form-group row  text-left">
-                                <label>ممثل الإدارة لنظام الجودة</label>
-                                <label for="" class="col-2 col-form-label">الاسم: -</label>
+                                <label>@lang('main.Management representative for the quality system')</label>
+                                <label for="" class="col-2 col-form-label">@lang('main.name'): -</label>
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="name" value="{{ $brokenRecord->name }}">
                                 </div>
@@ -176,12 +179,12 @@
                         @if ($brokenRecord->status == 'inProgress' && Auth::user()->hasRole('Employee'))
                         <th class=" w-50 text-center col-1 ">
                             <div class="" style="text-align:right ;">
-                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;"> عضوية:</label>
+                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.membership'):</label>
                             </div>
                             <div class="form-group row w-10 text-right">
-                                <label for="" class="col-2 col-form-label">1- مسئول الوثائق: -</label>
+                                <label for="" class="col-2 col-form-label">1-@lang('main.Documents officer'): -</label>
 
-                                <label for="" class="col-1 col-form-label">الاسم: -</label>
+                                <label for="" class="col-1 col-form-label">@lang('main.name'): -</label>
                                 <div class="col-2">
                                     <input type="text" class="form-control" readonly placeholder="  ......" name="source_official" value="{{ $brokenRecord->source_official }}">
                                 </div>
@@ -191,19 +194,19 @@
                         @if ($brokenRecord->status == 'confirmed' && Auth::user()->hasRole('Employee'))
                         <th class=" w-50 text-center col-1 ">
                             <div class="" style="text-align:right ;">
-                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;"> عضوية:</label>
+                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.membership'):</label>
                             </div>
-                            <div class="form-group row w-100">
-                                <label for="" class="col-4 col-form-label">1- مسئول الوثائق: -</label>
+                            <div class="form-group row w-10 text-right">
+                                <label for="" class="col-4 col-form-label">1-@lang('main.Documents officer'): -</label>
 
-                                <label for="" class="col-2 col-form-label">الاسم: -</label>
+                                <label for="" class="col-4 col-form-label">@lang('main.name'): -</label>
                                 <div class="col-3">
                                     <input type="text" class="form-control" readonly placeholder="  ......" name="source_official" value="{{ $brokenRecord->source_official }}">
                                 </div>
                             </div>
                             <div class="form-group row w-10 text-right">
-                                <label for="" class="col-2 col-form-label">2- مدير الجودة : -</label>
-                                <label for="" class="col-1 col-form-label">الاسم: -</label>
+                                <label for="" class="col-2 col-form-label">2-@lang('main.quality manager') : -</label>
+                                <label for="" class="col-1 col-form-label">@lang('main.name'): -</label>
 
                                 <div class="col-2">
                                     <input type="text" readonly class="form-control" placeholder="  ......" name="quality_manager" value="{{ $brokenRecord->quality_manager }}">
@@ -214,12 +217,12 @@
                         @if (Auth::user()->hasRole('Admin'))
                         <th class=" w-50 text-center col-1 ">
                             <div class="" style="text-align:right ;">
-                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;"> عضوية:</label>
+                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.membership'):</label>
                             </div>
                             <div class="form-group row w-10 text-right">
-                                <label for="" class="col-2 col-form-label">1- مسئول الوثائق: -</label>
+                                <label for="" class="col-2 col-form-label">1-@lang('main.Documents officer'): -</label>
 
-                                <label for="" class="col-1 col-form-label">الاسم: -</label>
+                                <label for="" class="col-1 col-form-label">@lang('main.name'): -</label>
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="source_official" value="{{ $brokenRecord->source_official }}">
                                 </div>
@@ -227,8 +230,8 @@
                             @if ($brokenRecord->status == 'confirmed' && Auth::user()->hasRole('Admin'))
 
                             <div class="form-group row w-10 text-right">
-                                <label for="" class="col-2 col-form-label">2- مدير الجودة : -</label>
-                                <label for="" class="col-1 col-form-label">الاسم: -</label>
+                                <label for="" class="col-2 col-form-label">2-@lang('main.quality manager') : -</label>
+                                <label for="" class="col-1 col-form-label">@lang('main.name'): -</label>
 
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="quality_manager" value="{{ $brokenRecord->quality_manager }}">
@@ -241,19 +244,19 @@
                         @if (Auth::user()->hasRole('SuperAdmin'))
                         <th class=" w-50 text-center col-1 ">
                             <div class="" style="text-align:right ;">
-                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;"> عضوية:</label>
+                                <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.membership'):</label>
                             </div>
-                            <div class="form-group row w-100 ">
-                                <label for="" class="col-6 col-form-label">1- مسئول الوثائق: -</label>
+                            <div class="form-group row w-10 text-right">
+                                <label for="" class="col-6 col-form-label">1-@lang('main.Documents officer'): -</label>
 
-                                <label for="" class="col-2 col-form-label">الاسم: -</label>
+                                <label for="" class="col-2 col-form-label">@lang('main.name'): -</label>
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="source_official" value="{{ $brokenRecord->source_official }}">
                                 </div>
                             </div>
-                            <div class="form-group row w-100 ">
-                                <label for="" class="col-6 col-form-label">2- مدير الجودة : -</label>
-                                <label for="" class="col-2 col-form-label">الاسم: -</label>
+                            <div class="form-group row w-10 text-right">
+                                <label for="" class="col-6 col-form-label">2-@lang('main.quality manager') : -</label>
+                                <label for="" class="col-2 col-form-label">@lang('main.name'): -</label>
 
                                 <div class="col-2">
                                     <input type="text" class="form-control" placeholder="  ......" name="quality_manager" value="{{ $brokenRecord->quality_manager }}">
@@ -272,39 +275,42 @@
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
+                                <label>@lang('main.Company Name')</label>
                                 <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :" value="{{ $brokenRecord->company_name }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
+                                <label>@lang('main.release_date') </label>
                                 <input class="form-control" type="text" name="date2" value="{{ $brokenRecord->date2 }}" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
+                                <label>@lang('main.Modification date')</label>
                                 <input class="form-control" type="text" name="date3" value="{{ $brokenRecord->date3 }}" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $brokenRecord->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $brokenRecord->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $brokenRecord->number_doc }}">
                             </div>
                         </th>
@@ -314,13 +320,13 @@
 
             @if ($brokenRecord->status == 'pending' && Auth::user()->hasRole('Employee'))
             <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                     </i></button>
             </div>
             @elseif(($brokenRecord->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
             ($brokenRecord->status == 'pending' && Auth::user()->hasRole('Admin')))
             <div class="form-group">
-                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit" class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                     </i></button>
             </div>
             @elseif(($brokenRecord->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -328,7 +334,7 @@
             ($brokenRecord->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
             <div class="row">
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                   حفظ  </i></button>
+            @lang('main.edit') </i></button>
             </div>
             @endif
         </form>

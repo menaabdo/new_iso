@@ -12,7 +12,7 @@
 
 <div class="card" style=''>
     <div class="card-body">
-        <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">قائمة المراجعين الداخليين المعتمدين لنظام الجودة</h3>
+        <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.List of approved internal auditors')</h3>
         <hr>
         <form action="{{route('listInternalAuditor.store')}}" method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
@@ -23,11 +23,11 @@
                     <div style="overflow-x:auto;">
                         <table class="table table-bordered ">
                             <tr style="background-color: #001635;color:white">
-                                <th class="col-1 col-form-label">م</th>
-                                <th>الإسم</th>
-                                <th>الإدارة التابع لها</th>
-                                <th>تاريخ التأهيل</th>
-                                <th>مكان التأهيل</th>
+                                <th class="col-1 col-form-label">@lang('main.m')</th>
+                                <th>@lang('main.name')</th>
+                                <th>@lang('main.affiliate management')</th>
+                                <th>@lang('main.Qualification date')</th>
+                                <th>@lang('main.Qualification place')</th>
                             </tr>
                             <tr id="list-0">
                                 <td class="text-center end-td ">
@@ -55,22 +55,22 @@
                                 <th class=" w-90 text-center col-3 ">
 
                                     <div class="" style="text-align:center ;">
-                                        <label for="" class="">إعداد</label>
+                                        <label for="" class="">@lang('main.prepare')</label>
                                     </div>
 
                                     <div class="" style="text-align:center ;">
-                                        <label for="" class="">مدير الجودة </label>
+                                        <label for="" class="">@lang('main.quality manager') </label>
                                     </div>
 
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-md-3 col-form-label">التاريخ : -</label>
+                                        <label for="" class="col-md-3 col-form-label">@lang('main.date') : -</label>
                                         <div class="col-6">
                                             <input type="date" class="form-control shadow-lg" placeholder="  ......" name="date_1">
                                         </div>
                                     </div>
 
                                     <div class="form-group row w-10 text-right">
-                                        <label for="" class="col-md-3 col-form-label">التوقيع: -</label>
+                                        <label for="" class="col-md-3 col-form-label">@lang('main.name'): -</label>
                                         <div class="col-6">
                                             <input type="text" class="form-control shadow-lg" placeholder="  ......" name="name">
                                         </div>
@@ -82,23 +82,23 @@
                                 <th class=" w-90 text-center col-md-3 ">
 
                                     <div class="" style="text-align:center ;">
-                                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعداد</label>
+                                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                                     </div>
                                     <div class="mb-3" style="text-align:center ;">
-                                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">مدير الجودة</label>
+                                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.quality manager')</label>
                                     </div>
 
 
 
                                     <div class="form-group row w-10 ">
-                                        <label for="" class="col-md-3 col-form-label " style='text-align:right'>التاريخ : -</label>
+                                        <label for="" class="col-md-3 col-form-label " style='text-align:right'>@lang('main.date') : -</label>
                                         <div class="col-md-6">
                                             <input type="date" class="form-control shadow-lg" placeholder="  ......" name="date_1">
                                         </div>
                                     </div>
 
                                     <div class="form-group row w-10 ">
-                                        <label for="" class="col-md-3 col-form-label " style='text-align:right'>التوقيع: -</label>
+                                        <label for="" class="col-md-3 col-form-label " style='text-align:right'>@lang('main.name'): -</label>
                                         <div class="col-md-6">
                                             <input type="text" class="form-control shadow-lg" placeholder="  ......" name="name">
                                         </div>
@@ -107,13 +107,13 @@
                                 </th>
                                 <th class=" w-100 text-center col-md-3 ">
                                     <div class="" style="text-align:center ;">
-                                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعتماد</label>
+                                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval')</label>
                                     </div>
                                     <div class="" style="text-align:center ;">
-                                        <label for="" class="mb-3" style="text-align:center;font-size:large;font-weight: bolder;">المدير العام</label>
+                                        <label for="" class="mb-3" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.General Director')</label>
                                     </div>
                                     <div class="form-group row w-10 ">
-                                        <label for="" class="col-md-3 col-form-label" style='text-align:right'>التاريخ : -</label>
+                                        <label for="" class="col-md-3 col-form-label" style='text-align:right'>@lang('main.date') : -</label>
                                         <div class="col-md-6">
                                             <input type="date" class="form-control shadow-lg" placeholder="  ......" name="date_2">
                                         </div>
@@ -121,7 +121,7 @@
 
 
                                     <div class="form-group row w-10 ">
-                                        <label for="" class="col-md-3 col-form-label " style='text-align:right'>التوقيع: -</label>
+                                        <label for="" class="col-md-3 col-form-label " style='text-align:right'>@lang('main.name'): -</label>
                                         <div class="col-md-6">
                                             <input type="text" class="form-control shadow-lg" placeholder="  ......" name="manager_name">
                                         </div>
@@ -133,56 +133,59 @@
                         </thead>
                     </table>
                 </div>
+                <div style="overflow-x:auto;">
+
                 <table class="table">
                     <thead>
                         <tr>
                             <th>
-                                <div class="" style="text-align:center ;">
-                                    <label>اسم الشركة</label>
+                                <div class="" style="text-align:start ;">
+                                    <label>@lang('main.Company Name')</label>
                                     <input class="form-control shadow-lg" type="text" name="company_name">
                                 </div>
-
+        
                             </th>
                             <th>
-                                <div class="" style="text-align:center ;">
-                                    <label style='text-align:center'>تاريخ الاصدار</label>
+                                <div class="" style="text-align:start ;">
+                                    <label>@lang('main.release_date') </label>
                                     <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
                                 </div>
-
+        
                             </th>
                             <th>
-                                <div class="" style="text-align:center ;">
-                                    <label>تاريخ التعديل</label>
+                                <div class="" style="text-align:start ;">
+                                    <label>@lang('main.Modification date')</label>
                                     <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
                                 </div>
-
+        
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                    <label> مدة الحفظ </label>
+                                    <label>@lang('main.model_period')</label>
                                     <input class="form-control shadow-lg" type="text" name="period_time">
                                 </div>
-
+        
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                    <label> رقم الصفحة </label>
+                                    <label>@lang('main.page_number')</label>
                                     <input class="form-control shadow-lg" type="text" name="number_page">
                                 </div>
-
+        
                             </th>
                             <th>
                                 <div class="" style="text-align:start ;">
-                                    <label> رقم الوثيقة </label>
+                                    <label>@lang('main.document_code')</label>
                                     <input class="form-control shadow-lg" type="text" name="number_doc">
                                 </div>
                             </th>
                         </tr>
                     </thead>
                 </table>
+                </div>
                 <div class='row mt-3'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
             </div>
         </form>
     </div>

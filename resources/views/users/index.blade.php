@@ -6,7 +6,7 @@
     $pagename = 'Users';
 ?>
 <!-- /.row -->
-<div class="card" style='margin-right:85px'>
+<div class="card" style=''>
 <div class="card-body">
     <div class="col-12">
         <div class="card">

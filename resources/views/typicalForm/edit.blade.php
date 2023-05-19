@@ -6,40 +6,37 @@
 
 <div class="card">
 <div class="card-body">
-    <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;text-align:center">نموذج إستلام وثائق/نماذج</h3>
+    <h3 style="margin-top:85px; text-shadow: 1px 1px 1px #3ed3ea;text-align:center">@lang('main.Document receipt form')</h3>
     <hr>
     <form action="{{route('typicalForm.update',$typicalForm->id)}}" method="post" enctype="multipart/form-data" id="fo1">
         @method('PUT')
         {{ csrf_field() }}
         <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-2 ">CO LOGO</label>
+                <label class="form-label col-md-2 ">@lang('main.Company Logo')</label>
   <img src="{{ asset($typicalForm->logo) }}" height=180px width=210px; />
         <input type="file" id="img" name="logo" accept="image/*">
     </div>
     <div class="form-group row w-100 text-left">
         
-    <div class="row col-form-label mr-3">
-                    <label class="form-label  ">إستلمت أنا :</label>
-               
-            <input type="text"  class="col-3 form-control"  name="name" value="{{ $typicalForm->name }}">
-            <label>الموقع أدناه الوثائق التالية.</label>
-            <label>والتي تخص إدارة / </label>
-            <input type="text"  class="col-3 form-control"   name="management" value="{{ $typicalForm->management }}">
+        <div class="col-form-label">
+            <label class="form-label  ">@lang('main.I received') :</label>
+            <input type="text" class="col-md-3"  name="name" value="{{ $typicalForm->name }}">
+            <label>@lang('main.Signed below are the following documents / which belong to the Department') :</label>
+            <input type="text"  class="col-md-3"  name="management" value="{{ $typicalForm->management }}">
         </div>
     </div>
    
-    <div class="form-group row w-100 text-right" style="text-align:center ;">
-            <div class="card-body" style='overflow-x:auto'>
+    <div class="card-body" style='overflow-x:auto'>
               
              
     <table class="table">
             <tr  style='font-size:14px;background-color:#001635;color:white;text-align:center;'>
-                       <th>م</th>
-                <th>إسم الوثيقة</th>
-                <th>كود الوثيقة</th>
-                <th>عدد النسخ</th>
-                <th>التاريخ</th>
-                <th>الملاحظات</th>
+                  <th>@lang('main.m')</th>
+                <th>@lang('main.Document name')</th>
+                <th>@lang('main.document_number')</th>
+                <th>@lang('main.num_copy')</th>
+                <th>@lang('main.date')</th>
+                <th>@lang('main.note')</th>
             </tr>
             @if(count($typicalForm->typicalForm)>0)
             @foreach($typicalForm->typicalForm as $key => $intr)
@@ -88,16 +85,16 @@
             <tr>
                 <th class=" w-50 text-center col-1 ">
                     <div class="" style="text-align:center ;">
-                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">المستلم:</label>
+                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.receiver'):</label>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-5 col-form-label">الاسم:       -</label>
+                        <label for="" class="col-5 col-form-label">@lang('main.name') :-</label>
                         <div class="col-2">
                             <input type="text" class="form-control" placeholder="  ......" name="name2" value="{{ $typicalForm->name2 }}">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-5 col-form-label">الوظيفة:       -</label>
+                        <label for="" class="col-5 col-form-label">@lang('main.job') :-</label>
                         <div class="col-2">
                             <input type="text" class="form-control" placeholder="  ......" name="job" value="{{ $typicalForm->job }}">
                         </div>
@@ -113,39 +110,42 @@
             <tr>
                 <th>
                   <div class="" style="text-align:start ;">
+                    <label>@lang('main.Company Name')</label>
                     <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :"  value="{{ $typicalForm->company_name }}">
                   </div>
         
                 </th>
                 <th>
                   <div class="" style="text-align:start ;">
+                    <label>@lang('main.release_date') </label>
                     <input class="form-control" type="text" name="date2"  value="{{ $typicalForm->date2 }}" placeholder="تاريخ الإصدار   :" onfocus="(this.type='date')" onblur="(this.type='text')">
                   </div>
         
                 </th>
                 <th>
                     <div class="" style="text-align:start ;">
+                        <label>@lang('main.Modification date')</label>
                         <input class="form-control" type="text" name="date3"  value="{{ $typicalForm->date3 }}" placeholder="تاريخ التعديل :" onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
         
                 </th>
                 <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $typicalForm->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $typicalForm->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $typicalForm->number_doc }}">
                             </div>
                         </th>
@@ -155,7 +155,7 @@
     
     <div class='row mt-3'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                </i> تعديل  </button>
+                </i>@lang('main.edit')  </button>
           </div>
         </form>
     </div>

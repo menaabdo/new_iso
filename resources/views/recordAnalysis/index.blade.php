@@ -1,49 +1,54 @@
 @extends('layouts.master')
-@section('content')
-<style>
-    .shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
-    #me:hover{
-        transform: scale(1.1);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-    }
-</style>
-<section class="content" style='margin:auto;'>
-        <div class="card" style='margin:auto'>
-<div class="card-body row" style='margin:auto;'>  
-    
-          <h3 style="text-shadow: 1px 1px 1px #3ed3ea;;margin-top:80px;">سجل تحليل لشكاوي العملاء</h3>
-          <hr>
-          </div>
-                <div class="row" style='margin:auto;width:90%'>
 
-           
-              <a  href="{{ route('recordAnalysis.create') }}"  class="btn col-md-12 mr-1" style=" ">
-              <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
-           
-            <div class="col-12">
-              <div class="card">
-<div class="card-body">
-              <div class="card">
-<div class="card-body">
-                <!-- /.card-header -->
-                <div class="card-body">
-                <div class="card-body" style='overflow-x:auto'>
-               
-                  <table id="example1" class="table table-bordered table-striped" >
-                    <thead style='color:  white; 
-    background-color: #001635;text-align:center'>
-                    <tr>
-                      <th style=" font-size:20px ">Logo</th>
-                      <th style=" font-size:20px ">Status</th>
-                      <th style="font-size:20px " data-field="Actions" class="datatable-cell "><span style="">Actions</span></th>
-                      
-                    </tr>
-                    </thead>
-        
-                    <tbody class="datatable-body text-center">
-                      @foreach ($all_recordAnalysis as $recordAnalysis)
+@section('content')
+    <style>
+        .shadow-lg {
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        }
+
+        #me:hover {
+            transform: scale(1.1);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        }
+    </style>
+    <section class="content" style='margin:auto;'>
+        <div class="card">
+            <div class="card-body row" style='margin:auto;;'>
+
+                <h3 style="margin-top:85px;color: #2a415b;
+    text-shadow: 1px 1px 1px #3ed3ea;
+    font-weight: bold;">@lang('main.Analyze customer complaints')</h3>
+                <hr>
+            </div>
+            <div class="row" style='margin:auto;width:90%'>
+
+                <a href="{{ route('recordAnalysis.create') }}" class="btn col-md-12 mr-1"
+                    style="width:120px;  float: right; font-size:20px ">
+                    <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+    background-color:#001635;'
+                        id='me'><b>@lang('main.create')</b></button></a>
+                <div class="col-12">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+                                            <table id="example1" class="table  table-striped shadow-lg">
+                                                <thead>
+                                                    <tr style='background-color: #001635;color:white;text-align:center'>
+
+                                                      <th style=" text-align:center ">@lang('main.Company Logo')</th>
+                                                      <th style=" text-align:center ">@lang('main.Status')</th>
+                                                        <th data-field="Actions" class="datatable-cell "><span
+                                                                style="">@lang('main.Actions')</span></th>
+                                                    </tr>
+                                                </thead>
+
+
+                                                <tbody class="datatable-body ">
+                                                    @foreach ($all_recordAnalysis as $recordAnalysis)
                           <tr class="datatable-row datatable-row-even">
                               <td class="datatable-cell" style="font-size:15px "><span><img src="{{asset($recordAnalysis->logo)}}" alt="Image" width="50px"></span></td>
                               <td class="datatable-cell" style="font-size:15px ">

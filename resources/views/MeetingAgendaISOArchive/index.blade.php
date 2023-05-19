@@ -21,14 +21,14 @@
 
             <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
-    font-weight: bold;">أرشيف إجراء  مراجعة الادارة </h3>
+    font-weight: bold;">@lang('main.Archive') @lang('main.Management review1')</h3>
             <hr>
         </div>
         <div class="row" style='margin:auto;width:90%'>
 
             <a href="{{ route('meetingAgendaArchives.create') }}" class="btn col-md-12 mr-1" style="margin-top: 40px;">
                 <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a>
+    background-color:#001635;' id='me'><b>@lang('main.create')</b></button></a>
             <div class="col-12">
 
                 <div class="card">
@@ -40,8 +40,8 @@
                                     <table id="example1" class="table  table-striped shadow-lg" style=''>
                                         <thead>
                                             <tr style='background-color: #001635;color:white;text-align:center'>
-                                                <th>Archive Name</th>
-                                                <th data-field="Actions" class="datatable-cell "><span style="">Actions</span></th>
+                                                <th>@lang('main.Archive Name')</th>
+                                                <th data-field="Actions" class="datatable-cell "><span style="">@lang('main.Actions')</span></th>
                                             </tr>
                                         </thead>
                                         <tbody class="datatable-body text-center">

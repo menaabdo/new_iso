@@ -16,18 +16,18 @@
         margin:0 !important;
     }
     } */
-    @media only screen and (min-width: 320px)and (max-width: 500px) {
+    /* @media only screen and (min-width: 320px)and (max-width: 500px) {
     form{
         width:43% !important;
         margin:0 !important;
     }
-    }
+    } */
 
 </style>
 <div class="card  " style='   ;'>
-    <div class='card-body row' style='margin:auto'>
+    <div class='card-body row'>
 
-        <form action="{{route('followUpRecord.update',$followUpRecord->id)}}" style='margin:auto;;margin-top:80px; width:100%' method="post" enctype="multipart/form-data" id="fo1">
+        <form action="{{route('followUpRecord.update',$followUpRecord->id)}}" class='col-md-9' style='margin:auto;;margin-top:80px; width:100%' method="post" enctype="multipart/form-data" id="fo1">
             @method('PUT')
             {{ csrf_field() }}
             <div style="" class="w-100 text-center my-4">
@@ -132,35 +132,35 @@
             <table class="table ">
                 <thead>
                     <tr>
-                        <th class=" w-50 text-center col-3 " style="border: 1px solid silver  !important;">
+                        <th class=" w-50 text-center col-3 " style="border: 1px solid #001635  !important;">
                             <div class="form-group row w-20 text-center">
-                                <label for="" class="col-12 col-form-label text-center">* المصدر </label>
+                                <label for="" class="col-12 col-form-label text-center">*@lang('main.Source') </label>
                             </div>
                             <div class="form-group row w-20 text-center">
 
-                                <label for="" class="col-6 col-form-label">(1) مراجعة داخلية</label>
-                                <label for="" class="col-6 col-form-center">(4) شكوى العميل</label>
-
-                            </div>
-                            <div class="form-group row w-20 text-center">
-
-                                <label for="" class="col-6 col-form-label">(2) مراجعة خارجية </label>
-                                <label for="" class="col-6 col-form-label">(5) حالة عدم مطابقة </label>
+                                <label for="" class="col-6 col-form-label">@lang('main.(1) An internal audit')</label>
+                                <label for="" class="col-6 col-form-center">@lang('main.(4) Customer Complaint')</label>
 
                             </div>
                             <div class="form-group row w-20 text-center">
 
-                                <label for="" class="col-6 col-form-label">(3) مراجعة إدارة</label>
-                                <label for="" class="col-6 col-form-label">(6) أخرى(تذكر الحالة)</label>
+                                <label for="" class="col-6 col-form-label">@lang('main.(2) External review')</label>
+                                <label for="" class="col-6 col-form-label">@lang('main.(5) A case of non-conformity')</label>
+
+                            </div>
+                            <div class="form-group row w-20 text-center">
+
+                                <label for="" class="col-6 col-form-label">@lang('main.(3) Management review')</label>
+                                <label for="" class="col-6 col-form-label">@lang('main.(6) Other (remember the case)')</label>
 
                             </div>
 
                             <div class="form-group row w-10 text-center">
-                                <label for="" class="col-12 col-form-label"> ** فاعلية الإٌجراء </label>
-                                <label for="" class="col-4 col-form-label">(7) إقفال الطلب </label>
-                                <label for="" class="col-4 col-form-label">(8) إجراء تصحيحي أخر </label>
+                                <label for="" class="col-12 col-form-label"> ** @lang('main.the effectiveness of the procedure') </label>
+                                <label for="" class="col-4 col-form-label">@lang('main.(7) Closing the application')</label>
+                                <label for="" class="col-4 col-form-label">@lang('main.(8) Another corrective action')</label>
 
-                                <label for="" class="col-4 col-form-label">(9)أجراء وقائي أخر</label>
+                                <label for="" class="col-4 col-form-label">@lang('main.(9) Another precautionary measure')</label>
 
                             </div>
 
@@ -170,56 +170,61 @@
                     </tr>
                 </thead>
             </table>
+            <div style="overflow-x:auto;">
             <table class="table">
                 <thead>
                     <tr>
                         <th>
                             <div class="" style="text-align:start ;">
+                                <label>@lang('main.Company Name')</label>
                                 <input class="form-control" type="text" name="company_name" placeholder="اسم الشركة  :" value="{{ $followUpRecord->company_name }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
+                                <label>@lang('main.release_date') </label>
                                 <input class="form-control" type="text" name="date2" placeholder="تاريخ الإصدار   :" value="{{ $followUpRecord->date2 }}" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
+                                <label>@lang('main.Modification date')</label>
                                 <input class="form-control" type="text" name="date3" placeholder="تاريخ التعديل :" value="{{ $followUpRecord->date3 }}" onfocus="(this.type='date')" onblur="(this.type='text')">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $followUpRecord->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $followUpRecord->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $followUpRecord->number_doc }}">
                             </div>
                         </th>
                     </tr>
                 </thead>
             </table>
+             </div>
 
     </div>
-    <div class="row">
-    <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                 <i class="fas fa-save" style="width:15% ; height: 20%;"></i> تعديل </button>
-    </div>
+    <div class='row'>
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
+        </div>
     </form>
 </div>
 

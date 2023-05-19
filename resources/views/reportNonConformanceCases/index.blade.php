@@ -1,46 +1,51 @@
 @extends('layouts.master')
 
 @section('content')
-<style>
-    .shadow-lg {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
-    #me:hover{
-        transform: scale(1.1);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-    }
-</style>
+    <style>
+        .shadow-lg {
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        }
 
-
+        #me:hover {
+            transform: scale(1.1);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        }
+    </style>
     <section class="content" style='margin:auto;'>
-        <div class="card" style='margin:auto;'>
-<div class="card-body" style='margin:auto;'>
-            <h3 class='col-md-12' style='margin:auto;margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea'>تقرير حالات عدم المطابقة والإجراءات التصحيحية والوقائية
+        <div class="card">
+            <div class="card-body row" style='margin:auto;;'>
+
+                <h3 style="margin-top:85px;color: #2a415b;
+    text-shadow: 1px 1px 1px #3ed3ea;
+    font-weight: bold;">@lang('main.Report cases of non-conformity and corrective and preventive actions')
             </h3>
-            <hr>
-          <div class="row" style='margin:auto;'>
-           
-              <a  href="{{ route('reportNonConformanceCases.create') }}"  class="btn col-md-12 mr-1" style="">
-          <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
-    background-color:#001635;' id='me'><b>إضافة جديد</b></button></a> <div class="col-12">
-                 
-            <div class="col-12">
-              <div class="card">
-<div class="card-body">
-              <div class="card">
-<div class="card-body">
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped" >
-                    <thead>
-                    <tr>
-                      <th style=" font-size:20px ">Logo</th>
-                      <th style="font-size:20px " data-field="Actions" class="datatable-cell "><span style="">Actions</span></th>
-                      
-                    </tr>
-                    </thead>
-        
-                    <tbody class="datatable-body ">
-                      @foreach ($all_reportNonConformanceCases as $reportNonConformanceCases)
+                <hr>
+            </div>
+            <div class="row" style='margin:auto;width:90%'>
+
+                <a href="{{ route('reportNonConformanceCases.create') }}" class="btn col-md-12 mr-1"
+                    style=" ">
+                    <button class='shadow-lg btn btn-primary' style='border-radius: 10px;
+    background-color:#001635;'
+                        id='me'><b>@lang('main.create')</b></button></a>
+                <div class="col-12">
+                <div style="overflow-x:auto;">
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+                                            <table id="example1" class="table  table-striped shadow-lg">
+                                                <thead>
+                                                    <tr style='background-color: #001635;color:white;text-align:center'>
+
+                                                      <th style=" text-align:center ">@lang('main.Company Logo')</th>
+                                                        <th data-field="Actions" class="datatable-cell "><span
+                                                                style="">@lang('main.Actions')</span></th>
+                                                    </tr>
+                                                </thead>
+
+
+                                                <tbody class="datatable-body ">
+                                                    <tbody class="datatable-body text-center ">
+                                                        @foreach ($all_reportNonConformanceCases as $reportNonConformanceCases)
                           <tr class="datatable-row datatable-row-even">
                               <td class="datatable-cell" style="font-size:15px "><span><img src="{{asset($reportNonConformanceCases->logo)}}" alt="Image" width="50px"></span></td>
                               <td style="font-size:15px">

@@ -25,12 +25,12 @@
         @method('PUT')
         {{ csrf_field() }}
       <div style="" class="w-100 text-center my-4">
-        <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>سجل حصر الوثائق الملغاة</h2>
+        <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Record of Canceled Documents') </h2>
         <hr class="w-100">
     </div>
   
     <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-2 ">CO LOGO</label>
+                <label class="form-label col-md-2 ">@lang('main.Company Logo')</label>
          @if ($recordCanceledDocument->status == 'pending' && Auth::user()->hasRole('Employee'))
             <input type="file" id="img" name="logo" accept="image/*">
         @endif
@@ -53,31 +53,31 @@
             <tr style='font-size:14px;background-color:#001635;color:white;text-align:center;'>
                 
                 @if ($recordCanceledDocument->status == 'pending' && Auth::user()->hasRole('Employee'))
-                <th scope="col" rowspan="2">م</th>
+                <th scope="col" rowspan="2">@lang('main.m')</th>
             @endif
             @if (($recordCanceledDocument->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
                 ($recordCanceledDocument->status == 'pending' && Auth::user()->hasRole('Admin')))
-                <th scope="col" rowspan="2">م</th>
+                <th scope="col" rowspan="2">@lang('main.m')</th>
             @endif
             @if (($recordCanceledDocument->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                 ($recordCanceledDocument->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
                 ($recordCanceledDocument->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
-                <th scope="col" rowspan="2">م</th>
+                <th scope="col" rowspan="2">@lang('main.m')</th>
             @endif
-                <th scope="col" rowspan="2">إسم الوثيقة</th>
-                <th scope="col" rowspan="2">كود </th>
-                <th scope="col" colspan="2"> الأصدار </th>
-                <th scope="col" colspan="2"> التعديل  </th>
-                <th scope="col" rowspan="2">سبب الالغاء</th>
-                <th scope="col" rowspan="2">ملاحظات/ بيان التعديل إن وجد</th>
+            <th scope="col" rowspan="2">@lang('main.Document name')</th>
+            <th scope="col" rowspan="2">@lang('main.code') </th>
+            <th scope="col" colspan="2">@lang('main.Release')</th>
+            <th scope="col" colspan="2">@lang('main.edit1')</th>
+            <th scope="col" rowspan="2">@lang('main.reason_cancel')</th>
+            <th scope="col" rowspan="2">@lang('main.Notes/modification statement, if any')</th>
 
             </tr>
             <tr style='font-size:14px;background-color:#001635;color:white;text-align:center;'>
                 
-                <th scope="col">رقم</th>
-                <th scope="col"> التاريخ</th>
-                <th scope="col">رقم</th>
-                <th scope="col"> التاريخ</th>
+                <th scope="col">@lang('main.num')</th>
+                        <th scope="col"> @lang('main.date')</th>
+                        <th scope="col">@lang('main.num')</th>
+                        <th scope="col"> @lang('main.date')</th>
             </tr>
             @if(count($recordCanceledDocument->recordCanceledDocument)>0)
             @foreach($recordCanceledDocument->recordCanceledDocument as $key => $intr)
@@ -181,17 +181,17 @@
                 <th class=" text-center col-2 ">
                     <div class="" style="text-align:center ;">
                         <label for="" class=""
-                            style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" readonly placeholder="  ......"
                                 name="name_1" value="{{ $recordCanceledDocument->name_1 }}">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" readonly placeholder="  ......"
                                 name="job_1" value="{{ $recordCanceledDocument->job_1 }}">
@@ -204,17 +204,17 @@
                 <th class=" text-center col-2 ">
                     <div class="" style="text-align:center ;">
                         <label for="" class=""
-                            style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" readonly placeholder="  ......"
                                 name="name_1" value="{{ $recordCanceledDocument->name_1 }}">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" readonly placeholder="  ......"
                                 name="job_1" value="{{ $recordCanceledDocument->job_1 }}">
@@ -225,17 +225,17 @@
                 <th class="  text-center col-2 ">
                     <div class="" style="text-align:center ;">
                         <label for="" class=""
-                            style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval')</label>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" readonly placeholder="  ......"
                                 name="name_2" value="{{ $recordCanceledDocument->name_2 }}">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" readonly placeholder="  ......"
                                 name="job_2" value="{{ $recordCanceledDocument->job_2 }}">
@@ -247,16 +247,16 @@
                 @if (Auth::user()->hasRole('Admin'))
                 <th class=" text-center col-2 ">
                     <div class="" style="text-align:center ;">
-                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الاسم:       -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.name'):       -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" placeholder="  ......" name="name_1"  value="{{ $recordCanceledDocument->name_1 }}">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الوظيفة:       -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.job'):       -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" placeholder="  ......" name="job_1"  value="{{ $recordCanceledDocument->job_1 }}">
                         </div>
@@ -267,10 +267,10 @@
                 <th class="  text-center col-2 ">
                     <div class="" style="text-align:center ;">
                         <label for="" class=""
-                            style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                            style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval')</label>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الاسم: -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.name'): -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" readonly
                                 placeholder="  ......" name="name_2"
@@ -278,7 +278,7 @@
                         </div>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الوظيفة: -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.job'): -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" readonly
                                 placeholder="  ......" name="job_2"
@@ -292,16 +292,16 @@
                 @if (Auth::user()->hasRole('SuperAdmin'))
                 <th class=" text-center col-2 ">
                     <div class="" style="text-align:center ;">
-                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعداد:</label>
+                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.prepare')</label>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الاسم:       -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.name'):       -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" placeholder="  ......" name="name_1"  value="{{ $recordCanceledDocument->name_1 }}">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الوظيفة:       -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.job'):       -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" placeholder="  ......" name="job_1"  value="{{ $recordCanceledDocument->job_1 }}">
                         </div>
@@ -310,16 +310,16 @@
                 </th>
                 <th class="  text-center col-2 ">
                     <div class="" style="text-align:center ;">
-                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">إعتماد:</label>
+                        <label for="" class="" style="text-align:center;font-size:large;font-weight: bolder;">@lang('main.approval')</label>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الاسم:       -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.name'):       -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" placeholder="  ......" name="name_2"  value="{{ $recordCanceledDocument->name_2 }}">
                         </div>
                     </div>
                     <div class="form-group row w-10 text-right">
-                        <label for="" class="col-3 col-form-label">الوظيفة:       -</label>
+                        <label for="" class="col-3 col-form-label">@lang('main.job'):       -</label>
                         <div class="col-6">
                             <input type="text" class="form-control" placeholder="  ......" name="job_2"  value="{{ $recordCanceledDocument->job_2 }}">
                         </div>
@@ -338,42 +338,42 @@
         <tr>
             <th>
               <div class="" style="text-align:start ;">
-              <label>اسم الشركة</label>
+                <label>@lang('main.Company Name')</label>
                 <input class="form-control" type="text" name="company_name"  value="{{ $recordCanceledDocument->company_name }}">
               </div>
     
             </th>
             <th>
               <div class="" style="text-align:start ;">
-              <label>تاريخ الاصدار</label>
+                <label>@lang('main.release_date') </label>
                 <input class="form-control" type="text" name="date2"  value="{{ $recordCanceledDocument->date2 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
               </div>
     
             </th>
             <th>
                 <div class="" style="text-align:start ;">
-                <label>تاريخ التعديل</label>
+                    <label>@lang('main.Modification date')</label>
                     <input class="form-control" type="text" name="date3"  value="{{ $recordCanceledDocument->date3 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                   </div>
     
             </th>
             <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $recordCanceledDocument->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $recordCanceledDocument->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $recordCanceledDocument->number_doc }}">
                             </div>
                         </th>
@@ -384,14 +384,14 @@
 @if ($recordCanceledDocument->status == 'pending' && Auth::user()->hasRole('Employee'))
 <div class="form-group">
     <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
         </i></button>
 </div>
 @elseif(($recordCanceledDocument->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
 ($recordCanceledDocument->status == 'pending' && Auth::user()->hasRole('Admin')))
 <div class="form-group">
     <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+        class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
         </i></button>
 </div>
 @elseif(($recordCanceledDocument->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -399,7 +399,7 @@
 ($recordCanceledDocument->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
 <div class='row mt-3'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                    تعديل</button>
+                    @lang('main.edit')</button>
             </div>
 @endif
     </form>

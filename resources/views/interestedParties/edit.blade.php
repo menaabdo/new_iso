@@ -20,11 +20,11 @@
         @method('PUT') 
               {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-            <h2 style="text-shadow: 1px 1px 1px #3ed3ea;"> استمارة الأطراف المهتمة</h2>
+            <h2 style="text-shadow: 1px 1px 1px #3ed3ea;"> @lang('main.Interested Parties Form')</h2>
             <hr class="w-100">
         </div>
         <div class='shadow-lg p-3'>
-                <label class="form-label pr-5">CO LOGO</label>
+                <label class="form-label pr-5">@lang('main.Company Logo')</label>
                 
               @if ($interestedPartie->status == 'pending' && Auth::user()->hasRole('Employee'))
             <input type="file" id="img" name="logo" accept="image/*">
@@ -47,20 +47,19 @@
                 <table class="table">
                 <tr style="background-color:#001635 ;color:white; text-align:center;">
                     @if ($interestedPartie->status == 'pending' && Auth::user()->hasRole('Employee'))
-                    <th>م</th>
+                    <th>@lang('main.m')</th>
                     @endif
                     @if (($interestedPartie->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
-                    ($interestedPartie->status == 'pending' && Auth::user()->hasRole('Admin')))                    <th>م</th>
+                    ($interestedPartie->status == 'pending' && Auth::user()->hasRole('Admin')))                    <th>@lang('main.m')</th>
                     @endif
                     @if (($interestedPartie->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
                     ($interestedPartie->status == 'pending' && Auth::user()->hasRole('SuperAdmin')) ||
-                    ($interestedPartie->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))                    <th>م</th>
+                    ($interestedPartie->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))                    <th>@lang('main.m')</th>
                     @endif
-                    <th>الأطراف المهتمة</th>
-                    <th>الاحتياجات والمتطلبات</th>
-                    <th> كيفية تحقيقها</th>
-                    <th> كيفية مراقبتها</th>
-
+                    <th>@lang('main.interested parties')</th>
+                    <th>@lang('main.needs and requirements')</th>
+                    <th>@lang('main.how to achieve them')</th>
+                    <th>@lang('main.How to monitor it')</th>
                 </tr>
 
                 @if(count($interestedPartie->interestedPartie)>0)
@@ -151,16 +150,16 @@
                     @if ($interestedPartie->status == 'confirmed' && Auth::user()->hasRole('Employee') ||$interestedPartie->status == 'confirmed' && Auth::user()->hasRole('Admin') )
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="font-size:large;font-weight: bolder;">إعداد (مدير الجودة)  :</label>
+                            <label for="" class="" style="font-size:large;font-weight: bolder;">@lang('main.prepare') (@lang('main.quality manager')) :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.name')   </label>
                             <div class="col-6">
                                 <input type="text" class="form-control" readonly placeholder="  ......" name="name_1" value="{{$interestedPartie->name_1}}">
                             </div>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">التاريخ:       -</label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date'):       -</label>
                             <div class="col-6">
                                 <input type="date" class="form-control" readonly placeholder="  ......" name="date_1" value="{{$interestedPartie->date_1}}">
                             </div>
@@ -170,16 +169,16 @@
                     @if(Auth::user()->hasRole('SuperAdmin'))
                     <th class=" w-50 text-center col-2 ">
                         <div class="" style="text-align:center ;">
-                            <label for="" class="" style="font-size:large;font-weight: bolder;">إعداد (مدير الجودة)  :</label>
+                            <label for="" class="" style="font-size:large;font-weight: bolder;">@lang('main.prepare') (@lang('main.quality manager')) :</label>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">الإسم   </label>
+                            <label for="" class="col-3 col-form-label">@lang('main.name')   </label>
                             <div class="col-6">
                                 <input type="text" class="form-control" placeholder="  ......" name="name_1" value="{{$interestedPartie->name_1}}">
                             </div>
                         </div>
                         <div class="form-group row w-10 text-center">
-                            <label for="" class="col-3 col-form-label">التاريخ:       -</label>
+                            <label for="" class="col-3 col-form-label">@lang('main.date'):       -</label>
                             <div class="col-6">
                                 <input type="date" class="form-control" placeholder="  ......" name="date_1" value="{{$interestedPartie->date_1}}">
                             </div>
@@ -197,42 +196,42 @@
                 <tr>
                     <th>
                       <div class="" style="text-align:start ;">
-                      <label>اسم الشركة</label>
+                        <label>@lang('main.Company Name')</label>
                         <input class="form-control" type="text" name="company_name"   value="{{ $interestedPartie->company_name }}">
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                      <label>تاريخ التعديل</label>
+                        <label>@lang('main.release_date') </label>
                         <input class="form-control" type="text" name="date2"  value="{{ $interestedPartie->date2 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
             
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                        <label>تاريخ الاصدار</label>
+                            <label>@lang('main.Modification date')</label>
                             <input class="form-control" type="text" name="date3"  value="{{ $interestedPartie->date3 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                           </div>
             
                     </th>
                     <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $interestedPartie->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $interestedPartie->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $interestedPartie->number_doc }}">
                             </div>
                         </th>
@@ -243,14 +242,14 @@
         @if ($interestedPartie->status == 'pending' && Auth::user()->hasRole('Employee'))
         <div class="form-group">
             <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                 </i></button>
         </div>
     @elseif(($interestedPartie->status == 'inProgress' && Auth::user()->hasRole('Admin')) ||
         ($interestedPartie->status == 'pending' && Auth::user()->hasRole('Admin')))
         <div class="form-group">
             <button style="border-radius:20px;margin: 50px; width:10% ; height: 5%;" type="submit"
-                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">تعديل
+                class="btn btn-primary"><i class="fas fa-save" style="width:15% ; height: 20%;">@lang('main.edit')
                 </i></button>
         </div>
     @elseif(($interestedPartie->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin')) ||
@@ -258,7 +257,7 @@
         ($interestedPartie->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin')))
         <div class='row'>
                 <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                    تعديل</button>
+                    @lang('main.edit')</button>
             </div>
     @endif
     </form>

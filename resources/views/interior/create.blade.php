@@ -8,7 +8,7 @@
 
 </style>
 <div style='margin-top:85px;width:85%;margin:auto' class='row card-body'>
-    <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;" class='mx-3'>متابعة نتائج المراجعة الداخلية </h3>
+    <h3 style="margin-top:85px;text-shadow: 1px 1px 1px #3ed3ea;" class='mx-3'>@lang('main.Follow up on the results of the internal audit') </h3>
     <hr>
 
     <form action="{{route('interior.store')}}" method="post" enctype="multipart/form-data" id="fo1" class='col-md-12'>
@@ -16,29 +16,29 @@
 
 
         <div class="form-group row text-right p-2">
-            <label for="" \-> ادارة :</label>
+            <label for="" \-> @lang('main.Department') :</label>
             <div class="col-md-4">
-                <input type="text" class="form-control shadow-lg" placeholder="ادارة  ......" name="management">
+                <input type="text" class="form-control shadow-lg" placeholder="@lang('main.Department')" name="management">
             </div>
         </div>
         <!-- table -->
-        <div class="form-group row text-right mt-5 ">
+        <div class="form-group row text-right mt-5 "  style="overflow-x:auto;">
             <table class="table table-bordered  text-center col-md-11" style="grid-auto-flow: column;justify-content: center; align-content: center;margin:auto">
 
 
 
                 <thead style='font-size:13px;background-color: #001635;color:white;padding:10px !important;'>
                     <tr>
-                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>م</th>
-                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>وصف حالة عدم المطابقة </th>
-                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>الإجراء التصحيحي / الوقائي المطلوب</th>
-                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>رقم الإجراء</th>
-                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>المسئول عن التنفيذ</th>
-                        <th scope="col" colspan="2">متابعة التنفيذ</th>
+                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>@lang('main.m')</th>
+                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>@lang('main.Description of the nonconformity') </th>
+                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>@lang('main.Corrective/preventive action required')</th>
+                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>@lang('main.action number')</th>
+                        <th scope="col" rowspan="2" style='vertical-align: middle; !important;'>@lang('main.Responsible for implementation')</th>
+                        <th scope="col" colspan="2">@lang('main.Follow-up implementation')</th>
                     </tr>
                     <tr style="">
-                        <th scope="col"> مخطط</th>
-                        <th scope="col">فعلي</th>
+                        <th scope="col"> @lang('main.plan')</th>
+                        <th scope="col">@lang('main.actual')</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -102,82 +102,80 @@
         <!-- ------------------------- -->
         @if(Auth::user()->hasRole('SuperAdmin'))
         <div class="form-group row text-center mt-5">
-            <label class="col-md-3 col-form-label"> رئيس فريق المراجعه :</label>
+            <label class="col-md-3 col-form-label">@lang('main.Head of the review team'):</label>
 
             <input type="text" class="form-control col-md-4 shadow-lg" name="head_of_the_review">
 
         </div>
         <div class="form-group row text-center ">
-            <label for="" class="col-md-3 col-form-label"> الاسم :</label>
+            <label for="" class="col-md-3 col-form-label"> @lang('main.name') :</label>
 
             <input type="text" class="form-control col-md-4 shadow-lg" name="name">
         </div>
         <div class="form-group row text-center ">
-            <label for="" class="col-md-3 col-form-label"> التاريخ :</label>
+            <label for="" class="col-md-3 col-form-label"> @lang('main.date') :</label>
 
             <input type="date" class="form-control col-md-4 shadow-lg" name="date">
         </div>
 
 
         @endif
+        <div style="overflow-x:auto;">
+
         <table class="table">
             <thead>
                 <tr>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label>اسم الشركة</label>
+                            <label>@lang('main.Company Name')</label>
                             <input class="form-control shadow-lg" type="text" name="company_name">
                         </div>
 
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label>تاريخ الإصدار </label>
+                            <label>@lang('main.release_date') </label>
                             <input class="form-control shadow-lg" type="text" name="date2" onfocus="(this.type='date')" onblur="(this.type='text')">
                         </div>
 
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label>تاريخ التعديل</label>
+                            <label>@lang('main.Modification date')</label>
                             <input class="form-control shadow-lg" type="text" name="date3" onfocus="(this.type='date')" onblur="(this.type='text')">
                         </div>
 
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label> مدة الحفظ </label>
+                            <label>@lang('main.model_period')</label>
                             <input class="form-control shadow-lg" type="text" name="period_time">
                         </div>
 
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label> رقم الصفحة </label>
+                            <label>@lang('main.page_number')</label>
                             <input class="form-control shadow-lg" type="text" name="number_page">
                         </div>
 
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                            <label> رقم الوثيقة </label>
+                            <label>@lang('main.document_code')</label>
                             <input class="form-control shadow-lg" type="text" name="number_doc">
                         </div>
                     </th>
                 </tr>
             </thead>
         </table>
+         </div>
         <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit" class="btn btn-primary col-md-4">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
+                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
         </div>
     </form>
 </div>
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
 

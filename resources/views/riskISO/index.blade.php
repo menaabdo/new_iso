@@ -19,7 +19,7 @@
                  <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
     font-weight: bold;">
-              @lang('main.Achieving Risk assessment')</h3>
+             @lang('main.Risk assessment1')</h3>
                 <hr>
                 </div>
       <div class="row" style='margin:auto;width:90%'>
@@ -116,7 +116,7 @@
                  @elseif($iso->status == 'inProgress' && Auth::user()->hasRole('SuperAdmin') || $iso->status == 'pending' && Auth::user()->hasRole('SuperAdmin')
                  || $iso->status == 'confirmed' && Auth::user()->hasRole('SuperAdmin'))
                 <td style="font-size:15px">
-                  <form id="delete-form-{{ $iso->id }}"
+                  <form id="delete-form-{{ $iso->id }}" class="d-flex justify-content-center"
                       action="{{ route('risksop.destroy', $iso->id) }}" method="post">
                      
                           <a href="{{ route('risksop.edit', $iso->id) }}"
@@ -126,7 +126,7 @@
                               <i class="fa fa-edit"></i>
                           </a>
                         <a href="{{ route('risksop.print', $iso->id) }}"
-                            class="btn btn-sm btn-clean
+                            class="btn btn-lg btn-clean
                             btn-icon mr-2 test"
                             title="@lang('general.print')"  target="_blank">
                             <i class="fa fa-print"></i>

@@ -400,7 +400,7 @@ td{
        <div class="row">
            <div class="col-lg-10 col-md-10" style='margin:auto'>
            <h3 style="margin-top:30px;color:#2a415b;padding:10px;color: #2a415b;
-   text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.Achieving Risk assessment')</h3>
+   text-shadow: 1px 1px 1px #3ed3ea;font-weight: bold;">@lang('main.Risk assessment1')</h3>
    <hr style='background-color:#3ed3ea'>
   
   
@@ -408,6 +408,7 @@ td{
             @method('PUT')
             {{ csrf_field() }}
             <input type="hidden" name="type" value="2">
+            <div style="overflow-x:auto;">
             <table style="width: 850px;" class="table table-bordered my-4   m-auto">
                 <thead>
                     <tr>
@@ -512,9 +513,10 @@ td{
 
                 </tbody>
             </table>
+            </div>
             <hr style="border: 5px; margin: 50px ;">
 
-            <section style="width: 650px;margin-top: 200px;ق" class=" my-4  p-4 m-auto">
+            <section style="width: 300px;margin-top: 200px;ق" class=" my-4  p-4 m-auto">
                 <div class="form-group row ">
                     <label for="" class="col-sm-2 col-form-label">@lang('main.Company Name')</label>
                     <div class="col-sm-10">
@@ -532,7 +534,7 @@ td{
             </section>
             <hr style="border: 5px; margin: 50px ;">
 
-            <section style="width: 650px;margin-top: 200px;" class=" my-4  p-4 m-auto">
+            <section style="width: 300px;margin-top: 200px;" class=" my-4  p-4 m-auto">
                 <div class="form-group row ">
                     <label for="" class="col-sm-2 col-form-label">@lang('main.version_number')</label>
                     <div class="col-sm-10">
@@ -549,6 +551,7 @@ td{
                 </div>
             </section>
             <hr style="border: 5px; margin: 50px ;">
+            <div style="overflow-x:auto;">
             <table style="width: 550px;" class="table table-bordered my-4   m-auto">
                 <thead>
                     <tr>
@@ -679,8 +682,9 @@ td{
                 </thead>
 
             </table>
-
+             </div>
             <hr style="border: 5px; margin: 50px ;">
+            <div style="overflow-x:auto;">
             <table style="width: 550px;justify-content: center;align-items: center;"
                 class="table table-bordered my-4   m-auto">
                 <thead>
@@ -799,6 +803,7 @@ td{
 
                 </tbody>
             </table>
+            </div>
             <hr style="border: 5px; margin: 50px ;">
             <section class="row" style="margin-right: 100px;">
                 <h2>@lang('main.Action illustration:')</h2>
@@ -825,9 +830,10 @@ td{
             </section>
         
             <section>
-                <div class="row" style="margin: 100px;text-align: start;">
+                <div class="row" style="text-align: start;">
                     <p>@lang('main.procedure')</p>
                     <h3>  @lang('main.Terms and illustrations')</h3>
+                    <div style="overflow-x:auto;">
                     <table class="table table-bordered my-4">
                         <thead>
                             <tr>
@@ -1070,6 +1076,7 @@ td{
                 <div class="input-group my-3  mx-3">
                     <label class="row">  @lang('main.Models used:')</label>
                 </div>
+                <div style="overflow-x:auto;">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -1208,7 +1215,7 @@ td{
                     </tbody>
 
                 </table>
-
+               </div>
                 <!-- <textarea class=form-control name="" id="" cols="55" rows="5"
                     placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
             </section>

@@ -15,26 +15,25 @@
 
 </style>
 <div class="card">
-<div class="form-group row w-100 text-right" style="text-align:center;overflow:auto">
 
-    <div class="card-body row" style='margin:auto;margin-top:80px'>
+    <div class="card-body row" style=';margin-top:80px'>
    
     <form action="{{route('customers.update',$customer->id)}}" method="post" class='col-md-10' style='margin:auto' enctype="multipart/form-data" id="fo1">
         @method('PUT') 
               {{ csrf_field() }}
         <div style="" class="w-100 text-center my-4">
-            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'> العمـــــــــــلاء</h2>
+            <h2 style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.Customers')</h2>
             <hr class="w-100">
         </div>
         <div class='row mt-4 mb-3'>
-                <label class="form-label col-md-2 ">CO LOGO</label>
+                <label class="form-label col-md-2 ">@lang('main.Company Logo')</label>
     
             <input type="file" id="img" name="logo" accept="image/*">
             <img src="{{ asset($customer->logo) }}" height=180px width=210px; />
           
         </div>
         <div class="form-group row ">
-            <label for="" class="col-2 col-form-label">العميل:</label>
+            <label for="" class="col-2 col-form-label">@lang('main.Customer'):</label>
             <div class="col-4">
            
          
@@ -42,40 +41,41 @@
             </div>
         </div>
         <div class="form-group row ">
-        <div class="col-4">
-        <label for="" class="col-3 col-form-label">مباشر:</label>
+        <div class="col-md-4">
+        <label for="" class="col-md-3 col-form-label">@lang('main.direct'):</label>
            
                   <input type="checkbox" name="direct" value=1 {{ $customer->direct=="1"? 'checked':'' }}>
             </div>
               <div class="col-6">
-              <label for="" class="col-2 col-form-label">مندوب:</label>
+              <label for="" class="col-3 col-form-label">@lang('main.delegate'):</label>
          
                 <input type="checkbox" name="delegate" value=1 {{ $customer->delegate=="1"? 'checked':'' }}>
             </div>
         </div>
         <div class="form-group row ">
-            <label for="" class="col-3 col-form-label">اسم المندوب:</label>
+            <label for="" class="col-3 col-form-label">@lang('main.delegate_name'):</label>
             <div class="col-6">
                 <input type="text" class="form-control" name="delegate_name" value="{{$customer->delegate_name}}">
             </div>
         </div>
         <hr class="w-100">
         <div class="form-group row w-100 text-right" style="text-align:center;">
+        <div style="overflow-x:auto;">
             <table class="table">
                 <tr style="background-color:    #001635; color:white;text-align:center;">
-                    <th scope="col" rowspan="2">م</th>
-                    <th scope="col" rowspan="2">الأسم</th>
-                    <th scope="col" rowspan="2">الكود</th>
-                    <th scope="col" colspan="7">البيانات</th>
+                    <th scope="col" rowspan="2">@lang('main.m')</th>
+                    <th scope="col" rowspan="2">@lang('main.name')</th>
+                    <th scope="col" rowspan="2">@lang('main.code')</th>
+                    <th scope="col" colspan="7">@lang('main.data')</th>
                 </tr>
                 <tr style="background-color:    #001635; color:white;text-align:center;">
-                    <th scope="col"> المسؤل</th>
-                    <th scope="col">الوظيفه</th>
-                    <th scope="col"> تليفون</th>
-                    <th scope="col">جوال</th>
-                    <th scope="col"> العنوان</th>
-                    <th scope="col">WEB</th>
-                    <th scope="col"> Email</th>
+                    <th scope="col"> @lang('main.Administrator')</th>
+                    <th scope="col">@lang('main.job')</th>
+                    <th scope="col">@lang('main.phone')</th>
+                    <th scope="col">@lang('main.jawaal')</th>
+                    <th scope="col">@lang('main.address')</th>
+                    <th scope="col">@lang('main.WEB')</th>
+                    <th scope="col">@lang('main.Email')</th>
                 </tr>
                 @if(count($customer->customer)>0)
                 @foreach($customer->customer as $key => $data)
@@ -129,6 +129,7 @@
                 @endif
             </table>
         </div>
+        </div>
 
 
 
@@ -139,42 +140,42 @@
                 <tr>
                     <th>
                       <div class="" style="text-align:start ;">
-                      <label>اسم الشركة</label>
+                        <label>@lang('main.Company Name')</label>
                         <input class="form-control" type="text" name="company_name"   value="{{ $customer->company_name }}">
                       </div>
             
                     </th>
                     <th>
                       <div class="" style="text-align:start ;">
-                      <label>تاريخ الاصدار</label>
+                        <label>@lang('main.release_date') </label>
                         <input class="form-control" type="text" name="date2"  value="{{ $customer->date2 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                       </div>
             
                     </th>
                     <th>
                         <div class="" style="text-align:start ;">
-                        <label>تاريخ التعديل</label>
+                            <label>@lang('main.Modification date')</label>
                             <input class="form-control" type="text" name="date3"  value="{{ $customer->date3 }}"  onfocus="(this.type='date')" onblur="(this.type='text')">
                           </div>
             
                     </th>
                    <th>
                             <div class="" style="text-align:start ;">
-                                <label> مدة الحفظ </label>
+                                <label>@lang('main.model_period')</label>
                                 <input class="form-control shadow-lg" type="text" name="period_time" value="{{ $customer->period_time }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الصفحة </label>
+                                <label>@lang('main.page_number')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_page" value="{{ $customer->number_page }}">
                             </div>
 
                         </th>
                         <th>
                             <div class="" style="text-align:start ;">
-                                <label> رقم الوثيقة </label>
+                                <label>@lang('main.document_code')</label>
                                 <input class="form-control shadow-lg" type="text" name="number_doc" value="{{ $customer->number_doc }}">
                             </div>
                         </th>
@@ -184,7 +185,7 @@
         <div class='row'>
             <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px;margin-right:100px;margin:auto" type="submit"
                 class="btn btn-primary col-md-4">
-              تعديل</button>
+              @lang('main.edit')</button>
                     </div>  
     </form>
 </div>

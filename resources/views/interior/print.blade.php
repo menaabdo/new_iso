@@ -18,7 +18,7 @@
     ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     border-radius: 6px;
     padding: 4;
-}'>متابعة نتائج المراجعة الداخلية </span>
+}'>@lang('main.Follow up on the results of the internal audit') </span>
 
                 </h2>
                   </div>

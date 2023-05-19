@@ -15,12 +15,12 @@
     color:#001635;
    
 }
-    }
+    
     </style>
      
     <div class='row card'>
         
-    <h3 style="margin-top:100px;margin-right:250px;text-shadow: 1px 1px 1px #3ed3ea;">سجل حصر وتحديدالاخطار والمخاطر </h3>
+    <h3 style="margin-top:100px;margin-right:250px;text-shadow: 1px 1px 1px #3ed3ea;">@lang('main.Risk Management report') </h3>
         <hr >
         <form action="{{ route('risk.store') }}" method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}
@@ -32,7 +32,7 @@
                     <input  type="text" class="form-control col-md-8 shadow-lg rounded" name="department" placeholder="ادخل ادارة / قسم  ......">
                 
             </div>
-            <table class='row  shadow-lg d-flex justifiy-content-between mt-5'  style='margin-right:100px;margin-left:-200px;width:90%;overflow-x:auto'>
+            <table class='table'  >
            
       <thead style='font-size:13px' class='' >
                         <tr class='' style=" background-color: azure;">
@@ -227,7 +227,7 @@
             </section>
 
             <div class="form-group" style='text-align:center'>
-            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit"
+            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 11%;padding:10px" type="submit"
                 class="btn btn-primary">
                 <i class="fas fa-save" style="width:15% ; height: 20%;"></i>حفظ</button>
         </div> 
@@ -238,7 +238,7 @@
       </div>
 <!-- <div class=" " >
   
-        <h3 style="margin-top:85px;">سجل حصر وتحديدالاخطار والمخاطر </h3>
+        <h3 style="margin-top:85px;">@lang('main.Risk Management report') </h3>
         <hr>
         <form action="{{ route('risk.store') }}" method="post" enctype="multipart/form-data" id="fo1">
             {{ csrf_field() }}

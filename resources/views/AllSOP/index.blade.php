@@ -21,7 +21,7 @@
 
             <h3 style="margin-top:85px;color: #2a415b;
     text-shadow: 1px 1px 1px #3ed3ea;
-    font-weight: bold;">جميع الإجراءات</h3>
+    font-weight: bold;">@lang('main.All Sop')</h3>
             <hr>
         </div>
         <div class="row" style='margin:auto;width:90%'>
@@ -37,9 +37,9 @@
                                     <table id="example1" class="table  table-striped shadow-lg" style=''>
                                         <thead>
                                             <tr style='background-color: #001635;color:white;text-align:center'>
-                                                <th>Sop Name</th>
-                                                <th>Sop Type</th>
-                                                <th data-field="Actions" class="datatable-cell "><span style="">Actions</span></th>
+                                                <th>@lang('main.Sop Name')</th>
+                                                <th>@lang('main.Sop Type')</th>
+                                                <th data-field="Actions" class="datatable-cell "><span style="">@lang('main.Actions')</span></th>
 
                                             </tr>
                                         </thead>
