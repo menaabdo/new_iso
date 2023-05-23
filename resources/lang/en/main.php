@@ -70,6 +70,7 @@ return [
     'edit'=>'Edit',
     'Quality goals'=>'Quality goals',
     'Risk assessment'=>'Risk assessment',
+    'Risk'=>'Risk',
     'Risk assessment1'=>'Risk assessment',
     'Department Name'=>'Department Name',
     'Department'=>'Department',
@@ -468,6 +469,11 @@ return [
     'Follow-up record of improvement and development work'=>'Follow-up record of improvement and development work',
     'Data collection and analysis report'=>'Data collection and analysis report',
     'Analyze customer complaints'=>'Analyze customer complaints',
+    'activity'=>'activity',
+    'Evaluation before action taken'=>'Evaluation before action taken',
+    'Actions taken'=>'Actions taken',
+    'Post-procedure evaluation'=>'Post-procedure evaluation',
+    'acceptable/no'=>'acceptable/no',
 
 
 

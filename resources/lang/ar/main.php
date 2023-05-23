@@ -71,6 +71,7 @@ return [
     'quality objectives'=>'إجراء أهداف الجودة',
     'objectives execution plan form'=>'خطه تنفيذ هدف',
     'Risk assessment'=>' تقيم المخاطر',
+    'Risk'=>'المخاطر',
     'Risk assessment1'=>' إجراء تقيم المخاطر',
     'edit'=>'تعديل',
     'Quality goals'=>'أهداف الجوده',
@@ -470,5 +471,10 @@ return [
     'Follow-up record of improvement and development work'=>'سجل متابعة أعمال التحسين والتطوير',
     'Data collection and analysis report'=>'تقرير جمع و تحليل البيانات',
     'Analyze customer complaints'=>'سجل تحليل لشكاوي العملاء',
+    'activity'=>'النشاط',
+    'Evaluation before action taken'=>'التقييم قبل الاجراء المتخذ',
+    'Actions taken'=>'الاجراءات المتخذه',
+    'Post-procedure evaluation'=>'التقييم بعد الإجراء الوقائى',
+    'acceptable/no'=>'مقبول/لا',
 ];  
 ?>
