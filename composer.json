@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.3",
-        "mcamara/laravel-localization": "*",
+        "mcamara/laravel-localization": "^1.8",
+        "mpdf/mpdf": "^8.0.17",
         "niklasravnsborg/laravel-pdf": "^4.1",
         "santigarcor/laratrust": "^7.1"
     },

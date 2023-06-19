@@ -476,5 +476,15 @@ return [
     'Actions taken'=>'الاجراءات المتخذه',
     'Post-procedure evaluation'=>'التقييم بعد الإجراء الوقائى',
     'acceptable/no'=>'مقبول/لا',
+    
+
+    //new
+    'purchaseProcedure'=>'إجراء الشراء',
+    'maintenanceProcedure'=>'إجراء الصيانة',
+    'trainingProcedure'=>'إجراء التدريب',
+    'salesProcedure'=>'إجراء المبيعات',
+    'workInstructionsProcedure'=>'إجراء تعليمات العمل',
+    'show'=>'مشاهده',
+    'delete'=>'مسح',
 ];  
 ?>

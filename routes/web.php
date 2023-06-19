@@ -66,7 +66,13 @@ use App\Http\Controllers\UnderstandingOrganizationSOPController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkPlanController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MaintenanceProcedureController;
+use App\Http\Controllers\PurchaseProcedureController;
+use App\Http\Controllers\SalesProcedureController;
+use App\Http\Controllers\TrainingProcedureController;
+use App\Http\Controllers\WorkInstructionsProcedureController;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,7 +95,11 @@ Route::post('/logout', [LoginController::class ,'logout'])->name('logout');
 
 
 
-Route::group(['middleware'=>['auth','role:SuperAdmin|Admin|Employee']], function () {
+Route::group([
+    
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ],
+    'middleware'=>['auth','role:SuperAdmin|Admin|Employee']], function () {
    
     Route::post('addUser/store', [RegisteredUserController::class, 'store'])->name('storeUser');
     Route::get('addUser', [RegisteredUserController::class, 'create'])->name('addUser');
@@ -305,6 +315,13 @@ Route::group([
 
     Route::resource('/recordAnalysis',RecordAnalysisController::class);
     Route::get('/recordAnalysis/print/{id}',[RecordAnalysisController::class,'print'])->name('recordAnalysis.print');
+
+
+    Route::resource('/purchaseProcedureISO',PurchaseProcedureController::class);
+    Route::resource('/maintenanceProcedureISO',MaintenanceProcedureController::class);
+    Route::resource('/trainingProcedureISO',TrainingProcedureController::class);
+    Route::resource('/workInstructionsProcedureISO',WorkInstructionsProcedureController::class);
+    Route::resource('/salesProcedureISO',SalesProcedureController::class);
 
 
 });

@@ -921,23 +921,23 @@ td{
                 <div class="input-group my-3  mx-3">
                     <label class="row">@lang('main.Purpose of the procedure:')</label>
                 </div>
-                <textarea class=form-control name="purpose" id="" cols="55" rows="5"
-                    placeholder="@lang('main.Purpose of the procedure:')">{{ $iso->purpose }}</textarea>
+                <textarea class=form-control name="purpose" id="editor" cols="55" rows="5"
+                   >{{ $iso->purpose }}</textarea>
 
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
                     <label class="row">@lang('main.the introduction')</label>
                 </div>
-                <textarea class=form-control name="introduction" id="" cols="55" rows="5"
-                    placeholder="@lang('main.the introduction')">{{ $iso->introduction }}</textarea>
+                <textarea class=form-control name="introduction" id="editor1" cols="55" rows="5"
+                   >{{ $iso->introduction }}</textarea>
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
                     <label class="row">@lang('main.Scope of application:')</label>
                 </div>
-                <textarea class=form-control name="scope_of_application" id="" cols="55" rows="5"
-                    placeholder="@lang('main.Scope of application:')">{{ $iso->scope_of_application }}</textarea>
+                <textarea class=form-control name="scope_of_application" id="editor2" cols="55" rows="5"
+                    >{{ $iso->scope_of_application }}</textarea>
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
@@ -1079,14 +1079,14 @@ td{
                 <div class="input-group my-3  mx-3">
                     <label class="row"> @lang('main.responsibilities')</label>
                 </div>
-                <textarea class=form-control name="responsibilities" id="" cols="55" rows="5"
-                    placeholder="@lang('main.responsibilities')">{{ $iso->responsibilities }}</textarea>
+                <textarea class=form-control name="responsibilities" id="editor3" cols="55" rows="5"
+                   >{{ $iso->responsibilities }}</textarea>
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
                     <label class="row"> @lang('main.action_steps')</label>
                 </div>
-                <textarea class=form-control name="action_steps" id="" cols="30" rows="20"
+                <textarea class=form-control name="action_steps" id="editor4" cols="30" rows="20"
                     placeholder="@lang('main.action_steps')">{{ $iso->action_steps }}</textarea>
             </section>
 
@@ -1242,8 +1242,8 @@ td{
                 <div class="input-group my-3  mx-3">
                     <label class="row"> @lang('main.External and internal reference sources:')</label>
                 </div>
-                <textarea class='shadow-lg form-control' name="reference_sources" id="" cols="55" rows="5"
-                    placeholder="@lang('main.External and internal reference sources:')">{{ $iso->reference_sources }}</textarea>
+                <textarea class='shadow-lg form-control' name="reference_sources" id="editor5" cols="55" rows="5"
+                    >{{ $iso->reference_sources }}</textarea>
             </section>
             @if ($iso->status == 'pending' && Auth::user()->hasRole('Employee'))
                 <div class="form-group">
@@ -1383,5 +1383,225 @@ td{
             $(`#models-${num}`).remove();
 
         }
+    </script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/super-build/ckeditor.js"></script>
+    <script>
+       
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor1"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor2"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor3"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor4"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor5"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
     </script>
 @stop

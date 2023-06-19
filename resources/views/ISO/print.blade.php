@@ -32,7 +32,7 @@
 <div class="container p-4" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;'>
            <div style="" class="w-100 text-center my-4">
    <h3 style="margin-top:85px;">
-   <img src="{{ asset($iso->company_logo) }}" src="{{ asset($iso->company_logo) }}" style="border-radius: 6px;
+   <img src="{{ asset($iso->company_logo) }}"  style="border-radius: 6px;
     border: 2px solid #001635;
     margin: 10px;
     float: left;
@@ -509,23 +509,23 @@
                 <div class="input-group my-3  mx-3">
                     <label class="row"> الغرض من الاجراء :</label>
                 </div>
-                <textarea class=form-control name="purpose" id="" cols="55" rows="5"
-                    placeholder="ادخل الغرض من الاجراء ------------------------">{{ $iso->purpose }}</textarea>
+                {!! html_entity_decode( $iso->purpose) ?? null !!}
+               
 
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
                     <label class="row"> المقدمه :</label>
                 </div>
-                <textarea class=form-control name="introduction" id="" cols="55" rows="5"
-                    placeholder="ادخل   المقدمه ------------------------">{{ $iso->introduction }}</textarea>
+                {!! html_entity_decode( $iso->introduction) ?? null !!}
+              
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
                     <label class="row"> نطاق التطبيق :</label>
                 </div>
-                <textarea class=form-control name="scope_of_application" id="" cols="55" rows="5"
-                    placeholder="ادخل   نطاق التطبيق ------------------------">{{ $iso->scope_of_application }}</textarea>
+                {!! html_entity_decode( $iso->scope_of_application) ?? null !!}
+              
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
@@ -573,15 +573,14 @@
                 <div class="input-group my-3  mx-3">
                     <label class="row"> المسؤليات :</label>
                 </div>
-                <textarea class=form-control name="responsibilities" id="" cols="55" rows="5"
-                    placeholder="ادخل  المسؤليات ------------------------">{{ $iso->responsibilities }}</textarea>
+                {!! html_entity_decode( $iso->responsibilities) ?? null !!}
+           
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
                     <label class="row"> خطوات العمل :</label>
                 </div>
-                <textarea class=form-control name="action_steps" id="" cols="30" rows="20"
-                    placeholder="ادخل  خطوات العمل ------------------------">{{ $iso->action_steps }}</textarea>
+                {!! html_entity_decode( $iso->action_steps) ?? null !!}
             </section>
 
             <section class="row" style="margin: 50px;">
@@ -650,8 +649,7 @@
                 <div class="input-group my-3  mx-3">
                     <label class="row"> المصادر المرجعيه الخارجيه والداخليه :</label>
                 </div>
-                <textarea class=form-control name="reference_sources" id="" cols="55" rows="5"
-                    placeholder="ادخل   نطاق التطبيق ------------------------">{{ $iso->reference_sources }}</textarea>
+                {!! html_entity_decode( $iso->reference_sources) ?? null !!}
             </section>
 
     </div>

@@ -406,686 +406,893 @@ td{
         {{ csrf_field() }}
         <input type="hidden" name="type" value="9">
         <div class='row' style='flex-wrap:nowrap'>
-        <div class="form__div" >
-           
-                            <input type="text" name="manage_name" class="form__input shadow-lg" placeholder="@lang('main.Manage Name')">
-                            <label for="" class="form__label border-0 text-white">@lang('main.Manage Name')</label>
-                           
-
-</div>
-                        
-                        <div class="form__div mb-0 " >
-                            <input onfocus="(this.type='date')" name="active_date" placeholder="@lang('main.Active Date')"  class="form__input text-white shadow-lg" >
-                            <label for="" class="form__label text-white" >@lang('main.Active Date')</label>
-                        </div>
-                        <div class="form__div mb-0 " >
-                            <input type="number" name='page_number' class="form__input text-white shadow-lg" placeholder="@lang('main.Page Number')">
-                            <label for="" class="form__label text-white">@lang('main.Page Number')</label>
-                        </div>
-</div>
-<!-- dates -->
-<div class='row' style='flex-wrap:nowrap'>
-       
-                        
-                        <div class="form__div  " >
-                            <input onfocus="(this.type='date')" placeholder="@lang('main.release_date')" class="form__input text-white shadow-lg" type="text" name="release_date">
-                            <label for="" class="form__label text-white" >@lang('main.release_date')</label>
-                        </div>
-                        <div class="form__div  " >
-                            <input onfocus="(this.type='date')" placeholder="@lang('main.review_date')" class="form__input text-white shadow-lg" type="text" name="review_date">
-                            <label id='2' for="" class="form__label text-white" >@lang('main.review_date')</label>
-                        </div>
-                       
-</div>
-<!-- end dates -->
-<!-- document codes -->
-<div class='row' style='flex-wrap:nowrap'>
-<div class="form__div " >
-           
-           <input type="text" class="form__input shadow-lg" placeholder="  @lang('main.document_code')" type="text" name="document_code">
-           <label for="" class="form__label border-0 text-white">@lang('main.document_code')</label>
-          
-
-</div>
-        <div class="form__div " >
-           
-                            <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.document_number')" type="text" name="document_number">
-                            <label for="" class="form__label border-0 text-white">@lang('main.document_number')</label>
-                           
-
-</div>
-</div>
-<div class='row' style='flex-wrap:nowrap'>
-<div class="form__div " style='height:48px;width:100% '>
-            <label for="" class=" border-0 " style='color:#2a415b;width:13%;margin-right:0'>@lang('main.Company Logo')</label>
-          
-           <input type="file" class=" shadow-lg" name="company_logo" style='padding:0;width:86% !important' placeholder=" ">
-          
-
-</div>
-</div>
-<div class='row' style='flex-wrap:nowrap'>
-<div class="form__div " >
-           
-           <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.Company Name')" name="company_name">
-           <label for="" class="form__label border-0 text-white">@lang('main.Company Name')</label>
-          
-
-</div>
-        <div class="form__div " >
-           
-                            <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.procedure_name')" name="procedure_name">
-                            <label for="" class="form__label border-0 text-white">@lang('main.procedure_name')</label>
-                           
-
-</div>
-</div>
-<div class='row' style='flex-wrap:nowrap'>
-<div class="form__div " >
-           
-           <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.version_number')"  name="version_number">
-           <label for="" class="form__label border-0 text-white">@lang('main.version_number')</label>
-          
-
-</div>
-        <div class="form__div " >
-           
-                            <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.copy_holder')" name="copy_holder">
-                            <label for="" class="form__label border-0 text-white">@lang('main.copy_holder')</label>
-                           
-
-</div>
-</div>
-
-<hr style="border: 5px; margin: 50px ;">
-<table style="width: 550px;" class="table table-bordered my-4   m-auto">
-    <thead>
-        <tr>
-            @if (Auth::user()->hasRole('Employee'))
-            <th class=" w-50 text-center col-2 ">
-                <div class="" style="text-align:start ;">
-                    <label for="" class="" style="text-align: center;font-size:xx-large;font-weight: bolder;">
-                       @lang('main.prepare')</label>
-
-                    <input class="form-control" type="text" name="prepare" style="text-align: end;"
-                        placeholder="">
-                </div>
-
-            </th>
-            @endif
-            @if (Auth::user()->hasRole('Admin'))
-            <th class=" w-50 text-center col-2 ">
-                <div class="" style="text-align:start ;">
-                    <label for="" class="" style="text-align: center;font-size:xx-large;font-weight: bolder;">
-                        @lang('main.prepare')</label>
-
-                    <input class="form-control" type="text" name="prepare" style="text-align: end;"
-                        placeholder="">
-                </div>
-
-            </th>
-            <th class=" w-50 text-center col-2 ">
-                <div class="" style="text-align:start ;">
-                    <label for="" class="" style="text-align: star;font-size:xx-large;font-weight: bolder;">
-                         @lang('main.review')</label>
-
-                    <input class="form-control" type="text" name="review" placeholder="">
-                </div>
-
-            </th>
-            @endif
-            @if(Auth::user()->hasRole('SuperAdmin'))
-            <th class=" w-50 text-center col-2 ">
-                <div class="" style="text-align:start ;">
-                    <label for="" class="" style="text-align: ">
-                        @lang('main.prepare')</label>
-
-                    <input class="form-control" type="text" name="prepare" style="text-align: end;"
-                        placeholder="">
-                </div>
-
-            </th>
-            <th class=" w-50 text-center col-2 ">
-                <div class="" style="text-align:start ;">
-                    <label for="" class="" style="text-align: ">
-                         @lang('main.review')</label>
-
-                    <input class="form-control" type="text" name="review" placeholder="">
-                </div>
-
-            </th>
-            <th class=" w-50 text-center col-2 ">
-                <div class="" style="text-align:start ;">
-                    <label for="" class="" style="text-align: end;">
-                        @lang('main.approval')</label>
-
-                    <input class="form-control" type="text" name="approval"
-                        style="text-align: end;width: 120px;">
-                </div>
-
-            </th>
-            @endif
-        </tr>
-    </thead>
-
-</table>
-
-<hr style="border: 5px; margin: 50px ;">
-<div style="overflow-x:auto;">
-<table style="width: 550px;justify-content: center;align-items: center;"
-    class="table table-bordered my-4   m-auto">
-    <thead>
-        <tr>
-            <th class=" w-50 text-center col-4 ">
-                <div class="" style="text-align:center ;">
-                    <label for="" class="" style="text-align: end;font-size:large;font-weight: bolder;">@lang('main.number_edit')</label>
-
-                </div>
-
-            </th>
-            <th class=" w-100 text-center col-4 ">
-                <div class="" style="text-align:center ;">
-                    <label for="" class="" style="text-align: star;">1</label>
-
-
-                </div>
-
-            </th>
-            <th class=" w-100 text-center col-4 ">
-                <div class="" style="text-align:center ;">
-                    <label for="" class="" style="text-align: center;">2 </label>
-
-                </div>
-
-            </th>
-            <th class=" w-100 text-center col-4 ">
-                <div class="" style="text-align:center ;">
-                    <label for="" class="" style="text-align: center;">3 </label>
-
-                </div>
-            </th>
-            <th class=" w-100 text-center col-4 ">
-                <div class="" style="text-align:center ;">
-                    <label for="" class="" style="text-align: center;">4 </label>
-                </div>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-
-            <th class=" w-50 text-center ">
-                <div class="" style="text-align:center ;">
-                    <label for="" class=""
-                        style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date')</label>
-
-                </div>
-            </th>
-            <th class=" w-50 text-center ">
-                <div class="" style="text-align:center ;">
-                    <input class="form-control" type="date" name="date_1" style="text-align: end;">
-                </div>
-            </th>
-            <th class=" w-50 text-center ">
-                <div class="" style="text-align:center ;">
-                    <input class="form-control" type="date" name="date_2" style="text-align: end;width: 120px;">
-                </div>
-            </th>
-            <th class=" w-50 text-center ">
-                <div class="" style="text-align:center ;">
-                    <input class="form-control" type="date" name="date_3" style="text-align: end;width: 120px;">
-                </div>
-            </th>
-            <th class=" w-50 text-center ">
-                <div class="" style="text-align:center ;">
-                    <input class="form-control" type="date" name="date_4" style="text-align: end;">
-                </div>
-            </th>
-        </tr>
-        <tr>
-            <th class=" w-100 text-center ">
-                <div class="form-group mt-4"
-                    style="text-align:center ;justify-content: center;align-items: center; width: 140px;">
-                    <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.page/pages')</label>
-
-                </div>
-            </th>
-            <th class=" w-50 text-center ">
-                <div class="form-group mt-4"
-                    style="text-align:center ;justify-content: center;align-items: center;">
-                    <input class="form-control" type="text" name="page_1" style="text-align: end;">
-                </div>
-            </th>
-            <th class=" w-50 text-center ">
-                <div class="form-group mt-4"
-                    style="text-align:center ;justify-content: center;align-items: center;">
-                    <input class="form-control" type="text" name="page_2" style="text-align: end;width: 120px;"
-                        placeholder=" ">
-                </div>
-            </th>
-            <th class=" w-50 text-center ">
-                <div class="form-group w-100 mt-4"
-                    style="text-align:center ;justify-content: center;align-items: center;">
-                    <input class="form-control" type="text" name="page_3" style="text-align: end;">
-                </div>
-            </th>
-            <th class=" w-50 text-center ">
-                <div class="form-group w-100 mt-4"
-                    style="text-align:center ;justify-content: center;align-items: center;">
-                    <input class="form-control" type="text" name="page_4" style="text-align: end;">
-
-                </div>
-            </th>
-        </tr>
-
-
-    </tbody>
-</table>
-</div>
-<hr style="border: 5px; ">
-<section class="row" style="">
-    <h2>@lang('main.Action illustration:')</h2>
-    <div class="input-group my-3  mx-3">
-        <label class="input-group-text" for="inputGroupFile01">@lang('main.choose_photo')</label>
-        <input type="file" class="form-control" name="image_illustration" id="inputGroupFile01">
+            <div class="form__div" >
+               
+                                <input type="text" name="manage_name" class="form__input shadow-lg" placeholder="@lang('main.Manage Name')">
+                                <label for="" class="form__label border-0 text-white">@lang('main.Manage Name')</label>
+                               
+    
     </div>
-
-
-
-</section>
-<br><br>
-      
-        <section>
-            <div class="row" style="text-align: start;">
-                <p style='background-color:#2a415b;padding:20px;border-radius:4px;color:white'>
-                   @lang('main.procedure')
-                </p>
-               <hr style='width:100%;margin:5px;padding:10px'>
-                       <h4 style='color: #2a415b;
-                        text-shadow: 1px 1px 1px #3ed3ea;
-                          font-weight: bold;'>
-                          @lang('main.Terms and illustrations')
-                          
-                        </h4>
-                <table class="table table-bordered my-4 shadow-lg" >
-                    <thead style='background-color: #2a415b;
-    color: white;
-    text-align: center;
-    font-weight: bolder;'>
-                        <tr>
-                            <th scope="col" style="font-size:large">@lang('main.drawing') </th>
-                            <th scope="col" style="font-size:large">@lang('main.term')</th>
-                            <th scope="col" style="font-size:large">@lang('main.explain')</th>
+                            
+                            <div class="form__div mb-0 " >
+                                <input onfocus="(this.type='date')" name="active_date" placeholder="@lang('main.Active Date')"  class="form__input text-white shadow-lg" >
+                                <label for="" class="form__label text-white" >@lang('main.Active Date')</label>
+                            </div>
+                            <div class="form__div mb-0 " >
+                                <input type="number" name='page_number' class="form__input text-white shadow-lg" placeholder="@lang('main.Page Number')">
+                                <label for="" class="form__label text-white">@lang('main.Page Number')</label>
+                            </div>
+    </div>
+    <!-- dates -->
+    <div class='row' style='flex-wrap:nowrap'>
+           
+                            
+                            <div class="form__div  " >
+                                <input onfocus="(this.type='date')" placeholder="@lang('main.release_date')" class="form__input text-white shadow-lg" type="text" name="release_date">
+                                <label for="" class="form__label text-white" >@lang('main.release_date')</label>
+                            </div>
+                            <div class="form__div  " >
+                                <input onfocus="(this.type='date')" placeholder="@lang('main.review_date')" class="form__input text-white shadow-lg" type="text" name="review_date">
+                                <label id='2' for="" class="form__label text-white" >@lang('main.review_date')</label>
+                            </div>
+                           
+    </div>
+    <!-- end dates -->
+    <!-- document codes -->
+    <div class='row' style='flex-wrap:nowrap'>
+    <div class="form__div " >
+               
+               <input type="text" class="form__input shadow-lg" placeholder="  @lang('main.document_code')" type="text" name="document_code">
+               <label for="" class="form__label border-0 text-white">@lang('main.document_code')</label>
+              
+    
+    </div>
+            <div class="form__div " >
+               
+                                <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.document_number')" type="text" name="document_number">
+                                <label for="" class="form__label border-0 text-white">@lang('main.document_number')</label>
+                               
+    
+    </div>
+    </div>
+    <div class='row' style='flex-wrap:nowrap'>
+    <div class="form__div " style='height:48px;width:100% '>
+                <label for="" class=" border-0 " style='color:#2a415b;width:13%;margin-right:0'>@lang('main.Company Logo')</label>
+              
+               <input type="file" class=" shadow-lg" name="company_logo" style='padding:0;width:86% !important' placeholder=" ">
+              
+    
+    </div>
+    </div>
+    <div class='row' style='flex-wrap:nowrap'>
+    <div class="form__div " >
+               
+               <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.Company Name')" name="company_name">
+               <label for="" class="form__label border-0 text-white">@lang('main.Company Name')</label>
+              
+    
+    </div>
+            <div class="form__div " >
+               
+                                <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.procedure_name')" name="procedure_name">
+                                <label for="" class="form__label border-0 text-white">@lang('main.procedure_name')</label>
+                               
+    
+    </div>
+    </div>
+    <div class='row' style='flex-wrap:nowrap'>
+    <div class="form__div " >
+               
+               <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.version_number')"  name="version_number">
+               <label for="" class="form__label border-0 text-white">@lang('main.version_number')</label>
+              
+    
+    </div>
+            <div class="form__div " >
+               
+                                <input type="text" class="form__input shadow-lg" placeholder=" @lang('main.copy_holder')" name="copy_holder">
+                                <label for="" class="form__label border-0 text-white">@lang('main.copy_holder')</label>
+                               
+    
+    </div>
+    </div>
+    
+    <hr style="border: 5px; margin: 50px ;">
+    <table style="width: 550px;" class="table table-bordered my-4   m-auto">
+        <thead>
+            <tr>
+                @if (Auth::user()->hasRole('Employee'))
+                <th class=" w-50 text-center col-2 ">
+                    <div class="" style="text-align:start ;">
+                        <label for="" class="" style="text-align: center;font-size:xx-large;font-weight: bolder;">
+                           @lang('main.prepare')</label>
+    
+                        <input class="form-control" type="text" name="prepare" style="text-align: end;"
+                            placeholder="">
+                    </div>
+    
+                </th>
+                @endif
+                @if (Auth::user()->hasRole('Admin'))
+                <th class=" w-50 text-center col-2 ">
+                    <div class="" style="text-align:start ;">
+                        <label for="" class="" style="text-align: center;font-size:xx-large;font-weight: bolder;">
+                            @lang('main.prepare')</label>
+    
+                        <input class="form-control" type="text" name="prepare" style="text-align: end;"
+                            placeholder="">
+                    </div>
+    
+                </th>
+                <th class=" w-50 text-center col-2 ">
+                    <div class="" style="text-align:start ;">
+                        <label for="" class="" style="text-align: star;font-size:xx-large;font-weight: bolder;">
+                             @lang('main.review')</label>
+    
+                        <input class="form-control" type="text" name="review" placeholder="">
+                    </div>
+    
+                </th>
+                @endif
+                @if(Auth::user()->hasRole('SuperAdmin'))
+                <th class=" w-50 text-center col-2 ">
+                    <div class="" style="text-align:start ;">
+                        <label for="" class="" style="text-align: ">
+                            @lang('main.prepare')</label>
+    
+                        <input class="form-control" type="text" name="prepare" style="text-align: end;"
+                            placeholder="">
+                    </div>
+    
+                </th>
+                <th class=" w-50 text-center col-2 ">
+                    <div class="" style="text-align:start ;">
+                        <label for="" class="" style="text-align: ">
+                             @lang('main.review')</label>
+    
+                        <input class="form-control" type="text" name="review" placeholder="">
+                    </div>
+    
+                </th>
+                <th class=" w-50 text-center col-2 ">
+                    <div class="" style="text-align:start ;">
+                        <label for="" class="" style="text-align: end;">
+                            @lang('main.approval')</label>
+    
+                        <input class="form-control" type="text" name="approval"
+                            style="text-align: end;width: 120px;">
+                    </div>
+    
+                </th>
+                @endif
+            </tr>
+        </thead>
+    
+    </table>
+    
+    <hr style="border: 5px; margin: 50px ;">
+    <div style="overflow-x:auto;">
+     
+    <table style="width: 550px;justify-content: center;align-items: center;"
+        class="table table-bordered my-4   m-auto">
+        <thead>
+            <tr>
+                <th class=" w-50 text-center col-4 ">
+                    <div class="" style="text-align:center ;">
+                        <label for="" class="" style="text-align: end;font-size:large;font-weight: bolder;">@lang('main.number_edit')</label>
+    
+                    </div>
+    
+                </th>
+                <th class=" w-100 text-center col-4 ">
+                    <div class="" style="text-align:center ;">
+                        <label for="" class="" style="text-align: star;">1</label>
+    
+    
+                    </div>
+    
+                </th>
+                <th class=" w-100 text-center col-4 ">
+                    <div class="" style="text-align:center ;">
+                        <label for="" class="" style="text-align: center;">2 </label>
+    
+                    </div>
+    
+                </th>
+                <th class=" w-100 text-center col-4 ">
+                    <div class="" style="text-align:center ;">
+                        <label for="" class="" style="text-align: center;">3 </label>
+    
+                    </div>
+                </th>
+                <th class=" w-100 text-center col-4 ">
+                    <div class="" style="text-align:center ;">
+                        <label for="" class="" style="text-align: center;">4 </label>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    
+                <th class=" w-50 text-center ">
+                    <div class="" style="text-align:center ;">
+                        <label for="" class=""
+                            style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.date')</label>
+    
+                    </div>
+                </th>
+                <th class=" w-50 text-center ">
+                    <div class="" style="text-align:center ;">
+                        <input class="form-control" type="date" name="date_1" style="text-align: end;">
+                    </div>
+                </th>
+                <th class=" w-50 text-center ">
+                    <div class="" style="text-align:center ;">
+                        <input class="form-control" type="date" name="date_2" style="text-align: end;width: 120px;">
+                    </div>
+                </th>
+                <th class=" w-50 text-center ">
+                    <div class="" style="text-align:center ;">
+                        <input class="form-control" type="date" name="date_3" style="text-align: end;width: 120px;">
+                    </div>
+                </th>
+                <th class=" w-50 text-center ">
+                    <div class="" style="text-align:center ;">
+                        <input class="form-control" type="date" name="date_4" style="text-align: end;">
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th class=" w-100 text-center ">
+                    <div class="form-group mt-4"
+                        style="text-align:center ;justify-content: center;align-items: center; width: 140px;">
+                        <label for="" class="" style="text-align: center;font-size:large;font-weight: bolder;">@lang('main.page/pages')</label>
+    
+                    </div>
+                </th>
+                <th class=" w-50 text-center ">
+                    <div class="form-group mt-4"
+                        style="text-align:center ;justify-content: center;align-items: center;">
+                        <input class="form-control" type="text" name="page_1" style="text-align: end;">
+                    </div>
+                </th>
+                <th class=" w-50 text-center ">
+                    <div class="form-group mt-4"
+                        style="text-align:center ;justify-content: center;align-items: center;">
+                        <input class="form-control" type="text" name="page_2" style="text-align: end;width: 120px;"
+                            placeholder=" ">
+                    </div>
+                </th>
+                <th class=" w-50 text-center ">
+                    <div class="form-group w-100 mt-4"
+                        style="text-align:center ;justify-content: center;align-items: center;">
+                        <input class="form-control" type="text" name="page_3" style="text-align: end;">
+                    </div>
+                </th>
+                <th class=" w-50 text-center ">
+                    <div class="form-group w-100 mt-4"
+                        style="text-align:center ;justify-content: center;align-items: center;">
+                        <input class="form-control" type="text" name="page_4" style="text-align: end;">
+    
+                    </div>
+                </th>
+            </tr>
+    
+    
+        </tbody>
+    </table>
+    </div>
+    <hr style="border: 5px; margin: 50px ;">
+    <section class="row" style="">
+        <h2>@lang('main.Action illustration:')</h2>
+        <div class="input-group my-3  mx-3">
+            <label class="input-group-text" for="inputGroupFile01">@lang('main.choose_photo')</label>
+            <input type="file" class="form-control" name="image_illustration" id="inputGroupFile01">
+        </div>
+    
+    
+    
+    </section>
+    <br><br>
+          
+            <section>
+                <div class="row" style="text-align: start;">
+                    <p style='background-color:#2a415b;padding:20px;border-radius:4px;color:white'>
+                       @lang('main.procedure')
+                    </p>
+                   <hr style='width:100%;margin:5px;padding:10px'>
+                           <h4 style='color: #2a415b;
+                            text-shadow: 1px 1px 1px #3ed3ea;
+                              font-weight: bold;'>
+                              @lang('main.Terms and illustrations')
+                              
+                            </h4>
+                    <table class="table table-bordered my-4 shadow-lg" >
+                        <thead style='background-color: #2a415b;
+        color: white;
+        text-align: center;
+        font-weight: bolder;'>
+                            <tr>
+                                <th scope="col" style="font-size:large">@lang('main.drawing') </th>
+                                <th scope="col" style="font-size:large">@lang('main.term')</th>
+                                <th scope="col" style="font-size:large">@lang('main.explain')</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="width: 150px; height: 80px;border: 2px solid grey;">
+                                        <div style="width: 20px; height: 80px;border: 2px solid grey;float: left;">
+    
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>@lang('main.Employment')</td>
+                                <td>@lang('main.figure') </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="width: 120px; height: 40px;border: 2px solid grey;border-radius: 25px;">
+    
+                                    </div>
+                                </td>
+                                <td>@lang('main.start')</td>
+                                <td>@lang('main.start_figure')</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="width: 150px; height: 90px;border: 2px solid grey;background-color: gray;">
+    
+                                    </div>
+                                </td>
+                                <td>@lang('main.practical')</td>
+                                <td>@lang('main.practical_figure') </td>
+                            </tr>
+                            <tr>
+                                <td>Larry the Bird</td>
+                                <td>@lang('main.documents')</td>
+                                <td>@lang('main.documents_action') </td>
+                            </tr>
+                            <tr>
+                                <td>Larry the Bird</td>
+                                <td>@lang('main.sub process') </td>
+                                <td>@lang('main.procedure sub process') </td>
+                            </tr>
+                            <tr>
+                                <td>Larry the Bird</td>
+                                <td>@lang('main.information')</td>
+                                <td>@lang('main.information_additional') </td>
+                            </tr>
+                            <tr>
+                                <td>Larry the Bird</td>
+                                <td>@lang('main.Link')</td>
+                                <td>@lang('main.Link_sequence')</td>
+                            </tr>
+                            <tr>
+                                <td>Larry the Bird</td>
+                                <td>@lang('main.end')</td>
+                                <td> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <hr style='width:100%'>
+            <section class=" col-12" style="">
+                <div class="input-group my-3  mx-3 ">
+                    <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Purpose of the procedure:')</label>
+                </div>
+                <textarea class='shadow-lg' name="purpose" id="editor" cols="55" rows="12"style='border:none;padding:10px'
+                    ></textarea>
+    
+            </section>
+            <hr style='width:100%'>
+            <section  class=" col-12" style="">
+                <div class="input-group my-3  mx-3">
+                    <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.the introduction')</label>
+                </div>
+                <textarea class='shadow-lg' name="introduction"  id="editor1" cols="55" rows="5" style='border:none;padding:10px'
+                    ></textarea>
+            </section>
+            <hr style='width:100%'>
+           
+            <section  class=" col-12" style="">
+                <div class="input-group my-3  mx-3">
+                    <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Scope of application:')</label>
+                </div>
+                <textarea class='shadow-lg' name="scope_of_application" id="editor2" cols="55" rows="5" style='border:none;padding:10px'
+                   ></textarea>
+            </section>
+            <hr style='width:100%'>
+            <section class="row" style="">
+                <div class="input-group my-3  mx-3">
+                    <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Terms and definitions:')</label>
+                </div>
+                
+                <table class="datatable-table table table-bordered mt-2 shadow-lg">
+                    <thead class="datatable-head" style='background-color: #2a415b;
+        color: white;
+        text-align: center;
+        font-weight: bolder;'>
+                        <tr class="datatable-row" style="left: 0px;">
+    
+                            <th data-field="" class="datatable-cell  end-cell text-center">
+                                <span>@lang('main.m')</span>
+                            </th>
+    
+                            <th data-field="" class="datatable-cell"><span>@lang('main.term')</span></th>
+                            <th data-field="" class="datatable-cell"><span>@lang('main.definitions')</span></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div style="width: 150px; height: 80px;border: 2px solid grey;">
-                                    <div style="width: 20px; height: 80px;border: 2px solid grey;float: left;">
-
+                    <tbody class="datatable-body">
+                        <tr class="datatable-row datatable-row-even" id="price-0">
+    
+                            <td class="text-center end-td ">
+                                <button type="button" title="Remove" disabled="disabled" class="btn btn-danger btn-option">
+                                    <i class="fa fa-minus-circle"></i>
+                                </button>
+                            </td>
+                            <td class="datatable-cell  ">
+                                <div class="a-col alternate">
+                                    <div class="input-field shadow-lg">
+                                        <input type="text" class="form-control" name="names[0][term]"/>
                                     </div>
                                 </div>
                             </td>
-                            <td>@lang('main.Employment')</td>
-                            <td>@lang('main.figure') </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div style="width: 120px; height: 40px;border: 2px solid grey;border-radius: 25px;">
-
+    
+                            <td class="datatable-cell  ">
+                                <div class="a-col alternate">
+                                    <div class="input-field">
+                                        <input type="text" class="form-control shadow-lg" name="names[0][definition]"/>
+                                    </div>
                                 </div>
                             </td>
-                            <td>@lang('main.start')</td>
-                            <td>@lang('main.start_figure')</td>
+    
                         </tr>
-                        <tr>
-                            <td>
-                                <div style="width: 150px; height: 90px;border: 2px solid grey;background-color: gray;">
-
-                                </div>
+                        <tr class="datatable-row datatable-row-even">
+    
+                            <td class="text-center end-td " id="increment">
+                                <button type="button" class="btn btn-primary add_new" id="btn-0" onclick="appendRow(0)"><i
+                                        class="fa fa-plus-circle"></i></button>
                             </td>
-                            <td>@lang('main.practical')</td>
-                            <td>@lang('main.practical_figure') </td>
-                        </tr>
-                        <tr>
-                            <td>Larry the Bird</td>
-                            <td>@lang('main.documents')</td>
-                            <td>@lang('main.documents_action') </td>
-                        </tr>
-                        <tr>
-                            <td>Larry the Bird</td>
-                            <td>@lang('main.sub process') </td>
-                            <td>@lang('main.procedure sub process') </td>
-                        </tr>
-                        <tr>
-                            <td>Larry the Bird</td>
-                            <td>@lang('main.information')</td>
-                            <td>@lang('main.information_additional') </td>
-                        </tr>
-                        <tr>
-                            <td>Larry the Bird</td>
-                            <td>@lang('main.Link')</td>
-                            <td>@lang('main.Link_sequence')</td>
-                        </tr>
-                        <tr>
-                            <td>Larry the Bird</td>
-                            <td>@lang('main.end')</td>
-                            <td> </td>
+    
+    
                         </tr>
                     </tbody>
                 </table>
-            </div>
-        </section>
-        <hr style='width:100%'>
-        <section class="row" style="">
-            <div class="input-group my-3  mx-3 ">
-                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Purpose of the procedure:')</label>
-            </div>
-            <textarea class='shadow-lg' name="purpose" id="" cols="55" rows="5"style='border:none;padding:10px'
-                placeholder="@lang('main.Purpose of the procedure:')"></textarea>
-
-        </section>
-        <hr style='width:100%'>
-        <section class="row" style="">
-            <div class="input-group my-3  mx-3">
-                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.the introduction')</label>
-            </div>
-            <textarea class='shadow-lg' name="introduction" id="" cols="55" rows="5" style='border:none;padding:10px'
-                placeholder="@lang('main.the introduction')"></textarea>
-        </section>
-        <hr style='width:100%'>
-       
-        <section class="row" style="">
-            <div class="input-group my-3  mx-3">
-                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Scope of application:')</label>
-            </div>
-            <textarea class='shadow-lg' name="scope_of_application" id="" cols="55" rows="5" style='border:none;padding:10px'
-                placeholder="@lang('main.Scope of application:')"></textarea>
-        </section>
-        <hr style='width:100%'>
-        <section class="row" style="">
-            <div class="input-group my-3  mx-3">
-                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Terms and definitions:')</label>
-            </div>
-            <table class="datatable-table table table-bordered mt-2 shadow-lg">
-                <thead class="datatable-head" style='background-color: #2a415b;
-    color: white;
-    text-align: center;
-    font-weight: bolder;'>
-                    <tr class="datatable-row" style="left: 0px;">
-
-                        <th data-field="" class="datatable-cell  end-cell text-center">
-                            <span>@lang('main.m')</span>
-                        </th>
-
-                        <th data-field="" class="datatable-cell"><span>@lang('main.term')</span></th>
-                        <th data-field="" class="datatable-cell"><span>@lang('main.definitions')</span></th>
-                    </tr>
-                </thead>
-                <tbody class="datatable-body">
-                    <tr class="datatable-row datatable-row-even" id="price-0">
-
-                        <td class="text-center end-td ">
-                            <button type="button" title="Remove" disabled="disabled" class="btn btn-danger btn-option">
-                                <i class="fa fa-minus-circle"></i>
-                            </button>
-                        </td>
-                        <td class="datatable-cell  ">
-                            <div class="a-col alternate">
-                                <div class="input-field shadow-lg">
-                                    <input type="text" class="form-control" name="names[0][term]"/>
-                                </div>
+                <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
+            </section>
+            <hr style='width:100%'>
+            <section  class=" col-12" style="">
+                <div class="input-group my-3  mx-3">
+                    <label class="row " style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.responsibilities')</label>
+                </div>
+                <textarea class='shadow-lg' name="responsibilities" id="editor3" cols="55" rows="5" style='border:none;padding:10px'
+    
+                   ></textarea>
+            </section>
+            <section  class=" col-12" style="">
+                <div class="input-group my-3  mx-3">
+                    <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.action_steps'):</label>
+                </div>
+                <textarea class='shadow-lg' name="action_steps" id="editor4" cols="55" rows="5" style='border:none;padding:10px'
+                    placeholder=" @lang('main.action_steps')"></textarea>
+            </section>
+            <hr style='width:100%'>
+            <section class="row" style="">
+                <div class="input-group my-3  mx-3">
+                    <label class="row"  style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.Models used:')</label>
+                </div>
+                <div style="overflow-x:auto;">
+     
+                <table class="table table-bordered shadow-lg">
+                    <thead style='background-color: #2a415b;
+        color: white;
+        text-align: center;
+        font-weight: bolder;'>
+                        <tr>
+                            <th data-field="" class="datatable-cell  end-cell text-center">
+                                <span>@lang('main.m')</span>
+                            </th>
+                            <th class="col-4" style="text-align: center;">@lang('main.Model name') </th>
+                            <th class="col-1" style="text-align: center;">@lang('main.Model number')</th>
+                            <th class="col-2" style="text-align: center;">@lang('main.release_date')</th>
+                            <th class="col-2" style="text-align: center;">@lang('main.model_period')</th>
+                            <th class="col-2" style="text-align: center;">@lang('main.model_side')</th>
+    
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="models-0">
+                            <td class="text-center end-td ">
+                                <button style='padding:4px' type="button" title="Remove" disabled="disabled" class="btn btn-danger btn-option">
+                                    <i class="fa fa-minus-circle"></i>
+                                </button>
+                            </td>
+                            <td>
+                            <div class="input-field shadow-lg">
+                                <input class="" type="text" name="models[0][model_name]" style="text-align: start;"
+                                    placeholder="----------------------------------------------------">
                             </div>
-                        </td>
-
-                        <td class="datatable-cell  ">
-                            <div class="a-col alternate">
-                                <div class="input-field">
-                                    <input type="text" class="form-control shadow-lg" name="names[0][definition]"/>
-                                </div>
+                                </td>
+                            <td>
+                            <div class="input-field shadow-lg">
+                                <input class="form-control" type="number" name="models[0][model_number]" style="text-align: start;"
+                                    placeholder="----------------------------------------------------">
                             </div>
-                        </td>
-
-                    </tr>
-                    <tr class="datatable-row datatable-row-even">
-
-                        <td class="text-center end-td " id="increment">
-                            <button type="button" class="btn btn-primary add_new" id="btn-0" onclick="appendRow(0)"><i
-                                    class="fa fa-plus-circle"></i></button>
-                        </td>
-
-
-                    </tr>
-                </tbody>
-            </table>
-            <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
-        </section>
-        <hr style='width:100%'>
-        <section class="row" style="">
-            <div class="input-group my-3  mx-3">
-                <label class="row " style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.responsibilities')</label>
-            </div>
-            <textarea class='shadow-lg' name="responsibilities" id="" cols="55" rows="5" style='border:none;padding:10px'
-
-                placeholder="@lang('main.responsibilities')"></textarea>
-        </section>
-        <section class="row" style="">
-            <div class="input-group my-3  mx-3">
-                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.action_steps'):</label>
-            </div>
-            <textarea class='shadow-lg' name="action_steps" id="" cols="55" rows="5" style='border:none;padding:10px'
-                placeholder=" @lang('main.action_steps')"></textarea>
-        </section>
-        <hr style='width:100%'>
-        <section class="row" style="">
-            <div class="input-group my-3  mx-3">
-                <label class="row"  style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.Models used:')</label>
-            </div>
-            <div style="overflow-x:auto;">
-            <table class="table table-bordered shadow-lg">
-                <thead style='background-color: #2a415b;
-    color: white;
-    text-align: center;
-    font-weight: bolder;'>
-                    <tr>
-                        <th data-field="" class="datatable-cell  end-cell text-center">
-                            <span>@lang('main.m')</span>
-                        </th>
-                        <th class="col-4" style="text-align: center;">@lang('main.Model name') </th>
-                        <th class="col-1" style="text-align: center;">@lang('main.Model number')</th>
-                        <th class="col-2" style="text-align: center;">@lang('main.release_date')</th>
-                        <th class="col-2" style="text-align: center;">@lang('main.model_period')</th>
-                        <th class="col-2" style="text-align: center;">@lang('main.model_side')</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id="models-0">
-                        <td class="text-center end-td ">
-                            <button style='padding:4px' type="button" title="Remove" disabled="disabled" class="btn btn-danger btn-option">
-                                <i class="fa fa-minus-circle"></i>
-                            </button>
-                        </td>
-                        <td>
-                        <div class="input-field shadow-lg">
-                            <input class="" type="text" name="models[0][model_name]" style="text-align: start;"
-                                placeholder="----------------------------------------------------">
-                        </div>
-                            </td>
-                        <td>
-                        <div class="input-field shadow-lg">
-                            <input class="form-control" type="number" name="models[0][model_number]" style="text-align: start;"
-                                placeholder="----------------------------------------------------">
-                        </div>
-                            </td>
-                        <td>
-                        <div class="input-field shadow-lg">
-                            <input class="form-control" type="date" name="models[0][model_date]" style="text-align: start;"
-                                placeholder="----------------------------------------------------">
-                          </div>
-                            </td>
-                        <td>
-                        <div class="input-field shadow-lg">
-                            <input class="form-control" type="text" name="models[0][model_period]" style="text-align: start;"
-                                placeholder="----------------------------------------------------">
-                        </div>
-                            </td>
-                        <td>
-                        <div class="input-field shadow-lg">
-                            <input class="form-control" type="text" name="models[0][model_side]" style="text-align: start;"
-                                placeholder="----------------------------------------------------">
-                        </div>
-                            </td>
-
-                    </tr>
+                                </td>
+                            <td>
+                            <div class="input-field shadow-lg">
+                                <input class="form-control" type="date" name="models[0][model_date]" style="text-align: start;"
+                                    placeholder="----------------------------------------------------">
+                              </div>
+                                </td>
+                            <td>
+                            <div class="input-field shadow-lg">
+                                <input class="form-control" type="text" name="models[0][model_period]" style="text-align: start;"
+                                    placeholder="----------------------------------------------------">
+                            </div>
+                                </td>
+                            <td>
+                            <div class="input-field shadow-lg">
+                                <input class="form-control" type="text" name="models[0][model_side]" style="text-align: start;"
+                                    placeholder="----------------------------------------------------">
+                            </div>
+                                </td>
+    
+                        </tr>
+                        
+                       
                     
-                   
-                
-                    <tr class="datatable-row datatable-row-even">
-
-                        <td class="text-center end-td " id="increment2">
-                            <button style='padding:4px' type="button" class="btn btn-primary add_new" id="btn2-0" onclick="appendRow2(0)"><i
-                                    class="fa fa-plus-circle"></i></button>
-                        </td>
-
-
-                    </tr>
-                </tbody>
-            </table>
-
-              </div>
-            <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
-        </section>
-        <hr style='width:100%'>
-        <section class="row" style="">
-            <div class="input-group my-3  mx-3">
-                <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.External and internal reference sources:')</label>
-            </div>
-            <textarea class='shadow-lg' name="reference_sources" id="" cols="55" rows="5" style='border:none;padding:10px'
-                placeholder="@lang('main.External and internal reference sources:')"></textarea>
-        </section>
-
-        <div class="form-group" style='text-align:center'>
-            <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit"
-                class="btn btn-primary">
-                <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
-        </div> 
-    </form>
-      </div>
+                        <tr class="datatable-row datatable-row-even">
+    
+                            <td class="text-center end-td " id="increment2">
+                                <button style='padding:4px' type="button" class="btn btn-primary add_new" id="btn2-0" onclick="appendRow2(0)"><i
+                                        class="fa fa-plus-circle"></i></button>
+                            </td>
+    
+    
+                        </tr>
+                    </tbody>
+                </table>
+                 </div> 
+                <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
+            </section>
+            <hr style='width:100%'>
+            <section  class=" col-12" style="">
+                <div class="input-group my-3  mx-3">
+                    <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.External and internal reference sources:')</label>
+                </div>
+                <textarea class='shadow-lg' name="reference_sources"id="editor5" cols="55" rows="5" style='border:none;padding:10px'
+                    ></textarea>
+            </section>
+    
+            <div class="form-group" style='text-align:center'>
+                <button style="border-radius:8px;margin: 50px; width:30% ;background-color: #2a415b; ;height: 5%;padding:10px" type="submit"
+                    class="btn btn-primary">
+                    <i class="fas fa-save" style="width:15% ; height: 20%;"></i>@lang('main.save')</button>
+            </div> 
+        </form>
+          </div>
+                </div>
             </div>
         </div>
+    </section>
+    </main>
     </div>
-</section>
-</main>
-</div>
-
-<!-- /.content -->
-<div class="modal fade account_model" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-    function appendRow(num) {
-                    $new_number = parseInt(num) + 1;
-                    $appended_text = ` <tr class="datatable-row datatable-row-even" id="price-${$new_number}">
-                                       
-                                        <td class="text-center end-td ">
-                                                  <button type="button" title="Remove" onclick="removeRow(${$new_number})"
-                                                            class="btn btn-danger btn-option">
-                                                            <i class="fa fa-minus-circle"></i>
-                                                  </button>
-                                        </td>
-                                        <td class="datatable-cell  ">
-                                                  <div class="a-col alternate">
-                                                            <div class="input-field">
-                                                                      <input type="text" class="form-control"
-                                                                                 name="names[${$new_number}][term]"  />
-                                                            </div>
-                                                  </div>
-                                        </td>
-
-                                        <td class="datatable-cell  ">
-                                                  <div class="a-col alternate">
-                                                            <div class="input-field">
-                                                                      <input type="text" class="form-control"
-                                                                                 name="names[${$new_number}][definition]"  />
-                                                            </div>
-                                                  </div>
-                                        </td>
-                                       
-                                       
-                              </tr>`;
-                    $($appended_text).insertAfter(`#price-${num}`);
-                    if (!document.getElementById(`price-${num}`)) {
-                              $($appended_text).insertAfter(`#price-0`);
-                    }
-
-                    $(`#btn-${num}`).remove();
-                    $("#increment").append(`<button type="button" class="btn btn-primary add_new" id="btn-${$new_number}" onclick="appendRow(${$new_number})"><i class="fa fa-plus-circle"></i></button></td>`);
-
-
-          }
-
-          function removeRow(num) {
-                    $(`#price-${num}`).remove();
-
-          }
-
-
-          function appendRow2(num) {
-                    $new_number = parseInt(num) + 1;
-                    $appended_text = ` <tr class="datatable-row datatable-row-even" id="models-${$new_number}">
-                                       
-                                        <td class="text-center end-td ">
-                                                  <button type="button" title="Remove" onclick="removeRow2(${$new_number})"
-                                                            class="btn btn-danger btn-option">
-                                                            <i class="fa fa-minus-circle"></i>
-                                                  </button>
-                                        </td>
-                                      
-                                        <td>
-                            <input class="form-control" type="text" name="models[${$new_number}][model_name]" style="text-align: start;"
-                                placeholder="----------------------------------------------------">
-                        </td>
-                        <td>
-                            <input class="form-control" type="number" name="models[${$new_number}][model_number]" style="text-align: start;"
-                                placeholder="----------------------------------------------------">
-                        </td>
-                        <td>
-                            <input class="form-control" type="date" name="models[${$new_number}][model_date]" style="text-align: start;"
-                                placeholder="----------------------------------------------------">
-                        </td>
-                        <td>
-                            <input class="form-control" type="text" name="models[${$new_number}][model_period]" style="text-align: start;"
-                                placeholder="----------------------------------------------------">
-                        </td>
-                        <td>
-                            <input class="form-control" type="text" name="models[${$new_number}][model_side]" style="text-align: start;"
-                                placeholder="----------------------------------------------------">
-                        </td>
-                                       
-                              </tr>`;
-                    $($appended_text).insertAfter(`#models-${num}`);
-                    if (!document.getElementById(`models-${num}`)) {
-                              $($appended_text).insertAfter(`#models-0`);
-                    }
-
-                    $(`#btn2-${num}`).remove();
-                    $("#increment2").append(`<button type="button" class="btn btn-primary add_new" id="btn2-${$new_number}" onclick="appendRow2(${$new_number})"><i class="fa fa-plus-circle"></i></button></td>`);
-
-
-          }
-
-          function removeRow2(num) {
-                    $(`#models-${num}`).remove();
-
-          }
-          function showme(){
-              console.log('mmmmmmmmmmmm')
-            //document.getElementById('2').style.display='block'
-          }
-
-
-</script>
-@endsection
+    
+    <!-- /.content -->
+    <div class="modal fade account_model" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        function appendRow(num){
+                        $new_number = parseInt(num) + 1;
+                        $appended_text = ` <tr class="datatable-row datatable-row-even" id="price-${$new_number}">
+                                            <td class="text-center end-td ">
+                                                      <button type="button" title="Remove" onclick="removeRow(${$new_number})"
+                                                                class="btn btn-danger btn-option">
+                                                                <i class="fa fa-minus-circle"></i>
+                                                      </button>
+                                            </td>
+                                            <td class="datatable-cell  ">
+                                                      <div class="a-col alternate">
+                                                                <div class="input-field">
+                                                                          <input type="text" class="form-control"
+                                                                                     name="names[${$new_number}][term]"  />
+                                                                </div>
+                                                      </div>
+                                            </td>
+                                            <td class="datatable-cell  ">
+                                                      <div class="a-col alternate">
+                                                                <div class="input-field">
+                                                                          <input type="text" class="form-control"
+                                                                                     name="names[${$new_number}][definition]"  />
+                                                                </div>
+                                                      </div>
+                                            </td>
+                                  </tr>`;
+                        $($appended_text).insertAfter(`#price-${num}`);
+                        if (!document.getElementById(`price-${num}`)) {
+                                  $($appended_text).insertAfter(`#price-0`);
+                        }
+    
+                        $(`#btn-${num}`).remove();
+                        $("#increment").append(`<button type="button" class="btn btn-primary add_new" id="btn-${$new_number}" onclick="appendRow(${$new_number})"><i class="fa fa-plus-circle"></i></button></td>`);
+            }
+              function removeRow(num) {
+                        $(`#price-${num}`).remove();
+              }
+              function appendRow2(num) {
+                        $new_number = parseInt(num) + 1;
+                        $appended_text = ` <tr class="datatable-row datatable-row-even" id="models-${$new_number}">
+                                           
+                                            <td class="text-center end-td ">
+                                                      <button type="button" title="Remove" onclick="removeRow2(${$new_number})"
+                                                                class="btn btn-danger btn-option">
+                                                                <i class="fa fa-minus-circle"></i>
+                                                      </button>
+                                            </td>
+                                          
+                                            <td>
+                                <input class="form-control" type="text" name="models[${$new_number}][model_name]" style="text-align: start;"
+                                    placeholder="----------------------------------------------------">
+                            </td>
+                            <td>
+                                <input class="form-control" type="number" name="models[${$new_number}][model_number]" style="text-align: start;"
+                                    placeholder="----------------------------------------------------">
+                            </td>
+                            <td>
+                                <input class="form-control" type="date" name="models[${$new_number}][model_date]" style="text-align: start;"
+                                    placeholder="----------------------------------------------------">
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" name="models[${$new_number}][model_period]" style="text-align: start;"
+                                    placeholder="----------------------------------------------------">
+                            </td>
+                            <td>
+                                <input class="form-control" type="text" name="models[${$new_number}][model_side]" style="text-align: start;"
+                                    placeholder="----------------------------------------------------">
+                            </td>
+                                           
+                                  </tr>`;
+                        $($appended_text).insertAfter(`#models-${num}`);
+                        if (!document.getElementById(`models-${num}`)) {
+                                  $($appended_text).insertAfter(`#models-0`);
+                        }
+    
+                        $(`#btn2-${num}`).remove();
+                        $("#increment2").append(`<button type="button" class="btn btn-primary add_new" id="btn2-${$new_number}" onclick="appendRow2(${$new_number})"><i class="fa fa-plus-circle"></i></button></td>`);
+    
+    
+              }
+              function removeRow2(num) {
+                        $(`#models-${num}`).remove();
+              }
+              function showme(){
+                  console.log('mmmmmmmmmmmm')
+              }
+    </script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/super-build/ckeditor.js"></script>
+    <script>
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor1"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor2"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor3"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor4"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+        CKEDITOR.ClassicEditor.create(document.getElementById("editor5"), {
+         
+            toolbar: {
+                items: [
+                  
+                    'findAndReplace', 'selectAll', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'alignment', '|',
+                    
+                ],
+               
+            },
+            removePlugins: [
+                'CKBox',
+                'CKFinder',
+                'EasyImage',
+                'RealTimeCollaborativeComments',
+                'RealTimeCollaborativeTrackChanges',
+                'RealTimeCollaborativeRevisionHistory',
+                'PresenceList',
+                'Comments',
+                'TrackChanges',
+                'TrackChangesData',
+                'RevisionHistory',
+                'Pagination',
+                'WProofreader',
+                'MathType',
+                'SlashCommand',
+                'Template',
+                'DocumentOutline',
+                'FormatPainter',
+                'TableOfContents'
+            ]
+        });
+    </script>
+    
+    @endsection

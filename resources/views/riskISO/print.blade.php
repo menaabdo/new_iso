@@ -1,8 +1,6 @@
 @extends('layouts.print')
 
 @section('content')
-
-<!-- Content Header (Page header) -->
 <style>
     input{
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
@@ -19,35 +17,40 @@
     border-radius: 2px;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+/* .mytable th,.mytable tr,.mytable td{
+    border:1px solid silver;
+} */
     </style>
 
+    <!-- Content Header (Page header) -->
 
-<!-- Main content -->
-<div class="card" >
+
+    <!-- Main content -->
+    <div class="card" >
 
 
 <div class="container p-4" style='text-align:center;border:1px solid silver; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;'>
            <div style="" class="w-100 text-center my-4">
- 
-    <h3 style="margin-top:85px;">
-    <img src="{{ asset($iso->company_logo) }}" style="border-radius: 6px;
+   <h3 style="margin-top:85px;">
+   <img src="{{ asset($iso->company_logo) }}"  style="border-radius: 6px;
     border: 2px solid #001635;
     margin: 10px;
     float: left;
     /* padding: 12px;" width="50px" height="50px" />
-
-    <span style='font-family:Cursive;border-bottom: 1px solid silver;
+   <span style='font-family:Cursive;border-bottom: 1px solid silver;
     ; box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
     border-radius: 6px;
     padding: 10px;text-shadow: 1px 1px 1px #3ed3ea;padding-left: 40px;
     padding-right: 40px;
-'>اجراء تقيم المخاطر
+'>
+  إجراء تقيم المخاطر
+
 </span>
 </h3>
-</div>
-    <hr>
-            <input type="hidden" name="type" value="2">
-            <table style="width: 850px;" class="table table-bordered my-4   m-auto">
+        <hr>
+      
+            <input type="hidden" name="type" value="1">
+            <table style="width: 850px;" class="mytable table table-bordered my-4   m-auto">
                 <thead>
                     <tr>
                         <th></th>
@@ -61,10 +64,9 @@
                             </div>
 
                         </th>
-                       </tr>
-                     <tr>
-                         <th>
-                         </th>
+                        </tr>
+                        <tr>
+                            <th></th>
                         <th class="col-3 ">
                             <div style="display: flex;justify-content: center;align-items: center;height: 50px;">
                                 خطوات العمل القياسيه
@@ -72,7 +74,7 @@
 
                         </th>
                         <th>
-                        </th>
+                          </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -136,12 +138,12 @@
             </table>
             <hr style="border: 5px; margin: 50px ;">
 
-            <section style="width: 650px;margin-top: 20px;margin:auto;" class=" my-4  p-4 m-auto">
+            <section style="width: 650px;margin-top: 20px;margin:auto" class=" my-4  p-4 m-auto">
                 <div class="form-group row ">
                     <label for="" class="col-sm-2 col-form-label">اسم الشركه</label>
                     <div class="col-sm-10">
                         <input type="text" name="company_name" value="{{ $iso->company_name }}"
-                            class="form-control ">
+                            class="form-control">
                     </div>
                 </div>
                 <div class="form-group row ">
@@ -154,7 +156,7 @@
             </section>
             <hr style="border: 5px; margin: 50px ;">
 
-            <section style="width: 650px;margin-top: 20px;margin:auto" class=" my-4  p-4 m-auto">
+            <section style="width: 650px;margin-top: 20px;margin:auto;" class=" my-4  p-4 m-auto">
                 <div class="form-group row ">
                     <label for="" class="col-sm-2 col-form-label">رقم النسخه</label>
                     <div class="col-sm-10">
@@ -266,7 +268,7 @@
                             <th class=" w-50 text-center col-2 ">
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
-                                        style="text-align: center;">
+                                        style="text-align: center;;">
                                         اعداد :</label>
 
                                     <input class="form-control" type="text" name="prepare"
@@ -277,7 +279,7 @@
                             <th class=" w-50 text-center col-2 ">
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
-                                        style="text-align: star;">
+                                        style="text-align: star;;">
                                         مراجعه :</label>
 
                                     <input class="form-control" type="text" name="review"
@@ -288,7 +290,7 @@
                             <th class=" w-50 text-center col-2 ">
                                 <div class="" style="text-align:start ;">
                                     <label for="" class=""
-                                        style="text-align: end;">
+                                        style="text-align: end;;">
                                         اعتماد : </label>
 
                                     <input class="form-control" type="text" name="approval"
@@ -449,7 +451,7 @@
                             <tr>
                                 <td>
                                     <div style="width: 150px; height: 80px;border: 2px solid grey;">
-                                        <div style="width: 20px; height: 80px;border: 2px solid grey;float: left;">
+                                        <div style="width: 20px; height: 80px;border: 2px solid grey;">
                                             <img src="{{ asset('image/Screenshot 2022-09-20 220318.png') }}" style="width: 160px; height: 80px;">
                                         </div>
                                     </div>
@@ -508,29 +510,29 @@
                 <div class="input-group my-3  mx-3">
                     <label class="row"> الغرض من الاجراء :</label>
                 </div>
-                <textarea class=form-control name="purpose" id="" cols="55" rows="5"
-                    placeholder="ادخل الغرض من الاجراء ------------------------">{{ $iso->purpose }}</textarea>
+                {!! html_entity_decode( $iso->purpose) ?? null !!}
+               
 
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
                     <label class="row"> المقدمه :</label>
                 </div>
-                <textarea class=form-control name="introduction" id="" cols="55" rows="5"
-                    placeholder="ادخل   المقدمه ------------------------">{{ $iso->introduction }}</textarea>
+                {!! html_entity_decode( $iso->introduction) ?? null !!}
+              
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
                     <label class="row"> نطاق التطبيق :</label>
                 </div>
-                <textarea class=form-control name="scope_of_application" id="" cols="55" rows="5"
-                    placeholder="ادخل   نطاق التطبيق ------------------------">{{ $iso->scope_of_application }}</textarea>
+                {!! html_entity_decode( $iso->scope_of_application) ?? null !!}
+              
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
                     <label class="row"> المصطلحات والتعريفات :</label>
                 </div>
-                <table class="datatable-table table table-bordered mt-2 ">
+                <table class="datatable-table table table-bordered mt-2 table table-bordered my-4   m-auto">
                     <thead class="datatable-head">
                         <tr class="datatable-row" style="left: 0px;">
 
@@ -572,15 +574,14 @@
                 <div class="input-group my-3  mx-3">
                     <label class="row"> المسؤليات :</label>
                 </div>
-                <textarea class=form-control name="responsibilities" id="" cols="55" rows="5"
-                    placeholder="ادخل  المسؤليات ------------------------">{{ $iso->responsibilities }}</textarea>
+                {!! html_entity_decode( $iso->responsibilities) ?? null !!}
+           
             </section>
             <section class="row" style="margin: 50px;">
                 <div class="input-group my-3  mx-3">
                     <label class="row"> خطوات العمل :</label>
                 </div>
-                <textarea class=form-control name="action_steps" id="" cols="30" rows="20"
-                    placeholder="ادخل  خطوات العمل ------------------------">{{ $iso->action_steps }}</textarea>
+                {!! html_entity_decode( $iso->action_steps) ?? null !!}
             </section>
 
             <section class="row" style="margin: 50px;">
@@ -649,12 +650,11 @@
                 <div class="input-group my-3  mx-3">
                     <label class="row"> المصادر المرجعيه الخارجيه والداخليه :</label>
                 </div>
-                <textarea class=form-control name="reference_sources" id="" cols="55" rows="5"
-                    placeholder="ادخل   نطاق التطبيق ------------------------">{{ $iso->reference_sources }}</textarea>
+                {!! html_entity_decode( $iso->reference_sources) ?? null !!}
             </section>
 
     </div>
-    </div>
+
     <!-- /.content -->
     <div class="modal fade account_model" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
     </div>

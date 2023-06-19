@@ -786,30 +786,30 @@ td{
             </div>
         </section>
         <hr style='width:100%'>
-        <section class="row" style="">
+        <section class=" col-12" style="">
             <div class="input-group my-3  mx-3 ">
                 <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Purpose of the procedure:')</label>
             </div>
-            <textarea class='shadow-lg' name="purpose" id="" cols="55" rows="5"style='border:none;padding:10px'
-                placeholder="@lang('main.Purpose of the procedure:')"></textarea>
+            <textarea class='shadow-lg' name="purpose" id="editor" cols="55" rows="12"style='border:none;padding:10px'
+                ></textarea>
 
         </section>
         <hr style='width:100%'>
-        <section class="row" style="">
+        <section  class=" col-12" style="">
             <div class="input-group my-3  mx-3">
                 <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.the introduction')</label>
             </div>
-            <textarea class='shadow-lg' name="introduction" id="" cols="55" rows="5" style='border:none;padding:10px'
-                placeholder="@lang('main.the introduction')"></textarea>
+            <textarea class='shadow-lg' name="introduction"  id="editor1" cols="55" rows="5" style='border:none;padding:10px'
+                ></textarea>
         </section>
         <hr style='width:100%'>
        
-        <section class="row" style="">
+        <section  class=" col-12" style="">
             <div class="input-group my-3  mx-3">
                 <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.Scope of application:')</label>
             </div>
-            <textarea class='shadow-lg' name="scope_of_application" id="" cols="55" rows="5" style='border:none;padding:10px'
-                placeholder="@lang('main.Scope of application:')"></textarea>
+            <textarea class='shadow-lg' name="scope_of_application" id="editor2" cols="55" rows="5" style='border:none;padding:10px'
+               ></textarea>
         </section>
         <hr style='width:100%'>
         <section class="row" style="">
@@ -871,19 +871,19 @@ td{
             <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
         </section>
         <hr style='width:100%'>
-        <section class="row" style="">
+        <section  class=" col-12" style="">
             <div class="input-group my-3  mx-3">
                 <label class="row " style='text-shadow: 1px 1px 1px #3ed3ea;'>@lang('main.responsibilities')</label>
             </div>
-            <textarea class='shadow-lg' name="responsibilities" id="" cols="55" rows="5" style='border:none;padding:10px'
+            <textarea class='shadow-lg' name="responsibilities" id="editor3" cols="55" rows="5" style='border:none;padding:10px'
 
-                placeholder="@lang('main.responsibilities')"></textarea>
+               ></textarea>
         </section>
-        <section class="row" style="">
+        <section  class=" col-12" style="">
             <div class="input-group my-3  mx-3">
                 <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.action_steps'):</label>
             </div>
-            <textarea class='shadow-lg' name="action_steps" id="" cols="55" rows="5" style='border:none;padding:10px'
+            <textarea class='shadow-lg' name="action_steps" id="editor4" cols="55" rows="5" style='border:none;padding:10px'
                 placeholder=" @lang('main.action_steps')"></textarea>
         </section>
         <hr style='width:100%'>
@@ -967,12 +967,12 @@ td{
             <!-- <textarea class=form-control name="" id="" cols="55" rows="5" placeholder="ادخل   نطاق التطبيق ------------------------"></textarea> -->
         </section>
         <hr style='width:100%'>
-        <section class="row" style="">
+        <section  class=" col-12" style="">
             <div class="input-group my-3  mx-3">
                 <label class="row" style='text-shadow: 1px 1px 1px #3ed3ea;'> @lang('main.External and internal reference sources:')</label>
             </div>
-            <textarea class='shadow-lg' name="reference_sources" id="" cols="55" rows="5" style='border:none;padding:10px'
-                placeholder="@lang('main.External and internal reference sources:')"></textarea>
+            <textarea class='shadow-lg' name="reference_sources"id="editor5" cols="55" rows="5" style='border:none;padding:10px'
+                ></textarea>
         </section>
 
         <div class="form-group" style='text-align:center'>
@@ -995,10 +995,9 @@ td{
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
-    function appendRow(num) {
+    function appendRow(num){
                     $new_number = parseInt(num) + 1;
                     $appended_text = ` <tr class="datatable-row datatable-row-even" id="price-${$new_number}">
-                                       
                                         <td class="text-center end-td ">
                                                   <button type="button" title="Remove" onclick="removeRow(${$new_number})"
                                                             class="btn btn-danger btn-option">
@@ -1013,7 +1012,6 @@ td{
                                                             </div>
                                                   </div>
                                         </td>
-
                                         <td class="datatable-cell  ">
                                                   <div class="a-col alternate">
                                                             <div class="input-field">
@@ -1022,8 +1020,6 @@ td{
                                                             </div>
                                                   </div>
                                         </td>
-                                       
-                                       
                               </tr>`;
                     $($appended_text).insertAfter(`#price-${num}`);
                     if (!document.getElementById(`price-${num}`)) {
@@ -1032,16 +1028,10 @@ td{
 
                     $(`#btn-${num}`).remove();
                     $("#increment").append(`<button type="button" class="btn btn-primary add_new" id="btn-${$new_number}" onclick="appendRow(${$new_number})"><i class="fa fa-plus-circle"></i></button></td>`);
-
-
-          }
-
+        }
           function removeRow(num) {
                     $(`#price-${num}`).remove();
-
           }
-
-
           function appendRow2(num) {
                     $new_number = parseInt(num) + 1;
                     $appended_text = ` <tr class="datatable-row datatable-row-even" id="models-${$new_number}">
@@ -1085,16 +1075,231 @@ td{
 
 
           }
-
           function removeRow2(num) {
                     $(`#models-${num}`).remove();
-
           }
           function showme(){
               console.log('mmmmmmmmmmmm')
-            //document.getElementById('2').style.display='block'
           }
-
-
 </script>
+<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/super-build/ckeditor.js"></script>
+<script>
+    CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
+     
+        toolbar: {
+            items: [
+              
+                'findAndReplace', 'selectAll', '|',
+                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                'bulletedList', 'numberedList', 'todoList', '|',
+                'outdent', 'indent', '|',
+                'alignment', '|',
+                
+            ],
+           
+        },
+        removePlugins: [
+            'CKBox',
+            'CKFinder',
+            'EasyImage',
+            'RealTimeCollaborativeComments',
+            'RealTimeCollaborativeTrackChanges',
+            'RealTimeCollaborativeRevisionHistory',
+            'PresenceList',
+            'Comments',
+            'TrackChanges',
+            'TrackChangesData',
+            'RevisionHistory',
+            'Pagination',
+            'WProofreader',
+            'MathType',
+            'SlashCommand',
+            'Template',
+            'DocumentOutline',
+            'FormatPainter',
+            'TableOfContents'
+        ]
+    });
+    CKEDITOR.ClassicEditor.create(document.getElementById("editor1"), {
+     
+        toolbar: {
+            items: [
+              
+                'findAndReplace', 'selectAll', '|',
+                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                'bulletedList', 'numberedList', 'todoList', '|',
+                'outdent', 'indent', '|',
+                'alignment', '|',
+                
+            ],
+           
+        },
+        removePlugins: [
+            'CKBox',
+            'CKFinder',
+            'EasyImage',
+            'RealTimeCollaborativeComments',
+            'RealTimeCollaborativeTrackChanges',
+            'RealTimeCollaborativeRevisionHistory',
+            'PresenceList',
+            'Comments',
+            'TrackChanges',
+            'TrackChangesData',
+            'RevisionHistory',
+            'Pagination',
+            'WProofreader',
+            'MathType',
+            'SlashCommand',
+            'Template',
+            'DocumentOutline',
+            'FormatPainter',
+            'TableOfContents'
+        ]
+    });
+    CKEDITOR.ClassicEditor.create(document.getElementById("editor2"), {
+     
+        toolbar: {
+            items: [
+              
+                'findAndReplace', 'selectAll', '|',
+                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                'bulletedList', 'numberedList', 'todoList', '|',
+                'outdent', 'indent', '|',
+                'alignment', '|',
+                
+            ],
+           
+        },
+        removePlugins: [
+            'CKBox',
+            'CKFinder',
+            'EasyImage',
+            'RealTimeCollaborativeComments',
+            'RealTimeCollaborativeTrackChanges',
+            'RealTimeCollaborativeRevisionHistory',
+            'PresenceList',
+            'Comments',
+            'TrackChanges',
+            'TrackChangesData',
+            'RevisionHistory',
+            'Pagination',
+            'WProofreader',
+            'MathType',
+            'SlashCommand',
+            'Template',
+            'DocumentOutline',
+            'FormatPainter',
+            'TableOfContents'
+        ]
+    });
+    CKEDITOR.ClassicEditor.create(document.getElementById("editor3"), {
+     
+        toolbar: {
+            items: [
+              
+                'findAndReplace', 'selectAll', '|',
+                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                'bulletedList', 'numberedList', 'todoList', '|',
+                'outdent', 'indent', '|',
+                'alignment', '|',
+                
+            ],
+           
+        },
+        removePlugins: [
+            'CKBox',
+            'CKFinder',
+            'EasyImage',
+            'RealTimeCollaborativeComments',
+            'RealTimeCollaborativeTrackChanges',
+            'RealTimeCollaborativeRevisionHistory',
+            'PresenceList',
+            'Comments',
+            'TrackChanges',
+            'TrackChangesData',
+            'RevisionHistory',
+            'Pagination',
+            'WProofreader',
+            'MathType',
+            'SlashCommand',
+            'Template',
+            'DocumentOutline',
+            'FormatPainter',
+            'TableOfContents'
+        ]
+    });
+    CKEDITOR.ClassicEditor.create(document.getElementById("editor4"), {
+     
+        toolbar: {
+            items: [
+              
+                'findAndReplace', 'selectAll', '|',
+                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                'bulletedList', 'numberedList', 'todoList', '|',
+                'outdent', 'indent', '|',
+                'alignment', '|',
+                
+            ],
+           
+        },
+        removePlugins: [
+            'CKBox',
+            'CKFinder',
+            'EasyImage',
+            'RealTimeCollaborativeComments',
+            'RealTimeCollaborativeTrackChanges',
+            'RealTimeCollaborativeRevisionHistory',
+            'PresenceList',
+            'Comments',
+            'TrackChanges',
+            'TrackChangesData',
+            'RevisionHistory',
+            'Pagination',
+            'WProofreader',
+            'MathType',
+            'SlashCommand',
+            'Template',
+            'DocumentOutline',
+            'FormatPainter',
+            'TableOfContents'
+        ]
+    });
+    CKEDITOR.ClassicEditor.create(document.getElementById("editor5"), {
+     
+        toolbar: {
+            items: [
+              
+                'findAndReplace', 'selectAll', '|',
+                'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                'bulletedList', 'numberedList', 'todoList', '|',
+                'outdent', 'indent', '|',
+                'alignment', '|',
+                
+            ],
+           
+        },
+        removePlugins: [
+            'CKBox',
+            'CKFinder',
+            'EasyImage',
+            'RealTimeCollaborativeComments',
+            'RealTimeCollaborativeTrackChanges',
+            'RealTimeCollaborativeRevisionHistory',
+            'PresenceList',
+            'Comments',
+            'TrackChanges',
+            'TrackChangesData',
+            'RevisionHistory',
+            'Pagination',
+            'WProofreader',
+            'MathType',
+            'SlashCommand',
+            'Template',
+            'DocumentOutline',
+            'FormatPainter',
+            'TableOfContents'
+        ]
+    });
+</script>
+
 @endsection

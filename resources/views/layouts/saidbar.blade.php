@@ -715,6 +715,95 @@
                     
                 </ul>
             </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="hide-menu">@lang('main.purchaseProcedure')</span>
+                </a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item">
+                        <a href="{{ route('purchaseProcedureISO.index') }}" class="sidebar-link">
+                            <i class="mdi mdi-adjust"></i>
+                            <span class="hide-menu"> @lang('main.purchaseProcedure')
+                            </span>
+                        </a>
+                    </li>
+                  
+                    
+                </ul>
+            </li>
+
+          
+            <li class="sidebar-item">
+                <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                    <i class="fas fa-solid fa-wrench"></i>
+                    <span class="hide-menu">@lang('main.maintenanceProcedure')</span>
+                </a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item">
+                        <a href="{{ route('maintenanceProcedureISO.index') }}" class="sidebar-link">
+                            <i class="mdi mdi-adjust"></i>
+                            <span class="hide-menu"> @lang('main.maintenanceProcedure')
+                            </span>
+                        </a>
+                    </li>
+                  
+                    
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                    <i class="fas fa-sync-alt"></i> 
+                    <span class="hide-menu">@lang('main.trainingProcedure')</span>
+                </a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item">
+                        <a href="{{ route('trainingProcedureISO.index') }}" class="sidebar-link">
+                            <i class="mdi mdi-adjust"></i>
+                            <span class="hide-menu"> @lang('main.trainingProcedure')
+                            </span>
+                        </a>
+                    </li>
+                  
+                    
+                </ul>
+            </li>
+        
+            <li class="sidebar-item">
+                <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                    <i class="fas fa-tasks"></i> 
+                    <span class="hide-menu">@lang('main.workInstructionsProcedure')</span>
+                </a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item">
+                        <a href="{{ route('workInstructionsProcedureISO.index') }}" class="sidebar-link">
+                            <i class="mdi mdi-adjust"></i>
+                            <span class="hide-menu"> @lang('main.workInstructionsProcedure')
+                            </span>
+                        </a>
+                    </li>
+                  
+                    
+                </ul>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                    <i class="fas fa-sync-alt"></i>
+                     <span class="hide-menu">@lang('main.salesProcedure')</span>
+                </a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item">
+                        <a href="{{ route('salesProcedureISO.index') }}" class="sidebar-link">
+                            <i class="mdi mdi-adjust"></i>
+                            <span class="hide-menu"> @lang('main.salesProcedure')
+                            </span>
+                        </a>
+                    </li>
+                  
+                    
+                </ul>
+            </li>
             <br>
             <br>
             </ul>
